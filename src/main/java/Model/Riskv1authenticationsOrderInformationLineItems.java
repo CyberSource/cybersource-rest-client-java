@@ -495,26 +495,26 @@ public class Riskv1authenticationsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsOrderInformationLineItems {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
-    sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    shippingAddress1: ").append(toIndentedString(shippingAddress1)).append("\n");
-    sb.append("    shippingAddress2: ").append(toIndentedString(shippingAddress2)).append("\n");
-    sb.append("    shippingCity: ").append(toIndentedString(shippingCity)).append("\n");
-    sb.append("    shippingCountryCode: ").append(toIndentedString(shippingCountryCode)).append("\n");
-    sb.append("    shippingFirstName: ").append(toIndentedString(shippingFirstName)).append("\n");
-    sb.append("    shippingLastName: ").append(toIndentedString(shippingLastName)).append("\n");
-    sb.append("    shippingMiddleName: ").append(toIndentedString(shippingMiddleName)).append("\n");
-    sb.append("    shippingPhone: ").append(toIndentedString(shippingPhone)).append("\n");
-    sb.append("    shippingPostalCode: ").append(toIndentedString(shippingPostalCode)).append("\n");
-    sb.append("    shippingState: ").append(toIndentedString(shippingState)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (giftCardCurrency != null) sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (passenger != null) sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
+    if (shippingDestinationTypes != null) sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (shippingAddress1 != null) sb.append("    shippingAddress1: ").append(toIndentedString(shippingAddress1)).append("\n");
+    if (shippingAddress2 != null) sb.append("    shippingAddress2: ").append(toIndentedString(shippingAddress2)).append("\n");
+    if (shippingCity != null) sb.append("    shippingCity: ").append(toIndentedString(shippingCity)).append("\n");
+    if (shippingCountryCode != null) sb.append("    shippingCountryCode: ").append(toIndentedString(shippingCountryCode)).append("\n");
+    if (shippingFirstName != null) sb.append("    shippingFirstName: ").append(toIndentedString(shippingFirstName)).append("\n");
+    if (shippingLastName != null) sb.append("    shippingLastName: ").append(toIndentedString(shippingLastName)).append("\n");
+    if (shippingMiddleName != null) sb.append("    shippingMiddleName: ").append(toIndentedString(shippingMiddleName)).append("\n");
+    if (shippingPhone != null) sb.append("    shippingPhone: ").append(toIndentedString(shippingPhone)).append("\n");
+    if (shippingPostalCode != null) sb.append("    shippingPostalCode: ").append(toIndentedString(shippingPostalCode)).append("\n");
+    if (shippingState != null) sb.append("    shippingState: ").append(toIndentedString(shippingState)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -525,10 +525,10 @@ public class Riskv1authenticationsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -97,8 +97,8 @@ public class InlineResponse2012SetupsRisk {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsRisk {\n");
     
-    sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
-    sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
+    if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class InlineResponse2012SetupsRisk {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

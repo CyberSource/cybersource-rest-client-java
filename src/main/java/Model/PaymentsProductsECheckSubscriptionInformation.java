@@ -50,7 +50,7 @@ public class PaymentsProductsECheckSubscriptionInformation {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -128,9 +128,9 @@ public class PaymentsProductsECheckSubscriptionInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsECheckSubscriptionInformation {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    selfServiceability: ").append(toIndentedString(selfServiceability)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (selfServiceability != null) sb.append("    selfServiceability: ").append(toIndentedString(selfServiceability)).append("\n");
+    if (mode != null) sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,10 +141,10 @@ public class PaymentsProductsECheckSubscriptionInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

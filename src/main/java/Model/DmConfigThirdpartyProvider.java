@@ -213,13 +213,13 @@ public class DmConfigThirdpartyProvider {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProvider {\n");
     
-    sb.append("    accurint: ").append(toIndentedString(accurint)).append("\n");
-    sb.append("    credilink: ").append(toIndentedString(credilink)).append("\n");
-    sb.append("    ekata: ").append(toIndentedString(ekata)).append("\n");
-    sb.append("    emailage: ").append(toIndentedString(emailage)).append("\n");
-    sb.append("    perseuss: ").append(toIndentedString(perseuss)).append("\n");
-    sb.append("    signifyd: ").append(toIndentedString(signifyd)).append("\n");
-    sb.append("    targus: ").append(toIndentedString(targus)).append("\n");
+    if (accurint != null) sb.append("    accurint: ").append(toIndentedString(accurint)).append("\n");
+    if (credilink != null) sb.append("    credilink: ").append(toIndentedString(credilink)).append("\n");
+    if (ekata != null) sb.append("    ekata: ").append(toIndentedString(ekata)).append("\n");
+    if (emailage != null) sb.append("    emailage: ").append(toIndentedString(emailage)).append("\n");
+    if (perseuss != null) sb.append("    perseuss: ").append(toIndentedString(perseuss)).append("\n");
+    if (signifyd != null) sb.append("    signifyd: ").append(toIndentedString(signifyd)).append("\n");
+    if (targus != null) sb.append("    targus: ").append(toIndentedString(targus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -230,10 +230,10 @@ public class DmConfigThirdpartyProvider {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -62,7 +62,7 @@ public class CardProcessingConfigCommonCurrencies1 {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -80,7 +80,7 @@ public class CardProcessingConfigCommonCurrencies1 {
    * @return enabledCardPresent
   **/
   @ApiModelProperty(value = "Indicates whether the card-present transaction is activated for the selected currency. If both enabledCardPresent and enabledCardNotPresent are set to null, then enabledCardPresent will have the value of enabled. ")
-  public Boolean isEnabledCardPresent() {
+  public Boolean EnabledCardPresent() {
     return enabledCardPresent;
   }
 
@@ -98,7 +98,7 @@ public class CardProcessingConfigCommonCurrencies1 {
    * @return enabledCardNotPresent
   **/
   @ApiModelProperty(value = "Indicates whether the card-present transaction is activated for the selected currency. If both enabledCardPresent and enabledCardNotPresent are set to null, then enabledCardNotPresent will have the value of enabled. ")
-  public Boolean isEnabledCardNotPresent() {
+  public Boolean EnabledCardNotPresent() {
     return enabledCardNotPresent;
   }
 
@@ -216,13 +216,13 @@ public class CardProcessingConfigCommonCurrencies1 {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonCurrencies1 {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    enabledCardPresent: ").append(toIndentedString(enabledCardPresent)).append("\n");
-    sb.append("    enabledCardNotPresent: ").append(toIndentedString(enabledCardNotPresent)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    terminalIds: ").append(toIndentedString(terminalIds)).append("\n");
-    sb.append("    serviceEnablementNumber: ").append(toIndentedString(serviceEnablementNumber)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enabledCardPresent != null) sb.append("    enabledCardPresent: ").append(toIndentedString(enabledCardPresent)).append("\n");
+    if (enabledCardNotPresent != null) sb.append("    enabledCardNotPresent: ").append(toIndentedString(enabledCardNotPresent)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (terminalIds != null) sb.append("    terminalIds: ").append(toIndentedString(terminalIds)).append("\n");
+    if (serviceEnablementNumber != null) sb.append("    serviceEnablementNumber: ").append(toIndentedString(serviceEnablementNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -233,10 +233,10 @@ public class CardProcessingConfigCommonCurrencies1 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

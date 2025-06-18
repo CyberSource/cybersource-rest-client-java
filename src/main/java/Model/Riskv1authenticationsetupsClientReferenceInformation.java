@@ -141,10 +141,10 @@ public class Riskv1authenticationsetupsClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsetupsClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (pausedRequestId != null) sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Riskv1authenticationsetupsClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

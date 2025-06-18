@@ -75,7 +75,7 @@ public class Ptsv2payoutsProcessingInformationFundingOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsProcessingInformationFundingOptions {\n");
     
-    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2payoutsProcessingInformationFundingOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

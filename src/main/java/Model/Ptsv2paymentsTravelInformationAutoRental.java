@@ -174,7 +174,7 @@ public class Ptsv2paymentsTravelInformationAutoRental {
    * @return noShowIndicator
   **/
   @ApiModelProperty(value = "No Show Indicator provides an indicator noting that the individual did not show up after making a reservation for a vehicle. Possible values: - true - false ")
-  public Boolean isNoShowIndicator() {
+  public Boolean NoShowIndicator() {
     return noShowIndicator;
   }
 
@@ -318,7 +318,7 @@ public class Ptsv2paymentsTravelInformationAutoRental {
    * @return insuranceIndicator
   **/
   @ApiModelProperty(value = "Used for MC and Discover  Valid values: - `true` - Yes (insurance was purchased) - `false` - No (insurance was not purchased) ")
-  public Boolean isInsuranceIndicator() {
+  public Boolean InsuranceIndicator() {
     return insuranceIndicator;
   }
 
@@ -1023,50 +1023,50 @@ public class Ptsv2paymentsTravelInformationAutoRental {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationAutoRental {\n");
     
-    sb.append("    noShowIndicator: ").append(toIndentedString(noShowIndicator)).append("\n");
-    sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
-    sb.append("    vehicleClass: ").append(toIndentedString(vehicleClass)).append("\n");
-    sb.append("    distanceTravelled: ").append(toIndentedString(distanceTravelled)).append("\n");
-    sb.append("    distanceUnit: ").append(toIndentedString(distanceUnit)).append("\n");
-    sb.append("    returnDateTime: ").append(toIndentedString(returnDateTime)).append("\n");
-    sb.append("    rentalDateTime: ").append(toIndentedString(rentalDateTime)).append("\n");
-    sb.append("    maxFreeDistance: ").append(toIndentedString(maxFreeDistance)).append("\n");
-    sb.append("    insuranceIndicator: ").append(toIndentedString(insuranceIndicator)).append("\n");
-    sb.append("    programCode: ").append(toIndentedString(programCode)).append("\n");
-    sb.append("    returnAddress: ").append(toIndentedString(returnAddress)).append("\n");
-    sb.append("    rentalAddress: ").append(toIndentedString(rentalAddress)).append("\n");
-    sb.append("    agreementNumber: ").append(toIndentedString(agreementNumber)).append("\n");
-    sb.append("    odometerReading: ").append(toIndentedString(odometerReading)).append("\n");
-    sb.append("    vehicleIdentificationNumber: ").append(toIndentedString(vehicleIdentificationNumber)).append("\n");
-    sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
-    sb.append("    numberOfAdditionalDrivers: ").append(toIndentedString(numberOfAdditionalDrivers)).append("\n");
-    sb.append("    driverAge: ").append(toIndentedString(driverAge)).append("\n");
-    sb.append("    specialProgramCode: ").append(toIndentedString(specialProgramCode)).append("\n");
-    sb.append("    vehicleMake: ").append(toIndentedString(vehicleMake)).append("\n");
-    sb.append("    vehicleModel: ").append(toIndentedString(vehicleModel)).append("\n");
-    sb.append("    timePeriod: ").append(toIndentedString(timePeriod)).append("\n");
-    sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
-    sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
-    sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
-    sb.append("    oneWayDropOffAmount: ").append(toIndentedString(oneWayDropOffAmount)).append("\n");
-    sb.append("    adjustedAmountIndicator: ").append(toIndentedString(adjustedAmountIndicator)).append("\n");
-    sb.append("    adjustedAmount: ").append(toIndentedString(adjustedAmount)).append("\n");
-    sb.append("    fuelCharges: ").append(toIndentedString(fuelCharges)).append("\n");
-    sb.append("    weeklyRentalRate: ").append(toIndentedString(weeklyRentalRate)).append("\n");
-    sb.append("    dailyRentalRate: ").append(toIndentedString(dailyRentalRate)).append("\n");
-    sb.append("    ratePerMile: ").append(toIndentedString(ratePerMile)).append("\n");
-    sb.append("    mileageCharge: ").append(toIndentedString(mileageCharge)).append("\n");
-    sb.append("    extraMileageCharge: ").append(toIndentedString(extraMileageCharge)).append("\n");
-    sb.append("    lateFeeAmount: ").append(toIndentedString(lateFeeAmount)).append("\n");
-    sb.append("    towingCharge: ").append(toIndentedString(towingCharge)).append("\n");
-    sb.append("    extraCharge: ").append(toIndentedString(extraCharge)).append("\n");
-    sb.append("    gpsCharge: ").append(toIndentedString(gpsCharge)).append("\n");
-    sb.append("    phoneCharge: ").append(toIndentedString(phoneCharge)).append("\n");
-    sb.append("    parkingViolationCharge: ").append(toIndentedString(parkingViolationCharge)).append("\n");
-    sb.append("    otherCharges: ").append(toIndentedString(otherCharges)).append("\n");
-    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
-    sb.append("    affiliateName: ").append(toIndentedString(affiliateName)).append("\n");
+    if (noShowIndicator != null) sb.append("    noShowIndicator: ").append(toIndentedString(noShowIndicator)).append("\n");
+    if (customerName != null) sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
+    if (vehicleClass != null) sb.append("    vehicleClass: ").append(toIndentedString(vehicleClass)).append("\n");
+    if (distanceTravelled != null) sb.append("    distanceTravelled: ").append(toIndentedString(distanceTravelled)).append("\n");
+    if (distanceUnit != null) sb.append("    distanceUnit: ").append(toIndentedString(distanceUnit)).append("\n");
+    if (returnDateTime != null) sb.append("    returnDateTime: ").append(toIndentedString(returnDateTime)).append("\n");
+    if (rentalDateTime != null) sb.append("    rentalDateTime: ").append(toIndentedString(rentalDateTime)).append("\n");
+    if (maxFreeDistance != null) sb.append("    maxFreeDistance: ").append(toIndentedString(maxFreeDistance)).append("\n");
+    if (insuranceIndicator != null) sb.append("    insuranceIndicator: ").append(toIndentedString(insuranceIndicator)).append("\n");
+    if (programCode != null) sb.append("    programCode: ").append(toIndentedString(programCode)).append("\n");
+    if (returnAddress != null) sb.append("    returnAddress: ").append(toIndentedString(returnAddress)).append("\n");
+    if (rentalAddress != null) sb.append("    rentalAddress: ").append(toIndentedString(rentalAddress)).append("\n");
+    if (agreementNumber != null) sb.append("    agreementNumber: ").append(toIndentedString(agreementNumber)).append("\n");
+    if (odometerReading != null) sb.append("    odometerReading: ").append(toIndentedString(odometerReading)).append("\n");
+    if (vehicleIdentificationNumber != null) sb.append("    vehicleIdentificationNumber: ").append(toIndentedString(vehicleIdentificationNumber)).append("\n");
+    if (companyId != null) sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
+    if (numberOfAdditionalDrivers != null) sb.append("    numberOfAdditionalDrivers: ").append(toIndentedString(numberOfAdditionalDrivers)).append("\n");
+    if (driverAge != null) sb.append("    driverAge: ").append(toIndentedString(driverAge)).append("\n");
+    if (specialProgramCode != null) sb.append("    specialProgramCode: ").append(toIndentedString(specialProgramCode)).append("\n");
+    if (vehicleMake != null) sb.append("    vehicleMake: ").append(toIndentedString(vehicleMake)).append("\n");
+    if (vehicleModel != null) sb.append("    vehicleModel: ").append(toIndentedString(vehicleModel)).append("\n");
+    if (timePeriod != null) sb.append("    timePeriod: ").append(toIndentedString(timePeriod)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
+    if (customerServicePhoneNumber != null) sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
+    if (oneWayDropOffAmount != null) sb.append("    oneWayDropOffAmount: ").append(toIndentedString(oneWayDropOffAmount)).append("\n");
+    if (adjustedAmountIndicator != null) sb.append("    adjustedAmountIndicator: ").append(toIndentedString(adjustedAmountIndicator)).append("\n");
+    if (adjustedAmount != null) sb.append("    adjustedAmount: ").append(toIndentedString(adjustedAmount)).append("\n");
+    if (fuelCharges != null) sb.append("    fuelCharges: ").append(toIndentedString(fuelCharges)).append("\n");
+    if (weeklyRentalRate != null) sb.append("    weeklyRentalRate: ").append(toIndentedString(weeklyRentalRate)).append("\n");
+    if (dailyRentalRate != null) sb.append("    dailyRentalRate: ").append(toIndentedString(dailyRentalRate)).append("\n");
+    if (ratePerMile != null) sb.append("    ratePerMile: ").append(toIndentedString(ratePerMile)).append("\n");
+    if (mileageCharge != null) sb.append("    mileageCharge: ").append(toIndentedString(mileageCharge)).append("\n");
+    if (extraMileageCharge != null) sb.append("    extraMileageCharge: ").append(toIndentedString(extraMileageCharge)).append("\n");
+    if (lateFeeAmount != null) sb.append("    lateFeeAmount: ").append(toIndentedString(lateFeeAmount)).append("\n");
+    if (towingCharge != null) sb.append("    towingCharge: ").append(toIndentedString(towingCharge)).append("\n");
+    if (extraCharge != null) sb.append("    extraCharge: ").append(toIndentedString(extraCharge)).append("\n");
+    if (gpsCharge != null) sb.append("    gpsCharge: ").append(toIndentedString(gpsCharge)).append("\n");
+    if (phoneCharge != null) sb.append("    phoneCharge: ").append(toIndentedString(phoneCharge)).append("\n");
+    if (parkingViolationCharge != null) sb.append("    parkingViolationCharge: ").append(toIndentedString(parkingViolationCharge)).append("\n");
+    if (otherCharges != null) sb.append("    otherCharges: ").append(toIndentedString(otherCharges)).append("\n");
+    if (companyName != null) sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+    if (affiliateName != null) sb.append("    affiliateName: ").append(toIndentedString(affiliateName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1077,10 +1077,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

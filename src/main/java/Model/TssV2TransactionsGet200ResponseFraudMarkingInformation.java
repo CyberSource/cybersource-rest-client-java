@@ -74,7 +74,7 @@ public class TssV2TransactionsGet200ResponseFraudMarkingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseFraudMarkingInformation {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponseFraudMarkingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

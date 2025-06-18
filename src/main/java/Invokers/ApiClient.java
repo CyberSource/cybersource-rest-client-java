@@ -57,6 +57,7 @@ import okhttp3.Route;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
+import okio.Buffer;
 import okio.BufferedSink;
 import okio.Okio;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -142,10 +143,18 @@ public class ApiClient {
 	 */
 	public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
+	/**
+	* Use this field <b>ONLY IF</b> you have more than one instance of ApiClient.
+	* This field should <b>NOT</b> be used/accessed for a singleton object.
+	*/
 	public String responseCode;
+
+	/**
+	* Use this field <b>ONLY IF</b> you have more than one instance of ApiClient.
+	* This field should <b>NOT</b> be used/accessed for a singleton object.
+	*/
 	public String status;
-	public InputStream responseBody;
-	public String respBody;
+
 	public MerchantConfig merchantConfig;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 
@@ -508,7 +517,6 @@ public class ApiClient {
 	 * <p>
 	 * When lenientDatetimeFormat is enabled, the following ISO 8601 datetime
 	 * formats are supported:
-	 * <p>
 	 * <ul>
 	 * <li>2015-08-16T08:20:05Z</li>
 	 * <li>2015-8-16T8:20:05Z</li>
@@ -1036,6 +1044,8 @@ public class ApiClient {
 			return (T) downloadFileFromResponse(response);
 		}
 
+		String respBody = null;
+
 		try {
 			if (response.body() != null)
 				respBody = response.body().string();
@@ -1080,10 +1090,10 @@ public class ApiClient {
 	public RequestBody serialize(Object obj, String contentType) throws ApiException {
 		if (obj instanceof byte[]) {
 			// Binary (byte array) body parameter support.
-			return RequestBody.create(MediaType.parse(contentType), (byte[]) obj);
+			return RequestBody.create((byte[]) obj, MediaType.parse(contentType));
 		} else if (obj instanceof File) {
 			// File body parameter support.
-			return RequestBody.create(MediaType.parse(contentType), (File) obj);
+			return RequestBody.create((File) obj, MediaType.parse(contentType));
 		} else if (isJsonMime(contentType)) {
 			String content;
 			if (obj != null) {
@@ -1091,7 +1101,7 @@ public class ApiClient {
 			} else {
 				content = null;
 			}
-			return RequestBody.create(MediaType.parse(contentType), content);
+			return RequestBody.create(content, MediaType.parse(contentType));
 		} else {
 			logger.error("ApiException : Content type \"" + contentType + "\" is not supported");
 			throw new ApiException("Content type \"" + contentType + "\" is not supported");
@@ -1191,8 +1201,9 @@ public class ApiClient {
 		try {
 			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime()) / 1000000);
 			Response response = call.execute();
-			responseCode = String.valueOf(response.code());
-			status = response.message();
+			String responseCode = String.valueOf(response.code());
+			this.status = response.message();
+			this.responseCode = responseCode;
 
 			logger.debug("Network Response :\n" + json.serialize(response.headers()));
 
@@ -1208,7 +1219,7 @@ public class ApiClient {
 			
 			logger.info("HTTP Response Body :\n{}", data);
 
-			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
+			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), response.message(), data);
 		} catch (IOException e) {
 			logger.error("ApiException : " + e.getMessage());
 			throw new ApiException(e);
@@ -1317,16 +1328,26 @@ public class ApiClient {
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-			
+
+		//create reqHeader parameter here 
+		Map<String, String> requestHeaderMap = new HashMap<String, String>();
+
 		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
-					addDefaultHeader(header.getKey(), header.getValue());
+					requestHeaderMap.put(header.getKey(), header.getValue());
 				}
 			}
 		}
-						
-		callAuthenticationHeader(method, path, body, queryParams);
+		
+		String contentType = headerParams.get("Content-Type");
+		// ensuring a default content type
+		if (contentType == null) {
+			contentType = "application/json";
+		}
+		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
+		
+		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1339,13 +1360,23 @@ public class ApiClient {
 			headerParams.put("Accept", defaultAcceptHeader);
 		}
 		
-		headerParams.putAll(defaultHeaderMap);
+		headerParams.putAll(requestHeaderMap);
 
 		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
-		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
+		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		return httpClient.newCall(request);
+	}
+	
+	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
+		if(requestBody!=null) {
+			Buffer buffer = new Buffer();
+			requestBody.writeTo(buffer);
+			String payload = buffer.readUtf8();
+			return payload;
+		}
+		return null;
 	}
 
 	/*
@@ -1353,10 +1384,10 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams) {
+	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
 
 		try {
-			merchantConfig.setRequestType(method);
+			String requestTarget = null;
 
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
@@ -1377,62 +1408,52 @@ public class ApiClient {
 							url.append(escapeString(param.getName())).append("=").append(escapeString(value));
 						}
 					}
-					merchantConfig.setRequestTarget(url.toString());
+					requestTarget= url.toString();
 				}
 			} else {
-				merchantConfig.setRequestTarget(path);
+				requestTarget = path;
 			}
 
 			Authorization authorization = new Authorization();
 
-			String requestBody = null;
-			if ((method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT") ||
-					method.equalsIgnoreCase("PATCH"))
-					&& body.equals("{}")) {
-				requestBody = "{}";
-			} else {
-				requestBody = json.serialize(body);
-			}
+			String requestBody = getRequestContentSendOverNetwork(reqBody);
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
-			merchantConfig.setRequestData(requestBody);
-			authorization.setJWTRequestBody(requestBody);
-			boolean isMerchantDetails = merchantConfig.validateMerchantDetails();
-
-			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
+			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
-				String token = authorization.getToken(merchantConfig);
+				String date = PropertiesUtil.getNewDate();
+				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
-					addDefaultHeader("Date", PropertiesUtil.date);
-					addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
-					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
-					addDefaultHeader("Signature", token);
-					addDefaultHeader("User-Agent", "Mozilla/5.0");
+					requestHeaderMap.put("Date", date);
+					requestHeaderMap.put("Host", merchantConfig.getRequestHost().trim());
+					requestHeaderMap.put("v-c-merchant-id", merchantConfig.getMerchantID());
+					requestHeaderMap.put("Signature", token);
+					requestHeaderMap.put("User-Agent", "Mozilla/5.0");
 
 					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
 							|| method.equalsIgnoreCase("PATCH")) {
-						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
+						PayloadDigest payloadDigest = new PayloadDigest(requestBody);
 						String digest = payloadDigest.getDigest();
-						addDefaultHeader("Digest", digest);
+						requestHeaderMap.put("Digest", digest);
 					}
 
 				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
 					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
+					requestHeaderMap.put("Authorization", token);
 				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.OAUTH)) {
 					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
+					requestHeaderMap.put("Authorization", token);
 				}
 			}
 
 			if (versionInfo != null && !versionInfo.isEmpty()) {
-				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
-		} catch (ConfigException e) {
+		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
 		}
 
@@ -1445,7 +1466,7 @@ public class ApiClient {
 	 * @param method                  The request method, one of "GET", "HEAD",
 	 *                                "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
 	 * @param queryParams             The query parameters
-	 * @param body                    The request body object
+	 * @param reqBody                 The request body object
 	 * @param headerParams            The header parameters
 	 * @param formParams              The form parameters
 	 * @param authNames               The authentications to apply
@@ -1454,7 +1475,7 @@ public class ApiClient {
 	 * @throws ApiException If fail to serialize the request body object
 	 */
 	@SuppressWarnings({ "unchecked" })
-	public Request buildRequest(String path, String method, List<Pair> queryParams, Object body,
+	public Request buildRequest(String path, String method, List<Pair> queryParams, RequestBody reqBody,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		updateParamsForAuth(authNames, queryParams, headerParams);
@@ -1463,12 +1484,20 @@ public class ApiClient {
 		final Request.Builder reqBuilder = new Request.Builder().url(url);
 		processHeaderParams(headerParams, reqBuilder);
 
-		String contentType = headerParams.get("Content-Type");
-		// ensuring a default content type
-		if (contentType == null) {
-			contentType = "application/json";
+		Request request = null;
+
+		if (progressRequestListener != null && reqBody != null) {
+			ProgressRequestBody progressRequestBody = new ProgressRequestBody(reqBody, progressRequestListener);
+			request = reqBuilder.method(method, progressRequestBody).build();
+		} else {
+			request = reqBuilder.method(method, reqBody).build();
 		}
 
+		return request;
+	}
+	
+	private RequestBody createRequestBody(String method, Object body, Map<String, Object> formParams,
+			String contentType) throws ApiException {
 		RequestBody reqBody;
 		if (!HttpMethod.permitsRequestBody(method)) {
 			reqBody = null;
@@ -1486,7 +1515,7 @@ public class ApiClient {
 				reqBody = null;
 			} else {
 				// use an empty request body (for POST, PUT and PATCH)
-				reqBody = RequestBody.create(MediaType.parse(contentType), "");
+				reqBody = RequestBody.create("",MediaType.parse(contentType));
 			}
 		} else {
 			if (body.equals("{}")) {
@@ -1495,17 +1524,7 @@ public class ApiClient {
 				reqBody = serialize(body, contentType);
 			}
 		}
-
-		Request request = null;
-
-		if (progressRequestListener != null && reqBody != null) {
-			ProgressRequestBody progressRequestBody = new ProgressRequestBody(reqBody, progressRequestListener);
-			request = reqBuilder.method(method, progressRequestBody).build();
-		} else {
-			request = reqBuilder.method(method, reqBody).build();
-		}
-
-		return request;
+		return reqBody;
 	}
 
 	/**
@@ -1616,10 +1635,10 @@ public class ApiClient {
 				Headers partHeaders = Headers.of("Content-Disposition",
 						"form-data; name=\"" + param.getKey() + "\"; filename=\"" + file.getName() + "\"");
 				MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
-				mpBuilder.addPart(partHeaders, RequestBody.create(mediaType, file));
+				mpBuilder.addPart(partHeaders, RequestBody.create(file, mediaType));
 			} else {
 				Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + param.getKey() + "\"");
-				mpBuilder.addPart(partHeaders, RequestBody.create(null, parameterToString(param.getValue())));
+				mpBuilder.addPart(partHeaders, RequestBody.create(parameterToString(param.getValue()), null));
 			}
 		}
 		return mpBuilder.build();

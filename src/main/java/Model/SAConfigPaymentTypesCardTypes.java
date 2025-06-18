@@ -141,10 +141,10 @@ public class SAConfigPaymentTypesCardTypes {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigPaymentTypesCardTypes {\n");
     
-    sb.append("    discover: ").append(toIndentedString(discover)).append("\n");
-    sb.append("    amex: ").append(toIndentedString(amex)).append("\n");
-    sb.append("    masterCard: ").append(toIndentedString(masterCard)).append("\n");
-    sb.append("    visa: ").append(toIndentedString(visa)).append("\n");
+    if (discover != null) sb.append("    discover: ").append(toIndentedString(discover)).append("\n");
+    if (amex != null) sb.append("    amex: ").append(toIndentedString(amex)).append("\n");
+    if (masterCard != null) sb.append("    masterCard: ").append(toIndentedString(masterCard)).append("\n");
+    if (visa != null) sb.append("    visa: ").append(toIndentedString(visa)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class SAConfigPaymentTypesCardTypes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

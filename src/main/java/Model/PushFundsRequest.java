@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv1pushfundstransferAggregatorInformation;
 import Model.Ptsv1pushfundstransferClientReferenceInformation;
 import Model.Ptsv1pushfundstransferMerchantInformation;
 import Model.Ptsv1pushfundstransferOrderInformation;
@@ -23,6 +22,7 @@ import Model.Ptsv1pushfundstransferPointOfServiceInformation;
 import Model.Ptsv1pushfundstransferProcessingInformation;
 import Model.Ptsv1pushfundstransferRecipientInformation;
 import Model.Ptsv1pushfundstransferSenderInformation;
+import Model.Ptsv2payoutsAggregatorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,7 +38,7 @@ import java.io.IOException;
 
 public class PushFundsRequest {
   @SerializedName("aggregatorInformation")
-  private Ptsv1pushfundstransferAggregatorInformation aggregatorInformation = null;
+  private Ptsv2payoutsAggregatorInformation aggregatorInformation = null;
 
   @SerializedName("clientReferenceInformation")
   private Ptsv1pushfundstransferClientReferenceInformation clientReferenceInformation = null;
@@ -61,7 +61,7 @@ public class PushFundsRequest {
   @SerializedName("pointOfServiceInformation")
   private Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation = null;
 
-  public PushFundsRequest aggregatorInformation(Ptsv1pushfundstransferAggregatorInformation aggregatorInformation) {
+  public PushFundsRequest aggregatorInformation(Ptsv2payoutsAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
     return this;
   }
@@ -71,11 +71,11 @@ public class PushFundsRequest {
    * @return aggregatorInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferAggregatorInformation getAggregatorInformation() {
+  public Ptsv2payoutsAggregatorInformation getAggregatorInformation() {
     return aggregatorInformation;
   }
 
-  public void setAggregatorInformation(Ptsv1pushfundstransferAggregatorInformation aggregatorInformation) {
+  public void setAggregatorInformation(Ptsv2payoutsAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
   }
 
@@ -236,14 +236,14 @@ public class PushFundsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFundsRequest {\n");
     
-    sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
-    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (pointOfServiceInformation != null) sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -254,10 +254,10 @@ public class PushFundsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

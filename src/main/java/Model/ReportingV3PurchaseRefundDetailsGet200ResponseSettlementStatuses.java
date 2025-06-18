@@ -164,11 +164,11 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlementStatuses {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseSettlementStatuses {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    settlementTime: ").append(toIndentedString(settlementTime)).append("\n");
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
-    sb.append("    errorText: ").append(toIndentedString(errorText)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (settlementTime != null) sb.append("    settlementTime: ").append(toIndentedString(settlementTime)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    if (errorText != null) sb.append("    errorText: ").append(toIndentedString(errorText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,10 +179,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlementStatuses {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

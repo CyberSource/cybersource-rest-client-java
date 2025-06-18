@@ -30,9 +30,9 @@ import java.io.IOException;
 
 public class Ptsv2voidsProcessingInformation {
   @SerializedName("paymentId")
-  private Object paymentId = null;
+  private String paymentId = null;
 
-  public Ptsv2voidsProcessingInformation paymentId(Object paymentId) {
+  public Ptsv2voidsProcessingInformation paymentId(String paymentId) {
     this.paymentId = paymentId;
     return this;
   }
@@ -42,11 +42,11 @@ public class Ptsv2voidsProcessingInformation {
    * @return paymentId
   **/
   @ApiModelProperty(value = "This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.")
-  public Object getPaymentId() {
+  public String getPaymentId() {
     return paymentId;
   }
 
-  public void setPaymentId(Object paymentId) {
+  public void setPaymentId(String paymentId) {
     this.paymentId = paymentId;
   }
 
@@ -74,7 +74,7 @@ public class Ptsv2voidsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2voidsProcessingInformation {\n");
     
-    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
+    if (paymentId != null) sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2voidsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

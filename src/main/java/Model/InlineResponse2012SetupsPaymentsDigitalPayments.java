@@ -75,7 +75,7 @@ public class InlineResponse2012SetupsPaymentsDigitalPayments {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsPaymentsDigitalPayments {\n");
     
-    sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
+    if (subscriptionStatus != null) sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class InlineResponse2012SetupsPaymentsDigitalPayments {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

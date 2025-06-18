@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse200Embedded;
+import Model.InlineResponse200Content;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,23 +24,26 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * InlineResponse200
+ * Represents the Card Art Asset associated to the Network Token. 
  */
+@ApiModel(description = "Represents the Card Art Asset associated to the Network Token. ")
 
 public class InlineResponse200 {
   @SerializedName("id")
   private String id = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("type")
+  private String type = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("provider")
+  private String provider = null;
 
-  @SerializedName("_embedded")
-  private InlineResponse200Embedded embedded = null;
+  @SerializedName("content")
+  private List<InlineResponse200Content> content = null;
 
   public InlineResponse200 id(String id) {
     this.id = id;
@@ -48,10 +51,10 @@ public class InlineResponse200 {
   }
 
    /**
-   * UUID uniquely generated for this comments. 
+   * Unique identifier for the Card Art Asset. 
    * @return id
   **/
-  @ApiModelProperty(value = "UUID uniquely generated for this comments. ")
+  @ApiModelProperty(example = "84cfb836a0000859be62c766bdc9e510", value = "Unique identifier for the Card Art Asset. ")
   public String getId() {
     return id;
   }
@@ -60,58 +63,66 @@ public class InlineResponse200 {
     this.id = id;
   }
 
-  public InlineResponse200 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse200 type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
+   * The type of Card Art Asset. 
+   * @return type
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(example = "cardArtCombined", value = "The type of Card Art Asset. ")
+  public String getType() {
+    return type;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public InlineResponse200 status(String status) {
-    this.status = status;
+  public InlineResponse200 provider(String provider) {
+    this.provider = provider;
     return this;
   }
 
    /**
-   * The status of the submitted transaction. Possible values are: - &#x60;ACCEPTED&#x60; - &#x60;REJECTED&#x60; 
-   * @return status
+   * The provider of the Card Art Asset. 
+   * @return provider
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(example = "vts", value = "The provider of the Card Art Asset. ")
+  public String getProvider() {
+    return provider;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setProvider(String provider) {
+    this.provider = provider;
   }
 
-  public InlineResponse200 embedded(InlineResponse200Embedded embedded) {
-    this.embedded = embedded;
+  public InlineResponse200 content(List<InlineResponse200Content> content) {
+    this.content = content;
+    return this;
+  }
+
+  public InlineResponse200 addContentItem(InlineResponse200Content contentItem) {
+    if (this.content == null) {
+      this.content = new ArrayList<InlineResponse200Content>();
+    }
+    this.content.add(contentItem);
     return this;
   }
 
    /**
-   * Get embedded
-   * @return embedded
+   * Array of content objects representing the Card Art Asset. 
+   * @return content
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse200Embedded getEmbedded() {
-    return embedded;
+  @ApiModelProperty(value = "Array of content objects representing the Card Art Asset. ")
+  public List<InlineResponse200Content> getContent() {
+    return content;
   }
 
-  public void setEmbedded(InlineResponse200Embedded embedded) {
-    this.embedded = embedded;
+  public void setContent(List<InlineResponse200Content> content) {
+    this.content = content;
   }
 
 
@@ -125,14 +136,14 @@ public class InlineResponse200 {
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
     return Objects.equals(this.id, inlineResponse200.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse200.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse200.status) &&
-        Objects.equals(this.embedded, inlineResponse200.embedded);
+        Objects.equals(this.type, inlineResponse200.type) &&
+        Objects.equals(this.provider, inlineResponse200.provider) &&
+        Objects.equals(this.content, inlineResponse200.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, status, embedded);
+    return Objects.hash(id, type, provider, content);
   }
 
 
@@ -141,10 +152,10 @@ public class InlineResponse200 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200 {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    if (content != null) sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +166,10 @@ public class InlineResponse200 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

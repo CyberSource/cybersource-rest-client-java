@@ -96,8 +96,8 @@ public class Riskv1authenticationsPaymentInformationCustomer {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsPaymentInformationCustomer {\n");
     
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1authenticationsPaymentInformationCustomer {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

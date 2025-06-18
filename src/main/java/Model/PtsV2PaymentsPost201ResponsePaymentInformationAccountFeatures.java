@@ -86,6 +86,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("regulated")
   private String regulated = null;
 
+  @SerializedName("accountHolderType")
+  private String accountHolderType = null;
+
   public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountType(String accountType) {
     this.accountType = accountType;
     return this;
@@ -418,6 +421,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     this.regulated = regulated;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountHolderType(String accountHolderType) {
+    this.accountHolderType = accountHolderType;
+    return this;
+  }
+
+   /**
+   * This is the account owner information, valid values are: - &#x60;01&#x60; : primary account holder - &#x60;02&#x60; : secondary account holder This is returned in the response of an account verification transaction by the Issuer.  
+   * @return accountHolderType
+  **/
+  @ApiModelProperty(value = "This is the account owner information, valid values are: - `01` : primary account holder - `02` : secondary account holder This is returned in the response of an account verification transaction by the Issuer.  ")
+  public String getAccountHolderType() {
+    return accountHolderType;
+  }
+
+  public void setAccountHolderType(String accountHolderType) {
+    this.accountHolderType = accountHolderType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -445,12 +466,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
         Objects.equals(this.pinlessDebit, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.pinlessDebit) &&
         Objects.equals(this.signatureDebit, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.signatureDebit) &&
         Objects.equals(this.prepaid, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.prepaid) &&
-        Objects.equals(this.regulated, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.regulated);
+        Objects.equals(this.regulated, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.regulated) &&
+        Objects.equals(this.accountHolderType, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.accountHolderType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountType, accountStatus, balances, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated);
+    return Objects.hash(accountType, accountStatus, balances, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated, accountHolderType);
   }
 
 
@@ -459,24 +481,25 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {\n");
     
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
-    sb.append("    balances: ").append(toIndentedString(balances)).append("\n");
-    sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
-    sb.append("    balanceAmountType: ").append(toIndentedString(balanceAmountType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    balanceSign: ").append(toIndentedString(balanceSign)).append("\n");
-    sb.append("    affluenceIndicator: ").append(toIndentedString(affluenceIndicator)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    commercial: ").append(toIndentedString(commercial)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    healthCare: ").append(toIndentedString(healthCare)).append("\n");
-    sb.append("    payroll: ").append(toIndentedString(payroll)).append("\n");
-    sb.append("    level3Eligible: ").append(toIndentedString(level3Eligible)).append("\n");
-    sb.append("    pinlessDebit: ").append(toIndentedString(pinlessDebit)).append("\n");
-    sb.append("    signatureDebit: ").append(toIndentedString(signatureDebit)).append("\n");
-    sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
-    sb.append("    regulated: ").append(toIndentedString(regulated)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (accountStatus != null) sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
+    if (balances != null) sb.append("    balances: ").append(toIndentedString(balances)).append("\n");
+    if (balanceAmount != null) sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
+    if (balanceAmountType != null) sb.append("    balanceAmountType: ").append(toIndentedString(balanceAmountType)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (balanceSign != null) sb.append("    balanceSign: ").append(toIndentedString(balanceSign)).append("\n");
+    if (affluenceIndicator != null) sb.append("    affluenceIndicator: ").append(toIndentedString(affluenceIndicator)).append("\n");
+    if (category != null) sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    if (commercial != null) sb.append("    commercial: ").append(toIndentedString(commercial)).append("\n");
+    if (group != null) sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    if (healthCare != null) sb.append("    healthCare: ").append(toIndentedString(healthCare)).append("\n");
+    if (payroll != null) sb.append("    payroll: ").append(toIndentedString(payroll)).append("\n");
+    if (level3Eligible != null) sb.append("    level3Eligible: ").append(toIndentedString(level3Eligible)).append("\n");
+    if (pinlessDebit != null) sb.append("    pinlessDebit: ").append(toIndentedString(pinlessDebit)).append("\n");
+    if (signatureDebit != null) sb.append("    signatureDebit: ").append(toIndentedString(signatureDebit)).append("\n");
+    if (prepaid != null) sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
+    if (regulated != null) sb.append("    regulated: ").append(toIndentedString(regulated)).append("\n");
+    if (accountHolderType != null) sb.append("    accountHolderType: ").append(toIndentedString(accountHolderType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -487,10 +510,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

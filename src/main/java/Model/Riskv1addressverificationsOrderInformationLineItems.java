@@ -186,12 +186,12 @@ public class Riskv1addressverificationsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1addressverificationsOrderInformationLineItems {\n");
     
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productRisk != null) sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,10 +202,10 @@ public class Riskv1addressverificationsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

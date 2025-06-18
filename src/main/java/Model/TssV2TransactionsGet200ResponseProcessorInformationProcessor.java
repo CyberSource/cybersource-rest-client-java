@@ -74,7 +74,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformationProcessor {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessorInformationProcessor {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationProcessor {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

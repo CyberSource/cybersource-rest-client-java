@@ -96,8 +96,8 @@ public class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {\n");
     
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    voucherSerialNumber: ").append(toIndentedString(voucherSerialNumber)).append("\n");
+    if (category != null) sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    if (voucherSerialNumber != null) sb.append("    voucherSerialNumber: ").append(toIndentedString(voucherSerialNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

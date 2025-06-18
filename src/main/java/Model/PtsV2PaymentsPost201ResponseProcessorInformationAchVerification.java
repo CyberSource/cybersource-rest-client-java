@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {\n");
     
-    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
-    sb.append("    resultCodeRaw: ").append(toIndentedString(resultCodeRaw)).append("\n");
+    if (resultCode != null) sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
+    if (resultCodeRaw != null) sb.append("    resultCodeRaw: ").append(toIndentedString(resultCodeRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

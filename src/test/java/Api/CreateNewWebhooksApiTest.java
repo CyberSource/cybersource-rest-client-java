@@ -13,8 +13,8 @@
 
 package Api;
 
-import Model.CreateWebhookRequest;
-import Model.InlineResponse2002;
+import Model.CreateWebhook;
+import Model.InlineResponse2003;
 import Model.InlineResponse2013;
 import Model.InlineResponse2014;
 import Model.SaveSymEgressKey;
@@ -37,22 +37,6 @@ public class CreateNewWebhooksApiTest {
 
     
     /**
-     * Create a Webhook
-     *
-     * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void createWebhookSubscriptionTest() throws Exception {
-        CreateWebhookRequest createWebhookRequest = null;
-        InlineResponse2014 response = api.createWebhookSubscription(createWebhookRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Find Products You Can Subscribe To
      *
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
@@ -63,7 +47,23 @@ public class CreateNewWebhooksApiTest {
     @Test
     public void findProductsToSubscribeTest() throws Exception {
         String organizationId = null;
-        List<InlineResponse2002> response = api.findProductsToSubscribe(organizationId);
+        List<InlineResponse2003> response = api.findProductsToSubscribe(organizationId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a New Webhook Subscription
+     *
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationSubscriptionsV2WebhooksPostTest() throws Exception {
+        CreateWebhook createWebhook = null;
+        InlineResponse2014 response = api.notificationSubscriptionsV2WebhooksPost(createWebhook);
 
         // TODO: test validations
     }
@@ -71,7 +71,7 @@ public class CreateNewWebhooksApiTest {
     /**
      * Create Webhook Security Keys
      *
-     * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remeber to save the key in the API response, so that you can use it to validate messages later. 
+     * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
      *
      * @throws Exception
      *          if the Api call fails

@@ -257,15 +257,15 @@ public class InlineResponse2012 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012 {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
-    sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
-    sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
-    sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -276,10 +276,10 @@ public class InlineResponse2012 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

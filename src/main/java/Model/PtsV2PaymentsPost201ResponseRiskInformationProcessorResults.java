@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseRiskInformationProcessorResults {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationProcessorResults {\n");
     
-    sb.append("    fraudDecision: ").append(toIndentedString(fraudDecision)).append("\n");
-    sb.append("    fraudDecisionReason: ").append(toIndentedString(fraudDecisionReason)).append("\n");
+    if (fraudDecision != null) sb.append("    fraudDecision: ").append(toIndentedString(fraudDecision)).append("\n");
+    if (fraudDecisionReason != null) sb.append("    fraudDecisionReason: ").append(toIndentedString(fraudDecisionReason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationProcessorResults {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -65,7 +65,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata {\n");
     
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    if (creator != null) sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -76,10 +76,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -75,7 +75,7 @@ public class PtsV2PaymentsPost201Response1PaymentInformationPaymentType {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1PaymentInformationPaymentType {\n");
     
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PtsV2PaymentsPost201Response1PaymentInformationPaymentType {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

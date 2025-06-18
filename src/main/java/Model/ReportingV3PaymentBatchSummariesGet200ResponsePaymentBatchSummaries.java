@@ -317,18 +317,18 @@ public class ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries {\n");
     
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    paymentSubTypeDescription: ").append(toIndentedString(paymentSubTypeDescription)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    salesCount: ").append(toIndentedString(salesCount)).append("\n");
-    sb.append("    salesAmount: ").append(toIndentedString(salesAmount)).append("\n");
-    sb.append("    creditCount: ").append(toIndentedString(creditCount)).append("\n");
-    sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
-    sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (paymentSubTypeDescription != null) sb.append("    paymentSubTypeDescription: ").append(toIndentedString(paymentSubTypeDescription)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    if (endTime != null) sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    if (salesCount != null) sb.append("    salesCount: ").append(toIndentedString(salesCount)).append("\n");
+    if (salesAmount != null) sb.append("    salesAmount: ").append(toIndentedString(salesAmount)).append("\n");
+    if (creditCount != null) sb.append("    creditCount: ").append(toIndentedString(creditCount)).append("\n");
+    if (creditAmount != null) sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
+    if (accountName != null) sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -339,10 +339,10 @@ public class ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -40,6 +40,12 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   @SerializedName("rawResponse")
   private String rawResponse = null;
 
+  @SerializedName("rawResponseLocal")
+  private String rawResponseLocal = null;
+
+  @SerializedName("responseDetails")
+  private String responseDetails = null;
+
   @SerializedName("responseCode")
   private String responseCode = null;
 
@@ -101,6 +107,42 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
 
   public void setRawResponse(String rawResponse) {
     this.rawResponse = rawResponse;
+  }
+
+  public PtsV2PaymentsPost201Response1ProcessorInformation rawResponseLocal(String rawResponseLocal) {
+    this.rawResponseLocal = rawResponseLocal;
+    return this;
+  }
+
+   /**
+   * This field is set to the value of failure reason returned by the processor in the local language of the processor. 
+   * @return rawResponseLocal
+  **/
+  @ApiModelProperty(value = "This field is set to the value of failure reason returned by the processor in the local language of the processor. ")
+  public String getRawResponseLocal() {
+    return rawResponseLocal;
+  }
+
+  public void setRawResponseLocal(String rawResponseLocal) {
+    this.rawResponseLocal = rawResponseLocal;
+  }
+
+  public PtsV2PaymentsPost201Response1ProcessorInformation responseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+    return this;
+  }
+
+   /**
+   * This field might contain information about a decline. 
+   * @return responseDetails
+  **/
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
+  public String getResponseDetails() {
+    return responseDetails;
+  }
+
+  public void setResponseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
   }
 
   public PtsV2PaymentsPost201Response1ProcessorInformation responseCode(String responseCode) {
@@ -170,6 +212,8 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     return Objects.equals(this.transactionId, ptsV2PaymentsPost201Response1ProcessorInformation.transactionId) &&
         Objects.equals(this.tradeNumber, ptsV2PaymentsPost201Response1ProcessorInformation.tradeNumber) &&
         Objects.equals(this.rawResponse, ptsV2PaymentsPost201Response1ProcessorInformation.rawResponse) &&
+        Objects.equals(this.rawResponseLocal, ptsV2PaymentsPost201Response1ProcessorInformation.rawResponseLocal) &&
+        Objects.equals(this.responseDetails, ptsV2PaymentsPost201Response1ProcessorInformation.responseDetails) &&
         Objects.equals(this.responseCode, ptsV2PaymentsPost201Response1ProcessorInformation.responseCode) &&
         Objects.equals(this.sellerProtection, ptsV2PaymentsPost201Response1ProcessorInformation.sellerProtection) &&
         Objects.equals(this.avs, ptsV2PaymentsPost201Response1ProcessorInformation.avs);
@@ -177,7 +221,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, tradeNumber, rawResponse, responseCode, sellerProtection, avs);
+    return Objects.hash(transactionId, tradeNumber, rawResponse, rawResponseLocal, responseDetails, responseCode, sellerProtection, avs);
   }
 
 
@@ -186,12 +230,14 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1ProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    tradeNumber: ").append(toIndentedString(tradeNumber)).append("\n");
-    sb.append("    rawResponse: ").append(toIndentedString(rawResponse)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
-    sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (tradeNumber != null) sb.append("    tradeNumber: ").append(toIndentedString(tradeNumber)).append("\n");
+    if (rawResponse != null) sb.append("    rawResponse: ").append(toIndentedString(rawResponse)).append("\n");
+    if (rawResponseLocal != null) sb.append("    rawResponseLocal: ").append(toIndentedString(rawResponseLocal)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,10 +248,10 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -129,9 +129,9 @@ public class TssV2PostEmvTags200ResponseParsedEMVTagsList {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2PostEmvTags200ResponseParsedEMVTagsList {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    totalTags: ").append(toIndentedString(totalTags)).append("\n");
-    sb.append("    emvTagBreakdownList: ").append(toIndentedString(emvTagBreakdownList)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (totalTags != null) sb.append("    totalTags: ").append(toIndentedString(totalTags)).append("\n");
+    if (emvTagBreakdownList != null) sb.append("    emvTagBreakdownList: ").append(toIndentedString(emvTagBreakdownList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -142,10 +142,10 @@ public class TssV2PostEmvTags200ResponseParsedEMVTagsList {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

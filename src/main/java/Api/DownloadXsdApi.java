@@ -38,6 +38,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class DownloadXsdApi {
     private static Logger logger = LogManager.getLogger(DownloadXsdApi.class);
@@ -73,6 +75,16 @@ public class DownloadXsdApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getXSDV2,getXSDV2Async,getXSDV2WithHttpInfo,getXSDV2Call")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -140,7 +152,6 @@ public class DownloadXsdApi {
      */
     public void getXSDV2(String reportDefinitionNameVersion) throws ApiException {
         logger.info("CALL TO METHOD 'getXSDV2' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getXSDV2WithHttpInfo(reportDefinitionNameVersion);
 
     }
@@ -153,6 +164,7 @@ public class DownloadXsdApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getXSDV2WithHttpInfo(String reportDefinitionNameVersion) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getXSDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
         return apiClient.execute(call);
     }

@@ -97,8 +97,8 @@ public class VTConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfig {\n");
     
-    sb.append("    cardNotPresent: ").append(toIndentedString(cardNotPresent)).append("\n");
-    sb.append("    cardPresent: ").append(toIndentedString(cardPresent)).append("\n");
+    if (cardNotPresent != null) sb.append("    cardNotPresent: ").append(toIndentedString(cardNotPresent)).append("\n");
+    if (cardPresent != null) sb.append("    cardPresent: ").append(toIndentedString(cardPresent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class VTConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

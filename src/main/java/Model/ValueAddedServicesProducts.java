@@ -36,6 +36,9 @@ public class ValueAddedServicesProducts {
   @SerializedName("transactionSearch")
   private PaymentsProductsTax transactionSearch = null;
 
+  @SerializedName("bankAccountValidation")
+  private PaymentsProductsTax bankAccountValidation = null;
+
   public ValueAddedServicesProducts reporting(PaymentsProductsTax reporting) {
     this.reporting = reporting;
     return this;
@@ -72,6 +75,24 @@ public class ValueAddedServicesProducts {
     this.transactionSearch = transactionSearch;
   }
 
+  public ValueAddedServicesProducts bankAccountValidation(PaymentsProductsTax bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
+    return this;
+  }
+
+   /**
+   * Get bankAccountValidation
+   * @return bankAccountValidation
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getBankAccountValidation() {
+    return bankAccountValidation;
+  }
+
+  public void setBankAccountValidation(PaymentsProductsTax bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class ValueAddedServicesProducts {
     }
     ValueAddedServicesProducts valueAddedServicesProducts = (ValueAddedServicesProducts) o;
     return Objects.equals(this.reporting, valueAddedServicesProducts.reporting) &&
-        Objects.equals(this.transactionSearch, valueAddedServicesProducts.transactionSearch);
+        Objects.equals(this.transactionSearch, valueAddedServicesProducts.transactionSearch) &&
+        Objects.equals(this.bankAccountValidation, valueAddedServicesProducts.bankAccountValidation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reporting, transactionSearch);
+    return Objects.hash(reporting, transactionSearch, bankAccountValidation);
   }
 
 
@@ -97,8 +119,9 @@ public class ValueAddedServicesProducts {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValueAddedServicesProducts {\n");
     
-    sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
-    sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
+    if (reporting != null) sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
+    if (transactionSearch != null) sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
+    if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +132,10 @@ public class ValueAddedServicesProducts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

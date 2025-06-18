@@ -38,10 +38,10 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiato
   }
 
    /**
-   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
+   * &gt; This field is ignored when you provide the &#x60;subscriptionInformation.originalTransactionId&#x60; or update the subscription.  This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
    * @return type
   **/
-  @ApiModelProperty(value = "This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** ")
+  @ApiModelProperty(value = "> This field is ignored when you provide the `subscriptionInformation.originalTransactionId` or update the subscription.  This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** ")
   public String getType() {
     return type;
   }
@@ -74,7 +74,7 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiato
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiator {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiato
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

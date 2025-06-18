@@ -75,7 +75,7 @@ public class Ptsv2paymentsPaymentInformationDirectDebit {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationDirectDebit {\n");
     
-    sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
+    if (mandate != null) sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentsPaymentInformationDirectDebit {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

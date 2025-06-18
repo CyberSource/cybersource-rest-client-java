@@ -47,10 +47,10 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
   }
 
    /**
-   * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE  - ALLOWABLE_PIN_RETRIES_EXCEEDED  - PROCESSOR_ERROR 
+   * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLOCKED_BY_CARDHOLDER  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE  - ALLOWABLE_PIN_RETRIES_EXCEEDED  - PROCESSOR_ERROR 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE  - ALLOWABLE_PIN_RETRIES_EXCEEDED  - PROCESSOR_ERROR ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLOCKED_BY_CARDHOLDER  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE  - ALLOWABLE_PIN_RETRIES_EXCEEDED  - PROCESSOR_ERROR ")
   public String getReason() {
     return reason;
   }
@@ -129,9 +129,9 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PayoutsPost201ResponseErrorInformation {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -142,10 +142,10 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

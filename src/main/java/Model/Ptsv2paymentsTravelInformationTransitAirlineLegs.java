@@ -492,26 +492,26 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirlineLegs {\n");
     
-    sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
-    sb.append("    flightNumber: ").append(toIndentedString(flightNumber)).append("\n");
-    sb.append("    originatingAirportCode: ").append(toIndentedString(originatingAirportCode)).append("\n");
-    sb.append("    propertyClass: ").append(toIndentedString(propertyClass)).append("\n");
-    sb.append("    stopoverIndicator: ").append(toIndentedString(stopoverIndicator)).append("\n");
-    sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
-    sb.append("    destinationAirportCode: ").append(toIndentedString(destinationAirportCode)).append("\n");
-    sb.append("    fareBasis: ").append(toIndentedString(fareBasis)).append("\n");
-    sb.append("    departTaxAmount: ").append(toIndentedString(departTaxAmount)).append("\n");
-    sb.append("    conjunctionTicket: ").append(toIndentedString(conjunctionTicket)).append("\n");
-    sb.append("    exchangeTicketNumber: ").append(toIndentedString(exchangeTicketNumber)).append("\n");
-    sb.append("    couponNumber: ").append(toIndentedString(couponNumber)).append("\n");
-    sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
-    sb.append("    departureTimeMeridian: ").append(toIndentedString(departureTimeMeridian)).append("\n");
-    sb.append("    arrivalTime: ").append(toIndentedString(arrivalTime)).append("\n");
-    sb.append("    arrivalTimeMeridian: ").append(toIndentedString(arrivalTimeMeridian)).append("\n");
-    sb.append("    endorsementsRestrictions: ").append(toIndentedString(endorsementsRestrictions)).append("\n");
-    sb.append("    totalFareAmount: ").append(toIndentedString(totalFareAmount)).append("\n");
-    sb.append("    feeAmount: ").append(toIndentedString(feeAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (carrierCode != null) sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
+    if (flightNumber != null) sb.append("    flightNumber: ").append(toIndentedString(flightNumber)).append("\n");
+    if (originatingAirportCode != null) sb.append("    originatingAirportCode: ").append(toIndentedString(originatingAirportCode)).append("\n");
+    if (propertyClass != null) sb.append("    propertyClass: ").append(toIndentedString(propertyClass)).append("\n");
+    if (stopoverIndicator != null) sb.append("    stopoverIndicator: ").append(toIndentedString(stopoverIndicator)).append("\n");
+    if (departureDate != null) sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
+    if (destinationAirportCode != null) sb.append("    destinationAirportCode: ").append(toIndentedString(destinationAirportCode)).append("\n");
+    if (fareBasis != null) sb.append("    fareBasis: ").append(toIndentedString(fareBasis)).append("\n");
+    if (departTaxAmount != null) sb.append("    departTaxAmount: ").append(toIndentedString(departTaxAmount)).append("\n");
+    if (conjunctionTicket != null) sb.append("    conjunctionTicket: ").append(toIndentedString(conjunctionTicket)).append("\n");
+    if (exchangeTicketNumber != null) sb.append("    exchangeTicketNumber: ").append(toIndentedString(exchangeTicketNumber)).append("\n");
+    if (couponNumber != null) sb.append("    couponNumber: ").append(toIndentedString(couponNumber)).append("\n");
+    if (departureTime != null) sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
+    if (departureTimeMeridian != null) sb.append("    departureTimeMeridian: ").append(toIndentedString(departureTimeMeridian)).append("\n");
+    if (arrivalTime != null) sb.append("    arrivalTime: ").append(toIndentedString(arrivalTime)).append("\n");
+    if (arrivalTimeMeridian != null) sb.append("    arrivalTimeMeridian: ").append(toIndentedString(arrivalTimeMeridian)).append("\n");
+    if (endorsementsRestrictions != null) sb.append("    endorsementsRestrictions: ").append(toIndentedString(endorsementsRestrictions)).append("\n");
+    if (totalFareAmount != null) sb.append("    totalFareAmount: ").append(toIndentedString(totalFareAmount)).append("\n");
+    if (feeAmount != null) sb.append("    feeAmount: ").append(toIndentedString(feeAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -522,10 +522,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

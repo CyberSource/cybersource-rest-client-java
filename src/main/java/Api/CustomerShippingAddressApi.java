@@ -48,6 +48,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class CustomerShippingAddressApi {
     private static Logger logger = LogManager.getLogger(CustomerShippingAddressApi.class);
@@ -85,6 +87,16 @@ public class CustomerShippingAddressApi {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteCustomerShippingAddress,deleteCustomerShippingAddressAsync,deleteCustomerShippingAddressWithHttpInfo,deleteCustomerShippingAddressCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -163,7 +175,6 @@ public class CustomerShippingAddressApi {
      */
     public void deleteCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
 
     }
@@ -178,6 +189,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -233,6 +245,16 @@ public class CustomerShippingAddressApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerShippingAddress,getCustomerShippingAddressAsync,getCustomerShippingAddressWithHttpInfo,getCustomerShippingAddressCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -312,7 +334,6 @@ public class CustomerShippingAddressApi {
      */
     public PostCustomerShippingAddressRequest getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostCustomerShippingAddressRequest> resp = getCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
         return resp.getData();
@@ -328,6 +349,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostCustomerShippingAddressRequest> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -386,6 +408,16 @@ public class CustomerShippingAddressApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerShippingAddressesList,getCustomerShippingAddressesListAsync,getCustomerShippingAddressesListWithHttpInfo,getCustomerShippingAddressesListCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -463,7 +495,6 @@ public class CustomerShippingAddressApi {
      */
     public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' ENDED");
         return resp.getData();
@@ -480,6 +511,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ShippingAddressListForCustomer> getCustomerShippingAddressesListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<ShippingAddressListForCustomer>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -538,6 +570,16 @@ public class CustomerShippingAddressApi {
     public okhttp3.Call patchCustomersShippingAddressCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "patchCustomersShippingAddress,patchCustomersShippingAddressAsync,patchCustomersShippingAddressWithHttpInfo,patchCustomersShippingAddressCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}"
@@ -626,7 +668,6 @@ public class CustomerShippingAddressApi {
      */
     public PatchCustomerShippingAddressRequest patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PatchCustomerShippingAddressRequest> resp = patchCustomersShippingAddressWithHttpInfo(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
         return resp.getData();
@@ -644,6 +685,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PatchCustomerShippingAddressRequest> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -701,6 +743,16 @@ public class CustomerShippingAddressApi {
     public okhttp3.Call postCustomerShippingAddressCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postCustomerShippingAddress,postCustomerShippingAddressAsync,postCustomerShippingAddressWithHttpInfo,postCustomerShippingAddressCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses"
@@ -778,7 +830,6 @@ public class CustomerShippingAddressApi {
      */
     public PostCustomerShippingAddressRequest postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostCustomerShippingAddressRequest> resp = postCustomerShippingAddressWithHttpInfo(customerId, postCustomerShippingAddressRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
         return resp.getData();
@@ -794,6 +845,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostCustomerShippingAddressRequest> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -118,9 +118,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights {\n");
     
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
-    sb.append("    processorRawName: ").append(toIndentedString(processorRawName)).append("\n");
+    if (category != null) sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (processorRawName != null) sb.append("    processorRawName: ").append(toIndentedString(processorRawName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

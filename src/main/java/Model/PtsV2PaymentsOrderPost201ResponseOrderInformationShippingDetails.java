@@ -74,7 +74,7 @@ public class PtsV2PaymentsOrderPost201ResponseOrderInformationShippingDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsOrderPost201ResponseOrderInformationShippingDetails {\n");
     
-    sb.append("    shippingMethod: ").append(toIndentedString(shippingMethod)).append("\n");
+    if (shippingMethod != null) sb.append("    shippingMethod: ").append(toIndentedString(shippingMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsOrderPost201ResponseOrderInformationShippingDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

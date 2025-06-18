@@ -316,18 +316,18 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
-    sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
-    sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
-    sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
-    sb.append("    processorTransactionFee: ").append(toIndentedString(processorTransactionFee)).append("\n");
-    sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
-    sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
-    sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (originalAmount != null) sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
+    if (originalCurrency != null) sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
+    if (processorTransactionFee != null) sb.append("    processorTransactionFee: ").append(toIndentedString(processorTransactionFee)).append("\n");
+    if (exchangeRate != null) sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
+    if (foreignCurrency != null) sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
+    if (foreignAmount != null) sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,10 +338,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -118,9 +118,9 @@ public class DmConfigThirdpartyProviderTargusCredentials {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderTargusCredentials {\n");
     
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
+    if (username != null) sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    if (password != null) sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    if (serviceId != null) sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class DmConfigThirdpartyProviderTargusCredentials {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

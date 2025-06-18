@@ -69,7 +69,8 @@ public class PaymentInstrumentApiTest {
     public void getPaymentInstrumentTest() throws Exception {
         String paymentInstrumentId = null;
         String profileId = null;
-        PostPaymentInstrumentRequest response = api.getPaymentInstrument(paymentInstrumentId, profileId);
+        Boolean retrieveBinDetails = null;
+        PostPaymentInstrumentRequest response = api.getPaymentInstrument(paymentInstrumentId, profileId, retrieveBinDetails);
 
         // TODO: test validations
     }
@@ -87,8 +88,9 @@ public class PaymentInstrumentApiTest {
         String paymentInstrumentId = null;
         PatchPaymentInstrumentRequest patchPaymentInstrumentRequest = null;
         String profileId = null;
+        Boolean retrieveBinDetails = null;
         String ifMatch = null;
-        PatchPaymentInstrumentRequest response = api.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
+        PatchPaymentInstrumentRequest response = api.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch);
 
         // TODO: test validations
     }
@@ -105,7 +107,8 @@ public class PaymentInstrumentApiTest {
     public void postPaymentInstrumentTest() throws Exception {
         PostPaymentInstrumentRequest postPaymentInstrumentRequest = null;
         String profileId = null;
-        PostPaymentInstrumentRequest response = api.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
+        Boolean retrieveBinDetails = null;
+        PostPaymentInstrumentRequest response = api.postPaymentInstrument(postPaymentInstrumentRequest, profileId, retrieveBinDetails);
 
         // TODO: test validations
     }

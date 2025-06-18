@@ -254,7 +254,7 @@ public class Riskv1decisionsOrderInformationLineItems {
    * @return gift
   **/
   @ApiModelProperty(value = "This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. ")
-  public Boolean isGift() {
+  public Boolean Gift() {
     return gift;
   }
 
@@ -425,22 +425,22 @@ public class Riskv1decisionsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformationLineItems {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
-    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
-    sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
-    sb.append("    distributorProductSku: ").append(toIndentedString(distributorProductSku)).append("\n");
-    sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
-    sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
-    sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (giftCardCurrency != null) sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productRisk != null) sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (gift != null) sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
+    if (distributorProductSku != null) sb.append("    distributorProductSku: ").append(toIndentedString(distributorProductSku)).append("\n");
+    if (passenger != null) sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
+    if (shippingDestinationTypes != null) sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (allowedExportCountries != null) sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
+    if (restrictedExportCountries != null) sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -451,10 +451,10 @@ public class Riskv1decisionsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

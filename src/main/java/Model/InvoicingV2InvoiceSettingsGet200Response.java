@@ -97,8 +97,8 @@ public class InvoicingV2InvoiceSettingsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoiceSettingsGet200Response {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    invoiceSettingsInformation: ").append(toIndentedString(invoiceSettingsInformation)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (invoiceSettingsInformation != null) sb.append("    invoiceSettingsInformation: ").append(toIndentedString(invoiceSettingsInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class InvoicingV2InvoiceSettingsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Riskv1decisionsClientReferenceInformationPartner;
+import Model.Rbsv1subscriptionsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,7 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   private String comments = null;
 
   @SerializedName("partner")
-  private Riskv1decisionsClientReferenceInformationPartner partner = null;
+  private Rbsv1subscriptionsClientReferenceInformationPartner partner = null;
 
   @SerializedName("applicationName")
   private String applicationName = null;
@@ -54,10 +54,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   }
 
    /**
-   * Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
+   * &gt; Deprecated: This field is ignored.  Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
    * @return code
   **/
-  @ApiModelProperty(value = "Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
+  @ApiModelProperty(value = "> Deprecated: This field is ignored.  Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
   public String getCode() {
     return code;
   }
@@ -72,10 +72,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   }
 
    /**
-   * Brief description of the order or any comment you wish to add to the order. 
+   * &gt; Deprecated: This field is ignored.  Brief description of the order or any comment you wish to add to the order. 
    * @return comments
   **/
-  @ApiModelProperty(value = "Brief description of the order or any comment you wish to add to the order. ")
+  @ApiModelProperty(value = "> Deprecated: This field is ignored.  Brief description of the order or any comment you wish to add to the order. ")
   public String getComments() {
     return comments;
   }
@@ -84,7 +84,7 @@ public class Rbsv1subscriptionsClientReferenceInformation {
     this.comments = comments;
   }
 
-  public Rbsv1subscriptionsClientReferenceInformation partner(Riskv1decisionsClientReferenceInformationPartner partner) {
+  public Rbsv1subscriptionsClientReferenceInformation partner(Rbsv1subscriptionsClientReferenceInformationPartner partner) {
     this.partner = partner;
     return this;
   }
@@ -94,11 +94,11 @@ public class Rbsv1subscriptionsClientReferenceInformation {
    * @return partner
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformationPartner getPartner() {
+  public Rbsv1subscriptionsClientReferenceInformationPartner getPartner() {
     return partner;
   }
 
-  public void setPartner(Riskv1decisionsClientReferenceInformationPartner partner) {
+  public void setPartner(Rbsv1subscriptionsClientReferenceInformationPartner partner) {
     this.partner = partner;
   }
 
@@ -108,10 +108,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   }
 
    /**
-   * The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
+   * &gt; Deprecated: This field is ignored.  The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
    * @return applicationName
   **/
-  @ApiModelProperty(value = "The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. ")
+  @ApiModelProperty(value = "> Deprecated: This field is ignored.  The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. ")
   public String getApplicationName() {
     return applicationName;
   }
@@ -126,10 +126,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   }
 
    /**
-   * Version of the CyberSource application or integration used for a transaction. 
+   * &gt; Deprecated: This field is ignored.  Version of the CyberSource application or integration used for a transaction. 
    * @return applicationVersion
   **/
-  @ApiModelProperty(value = "Version of the CyberSource application or integration used for a transaction. ")
+  @ApiModelProperty(value = "> Deprecated: This field is ignored.  Version of the CyberSource application or integration used for a transaction. ")
   public String getApplicationVersion() {
     return applicationVersion;
   }
@@ -144,10 +144,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
   }
 
    /**
-   * The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
+   * &gt; Deprecated: This field is ignored.  The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
    * @return applicationUser
   **/
-  @ApiModelProperty(value = "The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. ")
+  @ApiModelProperty(value = "> Deprecated: This field is ignored.  The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. ")
   public String getApplicationUser() {
     return applicationUser;
   }
@@ -185,12 +185,12 @@ public class Rbsv1subscriptionsClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
-    sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
-    sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    if (applicationVersion != null) sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
+    if (applicationUser != null) sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class Rbsv1subscriptionsClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

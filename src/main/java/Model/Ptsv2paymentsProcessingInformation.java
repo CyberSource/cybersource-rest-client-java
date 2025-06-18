@@ -153,6 +153,18 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("processingInstruction")
   private String processingInstruction = null;
 
+  @SerializedName("transactionTypeIndicator")
+  private String transactionTypeIndicator = null;
+
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
+
+  @SerializedName("languageCode")
+  private String languageCode = null;
+
+  @SerializedName("originalPaymentId")
+  private String originalPaymentId = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -189,7 +201,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return enableEscrowOption
   **/
   @ApiModelProperty(value = "Indicates whether to use the customer's escrow agreement. Possible values: - `true`: yes, use the customer's escrow agreement. - `false`: no, do not use the customer's escrow agreement.  ")
-  public Boolean isEnableEscrowOption() {
+  public Boolean EnableEscrowOption() {
     return enableEscrowOption;
   }
 
@@ -251,7 +263,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return capture
   **/
   @ApiModelProperty(value = "Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. ")
-  public Boolean isCapture() {
+  public Boolean Capture() {
     return capture;
   }
 
@@ -283,10 +295,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Payouts transaction type. Required for OCT transactions. This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. **Note** When the request includes this field, this value overrides the information in your CyberSource account. 
+   * Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet  
    * @return businessApplicationId
   **/
-  @ApiModelProperty(value = "Payouts transaction type. Required for OCT transactions. This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. **Note** When the request includes this field, this value overrides the information in your CyberSource account. ")
+  @ApiModelProperty(value = "Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet  ")
   public String getBusinessApplicationId() {
     return businessApplicationId;
   }
@@ -738,7 +750,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean isPayByPointsIndicator() {
+  public Boolean PayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
@@ -774,7 +786,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return isReturnAuthRecordEnabled
   **/
   @ApiModelProperty(value = "Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false ")
-  public Boolean isIsReturnAuthRecordEnabled() {
+  public Boolean IsReturnAuthRecordEnabled() {
     return isReturnAuthRecordEnabled;
   }
 
@@ -854,6 +866,78 @@ public class Ptsv2paymentsProcessingInformation {
     this.processingInstruction = processingInstruction;
   }
 
+  public Ptsv2paymentsProcessingInformation transactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+    return this;
+  }
+
+   /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @return transactionTypeIndicator
+  **/
+  @ApiModelProperty(value = "This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities ")
+  public String getTransactionTypeIndicator() {
+    return transactionTypeIndicator;
+  }
+
+  public void setTransactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = "This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+  }
+
+  public Ptsv2paymentsProcessingInformation languageCode(String languageCode) {
+    this.languageCode = languageCode;
+    return this;
+  }
+
+   /**
+   * Contains the ISO 639-2 defined language Code 
+   * @return languageCode
+  **/
+  @ApiModelProperty(value = "Contains the ISO 639-2 defined language Code ")
+  public String getLanguageCode() {
+    return languageCode;
+  }
+
+  public void setLanguageCode(String languageCode) {
+    this.languageCode = languageCode;
+  }
+
+  public Ptsv2paymentsProcessingInformation originalPaymentId(String originalPaymentId) {
+    this.originalPaymentId = originalPaymentId;
+    return this;
+  }
+
+   /**
+   * This value is used for linking Authorization extension transaction to the original Authorization transaction  and for linking MIT (Merchant initiated transaction) with the respective CIT (Customer initiated transaction). 
+   * @return originalPaymentId
+  **/
+  @ApiModelProperty(value = "This value is used for linking Authorization extension transaction to the original Authorization transaction  and for linking MIT (Merchant initiated transaction) with the respective CIT (Customer initiated transaction). ")
+  public String getOriginalPaymentId() {
+    return originalPaymentId;
+  }
+
+  public void setOriginalPaymentId(String originalPaymentId) {
+    this.originalPaymentId = originalPaymentId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -901,12 +985,16 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
         Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType) &&
         Objects.equals(this.enablerId, ptsv2paymentsProcessingInformation.enablerId) &&
-        Objects.equals(this.processingInstruction, ptsv2paymentsProcessingInformation.processingInstruction);
+        Objects.equals(this.processingInstruction, ptsv2paymentsProcessingInformation.processingInstruction) &&
+        Objects.equals(this.transactionTypeIndicator, ptsv2paymentsProcessingInformation.transactionTypeIndicator) &&
+        Objects.equals(this.purposeOfPayment, ptsv2paymentsProcessingInformation.purposeOfPayment) &&
+        Objects.equals(this.languageCode, ptsv2paymentsProcessingInformation.languageCode) &&
+        Objects.equals(this.originalPaymentId, ptsv2paymentsProcessingInformation.originalPaymentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId);
   }
 
 
@@ -915,44 +1003,48 @@ public class Ptsv2paymentsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformation {\n");
     
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
-    sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
-    sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
-    sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
-    sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
-    sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
-    sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
-    sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
-    sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
-    sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
-    sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
-    sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
-    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
-    sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
-    sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
-    sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
-    sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
-    sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
-    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
-    sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
-    sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
-    sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
-    sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
-    sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (enableEscrowOption != null) sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
+    if (actionTokenTypes != null) sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
+    if (binSource != null) sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
+    if (capture != null) sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
+    if (processorId != null) sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (commerceIndicatorLabel != null) sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    if (transactionTimeout != null) sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
+    if (intentsId != null) sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
+    if (electronicBenefitsTransfer != null) sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
+    if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    if (walletType != null) sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
+    if (nationalNetDomesticData != null) sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
+    if (mobileRemotePaymentType != null) sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
+    if (extendedCreditTotalCount != null) sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
+    if (payByPointsIndicator != null) sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    if (timeout != null) sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+    if (isReturnAuthRecordEnabled != null) sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
+    if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (enablerId != null) sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
+    if (processingInstruction != null) sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (languageCode != null) sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
+    if (originalPaymentId != null) sb.append("    originalPaymentId: ").append(toIndentedString(originalPaymentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -963,10 +1055,10 @@ public class Ptsv2paymentsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

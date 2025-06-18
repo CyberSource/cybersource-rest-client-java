@@ -75,7 +75,7 @@ public class Boardingv1registrationsProductInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsProductInformation {\n");
     
-    sb.append("    selectedProducts: ").append(toIndentedString(selectedProducts)).append("\n");
+    if (selectedProducts != null) sb.append("    selectedProducts: ").append(toIndentedString(selectedProducts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Boardingv1registrationsProductInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -97,8 +97,8 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationBarCode {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
+    if (value != null) sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    if (checkDigit != null) sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse4005;
+import Model.InlineResponse4006;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 
@@ -41,6 +41,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class SecureFileShareApi {
     private static Logger logger = LogManager.getLogger(SecureFileShareApi.class);
@@ -77,6 +79,16 @@ public class SecureFileShareApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getFile,getFileAsync,getFileWithHttpInfo,getFileCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -147,7 +159,6 @@ public class SecureFileShareApi {
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getFile' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
 
     }
@@ -161,6 +172,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -216,6 +228,16 @@ public class SecureFileShareApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getFileDetail,getFileDetailAsync,getFileDetailWithHttpInfo,getFileDetailCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -300,7 +322,6 @@ public class SecureFileShareApi {
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getFileDetail' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         logger.info("CALL TO METHOD 'getFileDetail' ENDED");
         return resp.getData();
@@ -317,6 +338,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, name, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

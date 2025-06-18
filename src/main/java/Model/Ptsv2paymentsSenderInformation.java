@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsSenderInformationAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,11 +33,11 @@ public class Ptsv2paymentsSenderInformation {
   @SerializedName("firstName")
   private String firstName = null;
 
-  @SerializedName("lastName")
-  private String lastName = null;
-
   @SerializedName("middleName")
   private String middleName = null;
+
+  @SerializedName("lastName")
+  private String lastName = null;
 
   @SerializedName("address1")
   private String address1 = null;
@@ -50,16 +51,28 @@ public class Ptsv2paymentsSenderInformation {
   @SerializedName("countryCode")
   private String countryCode = null;
 
+  @SerializedName("aliasName")
+  private String aliasName = null;
+
+  @SerializedName("referenceNumber")
+  private String referenceNumber = null;
+
+  @SerializedName("account")
+  private Ptsv2paymentsSenderInformationAccount account = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
   public Ptsv2paymentsSenderInformation firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
 
    /**
-   * First name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         Values exceeding the above limits will be truncated. 
+   * First name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported.Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to the processor. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         Values exceeding the above limits will be truncated. ")
+  @ApiModelProperty(value = "First name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported.Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to the processor. ")
   public String getFirstName() {
     return firstName;
   }
@@ -68,34 +81,16 @@ public class Ptsv2paymentsSenderInformation {
     this.firstName = firstName;
   }
 
-  public Ptsv2paymentsSenderInformation lastName(String lastName) {
-    this.lastName = lastName;
-    return this;
-  }
-
-   /**
-   * Last name of the sender.  **Applicable for Barclays AFT transactions only.** This field is optional for Visa and not applicable for Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  Values exceeding these limits will be truncated. 
-   * @return lastName
-  **/
-  @ApiModelProperty(value = "Last name of the sender.  **Applicable for Barclays AFT transactions only.** This field is optional for Visa and not applicable for Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  Values exceeding these limits will be truncated. ")
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
   public Ptsv2paymentsSenderInformation middleName(String middleName) {
     this.middleName = middleName;
     return this;
   }
 
    /**
-   * Middle name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        Values exceeding these limits will be truncated. 
+   * Middle name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Middle name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        Values exceeding these limits will be truncated. ")
+  @ApiModelProperty(value = "Middle name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -104,16 +99,34 @@ public class Ptsv2paymentsSenderInformation {
     this.middleName = middleName;
   }
 
+  public Ptsv2paymentsSenderInformation lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Last name of the sender. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
+   * @return lastName
+  **/
+  @ApiModelProperty(value = "Last name of the sender. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
   public Ptsv2paymentsSenderInformation address1(String address1) {
     this.address1 = address1;
     return this;
   }
 
    /**
-   * The street address of the sender.    **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 35 characters.  Values exceeding these limits will be truncated. 
+   * The street address of the sender. This field is applicable for AFT transactions.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return address1
   **/
-  @ApiModelProperty(value = "The street address of the sender.    **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 35 characters.  Values exceeding these limits will be truncated. ")
+  @ApiModelProperty(value = "The street address of the sender. This field is applicable for AFT transactions.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getAddress1() {
     return address1;
   }
@@ -128,10 +141,10 @@ public class Ptsv2paymentsSenderInformation {
   }
 
    /**
-   * The city or locality of the sender.in  **Applicable for Barclays AFT transactions only.** The field is optional for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.  The field has a maximum length of 25 characters.  Values exceeding these limits will be truncated. 
+   * The city or locality of the sender. This field is applicable for AFT transactions.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return locality
   **/
-  @ApiModelProperty(value = "The city or locality of the sender.in  **Applicable for Barclays AFT transactions only.** The field is optional for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.  The field has a maximum length of 25 characters.  Values exceeding these limits will be truncated. ")
+  @ApiModelProperty(value = "The city or locality of the sender. This field is applicable for AFT transactions.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLocality() {
     return locality;
   }
@@ -146,10 +159,10 @@ public class Ptsv2paymentsSenderInformation {
   }
 
    /**
-   * The state or province of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa AFT when the sender country is US or CA else it is optional for Visa AFT. This field is not applicable for Mastercard AFT.  Must be a two character value 
+   * The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "The state or province of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa AFT when the sender country is US or CA else it is optional for Visa AFT. This field is not applicable for Mastercard AFT.  Must be a two character value ")
+  @ApiModelProperty(value = "The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -164,16 +177,88 @@ public class Ptsv2paymentsSenderInformation {
   }
 
    /**
-   * The country associated with the address of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
+   * The country associated with the address of the sender. This field is applicable for AFT transactions.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
    * @return countryCode
   **/
-  @ApiModelProperty(value = "The country associated with the address of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
+  @ApiModelProperty(value = "The country associated with the address of the sender. This field is applicable for AFT transactions.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
   public String getCountryCode() {
     return countryCode;
   }
 
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
+  }
+
+  public Ptsv2paymentsSenderInformation aliasName(String aliasName) {
+    this.aliasName = aliasName;
+    return this;
+  }
+
+   /**
+   * Sender&#39;s alias name.
+   * @return aliasName
+  **/
+  @ApiModelProperty(value = "Sender's alias name.")
+  public String getAliasName() {
+    return aliasName;
+  }
+
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
+  }
+
+  public Ptsv2paymentsSenderInformation referenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+    return this;
+  }
+
+   /**
+   * This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported. 
+   * @return referenceNumber
+  **/
+  @ApiModelProperty(value = "This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported. ")
+  public String getReferenceNumber() {
+    return referenceNumber;
+  }
+
+  public void setReferenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+  }
+
+  public Ptsv2paymentsSenderInformation account(Ptsv2paymentsSenderInformationAccount account) {
+    this.account = account;
+    return this;
+  }
+
+   /**
+   * Get account
+   * @return account
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsSenderInformationAccount getAccount() {
+    return account;
+  }
+
+  public void setAccount(Ptsv2paymentsSenderInformationAccount account) {
+    this.account = account;
+  }
+
+  public Ptsv2paymentsSenderInformation postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * Postal code of sender. 
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "Postal code of sender. ")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
   }
 
 
@@ -187,17 +272,21 @@ public class Ptsv2paymentsSenderInformation {
     }
     Ptsv2paymentsSenderInformation ptsv2paymentsSenderInformation = (Ptsv2paymentsSenderInformation) o;
     return Objects.equals(this.firstName, ptsv2paymentsSenderInformation.firstName) &&
-        Objects.equals(this.lastName, ptsv2paymentsSenderInformation.lastName) &&
         Objects.equals(this.middleName, ptsv2paymentsSenderInformation.middleName) &&
+        Objects.equals(this.lastName, ptsv2paymentsSenderInformation.lastName) &&
         Objects.equals(this.address1, ptsv2paymentsSenderInformation.address1) &&
         Objects.equals(this.locality, ptsv2paymentsSenderInformation.locality) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsSenderInformation.administrativeArea) &&
-        Objects.equals(this.countryCode, ptsv2paymentsSenderInformation.countryCode);
+        Objects.equals(this.countryCode, ptsv2paymentsSenderInformation.countryCode) &&
+        Objects.equals(this.aliasName, ptsv2paymentsSenderInformation.aliasName) &&
+        Objects.equals(this.referenceNumber, ptsv2paymentsSenderInformation.referenceNumber) &&
+        Objects.equals(this.account, ptsv2paymentsSenderInformation.account) &&
+        Objects.equals(this.postalCode, ptsv2paymentsSenderInformation.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, middleName, address1, locality, administrativeArea, countryCode);
+    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, countryCode, aliasName, referenceNumber, account, postalCode);
   }
 
 
@@ -206,13 +295,17 @@ public class Ptsv2paymentsSenderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsSenderInformation {\n");
     
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (aliasName != null) sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +316,10 @@ public class Ptsv2paymentsSenderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

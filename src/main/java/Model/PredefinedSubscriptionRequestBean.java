@@ -274,16 +274,16 @@ public class PredefinedSubscriptionRequestBean {
     StringBuilder sb = new StringBuilder();
     sb.append("class PredefinedSubscriptionRequestBean {\n");
     
-    sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
-    sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
-    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
-    sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
-    sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
-    sb.append("    reportInterval: ").append(toIndentedString(reportInterval)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    startDay: ").append(toIndentedString(startDay)).append("\n");
-    sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
+    if (reportDefinitionName != null) sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
+    if (subscriptionType != null) sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
+    if (reportName != null) sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    if (reportMimeType != null) sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    if (reportFrequency != null) sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
+    if (reportInterval != null) sb.append("    reportInterval: ").append(toIndentedString(reportInterval)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    if (startDay != null) sb.append("    startDay: ").append(toIndentedString(startDay)).append("\n");
+    if (subscriptionStatus != null) sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -294,10 +294,10 @@ public class PredefinedSubscriptionRequestBean {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

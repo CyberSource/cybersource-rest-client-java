@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.CommerceSolutionsProductsTokenManagementConfigurationInformation;
-import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class CommerceSolutionsProductsTokenManagement {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private CommerceSolutionsProductsTokenManagementConfigurationInformation configurationInformation = null;
 
-  public CommerceSolutionsProductsTokenManagement subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public CommerceSolutionsProductsTokenManagement subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class CommerceSolutionsProductsTokenManagement {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 
@@ -98,8 +98,8 @@ public class CommerceSolutionsProductsTokenManagement {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsTokenManagement {\n");
     
-    sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
-    sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
+    if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (configurationInformation != null) sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class CommerceSolutionsProductsTokenManagement {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -85,7 +85,7 @@ public class ReportingV3ReportSubscriptionsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportSubscriptionsGet200Response {\n");
     
-    sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    if (subscriptions != null) sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class ReportingV3ReportSubscriptionsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

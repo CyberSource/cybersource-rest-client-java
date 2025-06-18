@@ -87,10 +87,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
   }
 
    /**
-   * Flag that indicates whether the transaction is an extended authorization. 
+   * Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. 
    * @return extendAuthIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction is an extended authorization. ")
+  @ApiModelProperty(value = "Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. ")
   public String getExtendAuthIndicator() {
     return extendAuthIndicator;
   }
@@ -109,7 +109,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    * @return cardVerificationIndicator
   **/
   @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
-  public Boolean isCardVerificationIndicator() {
+  public Boolean CardVerificationIndicator() {
     return cardVerificationIndicator;
   }
 
@@ -163,11 +163,11 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
-    sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
-    sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
-    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (authType != null) sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    if (extendAuthIndicator != null) sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
+    if (cardVerificationIndicator != null) sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,10 +178,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

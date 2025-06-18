@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor {\n");
     
-    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
-    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    if (storeId != null) sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
+    if (storeName != null) sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformationAvs {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1ProcessorInformationAvs {\n");
     
-    sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
+    if (codeRaw != null) sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsPost201Response1ProcessorInformationAvs {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

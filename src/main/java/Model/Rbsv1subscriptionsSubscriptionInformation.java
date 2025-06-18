@@ -41,6 +41,12 @@ public class Rbsv1subscriptionsSubscriptionInformation {
   @SerializedName("startDate")
   private String startDate = null;
 
+  @SerializedName("originalTransactionId")
+  private String originalTransactionId = null;
+
+  @SerializedName("originalTransactionAuthorizedAmount")
+  private String originalTransactionAuthorizedAmount = null;
+
   public Rbsv1subscriptionsSubscriptionInformation code(String code) {
     this.code = code;
     return this;
@@ -113,6 +119,42 @@ public class Rbsv1subscriptionsSubscriptionInformation {
     this.startDate = startDate;
   }
 
+  public Rbsv1subscriptionsSubscriptionInformation originalTransactionId(String originalTransactionId) {
+    this.originalTransactionId = originalTransactionId;
+    return this;
+  }
+
+   /**
+   * Network transaction identifier that was returned in the payment response field _processorInformation.transactionId_ in the reply message for the original subscription-initializing payment. 
+   * @return originalTransactionId
+  **/
+  @ApiModelProperty(value = "Network transaction identifier that was returned in the payment response field _processorInformation.transactionId_ in the reply message for the original subscription-initializing payment. ")
+  public String getOriginalTransactionId() {
+    return originalTransactionId;
+  }
+
+  public void setOriginalTransactionId(String originalTransactionId) {
+    this.originalTransactionId = originalTransactionId;
+  }
+
+  public Rbsv1subscriptionsSubscriptionInformation originalTransactionAuthorizedAmount(String originalTransactionAuthorizedAmount) {
+    this.originalTransactionAuthorizedAmount = originalTransactionAuthorizedAmount;
+    return this;
+  }
+
+   /**
+   * Amount of the original subscription-initializing payment.  *Required when using a Diners or Discover card*. 
+   * @return originalTransactionAuthorizedAmount
+  **/
+  @ApiModelProperty(value = "Amount of the original subscription-initializing payment.  *Required when using a Diners or Discover card*. ")
+  public String getOriginalTransactionAuthorizedAmount() {
+    return originalTransactionAuthorizedAmount;
+  }
+
+  public void setOriginalTransactionAuthorizedAmount(String originalTransactionAuthorizedAmount) {
+    this.originalTransactionAuthorizedAmount = originalTransactionAuthorizedAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +168,14 @@ public class Rbsv1subscriptionsSubscriptionInformation {
     return Objects.equals(this.code, rbsv1subscriptionsSubscriptionInformation.code) &&
         Objects.equals(this.planId, rbsv1subscriptionsSubscriptionInformation.planId) &&
         Objects.equals(this.name, rbsv1subscriptionsSubscriptionInformation.name) &&
-        Objects.equals(this.startDate, rbsv1subscriptionsSubscriptionInformation.startDate);
+        Objects.equals(this.startDate, rbsv1subscriptionsSubscriptionInformation.startDate) &&
+        Objects.equals(this.originalTransactionId, rbsv1subscriptionsSubscriptionInformation.originalTransactionId) &&
+        Objects.equals(this.originalTransactionAuthorizedAmount, rbsv1subscriptionsSubscriptionInformation.originalTransactionAuthorizedAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, planId, name, startDate);
+    return Objects.hash(code, planId, name, startDate, originalTransactionId, originalTransactionAuthorizedAmount);
   }
 
 
@@ -140,10 +184,12 @@ public class Rbsv1subscriptionsSubscriptionInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsSubscriptionInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (planId != null) sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (originalTransactionId != null) sb.append("    originalTransactionId: ").append(toIndentedString(originalTransactionId)).append("\n");
+    if (originalTransactionAuthorizedAmount != null) sb.append("    originalTransactionAuthorizedAmount: ").append(toIndentedString(originalTransactionAuthorizedAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +200,10 @@ public class Rbsv1subscriptionsSubscriptionInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

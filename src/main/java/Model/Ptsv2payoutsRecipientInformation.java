@@ -56,16 +56,31 @@ public class Ptsv2payoutsRecipientInformation {
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
 
+  @SerializedName("aliasName")
+  private String aliasName = null;
+
+  @SerializedName("nationality")
+  private String nationality = null;
+
+  @SerializedName("countryOfBirth")
+  private String countryOfBirth = null;
+
+  @SerializedName("occupation")
+  private String occupation = null;
+
+  @SerializedName("email")
+  private String email = null;
+
   public Ptsv2payoutsRecipientInformation firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
 
    /**
-   * First name of recipient. characters. * CTV (14) * Paymentech (30) 
+   * First name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of recipient. characters. * CTV (14) * Paymentech (30) ")
+  @ApiModelProperty(value = "First name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getFirstName() {
     return firstName;
   }
@@ -80,10 +95,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient&#39;s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * Middle name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  @ApiModelProperty(value = "Middle name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -98,10 +113,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Last name of recipient. characters. * CTV (14) * Paymentech (30) 
+   * Last name of the recipient.  This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of recipient. characters. * CTV (14) * Paymentech (30) ")
+  @ApiModelProperty(value = "Last name of the recipient.  This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLastName() {
     return lastName;
   }
@@ -116,10 +131,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient address information. Required only for FDCCompass.
+   * The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return address1
   **/
-  @ApiModelProperty(value = "Recipient address information. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getAddress1() {
     return address1;
   }
@@ -134,10 +149,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient city. Required only for FDCCompass.
+   * The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Recipient city. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLocality() {
     return locality;
   }
@@ -152,10 +167,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient State. Required only for FDCCompass.
+   * The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Recipient State. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -170,10 +185,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient country code. Required only for FDCCompass.
+   * The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
    * @return country
   **/
-  @ApiModelProperty(value = "Recipient country code. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
   public String getCountry() {
     return country;
   }
@@ -218,6 +233,96 @@ public class Ptsv2payoutsRecipientInformation {
     this.phoneNumber = phoneNumber;
   }
 
+  public Ptsv2payoutsRecipientInformation aliasName(String aliasName) {
+    this.aliasName = aliasName;
+    return this;
+  }
+
+   /**
+   * Account owner alias name. 
+   * @return aliasName
+  **/
+  @ApiModelProperty(value = "Account owner alias name. ")
+  public String getAliasName() {
+    return aliasName;
+  }
+
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
+  }
+
+  public Ptsv2payoutsRecipientInformation nationality(String nationality) {
+    this.nationality = nationality;
+    return this;
+  }
+
+   /**
+   * Account Owner Nationality
+   * @return nationality
+  **/
+  @ApiModelProperty(value = "Account Owner Nationality")
+  public String getNationality() {
+    return nationality;
+  }
+
+  public void setNationality(String nationality) {
+    this.nationality = nationality;
+  }
+
+  public Ptsv2payoutsRecipientInformation countryOfBirth(String countryOfBirth) {
+    this.countryOfBirth = countryOfBirth;
+    return this;
+  }
+
+   /**
+   * Account Owner Country of Birth
+   * @return countryOfBirth
+  **/
+  @ApiModelProperty(value = "Account Owner Country of Birth")
+  public String getCountryOfBirth() {
+    return countryOfBirth;
+  }
+
+  public void setCountryOfBirth(String countryOfBirth) {
+    this.countryOfBirth = countryOfBirth;
+  }
+
+  public Ptsv2payoutsRecipientInformation occupation(String occupation) {
+    this.occupation = occupation;
+    return this;
+  }
+
+   /**
+   * Account Owner Occupation
+   * @return occupation
+  **/
+  @ApiModelProperty(value = "Account Owner Occupation")
+  public String getOccupation() {
+    return occupation;
+  }
+
+  public void setOccupation(String occupation) {
+    this.occupation = occupation;
+  }
+
+  public Ptsv2payoutsRecipientInformation email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Account Owner email address
+   * @return email
+  **/
+  @ApiModelProperty(value = "Account Owner email address")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,12 +341,17 @@ public class Ptsv2payoutsRecipientInformation {
         Objects.equals(this.administrativeArea, ptsv2payoutsRecipientInformation.administrativeArea) &&
         Objects.equals(this.country, ptsv2payoutsRecipientInformation.country) &&
         Objects.equals(this.postalCode, ptsv2payoutsRecipientInformation.postalCode) &&
-        Objects.equals(this.phoneNumber, ptsv2payoutsRecipientInformation.phoneNumber);
+        Objects.equals(this.phoneNumber, ptsv2payoutsRecipientInformation.phoneNumber) &&
+        Objects.equals(this.aliasName, ptsv2payoutsRecipientInformation.aliasName) &&
+        Objects.equals(this.nationality, ptsv2payoutsRecipientInformation.nationality) &&
+        Objects.equals(this.countryOfBirth, ptsv2payoutsRecipientInformation.countryOfBirth) &&
+        Objects.equals(this.occupation, ptsv2payoutsRecipientInformation.occupation) &&
+        Objects.equals(this.email, ptsv2payoutsRecipientInformation.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, country, postalCode, phoneNumber);
+    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, country, postalCode, phoneNumber, aliasName, nationality, countryOfBirth, occupation, email);
   }
 
 
@@ -250,15 +360,20 @@ public class Ptsv2payoutsRecipientInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsRecipientInformation {\n");
     
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (aliasName != null) sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
+    if (nationality != null) sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
+    if (countryOfBirth != null) sb.append("    countryOfBirth: ").append(toIndentedString(countryOfBirth)).append("\n");
+    if (occupation != null) sb.append("    occupation: ").append(toIndentedString(occupation)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +384,10 @@ public class Ptsv2payoutsRecipientInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -119,9 +119,9 @@ public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsPaymentInformationPaymentType {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (subTypeName != null) sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

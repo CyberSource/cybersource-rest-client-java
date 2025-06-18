@@ -152,10 +152,10 @@ public class GetAllSubscriptionsResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAllSubscriptionsResponse {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    if (subscriptions != null) sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,10 +166,10 @@ public class GetAllSubscriptionsResponse {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

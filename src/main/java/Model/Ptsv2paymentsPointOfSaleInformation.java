@@ -71,6 +71,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("cardholderVerificationMethod")
   private List<String> cardholderVerificationMethod = null;
 
+  @SerializedName("terminalCategory")
+  private String terminalCategory = null;
+
   @SerializedName("terminalInputCapability")
   private List<String> terminalInputCapability = null;
 
@@ -161,10 +164,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM 
+   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM   - &#x60;4&#x60;: Biometric   - &#x60;5&#x60;: OTP 
    * @return cardholderVerificationMethodUsed
   **/
-  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM ")
+  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP ")
   public Integer getCardholderVerificationMethodUsed() {
     return cardholderVerificationMethodUsed;
   }
@@ -197,12 +200,12 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  Required if &#x60;pointOfSaleInformation.terminalID&#x60; is included in the request; otherwise, optional.  #### CyberSource through VisaNet Values 1 through 6 are supported on CyberSource through VisaNet, but some acquirers do not support all six values.  Optional field.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  Optional field for EMV transactions; otherwise, not used.  #### GPN Only values 6, 7, 8, and 9 are supported.  Required field.  #### JCN Gateway Only values 6, 7, 8, and 9 are supported.  Required field.  #### TSYS Acquiring Solutions Only value 6 is supported.  Required for transactions from mobile devices; otherwise, not used.  #### All other processors Not used.  Nonnegative integer. 
+   * Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  - 10: Card Activated Fuel Dispenser  - 11: Travel ticket vending machine #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  Required if &#x60;pointOfSaleInformation.terminalID&#x60; is included in the request; otherwise, optional.  #### CyberSource through VisaNet Values 1 through 6 are supported on CyberSource through VisaNet, but some acquirers do not support all six values.  Optional field.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  Optional field for EMV transactions; otherwise, not used.  #### GPN Only values 6, 7, 8, and 9 are supported.  Required field.  #### JCN Gateway Only values 6, 7, 8, and 9 are supported.  Required field.  #### TSYS Acquiring Solutions Only value 6 is supported.  Required for transactions from mobile devices; otherwise, not used.  #### All other processors Not used.  Nonnegative integer. 
    * minimum: 1
-   * maximum: 9
+   * maximum: 11
    * @return catLevel
   **/
-  @ApiModelProperty(value = "Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  Required if `pointOfSaleInformation.terminalID` is included in the request; otherwise, optional.  #### CyberSource through VisaNet Values 1 through 6 are supported on CyberSource through VisaNet, but some acquirers do not support all six values.  Optional field.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  Optional field for EMV transactions; otherwise, not used.  #### GPN Only values 6, 7, 8, and 9 are supported.  Required field.  #### JCN Gateway Only values 6, 7, 8, and 9 are supported.  Required field.  #### TSYS Acquiring Solutions Only value 6 is supported.  Required for transactions from mobile devices; otherwise, not used.  #### All other processors Not used.  Nonnegative integer. ")
+  @ApiModelProperty(value = "Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  - 10: Card Activated Fuel Dispenser  - 11: Travel ticket vending machine #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  Required if `pointOfSaleInformation.terminalID` is included in the request; otherwise, optional.  #### CyberSource through VisaNet Values 1 through 6 are supported on CyberSource through VisaNet, but some acquirers do not support all six values.  Optional field.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  Optional field for EMV transactions; otherwise, not used.  #### GPN Only values 6, 7, 8, and 9 are supported.  Required field.  #### JCN Gateway Only values 6, 7, 8, and 9 are supported.  Required field.  #### TSYS Acquiring Solutions Only value 6 is supported.  Required for transactions from mobile devices; otherwise, not used.  #### All other processors Not used.  Nonnegative integer. ")
   public Integer getCatLevel() {
     return catLevel;
   }
@@ -363,6 +366,24 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   public void setCardholderVerificationMethod(List<String> cardholderVerificationMethod) {
     this.cardholderVerificationMethod = cardholderVerificationMethod;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
+    return this;
+  }
+
+   /**
+   * Indicates the type of terminal.   Possible values: - &#x60;AFD&#x60;: Automated Fuel Dispenser 
+   * @return terminalCategory
+  **/
+  @ApiModelProperty(value = "Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser ")
+  public String getTerminalCategory() {
+    return terminalCategory;
+  }
+
+  public void setTerminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
   }
 
   public Ptsv2paymentsPointOfSaleInformation terminalInputCapability(List<String> terminalInputCapability) {
@@ -685,6 +706,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.trackData, ptsv2paymentsPointOfSaleInformation.trackData) &&
         Objects.equals(this.storeAndForwardIndicator, ptsv2paymentsPointOfSaleInformation.storeAndForwardIndicator) &&
         Objects.equals(this.cardholderVerificationMethod, ptsv2paymentsPointOfSaleInformation.cardholderVerificationMethod) &&
+        Objects.equals(this.terminalCategory, ptsv2paymentsPointOfSaleInformation.terminalCategory) &&
         Objects.equals(this.terminalInputCapability, ptsv2paymentsPointOfSaleInformation.terminalInputCapability) &&
         Objects.equals(this.terminalCardCaptureCapability, ptsv2paymentsPointOfSaleInformation.terminalCardCaptureCapability) &&
         Objects.equals(this.terminalOutputCapability, ptsv2paymentsPointOfSaleInformation.terminalOutputCapability) &&
@@ -705,7 +727,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
+    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalCategory, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -714,35 +736,36 @@ public class Ptsv2paymentsPointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPointOfSaleInformation {\n");
     
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
-    sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
-    sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
-    sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
-    sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
-    sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
-    sb.append("    operatingEnvironment: ").append(toIndentedString(operatingEnvironment)).append("\n");
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
-    sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
-    sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
-    sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
-    sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
-    sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
-    sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
-    sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
-    sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
-    sb.append("    pinEntrySolution: ").append(toIndentedString(pinEntrySolution)).append("\n");
-    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-    sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
-    sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
-    sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
-    sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
-    sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
-    sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
-    sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
-    sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
-    sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
-    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (terminalSerialNumber != null) sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
+    if (cardholderVerificationMethodUsed != null) sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
+    if (laneNumber != null) sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
+    if (catLevel != null) sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
+    if (entryMode != null) sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
+    if (terminalCapability != null) sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
+    if (operatingEnvironment != null) sb.append("    operatingEnvironment: ").append(toIndentedString(operatingEnvironment)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (amexCapnData != null) sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
+    if (trackData != null) sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
+    if (storeAndForwardIndicator != null) sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
+    if (cardholderVerificationMethod != null) sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
+    if (terminalCategory != null) sb.append("    terminalCategory: ").append(toIndentedString(terminalCategory)).append("\n");
+    if (terminalInputCapability != null) sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
+    if (terminalCardCaptureCapability != null) sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
+    if (terminalOutputCapability != null) sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
+    if (terminalPinCapability != null) sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
+    if (pinEntrySolution != null) sb.append("    pinEntrySolution: ").append(toIndentedString(pinEntrySolution)).append("\n");
+    if (deviceId != null) sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    if (pinBlockEncodingFormat != null) sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
+    if (encryptedPin != null) sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
+    if (encryptedKeySerialNumber != null) sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
+    if (partnerSdkVersion != null) sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
+    if (emvApplicationIdentifierAndDedicatedFileName != null) sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
+    if (terminalCompliance != null) sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
+    if (isDedicatedHardwareTerminal != null) sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
+    if (terminalModel != null) sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
+    if (terminalMake != null) sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
+    if (serviceCode != null) sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -753,10 +776,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

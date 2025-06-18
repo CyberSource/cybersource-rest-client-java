@@ -167,11 +167,11 @@ public class PaymentInstrumentListLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentInstrumentListLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    first: ").append(toIndentedString(first)).append("\n");
-    sb.append("    prev: ").append(toIndentedString(prev)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("    last: ").append(toIndentedString(last)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (first != null) sb.append("    first: ").append(toIndentedString(first)).append("\n");
+    if (prev != null) sb.append("    prev: ").append(toIndentedString(prev)).append("\n");
+    if (next != null) sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    if (last != null) sb.append("    last: ").append(toIndentedString(last)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -182,10 +182,10 @@ public class PaymentInstrumentListLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

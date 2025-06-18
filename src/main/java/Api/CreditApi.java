@@ -42,6 +42,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class CreditApi {
     private static Logger logger = LogManager.getLogger(CreditApi.class);
@@ -75,6 +77,16 @@ public class CreditApi {
     public okhttp3.Call createCreditCall(CreateCreditRequest createCreditRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createCreditRequest, CreateCreditRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createCredit,createCreditAsync,createCreditWithHttpInfo,createCreditCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/credits";
@@ -141,7 +153,6 @@ public class CreditApi {
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createCredit' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
         logger.info("CALL TO METHOD 'createCredit' ENDED");
         return resp.getData();
@@ -155,6 +166,7 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreditsPost201Response> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createCreditValidateBeforeCall(createCreditRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

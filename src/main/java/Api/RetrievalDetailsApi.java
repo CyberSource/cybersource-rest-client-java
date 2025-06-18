@@ -40,6 +40,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class RetrievalDetailsApi {
     private static Logger logger = LogManager.getLogger(RetrievalDetailsApi.class);
@@ -77,6 +79,16 @@ public class RetrievalDetailsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getRetrievalDetails,getRetrievalDetailsAsync,getRetrievalDetailsWithHttpInfo,getRetrievalDetailsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -158,7 +170,6 @@ public class RetrievalDetailsApi {
      */
     public ReportingV3RetrievalDetailsGet200Response getRetrievalDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getRetrievalDetails' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3RetrievalDetailsGet200Response> resp = getRetrievalDetailsWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getRetrievalDetails' ENDED");
         return resp.getData();
@@ -174,6 +185,7 @@ public class RetrievalDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3RetrievalDetailsGet200Response> getRetrievalDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRetrievalDetailsValidateBeforeCall(startTime, endTime, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3RetrievalDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

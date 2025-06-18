@@ -205,10 +205,10 @@ public class Ptsv2paymentsBuyerInformation {
   }
 
    /**
-   * language setting of the user
+   * language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). 
    * @return language
   **/
-  @ApiModelProperty(value = "language setting of the user")
+  @ApiModelProperty(value = "language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). ")
   public String getLanguage() {
     return language;
   }
@@ -305,17 +305,17 @@ public class Ptsv2paymentsBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    companyTaxId: ").append(toIndentedString(companyTaxId)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
-    sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
-    sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
-    sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (companyTaxId != null) sb.append("    companyTaxId: ").append(toIndentedString(companyTaxId)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (hashedPassword != null) sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    if (language != null) sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    if (noteToSeller != null) sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
+    if (mobilePhone != null) sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+    if (walletId != null) sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -326,10 +326,10 @@ public class Ptsv2paymentsBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

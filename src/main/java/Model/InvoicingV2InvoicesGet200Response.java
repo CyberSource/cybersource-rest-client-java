@@ -20,6 +20,7 @@ import Model.InvoicingV2InvoicesGet200ResponseInvoiceHistory;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
+import Model.Invoicingv2invoicesProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,6 +51,9 @@ public class InvoicingV2InvoicesGet200Response {
 
   @SerializedName("customerInformation")
   private Invoicingv2invoicesCustomerInformation customerInformation = null;
+
+  @SerializedName("processingInformation")
+  private Invoicingv2invoicesProcessingInformation processingInformation = null;
 
   @SerializedName("invoiceInformation")
   private InvoicingV2InvoicesPost201ResponseInvoiceInformation invoiceInformation = null;
@@ -150,6 +154,24 @@ public class InvoicingV2InvoicesGet200Response {
     this.customerInformation = customerInformation;
   }
 
+  public InvoicingV2InvoicesGet200Response processingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public InvoicingV2InvoicesGet200Response invoiceInformation(InvoicingV2InvoicesPost201ResponseInvoiceInformation invoiceInformation) {
     this.invoiceInformation = invoiceInformation;
     return this;
@@ -227,6 +249,7 @@ public class InvoicingV2InvoicesGet200Response {
         Objects.equals(this.submitTimeUtc, invoicingV2InvoicesGet200Response.submitTimeUtc) &&
         Objects.equals(this.status, invoicingV2InvoicesGet200Response.status) &&
         Objects.equals(this.customerInformation, invoicingV2InvoicesGet200Response.customerInformation) &&
+        Objects.equals(this.processingInformation, invoicingV2InvoicesGet200Response.processingInformation) &&
         Objects.equals(this.invoiceInformation, invoicingV2InvoicesGet200Response.invoiceInformation) &&
         Objects.equals(this.orderInformation, invoicingV2InvoicesGet200Response.orderInformation) &&
         Objects.equals(this.invoiceHistory, invoicingV2InvoicesGet200Response.invoiceHistory);
@@ -234,7 +257,7 @@ public class InvoicingV2InvoicesGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, invoiceInformation, orderInformation, invoiceHistory);
+    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation, invoiceHistory);
   }
 
 
@@ -243,14 +266,15 @@ public class InvoicingV2InvoicesGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesGet200Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
-    sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    invoiceHistory: ").append(toIndentedString(invoiceHistory)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (invoiceHistory != null) sb.append("    invoiceHistory: ").append(toIndentedString(invoiceHistory)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -261,10 +285,10 @@ public class InvoicingV2InvoicesGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

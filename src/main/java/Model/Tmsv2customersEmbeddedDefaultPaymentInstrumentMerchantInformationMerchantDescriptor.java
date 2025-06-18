@@ -74,7 +74,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMe
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantDescriptor {\n");
     
-    sb.append("    alternateName: ").append(toIndentedString(alternateName)).append("\n");
+    if (alternateName != null) sb.append("    alternateName: ").append(toIndentedString(alternateName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMe
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

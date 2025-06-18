@@ -74,7 +74,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation {\n");
     
-    sb.append("    resellerId: ").append(toIndentedString(resellerId)).append("\n");
+    if (resellerId != null) sb.append("    resellerId: ").append(toIndentedString(resellerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

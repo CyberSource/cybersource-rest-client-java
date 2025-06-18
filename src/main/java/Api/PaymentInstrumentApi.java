@@ -47,6 +47,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PaymentInstrumentApi {
     private static Logger logger = LogManager.getLogger(PaymentInstrumentApi.class);
@@ -83,6 +85,16 @@ public class PaymentInstrumentApi {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deletePaymentInstrument,deletePaymentInstrumentAsync,deletePaymentInstrumentWithHttpInfo,deletePaymentInstrumentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -153,7 +165,6 @@ public class PaymentInstrumentApi {
      */
     public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deletePaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
 
     }
@@ -167,6 +178,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -210,16 +222,27 @@ public class PaymentInstrumentApi {
      * Build call for getPaymentInstrument
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentInstrument,getPaymentInstrumentAsync,getPaymentInstrumentWithHttpInfo,getPaymentInstrumentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -227,6 +250,8 @@ public class PaymentInstrumentApi {
             .replaceAll("\\{" + "paymentInstrumentId" + "\\}", apiClient.escapeString(paymentInstrumentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (retrieveBinDetails != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "retrieveBinDetails", retrieveBinDetails));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
@@ -263,7 +288,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
@@ -272,7 +297,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        okhttp3.Call call = getPaymentInstrumentCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentCall(paymentInstrumentId, profileId, retrieveBinDetails, progressListener, progressRequestListener);
         return call;
 
         
@@ -286,13 +311,13 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
+    public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<PostPaymentInstrumentRequest> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
+        ApiResponse<PostPaymentInstrumentRequest> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -302,11 +327,13 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
+    public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -316,11 +343,12 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -342,7 +370,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, retrieveBinDetails, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -352,21 +380,34 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchPaymentInstrumentRequest, PatchPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "patchPaymentInstrument,patchPaymentInstrumentAsync,patchPaymentInstrumentWithHttpInfo,patchPaymentInstrumentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
             .replaceAll("\\{" + "paymentInstrumentId" + "\\}", apiClient.escapeString(paymentInstrumentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (retrieveBinDetails != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "retrieveBinDetails", retrieveBinDetails));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
@@ -405,7 +446,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
@@ -420,7 +461,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        okhttp3.Call call = patchPaymentInstrumentCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchPaymentInstrumentCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -435,14 +476,14 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<PatchPaymentInstrumentRequest> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
+        ApiResponse<PatchPaymentInstrumentRequest> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch);
         logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -453,12 +494,14 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;PatchPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
-        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, null, null);
+    public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -469,12 +512,13 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<PatchPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -496,7 +540,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PatchPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -505,19 +549,32 @@ public class PaymentInstrumentApi {
      * Build call for postPaymentInstrument
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentInstrumentRequest, PostPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postPaymentInstrument,postPaymentInstrumentAsync,postPaymentInstrumentWithHttpInfo,postPaymentInstrumentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (retrieveBinDetails != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "retrieveBinDetails", retrieveBinDetails));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
@@ -554,7 +611,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postPaymentInstrumentValidateBeforeCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postPaymentInstrumentValidateBeforeCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'postPaymentInstrumentRequest' is set
         if (postPaymentInstrumentRequest == null) {
@@ -563,7 +620,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        okhttp3.Call call = postPaymentInstrumentCall(postPaymentInstrumentRequest, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postPaymentInstrumentCall(postPaymentInstrumentRequest, profileId, retrieveBinDetails, progressListener, progressRequestListener);
         return call;
 
         
@@ -577,13 +634,13 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
+    public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<PostPaymentInstrumentRequest> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId);
+        ApiResponse<PostPaymentInstrumentRequest> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'postPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -593,11 +650,13 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
-        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, null, null);
+    public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -607,11 +666,12 @@ public class PaymentInstrumentApi {
      * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -633,7 +693,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, retrieveBinDetails, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

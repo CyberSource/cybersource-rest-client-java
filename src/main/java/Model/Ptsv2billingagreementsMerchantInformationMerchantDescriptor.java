@@ -140,10 +140,10 @@ public class Ptsv2billingagreementsMerchantInformationMerchantDescriptor {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsMerchantInformationMerchantDescriptor {\n");
     
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (contact != null) sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv2billingagreementsMerchantInformationMerchantDescriptor {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

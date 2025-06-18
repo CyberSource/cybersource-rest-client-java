@@ -96,8 +96,8 @@ public class PtsV2CreditsPost201Response1ProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreditsPost201Response1ProcessorInformation {\n");
     
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2CreditsPost201Response1ProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

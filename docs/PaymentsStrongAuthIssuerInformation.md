@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **lowValueExemptionResult** | **String** | This will be the value returned by Visanet when low value exemption has been requested.  Valid values: Visa Platform Connect - &#x60;2&#x60; Low value exemption validated/honored - &#x60;3&#x60; Low value exemption failed validation/not honored  |  [optional]
 **secureCorporatePaymentResult** | **String** | This will be the value returned by Visanet when secure corporate payment (scp) exemption has been requested.  Valid values: Visa Platform Connect - &#x60;2&#x60; Secure corporate payment exemption validated/honored - &#x60;3&#x60; Secure corporate payment exemption failed validation/not honored  |  [optional]
 **transactionRiskAnalysisExemptionResult** | **String** | This will be the value returned by Visanet when transaction risk analysis (TRA) exemption has been requested.    Valid values: Visa Platform Connect   - &#x60;2&#x60; transaction risk analysis (TRA) exemption validated/honored   - &#x60;3&#x60; transaction risk analysis (TRA) exemption failed validation/not honored  |  [optional]
+**delegatedAuthenticationResult** | **String** | This will be the value returned by Visanet when delegated authentication has been requested.  |  [optional]
 
 
 

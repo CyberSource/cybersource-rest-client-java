@@ -46,6 +46,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 {{#operations}}
 public class {{classname}} {
@@ -80,12 +82,22 @@ public class {{classname}} {
      */
     public okhttp3.Call {{operationId}}Call({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = {{#bodyParam}}sdkTracker.insertDeveloperIdTracker({{paramName}}, {{dataType}}.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId()){{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
+        Object localVarPostBody = {{#bodyParam}}sdkTracker.insertDeveloperIdTracker({{paramName}}, {{{dataType}}}.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId()){{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
 {{^bodyParam}}
         if ("{{httpMethod}}".equalsIgnoreCase("POST")) {
             {{localVariablePrefix}}localVarPostBody = "{}";
         }
         {{/bodyParam}}
+        
+        boolean isMLESupportedByCybsForApi = {{#vendorExtensions.x-devcenter-metaData.isMLEsupported}}true;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}{{^vendorExtensions.x-devcenter-metaData.isMLEsupported}}false;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "{{operationId}},{{operationId}}Async,{{operationId}}WithHttpInfo,{{operationId}}Call")) {
+            try {
+                {{localVariablePrefix}}localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String {{localVariablePrefix}}localVarPath = "{{{path}}}"{{#pathParams}}
@@ -188,7 +200,6 @@ public class {{classname}} {
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
         logger.info("CALL TO METHOD '{{operationId}}' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
         {{#returnType}}
         logger.info("CALL TO METHOD '{{operationId}}' ENDED");
@@ -203,6 +214,7 @@ public class {{classname}} {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<{{#vendorExtensions.x-streaming}}InputStream{{/vendorExtensions.x-streaming}}{{^vendorExtensions.x-streaming}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}{{/vendorExtensions.x-streaming}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call {{localVariablePrefix}}call = {{operationId}}ValidateBeforeCall({{#allParams}}{{paramName}}, {{/allParams}}null, null);
         {{#returnType}}Type {{localVariablePrefix}}localVarReturnType = new TypeToken<{{{returnType}}}>(){}.getType();
         return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call, {{localVariablePrefix}}localVarReturnType);{{/returnType}}{{^returnType}}return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call);{{/returnType}}

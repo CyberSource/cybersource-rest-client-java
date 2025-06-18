@@ -45,6 +45,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class TaxesApi {
     private static Logger logger = LogManager.getLogger(TaxesApi.class);
@@ -78,6 +80,16 @@ public class TaxesApi {
     public okhttp3.Call calculateTaxCall(TaxRequest taxRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(taxRequest, TaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "calculateTax,calculateTaxAsync,calculateTaxWithHttpInfo,calculateTaxCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/vas/v2/tax";
@@ -137,14 +149,13 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes
-     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param taxRequest  (required)
      * @return VasV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException {
         logger.info("CALL TO METHOD 'calculateTax' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2PaymentsPost201Response> resp = calculateTaxWithHttpInfo(taxRequest);
         logger.info("CALL TO METHOD 'calculateTax' ENDED");
         return resp.getData();
@@ -152,12 +163,13 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes
-     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param taxRequest  (required)
      * @return ApiResponse&lt;VasV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<VasV2PaymentsPost201Response> calculateTaxWithHttpInfo(TaxRequest taxRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = calculateTaxValidateBeforeCall(taxRequest, null, null);
         Type localVarReturnType = new TypeToken<VasV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -165,7 +177,7 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes (asynchronously)
-     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param taxRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -210,6 +222,16 @@ public class TaxesApi {
     public okhttp3.Call voidTaxCall(VoidTaxRequest voidTaxRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidTaxRequest, VoidTaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "voidTax,voidTaxAsync,voidTaxWithHttpInfo,voidTaxCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/vas/v2/tax/{id}"
@@ -284,7 +306,6 @@ public class TaxesApi {
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidTax' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2TaxVoid200Response> resp = voidTaxWithHttpInfo(voidTaxRequest, id);
         logger.info("CALL TO METHOD 'voidTax' ENDED");
         return resp.getData();
@@ -299,6 +320,7 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<VasV2TaxVoid200Response> voidTaxWithHttpInfo(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidTaxValidateBeforeCall(voidTaxRequest, id, null, null);
         Type localVarReturnType = new TypeToken<VasV2TaxVoid200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

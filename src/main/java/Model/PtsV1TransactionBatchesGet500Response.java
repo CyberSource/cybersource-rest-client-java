@@ -97,8 +97,8 @@ public class PtsV1TransactionBatchesGet500Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV1TransactionBatchesGet500Response {\n");
     
-    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class PtsV1TransactionBatchesGet500Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -115,8 +115,8 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocity {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationVelocity {\n");
     
-    sb.append("    morphing: ").append(toIndentedString(morphing)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (morphing != null) sb.append("    morphing: ").append(toIndentedString(morphing)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -127,10 +127,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocity {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

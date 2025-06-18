@@ -46,10 +46,10 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
   }
 
    /**
-   * The event triggered for the invoice.  Possible values:  - &#x60;CREATE&#x60;  - &#x60;UPDATE&#x60;  - &#x60;SEND&#x60;  - &#x60;RESEND&#x60;  - &#x60;REMINDER&#x60;  - &#x60;PAYMENT&#x60;  - &#x60;CANCEL&#x60; 
+   * The event triggered for the invoice.  Possible values:  - &#x60;UNKNOWN&#x60;  - &#x60;DRAFT&#x60;  - &#x60;CREATE&#x60;  - &#x60;UPDATE&#x60;  - &#x60;SEND&#x60;  - &#x60;RESEND&#x60;  - &#x60;REMINDER&#x60;  - &#x60;PAYMENT&#x60;  - &#x60;CANCEL&#x60;  - &#x60;PENDING&#x60;  - &#x60;REJECTED&#x60; 
    * @return event
   **/
-  @ApiModelProperty(value = "The event triggered for the invoice.  Possible values:  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL` ")
+  @ApiModelProperty(value = "The event triggered for the invoice.  Possible values:  - `UNKNOWN`  - `DRAFT`  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL`  - `PENDING`  - `REJECTED` ")
   public String getEvent() {
     return event;
   }
@@ -120,9 +120,9 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesGet200ResponseInvoiceHistory {\n");
     
-    sb.append("    event: ").append(toIndentedString(event)).append("\n");
-    sb.append("    date: ").append(toIndentedString(date)).append("\n");
-    sb.append("    transactionDetails: ").append(toIndentedString(transactionDetails)).append("\n");
+    if (event != null) sb.append("    event: ").append(toIndentedString(event)).append("\n");
+    if (date != null) sb.append("    date: ").append(toIndentedString(date)).append("\n");
+    if (transactionDetails != null) sb.append("    transactionDetails: ").append(toIndentedString(transactionDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

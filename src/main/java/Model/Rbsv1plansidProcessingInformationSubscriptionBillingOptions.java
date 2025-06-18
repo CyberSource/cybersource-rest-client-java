@@ -74,7 +74,7 @@ public class Rbsv1plansidProcessingInformationSubscriptionBillingOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1plansidProcessingInformationSubscriptionBillingOptions {\n");
     
-    sb.append("    applyTo: ").append(toIndentedString(applyTo)).append("\n");
+    if (applyTo != null) sb.append("    applyTo: ").append(toIndentedString(applyTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Rbsv1plansidProcessingInformationSubscriptionBillingOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

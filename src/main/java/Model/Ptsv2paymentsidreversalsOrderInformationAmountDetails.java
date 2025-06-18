@@ -74,7 +74,7 @@ public class Ptsv2paymentsidreversalsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsOrderInformationAmountDetails {\n");
     
-    sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
+    if (serviceFeeAmount != null) sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidreversalsOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

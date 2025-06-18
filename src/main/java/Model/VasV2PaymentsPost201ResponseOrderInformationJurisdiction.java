@@ -250,15 +250,15 @@ public class VasV2PaymentsPost201ResponseOrderInformationJurisdiction {
     StringBuilder sb = new StringBuilder();
     sb.append("class VasV2PaymentsPost201ResponseOrderInformationJurisdiction {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    taxName: ").append(toIndentedString(taxName)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
-    sb.append("    region: ").append(toIndentedString(region)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (taxName != null) sb.append("    taxName: ").append(toIndentedString(taxName)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxable != null) sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (rate != null) sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    if (region != null) sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class VasV2PaymentsPost201ResponseOrderInformationJurisdiction {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

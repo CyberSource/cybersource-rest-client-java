@@ -74,7 +74,7 @@ public class Riskv1liststypeentriesOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesOrderInformationLineItems {\n");
     
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Riskv1liststypeentriesOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -58,7 +58,7 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
    * @return instrumentidentifierNew
   **/
   @ApiModelProperty(value = "A value of true means the card number or bank account used to create an Instrument Identifier was new and did not already exist in the token vault. A value of false means the card number or bank account used to create an Instrument Identifier already existed in the token vault. ")
-  public Boolean isInstrumentidentifierNew() {
+  public Boolean InstrumentidentifierNew() {
     return instrumentidentifierNew;
   }
 
@@ -166,11 +166,11 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseTokenInformation {\n");
     
-    sb.append("    instrumentidentifierNew: ").append(toIndentedString(instrumentidentifierNew)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (instrumentidentifierNew != null) sb.append("    instrumentidentifierNew: ").append(toIndentedString(instrumentidentifierNew)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -181,10 +181,10 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

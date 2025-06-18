@@ -59,10 +59,10 @@ public class Ptsv2payoutsSenderInformationAccount {
   }
 
    /**
-   * The account number of the entity funding the transaction. It is the sender&#39;s account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (&lt;&#x3D; 19) * Paymentech (&lt;&#x3D; 16) 
+   * The account number of the entity funding the transaction. It is the sender&#39;s account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements and OCT transactions**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (&lt;&#x3D; 19) * Paymentech (&lt;&#x3D; 16) 
    * @return number
   **/
-  @ApiModelProperty(value = "The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16) ")
+  @ApiModelProperty(value = "The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements and OCT transactions**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16) ")
   public String getNumber() {
     return number;
   }
@@ -96,8 +96,8 @@ public class Ptsv2payoutsSenderInformationAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsSenderInformationAccount {\n");
     
-    sb.append("    fundsSource: ").append(toIndentedString(fundsSource)).append("\n");
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (fundsSource != null) sb.append("    fundsSource: ").append(toIndentedString(fundsSource)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2payoutsSenderInformationAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

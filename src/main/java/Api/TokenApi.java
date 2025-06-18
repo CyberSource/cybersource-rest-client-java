@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.InlineResponse200;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse410;
@@ -44,6 +45,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class TokenApi {
     private static Logger logger = LogManager.getLogger(TokenApi.class);
@@ -67,6 +70,173 @@ public class TokenApi {
     }
 
     /**
+     * Build call for getCardArtAsset
+     * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param tokenProvider The token provider. (required)
+     * @param assetType The type of asset. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getCardArtAssetCall(String instrumentIdentifierId, String tokenProvider, String assetType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCardArtAsset,getCardArtAssetAsync,getCardArtAssetWithHttpInfo,getCardArtAssetCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
+        // create path and map variables
+        String localVarPath = "/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}"
+            .replaceAll("\\{" + "instrumentIdentifierId" + "\\}", apiClient.escapeString(instrumentIdentifierId.toString()))
+            .replaceAll("\\{" + "tokenProvider" + "\\}", apiClient.escapeString(tokenProvider.toString()))
+            .replaceAll("\\{" + "assetType" + "\\}", apiClient.escapeString(assetType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCardArtAssetValidateBeforeCall(String instrumentIdentifierId, String tokenProvider, String assetType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'instrumentIdentifierId' is set
+        if (instrumentIdentifierId == null) {
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling getCardArtAsset(Async)");
+            throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling getCardArtAsset(Async)");
+        }
+        
+        // verify the required parameter 'tokenProvider' is set
+        if (tokenProvider == null) {
+            logger.error("Missing the required parameter 'tokenProvider' when calling getCardArtAsset(Async)");
+            throw new ApiException("Missing the required parameter 'tokenProvider' when calling getCardArtAsset(Async)");
+        }
+        
+        // verify the required parameter 'assetType' is set
+        if (assetType == null) {
+            logger.error("Missing the required parameter 'assetType' when calling getCardArtAsset(Async)");
+            throw new ApiException("Missing the required parameter 'assetType' when calling getCardArtAsset(Async)");
+        }
+        
+        
+        okhttp3.Call call = getCardArtAssetCall(instrumentIdentifierId, tokenProvider, assetType, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Retrieve Card Art
+     * Retrieves Card Art for a specific Instrument Identifier. The Card Art is a visual representation of the cardholder&#39;s payment card. Card Art is only available if a Network Token is successfully provisioned. 
+     * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param tokenProvider The token provider. (required)
+     * @param assetType The type of asset. (required)
+     * @return InlineResponse200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public InlineResponse200 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException {
+        logger.info("CALL TO METHOD 'getCardArtAsset' STARTED");
+        ApiResponse<InlineResponse200> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
+        logger.info("CALL TO METHOD 'getCardArtAsset' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve Card Art
+     * Retrieves Card Art for a specific Instrument Identifier. The Card Art is a visual representation of the cardholder&#39;s payment card. Card Art is only available if a Network Token is successfully provisioned. 
+     * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param tokenProvider The token provider. (required)
+     * @param assetType The type of asset. (required)
+     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<InlineResponse200> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Card Art (asynchronously)
+     * Retrieves Card Art for a specific Instrument Identifier. The Card Art is a visual representation of the cardholder&#39;s payment card. Card Art is only available if a Network Token is successfully provisioned. 
+     * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param tokenProvider The token provider. (required)
+     * @param assetType The type of asset. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse200> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postTokenPaymentCredentials
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
      * @param postPaymentCredentialsRequest  (required)
@@ -79,6 +249,16 @@ public class TokenApi {
     public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokens/{tokenId}/payment-credentials"
@@ -156,7 +336,6 @@ public class TokenApi {
      */
     public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");
         return resp.getData();
@@ -172,6 +351,7 @@ public class TokenApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

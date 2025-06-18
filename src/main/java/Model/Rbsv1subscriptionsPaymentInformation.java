@@ -75,7 +75,7 @@ public class Rbsv1subscriptionsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsPaymentInformation {\n");
     
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Rbsv1subscriptionsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

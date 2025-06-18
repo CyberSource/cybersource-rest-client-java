@@ -84,7 +84,7 @@ public class SAConfigPaymentMethods {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigPaymentMethods {\n");
     
-    sb.append("    enabledPaymentMethods: ").append(toIndentedString(enabledPaymentMethods)).append("\n");
+    if (enabledPaymentMethods != null) sb.append("    enabledPaymentMethods: ").append(toIndentedString(enabledPaymentMethods)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -95,10 +95,10 @@ public class SAConfigPaymentMethods {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

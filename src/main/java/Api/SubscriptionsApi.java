@@ -52,6 +52,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class SubscriptionsApi {
     private static Logger logger = LogManager.getLogger(SubscriptionsApi.class);
@@ -87,6 +89,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "activateSubscription,activateSubscriptionAsync,activateSubscriptionWithHttpInfo,activateSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -155,7 +167,6 @@ public class SubscriptionsApi {
      */
     public ActivateSubscriptionResponse activateSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
         return resp.getData();
@@ -169,6 +180,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -222,6 +234,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "cancelSubscription,cancelSubscriptionAsync,cancelSubscriptionWithHttpInfo,cancelSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -290,7 +312,6 @@ public class SubscriptionsApi {
      */
     public CancelSubscriptionResponse cancelSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<CancelSubscriptionResponse> resp = cancelSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'cancelSubscription' ENDED");
         return resp.getData();
@@ -304,6 +325,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CancelSubscriptionResponse> cancelSubscriptionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = cancelSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<CancelSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -355,6 +377,16 @@ public class SubscriptionsApi {
     public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createSubscription,createSubscriptionAsync,createSubscriptionWithHttpInfo,createSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions";
@@ -421,7 +453,6 @@ public class SubscriptionsApi {
      */
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<CreateSubscriptionResponse> resp = createSubscriptionWithHttpInfo(createSubscriptionRequest);
         logger.info("CALL TO METHOD 'createSubscription' ENDED");
         return resp.getData();
@@ -435,6 +466,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createSubscriptionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -491,6 +523,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getAllSubscriptions,getAllSubscriptionsAsync,getAllSubscriptionsWithHttpInfo,getAllSubscriptionsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -563,7 +605,6 @@ public class SubscriptionsApi {
      */
     public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
@@ -580,6 +621,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, null, null);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -636,6 +678,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getSubscription,getSubscriptionAsync,getSubscriptionWithHttpInfo,getSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -704,7 +756,6 @@ public class SubscriptionsApi {
      */
     public GetSubscriptionResponse getSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetSubscriptionResponse> resp = getSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
         return resp.getData();
@@ -718,6 +769,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -770,6 +822,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getSubscriptionCode,getSubscriptionCodeAsync,getSubscriptionCodeWithHttpInfo,getSubscriptionCodeCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -830,7 +892,6 @@ public class SubscriptionsApi {
      */
     public GetSubscriptionCodeResponse getSubscriptionCode() throws ApiException {
         logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetSubscriptionCodeResponse> resp = getSubscriptionCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getSubscriptionCode' ENDED");
         return resp.getData();
@@ -843,6 +904,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetSubscriptionCodeResponse> getSubscriptionCodeWithHttpInfo() throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -895,6 +957,16 @@ public class SubscriptionsApi {
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "suspendSubscription,suspendSubscriptionAsync,suspendSubscriptionWithHttpInfo,suspendSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -963,7 +1035,6 @@ public class SubscriptionsApi {
      */
     public SuspendSubscriptionResponse suspendSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<SuspendSubscriptionResponse> resp = suspendSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'suspendSubscription' ENDED");
         return resp.getData();
@@ -977,6 +1048,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<SuspendSubscriptionResponse> suspendSubscriptionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = suspendSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<SuspendSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1029,6 +1101,16 @@ public class SubscriptionsApi {
     public okhttp3.Call updateSubscriptionCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "updateSubscription,updateSubscriptionAsync,updateSubscriptionWithHttpInfo,updateSubscriptionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions/{id}"
@@ -1103,7 +1185,6 @@ public class SubscriptionsApi {
      */
     public UpdateSubscriptionResponse updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
         logger.info("CALL TO METHOD 'updateSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UpdateSubscriptionResponse> resp = updateSubscriptionWithHttpInfo(id, updateSubscription);
         logger.info("CALL TO METHOD 'updateSubscription' ENDED");
         return resp.getData();
@@ -1118,6 +1199,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UpdateSubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateSubscriptionValidateBeforeCall(id, updateSubscription, null, null);
         Type localVarReturnType = new TypeToken<UpdateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -230,14 +230,14 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    authorizationRequestId: ").append(toIndentedString(authorizationRequestId)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    rcode: ").append(toIndentedString(rcode)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (time != null) sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    if (authorizationRequestId != null) sb.append("    authorizationRequestId: ").append(toIndentedString(authorizationRequestId)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (rcode != null) sb.append("    rcode: ").append(toIndentedString(rcode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +248,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

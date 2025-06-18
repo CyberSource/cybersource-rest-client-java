@@ -141,10 +141,10 @@ public class Body {
     StringBuilder sb = new StringBuilder();
     sb.append("class Body {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    included: ").append(toIndentedString(included)).append("\n");
-    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
-    sb.append("    notificationEmail: ").append(toIndentedString(notificationEmail)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (included != null) sb.append("    included: ").append(toIndentedString(included)).append("\n");
+    if (merchantReference != null) sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    if (notificationEmail != null) sb.append("    notificationEmail: ").append(toIndentedString(notificationEmail)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Body {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -231,14 +231,14 @@ public class PayerAuthConfigCardTypes {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayerAuthConfigCardTypes {\n");
     
-    sb.append("    verifiedByVisa: ").append(toIndentedString(verifiedByVisa)).append("\n");
-    sb.append("    masterCardSecureCode: ").append(toIndentedString(masterCardSecureCode)).append("\n");
-    sb.append("    amexSafeKey: ").append(toIndentedString(amexSafeKey)).append("\n");
-    sb.append("    jCBJSecure: ").append(toIndentedString(jCBJSecure)).append("\n");
-    sb.append("    dinersClubInternationalProtectBuy: ").append(toIndentedString(dinersClubInternationalProtectBuy)).append("\n");
-    sb.append("    ELO: ").append(toIndentedString(ELO)).append("\n");
-    sb.append("    UPI: ").append(toIndentedString(UPI)).append("\n");
-    sb.append("    CB: ").append(toIndentedString(CB)).append("\n");
+    if (verifiedByVisa != null) sb.append("    verifiedByVisa: ").append(toIndentedString(verifiedByVisa)).append("\n");
+    if (masterCardSecureCode != null) sb.append("    masterCardSecureCode: ").append(toIndentedString(masterCardSecureCode)).append("\n");
+    if (amexSafeKey != null) sb.append("    amexSafeKey: ").append(toIndentedString(amexSafeKey)).append("\n");
+    if (jCBJSecure != null) sb.append("    jCBJSecure: ").append(toIndentedString(jCBJSecure)).append("\n");
+    if (dinersClubInternationalProtectBuy != null) sb.append("    dinersClubInternationalProtectBuy: ").append(toIndentedString(dinersClubInternationalProtectBuy)).append("\n");
+    if (ELO != null) sb.append("    ELO: ").append(toIndentedString(ELO)).append("\n");
+    if (UPI != null) sb.append("    UPI: ").append(toIndentedString(UPI)).append("\n");
+    if (CB != null) sb.append("    CB: ").append(toIndentedString(CB)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,10 +249,10 @@ public class PayerAuthConfigCardTypes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

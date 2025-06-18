@@ -143,10 +143,10 @@ public class InlineResponse2013 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -157,10 +157,10 @@ public class InlineResponse2013 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

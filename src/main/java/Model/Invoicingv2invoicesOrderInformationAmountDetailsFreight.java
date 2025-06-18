@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Contains all of the shipping-related fields for the invoice.
+ * Contains all of the shipping-related fields for the order.
  */
-@ApiModel(description = "Contains all of the shipping-related fields for the invoice.")
+@ApiModel(description = "Contains all of the shipping-related fields for the order.")
 
 public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
   @SerializedName("amount")
@@ -67,7 +67,7 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
    * @return taxable
   **/
   @ApiModelProperty(value = "Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any `lineItems[].taxAmount` values in your request, CyberSource does not include `invoiceDetails.taxable` in the data it sends to the processor.  Possible values:  - **true**  - **false** ")
-  public Boolean isTaxable() {
+  public Boolean Taxable() {
     return taxable;
   }
 
@@ -119,9 +119,9 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformationAmountDetailsFreight {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (taxable != null) sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

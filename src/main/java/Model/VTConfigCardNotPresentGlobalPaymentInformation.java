@@ -121,9 +121,9 @@ public class VTConfigCardNotPresentGlobalPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentGlobalPaymentInformation {\n");
     
-    sb.append("    basicInformation: ").append(toIndentedString(basicInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    merchantDefinedDataFields: ").append(toIndentedString(merchantDefinedDataFields)).append("\n");
+    if (basicInformation != null) sb.append("    basicInformation: ").append(toIndentedString(basicInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (merchantDefinedDataFields != null) sb.append("    merchantDefinedDataFields: ").append(toIndentedString(merchantDefinedDataFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class VTConfigCardNotPresentGlobalPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

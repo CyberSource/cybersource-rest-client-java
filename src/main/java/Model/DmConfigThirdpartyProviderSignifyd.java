@@ -46,7 +46,7 @@ public class DmConfigThirdpartyProviderSignifyd {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -97,8 +97,8 @@ public class DmConfigThirdpartyProviderSignifyd {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderSignifyd {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (credentials != null) sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class DmConfigThirdpartyProviderSignifyd {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

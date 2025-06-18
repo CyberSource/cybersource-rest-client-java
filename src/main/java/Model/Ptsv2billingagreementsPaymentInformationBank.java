@@ -141,10 +141,10 @@ public class Ptsv2billingagreementsPaymentInformationBank {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsPaymentInformationBank {\n");
     
-    sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
-    sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
-    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    if (swiftCode != null) sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
+    if (scheme != null) sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Ptsv2billingagreementsPaymentInformationBank {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

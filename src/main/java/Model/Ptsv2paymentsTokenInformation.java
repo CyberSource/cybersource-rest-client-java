@@ -187,12 +187,12 @@ public class Ptsv2paymentsTokenInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTokenInformation {\n");
     
-    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
-    sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    networkTokenOption: ").append(toIndentedString(networkTokenOption)).append("\n");
-    sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
+    if (jti != null) sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
+    if (transientTokenJwt != null) sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (networkTokenOption != null) sb.append("    networkTokenOption: ").append(toIndentedString(networkTokenOption)).append("\n");
+    if (tokenProvisioningInformation != null) sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -203,10 +203,10 @@ public class Ptsv2paymentsTokenInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

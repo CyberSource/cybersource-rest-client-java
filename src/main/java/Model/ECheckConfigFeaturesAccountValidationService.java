@@ -109,8 +109,8 @@ public class ECheckConfigFeaturesAccountValidationService {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigFeaturesAccountValidationService {\n");
     
-    sb.append("    internalOnly: ").append(toIndentedString(internalOnly)).append("\n");
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (internalOnly != null) sb.append("    internalOnly: ").append(toIndentedString(internalOnly)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,10 +121,10 @@ public class ECheckConfigFeaturesAccountValidationService {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

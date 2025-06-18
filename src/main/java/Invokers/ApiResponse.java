@@ -25,23 +25,27 @@ public class ApiResponse<T> {
     final private int statusCode;
     final private Map<String, List<String>> headers;
     final private T data;
+    final private String message;
 
     /**
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response
+     * @param message The status message of HTTP response
      */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
-        this(statusCode, headers, null);
+    public ApiResponse(int statusCode, Map<String, List<String>> headers, String message) {
+        this(statusCode, headers, message, null);
     }
 
     /**
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response
-     * @param data The object deserialized from response bod
+     * @param message The status message of HTTP response
+     * @param data The object deserialized from response body
      */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers, T data) {
+    public ApiResponse(int statusCode, Map<String, List<String>> headers, String message, T data) {
         this.statusCode = statusCode;
         this.headers = headers;
+        this.message= message;
         this.data = data;
     }
 
@@ -55,5 +59,9 @@ public class ApiResponse<T> {
 
     public T getData() {
         return data;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

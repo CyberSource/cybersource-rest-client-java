@@ -96,8 +96,8 @@ public class Riskv1liststypeentriesDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesDeviceInformation {\n");
     
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    networkIpAddress: ").append(toIndentedString(networkIpAddress)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (networkIpAddress != null) sb.append("    networkIpAddress: ").append(toIndentedString(networkIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1liststypeentriesDeviceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -144,10 +144,10 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsProductInformationSelectedProducts {\n");
     
-    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
-    sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
-    sb.append("    commerceSolutions: ").append(toIndentedString(commerceSolutions)).append("\n");
-    sb.append("    valueAddedServices: ").append(toIndentedString(valueAddedServices)).append("\n");
+    if (payments != null) sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
+    if (risk != null) sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
+    if (commerceSolutions != null) sb.append("    commerceSolutions: ").append(toIndentedString(commerceSolutions)).append("\n");
+    if (valueAddedServices != null) sb.append("    valueAddedServices: ").append(toIndentedString(valueAddedServices)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

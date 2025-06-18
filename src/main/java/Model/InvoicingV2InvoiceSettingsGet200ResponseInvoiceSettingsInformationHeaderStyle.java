@@ -96,8 +96,8 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationH
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle {\n");
     
-    sb.append("    fontColor: ").append(toIndentedString(fontColor)).append("\n");
-    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
+    if (fontColor != null) sb.append("    fontColor: ").append(toIndentedString(fontColor)).append("\n");
+    if (backgroundColor != null) sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationH
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.RiskProductsDecisionManager;
 import Model.RiskProductsFraudManagementEssentials;
+import Model.RiskProductsPortfolioRiskControls;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,6 +37,9 @@ public class RiskProducts {
 
   @SerializedName("decisionManager")
   private RiskProductsDecisionManager decisionManager = null;
+
+  @SerializedName("portfolioRiskControls")
+  private RiskProductsPortfolioRiskControls portfolioRiskControls = null;
 
   public RiskProducts fraudManagementEssentials(RiskProductsFraudManagementEssentials fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
@@ -73,6 +77,24 @@ public class RiskProducts {
     this.decisionManager = decisionManager;
   }
 
+  public RiskProducts portfolioRiskControls(RiskProductsPortfolioRiskControls portfolioRiskControls) {
+    this.portfolioRiskControls = portfolioRiskControls;
+    return this;
+  }
+
+   /**
+   * Get portfolioRiskControls
+   * @return portfolioRiskControls
+  **/
+  @ApiModelProperty(value = "")
+  public RiskProductsPortfolioRiskControls getPortfolioRiskControls() {
+    return portfolioRiskControls;
+  }
+
+  public void setPortfolioRiskControls(RiskProductsPortfolioRiskControls portfolioRiskControls) {
+    this.portfolioRiskControls = portfolioRiskControls;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class RiskProducts {
     }
     RiskProducts riskProducts = (RiskProducts) o;
     return Objects.equals(this.fraudManagementEssentials, riskProducts.fraudManagementEssentials) &&
-        Objects.equals(this.decisionManager, riskProducts.decisionManager);
+        Objects.equals(this.decisionManager, riskProducts.decisionManager) &&
+        Objects.equals(this.portfolioRiskControls, riskProducts.portfolioRiskControls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fraudManagementEssentials, decisionManager);
+    return Objects.hash(fraudManagementEssentials, decisionManager, portfolioRiskControls);
   }
 
 
@@ -98,8 +121,9 @@ public class RiskProducts {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskProducts {\n");
     
-    sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
-    sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
+    if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (portfolioRiskControls != null) sb.append("    portfolioRiskControls: ").append(toIndentedString(portfolioRiskControls)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +134,10 @@ public class RiskProducts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

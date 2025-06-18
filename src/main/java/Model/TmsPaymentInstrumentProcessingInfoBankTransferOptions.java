@@ -38,10 +38,10 @@ public class TmsPaymentInstrumentProcessingInfoBankTransferOptions {
   }
 
    /**
-   * Specifies the authorization method for the transaction.  #### TeleCheck Possible Values: - &#x60;ARC&#x60;: account receivable conversion - &#x60;CCD&#x60;: corporate cash disbursement - &#x60;POP&#x60;: point of purchase conversion - &#x60;PPD&#x60;: prearranged payment and deposit entry - &#x60;TEL&#x60;: telephone-initiated entry - &#x60;WEB&#x60;: internet-initiated entry 
+   * Specifies the authorization method for the transaction.  #### TeleCheck Possible Values: - &#x60;ARC&#x60;: account receivable conversion - &#x60;CCD&#x60;: corporate cash disbursement - &#x60;POP&#x60;: point of purchase conversion - &#x60;PPD&#x60;: prearranged payment and deposit entry - &#x60;TEL&#x60;: telephone-initiated entry - &#x60;WEB&#x60;: internet-initiated entry  # For details, see &#x60;ecp_sec_code&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
    * @return seCCode
   **/
-  @ApiModelProperty(value = "Specifies the authorization method for the transaction.  #### TeleCheck Possible Values: - `ARC`: account receivable conversion - `CCD`: corporate cash disbursement - `POP`: point of purchase conversion - `PPD`: prearranged payment and deposit entry - `TEL`: telephone-initiated entry - `WEB`: internet-initiated entry ")
+  @ApiModelProperty(value = "Specifies the authorization method for the transaction.  #### TeleCheck Possible Values: - `ARC`: account receivable conversion - `CCD`: corporate cash disbursement - `POP`: point of purchase conversion - `PPD`: prearranged payment and deposit entry - `TEL`: telephone-initiated entry - `WEB`: internet-initiated entry  # For details, see `ecp_sec_code` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
   public String getSeCCode() {
     return seCCode;
   }
@@ -74,7 +74,7 @@ public class TmsPaymentInstrumentProcessingInfoBankTransferOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsPaymentInstrumentProcessingInfoBankTransferOptions {\n");
     
-    sb.append("    seCCode: ").append(toIndentedString(seCCode)).append("\n");
+    if (seCCode != null) sb.append("    seCCode: ").append(toIndentedString(seCCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TmsPaymentInstrumentProcessingInfoBankTransferOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

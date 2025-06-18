@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +24,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions
@@ -40,6 +43,21 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
 
   @SerializedName("businessNameKatakana")
   private String businessNameKatakana = null;
+
+  @SerializedName("businessNameEnglish")
+  private String businessNameEnglish = null;
+
+  @SerializedName("bonuses")
+  private List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses = null;
+
+  @SerializedName("firstBillingMonth")
+  private String firstBillingMonth = null;
+
+  @SerializedName("numberOfInstallments")
+  private String numberOfInstallments = null;
+
+  @SerializedName("preApprovalType")
+  private String preApprovalType = null;
 
   public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions paymentMethod(String paymentMethod) {
     this.paymentMethod = paymentMethod;
@@ -113,6 +131,104 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
     this.businessNameKatakana = businessNameKatakana;
   }
 
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions businessNameEnglish(String businessNameEnglish) {
+    this.businessNameEnglish = businessNameEnglish;
+    return this;
+  }
+
+   /**
+   * Business name in English characters. This field is supported only on JCN Gateway and for the Sumitomo Mitsui Card Co. acquirer on CyberSource through VisaNet. 
+   * @return businessNameEnglish
+  **/
+  @ApiModelProperty(value = "Business name in English characters. This field is supported only on JCN Gateway and for the Sumitomo Mitsui Card Co. acquirer on CyberSource through VisaNet. ")
+  public String getBusinessNameEnglish() {
+    return businessNameEnglish;
+  }
+
+  public void setBusinessNameEnglish(String businessNameEnglish) {
+    this.businessNameEnglish = businessNameEnglish;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions bonuses(List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses) {
+    this.bonuses = bonuses;
+    return this;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions addBonusesItem(Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses bonusesItem) {
+    if (this.bonuses == null) {
+      this.bonuses = new ArrayList<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses>();
+    }
+    this.bonuses.add(bonusesItem);
+    return this;
+  }
+
+   /**
+   * An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length &#x3D; 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\&quot;month\&quot;: \&quot;1\&quot;,\&quot;amount\&quot;: \&quot;200\&quot;}, {\&quot;month\&quot;: \&quot;3\&quot;,\&quot;amount\&quot;: \&quot;2500\&quot;}, null] 
+   * @return bonuses
+  **/
+  @ApiModelProperty(value = "An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length = 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\"month\": \"1\",\"amount\": \"200\"}, {\"month\": \"3\",\"amount\": \"2500\"}, null] ")
+  public List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> getBonuses() {
+    return bonuses;
+  }
+
+  public void setBonuses(List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses) {
+    this.bonuses = bonuses;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions firstBillingMonth(String firstBillingMonth) {
+    this.firstBillingMonth = firstBillingMonth;
+    return this;
+  }
+
+   /**
+   * Billing month in MM format. 
+   * @return firstBillingMonth
+  **/
+  @ApiModelProperty(value = "Billing month in MM format. ")
+  public String getFirstBillingMonth() {
+    return firstBillingMonth;
+  }
+
+  public void setFirstBillingMonth(String firstBillingMonth) {
+    this.firstBillingMonth = firstBillingMonth;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions numberOfInstallments(String numberOfInstallments) {
+    this.numberOfInstallments = numberOfInstallments;
+    return this;
+  }
+
+   /**
+   * Number of Installments. 
+   * @return numberOfInstallments
+  **/
+  @ApiModelProperty(value = "Number of Installments. ")
+  public String getNumberOfInstallments() {
+    return numberOfInstallments;
+  }
+
+  public void setNumberOfInstallments(String numberOfInstallments) {
+    this.numberOfInstallments = numberOfInstallments;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions preApprovalType(String preApprovalType) {
+    this.preApprovalType = preApprovalType;
+    return this;
+  }
+
+   /**
+   * This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 &#x3D; Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 &#x3D; Negative card authorization (authorization-only with 0 or 1 amount) - 2 &#x3D; Reservation of authorization (authorization-only with amount) - 3 &#x3D; Cancel transaction - 4 &#x3D; Merchant-initiated reversal/refund transactions - 5 &#x3D; Cancel reservation of authorization - 6 &#x3D; Post authorization 
+   * @return preApprovalType
+  **/
+  @ApiModelProperty(value = "This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization ")
+  public String getPreApprovalType() {
+    return preApprovalType;
+  }
+
+  public void setPreApprovalType(String preApprovalType) {
+    this.preApprovalType = preApprovalType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +242,17 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
     return Objects.equals(this.paymentMethod, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.paymentMethod) &&
         Objects.equals(this.terminalId, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.terminalId) &&
         Objects.equals(this.businessName, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.businessName) &&
-        Objects.equals(this.businessNameKatakana, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.businessNameKatakana);
+        Objects.equals(this.businessNameKatakana, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.businessNameKatakana) &&
+        Objects.equals(this.businessNameEnglish, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.businessNameEnglish) &&
+        Objects.equals(this.bonuses, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.bonuses) &&
+        Objects.equals(this.firstBillingMonth, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.firstBillingMonth) &&
+        Objects.equals(this.numberOfInstallments, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.numberOfInstallments) &&
+        Objects.equals(this.preApprovalType, tssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.preApprovalType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentMethod, terminalId, businessName, businessNameKatakana);
+    return Objects.hash(paymentMethod, terminalId, businessName, businessNameKatakana, businessNameEnglish, bonuses, firstBillingMonth, numberOfInstallments, preApprovalType);
   }
 
 
@@ -140,10 +261,15 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions {\n");
     
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
-    sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (businessName != null) sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
+    if (businessNameKatakana != null) sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
+    if (businessNameEnglish != null) sb.append("    businessNameEnglish: ").append(toIndentedString(businessNameEnglish)).append("\n");
+    if (bonuses != null) sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
+    if (firstBillingMonth != null) sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");
+    if (numberOfInstallments != null) sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
+    if (preApprovalType != null) sb.append("    preApprovalType: ").append(toIndentedString(preApprovalType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +280,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

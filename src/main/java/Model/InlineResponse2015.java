@@ -15,8 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Kmsegressv2keysasymKeyInformation;
-import Model.Kmsegressv2keyssymClientReferenceInformation;
+import Model.InlineResponse2015Payloads;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,93 +26,197 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Egress Asymmetric Key Information Response. 
+ * InlineResponse2015
  */
-@ApiModel(description = "Egress Asymmetric Key Information Response. ")
 
 public class InlineResponse2015 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("eventDate")
+  private String eventDate = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("eventType")
+  private String eventType = null;
 
-  @SerializedName("clientReferenceInformation")
-  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
+  @SerializedName("organizationId")
+  private String organizationId = null;
 
-  @SerializedName("keyInformation")
-  private Kmsegressv2keysasymKeyInformation keyInformation = null;
+  @SerializedName("payloads")
+  private InlineResponse2015Payloads payloads = null;
 
-  public InlineResponse2015 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  @SerializedName("productId")
+  private String productId = null;
+
+  @SerializedName("requestType")
+  private String requestType = null;
+
+  @SerializedName("retryNumber")
+  private Integer retryNumber = null;
+
+  @SerializedName("transactionTraceId")
+  private String transactionTraceId = null;
+
+  @SerializedName("webhookId")
+  private String webhookId = null;
+
+  public InlineResponse2015 eventDate(String eventDate) {
+    this.eventDate = eventDate;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
-   * @return submitTimeUtc
+   * Date that the webhook was delivered
+   * @return eventDate
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "Date that the webhook was delivered")
+  public String getEventDate() {
+    return eventDate;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setEventDate(String eventDate) {
+    this.eventDate = eventDate;
   }
 
-  public InlineResponse2015 status(String status) {
-    this.status = status;
+  public InlineResponse2015 eventType(String eventType) {
+    this.eventType = eventType;
     return this;
   }
 
    /**
-   * The status of the submitted transaction. Possible values:  - ACCEPTED 
-   * @return status
+   * The event name the webhook was delivered for
+   * @return eventType
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:  - ACCEPTED ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(value = "The event name the webhook was delivered for")
+  public String getEventType() {
+    return eventType;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setEventType(String eventType) {
+    this.eventType = eventType;
   }
 
-  public InlineResponse2015 clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public InlineResponse2015 organizationId(String organizationId) {
+    this.organizationId = organizationId;
     return this;
   }
 
    /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * The Organization Identifier.
+   * @return organizationId
+  **/
+  @ApiModelProperty(value = "The Organization Identifier.")
+  public String getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(String organizationId) {
+    this.organizationId = organizationId;
+  }
+
+  public InlineResponse2015 payloads(InlineResponse2015Payloads payloads) {
+    this.payloads = payloads;
+    return this;
+  }
+
+   /**
+   * Get payloads
+   * @return payloads
   **/
   @ApiModelProperty(value = "")
-  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
+  public InlineResponse2015Payloads getPayloads() {
+    return payloads;
   }
 
-  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public void setPayloads(InlineResponse2015Payloads payloads) {
+    this.payloads = payloads;
   }
 
-  public InlineResponse2015 keyInformation(Kmsegressv2keysasymKeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public InlineResponse2015 productId(String productId) {
+    this.productId = productId;
     return this;
   }
 
    /**
-   * Get keyInformation
-   * @return keyInformation
+   * The product the webhook was delivered for
+   * @return productId
   **/
-  @ApiModelProperty(value = "")
-  public Kmsegressv2keysasymKeyInformation getKeyInformation() {
-    return keyInformation;
+  @ApiModelProperty(value = "The product the webhook was delivered for")
+  public String getProductId() {
+    return productId;
   }
 
-  public void setKeyInformation(Kmsegressv2keysasymKeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public InlineResponse2015 requestType(String requestType) {
+    this.requestType = requestType;
+    return this;
+  }
+
+   /**
+   * Identifies the the type of request
+   * @return requestType
+  **/
+  @ApiModelProperty(value = "Identifies the the type of request")
+  public String getRequestType() {
+    return requestType;
+  }
+
+  public void setRequestType(String requestType) {
+    this.requestType = requestType;
+  }
+
+  public InlineResponse2015 retryNumber(Integer retryNumber) {
+    this.retryNumber = retryNumber;
+    return this;
+  }
+
+   /**
+   * The number of retry attempts for a given webhook
+   * @return retryNumber
+  **/
+  @ApiModelProperty(value = "The number of retry attempts for a given webhook")
+  public Integer getRetryNumber() {
+    return retryNumber;
+  }
+
+  public void setRetryNumber(Integer retryNumber) {
+    this.retryNumber = retryNumber;
+  }
+
+  public InlineResponse2015 transactionTraceId(String transactionTraceId) {
+    this.transactionTraceId = transactionTraceId;
+    return this;
+  }
+
+   /**
+   * The identifier for the webhook
+   * @return transactionTraceId
+  **/
+  @ApiModelProperty(value = "The identifier for the webhook")
+  public String getTransactionTraceId() {
+    return transactionTraceId;
+  }
+
+  public void setTransactionTraceId(String transactionTraceId) {
+    this.transactionTraceId = transactionTraceId;
+  }
+
+  public InlineResponse2015 webhookId(String webhookId) {
+    this.webhookId = webhookId;
+    return this;
+  }
+
+   /**
+   * The identifier of the subscription
+   * @return webhookId
+  **/
+  @ApiModelProperty(value = "The identifier of the subscription")
+  public String getWebhookId() {
+    return webhookId;
+  }
+
+  public void setWebhookId(String webhookId) {
+    this.webhookId = webhookId;
   }
 
 
@@ -126,15 +229,20 @@ public class InlineResponse2015 {
       return false;
     }
     InlineResponse2015 inlineResponse2015 = (InlineResponse2015) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2015.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2015.status) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2015.clientReferenceInformation) &&
-        Objects.equals(this.keyInformation, inlineResponse2015.keyInformation);
+    return Objects.equals(this.eventDate, inlineResponse2015.eventDate) &&
+        Objects.equals(this.eventType, inlineResponse2015.eventType) &&
+        Objects.equals(this.organizationId, inlineResponse2015.organizationId) &&
+        Objects.equals(this.payloads, inlineResponse2015.payloads) &&
+        Objects.equals(this.productId, inlineResponse2015.productId) &&
+        Objects.equals(this.requestType, inlineResponse2015.requestType) &&
+        Objects.equals(this.retryNumber, inlineResponse2015.retryNumber) &&
+        Objects.equals(this.transactionTraceId, inlineResponse2015.transactionTraceId) &&
+        Objects.equals(this.webhookId, inlineResponse2015.webhookId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, clientReferenceInformation, keyInformation);
+    return Objects.hash(eventDate, eventType, organizationId, payloads, productId, requestType, retryNumber, transactionTraceId, webhookId);
   }
 
 
@@ -143,10 +251,15 @@ public class InlineResponse2015 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2015 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
+    if (eventDate != null) sb.append("    eventDate: ").append(toIndentedString(eventDate)).append("\n");
+    if (eventType != null) sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (payloads != null) sb.append("    payloads: ").append(toIndentedString(payloads)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    if (requestType != null) sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
+    if (retryNumber != null) sb.append("    retryNumber: ").append(toIndentedString(retryNumber)).append("\n");
+    if (transactionTraceId != null) sb.append("    transactionTraceId: ").append(toIndentedString(transactionTraceId)).append("\n");
+    if (webhookId != null) sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -157,10 +270,10 @@ public class InlineResponse2015 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

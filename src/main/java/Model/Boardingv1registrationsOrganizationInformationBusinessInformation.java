@@ -363,20 +363,20 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationBusinessInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
-    sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    businessContact: ").append(toIndentedString(businessContact)).append("\n");
-    sb.append("    technicalContact: ").append(toIndentedString(technicalContact)).append("\n");
-    sb.append("    emergencyContact: ").append(toIndentedString(emergencyContact)).append("\n");
-    sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (doingBusinessAs != null) sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (timeZone != null) sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    if (websiteUrl != null) sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (taxId != null) sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (businessContact != null) sb.append("    businessContact: ").append(toIndentedString(businessContact)).append("\n");
+    if (technicalContact != null) sb.append("    technicalContact: ").append(toIndentedString(technicalContact)).append("\n");
+    if (emergencyContact != null) sb.append("    emergencyContact: ").append(toIndentedString(emergencyContact)).append("\n");
+    if (merchantCategoryCode != null) sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -387,10 +387,10 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

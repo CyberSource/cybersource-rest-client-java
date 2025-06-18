@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Microformv2sessionsCheckoutApiInitialization;
+import Model.Microformv2sessionsTransientTokenResponseOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,22 +28,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. 
+ * This is a server-to-server API request to generate the capture context that can be used to initiate an instance of Microform on an acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. 
  */
-@ApiModel(description = "This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. ")
+@ApiModel(description = "This is a server-to-server API request to generate the capture context that can be used to initiate an instance of Microform on an acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. ")
 
 public class GenerateCaptureContextRequest {
+  @SerializedName("clientVersion")
+  private String clientVersion = null;
+
   @SerializedName("targetOrigins")
   private List<String> targetOrigins = null;
 
   @SerializedName("allowedCardNetworks")
   private List<String> allowedCardNetworks = null;
 
-  @SerializedName("clientVersion")
-  private String clientVersion = null;
+  @SerializedName("allowedPaymentTypes")
+  private List<String> allowedPaymentTypes = null;
 
-  @SerializedName("checkoutApiInitialization")
-  private Microformv2sessionsCheckoutApiInitialization checkoutApiInitialization = null;
+  @SerializedName("transientTokenResponseOptions")
+  private Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions = null;
+
+  public GenerateCaptureContextRequest clientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+    return this;
+  }
+
+   /**
+   * Specify the version of Microform that you want to use. 
+   * @return clientVersion
+  **/
+  @ApiModelProperty(value = "Specify the version of Microform that you want to use. ")
+  public String getClientVersion() {
+    return clientVersion;
+  }
+
+  public void setClientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+  }
 
   public GenerateCaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -59,10 +80,10 @@ public class GenerateCaptureContextRequest {
   }
 
    /**
-   * The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Microform is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080&lt;br&gt;&lt;br&gt;  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \&quot;https://example.com\&quot;,     \&quot;https://basket.example.com\&quot;,     \&quot;https://ecom.example.com\&quot;   ] 
+   * The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Microform is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080&lt;br&gt;&lt;br&gt;  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \&quot;https://example.com\&quot;,     \&quot;https://basket.example.com\&quot;,     \&quot;https://ecom.example.com\&quot;   ]&lt;br&gt;&lt;br&gt;  You can supply up to nine origins within the targetOrigins field for nested iframes. If the list of origins exceeds five ensure that you:   - Compare the list of origins in the v2/sessions targetOrigins field against the location.ancestorOrigins of the browser.    - Ensure that the count of origins and their content matches in both.  If any origins are absent or mismatched, the system will prevent Microform from loading and display a client-side error message. 
    * @return targetOrigins
   **/
-  @ApiModelProperty(value = "The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Microform is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080<br><br>  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \"https://example.com\",     \"https://basket.example.com\",     \"https://ecom.example.com\"   ] ")
+  @ApiModelProperty(value = "The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Microform is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080<br><br>  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \"https://example.com\",     \"https://basket.example.com\",     \"https://ecom.example.com\"   ]<br><br>  You can supply up to nine origins within the targetOrigins field for nested iframes. If the list of origins exceeds five ensure that you:   - Compare the list of origins in the v2/sessions targetOrigins field against the location.ancestorOrigins of the browser.    - Ensure that the count of origins and their content matches in both.  If any origins are absent or mismatched, the system will prevent Microform from loading and display a client-side error message. ")
   public List<String> getTargetOrigins() {
     return targetOrigins;
   }
@@ -85,10 +106,10 @@ public class GenerateCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET 
+   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/eCheck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/eCheck) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/eCheck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/eCheck) at least one card network should be specified in the allowedCardNetworks field in the capture context request. ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
@@ -97,40 +118,48 @@ public class GenerateCaptureContextRequest {
     this.allowedCardNetworks = allowedCardNetworks;
   }
 
-  public GenerateCaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
+  public GenerateCaptureContextRequest allowedPaymentTypes(List<String> allowedPaymentTypes) {
+    this.allowedPaymentTypes = allowedPaymentTypes;
+    return this;
+  }
+
+  public GenerateCaptureContextRequest addAllowedPaymentTypesItem(String allowedPaymentTypesItem) {
+    if (this.allowedPaymentTypes == null) {
+      this.allowedPaymentTypes = new ArrayList<String>();
+    }
+    this.allowedPaymentTypes.add(allowedPaymentTypesItem);
     return this;
   }
 
    /**
-   * Specify the version of Microform that you want to use. 
-   * @return clientVersion
+   * The payment types that are allowed for the merchant.    Possible values when launching Microform: - CARD - CHECK &lt;br&gt;&lt;br&gt; 
+   * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "Specify the version of Microform that you want to use. ")
-  public String getClientVersion() {
-    return clientVersion;
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Microform: - CARD - CHECK <br><br> ")
+  public List<String> getAllowedPaymentTypes() {
+    return allowedPaymentTypes;
   }
 
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
+  public void setAllowedPaymentTypes(List<String> allowedPaymentTypes) {
+    this.allowedPaymentTypes = allowedPaymentTypes;
   }
 
-  public GenerateCaptureContextRequest checkoutApiInitialization(Microformv2sessionsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
+  public GenerateCaptureContextRequest transientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
     return this;
   }
 
    /**
-   * Get checkoutApiInitialization
-   * @return checkoutApiInitialization
+   * Get transientTokenResponseOptions
+   * @return transientTokenResponseOptions
   **/
   @ApiModelProperty(value = "")
-  public Microformv2sessionsCheckoutApiInitialization getCheckoutApiInitialization() {
-    return checkoutApiInitialization;
+  public Microformv2sessionsTransientTokenResponseOptions getTransientTokenResponseOptions() {
+    return transientTokenResponseOptions;
   }
 
-  public void setCheckoutApiInitialization(Microformv2sessionsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
+  public void setTransientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
   }
 
 
@@ -143,15 +172,16 @@ public class GenerateCaptureContextRequest {
       return false;
     }
     GenerateCaptureContextRequest generateCaptureContextRequest = (GenerateCaptureContextRequest) o;
-    return Objects.equals(this.targetOrigins, generateCaptureContextRequest.targetOrigins) &&
+    return Objects.equals(this.clientVersion, generateCaptureContextRequest.clientVersion) &&
+        Objects.equals(this.targetOrigins, generateCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateCaptureContextRequest.allowedCardNetworks) &&
-        Objects.equals(this.clientVersion, generateCaptureContextRequest.clientVersion) &&
-        Objects.equals(this.checkoutApiInitialization, generateCaptureContextRequest.checkoutApiInitialization);
+        Objects.equals(this.allowedPaymentTypes, generateCaptureContextRequest.allowedPaymentTypes) &&
+        Objects.equals(this.transientTokenResponseOptions, generateCaptureContextRequest.transientTokenResponseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(targetOrigins, allowedCardNetworks, clientVersion, checkoutApiInitialization);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, transientTokenResponseOptions);
   }
 
 
@@ -160,10 +190,11 @@ public class GenerateCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateCaptureContextRequest {\n");
     
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
-    sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
-    sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
+    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
+    if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
+    if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -174,10 +205,10 @@ public class GenerateCaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

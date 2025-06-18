@@ -559,29 +559,29 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {\n");
     
-    sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
-    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
-    sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
-    sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
-    sb.append("    natureOfDispute: ").append(toIndentedString(natureOfDispute)).append("\n");
-    sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    sign: ").append(toIndentedString(sign)).append("\n");
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
-    sb.append("    originalSettlementTime: ").append(toIndentedString(originalSettlementTime)).append("\n");
-    sb.append("    trackingNumber: ").append(toIndentedString(trackingNumber)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    responseDueTime: ").append(toIndentedString(responseDueTime)).append("\n");
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    actionDescription: ").append(toIndentedString(actionDescription)).append("\n");
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
-    sb.append("    representmentCPTime: ").append(toIndentedString(representmentCPTime)).append("\n");
-    sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
-    sb.append("    eventRequestedTime: ").append(toIndentedString(eventRequestedTime)).append("\n");
-    sb.append("    preDisputeFlag: ").append(toIndentedString(preDisputeFlag)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
+    if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
+    if (natureOfDispute != null) sb.append("    natureOfDispute: ").append(toIndentedString(natureOfDispute)).append("\n");
+    if (alertType != null) sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (sign != null) sb.append("    sign: ").append(toIndentedString(sign)).append("\n");
+    if (action != null) sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    if (cardType != null) sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
+    if (originalSettlementTime != null) sb.append("    originalSettlementTime: ").append(toIndentedString(originalSettlementTime)).append("\n");
+    if (trackingNumber != null) sb.append("    trackingNumber: ").append(toIndentedString(trackingNumber)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (responseDueTime != null) sb.append("    responseDueTime: ").append(toIndentedString(responseDueTime)).append("\n");
+    if (time != null) sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    if (actionDescription != null) sb.append("    actionDescription: ").append(toIndentedString(actionDescription)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    if (representmentCPTime != null) sb.append("    representmentCPTime: ").append(toIndentedString(representmentCPTime)).append("\n");
+    if (applications != null) sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
+    if (eventRequestedTime != null) sb.append("    eventRequestedTime: ").append(toIndentedString(eventRequestedTime)).append("\n");
+    if (preDisputeFlag != null) sb.append("    preDisputeFlag: ").append(toIndentedString(preDisputeFlag)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -592,10 +592,10 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

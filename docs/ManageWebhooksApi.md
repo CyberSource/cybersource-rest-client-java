@@ -4,11 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
-[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
-[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
+[**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v2/webhooks/{webhookId} | Delete a Webhook Subscription
+[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v2/webhooks/{webhookId} | Get Details On a Single Webhook
+[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v2/webhooks | Get Details On All Created Webhooks
+[**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
+[**notificationSubscriptionsV2WebhooksWebhookIdPatch**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdPatch) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
+[**notificationSubscriptionsV2WebhooksWebhookIdStatusPut**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdStatusPut) | **PUT** /notification-subscriptions/v2/webhooks/{webhookId}/status | Update a Webhook Status
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
-[**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
 
 <a name="deleteWebhookSubscription"></a>
@@ -53,11 +55,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2004 getWebhookSubscriptionById(webhookId)
+> InlineResponse2014 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -73,7 +75,7 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The webhook Identifier
 try {
-    InlineResponse2004 result = apiInstance.getWebhookSubscriptionById(webhookId);
+    InlineResponse2014 result = apiInstance.getWebhookSubscriptionById(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionById");
@@ -89,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
@@ -98,11 +100,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> List&lt;InlineResponse2003&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
+> List&lt;InlineResponse2004&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -120,7 +122,7 @@ String organizationId = "organizationId_example"; // String | The Organization I
 String productId = "productId_example"; // String | The Product Identifier.
 String eventType = "eventType_example"; // String | The Event Type.
 try {
-    List<InlineResponse2003> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+    List<InlineResponse2004> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionsByOrg");
@@ -133,12 +135,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The Organization Identifier. |
- **productId** | **String**| The Product Identifier. |
- **eventType** | **String**| The Event Type. |
+ **productId** | **String**| The Product Identifier. | [optional]
+ **eventType** | **String**| The Event Type. | [optional]
 
 ### Return type
 
-[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
+[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -147,11 +149,148 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
+# **notificationSubscriptionsV1WebhooksWebhookIdPost**
+> InlineResponse2015 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
+
+Test a Webhook Configuration
+
+Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ManageWebhooksApi;
+
+
+ManageWebhooksApi apiInstance = new ManageWebhooksApi();
+String webhookId = "webhookId_example"; // String | The Webhook Identifier.
+try {
+    InlineResponse2015 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV1WebhooksWebhookIdPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The Webhook Identifier. |
+
+### Return type
+
+[**InlineResponse2015**](InlineResponse2015.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
+# **notificationSubscriptionsV2WebhooksWebhookIdPatch**
+> notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
+
+Update a Webhook Subscription
+
+Update a Webhook Subscription.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ManageWebhooksApi;
+
+
+ManageWebhooksApi apiInstance = new ManageWebhooksApi();
+String webhookId = "webhookId_example"; // String | The Webhook Identifier.
+UpdateWebhook updateWebhook = new UpdateWebhook(); // UpdateWebhook | The webhook payload or changes to apply.
+try {
+    apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV2WebhooksWebhookIdPatch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The Webhook Identifier. |
+ **updateWebhook** | [**UpdateWebhook**](UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="notificationSubscriptionsV2WebhooksWebhookIdStatusPut"></a>
+# **notificationSubscriptionsV2WebhooksWebhookIdStatusPut**
+> notificationSubscriptionsV2WebhooksWebhookIdStatusPut(webhookId, updateStatus)
+
+Update a Webhook Status
+
+Users can update the status of a webhook subscription by calling this endpoint.   The webhookId parameter in the URL path identifies the specific webhook subscription to be updated. The request body accepts the values ACTIVE or INACTIVE. If the subscription is set to INACTIVE, webhooks will not be delivered until the subscription is activated again. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ManageWebhooksApi;
+
+
+ManageWebhooksApi apiInstance = new ManageWebhooksApi();
+String webhookId = "webhookId_example"; // String | The Webhook Identifier.
+UpdateStatus updateStatus = new UpdateStatus(); // UpdateStatus | The status that the subscription should be updated to.
+try {
+    apiInstance.notificationSubscriptionsV2WebhooksWebhookIdStatusPut(webhookId, updateStatus);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV2WebhooksWebhookIdStatusPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The Webhook Identifier. |
+ **updateStatus** | [**UpdateStatus**](UpdateStatus.md)| The status that the subscription should be updated to. | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2015 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
+> InlineResponse2016 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
 
 Message Level Encryption
 
@@ -170,7 +309,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 SaveAsymEgressKey saveAsymEgressKey = new SaveAsymEgressKey(); // SaveAsymEgressKey | Provide egress Asymmetric key information to save (create or store)
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 try {
-    InlineResponse2015 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+    InlineResponse2016 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -189,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -198,51 +337,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="updateWebhookSubscription"></a>
-# **updateWebhookSubscription**
-> updateWebhookSubscription(webhookId, updateWebhookRequest)
-
-Update a Webhook Subscription
-
-Update the webhook subscription using PATCH.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.ManageWebhooksApi;
-
-
-ManageWebhooksApi apiInstance = new ManageWebhooksApi();
-String webhookId = "webhookId_example"; // String | The Webhook Identifier.
-UpdateWebhookRequest updateWebhookRequest = new UpdateWebhookRequest(); // UpdateWebhookRequest | The webhook payload or changes to apply.
-try {
-    apiInstance.updateWebhookSubscription(webhookId, updateWebhookRequest);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ManageWebhooksApi#updateWebhookSubscription");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The Webhook Identifier. |
- **updateWebhookRequest** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md)| The webhook payload or changes to apply. | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 

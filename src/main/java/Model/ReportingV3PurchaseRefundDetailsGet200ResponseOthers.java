@@ -207,13 +207,13 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseOthers {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseOthers {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    merchantData1: ").append(toIndentedString(merchantData1)).append("\n");
-    sb.append("    merchantData2: ").append(toIndentedString(merchantData2)).append("\n");
-    sb.append("    merchantData3: ").append(toIndentedString(merchantData3)).append("\n");
-    sb.append("    merchantData4: ").append(toIndentedString(merchantData4)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (merchantData1 != null) sb.append("    merchantData1: ").append(toIndentedString(merchantData1)).append("\n");
+    if (merchantData2 != null) sb.append("    merchantData2: ").append(toIndentedString(merchantData2)).append("\n");
+    if (merchantData3 != null) sb.append("    merchantData3: ").append(toIndentedString(merchantData3)).append("\n");
+    if (merchantData4 != null) sb.append("    merchantData4: ").append(toIndentedString(merchantData4)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseOthers {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

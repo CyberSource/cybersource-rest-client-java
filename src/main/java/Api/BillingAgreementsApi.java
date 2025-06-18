@@ -46,6 +46,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class BillingAgreementsApi {
     private static Logger logger = LogManager.getLogger(BillingAgreementsApi.class);
@@ -80,6 +82,16 @@ public class BillingAgreementsApi {
     public okhttp3.Call billingAgreementsDeRegistrationCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationAsync,billingAgreementsDeRegistrationWithHttpInfo,billingAgreementsDeRegistrationCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements/{id}"
@@ -154,7 +166,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2ModifyBillingAgreementPost201Response billingAgreementsDeRegistration(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2ModifyBillingAgreementPost201Response> resp = billingAgreementsDeRegistrationWithHttpInfo(modifyBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' ENDED");
         return resp.getData();
@@ -169,6 +180,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2ModifyBillingAgreementPost201Response> billingAgreementsDeRegistrationWithHttpInfo(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsDeRegistrationValidateBeforeCall(modifyBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2ModifyBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -222,6 +234,16 @@ public class BillingAgreementsApi {
     public okhttp3.Call billingAgreementsIntimationCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsIntimation,billingAgreementsIntimationAsync,billingAgreementsIntimationWithHttpInfo,billingAgreementsIntimationCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements/{id}/intimations"
@@ -296,7 +318,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response1> resp = billingAgreementsIntimationWithHttpInfo(intimateBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' ENDED");
         return resp.getData();
@@ -311,6 +332,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreditsPost201Response1> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsIntimationValidateBeforeCall(intimateBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -363,6 +385,16 @@ public class BillingAgreementsApi {
     public okhttp3.Call billingAgreementsRegistrationCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsRegistration,billingAgreementsRegistrationAsync,billingAgreementsRegistrationWithHttpInfo,billingAgreementsRegistrationCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements";
@@ -429,7 +461,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2CreateBillingAgreementPost201Response billingAgreementsRegistration(CreateBillingAgreement createBillingAgreement) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreateBillingAgreementPost201Response> resp = billingAgreementsRegistrationWithHttpInfo(createBillingAgreement);
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' ENDED");
         return resp.getData();
@@ -443,6 +474,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreateBillingAgreementPost201Response> billingAgreementsRegistrationWithHttpInfo(CreateBillingAgreement createBillingAgreement) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsRegistrationValidateBeforeCall(createBillingAgreement, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

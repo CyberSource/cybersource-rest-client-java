@@ -339,19 +339,19 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlements {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseSettlements {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    submissionTime: ").append(toIndentedString(submissionTime)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
-    sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    accountSuffix: ").append(toIndentedString(accountSuffix)).append("\n");
-    sb.append("    cybersourceBatchTime: ").append(toIndentedString(cybersourceBatchTime)).append("\n");
-    sb.append("    cybersourceBatchId: ").append(toIndentedString(cybersourceBatchId)).append("\n");
-    sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
-    sb.append("    debitNetwork: ").append(toIndentedString(debitNetwork)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (submissionTime != null) sb.append("    submissionTime: ").append(toIndentedString(submissionTime)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    if (walletType != null) sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (accountSuffix != null) sb.append("    accountSuffix: ").append(toIndentedString(accountSuffix)).append("\n");
+    if (cybersourceBatchTime != null) sb.append("    cybersourceBatchTime: ").append(toIndentedString(cybersourceBatchTime)).append("\n");
+    if (cybersourceBatchId != null) sb.append("    cybersourceBatchId: ").append(toIndentedString(cybersourceBatchId)).append("\n");
+    if (cardType != null) sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
+    if (debitNetwork != null) sb.append("    debitNetwork: ").append(toIndentedString(debitNetwork)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -362,10 +362,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlements {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

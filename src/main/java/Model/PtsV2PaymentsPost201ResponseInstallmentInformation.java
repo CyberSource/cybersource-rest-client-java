@@ -420,7 +420,7 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
 
    /**
    * Installment number when making payments in installments. Used along with &#x60;totalCount&#x60; to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as &#x60;sequence&#x60; &#x3D; 2 and &#x60;totalCount&#x60; &#x3D; 5.  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  #### CyberSource through VisaNet When you do not include this field in a request for a Crediario installment payment, CyberSource sends a value of 0 to the processor.  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 38-40 - Field: Installment Payment Number  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
-   * maximum: 99
+   * maximum: 999
    * @return sequence
   **/
   @ApiModelProperty(value = "Installment number when making payments in installments. Used along with `totalCount` to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as `sequence` = 2 and `totalCount` = 5.  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  #### CyberSource through VisaNet When you do not include this field in a request for a Crediario installment payment, CyberSource sends a value of 0 to the processor.  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 38-40 - Field: Installment Payment Number  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant's acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. ")
@@ -493,7 +493,7 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
 
    /**
    * Total number of installments when making payments in installments.  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  #### American Express Direct, Cielo, and Comercio Latino This value is the total number of installments you approved.  #### CyberSource Latin American Processing in Brazil This value is the total number of installments that you approved. The default is 1.  #### All Other Processors This value is used along with _sequence_ to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as _sequence_ &#x3D; 2 and _totalCount_ &#x3D; 5.  #### CyberSource through VisaNet For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 23-25 - Field: Number of Installments  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 7-8 - Field: Number of Installments  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR1 - Position: 7-8 - Field: Number of Installments  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR5 - Position: 20-22 - Field: Installment Total Count  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
-   * maximum: 99
+   * maximum: 999
    * @return totalCount
   **/
   @ApiModelProperty(value = "Total number of installments when making payments in installments.  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  #### American Express Direct, Cielo, and Comercio Latino This value is the total number of installments you approved.  #### CyberSource Latin American Processing in Brazil This value is the total number of installments that you approved. The default is 1.  #### All Other Processors This value is used along with _sequence_ to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as _sequence_ = 2 and _totalCount_ = 5.  #### CyberSource through VisaNet For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 23-25 - Field: Number of Installments  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 7-8 - Field: Number of Installments  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR1 - Position: 7-8 - Field: Number of Installments  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR5 - Position: 20-22 - Field: Installment Total Count  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant's acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. ")
@@ -626,32 +626,32 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseInstallmentInformation {\n");
     
-    sb.append("    additionalCosts: ").append(toIndentedString(additionalCosts)).append("\n");
-    sb.append("    additionalCostsPercentage: ").append(toIndentedString(additionalCostsPercentage)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    amountFunded: ").append(toIndentedString(amountFunded)).append("\n");
-    sb.append("    amountRequestedPercentage: ").append(toIndentedString(amountRequestedPercentage)).append("\n");
-    sb.append("    annualFinancingCost: ").append(toIndentedString(annualFinancingCost)).append("\n");
-    sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
-    sb.append("    expenses: ").append(toIndentedString(expenses)).append("\n");
-    sb.append("    expensesPercentage: ").append(toIndentedString(expensesPercentage)).append("\n");
-    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
-    sb.append("    feesPercentage: ").append(toIndentedString(feesPercentage)).append("\n");
-    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    insurance: ").append(toIndentedString(insurance)).append("\n");
-    sb.append("    insurancePercentage: ").append(toIndentedString(insurancePercentage)).append("\n");
-    sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
-    sb.append("    monthlyInterestRate: ").append(toIndentedString(monthlyInterestRate)).append("\n");
-    sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
-    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
-    sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
-    sb.append("    taxesPercentage: ").append(toIndentedString(taxesPercentage)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    minimumTotalCount: ").append(toIndentedString(minimumTotalCount)).append("\n");
-    sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
-    sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
-    sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
+    if (additionalCosts != null) sb.append("    additionalCosts: ").append(toIndentedString(additionalCosts)).append("\n");
+    if (additionalCostsPercentage != null) sb.append("    additionalCostsPercentage: ").append(toIndentedString(additionalCostsPercentage)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (amountFunded != null) sb.append("    amountFunded: ").append(toIndentedString(amountFunded)).append("\n");
+    if (amountRequestedPercentage != null) sb.append("    amountRequestedPercentage: ").append(toIndentedString(amountRequestedPercentage)).append("\n");
+    if (annualFinancingCost != null) sb.append("    annualFinancingCost: ").append(toIndentedString(annualFinancingCost)).append("\n");
+    if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
+    if (expenses != null) sb.append("    expenses: ").append(toIndentedString(expenses)).append("\n");
+    if (expensesPercentage != null) sb.append("    expensesPercentage: ").append(toIndentedString(expensesPercentage)).append("\n");
+    if (fees != null) sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
+    if (feesPercentage != null) sb.append("    feesPercentage: ").append(toIndentedString(feesPercentage)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (insurance != null) sb.append("    insurance: ").append(toIndentedString(insurance)).append("\n");
+    if (insurancePercentage != null) sb.append("    insurancePercentage: ").append(toIndentedString(insurancePercentage)).append("\n");
+    if (invoiceData != null) sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
+    if (monthlyInterestRate != null) sb.append("    monthlyInterestRate: ").append(toIndentedString(monthlyInterestRate)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+    if (taxes != null) sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
+    if (taxesPercentage != null) sb.append("    taxesPercentage: ").append(toIndentedString(taxesPercentage)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    if (minimumTotalCount != null) sb.append("    minimumTotalCount: ").append(toIndentedString(minimumTotalCount)).append("\n");
+    if (maximumTotalCount != null) sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
+    if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -662,10 +662,10 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

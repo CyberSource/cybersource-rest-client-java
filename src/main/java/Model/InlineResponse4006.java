@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4006Details;
+import Model.InlineResponse4006Fields;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,71 +26,47 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.joda.time.DateTime;
 
 /**
- * InlineResponse4006
+ * Error Bean
  */
+@ApiModel(description = "Error Bean")
 
 public class InlineResponse4006 {
-  @SerializedName("submitTimeUtc")
-  private DateTime submitTimeUtc = null;
-
-  @SerializedName("status")
-  private String status = null;
-
-  @SerializedName("reason")
-  private String reason = null;
+  @SerializedName("code")
+  private String code = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("details")
-  private List<InlineResponse4006Details> details = null;
+  @SerializedName("localizationKey")
+  private String localizationKey = null;
 
-   /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public DateTime getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
+  @SerializedName("correlationId")
+  private String correlationId = null;
 
-  public InlineResponse4006 status(String status) {
-    this.status = status;
+  @SerializedName("detail")
+  private String detail = null;
+
+  @SerializedName("fields")
+  private List<InlineResponse4006Fields> fields = null;
+
+  public InlineResponse4006 code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * The http status description of the submitted request.
-   * @return status
+   * Error code
+   * @return code
   **/
-  @ApiModelProperty(example = "BAD_REQUEST", value = "The http status description of the submitted request.")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(required = true, value = "Error code")
+  public String getCode() {
+    return code;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse4006 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setCode(String code) {
+    this.code = code;
   }
 
   public InlineResponse4006 message(String message) {
@@ -99,10 +75,10 @@ public class InlineResponse4006 {
   }
 
    /**
-   * Descriptive message for the error.
+   * Error message
    * @return message
   **/
-  @ApiModelProperty(value = "Descriptive message for the error.")
+  @ApiModelProperty(required = true, value = "Error message")
   public String getMessage() {
     return message;
   }
@@ -111,30 +87,84 @@ public class InlineResponse4006 {
     this.message = message;
   }
 
-  public InlineResponse4006 details(List<InlineResponse4006Details> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse4006 addDetailsItem(InlineResponse4006Details detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4006Details>();
-    }
-    this.details.add(detailsItem);
+  public InlineResponse4006 localizationKey(String localizationKey) {
+    this.localizationKey = localizationKey;
     return this;
   }
 
    /**
-   * Get details
-   * @return details
+   * Localization Key Name
+   * @return localizationKey
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse4006Details> getDetails() {
-    return details;
+  @ApiModelProperty(value = "Localization Key Name")
+  public String getLocalizationKey() {
+    return localizationKey;
   }
 
-  public void setDetails(List<InlineResponse4006Details> details) {
-    this.details = details;
+  public void setLocalizationKey(String localizationKey) {
+    this.localizationKey = localizationKey;
+  }
+
+  public InlineResponse4006 correlationId(String correlationId) {
+    this.correlationId = correlationId;
+    return this;
+  }
+
+   /**
+   * Correlation Id
+   * @return correlationId
+  **/
+  @ApiModelProperty(value = "Correlation Id")
+  public String getCorrelationId() {
+    return correlationId;
+  }
+
+  public void setCorrelationId(String correlationId) {
+    this.correlationId = correlationId;
+  }
+
+  public InlineResponse4006 detail(String detail) {
+    this.detail = detail;
+    return this;
+  }
+
+   /**
+   * Error Detail
+   * @return detail
+  **/
+  @ApiModelProperty(value = "Error Detail")
+  public String getDetail() {
+    return detail;
+  }
+
+  public void setDetail(String detail) {
+    this.detail = detail;
+  }
+
+  public InlineResponse4006 fields(List<InlineResponse4006Fields> fields) {
+    this.fields = fields;
+    return this;
+  }
+
+  public InlineResponse4006 addFieldsItem(InlineResponse4006Fields fieldsItem) {
+    if (this.fields == null) {
+      this.fields = new ArrayList<InlineResponse4006Fields>();
+    }
+    this.fields.add(fieldsItem);
+    return this;
+  }
+
+   /**
+   * Error fields List
+   * @return fields
+  **/
+  @ApiModelProperty(value = "Error fields List")
+  public List<InlineResponse4006Fields> getFields() {
+    return fields;
+  }
+
+  public void setFields(List<InlineResponse4006Fields> fields) {
+    this.fields = fields;
   }
 
 
@@ -147,16 +177,17 @@ public class InlineResponse4006 {
       return false;
     }
     InlineResponse4006 inlineResponse4006 = (InlineResponse4006) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse4006.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse4006.status) &&
-        Objects.equals(this.reason, inlineResponse4006.reason) &&
+    return Objects.equals(this.code, inlineResponse4006.code) &&
         Objects.equals(this.message, inlineResponse4006.message) &&
-        Objects.equals(this.details, inlineResponse4006.details);
+        Objects.equals(this.localizationKey, inlineResponse4006.localizationKey) &&
+        Objects.equals(this.correlationId, inlineResponse4006.correlationId) &&
+        Objects.equals(this.detail, inlineResponse4006.detail) &&
+        Objects.equals(this.fields, inlineResponse4006.fields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, details);
+    return Objects.hash(code, message, localizationKey, correlationId, detail, fields);
   }
 
 
@@ -165,11 +196,12 @@ public class InlineResponse4006 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4006 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (localizationKey != null) sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
+    if (detail != null) sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+    if (fields != null) sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +212,10 @@ public class InlineResponse4006 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

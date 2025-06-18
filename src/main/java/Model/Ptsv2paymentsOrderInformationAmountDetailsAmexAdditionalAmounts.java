@@ -96,8 +96,8 @@ public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

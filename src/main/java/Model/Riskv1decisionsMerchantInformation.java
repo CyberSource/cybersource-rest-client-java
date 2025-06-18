@@ -97,8 +97,8 @@ public class Riskv1decisionsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsMerchantInformation {\n");
     
-    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
-    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Riskv1decisionsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

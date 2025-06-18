@@ -60,7 +60,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
    * @return enabledMessage
   **/
   @ApiModelProperty(value = "Flag to indicate if a valid IVR transaction was detected. ")
-  public Boolean isEnabledMessage() {
+  public Boolean EnabledMessage() {
     return enabledMessage;
   }
 
@@ -96,7 +96,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
    * @return encryptionMandatory
   **/
   @ApiModelProperty(value = "Flag to indicate if the ACS requires the credential to be encrypted. ")
-  public Boolean isEncryptionMandatory() {
+  public Boolean EncryptionMandatory() {
     return encryptionMandatory;
   }
 
@@ -206,13 +206,13 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {\n");
     
-    sb.append("    enabledMessage: ").append(toIndentedString(enabledMessage)).append("\n");
-    sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");
-    sb.append("    encryptionMandatory: ").append(toIndentedString(encryptionMandatory)).append("\n");
-    sb.append("    encryptionType: ").append(toIndentedString(encryptionType)).append("\n");
-    sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    prompt: ").append(toIndentedString(prompt)).append("\n");
-    sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+    if (enabledMessage != null) sb.append("    enabledMessage: ").append(toIndentedString(enabledMessage)).append("\n");
+    if (encryptionKey != null) sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");
+    if (encryptionMandatory != null) sb.append("    encryptionMandatory: ").append(toIndentedString(encryptionMandatory)).append("\n");
+    if (encryptionType != null) sb.append("    encryptionType: ").append(toIndentedString(encryptionType)).append("\n");
+    if (label != null) sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    if (prompt != null) sb.append("    prompt: ").append(toIndentedString(prompt)).append("\n");
+    if (statusMessage != null) sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

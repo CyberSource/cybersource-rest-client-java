@@ -42,6 +42,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class InvoiceSettingsApi {
     private static Logger logger = LogManager.getLogger(InvoiceSettingsApi.class);
@@ -76,6 +78,16 @@ public class InvoiceSettingsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getInvoiceSettings,getInvoiceSettingsAsync,getInvoiceSettingsWithHttpInfo,getInvoiceSettingsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -136,7 +148,6 @@ public class InvoiceSettingsApi {
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException {
         logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
         logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
         return resp.getData();
@@ -149,6 +160,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> getInvoiceSettingsWithHttpInfo() throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -199,6 +211,16 @@ public class InvoiceSettingsApi {
     public okhttp3.Call updateInvoiceSettingsCall(InvoiceSettingsRequest invoiceSettingsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(invoiceSettingsRequest, InvoiceSettingsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "updateInvoiceSettings,updateInvoiceSettingsAsync,updateInvoiceSettingsWithHttpInfo,updateInvoiceSettingsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoiceSettings";
@@ -265,7 +287,6 @@ public class InvoiceSettingsApi {
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
         logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");
         return resp.getData();
@@ -279,6 +300,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> updateInvoiceSettingsWithHttpInfo(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

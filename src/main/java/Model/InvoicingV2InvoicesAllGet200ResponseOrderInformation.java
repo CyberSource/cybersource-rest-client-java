@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InvoicingV2InvoicesAllGet200ResponseOrderInformation
+ * Contains all of the order-related fields, such as the amount and line item details.
  */
+@ApiModel(description = "Contains all of the order-related fields, such as the amount and line item details.")
 
 public class InvoicingV2InvoicesAllGet200ResponseOrderInformation {
   @SerializedName("amountDetails")
@@ -75,7 +76,7 @@ public class InvoicingV2InvoicesAllGet200ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesAllGet200ResponseOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +87,10 @@ public class InvoicingV2InvoicesAllGet200ResponseOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

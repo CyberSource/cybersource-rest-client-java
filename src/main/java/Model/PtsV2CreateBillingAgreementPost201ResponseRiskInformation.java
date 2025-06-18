@@ -75,7 +75,7 @@ public class PtsV2CreateBillingAgreementPost201ResponseRiskInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateBillingAgreementPost201ResponseRiskInformation {\n");
     
-    sb.append("    processorResults: ").append(toIndentedString(processorResults)).append("\n");
+    if (processorResults != null) sb.append("    processorResults: ").append(toIndentedString(processorResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PtsV2CreateBillingAgreementPost201ResponseRiskInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

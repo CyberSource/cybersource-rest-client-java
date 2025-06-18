@@ -121,9 +121,9 @@ public class Flexv2sessionsFieldsOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Flexv2sessionsFieldsOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class Flexv2sessionsFieldsOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

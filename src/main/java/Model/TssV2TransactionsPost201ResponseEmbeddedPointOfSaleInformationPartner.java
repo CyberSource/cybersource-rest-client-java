@@ -74,7 +74,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartn
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner {\n");
     
-    sb.append("    originalTransactionId: ").append(toIndentedString(originalTransactionId)).append("\n");
+    if (originalTransactionId != null) sb.append("    originalTransactionId: ").append(toIndentedString(originalTransactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartn
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

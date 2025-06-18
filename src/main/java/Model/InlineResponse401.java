@@ -15,8 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse401Fields;
-import Model.InlineResponse401Links;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,149 +23,40 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse401
  */
 
 public class InlineResponse401 {
-  @SerializedName("_links")
-  private InlineResponse401Links links = null;
-
-  @SerializedName("code")
-  private String code = null;
-
-  @SerializedName("correlationId")
-  private String correlationId = null;
-
-  @SerializedName("detail")
-  private String detail = null;
-
-  @SerializedName("fields")
-  private List<InlineResponse401Fields> fields = null;
-
-  @SerializedName("localizationKey")
-  private String localizationKey = null;
+  @SerializedName("status")
+  private String status = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse401 links(InlineResponse401Links links) {
-    this.links = links;
+  @SerializedName("code")
+  private String code = null;
+
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
+
+  public InlineResponse401 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * The status of the submitted request.   Possible values: - UNAUTHORIZED
+   * @return status
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse401Links getLinks() {
-    return links;
+  @ApiModelProperty(value = "The status of the submitted request.   Possible values: - UNAUTHORIZED")
+  public String getStatus() {
+    return status;
   }
 
-  public void setLinks(InlineResponse401Links links) {
-    this.links = links;
-  }
-
-  public InlineResponse401 code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR 
-   * @return code
-  **/
-  @ApiModelProperty(value = "Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR ")
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public InlineResponse401 correlationId(String correlationId) {
-    this.correlationId = correlationId;
-    return this;
-  }
-
-   /**
-   * Get correlationId
-   * @return correlationId
-  **/
-  @ApiModelProperty(example = "c7b74452a7314f9ca28197d1084447a5", value = "")
-  public String getCorrelationId() {
-    return correlationId;
-  }
-
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
-  }
-
-  public InlineResponse401 detail(String detail) {
-    this.detail = detail;
-    return this;
-  }
-
-   /**
-   * Get detail
-   * @return detail
-  **/
-  @ApiModelProperty(example = "One or more fields failed validation", value = "")
-  public String getDetail() {
-    return detail;
-  }
-
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
-
-  public InlineResponse401 fields(List<InlineResponse401Fields> fields) {
-    this.fields = fields;
-    return this;
-  }
-
-  public InlineResponse401 addFieldsItem(InlineResponse401Fields fieldsItem) {
-    if (this.fields == null) {
-      this.fields = new ArrayList<InlineResponse401Fields>();
-    }
-    this.fields.add(fieldsItem);
-    return this;
-  }
-
-   /**
-   * Get fields
-   * @return fields
-  **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse401Fields> getFields() {
-    return fields;
-  }
-
-  public void setFields(List<InlineResponse401Fields> fields) {
-    this.fields = fields;
-  }
-
-  public InlineResponse401 localizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported 
-   * @return localizationKey
-  **/
-  @ApiModelProperty(value = "Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported ")
-  public String getLocalizationKey() {
-    return localizationKey;
-  }
-
-  public void setLocalizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public InlineResponse401 message(String message) {
@@ -176,16 +65,52 @@ public class InlineResponse401 {
   }
 
    /**
-   * Get message
+   * The detail message related to the status and reason listed above.
    * @return message
   **/
-  @ApiModelProperty(example = "Field validation error", value = "")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
   public String getMessage() {
     return message;
   }
 
   public void setMessage(String message) {
     this.message = message;
+  }
+
+  public InlineResponse401 code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * An optional short string which identifies the exact error.
+   * @return code
+  **/
+  @ApiModelProperty(value = "An optional short string which identifies the exact error.")
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+  public InlineResponse401 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
   }
 
 
@@ -198,18 +123,15 @@ public class InlineResponse401 {
       return false;
     }
     InlineResponse401 inlineResponse401 = (InlineResponse401) o;
-    return Objects.equals(this.links, inlineResponse401.links) &&
+    return Objects.equals(this.status, inlineResponse401.status) &&
+        Objects.equals(this.message, inlineResponse401.message) &&
         Objects.equals(this.code, inlineResponse401.code) &&
-        Objects.equals(this.correlationId, inlineResponse401.correlationId) &&
-        Objects.equals(this.detail, inlineResponse401.detail) &&
-        Objects.equals(this.fields, inlineResponse401.fields) &&
-        Objects.equals(this.localizationKey, inlineResponse401.localizationKey) &&
-        Objects.equals(this.message, inlineResponse401.message);
+        Objects.equals(this.submitTimeUtc, inlineResponse401.submitTimeUtc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, code, correlationId, detail, fields, localizationKey, message);
+    return Objects.hash(status, message, code, submitTimeUtc);
   }
 
 
@@ -218,13 +140,10 @@ public class InlineResponse401 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse401 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-    sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -235,10 +154,10 @@ public class InlineResponse401 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

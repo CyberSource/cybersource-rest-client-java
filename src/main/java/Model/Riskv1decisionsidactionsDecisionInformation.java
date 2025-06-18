@@ -96,8 +96,8 @@ public class Riskv1decisionsidactionsDecisionInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsidactionsDecisionInformation {\n");
     
-    sb.append("    decision: ").append(toIndentedString(decision)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (decision != null) sb.append("    decision: ").append(toIndentedString(decision)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1decisionsidactionsDecisionInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

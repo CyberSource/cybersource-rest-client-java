@@ -185,11 +185,11 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurations {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurations {\n");
     
-    sb.append("    products: ").append(toIndentedString(products)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (products != null) sb.append("    products: ").append(toIndentedString(products)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurations {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

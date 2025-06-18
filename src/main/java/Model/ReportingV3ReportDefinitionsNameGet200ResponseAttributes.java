@@ -132,7 +132,7 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
    * @return _default
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDefault() {
+  public Boolean Default() {
     return _default;
   }
 
@@ -150,7 +150,7 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
    * @return required
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequired() {
+  public Boolean Required() {
     return required;
   }
 
@@ -206,13 +206,13 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
-    sb.append("    supportedType: ").append(toIndentedString(supportedType)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (filterType != null) sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
+    if (_default != null) sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    if (required != null) sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    if (supportedType != null) sb.append("    supportedType: ").append(toIndentedString(supportedType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -29,9 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Contains all of the order-related fields for the invoice.
+ * Contains all of the order-related fields, such as the amount and line item details.
  */
-@ApiModel(description = "Contains all of the order-related fields for the invoice.")
+@ApiModel(description = "Contains all of the order-related fields, such as the amount and line item details.")
 
 public class InvoicingV2InvoicesPost201ResponseOrderInformation {
   @SerializedName("amountDetails")
@@ -72,10 +72,10 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformation {
   }
 
    /**
-   * Get lineItems
+   * List of the line items from the order.
    * @return lineItems
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "List of the line items from the order.")
   public List<Invoicingv2invoicesOrderInformationLineItems> getLineItems() {
     return lineItems;
   }
@@ -109,8 +109,8 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,10 +121,10 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

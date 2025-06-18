@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformation;
 import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsUnscheduledPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseBuyerInformation;
 import Model.TssV2TransactionsGet200ResponseClientReferenceInformation;
@@ -38,7 +39,6 @@ import Model.TssV2TransactionsGet200ResponseRecurringPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseRiskInformation;
 import Model.TssV2TransactionsGet200ResponseSenderInformation;
 import Model.TssV2TransactionsGet200ResponseTokenInformation;
-import Model.TssV2TransactionsGet200ResponseUnscheduledPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -119,7 +119,7 @@ public class TssV2TransactionsGet200Response {
   private TssV2TransactionsGet200ResponsePayoutOptions payoutOptions = null;
 
   @SerializedName("unscheduledPaymentInformation")
-  private TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation = null;
+  private Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation = null;
 
   @SerializedName("processingInformation")
   private TssV2TransactionsGet200ResponseProcessingInformation processingInformation = null;
@@ -531,7 +531,7 @@ public class TssV2TransactionsGet200Response {
     this.payoutOptions = payoutOptions;
   }
 
-  public TssV2TransactionsGet200Response unscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+  public TssV2TransactionsGet200Response unscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
     this.unscheduledPaymentInformation = unscheduledPaymentInformation;
     return this;
   }
@@ -541,11 +541,11 @@ public class TssV2TransactionsGet200Response {
    * @return unscheduledPaymentInformation
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
+  public Ptsv2paymentsUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
     return unscheduledPaymentInformation;
   }
 
-  public void setUnscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+  public void setUnscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
     this.unscheduledPaymentInformation = unscheduledPaymentInformation;
   }
 
@@ -746,36 +746,36 @@ public class TssV2TransactionsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200Response {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    rootId: ").append(toIndentedString(rootId)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
-    sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
-    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
-    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
-    sb.append("    fraudMarkingInformation: ").append(toIndentedString(fraudMarkingInformation)).append("\n");
-    sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
-    sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
-    sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
-    sb.append("    unscheduledPaymentInformation: ").append(toIndentedString(unscheduledPaymentInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
-    sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
-    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
-    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
-    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (rootId != null) sb.append("    rootId: ").append(toIndentedString(rootId)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (submitTimeUTC != null) sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (applicationInformation != null) sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (installmentInformation != null) sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    if (fraudMarkingInformation != null) sb.append("    fraudMarkingInformation: ").append(toIndentedString(fraudMarkingInformation)).append("\n");
+    if (healthCareInformation != null) sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
+    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (paymentInsightsInformation != null) sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
+    if (payoutOptions != null) sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
+    if (unscheduledPaymentInformation != null) sb.append("    unscheduledPaymentInformation: ").append(toIndentedString(unscheduledPaymentInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (recurringPaymentInformation != null) sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -786,10 +786,10 @@ public class TssV2TransactionsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

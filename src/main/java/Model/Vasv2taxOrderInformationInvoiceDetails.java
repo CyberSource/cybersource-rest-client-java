@@ -74,7 +74,7 @@ public class Vasv2taxOrderInformationInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Vasv2taxOrderInformationInvoiceDetails {\n");
     
-    sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
+    if (invoiceDate != null) sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Vasv2taxOrderInformationInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

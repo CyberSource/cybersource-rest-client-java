@@ -74,7 +74,7 @@ public class DmConfigOrganization {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigOrganization {\n");
     
-    sb.append("    hierarchyGroup: ").append(toIndentedString(hierarchyGroup)).append("\n");
+    if (hierarchyGroup != null) sb.append("    hierarchyGroup: ").append(toIndentedString(hierarchyGroup)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class DmConfigOrganization {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

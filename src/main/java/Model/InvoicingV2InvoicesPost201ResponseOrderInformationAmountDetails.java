@@ -25,12 +25,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
- * Contains all of the amount-related fields in the invoice.
+ * Contains all of the amount-related fields.
  */
-@ApiModel(description = "Contains all of the amount-related fields in the invoice.")
+@ApiModel(description = "Contains all of the amount-related fields.")
 
 public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
@@ -46,13 +45,13 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
   private String discountAmount = null;
 
   @SerializedName("discountPercent")
-  private BigDecimal discountPercent = null;
+  private String discountPercent = null;
 
   @SerializedName("subAmount")
-  private BigDecimal subAmount = null;
+  private String subAmount = null;
 
   @SerializedName("minimumPartialAmount")
-  private BigDecimal minimumPartialAmount = null;
+  private String minimumPartialAmount = null;
 
   @SerializedName("taxDetails")
   private Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails taxDetails = null;
@@ -66,10 +65,10 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
   }
 
    /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or &#x60;orderInformation.lineItems[].unitPrice&#x60; for the order.  #### Invoicing Required for creating a new invoice.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or &#x60;orderInformation.lineItems[].unitPrice&#x60; for the order.  #### Invoicing / Pay By Link Required for creating a new invoice or payment link.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
    * @return totalAmount
   **/
-  @ApiModelProperty(value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing Required for creating a new invoice.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. ")
+  @ApiModelProperty(value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing / Pay By Link Required for creating a new invoice or payment link.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. ")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -132,43 +131,43 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
     this.discountAmount = discountAmount;
   }
 
-  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails discountPercent(BigDecimal discountPercent) {
+  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails discountPercent(String discountPercent) {
     this.discountPercent = discountPercent;
     return this;
   }
 
    /**
-   * The total discount percentage applied to the invoice.
+   * The total discount percentage applied to the order.
    * @return discountPercent
   **/
-  @ApiModelProperty(value = "The total discount percentage applied to the invoice.")
-  public BigDecimal getDiscountPercent() {
+  @ApiModelProperty(value = "The total discount percentage applied to the order.")
+  public String getDiscountPercent() {
     return discountPercent;
   }
 
-  public void setDiscountPercent(BigDecimal discountPercent) {
+  public void setDiscountPercent(String discountPercent) {
     this.discountPercent = discountPercent;
   }
 
-  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails subAmount(BigDecimal subAmount) {
+  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails subAmount(String subAmount) {
     this.subAmount = subAmount;
     return this;
   }
 
    /**
-   * Sub-amount of the invoice.
+   * Sub-amount of the order.
    * @return subAmount
   **/
-  @ApiModelProperty(value = "Sub-amount of the invoice.")
-  public BigDecimal getSubAmount() {
+  @ApiModelProperty(value = "Sub-amount of the order.")
+  public String getSubAmount() {
     return subAmount;
   }
 
-  public void setSubAmount(BigDecimal subAmount) {
+  public void setSubAmount(String subAmount) {
     this.subAmount = subAmount;
   }
 
-  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails minimumPartialAmount(BigDecimal minimumPartialAmount) {
+  public InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails minimumPartialAmount(String minimumPartialAmount) {
     this.minimumPartialAmount = minimumPartialAmount;
     return this;
   }
@@ -178,11 +177,11 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
    * @return minimumPartialAmount
   **/
   @ApiModelProperty(value = "The minimum partial amount required to pay the invoice.")
-  public BigDecimal getMinimumPartialAmount() {
+  public String getMinimumPartialAmount() {
     return minimumPartialAmount;
   }
 
-  public void setMinimumPartialAmount(BigDecimal minimumPartialAmount) {
+  public void setMinimumPartialAmount(String minimumPartialAmount) {
     this.minimumPartialAmount = minimumPartialAmount;
   }
 
@@ -254,15 +253,15 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
-    sb.append("    subAmount: ").append(toIndentedString(subAmount)).append("\n");
-    sb.append("    minimumPartialAmount: ").append(toIndentedString(minimumPartialAmount)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
-    sb.append("    freight: ").append(toIndentedString(freight)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (balanceAmount != null) sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountPercent != null) sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
+    if (subAmount != null) sb.append("    subAmount: ").append(toIndentedString(subAmount)).append("\n");
+    if (minimumPartialAmount != null) sb.append("    minimumPartialAmount: ").append(toIndentedString(minimumPartialAmount)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (freight != null) sb.append("    freight: ").append(toIndentedString(freight)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -273,10 +272,10 @@ public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -207,13 +207,13 @@ public class PtsV2PaymentsPost201ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
-    sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (reversal != null) sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
+    if (capture != null) sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class PtsV2PaymentsPost201ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

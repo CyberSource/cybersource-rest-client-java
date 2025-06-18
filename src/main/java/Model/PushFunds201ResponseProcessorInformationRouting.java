@@ -74,7 +74,7 @@ public class PushFunds201ResponseProcessorInformationRouting {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseProcessorInformationRouting {\n");
     
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PushFunds201ResponseProcessorInformationRouting {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

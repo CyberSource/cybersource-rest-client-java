@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.GetAllPlansResponseLinks;
 import Model.InvoicingV2InvoicesAllGet200ResponseInvoices;
+import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ import java.util.List;
 
 public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("_links")
-  private GetAllPlansResponseLinks links = null;
+  private InvoicingV2InvoicesAllGet200ResponseLinks links = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -45,7 +45,7 @@ public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("invoices")
   private List<InvoicingV2InvoicesAllGet200ResponseInvoices> invoices = null;
 
-  public InvoicingV2InvoicesAllGet200Response links(GetAllPlansResponseLinks links) {
+  public InvoicingV2InvoicesAllGet200Response links(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -55,11 +55,11 @@ public class InvoicingV2InvoicesAllGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public GetAllPlansResponseLinks getLinks() {
+  public InvoicingV2InvoicesAllGet200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(GetAllPlansResponseLinks links) {
+  public void setLinks(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
   }
 
@@ -152,10 +152,10 @@ public class InvoicingV2InvoicesAllGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesAllGet200Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    totalInvoices: ").append(toIndentedString(totalInvoices)).append("\n");
-    sb.append("    invoices: ").append(toIndentedString(invoices)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (totalInvoices != null) sb.append("    totalInvoices: ").append(toIndentedString(totalInvoices)).append("\n");
+    if (invoices != null) sb.append("    invoices: ").append(toIndentedString(invoices)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,10 +166,10 @@ public class InvoicingV2InvoicesAllGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -44,6 +44,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PushFundsApi {
     private static Logger logger = LogManager.getLogger(PushFundsApi.class);
@@ -83,6 +85,16 @@ public class PushFundsApi {
     public okhttp3.Call createPushFundsTransferCall(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pushFundsRequest, PushFundsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createPushFundsTransfer,createPushFundsTransferAsync,createPushFundsTransferWithHttpInfo,createPushFundsTransferCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v1/push-funds-transfer";
@@ -203,7 +215,6 @@ public class PushFundsApi {
      */
     public PushFunds201Response createPushFundsTransfer(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createPushFundsTransfer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PushFunds201Response> resp = createPushFundsTransferWithHttpInfo(pushFundsRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
         logger.info("CALL TO METHOD 'createPushFundsTransfer' ENDED");
         return resp.getData();
@@ -223,6 +234,7 @@ public class PushFundsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PushFunds201Response> createPushFundsTransferWithHttpInfo(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPushFundsTransferValidateBeforeCall(pushFundsRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, null, null);
         Type localVarReturnType = new TypeToken<PushFunds201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

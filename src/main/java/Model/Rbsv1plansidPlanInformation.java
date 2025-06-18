@@ -186,12 +186,12 @@ public class Rbsv1plansidPlanInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1plansidPlanInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    billingPeriod: ").append(toIndentedString(billingPeriod)).append("\n");
-    sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (billingPeriod != null) sb.append("    billingPeriod: ").append(toIndentedString(billingPeriod)).append("\n");
+    if (billingCycles != null) sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,10 +202,10 @@ public class Rbsv1plansidPlanInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

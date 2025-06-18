@@ -205,12 +205,12 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseRiskInformation {\n");
     
-    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
-    sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
-    sb.append("    passiveProfile: ").append(toIndentedString(passiveProfile)).append("\n");
-    sb.append("    passiveRules: ").append(toIndentedString(passiveRules)).append("\n");
-    sb.append("    score: ").append(toIndentedString(score)).append("\n");
-    sb.append("    localTime: ").append(toIndentedString(localTime)).append("\n");
+    if (profile != null) sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+    if (rules != null) sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+    if (passiveProfile != null) sb.append("    passiveProfile: ").append(toIndentedString(passiveProfile)).append("\n");
+    if (passiveRules != null) sb.append("    passiveRules: ").append(toIndentedString(passiveRules)).append("\n");
+    if (score != null) sb.append("    score: ").append(toIndentedString(score)).append("\n");
+    if (localTime != null) sb.append("    localTime: ").append(toIndentedString(localTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -221,10 +221,10 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

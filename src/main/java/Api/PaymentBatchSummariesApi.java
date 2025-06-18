@@ -41,6 +41,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PaymentBatchSummariesApi {
     private static Logger logger = LogManager.getLogger(PaymentBatchSummariesApi.class);
@@ -81,6 +83,16 @@ public class PaymentBatchSummariesApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentBatchSummary,getPaymentBatchSummaryAsync,getPaymentBatchSummaryWithHttpInfo,getPaymentBatchSummaryCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -171,7 +183,6 @@ public class PaymentBatchSummariesApi {
      */
     public ReportingV3PaymentBatchSummariesGet200Response getPaymentBatchSummary(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> resp = getPaymentBatchSummaryWithHttpInfo(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek);
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' ENDED");
         return resp.getData();
@@ -190,6 +201,7 @@ public class PaymentBatchSummariesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> getPaymentBatchSummaryWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPaymentBatchSummaryValidateBeforeCall(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3PaymentBatchSummariesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

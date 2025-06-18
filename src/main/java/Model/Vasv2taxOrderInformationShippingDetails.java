@@ -140,10 +140,10 @@ public class Vasv2taxOrderInformationShippingDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Vasv2taxOrderInformationShippingDetails {\n");
     
-    sb.append("    shipFromLocality: ").append(toIndentedString(shipFromLocality)).append("\n");
-    sb.append("    shipFromCountry: ").append(toIndentedString(shipFromCountry)).append("\n");
-    sb.append("    shipFromPostalCode: ").append(toIndentedString(shipFromPostalCode)).append("\n");
-    sb.append("    shipFromAdministrativeArea: ").append(toIndentedString(shipFromAdministrativeArea)).append("\n");
+    if (shipFromLocality != null) sb.append("    shipFromLocality: ").append(toIndentedString(shipFromLocality)).append("\n");
+    if (shipFromCountry != null) sb.append("    shipFromCountry: ").append(toIndentedString(shipFromCountry)).append("\n");
+    if (shipFromPostalCode != null) sb.append("    shipFromPostalCode: ").append(toIndentedString(shipFromPostalCode)).append("\n");
+    if (shipFromAdministrativeArea != null) sb.append("    shipFromAdministrativeArea: ").append(toIndentedString(shipFromAdministrativeArea)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Vasv2taxOrderInformationShippingDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

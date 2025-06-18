@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesOrderInformation;
+import Model.Invoicingv2invoicesProcessingInformation;
 import Model.Invoicingv2invoicesidInvoiceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -34,6 +35,9 @@ import java.io.IOException;
 public class UpdateInvoiceRequest {
   @SerializedName("customerInformation")
   private Invoicingv2invoicesCustomerInformation customerInformation = null;
+
+  @SerializedName("processingInformation")
+  private Invoicingv2invoicesProcessingInformation processingInformation = null;
 
   @SerializedName("invoiceInformation")
   private Invoicingv2invoicesidInvoiceInformation invoiceInformation = null;
@@ -59,6 +63,24 @@ public class UpdateInvoiceRequest {
     this.customerInformation = customerInformation;
   }
 
+  public UpdateInvoiceRequest processingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public UpdateInvoiceRequest invoiceInformation(Invoicingv2invoicesidInvoiceInformation invoiceInformation) {
     this.invoiceInformation = invoiceInformation;
     return this;
@@ -68,7 +90,7 @@ public class UpdateInvoiceRequest {
    * Get invoiceInformation
    * @return invoiceInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Invoicingv2invoicesidInvoiceInformation getInvoiceInformation() {
     return invoiceInformation;
   }
@@ -86,7 +108,7 @@ public class UpdateInvoiceRequest {
    * Get orderInformation
    * @return orderInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Invoicingv2invoicesOrderInformation getOrderInformation() {
     return orderInformation;
   }
@@ -106,13 +128,14 @@ public class UpdateInvoiceRequest {
     }
     UpdateInvoiceRequest updateInvoiceRequest = (UpdateInvoiceRequest) o;
     return Objects.equals(this.customerInformation, updateInvoiceRequest.customerInformation) &&
+        Objects.equals(this.processingInformation, updateInvoiceRequest.processingInformation) &&
         Objects.equals(this.invoiceInformation, updateInvoiceRequest.invoiceInformation) &&
         Objects.equals(this.orderInformation, updateInvoiceRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerInformation, invoiceInformation, orderInformation);
+    return Objects.hash(customerInformation, processingInformation, invoiceInformation, orderInformation);
   }
 
 
@@ -121,9 +144,10 @@ public class UpdateInvoiceRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateInvoiceRequest {\n");
     
-    sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
-    sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +158,10 @@ public class UpdateInvoiceRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

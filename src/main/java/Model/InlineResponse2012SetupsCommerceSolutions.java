@@ -119,9 +119,9 @@ public class InlineResponse2012SetupsCommerceSolutions {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsCommerceSolutions {\n");
     
-    sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
-    sb.append("    accountUpdater: ").append(toIndentedString(accountUpdater)).append("\n");
-    sb.append("    binLookup: ").append(toIndentedString(binLookup)).append("\n");
+    if (tokenManagement != null) sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
+    if (accountUpdater != null) sb.append("    accountUpdater: ").append(toIndentedString(accountUpdater)).append("\n");
+    if (binLookup != null) sb.append("    binLookup: ").append(toIndentedString(binLookup)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class InlineResponse2012SetupsCommerceSolutions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

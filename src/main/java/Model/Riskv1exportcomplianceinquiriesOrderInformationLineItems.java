@@ -61,10 +61,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationLineItems {
   }
 
    /**
-   * Per-item price of the product. This value for this field cannot be negative.  You must include either this field or the request-level field &#x60;orderInformation.amountDetails.totalAmount&#x60; in your request.  You can include a decimal point (.), but you cannot include any other special characters. The value is truncated to the correct number of decimal places.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field &#x60;orderInformation.amountDetails.totalAmount&#x60; in your request.  #### Tax Calculation Required field for U.S., Canadian, international and value added taxes.  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.  #### Maximum Field Lengths For GPN and JCN Gateway: Decimal (10) All other processors: Decimal (15) 
+   * Per-item price of the product. If line items are present in the request, the unit price is a mandatory field. 
    * @return unitPrice
   **/
-  @ApiModelProperty(required = true, value = "Per-item price of the product. This value for this field cannot be negative.  You must include either this field or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  You can include a decimal point (.), but you cannot include any other special characters. The value is truncated to the correct number of decimal places.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  #### Tax Calculation Required field for U.S., Canadian, international and value added taxes.  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.  #### Maximum Field Lengths For GPN and JCN Gateway: Decimal (10) All other processors: Decimal (15) ")
+  @ApiModelProperty(value = "Per-item price of the product. If line items are present in the request, the unit price is a mandatory field. ")
   public String getUnitPrice() {
     return unitPrice;
   }
@@ -248,14 +248,14 @@ public class Riskv1exportcomplianceinquiriesOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1exportcomplianceinquiriesOrderInformationLineItems {\n");
     
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
-    sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (allowedExportCountries != null) sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
+    if (restrictedExportCountries != null) sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productRisk != null) sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -266,10 +266,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

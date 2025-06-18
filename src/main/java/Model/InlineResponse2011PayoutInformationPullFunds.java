@@ -96,8 +96,8 @@ public class InlineResponse2011PayoutInformationPullFunds {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PayoutInformationPullFunds {\n");
     
-    sb.append("    domesticParticipant: ").append(toIndentedString(domesticParticipant)).append("\n");
-    sb.append("    crossBorderParticipant: ").append(toIndentedString(crossBorderParticipant)).append("\n");
+    if (domesticParticipant != null) sb.append("    domesticParticipant: ").append(toIndentedString(domesticParticipant)).append("\n");
+    if (crossBorderParticipant != null) sb.append("    crossBorderParticipant: ").append(toIndentedString(crossBorderParticipant)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class InlineResponse2011PayoutInformationPullFunds {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

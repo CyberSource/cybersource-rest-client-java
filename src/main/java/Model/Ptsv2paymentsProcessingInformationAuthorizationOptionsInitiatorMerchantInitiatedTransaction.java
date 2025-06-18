@@ -38,6 +38,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerc
   @SerializedName("originalAuthorizedAmount")
   private String originalAuthorizedAmount = null;
 
+  @SerializedName("agreementId")
+  private String agreementId = null;
+
   public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction reason(String reason) {
     this.reason = reason;
     return this;
@@ -92,6 +95,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerc
     this.originalAuthorizedAmount = originalAuthorizedAmount;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction agreementId(String agreementId) {
+    this.agreementId = agreementId;
+    return this;
+  }
+
+   /**
+   * An API to carry the agreement ID generated for recurring and unscheduled Card on file transaction. the merchant generates this per card holder or per payment agreement and shares the generated unique ID in the subsequent transactions. This can contain foreign/arabic character set also. Cybersource forwards this value to the Saudi Payment processor. 
+   * @return agreementId
+  **/
+  @ApiModelProperty(value = "An API to carry the agreement ID generated for recurring and unscheduled Card on file transaction. the merchant generates this per card holder or per payment agreement and shares the generated unique ID in the subsequent transactions. This can contain foreign/arabic character set also. Cybersource forwards this value to the Saudi Payment processor. ")
+  public String getAgreementId() {
+    return agreementId;
+  }
+
+  public void setAgreementId(String agreementId) {
+    this.agreementId = agreementId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerc
     Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction = (Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction) o;
     return Objects.equals(this.reason, ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.reason) &&
         Objects.equals(this.previousTransactionId, ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.previousTransactionId) &&
-        Objects.equals(this.originalAuthorizedAmount, ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.originalAuthorizedAmount);
+        Objects.equals(this.originalAuthorizedAmount, ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.originalAuthorizedAmount) &&
+        Objects.equals(this.agreementId, ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.agreementId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, previousTransactionId, originalAuthorizedAmount);
+    return Objects.hash(reason, previousTransactionId, originalAuthorizedAmount, agreementId);
   }
 
 
@@ -118,9 +140,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerc
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
-    sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (previousTransactionId != null) sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
+    if (originalAuthorizedAmount != null) sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
+    if (agreementId != null) sb.append("    agreementId: ").append(toIndentedString(agreementId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +154,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerc
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

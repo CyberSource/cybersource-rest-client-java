@@ -154,10 +154,10 @@ public class UmsV1UsersGet200ResponseUsers {
     StringBuilder sb = new StringBuilder();
     sb.append("class UmsV1UsersGet200ResponseUsers {\n");
     
-    sb.append("    accountInformation: ").append(toIndentedString(accountInformation)).append("\n");
-    sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
-    sb.append("    contactInformation: ").append(toIndentedString(contactInformation)).append("\n");
-    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    if (accountInformation != null) sb.append("    accountInformation: ").append(toIndentedString(accountInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (contactInformation != null) sb.append("    contactInformation: ").append(toIndentedString(contactInformation)).append("\n");
+    if (customFields != null) sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -168,10 +168,10 @@ public class UmsV1UsersGet200ResponseUsers {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

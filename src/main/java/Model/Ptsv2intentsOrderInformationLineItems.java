@@ -230,14 +230,14 @@ public class Ptsv2intentsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsOrderInformationLineItems {\n");
     
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    typeOfSupply: ").append(toIndentedString(typeOfSupply)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (typeOfSupply != null) sb.append("    typeOfSupply: ").append(toIndentedString(typeOfSupply)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +248,10 @@ public class Ptsv2intentsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

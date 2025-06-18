@@ -119,9 +119,9 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPerso
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    issuedBy: ").append(toIndentedString(issuedBy)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (issuedBy != null) sb.append("    issuedBy: ").append(toIndentedString(issuedBy)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPerso
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

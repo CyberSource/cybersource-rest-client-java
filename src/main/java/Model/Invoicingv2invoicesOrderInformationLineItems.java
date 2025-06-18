@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * List of the line items from the order, which are included in an invoice.
+ * Line item from the order.
  */
-@ApiModel(description = "List of the line items from the order, which are included in an invoice.")
+@ApiModel(description = "Line item from the order.")
 
 public class Invoicingv2invoicesOrderInformationLineItems {
   @SerializedName("productSku")
@@ -45,8 +45,8 @@ public class Invoicingv2invoicesOrderInformationLineItems {
   @SerializedName("discountAmount")
   private String discountAmount = null;
 
-  @SerializedName("discountRate")
-  private String discountRate = null;
+  @SerializedName("discountPercent")
+  private String discountPercent = null;
 
   @SerializedName("taxAmount")
   private String taxAmount = null;
@@ -140,7 +140,7 @@ public class Invoicingv2invoicesOrderInformationLineItems {
    * Discount applied to the item.
    * @return discountAmount
   **/
-  @ApiModelProperty(value = "Discount applied to the item.")
+  @ApiModelProperty(example = "10.00", value = "Discount applied to the item.")
   public String getDiscountAmount() {
     return discountAmount;
   }
@@ -149,22 +149,22 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     this.discountAmount = discountAmount;
   }
 
-  public Invoicingv2invoicesOrderInformationLineItems discountRate(String discountRate) {
-    this.discountRate = discountRate;
+  public Invoicingv2invoicesOrderInformationLineItems discountPercent(String discountPercent) {
+    this.discountPercent = discountPercent;
     return this;
   }
 
    /**
    * Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (&#x3D;5.25%) 
-   * @return discountRate
+   * @return discountPercent
   **/
-  @ApiModelProperty(value = "Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%) ")
-  public String getDiscountRate() {
-    return discountRate;
+  @ApiModelProperty(example = "10", value = "Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%) ")
+  public String getDiscountPercent() {
+    return discountPercent;
   }
 
-  public void setDiscountRate(String discountRate) {
-    this.discountRate = discountRate;
+  public void setDiscountPercent(String discountPercent) {
+    this.discountPercent = discountPercent;
   }
 
   public Invoicingv2invoicesOrderInformationLineItems taxAmount(String taxAmount) {
@@ -191,10 +191,10 @@ public class Invoicingv2invoicesOrderInformationLineItems {
   }
 
    /**
-   * Tax rate applied to the item.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
+   * Valid range: 1% to 99%, with only whole percentage values accepted; values with additional  decimal places will be truncated  For processor-specific details, see the alternate_tax_amount, vat_rate, vat_tax_rate, local_tax, national_tax, vat_tax_amount or other_tax#_rate field descriptions in the Level II and Level III Processing Using the SCMP API Guide. 
    * @return taxRate
   **/
-  @ApiModelProperty(value = "Tax rate applied to the item.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). ")
+  @ApiModelProperty(value = "Valid range: 1% to 99%, with only whole percentage values accepted; values with additional  decimal places will be truncated  For processor-specific details, see the alternate_tax_amount, vat_rate, vat_tax_rate, local_tax, national_tax, vat_tax_amount or other_tax#_rate field descriptions in the Level II and Level III Processing Using the SCMP API Guide. ")
   public String getTaxRate() {
     return taxRate;
   }
@@ -236,7 +236,7 @@ public class Invoicingv2invoicesOrderInformationLineItems {
         Objects.equals(this.quantity, invoicingv2invoicesOrderInformationLineItems.quantity) &&
         Objects.equals(this.unitPrice, invoicingv2invoicesOrderInformationLineItems.unitPrice) &&
         Objects.equals(this.discountAmount, invoicingv2invoicesOrderInformationLineItems.discountAmount) &&
-        Objects.equals(this.discountRate, invoicingv2invoicesOrderInformationLineItems.discountRate) &&
+        Objects.equals(this.discountPercent, invoicingv2invoicesOrderInformationLineItems.discountPercent) &&
         Objects.equals(this.taxAmount, invoicingv2invoicesOrderInformationLineItems.taxAmount) &&
         Objects.equals(this.taxRate, invoicingv2invoicesOrderInformationLineItems.taxRate) &&
         Objects.equals(this.totalAmount, invoicingv2invoicesOrderInformationLineItems.totalAmount);
@@ -244,7 +244,7 @@ public class Invoicingv2invoicesOrderInformationLineItems {
 
   @Override
   public int hashCode() {
-    return Objects.hash(productSku, productName, quantity, unitPrice, discountAmount, discountRate, taxAmount, taxRate, totalAmount);
+    return Objects.hash(productSku, productName, quantity, unitPrice, discountAmount, discountPercent, taxAmount, taxRate, totalAmount);
   }
 
 
@@ -253,15 +253,15 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformationLineItems {\n");
     
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountPercent != null) sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -272,10 +272,10 @@ public class Invoicingv2invoicesOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

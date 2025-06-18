@@ -74,7 +74,7 @@ public class Ptsv2paymentsIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsIssuerInformation {\n");
     
-    sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
+    if (discretionaryData != null) sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

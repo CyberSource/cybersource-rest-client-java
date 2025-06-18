@@ -14,7 +14,9 @@
 package Api;
 
 import org.joda.time.DateTime;
+import java.io.File;
 import org.joda.time.LocalDate;
+import Model.Model400UploadBatchFileResponse;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
@@ -84,6 +86,22 @@ public class TransactionBatchesApiTest {
         DateTime startTime = null;
         DateTime endTime = null;
         PtsV1TransactionBatchesGet200Response response = api.getTransactionBatches(startTime, endTime);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Upload a Batch File
+     *
+     * This endpoint enables the upload of a batch file containing transactions for processing.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void uploadTransactionBatchTest() throws Exception {
+        File file = null;
+        api.uploadTransactionBatch(file);
 
         // TODO: test validations
     }

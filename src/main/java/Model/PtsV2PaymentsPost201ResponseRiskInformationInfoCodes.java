@@ -324,15 +324,15 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {\n");
     
-    sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    customerList: ").append(toIndentedString(customerList)).append("\n");
-    sb.append("    deviceBehavior: ").append(toIndentedString(deviceBehavior)).append("\n");
-    sb.append("    identityChange: ").append(toIndentedString(identityChange)).append("\n");
-    sb.append("    internet: ").append(toIndentedString(internet)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    suspicious: ").append(toIndentedString(suspicious)).append("\n");
-    sb.append("    globalVelocity: ").append(toIndentedString(globalVelocity)).append("\n");
+    if (velocity != null) sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (customerList != null) sb.append("    customerList: ").append(toIndentedString(customerList)).append("\n");
+    if (deviceBehavior != null) sb.append("    deviceBehavior: ").append(toIndentedString(deviceBehavior)).append("\n");
+    if (identityChange != null) sb.append("    identityChange: ").append(toIndentedString(identityChange)).append("\n");
+    if (internet != null) sb.append("    internet: ").append(toIndentedString(internet)).append("\n");
+    if (phone != null) sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    if (suspicious != null) sb.append("    suspicious: ").append(toIndentedString(suspicious)).append("\n");
+    if (globalVelocity != null) sb.append("    globalVelocity: ").append(toIndentedString(globalVelocity)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -343,10 +343,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -49,7 +49,7 @@ public class Binv1binlookupProcessingInformationPayoutOptions {
    * @return payoutInquiry
   **/
   @ApiModelProperty(value = "If `true` then provide attributes related to fund transfer/payouts. If payout information not found then response will have standard account lookup.  Possible values: - true - false ")
-  public Boolean isPayoutInquiry() {
+  public Boolean PayoutInquiry() {
     return payoutInquiry;
   }
 
@@ -119,9 +119,9 @@ public class Binv1binlookupProcessingInformationPayoutOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Binv1binlookupProcessingInformationPayoutOptions {\n");
     
-    sb.append("    payoutInquiry: ").append(toIndentedString(payoutInquiry)).append("\n");
-    sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
-    sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
+    if (payoutInquiry != null) sb.append("    payoutInquiry: ").append(toIndentedString(payoutInquiry)).append("\n");
+    if (networkId != null) sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+    if (acquirerBin != null) sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Binv1binlookupProcessingInformationPayoutOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationBank {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationBank {\n");
     
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationBank {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

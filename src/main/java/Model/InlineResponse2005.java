@@ -15,8 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2005Embedded;
-import Model.InlineResponse2005Links;
+import Model.Dmsv3devicesdeassociateDevices;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,159 +32,54 @@ import java.util.List;
  */
 
 public class InlineResponse2005 {
-  @SerializedName("_links")
-  private List<InlineResponse2005Links> links = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("object")
-  private String object = null;
+  @SerializedName("devices")
+  private List<Dmsv3devicesdeassociateDevices> devices = null;
 
-  @SerializedName("offset")
-  private Integer offset = null;
-
-  @SerializedName("limit")
-  private Integer limit = null;
-
-  @SerializedName("count")
-  private Integer count = null;
-
-  @SerializedName("total")
-  private Integer total = null;
-
-  @SerializedName("_embedded")
-  private InlineResponse2005Embedded embedded = null;
-
-  public InlineResponse2005 links(List<InlineResponse2005Links> links) {
-    this.links = links;
+  public InlineResponse2005 status(String status) {
+    this.status = status;
     return this;
   }
 
-  public InlineResponse2005 addLinksItem(InlineResponse2005Links linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<InlineResponse2005Links>();
+   /**
+   * Possible values: - OK
+   * @return status
+  **/
+  @ApiModelProperty(value = "Possible values: - OK")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public InlineResponse2005 devices(List<Dmsv3devicesdeassociateDevices> devices) {
+    this.devices = devices;
+    return this;
+  }
+
+  public InlineResponse2005 addDevicesItem(Dmsv3devicesdeassociateDevices devicesItem) {
+    if (this.devices == null) {
+      this.devices = new ArrayList<Dmsv3devicesdeassociateDevices>();
     }
-    this.links.add(linksItem);
+    this.devices.add(devicesItem);
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Get devices
+   * @return devices
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2005Links> getLinks() {
-    return links;
+  public List<Dmsv3devicesdeassociateDevices> getDevices() {
+    return devices;
   }
 
-  public void setLinks(List<InlineResponse2005Links> links) {
-    this.links = links;
-  }
-
-  public InlineResponse2005 object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Get object
-   * @return object
-  **/
-  @ApiModelProperty(example = "collection", value = "")
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public InlineResponse2005 offset(Integer offset) {
-    this.offset = offset;
-    return this;
-  }
-
-   /**
-   * Get offset
-   * @return offset
-  **/
-  @ApiModelProperty(example = "0", value = "")
-  public Integer getOffset() {
-    return offset;
-  }
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-  public InlineResponse2005 limit(Integer limit) {
-    this.limit = limit;
-    return this;
-  }
-
-   /**
-   * Get limit
-   * @return limit
-  **/
-  @ApiModelProperty(example = "20", value = "")
-  public Integer getLimit() {
-    return limit;
-  }
-
-  public void setLimit(Integer limit) {
-    this.limit = limit;
-  }
-
-  public InlineResponse2005 count(Integer count) {
-    this.count = count;
-    return this;
-  }
-
-   /**
-   * Get count
-   * @return count
-  **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getCount() {
-    return count;
-  }
-
-  public void setCount(Integer count) {
-    this.count = count;
-  }
-
-  public InlineResponse2005 total(Integer total) {
-    this.total = total;
-    return this;
-  }
-
-   /**
-   * Get total
-   * @return total
-  **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getTotal() {
-    return total;
-  }
-
-  public void setTotal(Integer total) {
-    this.total = total;
-  }
-
-  public InlineResponse2005 embedded(InlineResponse2005Embedded embedded) {
-    this.embedded = embedded;
-    return this;
-  }
-
-   /**
-   * Get embedded
-   * @return embedded
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2005Embedded getEmbedded() {
-    return embedded;
-  }
-
-  public void setEmbedded(InlineResponse2005Embedded embedded) {
-    this.embedded = embedded;
+  public void setDevices(List<Dmsv3devicesdeassociateDevices> devices) {
+    this.devices = devices;
   }
 
 
@@ -198,18 +92,13 @@ public class InlineResponse2005 {
       return false;
     }
     InlineResponse2005 inlineResponse2005 = (InlineResponse2005) o;
-    return Objects.equals(this.links, inlineResponse2005.links) &&
-        Objects.equals(this.object, inlineResponse2005.object) &&
-        Objects.equals(this.offset, inlineResponse2005.offset) &&
-        Objects.equals(this.limit, inlineResponse2005.limit) &&
-        Objects.equals(this.count, inlineResponse2005.count) &&
-        Objects.equals(this.total, inlineResponse2005.total) &&
-        Objects.equals(this.embedded, inlineResponse2005.embedded);
+    return Objects.equals(this.status, inlineResponse2005.status) &&
+        Objects.equals(this.devices, inlineResponse2005.devices);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, object, offset, limit, count, total, embedded);
+    return Objects.hash(status, devices);
   }
 
 
@@ -218,13 +107,8 @@ public class InlineResponse2005 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (devices != null) sb.append("    devices: ").append(toIndentedString(devices)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -235,10 +119,10 @@ public class InlineResponse2005 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

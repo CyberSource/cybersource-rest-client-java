@@ -41,6 +41,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class UserManagementSearchApi {
     private static Logger logger = LogManager.getLogger(UserManagementSearchApi.class);
@@ -74,6 +76,16 @@ public class UserManagementSearchApi {
     public okhttp3.Call searchUsersCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(searchRequest, SearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "searchUsers,searchUsersAsync,searchUsersWithHttpInfo,searchUsersCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/ums/v1/users/search";
@@ -140,7 +152,6 @@ public class UserManagementSearchApi {
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'searchUsers' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
         logger.info("CALL TO METHOD 'searchUsers' ENDED");
         return resp.getData();
@@ -154,6 +165,7 @@ public class UserManagementSearchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UmsV1UsersGet200Response> searchUsersWithHttpInfo(SearchRequest searchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = searchUsersValidateBeforeCall(searchRequest, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -41,6 +41,9 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
 
+  @SerializedName("transactionInformation")
+  private String transactionInformation = null;
+
   public TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation name(String name) {
     this.name = name;
     return this;
@@ -113,6 +116,24 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
     this.phoneNumber = phoneNumber;
   }
 
+  public TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation transactionInformation(String transactionInformation) {
+    this.transactionInformation = transactionInformation;
+    return this;
+  }
+
+   /**
+   * In a Mastercard Transaction, this field contains the unique identifier (Transaction Link ID) for the first transaction in a transaction life cycle.  This ID is crucial for maintaining continuity and linking subsequent operations to the original transaction. 
+   * @return transactionInformation
+  **/
+  @ApiModelProperty(value = "In a Mastercard Transaction, this field contains the unique identifier (Transaction Link ID) for the first transaction in a transaction life cycle.  This ID is crucial for maintaining continuity and linking subsequent operations to the original transaction. ")
+  public String getTransactionInformation() {
+    return transactionInformation;
+  }
+
+  public void setTransactionInformation(String transactionInformation) {
+    this.transactionInformation = transactionInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +147,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
     return Objects.equals(this.name, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.name) &&
         Objects.equals(this.country, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.country) &&
         Objects.equals(this.binLength, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.binLength) &&
-        Objects.equals(this.phoneNumber, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.phoneNumber);
+        Objects.equals(this.phoneNumber, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.phoneNumber) &&
+        Objects.equals(this.transactionInformation, tssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.transactionInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, country, binLength, phoneNumber);
+    return Objects.hash(name, country, binLength, phoneNumber, transactionInformation);
   }
 
 
@@ -140,10 +162,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (binLength != null) sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (transactionInformation != null) sb.append("    transactionInformation: ").append(toIndentedString(transactionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +177,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

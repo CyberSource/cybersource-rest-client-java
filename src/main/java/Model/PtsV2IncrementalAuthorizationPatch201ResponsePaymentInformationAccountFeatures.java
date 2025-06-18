@@ -74,7 +74,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAcco
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeatures {\n");
     
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    if (category != null) sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAcco
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

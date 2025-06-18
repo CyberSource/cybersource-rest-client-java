@@ -19,6 +19,7 @@ import Model.Ptsv2paymentsTokenInformationTokenProvisioningInformation;
 import Model.TmsEmbeddedInstrumentIdentifierBankAccount;
 import Model.TmsEmbeddedInstrumentIdentifierBillTo;
 import Model.TmsEmbeddedInstrumentIdentifierCard;
+import Model.TmsEmbeddedInstrumentIdentifierEmbedded;
 import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
@@ -76,6 +77,9 @@ public class PatchInstrumentIdentifierRequest {
 
   @SerializedName("metadata")
   private TmsEmbeddedInstrumentIdentifierMetadata metadata = null;
+
+  @SerializedName("_embedded")
+  private TmsEmbeddedInstrumentIdentifierEmbedded embedded = null;
 
   public PatchInstrumentIdentifierRequest links(TmsEmbeddedInstrumentIdentifierLinks links) {
     this.links = links;
@@ -293,6 +297,24 @@ public class PatchInstrumentIdentifierRequest {
     this.metadata = metadata;
   }
 
+  public PatchInstrumentIdentifierRequest embedded(TmsEmbeddedInstrumentIdentifierEmbedded embedded) {
+    this.embedded = embedded;
+    return this;
+  }
+
+   /**
+   * Get embedded
+   * @return embedded
+  **/
+  @ApiModelProperty(value = "")
+  public TmsEmbeddedInstrumentIdentifierEmbedded getEmbedded() {
+    return embedded;
+  }
+
+  public void setEmbedded(TmsEmbeddedInstrumentIdentifierEmbedded embedded) {
+    this.embedded = embedded;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -315,12 +337,13 @@ public class PatchInstrumentIdentifierRequest {
         Objects.equals(this.issuer, patchInstrumentIdentifierRequest.issuer) &&
         Objects.equals(this.processingInformation, patchInstrumentIdentifierRequest.processingInformation) &&
         Objects.equals(this.billTo, patchInstrumentIdentifierRequest.billTo) &&
-        Objects.equals(this.metadata, patchInstrumentIdentifierRequest.metadata);
+        Objects.equals(this.metadata, patchInstrumentIdentifierRequest.metadata) &&
+        Objects.equals(this.embedded, patchInstrumentIdentifierRequest.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata);
+    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata, embedded);
   }
 
 
@@ -329,19 +352,20 @@ public class PatchInstrumentIdentifierRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatchInstrumentIdentifierRequest {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
-    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (tokenProvisioningInformation != null) sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (bankAccount != null) sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -352,10 +376,10 @@ public class PatchInstrumentIdentifierRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

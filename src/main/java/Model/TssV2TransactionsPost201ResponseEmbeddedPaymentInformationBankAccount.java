@@ -96,8 +96,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccou
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (prefix != null) sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccou
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

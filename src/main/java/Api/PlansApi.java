@@ -50,6 +50,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PlansApi {
     private static Logger logger = LogManager.getLogger(PlansApi.class);
@@ -85,6 +87,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "activatePlan,activatePlanAsync,activatePlanWithHttpInfo,activatePlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -153,7 +165,6 @@ public class PlansApi {
      */
     public ActivateDeactivatePlanResponse activatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activatePlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ActivateDeactivatePlanResponse> resp = activatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activatePlan' ENDED");
         return resp.getData();
@@ -167,6 +178,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ActivateDeactivatePlanResponse> activatePlanWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -218,6 +230,16 @@ public class PlansApi {
     public okhttp3.Call createPlanCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPlanRequest, CreatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createPlan,createPlanAsync,createPlanWithHttpInfo,createPlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans";
@@ -277,14 +299,13 @@ public class PlansApi {
 
     /**
      * Create a Plan
-     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
+     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param createPlanRequest  (required)
      * @return CreatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public CreatePlanResponse createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createPlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<CreatePlanResponse> resp = createPlanWithHttpInfo(createPlanRequest);
         logger.info("CALL TO METHOD 'createPlan' ENDED");
         return resp.getData();
@@ -292,12 +313,13 @@ public class PlansApi {
 
     /**
      * Create a Plan
-     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
+     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param createPlanRequest  (required)
      * @return ApiResponse&lt;CreatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreatePlanResponse> createPlanWithHttpInfo(CreatePlanRequest createPlanRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPlanValidateBeforeCall(createPlanRequest, null, null);
         Type localVarReturnType = new TypeToken<CreatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -305,7 +327,7 @@ public class PlansApi {
 
     /**
      * Create a Plan (asynchronously)
-     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
+     * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param createPlanRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -351,6 +373,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deactivatePlan,deactivatePlanAsync,deactivatePlanWithHttpInfo,deactivatePlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -419,7 +451,6 @@ public class PlansApi {
      */
     public ActivateDeactivatePlanResponse deactivatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ActivateDeactivatePlanResponse> resp = deactivatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deactivatePlan' ENDED");
         return resp.getData();
@@ -433,6 +464,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ActivateDeactivatePlanResponse> deactivatePlanWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deactivatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -486,6 +518,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deletePlan,deletePlanAsync,deletePlanWithHttpInfo,deletePlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -554,7 +596,6 @@ public class PlansApi {
      */
     public DeletePlanResponse deletePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deletePlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<DeletePlanResponse> resp = deletePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deletePlan' ENDED");
         return resp.getData();
@@ -568,6 +609,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<DeletePlanResponse> deletePlanWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<DeletePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -621,6 +663,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPlan,getPlanAsync,getPlanWithHttpInfo,getPlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -689,7 +741,6 @@ public class PlansApi {
      */
     public GetPlanResponse getPlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getPlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetPlanResponse> resp = getPlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getPlan' ENDED");
         return resp.getData();
@@ -703,6 +754,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetPlanResponse> getPlanWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<GetPlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -755,6 +807,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPlanCode,getPlanCodeAsync,getPlanCodeWithHttpInfo,getPlanCodeCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -815,7 +877,6 @@ public class PlansApi {
      */
     public GetPlanCodeResponse getPlanCode() throws ApiException {
         logger.info("CALL TO METHOD 'getPlanCode' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetPlanCodeResponse> resp = getPlanCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getPlanCode' ENDED");
         return resp.getData();
@@ -828,6 +889,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetPlanCodeResponse> getPlanCodeWithHttpInfo() throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlanCodeValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetPlanCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -884,6 +946,16 @@ public class PlansApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPlans,getPlansAsync,getPlansWithHttpInfo,getPlansCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -959,7 +1031,6 @@ public class PlansApi {
      */
     public GetAllPlansResponse getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getPlans' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<GetAllPlansResponse> resp = getPlansWithHttpInfo(offset, limit, code, status, name);
         logger.info("CALL TO METHOD 'getPlans' ENDED");
         return resp.getData();
@@ -977,6 +1048,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetAllPlansResponse> getPlansWithHttpInfo(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlansValidateBeforeCall(offset, limit, code, status, name, null, null);
         Type localVarReturnType = new TypeToken<GetAllPlansResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1033,6 +1105,16 @@ public class PlansApi {
     public okhttp3.Call updatePlanCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePlanRequest, UpdatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "updatePlan,updatePlanAsync,updatePlanWithHttpInfo,updatePlanCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}"
@@ -1107,7 +1189,6 @@ public class PlansApi {
      */
     public UpdatePlanResponse updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updatePlan' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UpdatePlanResponse> resp = updatePlanWithHttpInfo(id, updatePlanRequest);
         logger.info("CALL TO METHOD 'updatePlan' ENDED");
         return resp.getData();
@@ -1122,6 +1203,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UpdatePlanResponse> updatePlanWithHttpInfo(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updatePlanValidateBeforeCall(id, updatePlanRequest, null, null);
         Type localVarReturnType = new TypeToken<UpdatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

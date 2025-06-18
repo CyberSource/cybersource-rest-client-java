@@ -184,12 +184,12 @@ public class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {\n");
     
-    sb.append("    pointsBeforeRedemption: ").append(toIndentedString(pointsBeforeRedemption)).append("\n");
-    sb.append("    pointsValueBeforeRedemption: ").append(toIndentedString(pointsValueBeforeRedemption)).append("\n");
-    sb.append("    pointsRedeemed: ").append(toIndentedString(pointsRedeemed)).append("\n");
-    sb.append("    pointsValueRedeemed: ").append(toIndentedString(pointsValueRedeemed)).append("\n");
-    sb.append("    pointsAfterRedemption: ").append(toIndentedString(pointsAfterRedemption)).append("\n");
-    sb.append("    pointsValueAfterRedemption: ").append(toIndentedString(pointsValueAfterRedemption)).append("\n");
+    if (pointsBeforeRedemption != null) sb.append("    pointsBeforeRedemption: ").append(toIndentedString(pointsBeforeRedemption)).append("\n");
+    if (pointsValueBeforeRedemption != null) sb.append("    pointsValueBeforeRedemption: ").append(toIndentedString(pointsValueBeforeRedemption)).append("\n");
+    if (pointsRedeemed != null) sb.append("    pointsRedeemed: ").append(toIndentedString(pointsRedeemed)).append("\n");
+    if (pointsValueRedeemed != null) sb.append("    pointsValueRedeemed: ").append(toIndentedString(pointsValueRedeemed)).append("\n");
+    if (pointsAfterRedemption != null) sb.append("    pointsAfterRedemption: ").append(toIndentedString(pointsAfterRedemption)).append("\n");
+    if (pointsValueAfterRedemption != null) sb.append("    pointsValueAfterRedemption: ").append(toIndentedString(pointsValueAfterRedemption)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

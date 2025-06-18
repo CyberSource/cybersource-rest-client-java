@@ -262,15 +262,15 @@ public class CardProcessingConfigFeaturesCardNotPresentPayouts {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardNotPresentPayouts {\n");
     
-    sb.append("    reimbursementCode: ").append(toIndentedString(reimbursementCode)).append("\n");
-    sb.append("    acquiringInstitutionId: ").append(toIndentedString(acquiringInstitutionId)).append("\n");
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
-    sb.append("    merchantAbaNumber: ").append(toIndentedString(merchantAbaNumber)).append("\n");
-    sb.append("    networkOrder: ").append(toIndentedString(networkOrder)).append("\n");
-    sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (reimbursementCode != null) sb.append("    reimbursementCode: ").append(toIndentedString(reimbursementCode)).append("\n");
+    if (acquiringInstitutionId != null) sb.append("    acquiringInstitutionId: ").append(toIndentedString(acquiringInstitutionId)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (financialInstitutionId != null) sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
+    if (merchantAbaNumber != null) sb.append("    merchantAbaNumber: ").append(toIndentedString(merchantAbaNumber)).append("\n");
+    if (networkOrder != null) sb.append("    networkOrder: ").append(toIndentedString(networkOrder)).append("\n");
+    if (currencies != null) sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -281,10 +281,10 @@ public class CardProcessingConfigFeaturesCardNotPresentPayouts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

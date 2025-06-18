@@ -113,7 +113,7 @@ public class Boardingv1registrationsOrganizationInformationKYC {
    * @return offerSubscriptions
   **/
   @ApiModelProperty(example = "true", required = true, value = "")
-  public Boolean isOfferSubscriptions() {
+  public Boolean OfferSubscriptions() {
     return offerSubscriptions;
   }
 
@@ -318,18 +318,18 @@ public class Boardingv1registrationsOrganizationInformationKYC {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationKYC {\n");
     
-    sb.append("    whenIsCustomerCharged: ").append(toIndentedString(whenIsCustomerCharged)).append("\n");
-    sb.append("    whenIsCustomerChargedDescription: ").append(toIndentedString(whenIsCustomerChargedDescription)).append("\n");
-    sb.append("    offerSubscriptions: ").append(toIndentedString(offerSubscriptions)).append("\n");
-    sb.append("    monthlySubscriptionPercent: ").append(toIndentedString(monthlySubscriptionPercent)).append("\n");
-    sb.append("    quarterlySubscriptionPercent: ").append(toIndentedString(quarterlySubscriptionPercent)).append("\n");
-    sb.append("    semiAnnualSubscriptionPercent: ").append(toIndentedString(semiAnnualSubscriptionPercent)).append("\n");
-    sb.append("    annualSubscriptionPercent: ").append(toIndentedString(annualSubscriptionPercent)).append("\n");
-    sb.append("    timeToProductDelivery: ").append(toIndentedString(timeToProductDelivery)).append("\n");
-    sb.append("    estimatedMonthlySales: ").append(toIndentedString(estimatedMonthlySales)).append("\n");
-    sb.append("    averageOrderAmount: ").append(toIndentedString(averageOrderAmount)).append("\n");
-    sb.append("    largestExpectedOrderAmount: ").append(toIndentedString(largestExpectedOrderAmount)).append("\n");
-    sb.append("    depositBankAccount: ").append(toIndentedString(depositBankAccount)).append("\n");
+    if (whenIsCustomerCharged != null) sb.append("    whenIsCustomerCharged: ").append(toIndentedString(whenIsCustomerCharged)).append("\n");
+    if (whenIsCustomerChargedDescription != null) sb.append("    whenIsCustomerChargedDescription: ").append(toIndentedString(whenIsCustomerChargedDescription)).append("\n");
+    if (offerSubscriptions != null) sb.append("    offerSubscriptions: ").append(toIndentedString(offerSubscriptions)).append("\n");
+    if (monthlySubscriptionPercent != null) sb.append("    monthlySubscriptionPercent: ").append(toIndentedString(monthlySubscriptionPercent)).append("\n");
+    if (quarterlySubscriptionPercent != null) sb.append("    quarterlySubscriptionPercent: ").append(toIndentedString(quarterlySubscriptionPercent)).append("\n");
+    if (semiAnnualSubscriptionPercent != null) sb.append("    semiAnnualSubscriptionPercent: ").append(toIndentedString(semiAnnualSubscriptionPercent)).append("\n");
+    if (annualSubscriptionPercent != null) sb.append("    annualSubscriptionPercent: ").append(toIndentedString(annualSubscriptionPercent)).append("\n");
+    if (timeToProductDelivery != null) sb.append("    timeToProductDelivery: ").append(toIndentedString(timeToProductDelivery)).append("\n");
+    if (estimatedMonthlySales != null) sb.append("    estimatedMonthlySales: ").append(toIndentedString(estimatedMonthlySales)).append("\n");
+    if (averageOrderAmount != null) sb.append("    averageOrderAmount: ").append(toIndentedString(averageOrderAmount)).append("\n");
+    if (largestExpectedOrderAmount != null) sb.append("    largestExpectedOrderAmount: ").append(toIndentedString(largestExpectedOrderAmount)).append("\n");
+    if (depositBankAccount != null) sb.append("    depositBankAccount: ").append(toIndentedString(depositBankAccount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -340,10 +340,10 @@ public class Boardingv1registrationsOrganizationInformationKYC {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -133,9 +133,9 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsProces
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayoutsConfigurationInformationConfigurationsProcessorAccount {\n");
     
-    sb.append("    originatorMerchantId: ").append(toIndentedString(originatorMerchantId)).append("\n");
-    sb.append("    originatorTerminalId: ").append(toIndentedString(originatorTerminalId)).append("\n");
-    sb.append("    supportedCurrencies: ").append(toIndentedString(supportedCurrencies)).append("\n");
+    if (originatorMerchantId != null) sb.append("    originatorMerchantId: ").append(toIndentedString(originatorMerchantId)).append("\n");
+    if (originatorTerminalId != null) sb.append("    originatorTerminalId: ").append(toIndentedString(originatorTerminalId)).append("\n");
+    if (supportedCurrencies != null) sb.append("    supportedCurrencies: ").append(toIndentedString(supportedCurrencies)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -146,10 +146,10 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsProces
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

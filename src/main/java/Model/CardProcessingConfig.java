@@ -98,8 +98,8 @@ public class CardProcessingConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfig {\n");
     
-    sb.append("    common: ").append(toIndentedString(common)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    if (common != null) sb.append("    common: ").append(toIndentedString(common)).append("\n");
+    if (features != null) sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class CardProcessingConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201Response1PaymentInformationBank;
+import Model.PtsV2PaymentsPost201Response1PaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201Response1PaymentInformationPaymentType;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformationCustomer;
 import com.google.gson.TypeAdapter;
@@ -34,6 +35,9 @@ import java.io.IOException;
 public class PtsV2PaymentsPost201Response1PaymentInformation {
   @SerializedName("paymentType")
   private PtsV2PaymentsPost201Response1PaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("eWallet")
+  private PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet = null;
 
   @SerializedName("customer")
   private Ptsv2refreshpaymentstatusidPaymentInformationCustomer customer = null;
@@ -57,6 +61,24 @@ public class PtsV2PaymentsPost201Response1PaymentInformation {
 
   public void setPaymentType(PtsV2PaymentsPost201Response1PaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
+  }
+
+  public PtsV2PaymentsPost201Response1PaymentInformation eWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1PaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
   }
 
   public PtsV2PaymentsPost201Response1PaymentInformation customer(Ptsv2refreshpaymentstatusidPaymentInformationCustomer customer) {
@@ -106,13 +128,14 @@ public class PtsV2PaymentsPost201Response1PaymentInformation {
     }
     PtsV2PaymentsPost201Response1PaymentInformation ptsV2PaymentsPost201Response1PaymentInformation = (PtsV2PaymentsPost201Response1PaymentInformation) o;
     return Objects.equals(this.paymentType, ptsV2PaymentsPost201Response1PaymentInformation.paymentType) &&
+        Objects.equals(this.eWallet, ptsV2PaymentsPost201Response1PaymentInformation.eWallet) &&
         Objects.equals(this.customer, ptsV2PaymentsPost201Response1PaymentInformation.customer) &&
         Objects.equals(this.bank, ptsV2PaymentsPost201Response1PaymentInformation.bank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, bank);
+    return Objects.hash(paymentType, eWallet, customer, bank);
   }
 
 
@@ -121,9 +144,10 @@ public class PtsV2PaymentsPost201Response1PaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1PaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +158,10 @@ public class PtsV2PaymentsPost201Response1PaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

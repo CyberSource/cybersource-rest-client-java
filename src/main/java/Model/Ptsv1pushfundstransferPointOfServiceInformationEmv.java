@@ -74,7 +74,7 @@ public class Ptsv1pushfundstransferPointOfServiceInformationEmv {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferPointOfServiceInformationEmv {\n");
     
-    sb.append("    cardSequenceNumber: ").append(toIndentedString(cardSequenceNumber)).append("\n");
+    if (cardSequenceNumber != null) sb.append("    cardSequenceNumber: ").append(toIndentedString(cardSequenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv1pushfundstransferPointOfServiceInformationEmv {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -118,9 +118,9 @@ public class InlineResponseDefaultLinksNext {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponseDefaultLinksNext {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class InlineResponseDefaultLinksNext {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

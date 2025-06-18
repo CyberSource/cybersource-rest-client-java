@@ -123,7 +123,7 @@ public class Riskv1authenticationsOrderInformation {
    * @return reordered
   **/
   @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
-  public Boolean isReordered() {
+  public Boolean Reordered() {
     return reordered;
   }
 
@@ -242,14 +242,14 @@ public class Riskv1authenticationsOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
-    sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
-    sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (preOrder != null) sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
+    if (preOrderDate != null) sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
+    if (reordered != null) sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (totalOffersCount != null) sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -260,10 +260,10 @@ public class Riskv1authenticationsOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

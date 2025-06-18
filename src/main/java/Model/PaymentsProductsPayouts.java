@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import Model.PaymentsProductsPayoutsConfigurationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class PaymentsProductsPayouts {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private PaymentsProductsPayoutsConfigurationInformation configurationInformation = null;
 
-  public PaymentsProductsPayouts subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public PaymentsProductsPayouts subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class PaymentsProductsPayouts {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 
@@ -98,8 +98,8 @@ public class PaymentsProductsPayouts {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayouts {\n");
     
-    sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
-    sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
+    if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (configurationInformation != null) sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class PaymentsProductsPayouts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

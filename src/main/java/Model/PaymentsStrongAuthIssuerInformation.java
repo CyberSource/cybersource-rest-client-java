@@ -44,6 +44,9 @@ public class PaymentsStrongAuthIssuerInformation {
   @SerializedName("transactionRiskAnalysisExemptionResult")
   private String transactionRiskAnalysisExemptionResult = null;
 
+  @SerializedName("delegatedAuthenticationResult")
+  private String delegatedAuthenticationResult = null;
+
   public PaymentsStrongAuthIssuerInformation riskAnalysisExemptionResult(String riskAnalysisExemptionResult) {
     this.riskAnalysisExemptionResult = riskAnalysisExemptionResult;
     return this;
@@ -134,6 +137,24 @@ public class PaymentsStrongAuthIssuerInformation {
     this.transactionRiskAnalysisExemptionResult = transactionRiskAnalysisExemptionResult;
   }
 
+  public PaymentsStrongAuthIssuerInformation delegatedAuthenticationResult(String delegatedAuthenticationResult) {
+    this.delegatedAuthenticationResult = delegatedAuthenticationResult;
+    return this;
+  }
+
+   /**
+   * This will be the value returned by Visanet when delegated authentication has been requested. 
+   * @return delegatedAuthenticationResult
+  **/
+  @ApiModelProperty(value = "This will be the value returned by Visanet when delegated authentication has been requested. ")
+  public String getDelegatedAuthenticationResult() {
+    return delegatedAuthenticationResult;
+  }
+
+  public void setDelegatedAuthenticationResult(String delegatedAuthenticationResult) {
+    this.delegatedAuthenticationResult = delegatedAuthenticationResult;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +169,13 @@ public class PaymentsStrongAuthIssuerInformation {
         Objects.equals(this.trustedMerchantExemptionResult, paymentsStrongAuthIssuerInformation.trustedMerchantExemptionResult) &&
         Objects.equals(this.lowValueExemptionResult, paymentsStrongAuthIssuerInformation.lowValueExemptionResult) &&
         Objects.equals(this.secureCorporatePaymentResult, paymentsStrongAuthIssuerInformation.secureCorporatePaymentResult) &&
-        Objects.equals(this.transactionRiskAnalysisExemptionResult, paymentsStrongAuthIssuerInformation.transactionRiskAnalysisExemptionResult);
+        Objects.equals(this.transactionRiskAnalysisExemptionResult, paymentsStrongAuthIssuerInformation.transactionRiskAnalysisExemptionResult) &&
+        Objects.equals(this.delegatedAuthenticationResult, paymentsStrongAuthIssuerInformation.delegatedAuthenticationResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(riskAnalysisExemptionResult, trustedMerchantExemptionResult, lowValueExemptionResult, secureCorporatePaymentResult, transactionRiskAnalysisExemptionResult);
+    return Objects.hash(riskAnalysisExemptionResult, trustedMerchantExemptionResult, lowValueExemptionResult, secureCorporatePaymentResult, transactionRiskAnalysisExemptionResult, delegatedAuthenticationResult);
   }
 
 
@@ -162,11 +184,12 @@ public class PaymentsStrongAuthIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsStrongAuthIssuerInformation {\n");
     
-    sb.append("    riskAnalysisExemptionResult: ").append(toIndentedString(riskAnalysisExemptionResult)).append("\n");
-    sb.append("    trustedMerchantExemptionResult: ").append(toIndentedString(trustedMerchantExemptionResult)).append("\n");
-    sb.append("    lowValueExemptionResult: ").append(toIndentedString(lowValueExemptionResult)).append("\n");
-    sb.append("    secureCorporatePaymentResult: ").append(toIndentedString(secureCorporatePaymentResult)).append("\n");
-    sb.append("    transactionRiskAnalysisExemptionResult: ").append(toIndentedString(transactionRiskAnalysisExemptionResult)).append("\n");
+    if (riskAnalysisExemptionResult != null) sb.append("    riskAnalysisExemptionResult: ").append(toIndentedString(riskAnalysisExemptionResult)).append("\n");
+    if (trustedMerchantExemptionResult != null) sb.append("    trustedMerchantExemptionResult: ").append(toIndentedString(trustedMerchantExemptionResult)).append("\n");
+    if (lowValueExemptionResult != null) sb.append("    lowValueExemptionResult: ").append(toIndentedString(lowValueExemptionResult)).append("\n");
+    if (secureCorporatePaymentResult != null) sb.append("    secureCorporatePaymentResult: ").append(toIndentedString(secureCorporatePaymentResult)).append("\n");
+    if (transactionRiskAnalysisExemptionResult != null) sb.append("    transactionRiskAnalysisExemptionResult: ").append(toIndentedString(transactionRiskAnalysisExemptionResult)).append("\n");
+    if (delegatedAuthenticationResult != null) sb.append("    delegatedAuthenticationResult: ").append(toIndentedString(delegatedAuthenticationResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +200,10 @@ public class PaymentsStrongAuthIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

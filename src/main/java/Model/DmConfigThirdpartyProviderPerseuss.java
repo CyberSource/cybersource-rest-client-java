@@ -49,7 +49,7 @@ public class DmConfigThirdpartyProviderPerseuss {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -67,7 +67,7 @@ public class DmConfigThirdpartyProviderPerseuss {
    * @return enableRealTime
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnableRealTime() {
+  public Boolean EnableRealTime() {
     return enableRealTime;
   }
 
@@ -119,9 +119,9 @@ public class DmConfigThirdpartyProviderPerseuss {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderPerseuss {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    enableRealTime: ").append(toIndentedString(enableRealTime)).append("\n");
-    sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enableRealTime != null) sb.append("    enableRealTime: ").append(toIndentedString(enableRealTime)).append("\n");
+    if (credentials != null) sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class DmConfigThirdpartyProviderPerseuss {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

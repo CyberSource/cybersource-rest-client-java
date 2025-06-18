@@ -162,11 +162,11 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStr
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication {\n");
     
-    sb.append("    lowValueExemptionIndicator: ").append(toIndentedString(lowValueExemptionIndicator)).append("\n");
-    sb.append("    riskAnalysisExemptionIndicator: ").append(toIndentedString(riskAnalysisExemptionIndicator)).append("\n");
-    sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
-    sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
-    sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
+    if (lowValueExemptionIndicator != null) sb.append("    lowValueExemptionIndicator: ").append(toIndentedString(lowValueExemptionIndicator)).append("\n");
+    if (riskAnalysisExemptionIndicator != null) sb.append("    riskAnalysisExemptionIndicator: ").append(toIndentedString(riskAnalysisExemptionIndicator)).append("\n");
+    if (trustedMerchantExemptionIndicator != null) sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
+    if (secureCorporatePaymentIndicator != null) sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
+    if (delegatedAuthenticationExemptionIndicator != null) sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStr
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

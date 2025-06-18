@@ -96,8 +96,8 @@ public class Ptsv2billingagreementsAgreementInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsAgreementInformation {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (dateSigned != null) sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2billingagreementsAgreementInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

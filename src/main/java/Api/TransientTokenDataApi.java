@@ -38,6 +38,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class TransientTokenDataApi {
     private static Logger logger = LogManager.getLogger(TransientTokenDataApi.class);
@@ -75,6 +77,16 @@ public class TransientTokenDataApi {
             localVarPostBody = "{}";
         }
         
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenAsync,getPaymentCredentialsForTransientTokenWithHttpInfo,getPaymentCredentialsForTransientTokenCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
         // create path and map variables
         String localVarPath = "/flex/v2/payment-credentials/{paymentCredentialsReference}"
             .replaceAll("\\{" + "paymentCredentialsReference" + "\\}", apiClient.escapeString(paymentCredentialsReference.toString()));
@@ -86,7 +98,7 @@ public class TransientTokenDataApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+            "application/jwt"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -141,7 +153,6 @@ public class TransientTokenDataApi {
      */
     public String getPaymentCredentialsForTransientToken(String paymentCredentialsReference) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = getPaymentCredentialsForTransientTokenWithHttpInfo(paymentCredentialsReference);
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' ENDED");
         return resp.getData();
@@ -155,6 +166,7 @@ public class TransientTokenDataApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> getPaymentCredentialsForTransientTokenWithHttpInfo(String paymentCredentialsReference) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(paymentCredentialsReference, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -208,6 +220,16 @@ public class TransientTokenDataApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionForTransientToken,getTransactionForTransientTokenAsync,getTransactionForTransientTokenWithHttpInfo,getTransactionForTransientTokenCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -275,7 +297,6 @@ public class TransientTokenDataApi {
      */
     public void getTransactionForTransientToken(String transientToken) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionForTransientToken' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionForTransientTokenWithHttpInfo(transientToken);
 
     }
@@ -288,6 +309,7 @@ public class TransientTokenDataApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getTransactionForTransientTokenWithHttpInfo(String transientToken) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionForTransientTokenValidateBeforeCall(transientToken, null, null);
         return apiClient.execute(call);
     }

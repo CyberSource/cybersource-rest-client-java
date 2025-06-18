@@ -96,8 +96,8 @@ public class Ptsv2paymentreferencesPaymentInformationBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesPaymentInformationBankAccount {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentreferencesPaymentInformationBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

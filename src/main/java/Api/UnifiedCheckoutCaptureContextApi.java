@@ -40,6 +40,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class UnifiedCheckoutCaptureContextApi {
     private static Logger logger = LogManager.getLogger(UnifiedCheckoutCaptureContextApi.class);
@@ -73,6 +75,16 @@ public class UnifiedCheckoutCaptureContextApi {
     public okhttp3.Call generateUnifiedCheckoutCaptureContextCall(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateUnifiedCheckoutCaptureContextRequest, GenerateUnifiedCheckoutCaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "generateUnifiedCheckoutCaptureContext,generateUnifiedCheckoutCaptureContextAsync,generateUnifiedCheckoutCaptureContextWithHttpInfo,generateUnifiedCheckoutCaptureContextCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/up/v1/capture-contexts";
@@ -139,7 +151,6 @@ public class UnifiedCheckoutCaptureContextApi {
      */
     public String generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateUnifiedCheckoutCaptureContextWithHttpInfo(generateUnifiedCheckoutCaptureContextRequest);
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' ENDED");
         return resp.getData();
@@ -153,6 +164,7 @@ public class UnifiedCheckoutCaptureContextApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> generateUnifiedCheckoutCaptureContextWithHttpInfo(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateUnifiedCheckoutCaptureContextValidateBeforeCall(generateUnifiedCheckoutCaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

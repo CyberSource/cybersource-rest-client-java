@@ -59,10 +59,10 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
   }
 
    /**
-   * Bank routing number. This is also called the transit number. 
+   * Bank routing number. This is also called the transit number.  # For details, see &#x60;ecp_rdfi&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
    * @return routingNumber
   **/
-  @ApiModelProperty(value = "Bank routing number. This is also called the transit number. ")
+  @ApiModelProperty(value = "Bank routing number. This is also called the transit number.  # For details, see `ecp_rdfi` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
   public String getRoutingNumber() {
     return routingNumber;
   }
@@ -96,8 +96,8 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifierBankAccount {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (routingNumber != null) sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

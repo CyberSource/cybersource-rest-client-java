@@ -295,17 +295,17 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRecurringPaymentInformation {\n");
     
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    numberOfPayments: ").append(toIndentedString(numberOfPayments)).append("\n");
-    sb.append("    originalPurchaseDate: ").append(toIndentedString(originalPurchaseDate)).append("\n");
-    sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    occurrence: ").append(toIndentedString(occurrence)).append("\n");
-    sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
-    sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
-    sb.append("    maximumAmount: ").append(toIndentedString(maximumAmount)).append("\n");
-    sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+    if (endDate != null) sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (numberOfPayments != null) sb.append("    numberOfPayments: ").append(toIndentedString(numberOfPayments)).append("\n");
+    if (originalPurchaseDate != null) sb.append("    originalPurchaseDate: ").append(toIndentedString(originalPurchaseDate)).append("\n");
+    if (sequenceNumber != null) sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (occurrence != null) sb.append("    occurrence: ").append(toIndentedString(occurrence)).append("\n");
+    if (validationIndicator != null) sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
+    if (maximumAmount != null) sb.append("    maximumAmount: ").append(toIndentedString(maximumAmount)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -316,10 +316,10 @@ public class Ptsv2paymentsRecurringPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

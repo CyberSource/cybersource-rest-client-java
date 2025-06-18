@@ -118,9 +118,9 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {\n");
     
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
-    sb.append("    informationCode: ").append(toIndentedString(informationCode)).append("\n");
+    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (fieldName != null) sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
+    if (informationCode != null) sb.append("    informationCode: ").append(toIndentedString(informationCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

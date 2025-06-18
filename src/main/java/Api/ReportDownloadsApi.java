@@ -40,6 +40,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class ReportDownloadsApi {
     private static Logger logger = LogManager.getLogger(ReportDownloadsApi.class);
@@ -77,6 +79,16 @@ public class ReportDownloadsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "downloadReport,downloadReportAsync,downloadReportWithHttpInfo,downloadReportCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -157,7 +169,6 @@ public class ReportDownloadsApi {
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'downloadReport' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
 
     }
@@ -172,6 +183,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, null, null);
         return apiClient.execute(call);
     }

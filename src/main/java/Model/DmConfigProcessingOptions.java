@@ -42,7 +42,7 @@ public class DmConfigProcessingOptions {
    * @return stepUpAuthEnabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isStepUpAuthEnabled() {
+  public Boolean StepUpAuthEnabled() {
     return stepUpAuthEnabled;
   }
 
@@ -74,7 +74,7 @@ public class DmConfigProcessingOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigProcessingOptions {\n");
     
-    sb.append("    stepUpAuthEnabled: ").append(toIndentedString(stepUpAuthEnabled)).append("\n");
+    if (stepUpAuthEnabled != null) sb.append("    stepUpAuthEnabled: ").append(toIndentedString(stepUpAuthEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class DmConfigProcessingOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -85,7 +85,7 @@ public class Accountupdaterv1batchesIncluded {
     StringBuilder sb = new StringBuilder();
     sb.append("class Accountupdaterv1batchesIncluded {\n");
     
-    sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
+    if (tokens != null) sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class Accountupdaterv1batchesIncluded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

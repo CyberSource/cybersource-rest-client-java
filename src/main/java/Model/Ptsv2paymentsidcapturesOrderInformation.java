@@ -200,12 +200,12 @@ public class Ptsv2paymentsidcapturesOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
-    sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -216,10 +216,10 @@ public class Ptsv2paymentsidcapturesOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

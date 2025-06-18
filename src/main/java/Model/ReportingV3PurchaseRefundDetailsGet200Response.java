@@ -307,15 +307,15 @@ public class ReportingV3PurchaseRefundDetailsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200Response {\n");
     
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    pageResults: ").append(toIndentedString(pageResults)).append("\n");
-    sb.append("    requestDetails: ").append(toIndentedString(requestDetails)).append("\n");
-    sb.append("    settlements: ").append(toIndentedString(settlements)).append("\n");
-    sb.append("    authorizations: ").append(toIndentedString(authorizations)).append("\n");
-    sb.append("    feeAndFundingDetails: ").append(toIndentedString(feeAndFundingDetails)).append("\n");
-    sb.append("    others: ").append(toIndentedString(others)).append("\n");
-    sb.append("    settlementStatuses: ").append(toIndentedString(settlementStatuses)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    if (pageResults != null) sb.append("    pageResults: ").append(toIndentedString(pageResults)).append("\n");
+    if (requestDetails != null) sb.append("    requestDetails: ").append(toIndentedString(requestDetails)).append("\n");
+    if (settlements != null) sb.append("    settlements: ").append(toIndentedString(settlements)).append("\n");
+    if (authorizations != null) sb.append("    authorizations: ").append(toIndentedString(authorizations)).append("\n");
+    if (feeAndFundingDetails != null) sb.append("    feeAndFundingDetails: ").append(toIndentedString(feeAndFundingDetails)).append("\n");
+    if (others != null) sb.append("    others: ").append(toIndentedString(others)).append("\n");
+    if (settlementStatuses != null) sb.append("    settlementStatuses: ").append(toIndentedString(settlementStatuses)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -326,10 +326,10 @@ public class ReportingV3PurchaseRefundDetailsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -46,6 +46,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class VoidApi {
     private static Logger logger = LogManager.getLogger(VoidApi.class);
@@ -79,6 +81,16 @@ public class VoidApi {
     public okhttp3.Call mitVoidCall(MitVoidRequest mitVoidRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(mitVoidRequest, MitVoidRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "mitVoid,mitVoidAsync,mitVoidWithHttpInfo,mitVoidCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/voids";
@@ -145,7 +157,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
         logger.info("CALL TO METHOD 'mitVoid' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
         logger.info("CALL TO METHOD 'mitVoid' ENDED");
         return resp.getData();
@@ -159,6 +170,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> mitVoidWithHttpInfo(MitVoidRequest mitVoidRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = mitVoidValidateBeforeCall(mitVoidRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -211,6 +223,16 @@ public class VoidApi {
     public okhttp3.Call voidCaptureCall(VoidCaptureRequest voidCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCaptureRequest, VoidCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "voidCapture,voidCaptureAsync,voidCaptureWithHttpInfo,voidCaptureCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/captures/{id}/voids"
@@ -285,7 +307,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCapture' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
         logger.info("CALL TO METHOD 'voidCapture' ENDED");
         return resp.getData();
@@ -300,6 +321,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -353,6 +375,16 @@ public class VoidApi {
     public okhttp3.Call voidCreditCall(VoidCreditRequest voidCreditRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCreditRequest, VoidCreditRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "voidCredit,voidCreditAsync,voidCreditWithHttpInfo,voidCreditCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/credits/{id}/voids"
@@ -427,7 +459,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCredit' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
         logger.info("CALL TO METHOD 'voidCredit' ENDED");
         return resp.getData();
@@ -442,6 +473,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -495,6 +527,16 @@ public class VoidApi {
     public okhttp3.Call voidPaymentCall(VoidPaymentRequest voidPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidPaymentRequest, VoidPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "voidPayment,voidPaymentAsync,voidPaymentWithHttpInfo,voidPaymentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/voids"
@@ -569,7 +611,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidPayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
         logger.info("CALL TO METHOD 'voidPayment' ENDED");
         return resp.getData();
@@ -584,6 +625,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -637,6 +679,16 @@ public class VoidApi {
     public okhttp3.Call voidRefundCall(VoidRefundRequest voidRefundRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidRefundRequest, VoidRefundRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "voidRefund,voidRefundAsync,voidRefundWithHttpInfo,voidRefundCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v2/refunds/{id}/voids"
@@ -711,7 +763,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidRefund' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
         logger.info("CALL TO METHOD 'voidRefund' ENDED");
         return resp.getData();
@@ -726,6 +777,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

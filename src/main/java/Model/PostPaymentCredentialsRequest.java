@@ -32,22 +32,43 @@ public class PostPaymentCredentialsRequest {
   @SerializedName("paymentCredentialType")
   private String paymentCredentialType = null;
 
+  @SerializedName("transactionType")
+  private String transactionType = null;
+
   public PostPaymentCredentialsRequest paymentCredentialType(String paymentCredentialType) {
     this.paymentCredentialType = paymentCredentialType;
     return this;
   }
 
    /**
-   * The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \&quot;NETWORK_TOKEN\&quot; is supplied then only network token will be returned and cryptogram or dynamic CVV will be excluded.   Possible Values:   - NETWORK_TOKEN 
+   * The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \&quot;NETWORK_TOKEN\&quot; is supplied then only network token card number will be returned and no cryptogram or dynamic CVV will be requested. If \&quot;SECURITY_CODE\&quot; is supplied then dynamic CVV will be requested and returned with the network token card number. Dynamic CVV is only supported for Amex and SCOF. If \&quot;CRYPTOGRAM\&quot; is supplied then cryptogram will be requested and returned with the network token card number. Cryptogram is NOT supported for Amex.  Possible Values:   - NETWORK_TOKEN   - SECURITY_CODE   - CRYPTOGRAM 
    * @return paymentCredentialType
   **/
-  @ApiModelProperty(value = "The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \"NETWORK_TOKEN\" is supplied then only network token will be returned and cryptogram or dynamic CVV will be excluded.   Possible Values:   - NETWORK_TOKEN ")
+  @ApiModelProperty(value = "The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \"NETWORK_TOKEN\" is supplied then only network token card number will be returned and no cryptogram or dynamic CVV will be requested. If \"SECURITY_CODE\" is supplied then dynamic CVV will be requested and returned with the network token card number. Dynamic CVV is only supported for Amex and SCOF. If \"CRYPTOGRAM\" is supplied then cryptogram will be requested and returned with the network token card number. Cryptogram is NOT supported for Amex.  Possible Values:   - NETWORK_TOKEN   - SECURITY_CODE   - CRYPTOGRAM ")
   public String getPaymentCredentialType() {
     return paymentCredentialType;
   }
 
   public void setPaymentCredentialType(String paymentCredentialType) {
     this.paymentCredentialType = paymentCredentialType;
+  }
+
+  public PostPaymentCredentialsRequest transactionType(String transactionType) {
+    this.transactionType = transactionType;
+    return this;
+  }
+
+   /**
+   * Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. 
+   * @return transactionType
+  **/
+  @ApiModelProperty(value = "Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. ")
+  public String getTransactionType() {
+    return transactionType;
+  }
+
+  public void setTransactionType(String transactionType) {
+    this.transactionType = transactionType;
   }
 
 
@@ -60,12 +81,13 @@ public class PostPaymentCredentialsRequest {
       return false;
     }
     PostPaymentCredentialsRequest postPaymentCredentialsRequest = (PostPaymentCredentialsRequest) o;
-    return Objects.equals(this.paymentCredentialType, postPaymentCredentialsRequest.paymentCredentialType);
+    return Objects.equals(this.paymentCredentialType, postPaymentCredentialsRequest.paymentCredentialType) &&
+        Objects.equals(this.transactionType, postPaymentCredentialsRequest.transactionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentCredentialType);
+    return Objects.hash(paymentCredentialType, transactionType);
   }
 
 
@@ -74,7 +96,8 @@ public class PostPaymentCredentialsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostPaymentCredentialsRequest {\n");
     
-    sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
+    if (paymentCredentialType != null) sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +108,10 @@ public class PostPaymentCredentialsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

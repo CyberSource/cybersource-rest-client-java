@@ -42,6 +42,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class SearchTransactionsApi {
     private static Logger logger = LogManager.getLogger(SearchTransactionsApi.class);
@@ -75,6 +77,16 @@ public class SearchTransactionsApi {
     public okhttp3.Call createSearchCall(CreateSearchRequest createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSearchRequest, CreateSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createSearch,createSearchAsync,createSearchWithHttpInfo,createSearchCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tss/v2/searches";
@@ -141,7 +153,6 @@ public class SearchTransactionsApi {
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSearch' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         logger.info("CALL TO METHOD 'createSearch' ENDED");
         return resp.getData();
@@ -155,6 +166,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(CreateSearchRequest createSearchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -208,6 +220,16 @@ public class SearchTransactionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getSearch,getSearchAsync,getSearchWithHttpInfo,getSearchCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -276,7 +298,6 @@ public class SearchTransactionsApi {
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
         logger.info("CALL TO METHOD 'getSearch' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         logger.info("CALL TO METHOD 'getSearch' ENDED");
         return resp.getData();
@@ -290,6 +311,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String searchId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSearchValidateBeforeCall(searchId, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -85,7 +85,7 @@ public class TssV2TransactionsPost201ResponseEmbedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbedded {\n");
     
-    sb.append("    transactionSummaries: ").append(toIndentedString(transactionSummaries)).append("\n");
+    if (transactionSummaries != null) sb.append("    transactionSummaries: ").append(toIndentedString(transactionSummaries)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class TssV2TransactionsPost201ResponseEmbedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

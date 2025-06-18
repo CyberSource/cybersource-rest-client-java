@@ -40,7 +40,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   private Boolean avsSignedAgreement = null;
 
   @SerializedName("avsCalculatedResponseBehavior")
-  private Object avsCalculatedResponseBehavior = null;
+  private String avsCalculatedResponseBehavior = "continue";
 
   @SerializedName("avsAdditionalId")
   private String avsAdditionalId = null;
@@ -52,7 +52,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   private String avsEntityId = null;
 
   @SerializedName("avsResultMode")
-  private Object avsResultMode = null;
+  private String avsResultMode = null;
 
   @SerializedName("enableAvsTokenCreation")
   private Boolean enableAvsTokenCreation = false;
@@ -67,7 +67,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsAccountOwnershipService
   **/
   @ApiModelProperty(value = "*NEW* Determined in WF eTicket if account has opted into the Account Ownership Service.")
-  public Boolean isAvsAccountOwnershipService() {
+  public Boolean AvsAccountOwnershipService() {
     return avsAccountOwnershipService;
   }
 
@@ -85,7 +85,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsAccountStatusService
   **/
   @ApiModelProperty(value = "*NEW* Determined in WF eTicket if account has opted into the Account Status Service.")
-  public Boolean isAvsAccountStatusService() {
+  public Boolean AvsAccountStatusService() {
     return avsAccountStatusService;
   }
 
@@ -103,7 +103,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsSignedAgreement
   **/
   @ApiModelProperty(value = "*NEW* Taken from Addendum Agreement Column in boarding form.")
-  public Boolean isAvsSignedAgreement() {
+  public Boolean AvsSignedAgreement() {
     return avsSignedAgreement;
   }
 
@@ -111,21 +111,21 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     this.avsSignedAgreement = avsSignedAgreement;
   }
 
-  public ECheckConfigFeaturesAccountValidationServiceProcessors avsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsCalculatedResponseBehavior(String avsCalculatedResponseBehavior) {
     this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - continue
    * @return avsCalculatedResponseBehavior
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAvsCalculatedResponseBehavior() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - continue")
+  public String getAvsCalculatedResponseBehavior() {
     return avsCalculatedResponseBehavior;
   }
 
-  public void setAvsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+  public void setAvsCalculatedResponseBehavior(String avsCalculatedResponseBehavior) {
     this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
   }
 
@@ -157,7 +157,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return enableAvs
   **/
   @ApiModelProperty(value = "*NEW*")
-  public Boolean isEnableAvs() {
+  public Boolean EnableAvs() {
     return enableAvs;
   }
 
@@ -183,21 +183,21 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     this.avsEntityId = avsEntityId;
   }
 
-  public ECheckConfigFeaturesAccountValidationServiceProcessors avsResultMode(Object avsResultMode) {
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsResultMode(String avsResultMode) {
     this.avsResultMode = avsResultMode;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX
    * @return avsResultMode
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAvsResultMode() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX")
+  public String getAvsResultMode() {
     return avsResultMode;
   }
 
-  public void setAvsResultMode(Object avsResultMode) {
+  public void setAvsResultMode(String avsResultMode) {
     this.avsResultMode = avsResultMode;
   }
 
@@ -211,7 +211,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return enableAvsTokenCreation
   **/
   @ApiModelProperty(value = "*NEW* Applicable if the merchant wants to run AVS on token creation requests only.")
-  public Boolean isEnableAvsTokenCreation() {
+  public Boolean EnableAvsTokenCreation() {
     return enableAvsTokenCreation;
   }
 
@@ -251,15 +251,15 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigFeaturesAccountValidationServiceProcessors {\n");
     
-    sb.append("    avsAccountOwnershipService: ").append(toIndentedString(avsAccountOwnershipService)).append("\n");
-    sb.append("    avsAccountStatusService: ").append(toIndentedString(avsAccountStatusService)).append("\n");
-    sb.append("    avsSignedAgreement: ").append(toIndentedString(avsSignedAgreement)).append("\n");
-    sb.append("    avsCalculatedResponseBehavior: ").append(toIndentedString(avsCalculatedResponseBehavior)).append("\n");
-    sb.append("    avsAdditionalId: ").append(toIndentedString(avsAdditionalId)).append("\n");
-    sb.append("    enableAvs: ").append(toIndentedString(enableAvs)).append("\n");
-    sb.append("    avsEntityId: ").append(toIndentedString(avsEntityId)).append("\n");
-    sb.append("    avsResultMode: ").append(toIndentedString(avsResultMode)).append("\n");
-    sb.append("    enableAvsTokenCreation: ").append(toIndentedString(enableAvsTokenCreation)).append("\n");
+    if (avsAccountOwnershipService != null) sb.append("    avsAccountOwnershipService: ").append(toIndentedString(avsAccountOwnershipService)).append("\n");
+    if (avsAccountStatusService != null) sb.append("    avsAccountStatusService: ").append(toIndentedString(avsAccountStatusService)).append("\n");
+    if (avsSignedAgreement != null) sb.append("    avsSignedAgreement: ").append(toIndentedString(avsSignedAgreement)).append("\n");
+    if (avsCalculatedResponseBehavior != null) sb.append("    avsCalculatedResponseBehavior: ").append(toIndentedString(avsCalculatedResponseBehavior)).append("\n");
+    if (avsAdditionalId != null) sb.append("    avsAdditionalId: ").append(toIndentedString(avsAdditionalId)).append("\n");
+    if (enableAvs != null) sb.append("    enableAvs: ").append(toIndentedString(enableAvs)).append("\n");
+    if (avsEntityId != null) sb.append("    avsEntityId: ").append(toIndentedString(avsEntityId)).append("\n");
+    if (avsResultMode != null) sb.append("    avsResultMode: ").append(toIndentedString(avsResultMode)).append("\n");
+    if (enableAvsTokenCreation != null) sb.append("    enableAvsTokenCreation: ").append(toIndentedString(enableAvsTokenCreation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,10 +270,10 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

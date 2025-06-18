@@ -15,8 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Microformv2sessionsTransientTokenResponseOptions;
 import Model.Upv1capturecontextsCaptureMandate;
-import Model.Upv1capturecontextsCheckoutApiInitialization;
+import Model.Upv1capturecontextsCompleteMandate;
 import Model.Upv1capturecontextsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -34,11 +35,11 @@ import java.util.List;
  */
 
 public class GenerateUnifiedCheckoutCaptureContextRequest {
-  @SerializedName("targetOrigins")
-  private List<String> targetOrigins = null;
-
   @SerializedName("clientVersion")
   private String clientVersion = null;
+
+  @SerializedName("targetOrigins")
+  private List<String> targetOrigins = null;
 
   @SerializedName("allowedCardNetworks")
   private List<String> allowedCardNetworks = null;
@@ -55,11 +56,32 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   @SerializedName("captureMandate")
   private Upv1capturecontextsCaptureMandate captureMandate = null;
 
+  @SerializedName("completeMandate")
+  private Upv1capturecontextsCompleteMandate completeMandate = null;
+
   @SerializedName("orderInformation")
   private Upv1capturecontextsOrderInformation orderInformation = null;
 
-  @SerializedName("checkoutApiInitialization")
-  private Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization = null;
+  @SerializedName("transientTokenResponseOptions")
+  private Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions = null;
+
+  public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+    return this;
+  }
+
+   /**
+   * Specify the version of Unified Checkout that you want to use.
+   * @return clientVersion
+  **/
+  @ApiModelProperty(example = "0.25", value = "Specify the version of Unified Checkout that you want to use.")
+  public String getClientVersion() {
+    return clientVersion;
+  }
+
+  public void setClientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+  }
 
   public GenerateUnifiedCheckoutCaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -87,24 +109,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.targetOrigins = targetOrigins;
   }
 
-  public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-    return this;
-  }
-
-   /**
-   * Specify the version of Unified Checkout that you want to use.
-   * @return clientVersion
-  **/
-  @ApiModelProperty(example = "0.22", value = "Specify the version of Unified Checkout that you want to use.")
-  public String getClientVersion() {
-    return clientVersion;
-  }
-
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-  }
-
   public GenerateUnifiedCheckoutCaptureContextRequest allowedCardNetworks(List<String> allowedCardNetworks) {
     this.allowedCardNetworks = allowedCardNetworks;
     return this;
@@ -119,10 +123,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:   - VISA   - MASTERCARD   - AMEX   - DISCOVER   - DINERSCLUB   - JCB 
+   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:   - VISA   - MASTERCARD   - AMEX   - DISCOVER   - DINERSCLUB   - JCB ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
@@ -145,10 +149,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK &lt;br&gt;&lt;br&gt;  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC &lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK <br><br>  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -211,6 +215,24 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.captureMandate = captureMandate;
   }
 
+  public GenerateUnifiedCheckoutCaptureContextRequest completeMandate(Upv1capturecontextsCompleteMandate completeMandate) {
+    this.completeMandate = completeMandate;
+    return this;
+  }
+
+   /**
+   * Get completeMandate
+   * @return completeMandate
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsCompleteMandate getCompleteMandate() {
+    return completeMandate;
+  }
+
+  public void setCompleteMandate(Upv1capturecontextsCompleteMandate completeMandate) {
+    this.completeMandate = completeMandate;
+  }
+
   public GenerateUnifiedCheckoutCaptureContextRequest orderInformation(Upv1capturecontextsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
@@ -229,22 +251,22 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.orderInformation = orderInformation;
   }
 
-  public GenerateUnifiedCheckoutCaptureContextRequest checkoutApiInitialization(Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
+  public GenerateUnifiedCheckoutCaptureContextRequest transientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
     return this;
   }
 
    /**
-   * Get checkoutApiInitialization
-   * @return checkoutApiInitialization
+   * Get transientTokenResponseOptions
+   * @return transientTokenResponseOptions
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsCheckoutApiInitialization getCheckoutApiInitialization() {
-    return checkoutApiInitialization;
+  public Microformv2sessionsTransientTokenResponseOptions getTransientTokenResponseOptions() {
+    return transientTokenResponseOptions;
   }
 
-  public void setCheckoutApiInitialization(Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
+  public void setTransientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
   }
 
 
@@ -257,20 +279,21 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
       return false;
     }
     GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest = (GenerateUnifiedCheckoutCaptureContextRequest) o;
-    return Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
-        Objects.equals(this.clientVersion, generateUnifiedCheckoutCaptureContextRequest.clientVersion) &&
+    return Objects.equals(this.clientVersion, generateUnifiedCheckoutCaptureContextRequest.clientVersion) &&
+        Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateUnifiedCheckoutCaptureContextRequest.allowedCardNetworks) &&
         Objects.equals(this.allowedPaymentTypes, generateUnifiedCheckoutCaptureContextRequest.allowedPaymentTypes) &&
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
         Objects.equals(this.locale, generateUnifiedCheckoutCaptureContextRequest.locale) &&
         Objects.equals(this.captureMandate, generateUnifiedCheckoutCaptureContextRequest.captureMandate) &&
+        Objects.equals(this.completeMandate, generateUnifiedCheckoutCaptureContextRequest.completeMandate) &&
         Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation) &&
-        Objects.equals(this.checkoutApiInitialization, generateUnifiedCheckoutCaptureContextRequest.checkoutApiInitialization);
+        Objects.equals(this.transientTokenResponseOptions, generateUnifiedCheckoutCaptureContextRequest.transientTokenResponseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(targetOrigins, clientVersion, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, checkoutApiInitialization);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, completeMandate, orderInformation, transientTokenResponseOptions);
   }
 
 
@@ -279,15 +302,16 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
-    sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
-    sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
+    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
+    if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
+    if (completeMandate != null) sb.append("    completeMandate: ").append(toIndentedString(completeMandate)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -298,10 +322,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

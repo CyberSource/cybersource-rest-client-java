@@ -85,7 +85,7 @@ public class CardProcessingConfigFeaturesCardNotPresent {
    * @return ignoreAddressVerificationSystem
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline. Applicable for VPC, FDI Global (fdiglobal), GPX (gpx) and GPN (gpn) processors.")
-  public Boolean isIgnoreAddressVerificationSystem() {
+  public Boolean IgnoreAddressVerificationSystem() {
     return ignoreAddressVerificationSystem;
   }
 
@@ -103,7 +103,7 @@ public class CardProcessingConfigFeaturesCardNotPresent {
    * @return visaStraightThroughProcessingOnly
   **/
   @ApiModelProperty(value = "Indicates if a merchant is enabled for Straight Through Processing - B2B invoice payments. Applicable for FDI Global (fdiglobal), TSYS (tsys), VPC and GPX (gpx) processors.")
-  public Boolean isVisaStraightThroughProcessingOnly() {
+  public Boolean VisaStraightThroughProcessingOnly() {
     return visaStraightThroughProcessingOnly;
   }
 
@@ -175,11 +175,11 @@ public class CardProcessingConfigFeaturesCardNotPresent {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardNotPresent {\n");
     
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
-    sb.append("    ignoreAddressVerificationSystem: ").append(toIndentedString(ignoreAddressVerificationSystem)).append("\n");
-    sb.append("    visaStraightThroughProcessingOnly: ").append(toIndentedString(visaStraightThroughProcessingOnly)).append("\n");
-    sb.append("    amexTransactionAdviceAddendum1: ").append(toIndentedString(amexTransactionAdviceAddendum1)).append("\n");
-    sb.append("    installment: ").append(toIndentedString(installment)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (ignoreAddressVerificationSystem != null) sb.append("    ignoreAddressVerificationSystem: ").append(toIndentedString(ignoreAddressVerificationSystem)).append("\n");
+    if (visaStraightThroughProcessingOnly != null) sb.append("    visaStraightThroughProcessingOnly: ").append(toIndentedString(visaStraightThroughProcessingOnly)).append("\n");
+    if (amexTransactionAdviceAddendum1 != null) sb.append("    amexTransactionAdviceAddendum1: ").append(toIndentedString(amexTransactionAdviceAddendum1)).append("\n");
+    if (installment != null) sb.append("    installment: ").append(toIndentedString(installment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -190,10 +190,10 @@ public class CardProcessingConfigFeaturesCardNotPresent {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

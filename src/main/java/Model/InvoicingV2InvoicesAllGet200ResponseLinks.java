@@ -141,10 +141,10 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesAllGet200ResponseLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    update: ").append(toIndentedString(update)).append("\n");
-    sb.append("    deliver: ").append(toIndentedString(deliver)).append("\n");
-    sb.append("    cancel: ").append(toIndentedString(cancel)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (update != null) sb.append("    update: ").append(toIndentedString(update)).append("\n");
+    if (deliver != null) sb.append("    deliver: ").append(toIndentedString(deliver)).append("\n");
+    if (cancel != null) sb.append("    cancel: ").append(toIndentedString(cancel)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

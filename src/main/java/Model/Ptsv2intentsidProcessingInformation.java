@@ -84,7 +84,7 @@ public class Ptsv2intentsidProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsidProcessingInformation {\n");
     
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -95,10 +95,10 @@ public class Ptsv2intentsidProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

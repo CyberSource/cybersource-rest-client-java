@@ -93,7 +93,7 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
    * @return applied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount (`travelInformation.autoRental.taxDetails.amount`) is included in the request.  Possible values: - `false`: tax amount is not included in the request. - `true`:  tax amount is included in the request. ")
-  public Boolean isApplied() {
+  public Boolean Applied() {
     return applied;
   }
 
@@ -184,12 +184,12 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
-    sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
-    sb.append("    exemptionCode: ").append(toIndentedString(exemptionCode)).append("\n");
-    sb.append("    taxType: ").append(toIndentedString(taxType)).append("\n");
-    sb.append("    taxSummary: ").append(toIndentedString(taxSummary)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (rate != null) sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    if (applied != null) sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
+    if (exemptionCode != null) sb.append("    exemptionCode: ").append(toIndentedString(exemptionCode)).append("\n");
+    if (taxType != null) sb.append("    taxType: ").append(toIndentedString(taxType)).append("\n");
+    if (taxSummary != null) sb.append("    taxSummary: ").append(toIndentedString(taxSummary)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -141,10 +141,10 @@ public class Riskv1liststypeentriesRiskInformationMarkingDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesRiskInformationMarkingDetails {\n");
     
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    recordName: ").append(toIndentedString(recordName)).append("\n");
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    if (notes != null) sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (recordName != null) sb.append("    recordName: ").append(toIndentedString(recordName)).append("\n");
+    if (action != null) sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Riskv1liststypeentriesRiskInformationMarkingDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

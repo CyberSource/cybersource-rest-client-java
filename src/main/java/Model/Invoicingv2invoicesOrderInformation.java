@@ -29,9 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Contains all of the order-related fields for the invoice, such as the amount and line item details.
+ * Contains all of the order-related fields, such as the amount and line item details.
  */
-@ApiModel(description = "Contains all of the order-related fields for the invoice, such as the amount and line item details.")
+@ApiModel(description = "Contains all of the order-related fields, such as the amount and line item details.")
 
 public class Invoicingv2invoicesOrderInformation {
   @SerializedName("amountDetails")
@@ -49,7 +49,7 @@ public class Invoicingv2invoicesOrderInformation {
    * Get amountDetails
    * @return amountDetails
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Invoicingv2invoicesOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
@@ -72,10 +72,10 @@ public class Invoicingv2invoicesOrderInformation {
   }
 
    /**
-   * Get lineItems
+   * List of the line items from the order.
    * @return lineItems
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "List of the line items from the order.")
   public List<Invoicingv2invoicesOrderInformationLineItems> getLineItems() {
     return lineItems;
   }
@@ -109,8 +109,8 @@ public class Invoicingv2invoicesOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,10 +121,10 @@ public class Invoicingv2invoicesOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

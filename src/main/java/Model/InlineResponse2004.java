@@ -15,10 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Notificationsubscriptionsv1webhooksNotificationScope;
-import Model.Notificationsubscriptionsv1webhooksProducts;
-import Model.Notificationsubscriptionsv1webhooksRetryPolicy;
-import Model.Notificationsubscriptionsv1webhooksSecurityPolicy;
+import Model.Notificationsubscriptionsv2webhooksProducts;
+import Model.Notificationsubscriptionsv2webhooksRetryPolicy;
+import Model.Notificationsubscriptionsv2webhooksSecurityPolicy;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +28,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * InlineResponse2004
@@ -43,16 +41,13 @@ public class InlineResponse2004 {
   private String organizationId = null;
 
   @SerializedName("products")
-  private List<Notificationsubscriptionsv1webhooksProducts> products = null;
+  private List<Notificationsubscriptionsv2webhooksProducts> products = null;
 
   @SerializedName("webhookUrl")
   private String webhookUrl = null;
 
   @SerializedName("healthCheckUrl")
   private String healthCheckUrl = null;
-
-  @SerializedName("notificationScope")
-  private Notificationsubscriptionsv1webhooksNotificationScope notificationScope = null;
 
   @SerializedName("status")
   private String status = "INACTIVE";
@@ -64,19 +59,16 @@ public class InlineResponse2004 {
   private String description = null;
 
   @SerializedName("retryPolicy")
-  private Notificationsubscriptionsv1webhooksRetryPolicy retryPolicy = null;
+  private Notificationsubscriptionsv2webhooksRetryPolicy retryPolicy = null;
 
   @SerializedName("securityPolicy")
-  private Notificationsubscriptionsv1webhooksSecurityPolicy securityPolicy = null;
+  private Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy = null;
 
   @SerializedName("createdOn")
   private String createdOn = null;
 
   @SerializedName("updatedOn")
   private String updatedOn = null;
-
-  @SerializedName("additionalAttributes")
-  private List<Map<String, String>> additionalAttributes = null;
 
   public InlineResponse2004 webhookId(String webhookId) {
     this.webhookId = webhookId;
@@ -114,14 +106,14 @@ public class InlineResponse2004 {
     this.organizationId = organizationId;
   }
 
-  public InlineResponse2004 products(List<Notificationsubscriptionsv1webhooksProducts> products) {
+  public InlineResponse2004 products(List<Notificationsubscriptionsv2webhooksProducts> products) {
     this.products = products;
     return this;
   }
 
-  public InlineResponse2004 addProductsItem(Notificationsubscriptionsv1webhooksProducts productsItem) {
+  public InlineResponse2004 addProductsItem(Notificationsubscriptionsv2webhooksProducts productsItem) {
     if (this.products == null) {
-      this.products = new ArrayList<Notificationsubscriptionsv1webhooksProducts>();
+      this.products = new ArrayList<Notificationsubscriptionsv2webhooksProducts>();
     }
     this.products.add(productsItem);
     return this;
@@ -132,11 +124,11 @@ public class InlineResponse2004 {
    * @return products
   **/
   @ApiModelProperty(value = "")
-  public List<Notificationsubscriptionsv1webhooksProducts> getProducts() {
+  public List<Notificationsubscriptionsv2webhooksProducts> getProducts() {
     return products;
   }
 
-  public void setProducts(List<Notificationsubscriptionsv1webhooksProducts> products) {
+  public void setProducts(List<Notificationsubscriptionsv2webhooksProducts> products) {
     this.products = products;
   }
 
@@ -174,24 +166,6 @@ public class InlineResponse2004 {
 
   public void setHealthCheckUrl(String healthCheckUrl) {
     this.healthCheckUrl = healthCheckUrl;
-  }
-
-  public InlineResponse2004 notificationScope(Notificationsubscriptionsv1webhooksNotificationScope notificationScope) {
-    this.notificationScope = notificationScope;
-    return this;
-  }
-
-   /**
-   * Get notificationScope
-   * @return notificationScope
-  **/
-  @ApiModelProperty(value = "")
-  public Notificationsubscriptionsv1webhooksNotificationScope getNotificationScope() {
-    return notificationScope;
-  }
-
-  public void setNotificationScope(Notificationsubscriptionsv1webhooksNotificationScope notificationScope) {
-    this.notificationScope = notificationScope;
   }
 
   public InlineResponse2004 status(String status) {
@@ -248,7 +222,7 @@ public class InlineResponse2004 {
     this.description = description;
   }
 
-  public InlineResponse2004 retryPolicy(Notificationsubscriptionsv1webhooksRetryPolicy retryPolicy) {
+  public InlineResponse2004 retryPolicy(Notificationsubscriptionsv2webhooksRetryPolicy retryPolicy) {
     this.retryPolicy = retryPolicy;
     return this;
   }
@@ -258,15 +232,15 @@ public class InlineResponse2004 {
    * @return retryPolicy
   **/
   @ApiModelProperty(value = "")
-  public Notificationsubscriptionsv1webhooksRetryPolicy getRetryPolicy() {
+  public Notificationsubscriptionsv2webhooksRetryPolicy getRetryPolicy() {
     return retryPolicy;
   }
 
-  public void setRetryPolicy(Notificationsubscriptionsv1webhooksRetryPolicy retryPolicy) {
+  public void setRetryPolicy(Notificationsubscriptionsv2webhooksRetryPolicy retryPolicy) {
     this.retryPolicy = retryPolicy;
   }
 
-  public InlineResponse2004 securityPolicy(Notificationsubscriptionsv1webhooksSecurityPolicy securityPolicy) {
+  public InlineResponse2004 securityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy) {
     this.securityPolicy = securityPolicy;
     return this;
   }
@@ -276,11 +250,11 @@ public class InlineResponse2004 {
    * @return securityPolicy
   **/
   @ApiModelProperty(value = "")
-  public Notificationsubscriptionsv1webhooksSecurityPolicy getSecurityPolicy() {
+  public Notificationsubscriptionsv2webhooksSecurityPolicy getSecurityPolicy() {
     return securityPolicy;
   }
 
-  public void setSecurityPolicy(Notificationsubscriptionsv1webhooksSecurityPolicy securityPolicy) {
+  public void setSecurityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy) {
     this.securityPolicy = securityPolicy;
   }
 
@@ -320,32 +294,6 @@ public class InlineResponse2004 {
     this.updatedOn = updatedOn;
   }
 
-  public InlineResponse2004 additionalAttributes(List<Map<String, String>> additionalAttributes) {
-    this.additionalAttributes = additionalAttributes;
-    return this;
-  }
-
-  public InlineResponse2004 addAdditionalAttributesItem(Map<String, String> additionalAttributesItem) {
-    if (this.additionalAttributes == null) {
-      this.additionalAttributes = new ArrayList<Map<String, String>>();
-    }
-    this.additionalAttributes.add(additionalAttributesItem);
-    return this;
-  }
-
-   /**
-   * Additional, free form configuration data.
-   * @return additionalAttributes
-  **/
-  @ApiModelProperty(value = "Additional, free form configuration data.")
-  public List<Map<String, String>> getAdditionalAttributes() {
-    return additionalAttributes;
-  }
-
-  public void setAdditionalAttributes(List<Map<String, String>> additionalAttributes) {
-    this.additionalAttributes = additionalAttributes;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -361,20 +309,18 @@ public class InlineResponse2004 {
         Objects.equals(this.products, inlineResponse2004.products) &&
         Objects.equals(this.webhookUrl, inlineResponse2004.webhookUrl) &&
         Objects.equals(this.healthCheckUrl, inlineResponse2004.healthCheckUrl) &&
-        Objects.equals(this.notificationScope, inlineResponse2004.notificationScope) &&
         Objects.equals(this.status, inlineResponse2004.status) &&
         Objects.equals(this.name, inlineResponse2004.name) &&
         Objects.equals(this.description, inlineResponse2004.description) &&
         Objects.equals(this.retryPolicy, inlineResponse2004.retryPolicy) &&
         Objects.equals(this.securityPolicy, inlineResponse2004.securityPolicy) &&
         Objects.equals(this.createdOn, inlineResponse2004.createdOn) &&
-        Objects.equals(this.updatedOn, inlineResponse2004.updatedOn) &&
-        Objects.equals(this.additionalAttributes, inlineResponse2004.additionalAttributes);
+        Objects.equals(this.updatedOn, inlineResponse2004.updatedOn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, notificationScope, status, name, description, retryPolicy, securityPolicy, createdOn, updatedOn, additionalAttributes);
+    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, status, name, description, retryPolicy, securityPolicy, createdOn, updatedOn);
   }
 
 
@@ -383,20 +329,18 @@ public class InlineResponse2004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2004 {\n");
     
-    sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    products: ").append(toIndentedString(products)).append("\n");
-    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
-    sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
-    sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
-    sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
-    sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
-    sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
+    if (webhookId != null) sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (products != null) sb.append("    products: ").append(toIndentedString(products)).append("\n");
+    if (webhookUrl != null) sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
+    if (healthCheckUrl != null) sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
+    if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
+    if (createdOn != null) sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
+    if (updatedOn != null) sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -407,10 +351,10 @@ public class InlineResponse2004 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

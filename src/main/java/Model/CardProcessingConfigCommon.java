@@ -193,7 +193,7 @@ public class CardProcessingConfigCommon {
    * @return enablePartialAuth
   **/
   @ApiModelProperty(value = "Allow merchants to accept partial authorization approvals. Applicable for Elavon Americas (elavonamericas), VPC, GPX (gpx), FDI Global (fdiglobal), FDC Nashville (smartfdc), GPN (gpn), TSYS (tsys), American Express Direct (amexdirect), Paymentech Tampa (paymentechtampa) and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cnp, cp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnablePartialAuth() {
+  public Boolean EnablePartialAuth() {
     return enablePartialAuth;
   }
 
@@ -265,7 +265,7 @@ public class CardProcessingConfigCommon {
    * @return enableSplitShipment
   **/
   @ApiModelProperty(value = "Enables you to split an order into multiple shipments with multiple captures. This feature is provided by CyberSource and supports three different scenarios:  * multiple authorizations * multiple captures * multiple authorizations with multiple captures  Applicable for VPC processors. ")
-  public Boolean isEnableSplitShipment() {
+  public Boolean EnableSplitShipment() {
     return enableSplitShipment;
   }
 
@@ -283,7 +283,7 @@ public class CardProcessingConfigCommon {
    * @return enableInterchangeOptimization
   **/
   @ApiModelProperty(value = "Reduces your interchange fees by using automatic authorization refresh and automatic partial authorization reversal. Applicable for VPC processors.")
-  public Boolean isEnableInterchangeOptimization() {
+  public Boolean EnableInterchangeOptimization() {
     return enableInterchangeOptimization;
   }
 
@@ -355,7 +355,7 @@ public class CardProcessingConfigCommon {
    * @return allowCapturesGreaterThanAuthorizations
   **/
   @ApiModelProperty(value = "Enables this merchant account to capture amounts greater than the authorization amount. Applicable for GPX (gpx), VPC, Paymentech Tampa (paymentechtampa) and Chase Paymentech Salem (chasepaymentechsalem) processors.")
-  public Boolean isAllowCapturesGreaterThanAuthorizations() {
+  public Boolean AllowCapturesGreaterThanAuthorizations() {
     return allowCapturesGreaterThanAuthorizations;
   }
 
@@ -373,7 +373,7 @@ public class CardProcessingConfigCommon {
    * @return enableDuplicateMerchantReferenceNumberBlocking
   **/
   @ApiModelProperty(value = "Helps prevent duplicate transactions. Applicable for VPC, GPX (gpx) and Chase Paymentech Salem (chasepaymentechsalem) processors.")
-  public Boolean isEnableDuplicateMerchantReferenceNumberBlocking() {
+  public Boolean EnableDuplicateMerchantReferenceNumberBlocking() {
     return enableDuplicateMerchantReferenceNumberBlocking;
   }
 
@@ -391,7 +391,7 @@ public class CardProcessingConfigCommon {
    * @return domesticMerchantId
   **/
   @ApiModelProperty(value = "This is a local merchant ID used by merchants in addition to the conventional merchant ID. This value is sent to the issuer. Applicable for VPC and Prisma (prisma) processors.")
-  public Boolean isDomesticMerchantId() {
+  public Boolean DomesticMerchantId() {
     return domesticMerchantId;
   }
 
@@ -463,7 +463,7 @@ public class CardProcessingConfigCommon {
    * @return preferCobadgedSecondaryBrand
   **/
   @ApiModelProperty(value = "It denotes merchant's preference on secondary brand for routing in case of co-branded cards. Applicable for EFTPOS processors.")
-  public Boolean isPreferCobadgedSecondaryBrand() {
+  public Boolean PreferCobadgedSecondaryBrand() {
     return preferCobadgedSecondaryBrand;
   }
 
@@ -499,7 +499,7 @@ public class CardProcessingConfigCommon {
    * @return governmentControlled
   **/
   @ApiModelProperty(value = "Indicates whether the merchant is government controlled. Applicable for VPC processors.")
-  public Boolean isGovernmentControlled() {
+  public Boolean GovernmentControlled() {
     return governmentControlled;
   }
 
@@ -517,7 +517,7 @@ public class CardProcessingConfigCommon {
    * @return dropBillingInfo
   **/
   @ApiModelProperty(value = "This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request.")
-  public Boolean isDropBillingInfo() {
+  public Boolean DropBillingInfo() {
     return dropBillingInfo;
   }
 
@@ -571,29 +571,29 @@ public class CardProcessingConfigCommon {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommon {\n");
     
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
-    sb.append("    amexVendorCode: ").append(toIndentedString(amexVendorCode)).append("\n");
-    sb.append("    defaultAuthTypeCode: ").append(toIndentedString(defaultAuthTypeCode)).append("\n");
-    sb.append("    masterCardAssignedId: ").append(toIndentedString(masterCardAssignedId)).append("\n");
-    sb.append("    enablePartialAuth: ").append(toIndentedString(enablePartialAuth)).append("\n");
-    sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
-    sb.append("    sicCode: ").append(toIndentedString(sicCode)).append("\n");
-    sb.append("    foodAndConsumerServiceId: ").append(toIndentedString(foodAndConsumerServiceId)).append("\n");
-    sb.append("    enableSplitShipment: ").append(toIndentedString(enableSplitShipment)).append("\n");
-    sb.append("    enableInterchangeOptimization: ").append(toIndentedString(enableInterchangeOptimization)).append("\n");
-    sb.append("    visaDelegatedAuthenticationId: ").append(toIndentedString(visaDelegatedAuthenticationId)).append("\n");
-    sb.append("    creditCardRefundLimitPercent: ").append(toIndentedString(creditCardRefundLimitPercent)).append("\n");
-    sb.append("    businessCenterCreditCardRefundLimitPercent: ").append(toIndentedString(businessCenterCreditCardRefundLimitPercent)).append("\n");
-    sb.append("    allowCapturesGreaterThanAuthorizations: ").append(toIndentedString(allowCapturesGreaterThanAuthorizations)).append("\n");
-    sb.append("    enableDuplicateMerchantReferenceNumberBlocking: ").append(toIndentedString(enableDuplicateMerchantReferenceNumberBlocking)).append("\n");
-    sb.append("    domesticMerchantId: ").append(toIndentedString(domesticMerchantId)).append("\n");
-    sb.append("    processLevel3Data: ").append(toIndentedString(processLevel3Data)).append("\n");
-    sb.append("    subMerchantId: ").append(toIndentedString(subMerchantId)).append("\n");
-    sb.append("    subMerchantBusinessName: ").append(toIndentedString(subMerchantBusinessName)).append("\n");
-    sb.append("    preferCobadgedSecondaryBrand: ").append(toIndentedString(preferCobadgedSecondaryBrand)).append("\n");
-    sb.append("    merchantDescriptorInformation: ").append(toIndentedString(merchantDescriptorInformation)).append("\n");
-    sb.append("    governmentControlled: ").append(toIndentedString(governmentControlled)).append("\n");
-    sb.append("    dropBillingInfo: ").append(toIndentedString(dropBillingInfo)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (amexVendorCode != null) sb.append("    amexVendorCode: ").append(toIndentedString(amexVendorCode)).append("\n");
+    if (defaultAuthTypeCode != null) sb.append("    defaultAuthTypeCode: ").append(toIndentedString(defaultAuthTypeCode)).append("\n");
+    if (masterCardAssignedId != null) sb.append("    masterCardAssignedId: ").append(toIndentedString(masterCardAssignedId)).append("\n");
+    if (enablePartialAuth != null) sb.append("    enablePartialAuth: ").append(toIndentedString(enablePartialAuth)).append("\n");
+    if (merchantCategoryCode != null) sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
+    if (sicCode != null) sb.append("    sicCode: ").append(toIndentedString(sicCode)).append("\n");
+    if (foodAndConsumerServiceId != null) sb.append("    foodAndConsumerServiceId: ").append(toIndentedString(foodAndConsumerServiceId)).append("\n");
+    if (enableSplitShipment != null) sb.append("    enableSplitShipment: ").append(toIndentedString(enableSplitShipment)).append("\n");
+    if (enableInterchangeOptimization != null) sb.append("    enableInterchangeOptimization: ").append(toIndentedString(enableInterchangeOptimization)).append("\n");
+    if (visaDelegatedAuthenticationId != null) sb.append("    visaDelegatedAuthenticationId: ").append(toIndentedString(visaDelegatedAuthenticationId)).append("\n");
+    if (creditCardRefundLimitPercent != null) sb.append("    creditCardRefundLimitPercent: ").append(toIndentedString(creditCardRefundLimitPercent)).append("\n");
+    if (businessCenterCreditCardRefundLimitPercent != null) sb.append("    businessCenterCreditCardRefundLimitPercent: ").append(toIndentedString(businessCenterCreditCardRefundLimitPercent)).append("\n");
+    if (allowCapturesGreaterThanAuthorizations != null) sb.append("    allowCapturesGreaterThanAuthorizations: ").append(toIndentedString(allowCapturesGreaterThanAuthorizations)).append("\n");
+    if (enableDuplicateMerchantReferenceNumberBlocking != null) sb.append("    enableDuplicateMerchantReferenceNumberBlocking: ").append(toIndentedString(enableDuplicateMerchantReferenceNumberBlocking)).append("\n");
+    if (domesticMerchantId != null) sb.append("    domesticMerchantId: ").append(toIndentedString(domesticMerchantId)).append("\n");
+    if (processLevel3Data != null) sb.append("    processLevel3Data: ").append(toIndentedString(processLevel3Data)).append("\n");
+    if (subMerchantId != null) sb.append("    subMerchantId: ").append(toIndentedString(subMerchantId)).append("\n");
+    if (subMerchantBusinessName != null) sb.append("    subMerchantBusinessName: ").append(toIndentedString(subMerchantBusinessName)).append("\n");
+    if (preferCobadgedSecondaryBrand != null) sb.append("    preferCobadgedSecondaryBrand: ").append(toIndentedString(preferCobadgedSecondaryBrand)).append("\n");
+    if (merchantDescriptorInformation != null) sb.append("    merchantDescriptorInformation: ").append(toIndentedString(merchantDescriptorInformation)).append("\n");
+    if (governmentControlled != null) sb.append("    governmentControlled: ").append(toIndentedString(governmentControlled)).append("\n");
+    if (dropBillingInfo != null) sb.append("    dropBillingInfo: ").append(toIndentedString(dropBillingInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -604,10 +604,10 @@ public class CardProcessingConfigCommon {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

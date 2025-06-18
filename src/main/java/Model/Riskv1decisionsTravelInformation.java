@@ -226,13 +226,13 @@ public class Riskv1decisionsTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsTravelInformation {\n");
     
-    sb.append("    actualFinalDestination: ").append(toIndentedString(actualFinalDestination)).append("\n");
-    sb.append("    completeRoute: ").append(toIndentedString(completeRoute)).append("\n");
-    sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
-    sb.append("    journeyType: ").append(toIndentedString(journeyType)).append("\n");
-    sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
-    sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
-    sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
+    if (actualFinalDestination != null) sb.append("    actualFinalDestination: ").append(toIndentedString(actualFinalDestination)).append("\n");
+    if (completeRoute != null) sb.append("    completeRoute: ").append(toIndentedString(completeRoute)).append("\n");
+    if (departureTime != null) sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
+    if (journeyType != null) sb.append("    journeyType: ").append(toIndentedString(journeyType)).append("\n");
+    if (legs != null) sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
+    if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
+    if (passengers != null) sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -243,10 +243,10 @@ public class Riskv1decisionsTravelInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

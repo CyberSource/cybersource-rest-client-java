@@ -140,10 +140,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalanc
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances {\n");
     
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalanc
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -48,7 +48,7 @@ public class SAConfigCheckout {
    * @return displayTaxAmount
   **/
   @ApiModelProperty(value = "Toggles whether or not the tax amount is displayed on the Hosted Checkout.")
-  public Boolean isDisplayTaxAmount() {
+  public Boolean DisplayTaxAmount() {
     return displayTaxAmount;
   }
 
@@ -118,9 +118,9 @@ public class SAConfigCheckout {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigCheckout {\n");
     
-    sb.append("    displayTaxAmount: ").append(toIndentedString(displayTaxAmount)).append("\n");
-    sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
-    sb.append("    returnToMerchantSiteUrl: ").append(toIndentedString(returnToMerchantSiteUrl)).append("\n");
+    if (displayTaxAmount != null) sb.append("    displayTaxAmount: ").append(toIndentedString(displayTaxAmount)).append("\n");
+    if (templateType != null) sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
+    if (returnToMerchantSiteUrl != null) sb.append("    returnToMerchantSiteUrl: ").append(toIndentedString(returnToMerchantSiteUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class SAConfigCheckout {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

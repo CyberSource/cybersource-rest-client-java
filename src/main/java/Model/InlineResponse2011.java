@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011IssuerInformation;
-import Model.InlineResponse2011PaymentAccountInformation;
 import Model.InlineResponse2011PayoutInformation;
+import Model.TmsBinLookupIssuerInformation;
+import Model.TmsBinLookupPaymentAccountInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,10 +42,10 @@ public class InlineResponse2011 {
   private String status = null;
 
   @SerializedName("paymentAccountInformation")
-  private InlineResponse2011PaymentAccountInformation paymentAccountInformation = null;
+  private TmsBinLookupPaymentAccountInformation paymentAccountInformation = null;
 
   @SerializedName("issuerInformation")
-  private InlineResponse2011IssuerInformation issuerInformation = null;
+  private TmsBinLookupIssuerInformation issuerInformation = null;
 
   @SerializedName("payoutInformation")
   private InlineResponse2011PayoutInformation payoutInformation = null;
@@ -104,7 +104,7 @@ public class InlineResponse2011 {
     this.status = status;
   }
 
-  public InlineResponse2011 paymentAccountInformation(InlineResponse2011PaymentAccountInformation paymentAccountInformation) {
+  public InlineResponse2011 paymentAccountInformation(TmsBinLookupPaymentAccountInformation paymentAccountInformation) {
     this.paymentAccountInformation = paymentAccountInformation;
     return this;
   }
@@ -114,15 +114,15 @@ public class InlineResponse2011 {
    * @return paymentAccountInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011PaymentAccountInformation getPaymentAccountInformation() {
+  public TmsBinLookupPaymentAccountInformation getPaymentAccountInformation() {
     return paymentAccountInformation;
   }
 
-  public void setPaymentAccountInformation(InlineResponse2011PaymentAccountInformation paymentAccountInformation) {
+  public void setPaymentAccountInformation(TmsBinLookupPaymentAccountInformation paymentAccountInformation) {
     this.paymentAccountInformation = paymentAccountInformation;
   }
 
-  public InlineResponse2011 issuerInformation(InlineResponse2011IssuerInformation issuerInformation) {
+  public InlineResponse2011 issuerInformation(TmsBinLookupIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
     return this;
   }
@@ -132,11 +132,11 @@ public class InlineResponse2011 {
    * @return issuerInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011IssuerInformation getIssuerInformation() {
+  public TmsBinLookupIssuerInformation getIssuerInformation() {
     return issuerInformation;
   }
 
-  public void setIssuerInformation(InlineResponse2011IssuerInformation issuerInformation) {
+  public void setIssuerInformation(TmsBinLookupIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
   }
 
@@ -187,12 +187,12 @@ public class InlineResponse2011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011 {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
-    sb.append("    payoutInformation: ").append(toIndentedString(payoutInformation)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (paymentAccountInformation != null) sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (payoutInformation != null) sb.append("    payoutInformation: ").append(toIndentedString(payoutInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -203,10 +203,10 @@ public class InlineResponse2011 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

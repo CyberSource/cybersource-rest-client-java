@@ -75,7 +75,7 @@ public class TmsAuthorizationOptionsInitiator {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsAuthorizationOptionsInitiator {\n");
     
-    sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
+    if (merchantInitiatedTransaction != null) sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class TmsAuthorizationOptionsInitiator {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

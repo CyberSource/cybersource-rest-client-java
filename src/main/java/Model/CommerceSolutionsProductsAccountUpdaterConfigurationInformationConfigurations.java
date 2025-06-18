@@ -170,11 +170,11 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations {\n");
     
-    sb.append("    masterCard: ").append(toIndentedString(masterCard)).append("\n");
-    sb.append("    visa: ").append(toIndentedString(visa)).append("\n");
-    sb.append("    amex: ").append(toIndentedString(amex)).append("\n");
-    sb.append("    preferredDay: ").append(toIndentedString(preferredDay)).append("\n");
-    sb.append("    daysWindow: ").append(toIndentedString(daysWindow)).append("\n");
+    if (masterCard != null) sb.append("    masterCard: ").append(toIndentedString(masterCard)).append("\n");
+    if (visa != null) sb.append("    visa: ").append(toIndentedString(visa)).append("\n");
+    if (amex != null) sb.append("    amex: ").append(toIndentedString(amex)).append("\n");
+    if (preferredDay != null) sb.append("    preferredDay: ").append(toIndentedString(preferredDay)).append("\n");
+    if (daysWindow != null) sb.append("    daysWindow: ").append(toIndentedString(daysWindow)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -185,10 +185,10 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

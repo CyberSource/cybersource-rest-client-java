@@ -274,16 +274,16 @@ public class PushFunds201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
-    sb.append("    actionCode: ").append(toIndentedString(actionCode)).append("\n");
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    feeProgramIndicator: ").append(toIndentedString(feeProgramIndicator)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
-    sb.append("    settlement: ").append(toIndentedString(settlement)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (actionCode != null) sb.append("    actionCode: ").append(toIndentedString(actionCode)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (feeProgramIndicator != null) sb.append("    feeProgramIndicator: ").append(toIndentedString(feeProgramIndicator)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
+    if (settlement != null) sb.append("    settlement: ").append(toIndentedString(settlement)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -294,10 +294,10 @@ public class PushFunds201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

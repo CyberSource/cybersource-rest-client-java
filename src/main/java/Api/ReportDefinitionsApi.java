@@ -41,6 +41,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class ReportDefinitionsApi {
     private static Logger logger = LogManager.getLogger(ReportDefinitionsApi.class);
@@ -79,6 +81,16 @@ public class ReportDefinitionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getResourceInfoByReportDefinition,getResourceInfoByReportDefinitionAsync,getResourceInfoByReportDefinitionWithHttpInfo,getResourceInfoByReportDefinitionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -156,7 +168,6 @@ public class ReportDefinitionsApi {
      */
     public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' ENDED");
         return resp.getData();
@@ -173,6 +184,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, subscriptionType, reportMimeType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -230,6 +242,16 @@ public class ReportDefinitionsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getResourceV2Info,getResourceV2InfoAsync,getResourceV2InfoWithHttpInfo,getResourceV2InfoCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -296,7 +318,6 @@ public class ReportDefinitionsApi {
      */
     public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         logger.info("CALL TO METHOD 'getResourceV2Info' ENDED");
         return resp.getData();
@@ -311,6 +332,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String subscriptionType, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getResourceV2InfoValidateBeforeCall(subscriptionType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

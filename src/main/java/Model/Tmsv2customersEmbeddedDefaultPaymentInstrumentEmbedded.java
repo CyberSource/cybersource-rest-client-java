@@ -76,7 +76,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {\n");
     
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -87,10 +87,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -47,6 +47,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PayerAuthenticationApi {
     private static Logger logger = LogManager.getLogger(PayerAuthenticationApi.class);
@@ -80,6 +82,16 @@ public class PayerAuthenticationApi {
     public okhttp3.Call checkPayerAuthEnrollmentCall(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(checkPayerAuthEnrollmentRequest, CheckPayerAuthEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "checkPayerAuthEnrollment,checkPayerAuthEnrollmentAsync,checkPayerAuthEnrollmentWithHttpInfo,checkPayerAuthEnrollmentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentications";
@@ -146,7 +158,6 @@ public class PayerAuthenticationApi {
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationsPost201Response> resp = checkPayerAuthEnrollmentWithHttpInfo(checkPayerAuthEnrollmentRequest);
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' ENDED");
         return resp.getData();
@@ -160,6 +171,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationsPost201Response> checkPayerAuthEnrollmentWithHttpInfo(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = checkPayerAuthEnrollmentValidateBeforeCall(checkPayerAuthEnrollmentRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -211,6 +223,16 @@ public class PayerAuthenticationApi {
     public okhttp3.Call payerAuthSetupCall(PayerAuthSetupRequest payerAuthSetupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(payerAuthSetupRequest, PayerAuthSetupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "payerAuthSetup,payerAuthSetupAsync,payerAuthSetupWithHttpInfo,payerAuthSetupCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-setups";
@@ -270,14 +292,13 @@ public class PayerAuthenticationApi {
 
     /**
      * Setup Payer Auth
-     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param payerAuthSetupRequest  (required)
      * @return RiskV1AuthenticationSetupsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
         logger.info("CALL TO METHOD 'payerAuthSetup' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
         logger.info("CALL TO METHOD 'payerAuthSetup' ENDED");
         return resp.getData();
@@ -285,12 +306,13 @@ public class PayerAuthenticationApi {
 
     /**
      * Setup Payer Auth
-     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param payerAuthSetupRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationSetupsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationSetupsPost201Response> payerAuthSetupWithHttpInfo(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = payerAuthSetupValidateBeforeCall(payerAuthSetupRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationSetupsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -298,7 +320,7 @@ public class PayerAuthenticationApi {
 
     /**
      * Setup Payer Auth (asynchronously)
-     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param payerAuthSetupRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -342,6 +364,16 @@ public class PayerAuthenticationApi {
     public okhttp3.Call validateAuthenticationResultsCall(ValidateRequest validateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateRequest, ValidateRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = true;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "validateAuthenticationResults,validateAuthenticationResultsAsync,validateAuthenticationResultsWithHttpInfo,validateAuthenticationResultsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-results";
@@ -408,7 +440,6 @@ public class PayerAuthenticationApi {
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
         logger.info("CALL TO METHOD 'validateAuthenticationResults' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
         logger.info("CALL TO METHOD 'validateAuthenticationResults' ENDED");
         return resp.getData();
@@ -422,6 +453,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationResultsPost201Response> validateAuthenticationResultsWithHttpInfo(ValidateRequest validateRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(validateRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationResultsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

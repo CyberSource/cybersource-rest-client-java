@@ -448,24 +448,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    emailRaw: ").append(toIndentedString(emailRaw)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    phoneNumberRaw: ").append(toIndentedString(phoneNumberRaw)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    postalCodeRaw: ").append(toIndentedString(postalCodeRaw)).append("\n");
-    sb.append("    street: ").append(toIndentedString(street)).append("\n");
-    sb.append("    streetRaw: ").append(toIndentedString(streetRaw)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nameRaw: ").append(toIndentedString(nameRaw)).append("\n");
-    sb.append("    firstNameRaw: ").append(toIndentedString(firstNameRaw)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleNameRaw: ").append(toIndentedString(middleNameRaw)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastNameRaw: ").append(toIndentedString(lastNameRaw)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (codeRaw != null) sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (emailRaw != null) sb.append("    emailRaw: ").append(toIndentedString(emailRaw)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (phoneNumberRaw != null) sb.append("    phoneNumberRaw: ").append(toIndentedString(phoneNumberRaw)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (postalCodeRaw != null) sb.append("    postalCodeRaw: ").append(toIndentedString(postalCodeRaw)).append("\n");
+    if (street != null) sb.append("    street: ").append(toIndentedString(street)).append("\n");
+    if (streetRaw != null) sb.append("    streetRaw: ").append(toIndentedString(streetRaw)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (nameRaw != null) sb.append("    nameRaw: ").append(toIndentedString(nameRaw)).append("\n");
+    if (firstNameRaw != null) sb.append("    firstNameRaw: ").append(toIndentedString(firstNameRaw)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleNameRaw != null) sb.append("    middleNameRaw: ").append(toIndentedString(middleNameRaw)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastNameRaw != null) sb.append("    lastNameRaw: ").append(toIndentedString(lastNameRaw)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -476,10 +476,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

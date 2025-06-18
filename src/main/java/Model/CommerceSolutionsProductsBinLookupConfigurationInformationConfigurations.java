@@ -45,7 +45,7 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
    * @return isPayoutOptionsEnabled
   **/
   @ApiModelProperty(value = "This flag indicates if the merchant is configured to make payout calls")
-  public Boolean isIsPayoutOptionsEnabled() {
+  public Boolean IsPayoutOptionsEnabled() {
     return isPayoutOptionsEnabled;
   }
 
@@ -63,7 +63,7 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
    * @return isAccountPrefixEnabled
   **/
   @ApiModelProperty(value = "This flag indicates if the merchant is configured to receive account prefix")
-  public Boolean isIsAccountPrefixEnabled() {
+  public Boolean IsAccountPrefixEnabled() {
     return isAccountPrefixEnabled;
   }
 
@@ -96,8 +96,8 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsBinLookupConfigurationInformationConfigurations {\n");
     
-    sb.append("    isPayoutOptionsEnabled: ").append(toIndentedString(isPayoutOptionsEnabled)).append("\n");
-    sb.append("    isAccountPrefixEnabled: ").append(toIndentedString(isAccountPrefixEnabled)).append("\n");
+    if (isPayoutOptionsEnabled != null) sb.append("    isPayoutOptionsEnabled: ").append(toIndentedString(isPayoutOptionsEnabled)).append("\n");
+    if (isAccountPrefixEnabled != null) sb.append("    isAccountPrefixEnabled: ").append(toIndentedString(isAccountPrefixEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -42,7 +42,7 @@ public class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {
    * @return storedCredentialUsed
   **/
   @ApiModelProperty(value = "Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. ")
-  public Boolean isStoredCredentialUsed() {
+  public Boolean StoredCredentialUsed() {
     return storedCredentialUsed;
   }
 
@@ -74,7 +74,7 @@ public class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {\n");
     
-    sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
+    if (storedCredentialUsed != null) sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

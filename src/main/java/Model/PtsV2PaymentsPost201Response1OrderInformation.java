@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201Response1OrderInformationAmountDetails;
 import Model.PtsV2PaymentsPost201Response1OrderInformationBillTo;
 import Model.PtsV2PaymentsPost201Response1OrderInformationShipTo;
 import com.google.gson.TypeAdapter;
@@ -36,6 +37,9 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
 
   @SerializedName("shipTo")
   private PtsV2PaymentsPost201Response1OrderInformationShipTo shipTo = null;
+
+  @SerializedName("amountDetails")
+  private PtsV2PaymentsPost201Response1OrderInformationAmountDetails amountDetails = null;
 
   public PtsV2PaymentsPost201Response1OrderInformation billTo(PtsV2PaymentsPost201Response1OrderInformationBillTo billTo) {
     this.billTo = billTo;
@@ -73,6 +77,24 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
     this.shipTo = shipTo;
   }
 
+  public PtsV2PaymentsPost201Response1OrderInformation amountDetails(PtsV2PaymentsPost201Response1OrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+    return this;
+  }
+
+   /**
+   * Get amountDetails
+   * @return amountDetails
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1OrderInformationAmountDetails getAmountDetails() {
+    return amountDetails;
+  }
+
+  public void setAmountDetails(PtsV2PaymentsPost201Response1OrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
     }
     PtsV2PaymentsPost201Response1OrderInformation ptsV2PaymentsPost201Response1OrderInformation = (PtsV2PaymentsPost201Response1OrderInformation) o;
     return Objects.equals(this.billTo, ptsV2PaymentsPost201Response1OrderInformation.billTo) &&
-        Objects.equals(this.shipTo, ptsV2PaymentsPost201Response1OrderInformation.shipTo);
+        Objects.equals(this.shipTo, ptsV2PaymentsPost201Response1OrderInformation.shipTo) &&
+        Objects.equals(this.amountDetails, ptsV2PaymentsPost201Response1OrderInformation.amountDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billTo, shipTo);
+    return Objects.hash(billTo, shipTo, amountDetails);
   }
 
 
@@ -98,8 +121,9 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1OrderInformation {\n");
     
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +134,10 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

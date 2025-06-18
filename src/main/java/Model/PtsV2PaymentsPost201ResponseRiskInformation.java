@@ -323,17 +323,17 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformation {\n");
     
-    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
-    sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
-    sb.append("    infoCodes: ").append(toIndentedString(infoCodes)).append("\n");
-    sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
-    sb.append("    casePriority: ").append(toIndentedString(casePriority)).append("\n");
-    sb.append("    localTime: ").append(toIndentedString(localTime)).append("\n");
-    sb.append("    score: ").append(toIndentedString(score)).append("\n");
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
-    sb.append("    travel: ").append(toIndentedString(travel)).append("\n");
-    sb.append("    processorResults: ").append(toIndentedString(processorResults)).append("\n");
+    if (profile != null) sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+    if (rules != null) sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+    if (infoCodes != null) sb.append("    infoCodes: ").append(toIndentedString(infoCodes)).append("\n");
+    if (velocity != null) sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
+    if (casePriority != null) sb.append("    casePriority: ").append(toIndentedString(casePriority)).append("\n");
+    if (localTime != null) sb.append("    localTime: ").append(toIndentedString(localTime)).append("\n");
+    if (score != null) sb.append("    score: ").append(toIndentedString(score)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (providers != null) sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
+    if (travel != null) sb.append("    travel: ").append(toIndentedString(travel)).append("\n");
+    if (processorResults != null) sb.append("    processorResults: ").append(toIndentedString(processorResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -344,10 +344,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

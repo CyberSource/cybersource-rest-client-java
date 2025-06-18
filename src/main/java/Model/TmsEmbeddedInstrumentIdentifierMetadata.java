@@ -65,7 +65,7 @@ public class TmsEmbeddedInstrumentIdentifierMetadata {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifierMetadata {\n");
     
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    if (creator != null) sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -76,10 +76,10 @@ public class TmsEmbeddedInstrumentIdentifierMetadata {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

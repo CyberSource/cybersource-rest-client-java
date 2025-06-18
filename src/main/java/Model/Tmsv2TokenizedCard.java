@@ -16,7 +16,9 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Tmsv2TokenizedCardCard;
+import Model.Tmsv2TokenizedCardLinks;
 import Model.Tmsv2TokenizedCardMetadata;
+import Model.Tmsv2TokenizedCardPasscode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,20 +33,29 @@ import java.io.IOException;
  */
 
 public class Tmsv2TokenizedCard {
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("_links")
+  private Tmsv2TokenizedCardLinks links = null;
+
+  @SerializedName("id")
+  private String id = null;
+
+  @SerializedName("object")
+  private String object = null;
+
+  @SerializedName("accountReferenceId")
+  private String accountReferenceId = null;
+
+  @SerializedName("consumerId")
+  private String consumerId = null;
+
+  @SerializedName("createInstrumentIdentifier")
+  private Boolean createInstrumentIdentifier = null;
 
   @SerializedName("source")
   private String source = null;
 
   @SerializedName("state")
   private String state = null;
-
-  @SerializedName("enrollmentId")
-  private String enrollmentId = null;
-
-  @SerializedName("tokenReferenceId")
-  private String tokenReferenceId = null;
 
   @SerializedName("reason")
   private String reason = null;
@@ -58,58 +69,154 @@ public class Tmsv2TokenizedCard {
   @SerializedName("expirationYear")
   private String expirationYear = null;
 
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("cryptogram")
   private String cryptogram = null;
+
+  @SerializedName("securityCode")
+  private String securityCode = null;
+
+  @SerializedName("eci")
+  private String eci = null;
+
+  @SerializedName("requestorId")
+  private String requestorId = null;
+
+  @SerializedName("enrollmentId")
+  private String enrollmentId = null;
+
+  @SerializedName("tokenReferenceId")
+  private String tokenReferenceId = null;
+
+  @SerializedName("paymentAccountReference")
+  private String paymentAccountReference = null;
 
   @SerializedName("card")
   private Tmsv2TokenizedCardCard card = null;
 
+  @SerializedName("passcode")
+  private Tmsv2TokenizedCardPasscode passcode = null;
+
   @SerializedName("metadata")
   private Tmsv2TokenizedCardMetadata metadata = null;
 
-   /**
-   * The network token card association brand Possible Values: - visa - mastercard - americanexpress 
-   * @return type
-  **/
-  @ApiModelProperty(example = "visa", value = "The network token card association brand Possible Values: - visa - mastercard - americanexpress ")
-  public String getType() {
-    return type;
+  public Tmsv2TokenizedCard links(Tmsv2TokenizedCardLinks links) {
+    this.links = links;
+    return this;
   }
 
    /**
-   * This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE 
+   * Get links
+   * @return links
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardLinks getLinks() {
+    return links;
+  }
+
+  public void setLinks(Tmsv2TokenizedCardLinks links) {
+    this.links = links;
+  }
+
+   /**
+   * The Id of the Tokenized Card. 
+   * @return id
+  **/
+  @ApiModelProperty(value = "The Id of the Tokenized Card. ")
+  public String getId() {
+    return id;
+  }
+
+   /**
+   * The type. Possible Values: - tokenizedCard 
+   * @return object
+  **/
+  @ApiModelProperty(example = "tokenizedCard", value = "The type. Possible Values: - tokenizedCard ")
+  public String getObject() {
+    return object;
+  }
+
+  public Tmsv2TokenizedCard accountReferenceId(String accountReferenceId) {
+    this.accountReferenceId = accountReferenceId;
+    return this;
+  }
+
+   /**
+   * An identifier provided by the issuer for the account. 
+   * @return accountReferenceId
+  **/
+  @ApiModelProperty(value = "An identifier provided by the issuer for the account. ")
+  public String getAccountReferenceId() {
+    return accountReferenceId;
+  }
+
+  public void setAccountReferenceId(String accountReferenceId) {
+    this.accountReferenceId = accountReferenceId;
+  }
+
+  public Tmsv2TokenizedCard consumerId(String consumerId) {
+    this.consumerId = consumerId;
+    return this;
+  }
+
+   /**
+   * Identifier of the consumer within the wallet. Maximum 24 characters for VTS.
+   * @return consumerId
+  **/
+  @ApiModelProperty(value = "Identifier of the consumer within the wallet. Maximum 24 characters for VTS.")
+  public String getConsumerId() {
+    return consumerId;
+  }
+
+  public void setConsumerId(String consumerId) {
+    this.consumerId = consumerId;
+  }
+
+  public Tmsv2TokenizedCard createInstrumentIdentifier(Boolean createInstrumentIdentifier) {
+    this.createInstrumentIdentifier = createInstrumentIdentifier;
+    return this;
+  }
+
+   /**
+   * Specifies whether the InstrumentId should be created (true) or not (false). Possible Values: - &#x60;true&#x60;: The InstrumentId should be created. - &#x60;false&#x60;: The InstrumentId should be created. 
+   * @return createInstrumentIdentifier
+  **/
+  @ApiModelProperty(value = "Specifies whether the InstrumentId should be created (true) or not (false). Possible Values: - `true`: The InstrumentId should be created. - `false`: The InstrumentId should be created. ")
+  public Boolean CreateInstrumentIdentifier() {
+    return createInstrumentIdentifier;
+  }
+
+  public void setCreateInstrumentIdentifier(Boolean createInstrumentIdentifier) {
+    this.createInstrumentIdentifier = createInstrumentIdentifier;
+  }
+
+  public Tmsv2TokenizedCard source(String source) {
+    this.source = source;
+    return this;
+  }
+
+   /**
+   * Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER 
    * @return source
   **/
-  @ApiModelProperty(example = "ONFILE", value = "This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE ")
+  @ApiModelProperty(value = "Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER ")
   public String getSource() {
     return source;
   }
 
+  public void setSource(String source) {
+    this.source = source;
+  }
+
    /**
-   * State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. 
+   * State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token. 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. ")
+  @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token. ")
   public String getState() {
     return state;
-  }
-
-   /**
-   * Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. 
-   * @return enrollmentId
-  **/
-  @ApiModelProperty(value = "Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. ")
-  public String getEnrollmentId() {
-    return enrollmentId;
-  }
-
-   /**
-   * Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. 
-   * @return tokenReferenceId
-  **/
-  @ApiModelProperty(value = "Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. ")
-  public String getTokenReferenceId() {
-    return tokenReferenceId;
   }
 
    /**
@@ -122,39 +229,111 @@ public class Tmsv2TokenizedCard {
   }
 
    /**
-   * The token requestors network token 
+   * The token requestor&#39;s network token for the provided PAN and consumer Id, if available. 
    * @return number
   **/
-  @ApiModelProperty(value = "The token requestors network token ")
+  @ApiModelProperty(value = "The token requestor's network token for the provided PAN and consumer Id, if available. ")
   public String getNumber() {
     return number;
   }
 
    /**
-   * Two-digit month in which the network token expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   * Two-digit month in which the network token expires. Format: &#x60;MM&#x60;. Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = "Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
+  @ApiModelProperty(value = "Two-digit month in which the network token expires. Format: `MM`. Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
 
    /**
-   * Four-digit year in which the network token expires.  Format: &#x60;YYYY&#x60;. 
+   * Four-digit year in which the network token expires. Format: &#x60;YYYY&#x60;. 
    * @return expirationYear
   **/
-  @ApiModelProperty(value = "Four-digit year in which the network token expires.  Format: `YYYY`. ")
+  @ApiModelProperty(value = "Four-digit year in which the network token expires. Format: `YYYY`. ")
   public String getExpirationYear() {
     return expirationYear;
   }
 
+  public Tmsv2TokenizedCard type(String type) {
+    this.type = type;
+    return this;
+  }
+
    /**
-   * Generated value used in conjunction with the network token for making a payment. 
+   * The type of card (Card Network). Possible Values: - visa - mastercard - americanexpress 
+   * @return type
+  **/
+  @ApiModelProperty(value = "The type of card (Card Network). Possible Values: - visa - mastercard - americanexpress ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+   /**
+   * Value generated by the card association to be used alongside the network token for processing a payment. 
    * @return cryptogram
   **/
-  @ApiModelProperty(example = "CgAFRFYFPTFOfg5rj2ais9wQAAAAAM=", value = "Generated value used in conjunction with the network token for making a payment. ")
+  @ApiModelProperty(example = "CgAFRFYFPTFOfg5rj2ais9wQAAAAAM=", value = "Value generated by the card association to be used alongside the network token for processing a payment. ")
   public String getCryptogram() {
     return cryptogram;
+  }
+
+   /**
+   * 4-digit number generated by the card association to be used alogside the network token for processing a payment. Only supported for Amex and SCOF. 
+   * @return securityCode
+  **/
+  @ApiModelProperty(example = "4523", value = "4-digit number generated by the card association to be used alogside the network token for processing a payment. Only supported for Amex and SCOF. ")
+  public String getSecurityCode() {
+    return securityCode;
+  }
+
+   /**
+   * Raw Electronic Commerce Indicator provided by the card association with the result of the cardholder authentication. 
+   * @return eci
+  **/
+  @ApiModelProperty(value = "Raw Electronic Commerce Indicator provided by the card association with the result of the cardholder authentication. ")
+  public String getEci() {
+    return eci;
+  }
+
+   /**
+   * 11-digit identifier that uniquely identifies the Token Requestor. 
+   * @return requestorId
+  **/
+  @ApiModelProperty(value = "11-digit identifier that uniquely identifies the Token Requestor. ")
+  public String getRequestorId() {
+    return requestorId;
+  }
+
+   /**
+   * Unique id to identify this PAN/ enrollment. 
+   * @return enrollmentId
+  **/
+  @ApiModelProperty(value = "Unique id to identify this PAN/ enrollment. ")
+  public String getEnrollmentId() {
+    return enrollmentId;
+  }
+
+   /**
+   * Unique ID for netwrok token. 
+   * @return tokenReferenceId
+  **/
+  @ApiModelProperty(value = "Unique ID for netwrok token. ")
+  public String getTokenReferenceId() {
+    return tokenReferenceId;
+  }
+
+   /**
+   * Payment account reference. 
+   * @return paymentAccountReference
+  **/
+  @ApiModelProperty(value = "Payment account reference. ")
+  public String getPaymentAccountReference() {
+    return paymentAccountReference;
   }
 
   public Tmsv2TokenizedCard card(Tmsv2TokenizedCardCard card) {
@@ -173,6 +352,24 @@ public class Tmsv2TokenizedCard {
 
   public void setCard(Tmsv2TokenizedCardCard card) {
     this.card = card;
+  }
+
+  public Tmsv2TokenizedCard passcode(Tmsv2TokenizedCardPasscode passcode) {
+    this.passcode = passcode;
+    return this;
+  }
+
+   /**
+   * Get passcode
+   * @return passcode
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardPasscode getPasscode() {
+    return passcode;
+  }
+
+  public void setPasscode(Tmsv2TokenizedCardPasscode passcode) {
+    this.passcode = passcode;
   }
 
   public Tmsv2TokenizedCard metadata(Tmsv2TokenizedCardMetadata metadata) {
@@ -203,23 +400,34 @@ public class Tmsv2TokenizedCard {
       return false;
     }
     Tmsv2TokenizedCard tmsv2TokenizedCard = (Tmsv2TokenizedCard) o;
-    return Objects.equals(this.type, tmsv2TokenizedCard.type) &&
+    return Objects.equals(this.links, tmsv2TokenizedCard.links) &&
+        Objects.equals(this.id, tmsv2TokenizedCard.id) &&
+        Objects.equals(this.object, tmsv2TokenizedCard.object) &&
+        Objects.equals(this.accountReferenceId, tmsv2TokenizedCard.accountReferenceId) &&
+        Objects.equals(this.consumerId, tmsv2TokenizedCard.consumerId) &&
+        Objects.equals(this.createInstrumentIdentifier, tmsv2TokenizedCard.createInstrumentIdentifier) &&
         Objects.equals(this.source, tmsv2TokenizedCard.source) &&
         Objects.equals(this.state, tmsv2TokenizedCard.state) &&
-        Objects.equals(this.enrollmentId, tmsv2TokenizedCard.enrollmentId) &&
-        Objects.equals(this.tokenReferenceId, tmsv2TokenizedCard.tokenReferenceId) &&
         Objects.equals(this.reason, tmsv2TokenizedCard.reason) &&
         Objects.equals(this.number, tmsv2TokenizedCard.number) &&
         Objects.equals(this.expirationMonth, tmsv2TokenizedCard.expirationMonth) &&
         Objects.equals(this.expirationYear, tmsv2TokenizedCard.expirationYear) &&
+        Objects.equals(this.type, tmsv2TokenizedCard.type) &&
         Objects.equals(this.cryptogram, tmsv2TokenizedCard.cryptogram) &&
+        Objects.equals(this.securityCode, tmsv2TokenizedCard.securityCode) &&
+        Objects.equals(this.eci, tmsv2TokenizedCard.eci) &&
+        Objects.equals(this.requestorId, tmsv2TokenizedCard.requestorId) &&
+        Objects.equals(this.enrollmentId, tmsv2TokenizedCard.enrollmentId) &&
+        Objects.equals(this.tokenReferenceId, tmsv2TokenizedCard.tokenReferenceId) &&
+        Objects.equals(this.paymentAccountReference, tmsv2TokenizedCard.paymentAccountReference) &&
         Objects.equals(this.card, tmsv2TokenizedCard.card) &&
+        Objects.equals(this.passcode, tmsv2TokenizedCard.passcode) &&
         Objects.equals(this.metadata, tmsv2TokenizedCard.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, source, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card, metadata);
+    return Objects.hash(links, id, object, accountReferenceId, consumerId, createInstrumentIdentifier, source, state, reason, number, expirationMonth, expirationYear, type, cryptogram, securityCode, eci, requestorId, enrollmentId, tokenReferenceId, paymentAccountReference, card, passcode, metadata);
   }
 
 
@@ -228,18 +436,29 @@ public class Tmsv2TokenizedCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCard {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
-    sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    if (accountReferenceId != null) sb.append("    accountReferenceId: ").append(toIndentedString(accountReferenceId)).append("\n");
+    if (consumerId != null) sb.append("    consumerId: ").append(toIndentedString(consumerId)).append("\n");
+    if (createInstrumentIdentifier != null) sb.append("    createInstrumentIdentifier: ").append(toIndentedString(createInstrumentIdentifier)).append("\n");
+    if (source != null) sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (cryptogram != null) sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    if (eci != null) sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    if (enrollmentId != null) sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
+    if (tokenReferenceId != null) sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (passcode != null) sb.append("    passcode: ").append(toIndentedString(passcode)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -250,10 +469,10 @@ public class Tmsv2TokenizedCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

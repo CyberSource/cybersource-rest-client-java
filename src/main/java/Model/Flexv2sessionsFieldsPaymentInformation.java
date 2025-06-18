@@ -75,7 +75,7 @@ public class Flexv2sessionsFieldsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Flexv2sessionsFieldsPaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Flexv2sessionsFieldsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Ptsv2creditsInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2creditsInstallmentInformation {\n");
     
-    sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2creditsInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

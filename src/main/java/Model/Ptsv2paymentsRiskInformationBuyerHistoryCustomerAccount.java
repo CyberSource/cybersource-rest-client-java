@@ -184,12 +184,12 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {\n");
     
-    sb.append("    lastChangeDate: ").append(toIndentedString(lastChangeDate)).append("\n");
-    sb.append("    creationHistory: ").append(toIndentedString(creationHistory)).append("\n");
-    sb.append("    modificationHistory: ").append(toIndentedString(modificationHistory)).append("\n");
-    sb.append("    passwordHistory: ").append(toIndentedString(passwordHistory)).append("\n");
-    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
-    sb.append("    passwordChangeDate: ").append(toIndentedString(passwordChangeDate)).append("\n");
+    if (lastChangeDate != null) sb.append("    lastChangeDate: ").append(toIndentedString(lastChangeDate)).append("\n");
+    if (creationHistory != null) sb.append("    creationHistory: ").append(toIndentedString(creationHistory)).append("\n");
+    if (modificationHistory != null) sb.append("    modificationHistory: ").append(toIndentedString(modificationHistory)).append("\n");
+    if (passwordHistory != null) sb.append("    passwordHistory: ").append(toIndentedString(passwordHistory)).append("\n");
+    if (createDate != null) sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    if (passwordChangeDate != null) sb.append("    passwordChangeDate: ").append(toIndentedString(passwordChangeDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

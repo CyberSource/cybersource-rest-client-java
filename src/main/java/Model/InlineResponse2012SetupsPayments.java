@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2012SetupsPaymentsAlternativePaymentMethods;
 import Model.InlineResponse2012SetupsPaymentsCardProcessing;
 import Model.InlineResponse2012SetupsPaymentsDigitalPayments;
 import com.google.gson.TypeAdapter;
@@ -33,6 +34,9 @@ import java.io.IOException;
 public class InlineResponse2012SetupsPayments {
   @SerializedName("cardProcessing")
   private InlineResponse2012SetupsPaymentsCardProcessing cardProcessing = null;
+
+  @SerializedName("alternativePaymentMethods")
+  private InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods = null;
 
   @SerializedName("cardPresentConnect")
   private InlineResponse2012SetupsPaymentsCardProcessing cardPresentConnect = null;
@@ -101,6 +105,24 @@ public class InlineResponse2012SetupsPayments {
 
   public void setCardProcessing(InlineResponse2012SetupsPaymentsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
+  }
+
+  public InlineResponse2012SetupsPayments alternativePaymentMethods(InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
+    return this;
+  }
+
+   /**
+   * Get alternativePaymentMethods
+   * @return alternativePaymentMethods
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2012SetupsPaymentsAlternativePaymentMethods getAlternativePaymentMethods() {
+    return alternativePaymentMethods;
+  }
+
+  public void setAlternativePaymentMethods(InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
   }
 
   public InlineResponse2012SetupsPayments cardPresentConnect(InlineResponse2012SetupsPaymentsCardProcessing cardPresentConnect) {
@@ -420,6 +442,7 @@ public class InlineResponse2012SetupsPayments {
     }
     InlineResponse2012SetupsPayments inlineResponse2012SetupsPayments = (InlineResponse2012SetupsPayments) o;
     return Objects.equals(this.cardProcessing, inlineResponse2012SetupsPayments.cardProcessing) &&
+        Objects.equals(this.alternativePaymentMethods, inlineResponse2012SetupsPayments.alternativePaymentMethods) &&
         Objects.equals(this.cardPresentConnect, inlineResponse2012SetupsPayments.cardPresentConnect) &&
         Objects.equals(this.eCheck, inlineResponse2012SetupsPayments.eCheck) &&
         Objects.equals(this.payerAuthentication, inlineResponse2012SetupsPayments.payerAuthentication) &&
@@ -441,7 +464,7 @@ public class InlineResponse2012SetupsPayments {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee);
   }
 
 
@@ -450,24 +473,25 @@ public class InlineResponse2012SetupsPayments {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsPayments {\n");
     
-    sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
-    sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
-    sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
-    sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
-    sb.append("    digitalPayments: ").append(toIndentedString(digitalPayments)).append("\n");
-    sb.append("    secureAcceptance: ").append(toIndentedString(secureAcceptance)).append("\n");
-    sb.append("    virtualTerminal: ").append(toIndentedString(virtualTerminal)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
-    sb.append("    customerInvoicing: ").append(toIndentedString(customerInvoicing)).append("\n");
-    sb.append("    recurringBilling: ").append(toIndentedString(recurringBilling)).append("\n");
-    sb.append("    cybsReadyTerminal: ").append(toIndentedString(cybsReadyTerminal)).append("\n");
-    sb.append("    paymentOrchestration: ").append(toIndentedString(paymentOrchestration)).append("\n");
-    sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
-    sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
-    sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
-    sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
-    sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
+    if (cardProcessing != null) sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
+    if (alternativePaymentMethods != null) sb.append("    alternativePaymentMethods: ").append(toIndentedString(alternativePaymentMethods)).append("\n");
+    if (cardPresentConnect != null) sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
+    if (eCheck != null) sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
+    if (payerAuthentication != null) sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
+    if (digitalPayments != null) sb.append("    digitalPayments: ").append(toIndentedString(digitalPayments)).append("\n");
+    if (secureAcceptance != null) sb.append("    secureAcceptance: ").append(toIndentedString(secureAcceptance)).append("\n");
+    if (virtualTerminal != null) sb.append("    virtualTerminal: ").append(toIndentedString(virtualTerminal)).append("\n");
+    if (currencyConversion != null) sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    if (tax != null) sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
+    if (customerInvoicing != null) sb.append("    customerInvoicing: ").append(toIndentedString(customerInvoicing)).append("\n");
+    if (recurringBilling != null) sb.append("    recurringBilling: ").append(toIndentedString(recurringBilling)).append("\n");
+    if (cybsReadyTerminal != null) sb.append("    cybsReadyTerminal: ").append(toIndentedString(cybsReadyTerminal)).append("\n");
+    if (paymentOrchestration != null) sb.append("    paymentOrchestration: ").append(toIndentedString(paymentOrchestration)).append("\n");
+    if (payouts != null) sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
+    if (payByLink != null) sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
+    if (unifiedCheckout != null) sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
+    if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
+    if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -478,10 +502,10 @@ public class InlineResponse2012SetupsPayments {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -49,6 +49,15 @@ public class Upv1capturecontextsCaptureMandate {
   @SerializedName("showAcceptedNetworkIcons")
   private Boolean showAcceptedNetworkIcons = null;
 
+  @SerializedName("requestSaveCard")
+  private Boolean requestSaveCard = null;
+
+  @SerializedName("comboCard")
+  private Boolean comboCard = null;
+
+  @SerializedName("CPF")
+  private Boolean CPF = null;
+
   public Upv1capturecontextsCaptureMandate billingType(String billingType) {
     this.billingType = billingType;
     return this;
@@ -77,7 +86,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestEmail
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer email address.  Possible values:  - True  - False ")
-  public Boolean isRequestEmail() {
+  public Boolean RequestEmail() {
     return requestEmail;
   }
 
@@ -95,7 +104,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestPhone
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer phone number.  Possible values: - True - False ")
-  public Boolean isRequestPhone() {
+  public Boolean RequestPhone() {
     return requestPhone;
   }
 
@@ -113,7 +122,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestShipping
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer shipping details.  Possible values: - True - False ")
-  public Boolean isRequestShipping() {
+  public Boolean RequestShipping() {
     return requestShipping;
   }
 
@@ -157,12 +166,66 @@ public class Upv1capturecontextsCaptureMandate {
    * @return showAcceptedNetworkIcons
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to display the list of accepted card networks beneath the payment button  Possible values: - True - False ")
-  public Boolean isShowAcceptedNetworkIcons() {
+  public Boolean ShowAcceptedNetworkIcons() {
     return showAcceptedNetworkIcons;
   }
 
   public void setShowAcceptedNetworkIcons(Boolean showAcceptedNetworkIcons) {
     this.showAcceptedNetworkIcons = showAcceptedNetworkIcons;
+  }
+
+  public Upv1capturecontextsCaptureMandate requestSaveCard(Boolean requestSaveCard) {
+    this.requestSaveCard = requestSaveCard;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display the \&quot;Save card for future use\&quot; checkbox.&lt;br&gt;  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.&lt;br&gt;  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False&lt;br&gt;&lt;br&gt;  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message &#39;Save card for future use&#39; in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.&lt;br&gt;&lt;br&gt;  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. 
+   * @return requestSaveCard
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display the \"Save card for future use\" checkbox.<br>  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.<br>  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False<br><br>  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message 'Save card for future use' in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.<br><br>  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. ")
+  public Boolean RequestSaveCard() {
+    return requestSaveCard;
+  }
+
+  public void setRequestSaveCard(Boolean requestSaveCard) {
+    this.requestSaveCard = requestSaveCard;
+  }
+
+  public Upv1capturecontextsCaptureMandate comboCard(Boolean comboCard) {
+    this.comboCard = comboCard;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display combo card at checkout.&lt;br&gt;  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False&lt;br&gt;&lt;br&gt;  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout &lt;br&gt;&lt;br&gt;  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout. 
+   * @return comboCard
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display combo card at checkout.<br>  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False<br><br>  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout <br><br>  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout. ")
+  public Boolean ComboCard() {
+    return comboCard;
+  }
+
+  public void setComboCard(Boolean comboCard) {
+    this.comboCard = comboCard;
+  }
+
+  public Upv1capturecontextsCaptureMandate CPF(Boolean CPF) {
+    this.CPF = CPF;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False&lt;br&gt;&lt;br&gt;  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.&lt;br&gt;&lt;br&gt;  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. 
+   * @return CPF
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False<br><br>  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.<br><br>  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. ")
+  public Boolean CPF() {
+    return CPF;
+  }
+
+  public void setCPF(Boolean CPF) {
+    this.CPF = CPF;
   }
 
 
@@ -180,12 +243,15 @@ public class Upv1capturecontextsCaptureMandate {
         Objects.equals(this.requestPhone, upv1capturecontextsCaptureMandate.requestPhone) &&
         Objects.equals(this.requestShipping, upv1capturecontextsCaptureMandate.requestShipping) &&
         Objects.equals(this.shipToCountries, upv1capturecontextsCaptureMandate.shipToCountries) &&
-        Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons);
+        Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons) &&
+        Objects.equals(this.requestSaveCard, upv1capturecontextsCaptureMandate.requestSaveCard) &&
+        Objects.equals(this.comboCard, upv1capturecontextsCaptureMandate.comboCard) &&
+        Objects.equals(this.CPF, upv1capturecontextsCaptureMandate.CPF);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons);
+    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, requestSaveCard, comboCard, CPF);
   }
 
 
@@ -194,12 +260,15 @@ public class Upv1capturecontextsCaptureMandate {
     StringBuilder sb = new StringBuilder();
     sb.append("class Upv1capturecontextsCaptureMandate {\n");
     
-    sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
-    sb.append("    requestEmail: ").append(toIndentedString(requestEmail)).append("\n");
-    sb.append("    requestPhone: ").append(toIndentedString(requestPhone)).append("\n");
-    sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
-    sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
-    sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
+    if (billingType != null) sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
+    if (requestEmail != null) sb.append("    requestEmail: ").append(toIndentedString(requestEmail)).append("\n");
+    if (requestPhone != null) sb.append("    requestPhone: ").append(toIndentedString(requestPhone)).append("\n");
+    if (requestShipping != null) sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
+    if (shipToCountries != null) sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
+    if (showAcceptedNetworkIcons != null) sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
+    if (requestSaveCard != null) sb.append("    requestSaveCard: ").append(toIndentedString(requestSaveCard)).append("\n");
+    if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
+    if (CPF != null) sb.append("    CPF: ").append(toIndentedString(CPF)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,10 +279,10 @@ public class Upv1capturecontextsCaptureMandate {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

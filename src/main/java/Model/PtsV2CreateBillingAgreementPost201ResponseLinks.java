@@ -141,10 +141,10 @@ public class PtsV2CreateBillingAgreementPost201ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateBillingAgreementPost201ResponseLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    updateAgreement: ").append(toIndentedString(updateAgreement)).append("\n");
-    sb.append("    revokeAgreement: ").append(toIndentedString(revokeAgreement)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (updateAgreement != null) sb.append("    updateAgreement: ").append(toIndentedString(updateAgreement)).append("\n");
+    if (revokeAgreement != null) sb.append("    revokeAgreement: ").append(toIndentedString(revokeAgreement)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class PtsV2CreateBillingAgreementPost201ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

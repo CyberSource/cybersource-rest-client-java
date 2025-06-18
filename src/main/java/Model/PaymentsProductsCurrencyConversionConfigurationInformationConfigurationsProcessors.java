@@ -96,8 +96,8 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors {\n");
     
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    acquirerId: ").append(toIndentedString(acquirerId)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (acquirerId != null) sb.append("    acquirerId: ").append(toIndentedString(acquirerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Ptsv2paymentreferencesidintentsPaymentInformationEWallet {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesidintentsPaymentInformationEWallet {\n");
     
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentreferencesidintentsPaymentInformationEWallet {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

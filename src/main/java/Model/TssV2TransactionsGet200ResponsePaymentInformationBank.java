@@ -208,13 +208,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBank {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationBank {\n");
     
-    sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
-    sb.append("    branchCode: ").append(toIndentedString(branchCode)).append("\n");
-    sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
-    sb.append("    bankCode: ").append(toIndentedString(bankCode)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
-    sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
+    if (routingNumber != null) sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
+    if (branchCode != null) sb.append("    branchCode: ").append(toIndentedString(branchCode)).append("\n");
+    if (swiftCode != null) sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
+    if (bankCode != null) sb.append("    bankCode: ").append(toIndentedString(bankCode)).append("\n");
+    if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (mandate != null) sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,10 +225,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBank {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

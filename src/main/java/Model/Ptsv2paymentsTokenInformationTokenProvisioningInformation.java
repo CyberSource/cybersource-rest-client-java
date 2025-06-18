@@ -45,7 +45,7 @@ public class Ptsv2paymentsTokenInformationTokenProvisioningInformation {
    * @return consumerConsentObtained
   **/
   @ApiModelProperty(value = "Flag that indicates whether the user consented to the tokenization of their credentials. Required for card network tokenization in certain markets, such as India. Possible Values: - `true`: Consumer has consented to tokenization of their credentials. - `false`: Consumer has not consented to tokenization of their credentials. ")
-  public Boolean isConsumerConsentObtained() {
+  public Boolean ConsumerConsentObtained() {
     return consumerConsentObtained;
   }
 
@@ -63,7 +63,7 @@ public class Ptsv2paymentsTokenInformationTokenProvisioningInformation {
    * @return multiFactorAuthenticated
   **/
   @ApiModelProperty(value = "Flag that indicates whether AFA (Additional Factor of Authentication) for the PAN was completed. Required for card network tokenization in certain markets, such as India. Possible Values: - `true`: Consumer has been authenticated by the issuer. - `false`: Consumer has not been authenticated by the issuer. ")
-  public Boolean isMultiFactorAuthenticated() {
+  public Boolean MultiFactorAuthenticated() {
     return multiFactorAuthenticated;
   }
 
@@ -96,8 +96,8 @@ public class Ptsv2paymentsTokenInformationTokenProvisioningInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTokenInformationTokenProvisioningInformation {\n");
     
-    sb.append("    consumerConsentObtained: ").append(toIndentedString(consumerConsentObtained)).append("\n");
-    sb.append("    multiFactorAuthenticated: ").append(toIndentedString(multiFactorAuthenticated)).append("\n");
+    if (consumerConsentObtained != null) sb.append("    consumerConsentObtained: ").append(toIndentedString(consumerConsentObtained)).append("\n");
+    if (multiFactorAuthenticated != null) sb.append("    multiFactorAuthenticated: ").append(toIndentedString(multiFactorAuthenticated)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsTokenInformationTokenProvisioningInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -96,8 +96,8 @@ public class Ptsv2paymentsTravelInformationVehicleData {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationVehicleData {\n");
     
-    sb.append("    connectorType: ").append(toIndentedString(connectorType)).append("\n");
-    sb.append("    chargingReasonCode: ").append(toIndentedString(chargingReasonCode)).append("\n");
+    if (connectorType != null) sb.append("    connectorType: ").append(toIndentedString(connectorType)).append("\n");
+    if (chargingReasonCode != null) sb.append("    chargingReasonCode: ").append(toIndentedString(chargingReasonCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsTravelInformationVehicleData {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

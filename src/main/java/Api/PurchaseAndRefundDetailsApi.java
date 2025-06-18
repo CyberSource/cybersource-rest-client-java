@@ -41,6 +41,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class PurchaseAndRefundDetailsApi {
     private static Logger logger = LogManager.getLogger(PurchaseAndRefundDetailsApi.class);
@@ -83,6 +85,16 @@ public class PurchaseAndRefundDetailsApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPurchaseAndRefundDetails,getPurchaseAndRefundDetailsAsync,getPurchaseAndRefundDetailsWithHttpInfo,getPurchaseAndRefundDetailsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -179,7 +191,6 @@ public class PurchaseAndRefundDetailsApi {
      */
     public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
         logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
         logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' ENDED");
         return resp.getData();
@@ -200,6 +211,7 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3PurchaseRefundDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

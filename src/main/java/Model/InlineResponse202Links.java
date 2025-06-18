@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.InlineResponse202LinksStatus;
-import Model.InlineResponse401LinksSelf;
+import Model.InlineResponse4011LinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,12 +34,12 @@ import java.util.List;
 
 public class InlineResponse202Links {
   @SerializedName("self")
-  private InlineResponse401LinksSelf self = null;
+  private InlineResponse4011LinksSelf self = null;
 
   @SerializedName("status")
   private List<InlineResponse202LinksStatus> status = null;
 
-  public InlineResponse202Links self(InlineResponse401LinksSelf self) {
+  public InlineResponse202Links self(InlineResponse4011LinksSelf self) {
     this.self = self;
     return this;
   }
@@ -49,11 +49,11 @@ public class InlineResponse202Links {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse401LinksSelf getSelf() {
+  public InlineResponse4011LinksSelf getSelf() {
     return self;
   }
 
-  public void setSelf(InlineResponse401LinksSelf self) {
+  public void setSelf(InlineResponse4011LinksSelf self) {
     this.self = self;
   }
 
@@ -108,8 +108,8 @@ public class InlineResponse202Links {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse202Links {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,10 +120,10 @@ public class InlineResponse202Links {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

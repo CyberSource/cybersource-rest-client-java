@@ -228,14 +228,14 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationresultsConsumerAuthenticationInformation {\n");
     
-    sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
-    sb.append("    authenticationTransactionContext: ").append(toIndentedString(authenticationTransactionContext)).append("\n");
-    sb.append("    otpToken: ").append(toIndentedString(otpToken)).append("\n");
-    sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
-    sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
-    sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
-    sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
-    sb.append("    credentialEncrypted: ").append(toIndentedString(credentialEncrypted)).append("\n");
+    if (authenticationTransactionId != null) sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    if (authenticationTransactionContext != null) sb.append("    authenticationTransactionContext: ").append(toIndentedString(authenticationTransactionContext)).append("\n");
+    if (otpToken != null) sb.append("    otpToken: ").append(toIndentedString(otpToken)).append("\n");
+    if (responseAccessToken != null) sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
+    if (signedParesStatusReason != null) sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
+    if (signedPares != null) sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
+    if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    if (credentialEncrypted != null) sb.append("    credentialEncrypted: ").append(toIndentedString(credentialEncrypted)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -246,10 +246,10 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 
