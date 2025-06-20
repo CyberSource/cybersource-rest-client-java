@@ -17,7 +17,11 @@ public class JWEUtility {
     /**
      * This method has been marked as Deprecated and will be removed in coming releases.
      *
+     * @param encodedResponse The encoded response that has to be decrypted
+     * @param merchantConfig The merchant configuration object where the private key pem file path is provided
+     * @return The decrypted response as a JSON string
      * @deprecated use {@link #decryptJWEResponse(PrivateKey, String)} instead.
+     * @throws JWEException Error during decryption
      */
     @Deprecated
     public static String decryptJWEResponse(String encodedResponse, MerchantConfig merchantConfig) throws JWEException {
@@ -39,6 +43,13 @@ public class JWEUtility {
         }
     }
 
+    /**
+     *
+     * @param privateKey The private key to use for decrypting the encoded response
+     * @param encodedResponse The encoded response that has to be decrypted
+     * @return The decrypted response as a JSON string
+     * @throws JWEException Error during decryption
+     */
     public static String decryptJWEResponse(PrivateKey privateKey, String encodedResponse) throws JWEException {
         try {
             return com.cybersource.authsdk.util.JWEUtility.decryptJWEUsingPrivateKey(privateKey, encodedResponse);

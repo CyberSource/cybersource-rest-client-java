@@ -48,7 +48,7 @@ public class SubscriptionsApiTest {
     /**
      * Activate a Subscription
      *
-     * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+     * Activate a &#x60;SUSPENDED&#x60; Subscription 
      *
      * @throws Exception
      *          if the Api call fails
@@ -56,7 +56,8 @@ public class SubscriptionsApiTest {
     @Test
     public void activateSubscriptionTest() throws Exception {
         String id = null;
-        ActivateSubscriptionResponse response = api.activateSubscription(id);
+        Boolean processSkippedPayments = null;
+        ActivateSubscriptionResponse response = api.activateSubscription(id, processSkippedPayments);
 
         // TODO: test validations
     }

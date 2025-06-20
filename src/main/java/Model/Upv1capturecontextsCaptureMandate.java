@@ -49,6 +49,9 @@ public class Upv1capturecontextsCaptureMandate {
   @SerializedName("showAcceptedNetworkIcons")
   private Boolean showAcceptedNetworkIcons = null;
 
+  @SerializedName("showConfirmationStep")
+  private Boolean showConfirmationStep = null;
+
   @SerializedName("requestSaveCard")
   private Boolean requestSaveCard = null;
 
@@ -174,6 +177,24 @@ public class Upv1capturecontextsCaptureMandate {
     this.showAcceptedNetworkIcons = showAcceptedNetworkIcons;
   }
 
+  public Upv1capturecontextsCaptureMandate showConfirmationStep(Boolean showConfirmationStep) {
+    this.showConfirmationStep = showConfirmationStep;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display the final confirmation screen when using Click to Pay.&lt;br&gt; Where &#39;BillingType&#39;&#x3D; NONE and &#39;requestShipping&#39;&#x3D; FALSE and the customer is using an existing Click to Pay card as their chosen payment method, a final confirmation screen can be removed allowing the customer to check out as soon as they have selected their payment method from within their Click to Pay card tray.  Possible values: - True - False 
+   * @return showConfirmationStep
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display the final confirmation screen when using Click to Pay.<br> Where 'BillingType'= NONE and 'requestShipping'= FALSE and the customer is using an existing Click to Pay card as their chosen payment method, a final confirmation screen can be removed allowing the customer to check out as soon as they have selected their payment method from within their Click to Pay card tray.  Possible values: - True - False ")
+  public Boolean ShowConfirmationStep() {
+    return showConfirmationStep;
+  }
+
+  public void setShowConfirmationStep(Boolean showConfirmationStep) {
+    this.showConfirmationStep = showConfirmationStep;
+  }
+
   public Upv1capturecontextsCaptureMandate requestSaveCard(Boolean requestSaveCard) {
     this.requestSaveCard = requestSaveCard;
     return this;
@@ -244,6 +265,7 @@ public class Upv1capturecontextsCaptureMandate {
         Objects.equals(this.requestShipping, upv1capturecontextsCaptureMandate.requestShipping) &&
         Objects.equals(this.shipToCountries, upv1capturecontextsCaptureMandate.shipToCountries) &&
         Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons) &&
+        Objects.equals(this.showConfirmationStep, upv1capturecontextsCaptureMandate.showConfirmationStep) &&
         Objects.equals(this.requestSaveCard, upv1capturecontextsCaptureMandate.requestSaveCard) &&
         Objects.equals(this.comboCard, upv1capturecontextsCaptureMandate.comboCard) &&
         Objects.equals(this.CPF, upv1capturecontextsCaptureMandate.CPF);
@@ -251,7 +273,7 @@ public class Upv1capturecontextsCaptureMandate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, requestSaveCard, comboCard, CPF);
+    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, showConfirmationStep, requestSaveCard, comboCard, CPF);
   }
 
 
@@ -266,6 +288,7 @@ public class Upv1capturecontextsCaptureMandate {
     if (requestShipping != null) sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
     if (shipToCountries != null) sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
     if (showAcceptedNetworkIcons != null) sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
+    if (showConfirmationStep != null) sb.append("    showConfirmationStep: ").append(toIndentedString(showConfirmationStep)).append("\n");
     if (requestSaveCard != null) sb.append("    requestSaveCard: ").append(toIndentedString(requestSaveCard)).append("\n");
     if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
     if (CPF != null) sb.append("    CPF: ").append(toIndentedString(CPF)).append("\n");

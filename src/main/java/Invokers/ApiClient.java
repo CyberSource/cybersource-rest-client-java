@@ -959,8 +959,8 @@ public class ApiClient {
 	 * @return True if the given MIME is JSON, false otherwise.
 	 */
 	public boolean isJsonMime(String mime) {
-		String jsonMime = "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$";
-		return mime != null && (mime.matches(jsonMime) || mime.equalsIgnoreCase("application/json-patch+json"));
+		String jsonMime = "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(.*)?$";
+		return mime != null && (mime.matches(jsonMime) || mime.equalsIgnoreCase("application/json-patch+json") || mime.equalsIgnoreCase("application/json") || mime.equalsIgnoreCase("application/hal+json"));
 	}
 
 	/**
@@ -1451,6 +1451,8 @@ public class ApiClient {
 
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
+			} else {
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
 			}
 
 		} catch (ConfigException | IOException e) {

@@ -36,16 +36,19 @@ public class Upv1capturecontextsCompleteMandate {
   @SerializedName("decisionManager")
   private Boolean decisionManager = null;
 
+  @SerializedName("consumerAuthentication")
+  private Boolean consumerAuthentication = null;
+
   public Upv1capturecontextsCompleteMandate type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment without capturing it immediately.  Payment types that initiate an immediate transfer of funds are not allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.&lt;br&gt;&lt;br&gt;   - CAPTURE: Use this value when you want to capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.&lt;br&gt;&lt;br&gt; - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available. Payment types like account-to-account transfers that initiate an immediate transfer of funds are allowed and presented to the customer. If selected, an immediate transfer of funds occurs; otherwise, a final backend call is needed to capture the payment. Transactions can be AUTHORIZED, CAPTURED, or PENDING. 
+   * This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment within Unified Checkout without capturing it immediately.  Payment types that initiate an immediate transfer of funds are NOT allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.  A merchant would need to perform their own capture via API where applicable.&lt;br&gt;&lt;br&gt;   - CAPTURE: Use this value when you want to perform a sale within Unified Checkout and capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.&lt;br&gt;&lt;br&gt; - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available.  It will perform a \&quot;CAPTURE\&quot; where an \&quot;AUTH\&quot; is not allowed by the payment type.  Transactions can be AUTHORIZED, CAPTURED, or PENDING.  If an \&quot;AUTH\&quot; is performed, a merchant would need to perform their own capture via API where applicable. 
    * @return type
   **/
-  @ApiModelProperty(example = "AUTH", value = "This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment without capturing it immediately.  Payment types that initiate an immediate transfer of funds are not allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.<br><br>   - CAPTURE: Use this value when you want to capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.<br><br> - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available. Payment types like account-to-account transfers that initiate an immediate transfer of funds are allowed and presented to the customer. If selected, an immediate transfer of funds occurs; otherwise, a final backend call is needed to capture the payment. Transactions can be AUTHORIZED, CAPTURED, or PENDING. ")
+  @ApiModelProperty(example = "AUTH", value = "This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment within Unified Checkout without capturing it immediately.  Payment types that initiate an immediate transfer of funds are NOT allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.  A merchant would need to perform their own capture via API where applicable.<br><br>   - CAPTURE: Use this value when you want to perform a sale within Unified Checkout and capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.<br><br> - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available.  It will perform a \"CAPTURE\" where an \"AUTH\" is not allowed by the payment type.  Transactions can be AUTHORIZED, CAPTURED, or PENDING.  If an \"AUTH\" is performed, a merchant would need to perform their own capture via API where applicable. ")
   public String getType() {
     return type;
   }
@@ -60,16 +63,34 @@ public class Upv1capturecontextsCompleteMandate {
   }
 
    /**
-   * Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False&lt;br&gt;&lt;br&gt;  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False indicates that you do not wish to run device fingerprinting and skip decision manager services. 
+   * Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False&lt;br&gt;&lt;br&gt;  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False (or not provided) indicates that you do not wish to run device fingerprinting and skip decision manager services. 
    * @return decisionManager
   **/
-  @ApiModelProperty(value = "Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False indicates that you do not wish to run device fingerprinting and skip decision manager services. ")
+  @ApiModelProperty(value = "Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False (or not provided) indicates that you do not wish to run device fingerprinting and skip decision manager services. ")
   public Boolean DecisionManager() {
     return decisionManager;
   }
 
   public void setDecisionManager(Boolean decisionManager) {
     this.decisionManager = decisionManager;
+  }
+
+  public Upv1capturecontextsCompleteMandate consumerAuthentication(Boolean consumerAuthentication) {
+    this.consumerAuthentication = consumerAuthentication;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to determine whether Consumer Authentication is invoked during service orchestration.  Possible values:  - True  - False&lt;br&gt;&lt;br&gt;  Setting this value to True will attempt to perform authentication using the Payer Authentication Service. Setting this value to False (or not provided) indicates that you do not wish to perform authentication using the Payer Authentication Service. 
+   * @return consumerAuthentication
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to determine whether Consumer Authentication is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True will attempt to perform authentication using the Payer Authentication Service. Setting this value to False (or not provided) indicates that you do not wish to perform authentication using the Payer Authentication Service. ")
+  public Boolean ConsumerAuthentication() {
+    return consumerAuthentication;
+  }
+
+  public void setConsumerAuthentication(Boolean consumerAuthentication) {
+    this.consumerAuthentication = consumerAuthentication;
   }
 
 
@@ -83,12 +104,13 @@ public class Upv1capturecontextsCompleteMandate {
     }
     Upv1capturecontextsCompleteMandate upv1capturecontextsCompleteMandate = (Upv1capturecontextsCompleteMandate) o;
     return Objects.equals(this.type, upv1capturecontextsCompleteMandate.type) &&
-        Objects.equals(this.decisionManager, upv1capturecontextsCompleteMandate.decisionManager);
+        Objects.equals(this.decisionManager, upv1capturecontextsCompleteMandate.decisionManager) &&
+        Objects.equals(this.consumerAuthentication, upv1capturecontextsCompleteMandate.consumerAuthentication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, decisionManager);
+    return Objects.hash(type, decisionManager, consumerAuthentication);
   }
 
 
@@ -99,6 +121,7 @@ public class Upv1capturecontextsCompleteMandate {
     
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (consumerAuthentication != null) sb.append("    consumerAuthentication: ").append(toIndentedString(consumerAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

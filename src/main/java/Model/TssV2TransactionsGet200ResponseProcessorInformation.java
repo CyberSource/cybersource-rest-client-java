@@ -73,6 +73,9 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("electronicVerificationResults")
   private TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
 
+  @SerializedName("eventStatus")
+  private String eventStatus = null;
+
   @SerializedName("systemTraceAuditNumber")
   private String systemTraceAuditNumber = null;
 
@@ -306,6 +309,24 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.electronicVerificationResults = electronicVerificationResults;
   }
 
+  public TssV2TransactionsGet200ResponseProcessorInformation eventStatus(String eventStatus) {
+    this.eventStatus = eventStatus;
+    return this;
+  }
+
+   /**
+   * The event status. 
+   * @return eventStatus
+  **/
+  @ApiModelProperty(value = "The event status. ")
+  public String getEventStatus() {
+    return eventStatus;
+  }
+
+  public void setEventStatus(String eventStatus) {
+    this.eventStatus = eventStatus;
+  }
+
   public TssV2TransactionsGet200ResponseProcessorInformation systemTraceAuditNumber(String systemTraceAuditNumber) {
     this.systemTraceAuditNumber = systemTraceAuditNumber;
     return this;
@@ -382,6 +403,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.cardVerification, tssV2TransactionsGet200ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.achVerification, tssV2TransactionsGet200ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.electronicVerificationResults, tssV2TransactionsGet200ResponseProcessorInformation.electronicVerificationResults) &&
+        Objects.equals(this.eventStatus, tssV2TransactionsGet200ResponseProcessorInformation.eventStatus) &&
         Objects.equals(this.systemTraceAuditNumber, tssV2TransactionsGet200ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource) &&
         Objects.equals(this.paymentAccountReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.paymentAccountReferenceNumber);
@@ -389,7 +411,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, eventStatus, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber);
   }
 
 
@@ -410,6 +432,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     if (achVerification != null) sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    if (eventStatus != null) sb.append("    eventStatus: ").append(toIndentedString(eventStatus)).append("\n");
     if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
