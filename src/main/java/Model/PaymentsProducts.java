@@ -28,6 +28,7 @@ import Model.PaymentsProductsPayouts;
 import Model.PaymentsProductsSecureAcceptance;
 import Model.PaymentsProductsServiceFee;
 import Model.PaymentsProductsTax;
+import Model.PaymentsProductsUnifiedCheckout;
 import Model.PaymentsProductsVirtualTerminal;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -95,7 +96,7 @@ public class PaymentsProducts {
   private PaymentsProductsTax payByLink = null;
 
   @SerializedName("unifiedCheckout")
-  private PaymentsProductsTax unifiedCheckout = null;
+  private PaymentsProductsUnifiedCheckout unifiedCheckout = null;
 
   @SerializedName("receivablesManager")
   private PaymentsProductsTax receivablesManager = null;
@@ -409,7 +410,7 @@ public class PaymentsProducts {
     this.payByLink = payByLink;
   }
 
-  public PaymentsProducts unifiedCheckout(PaymentsProductsTax unifiedCheckout) {
+  public PaymentsProducts unifiedCheckout(PaymentsProductsUnifiedCheckout unifiedCheckout) {
     this.unifiedCheckout = unifiedCheckout;
     return this;
   }
@@ -419,11 +420,11 @@ public class PaymentsProducts {
    * @return unifiedCheckout
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsTax getUnifiedCheckout() {
+  public PaymentsProductsUnifiedCheckout getUnifiedCheckout() {
     return unifiedCheckout;
   }
 
-  public void setUnifiedCheckout(PaymentsProductsTax unifiedCheckout) {
+  public void setUnifiedCheckout(PaymentsProductsUnifiedCheckout unifiedCheckout) {
     this.unifiedCheckout = unifiedCheckout;
   }
 

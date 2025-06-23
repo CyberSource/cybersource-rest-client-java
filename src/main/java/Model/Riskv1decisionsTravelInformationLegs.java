@@ -41,6 +41,9 @@ public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("departureDate")
   private String departureDate = null;
 
+  @SerializedName("departureTime")
+  private Integer departureTime = null;
+
   public Riskv1decisionsTravelInformationLegs origination(String origination) {
     this.origination = origination;
     return this;
@@ -113,6 +116,24 @@ public class Riskv1decisionsTravelInformationLegs {
     this.departureDate = departureDate;
   }
 
+  public Riskv1decisionsTravelInformationLegs departureTime(Integer departureTime) {
+    this.departureTime = departureTime;
+    return this;
+  }
+
+   /**
+   * Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be &#x60;00-23&#x60; and the minutes must be &#x60;00-59&#x60;. Format: English characters only. Optional request field for travel legs. 
+   * @return departureTime
+  **/
+  @ApiModelProperty(value = "Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs. ")
+  public Integer getDepartureTime() {
+    return departureTime;
+  }
+
+  public void setDepartureTime(Integer departureTime) {
+    this.departureTime = departureTime;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +147,13 @@ public class Riskv1decisionsTravelInformationLegs {
     return Objects.equals(this.origination, riskv1decisionsTravelInformationLegs.origination) &&
         Objects.equals(this.destination, riskv1decisionsTravelInformationLegs.destination) &&
         Objects.equals(this.carrierCode, riskv1decisionsTravelInformationLegs.carrierCode) &&
-        Objects.equals(this.departureDate, riskv1decisionsTravelInformationLegs.departureDate);
+        Objects.equals(this.departureDate, riskv1decisionsTravelInformationLegs.departureDate) &&
+        Objects.equals(this.departureTime, riskv1decisionsTravelInformationLegs.departureTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(origination, destination, carrierCode, departureDate);
+    return Objects.hash(origination, destination, carrierCode, departureDate, departureTime);
   }
 
 
@@ -144,6 +166,7 @@ public class Riskv1decisionsTravelInformationLegs {
     if (destination != null) sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     if (carrierCode != null) sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
     if (departureDate != null) sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
+    if (departureTime != null) sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

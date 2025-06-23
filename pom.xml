@@ -304,7 +304,13 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.35</version>
+			<version>0.0.36-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcpg-jdk18on</artifactId>
+		    <version>1.81</version>
 		</dependency>
 	</dependencies>
 

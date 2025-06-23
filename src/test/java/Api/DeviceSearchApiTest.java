@@ -13,12 +13,14 @@
 
 package Api;
 
-import Model.InlineResponse2006;
+import Model.InlineResponse2005;
+import Model.InlineResponse2007;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
 import Model.InlineResponse4043;
 import Model.InlineResponse5003;
+import Model.PostDeviceSearchRequest;
 import Model.PostDeviceSearchRequestV3;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -39,7 +41,23 @@ public class DeviceSearchApiTest {
 
     
     /**
-     * Retrieve List of Devices for a given search query V3
+     * Retrieve List of Devices for a given search query V2
+     *
+     * Retrieves list of terminals in paginated format.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void postSearchQueryTest() throws Exception {
+        PostDeviceSearchRequest postDeviceSearchRequest = null;
+        InlineResponse2005 response = api.postSearchQuery(postDeviceSearchRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve List of Devices for a given search query
      *
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      *
@@ -49,7 +67,7 @@ public class DeviceSearchApiTest {
     @Test
     public void postSearchQueryV3Test() throws Exception {
         PostDeviceSearchRequestV3 postDeviceSearchRequestV3 = null;
-        InlineResponse2006 response = api.postSearchQueryV3(postDeviceSearchRequestV3);
+        InlineResponse2007 response = api.postSearchQueryV3(postDeviceSearchRequestV3);
 
         // TODO: test validations
     }

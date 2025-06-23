@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> ActivateSubscriptionResponse activateSubscription(id)
+> ActivateSubscriptionResponse activateSubscription(id, processSkippedPayments)
 
 Activate a Subscription
 
-Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+Activate a &#x60;SUSPENDED&#x60; Subscription 
 
 ### Example
 ```java
@@ -31,8 +31,9 @@ Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription
 
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
+Boolean processSkippedPayments = true; // Boolean | Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true.
 try {
-    ActivateSubscriptionResponse result = apiInstance.activateSubscription(id);
+    ActivateSubscriptionResponse result = apiInstance.activateSubscription(id, processSkippedPayments);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#activateSubscription");
@@ -45,6 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id |
+ **processSkippedPayments** | **Boolean**| Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. | [optional] [default to true]
 
 ### Return type
 
