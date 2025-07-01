@@ -5,7 +5,7 @@
 	<artifactId>cybersource-rest-client-java</artifactId>
 	<packaging>jar</packaging>
 	<name>cybersource-rest-client-java</name>
-	<version>0.0.78-SNAPSHOT</version>
+	<version>0.0.78</version>
 	<url>http://developer.cybersource.com</url>
 	<description>Cybersource Rest Client SDK</description>
 	
@@ -304,7 +304,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.36-SNAPSHOT</version>
+			<version>0.0.36</version>
 		</dependency>
 		
 		<dependency>
