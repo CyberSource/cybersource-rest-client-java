@@ -20,6 +20,7 @@ import Model.GetAllSubscriptionsResponseOrderInformation;
 import Model.GetAllSubscriptionsResponsePaymentInformation;
 import Model.GetAllSubscriptionsResponsePlanInformation;
 import Model.GetAllSubscriptionsResponseSubscriptionInformation;
+import Model.GetSubscriptionResponseReactivationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,6 +55,9 @@ public class GetSubscriptionResponse {
 
   @SerializedName("orderInformation")
   private GetAllSubscriptionsResponseOrderInformation orderInformation = null;
+
+  @SerializedName("reactivationInformation")
+  private GetSubscriptionResponseReactivationInformation reactivationInformation = null;
 
   public GetSubscriptionResponse links(GetAllSubscriptionsResponseLinks links) {
     this.links = links;
@@ -181,6 +185,24 @@ public class GetSubscriptionResponse {
     this.orderInformation = orderInformation;
   }
 
+  public GetSubscriptionResponse reactivationInformation(GetSubscriptionResponseReactivationInformation reactivationInformation) {
+    this.reactivationInformation = reactivationInformation;
+    return this;
+  }
+
+   /**
+   * Get reactivationInformation
+   * @return reactivationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public GetSubscriptionResponseReactivationInformation getReactivationInformation() {
+    return reactivationInformation;
+  }
+
+  public void setReactivationInformation(GetSubscriptionResponseReactivationInformation reactivationInformation) {
+    this.reactivationInformation = reactivationInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -197,12 +219,13 @@ public class GetSubscriptionResponse {
         Objects.equals(this.planInformation, getSubscriptionResponse.planInformation) &&
         Objects.equals(this.subscriptionInformation, getSubscriptionResponse.subscriptionInformation) &&
         Objects.equals(this.paymentInformation, getSubscriptionResponse.paymentInformation) &&
-        Objects.equals(this.orderInformation, getSubscriptionResponse.orderInformation);
+        Objects.equals(this.orderInformation, getSubscriptionResponse.orderInformation) &&
+        Objects.equals(this.reactivationInformation, getSubscriptionResponse.reactivationInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, planInformation, subscriptionInformation, paymentInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, planInformation, subscriptionInformation, paymentInformation, orderInformation, reactivationInformation);
   }
 
 
@@ -218,6 +241,7 @@ public class GetSubscriptionResponse {
     if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (reactivationInformation != null) sb.append("    reactivationInformation: ").append(toIndentedString(reactivationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

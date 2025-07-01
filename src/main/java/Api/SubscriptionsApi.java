@@ -79,12 +79,13 @@ public class SubscriptionsApi {
     /**
      * Build call for activateSubscription
      * @param id Subscription Id (required)
+     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call activateSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call activateSubscriptionCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -106,6 +107,8 @@ public class SubscriptionsApi {
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (processSkippedPayments != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "processSkippedPayments", processSkippedPayments));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -140,7 +143,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -149,7 +152,7 @@ public class SubscriptionsApi {
         }
         
         
-        okhttp3.Call call = activateSubscriptionCall(id, progressListener, progressRequestListener);
+        okhttp3.Call call = activateSubscriptionCall(id, processSkippedPayments, progressListener, progressRequestListener);
         return call;
 
         
@@ -160,41 +163,44 @@ public class SubscriptionsApi {
 
     /**
      * Activate a Subscription
-     * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+     * Activate a &#x60;SUSPENDED&#x60; Subscription 
      * @param id Subscription Id (required)
+     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @return ActivateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ActivateSubscriptionResponse activateSubscription(String id) throws ApiException {
+    public ActivateSubscriptionResponse activateSubscription(String id, Boolean processSkippedPayments) throws ApiException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
-        ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id);
+        ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id, processSkippedPayments);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
         return resp.getData();
     }
 
     /**
      * Activate a Subscription
-     * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+     * Activate a &#x60;SUSPENDED&#x60; Subscription 
      * @param id Subscription Id (required)
+     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @return ApiResponse&lt;ActivateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processSkippedPayments) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, null, null);
+        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processSkippedPayments, null, null);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Activate a Subscription (asynchronously)
-     * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+     * Activate a &#x60;SUSPENDED&#x60; Subscription 
      * @param id Subscription Id (required)
+     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call activateSubscriptionAsync(String id, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call activateSubscriptionAsync(String id, Boolean processSkippedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -216,7 +222,7 @@ public class SubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, progressListener, progressRequestListener);
+        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processSkippedPayments, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
