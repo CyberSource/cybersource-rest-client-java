@@ -45,7 +45,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   private Integer stopoverIndicator = null;
 
   @SerializedName("departureDate")
-  private Integer departureDate = null;
+  private String departureDate = null;
 
   @SerializedName("destinationAirportCode")
   private String destinationAirportCode = null;
@@ -179,7 +179,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
     this.stopoverIndicator = stopoverIndicator;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineLegs departureDate(Integer departureDate) {
+  public Ptsv2paymentsTravelInformationTransitAirlineLegs departureDate(String departureDate) {
     this.departureDate = departureDate;
     return this;
   }
@@ -189,11 +189,11 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
    * @return departureDate
   **/
   @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: `YYYYMMDD`. Format: English characters only. Optional request field for travel legs. ")
-  public Integer getDepartureDate() {
+  public String getDepartureDate() {
     return departureDate;
   }
 
-  public void setDepartureDate(Integer departureDate) {
+  public void setDepartureDate(String departureDate) {
     this.departureDate = departureDate;
   }
 
