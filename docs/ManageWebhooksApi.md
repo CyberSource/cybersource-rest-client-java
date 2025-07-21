@@ -59,7 +59,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2014 getWebhookSubscriptionById(webhookId)
+> InlineResponse2015 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -75,7 +75,7 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The webhook Identifier
 try {
-    InlineResponse2014 result = apiInstance.getWebhookSubscriptionById(webhookId);
+    InlineResponse2015 result = apiInstance.getWebhookSubscriptionById(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionById");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> InlineResponse2015 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
+> InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
 
 Test a Webhook Configuration
 
@@ -169,7 +169,7 @@ Test the webhook configuration by sending a sample webhook. Calling this endpoin
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The Webhook Identifier.
 try {
-    InlineResponse2015 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+    InlineResponse2016 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV1WebhooksWebhookIdPost");
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2016 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
+> InlineResponse2017 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
 
 Message Level Encryption
 
@@ -309,7 +309,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 SaveAsymEgressKey saveAsymEgressKey = new SaveAsymEgressKey(); // SaveAsymEgressKey | Provide egress Asymmetric key information to save (create or store)
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 try {
-    InlineResponse2016 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+    InlineResponse2017 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**InlineResponse2017**](InlineResponse2017.md)
 
 ### Authorization
 

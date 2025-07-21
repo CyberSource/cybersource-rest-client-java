@@ -16,10 +16,14 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2intentsClientReferenceInformation;
+import Model.Ptsv2intentsEventInformation;
 import Model.Ptsv2intentsMerchantInformation;
 import Model.Ptsv2intentsOrderInformation;
 import Model.Ptsv2intentsPaymentInformation;
 import Model.Ptsv2intentsProcessingInformation;
+import Model.Ptsv2intentsRecipientInformation;
+import Model.Ptsv2intentsSenderInformation;
+import Model.Ptsv2intentsTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,6 +52,18 @@ public class CreateOrderRequest {
 
   @SerializedName("orderInformation")
   private Ptsv2intentsOrderInformation orderInformation = null;
+
+  @SerializedName("senderInformation")
+  private Ptsv2intentsSenderInformation senderInformation = null;
+
+  @SerializedName("eventInformation")
+  private Ptsv2intentsEventInformation eventInformation = null;
+
+  @SerializedName("travelInformation")
+  private Ptsv2intentsTravelInformation travelInformation = null;
+
+  @SerializedName("recipientInformation")
+  private Ptsv2intentsRecipientInformation recipientInformation = null;
 
   public CreateOrderRequest clientReferenceInformation(Ptsv2intentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -139,6 +155,78 @@ public class CreateOrderRequest {
     this.orderInformation = orderInformation;
   }
 
+  public CreateOrderRequest senderInformation(Ptsv2intentsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+    return this;
+  }
+
+   /**
+   * Get senderInformation
+   * @return senderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsSenderInformation getSenderInformation() {
+    return senderInformation;
+  }
+
+  public void setSenderInformation(Ptsv2intentsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+  }
+
+  public CreateOrderRequest eventInformation(Ptsv2intentsEventInformation eventInformation) {
+    this.eventInformation = eventInformation;
+    return this;
+  }
+
+   /**
+   * Get eventInformation
+   * @return eventInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsEventInformation getEventInformation() {
+    return eventInformation;
+  }
+
+  public void setEventInformation(Ptsv2intentsEventInformation eventInformation) {
+    this.eventInformation = eventInformation;
+  }
+
+  public CreateOrderRequest travelInformation(Ptsv2intentsTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(Ptsv2intentsTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
+  public CreateOrderRequest recipientInformation(Ptsv2intentsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+    return this;
+  }
+
+   /**
+   * Get recipientInformation
+   * @return recipientInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsRecipientInformation getRecipientInformation() {
+    return recipientInformation;
+  }
+
+  public void setRecipientInformation(Ptsv2intentsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +241,16 @@ public class CreateOrderRequest {
         Objects.equals(this.processingInformation, createOrderRequest.processingInformation) &&
         Objects.equals(this.merchantInformation, createOrderRequest.merchantInformation) &&
         Objects.equals(this.paymentInformation, createOrderRequest.paymentInformation) &&
-        Objects.equals(this.orderInformation, createOrderRequest.orderInformation);
+        Objects.equals(this.orderInformation, createOrderRequest.orderInformation) &&
+        Objects.equals(this.senderInformation, createOrderRequest.senderInformation) &&
+        Objects.equals(this.eventInformation, createOrderRequest.eventInformation) &&
+        Objects.equals(this.travelInformation, createOrderRequest.travelInformation) &&
+        Objects.equals(this.recipientInformation, createOrderRequest.recipientInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, merchantInformation, paymentInformation, orderInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, merchantInformation, paymentInformation, orderInformation, senderInformation, eventInformation, travelInformation, recipientInformation);
   }
 
 
@@ -172,6 +264,10 @@ public class CreateOrderRequest {
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (eventInformation != null) sb.append("    eventInformation: ").append(toIndentedString(eventInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

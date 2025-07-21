@@ -30,6 +30,7 @@ import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationSepa;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
+import Model.Ptsv2paymentsPaymentInformationTokenizedPaymentMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -49,6 +50,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("tokenizedCard")
   private Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("tokenizedPaymentMethod")
+  private Ptsv2paymentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod = null;
 
   @SerializedName("directDebit")
   private Ptsv2paymentsPaymentInformationDirectDebit directDebit = null;
@@ -126,6 +130,24 @@ public class Ptsv2paymentsPaymentInformation {
 
   public void setTokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
+  }
+
+  public Ptsv2paymentsPaymentInformation tokenizedPaymentMethod(Ptsv2paymentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
+    return this;
+  }
+
+   /**
+   * Get tokenizedPaymentMethod
+   * @return tokenizedPaymentMethod
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationTokenizedPaymentMethod getTokenizedPaymentMethod() {
+    return tokenizedPaymentMethod;
+  }
+
+  public void setTokenizedPaymentMethod(Ptsv2paymentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
   }
 
   public Ptsv2paymentsPaymentInformation directDebit(Ptsv2paymentsPaymentInformationDirectDebit directDebit) {
@@ -392,6 +414,7 @@ public class Ptsv2paymentsPaymentInformation {
     Ptsv2paymentsPaymentInformation ptsv2paymentsPaymentInformation = (Ptsv2paymentsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2paymentsPaymentInformation.card) &&
         Objects.equals(this.tokenizedCard, ptsv2paymentsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.tokenizedPaymentMethod, ptsv2paymentsPaymentInformation.tokenizedPaymentMethod) &&
         Objects.equals(this.directDebit, ptsv2paymentsPaymentInformation.directDebit) &&
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
@@ -410,7 +433,7 @@ public class Ptsv2paymentsPaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, sepa, eWallet, paymentAccountReference);
+    return Objects.hash(card, tokenizedCard, tokenizedPaymentMethod, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, sepa, eWallet, paymentAccountReference);
   }
 
 
@@ -421,6 +444,7 @@ public class Ptsv2paymentsPaymentInformation {
     
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
     if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (tokenizedPaymentMethod != null) sb.append("    tokenizedPaymentMethod: ").append(toIndentedString(tokenizedPaymentMethod)).append("\n");
     if (directDebit != null) sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
     if (fluidData != null) sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");

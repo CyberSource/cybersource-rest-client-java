@@ -74,6 +74,9 @@ public class Ptsv2paymentsInstallmentInformation {
   @SerializedName("identifier")
   private String identifier = null;
 
+  @SerializedName("annualInterestRate")
+  private String annualInterestRate = null;
+
   public Ptsv2paymentsInstallmentInformation amount(String amount) {
     this.amount = amount;
     return this;
@@ -346,6 +349,24 @@ public class Ptsv2paymentsInstallmentInformation {
     this.identifier = identifier;
   }
 
+  public Ptsv2paymentsInstallmentInformation annualInterestRate(String annualInterestRate) {
+    this.annualInterestRate = annualInterestRate;
+    return this;
+  }
+
+   /**
+   * Annual interest rate.  This field is returned only for two kinds of installment payments on Visa Platform Connect: - Crediario with Visa in Brazil: this field is included in the authorization response for the Crediario eligibility request when the issuer approves the customer&#39;s request for Crediario installment payments. - Mastercard in all countries except Brazil, Croatia, Georgia, and Greece.   Example: A value of 1.0 specifies 1%.  Example: A value of 4.0 specifies 4%.  #### Brazil The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate   #### Other Countries The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 58-62 SCMP API Fields| 216 - Field: Mastercard Annual Percentage Rate 
+   * @return annualInterestRate
+  **/
+  @ApiModelProperty(value = "Annual interest rate.  This field is returned only for two kinds of installment payments on Visa Platform Connect: - Crediario with Visa in Brazil: this field is included in the authorization response for the Crediario eligibility request when the issuer approves the customer's request for Crediario installment payments. - Mastercard in all countries except Brazil, Croatia, Georgia, and Greece.   Example: A value of 1.0 specifies 1%.  Example: A value of 4.0 specifies 4%.  #### Brazil The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate   #### Other Countries The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 58-62 SCMP API Fields| 216 - Field: Mastercard Annual Percentage Rate ")
+  public String getAnnualInterestRate() {
+    return annualInterestRate;
+  }
+
+  public void setAnnualInterestRate(String annualInterestRate) {
+    this.annualInterestRate = annualInterestRate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -370,12 +391,13 @@ public class Ptsv2paymentsInstallmentInformation {
         Objects.equals(this.gracePeriodDurationType, ptsv2paymentsInstallmentInformation.gracePeriodDurationType) &&
         Objects.equals(this.firstInstallmentAmount, ptsv2paymentsInstallmentInformation.firstInstallmentAmount) &&
         Objects.equals(this.validationIndicator, ptsv2paymentsInstallmentInformation.validationIndicator) &&
-        Objects.equals(this.identifier, ptsv2paymentsInstallmentInformation.identifier);
+        Objects.equals(this.identifier, ptsv2paymentsInstallmentInformation.identifier) &&
+        Objects.equals(this.annualInterestRate, ptsv2paymentsInstallmentInformation.annualInterestRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount, validationIndicator, identifier);
+    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount, validationIndicator, identifier, annualInterestRate);
   }
 
 
@@ -399,6 +421,7 @@ public class Ptsv2paymentsInstallmentInformation {
     if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
     if (validationIndicator != null) sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
     if (identifier != null) sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+    if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
