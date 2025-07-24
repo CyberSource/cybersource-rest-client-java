@@ -55,7 +55,7 @@ No authorization required
 
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2012 postRegistration(postRegistrationBody, vCIdempotencyId)
+> InlineResponse2013 postRegistration(postRegistrationBody, vCIdempotencyId)
 
 Create a boarding registration
 
@@ -72,7 +72,7 @@ MerchantBoardingApi apiInstance = new MerchantBoardingApi();
 PostRegistrationBody postRegistrationBody = new PostRegistrationBody(); // PostRegistrationBody | Boarding registration data
 String vCIdempotencyId = "vCIdempotencyId_example"; // String | defines idempotency of the request
 try {
-    InlineResponse2012 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
+    InlineResponse2013 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantBoardingApi#postRegistration");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**InlineResponse2013**](InlineResponse2013.md)
 
 ### Authorization
 

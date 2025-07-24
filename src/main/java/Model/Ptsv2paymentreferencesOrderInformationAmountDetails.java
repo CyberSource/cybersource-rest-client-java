@@ -53,6 +53,9 @@ public class Ptsv2paymentreferencesOrderInformationAmountDetails {
   @SerializedName("settlementCurrency")
   private String settlementCurrency = null;
 
+  @SerializedName("invoiceAmount")
+  private String invoiceAmount = null;
+
   @SerializedName("giftwrapAmount")
   private String giftwrapAmount = null;
 
@@ -212,6 +215,24 @@ public class Ptsv2paymentreferencesOrderInformationAmountDetails {
     this.settlementCurrency = settlementCurrency;
   }
 
+  public Ptsv2paymentreferencesOrderInformationAmountDetails invoiceAmount(String invoiceAmount) {
+    this.invoiceAmount = invoiceAmount;
+    return this;
+  }
+
+   /**
+   * Invoice amount.  The invoice amount issued by the Merchant to the Cardholder, which includes VAT (excluding items such as TIPS or CASHBACK). For transactions that do not have applicable Benefit Laws, the field may be entered as zeros.  This field is only applicable for Uruguay market.  Example: 100.00  Uruguay  The value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR9 - Position: 7-18 - Field: Invoice Amount 
+   * @return invoiceAmount
+  **/
+  @ApiModelProperty(value = "Invoice amount.  The invoice amount issued by the Merchant to the Cardholder, which includes VAT (excluding items such as TIPS or CASHBACK). For transactions that do not have applicable Benefit Laws, the field may be entered as zeros.  This field is only applicable for Uruguay market.  Example: 100.00  Uruguay  The value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR9 - Position: 7-18 - Field: Invoice Amount ")
+  public String getInvoiceAmount() {
+    return invoiceAmount;
+  }
+
+  public void setInvoiceAmount(String invoiceAmount) {
+    this.invoiceAmount = invoiceAmount;
+  }
+
   public Ptsv2paymentreferencesOrderInformationAmountDetails giftwrapAmount(String giftwrapAmount) {
     this.giftwrapAmount = giftwrapAmount;
     return this;
@@ -320,6 +341,7 @@ public class Ptsv2paymentreferencesOrderInformationAmountDetails {
         Objects.equals(this.exchangeRate, ptsv2paymentreferencesOrderInformationAmountDetails.exchangeRate) &&
         Objects.equals(this.exchangeRateTimeStamp, ptsv2paymentreferencesOrderInformationAmountDetails.exchangeRateTimeStamp) &&
         Objects.equals(this.settlementCurrency, ptsv2paymentreferencesOrderInformationAmountDetails.settlementCurrency) &&
+        Objects.equals(this.invoiceAmount, ptsv2paymentreferencesOrderInformationAmountDetails.invoiceAmount) &&
         Objects.equals(this.giftwrapAmount, ptsv2paymentreferencesOrderInformationAmountDetails.giftwrapAmount) &&
         Objects.equals(this.handlingAmount, ptsv2paymentreferencesOrderInformationAmountDetails.handlingAmount) &&
         Objects.equals(this.shippingAmount, ptsv2paymentreferencesOrderInformationAmountDetails.shippingAmount) &&
@@ -329,7 +351,7 @@ public class Ptsv2paymentreferencesOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, discountAmount, taxAmount, dutyAmount, exchangeRate, exchangeRateTimeStamp, settlementCurrency, giftwrapAmount, handlingAmount, shippingAmount, shippingDiscountAmount, insuranceAmount);
+    return Objects.hash(totalAmount, currency, discountAmount, taxAmount, dutyAmount, exchangeRate, exchangeRateTimeStamp, settlementCurrency, invoiceAmount, giftwrapAmount, handlingAmount, shippingAmount, shippingDiscountAmount, insuranceAmount);
   }
 
 
@@ -346,6 +368,7 @@ public class Ptsv2paymentreferencesOrderInformationAmountDetails {
     if (exchangeRate != null) sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
     if (exchangeRateTimeStamp != null) sb.append("    exchangeRateTimeStamp: ").append(toIndentedString(exchangeRateTimeStamp)).append("\n");
     if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (invoiceAmount != null) sb.append("    invoiceAmount: ").append(toIndentedString(invoiceAmount)).append("\n");
     if (giftwrapAmount != null) sb.append("    giftwrapAmount: ").append(toIndentedString(giftwrapAmount)).append("\n");
     if (handlingAmount != null) sb.append("    handlingAmount: ").append(toIndentedString(handlingAmount)).append("\n");
     if (shippingAmount != null) sb.append("    shippingAmount: ").append(toIndentedString(shippingAmount)).append("\n");

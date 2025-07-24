@@ -21,6 +21,7 @@ import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard;
+import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
@@ -43,6 +44,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
 
   @SerializedName("tokenizedCard")
   private PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("tokenizedPaymentMethod")
+  private PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod = null;
 
   @SerializedName("accountFeatures")
   private PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountFeatures = null;
@@ -114,6 +118,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
 
   public void setTokenizedCard(PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformation tokenizedPaymentMethod(PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
+    return this;
+  }
+
+   /**
+   * Get tokenizedPaymentMethod
+   * @return tokenizedPaymentMethod
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod getTokenizedPaymentMethod() {
+    return tokenizedPaymentMethod;
+  }
+
+  public void setTokenizedPaymentMethod(PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
   }
 
   public PtsV2PaymentsPost201ResponsePaymentInformation accountFeatures(PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountFeatures) {
@@ -344,6 +366,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     PtsV2PaymentsPost201ResponsePaymentInformation ptsV2PaymentsPost201ResponsePaymentInformation = (PtsV2PaymentsPost201ResponsePaymentInformation) o;
     return Objects.equals(this.card, ptsV2PaymentsPost201ResponsePaymentInformation.card) &&
         Objects.equals(this.tokenizedCard, ptsV2PaymentsPost201ResponsePaymentInformation.tokenizedCard) &&
+        Objects.equals(this.tokenizedPaymentMethod, ptsV2PaymentsPost201ResponsePaymentInformation.tokenizedPaymentMethod) &&
         Objects.equals(this.accountFeatures, ptsV2PaymentsPost201ResponsePaymentInformation.accountFeatures) &&
         Objects.equals(this.bank, ptsV2PaymentsPost201ResponsePaymentInformation.bank) &&
         Objects.equals(this.customer, ptsV2PaymentsPost201ResponsePaymentInformation.customer) &&
@@ -360,7 +383,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, scheme, bin, accountType, issuer, binCountry, eWallet);
+    return Objects.hash(card, tokenizedCard, tokenizedPaymentMethod, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, scheme, bin, accountType, issuer, binCountry, eWallet);
   }
 
 
@@ -371,6 +394,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
     if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (tokenizedPaymentMethod != null) sb.append("    tokenizedPaymentMethod: ").append(toIndentedString(tokenizedPaymentMethod)).append("\n");
     if (accountFeatures != null) sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
     if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");

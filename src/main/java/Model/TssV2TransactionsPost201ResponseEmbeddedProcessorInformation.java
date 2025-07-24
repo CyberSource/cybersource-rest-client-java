@@ -39,6 +39,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
   @SerializedName("approvalCode")
   private String approvalCode = null;
 
+  @SerializedName("eventStatus")
+  private String eventStatus = null;
+
   @SerializedName("retrievalReferenceNumber")
   private String retrievalReferenceNumber = null;
 
@@ -96,6 +99,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     this.approvalCode = approvalCode;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation eventStatus(String eventStatus) {
+    this.eventStatus = eventStatus;
+    return this;
+  }
+
+   /**
+   * The event status. 
+   * @return eventStatus
+  **/
+  @ApiModelProperty(value = "The event status. ")
+  public String getEventStatus() {
+    return eventStatus;
+  }
+
+  public void setEventStatus(String eventStatus) {
+    this.eventStatus = eventStatus;
+  }
+
   public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation retrievalReferenceNumber(String retrievalReferenceNumber) {
     this.retrievalReferenceNumber = retrievalReferenceNumber;
     return this;
@@ -127,12 +148,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     return Objects.equals(this.processor, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.processor) &&
         Objects.equals(this.providerTransactionId, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.providerTransactionId) &&
         Objects.equals(this.approvalCode, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.approvalCode) &&
+        Objects.equals(this.eventStatus, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.eventStatus) &&
         Objects.equals(this.retrievalReferenceNumber, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.retrievalReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, providerTransactionId, approvalCode, retrievalReferenceNumber);
+    return Objects.hash(processor, providerTransactionId, approvalCode, eventStatus, retrievalReferenceNumber);
   }
 
 
@@ -144,6 +166,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     if (processor != null) sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
     if (providerTransactionId != null) sb.append("    providerTransactionId: ").append(toIndentedString(providerTransactionId)).append("\n");
     if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (eventStatus != null) sb.append("    eventStatus: ").append(toIndentedString(eventStatus)).append("\n");
     if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();

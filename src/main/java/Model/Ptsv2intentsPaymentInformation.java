@@ -15,7 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2intentsPaymentInformationEWallet;
 import Model.Ptsv2intentsPaymentInformationPaymentType;
+import Model.Ptsv2intentsPaymentInformationTokenizedPaymentMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,6 +34,15 @@ import java.io.IOException;
 public class Ptsv2intentsPaymentInformation {
   @SerializedName("paymentType")
   private Ptsv2intentsPaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("tokenizedPaymentMethod")
+  private Ptsv2intentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod = null;
+
+  @SerializedName("industryType")
+  private String industryType = null;
+
+  @SerializedName("eWallet")
+  private Ptsv2intentsPaymentInformationEWallet eWallet = null;
 
   public Ptsv2intentsPaymentInformation paymentType(Ptsv2intentsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
@@ -51,6 +62,60 @@ public class Ptsv2intentsPaymentInformation {
     this.paymentType = paymentType;
   }
 
+  public Ptsv2intentsPaymentInformation tokenizedPaymentMethod(Ptsv2intentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
+    return this;
+  }
+
+   /**
+   * Get tokenizedPaymentMethod
+   * @return tokenizedPaymentMethod
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsPaymentInformationTokenizedPaymentMethod getTokenizedPaymentMethod() {
+    return tokenizedPaymentMethod;
+  }
+
+  public void setTokenizedPaymentMethod(Ptsv2intentsPaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod) {
+    this.tokenizedPaymentMethod = tokenizedPaymentMethod;
+  }
+
+  public Ptsv2intentsPaymentInformation industryType(String industryType) {
+    this.industryType = industryType;
+    return this;
+  }
+
+   /**
+   * Indicates the industry type. Possible Values: - \&quot;Events\&quot; - \&quot;Ticketing\&quot; - \&quot;Fuel\&quot; - \&quot;GAMING\&quot; - \&quot;DIGITAL GOODS\&quot; - \&quot;TELCO\&quot; - \&quot;Token Service Providers\&quot; - \&quot;Gambling\&quot; - \&quot;CFDs\&quot; - \&quot;car rental\&quot; - \&quot;hotel\&quot; - \&quot;transportation\&quot; - \&quot;travel package\&quot; - \&quot;Cruise Line\&quot; - \&quot;P2P\&quot; - \&quot;Retail\&quot; - \&quot;Food\&quot; - \&quot;Groceries\&quot; - \&quot;Ride Sharing\&quot; - \&quot;Taxi\&quot; - \&quot;Remittance\&quot; - \&quot;Crypto\&quot; - \&quot;Marketplaces\&quot; 
+   * @return industryType
+  **/
+  @ApiModelProperty(value = "Indicates the industry type. Possible Values: - \"Events\" - \"Ticketing\" - \"Fuel\" - \"GAMING\" - \"DIGITAL GOODS\" - \"TELCO\" - \"Token Service Providers\" - \"Gambling\" - \"CFDs\" - \"car rental\" - \"hotel\" - \"transportation\" - \"travel package\" - \"Cruise Line\" - \"P2P\" - \"Retail\" - \"Food\" - \"Groceries\" - \"Ride Sharing\" - \"Taxi\" - \"Remittance\" - \"Crypto\" - \"Marketplaces\" ")
+  public String getIndustryType() {
+    return industryType;
+  }
+
+  public void setIndustryType(String industryType) {
+    this.industryType = industryType;
+  }
+
+  public Ptsv2intentsPaymentInformation eWallet(Ptsv2intentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsPaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(Ptsv2intentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +126,15 @@ public class Ptsv2intentsPaymentInformation {
       return false;
     }
     Ptsv2intentsPaymentInformation ptsv2intentsPaymentInformation = (Ptsv2intentsPaymentInformation) o;
-    return Objects.equals(this.paymentType, ptsv2intentsPaymentInformation.paymentType);
+    return Objects.equals(this.paymentType, ptsv2intentsPaymentInformation.paymentType) &&
+        Objects.equals(this.tokenizedPaymentMethod, ptsv2intentsPaymentInformation.tokenizedPaymentMethod) &&
+        Objects.equals(this.industryType, ptsv2intentsPaymentInformation.industryType) &&
+        Objects.equals(this.eWallet, ptsv2intentsPaymentInformation.eWallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType);
+    return Objects.hash(paymentType, tokenizedPaymentMethod, industryType, eWallet);
   }
 
 
@@ -76,6 +144,9 @@ public class Ptsv2intentsPaymentInformation {
     sb.append("class Ptsv2intentsPaymentInformation {\n");
     
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (tokenizedPaymentMethod != null) sb.append("    tokenizedPaymentMethod: ").append(toIndentedString(tokenizedPaymentMethod)).append("\n");
+    if (industryType != null) sb.append("    industryType: ").append(toIndentedString(industryType)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

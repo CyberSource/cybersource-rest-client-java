@@ -16,9 +16,9 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2intentsClientReferenceInformation;
-import Model.Ptsv2intentsPaymentInformation;
 import Model.Ptsv2intentsidMerchantInformation;
 import Model.Ptsv2intentsidOrderInformation;
+import Model.Ptsv2intentsidPaymentInformation;
 import Model.Ptsv2intentsidProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -44,7 +44,7 @@ public class UpdateOrderRequest {
   private Ptsv2intentsidMerchantInformation merchantInformation = null;
 
   @SerializedName("paymentInformation")
-  private Ptsv2intentsPaymentInformation paymentInformation = null;
+  private Ptsv2intentsidPaymentInformation paymentInformation = null;
 
   @SerializedName("processingInformation")
   private Ptsv2intentsidProcessingInformation processingInformation = null;
@@ -103,7 +103,7 @@ public class UpdateOrderRequest {
     this.merchantInformation = merchantInformation;
   }
 
-  public UpdateOrderRequest paymentInformation(Ptsv2intentsPaymentInformation paymentInformation) {
+  public UpdateOrderRequest paymentInformation(Ptsv2intentsidPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -113,11 +113,11 @@ public class UpdateOrderRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2intentsPaymentInformation getPaymentInformation() {
+  public Ptsv2intentsidPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Ptsv2intentsPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Ptsv2intentsidPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 

@@ -14,7 +14,7 @@
 package Api;
 
 import Model.CreateBinLookupRequest;
-import Model.InlineResponse2011;
+import Model.InlineResponse2012;
 import Model.PtsV2CreateOrderPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class BinLookupApiTest {
     /**
      * BIN Lookup API
      *
-     * The BIN Lookup Service is a versatile business tool that provides card network agnostic solution designed to ensure frictionless transaction experience by utilizing up-to-date Bank Identification Number (BIN) attributes sourced from multiple global and regional data sources. This service helps to improve authorization rates by helping to route transactions to the best-suited card network, minimizes fraud through card detail verification and aids in regulatory compliance by identifying card properties. The service is flexible and provides businesses with a flexible choice of inputs such as primary account number (PAN), network token from major networks which includes device PAN (DPAN), and all types of tokens generated via CyberSource Token Management Service (TMS). Currently, the range of available credentials is contingent on the networks enabled for the business entity. Therefore, the network information specified in this documentation is illustrative and subject to personalized offerings for each reseller or merchant. 
+     * The BIN Lookup Service is a versatile business tool that provides card network agnostic solution designed to ensure frictionless transaction experience by utilizing up-to-date Bank Identification Number (BIN) attributes sourced from multiple global and regional data sources. This service helps to improve authorization rates by helping to route transactions to the best-suited card network, minimizes fraud through card detail verification and aids in regulatory compliance by identifying card properties. The service is flexible and provides businesses with a flexible choice of inputs such as primary account number (PAN), network token from major networks (such as Visa, American Express, Discover and several regional networks) which includes device PAN (DPAN), and all types of tokens generated via CyberSource Token Management Service (TMS). Currently, the range of available credentials is contingent on the networks enabled for the business entity. Therefore, the network information specified in this documentation is illustrative and subject to personalized offerings for each reseller or merchant. 
      *
      * @throws Exception
      *          if the Api call fails
@@ -46,7 +46,7 @@ public class BinLookupApiTest {
     @Test
     public void getAccountInfoTest() throws Exception {
         CreateBinLookupRequest createBinLookupRequest = null;
-        InlineResponse2011 response = api.getAccountInfo(createBinLookupRequest);
+        InlineResponse2012 response = api.getAccountInfo(createBinLookupRequest);
 
         // TODO: test validations
     }

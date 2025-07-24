@@ -56,7 +56,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksPost"></a>
 # **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2014 notificationSubscriptionsV2WebhooksPost(createWebhook)
+> InlineResponse2015 notificationSubscriptionsV2WebhooksPost(createWebhook)
 
 Create a New Webhook Subscription
 
@@ -72,7 +72,7 @@ Create a new webhook subscription. Before creating a webhook, ensure that a sign
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 CreateWebhook createWebhook = new CreateWebhook(); // CreateWebhook | The webhook payload
 try {
-    InlineResponse2014 result = apiInstance.notificationSubscriptionsV2WebhooksPost(createWebhook);
+    InlineResponse2015 result = apiInstance.notificationSubscriptionsV2WebhooksPost(createWebhook);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#notificationSubscriptionsV2WebhooksPost");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2013 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey)
+> InlineResponse2014 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -120,7 +120,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 SaveSymEgressKey saveSymEgressKey = new SaveSymEgressKey(); // SaveSymEgressKey | Provide egress Symmetric key information to save (create or store or refresh)
 try {
-    InlineResponse2013 result = apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+    InlineResponse2014 result = apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#saveSymEgressKey");
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
