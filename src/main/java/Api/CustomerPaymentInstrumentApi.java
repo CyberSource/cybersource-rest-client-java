@@ -89,8 +89,9 @@ public class CustomerPaymentInstrumentApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentAsync,deleteCustomerPaymentInstrumentWithHttpInfo,deleteCustomerPaymentInstrumentCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentAsync,deleteCustomerPaymentInstrumentWithHttpInfo,deleteCustomerPaymentInstrumentCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -247,8 +248,9 @@ public class CustomerPaymentInstrumentApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentAsync,getCustomerPaymentInstrumentWithHttpInfo,getCustomerPaymentInstrumentCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentAsync,getCustomerPaymentInstrumentWithHttpInfo,getCustomerPaymentInstrumentCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -410,8 +412,9 @@ public class CustomerPaymentInstrumentApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListAsync,getCustomerPaymentInstrumentsListWithHttpInfo,getCustomerPaymentInstrumentsListCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListAsync,getCustomerPaymentInstrumentsListWithHttpInfo,getCustomerPaymentInstrumentsListCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -571,8 +574,9 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -744,8 +748,9 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

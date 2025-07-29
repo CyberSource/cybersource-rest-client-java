@@ -87,8 +87,9 @@ public class PurchaseAndRefundDetailsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPurchaseAndRefundDetails,getPurchaseAndRefundDetailsAsync,getPurchaseAndRefundDetailsWithHttpInfo,getPurchaseAndRefundDetailsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPurchaseAndRefundDetails,getPurchaseAndRefundDetailsAsync,getPurchaseAndRefundDetailsWithHttpInfo,getPurchaseAndRefundDetailsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

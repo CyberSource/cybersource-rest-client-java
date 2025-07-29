@@ -93,8 +93,9 @@ public class DecisionManagerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementActionsRequest, CaseManagementActionsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "actionDecisionManagerCase,actionDecisionManagerCaseAsync,actionDecisionManagerCaseWithHttpInfo,actionDecisionManagerCaseCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "actionDecisionManagerCase,actionDecisionManagerCaseAsync,actionDecisionManagerCaseWithHttpInfo,actionDecisionManagerCaseCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -245,8 +246,9 @@ public class DecisionManagerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addNegativeListRequest, AddNegativeListRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "addNegative,addNegativeAsync,addNegativeWithHttpInfo,addNegativeCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "addNegative,addNegativeAsync,addNegativeWithHttpInfo,addNegativeCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -397,8 +399,9 @@ public class DecisionManagerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementCommentsRequest, CaseManagementCommentsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "commentDecisionManagerCase,commentDecisionManagerCaseAsync,commentDecisionManagerCaseWithHttpInfo,commentDecisionManagerCaseCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "commentDecisionManagerCase,commentDecisionManagerCaseAsync,commentDecisionManagerCaseWithHttpInfo,commentDecisionManagerCaseCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -548,8 +551,9 @@ public class DecisionManagerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBundledDecisionManagerCaseRequest, CreateBundledDecisionManagerCaseRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createBundledDecisionManagerCase,createBundledDecisionManagerCaseAsync,createBundledDecisionManagerCaseWithHttpInfo,createBundledDecisionManagerCaseCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createBundledDecisionManagerCase,createBundledDecisionManagerCaseAsync,createBundledDecisionManagerCaseWithHttpInfo,createBundledDecisionManagerCaseCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -690,8 +694,9 @@ public class DecisionManagerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(fraudMarkingActionRequest, FraudMarkingActionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "fraudUpdate,fraudUpdateAsync,fraudUpdateWithHttpInfo,fraudUpdateCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "fraudUpdate,fraudUpdateAsync,fraudUpdateWithHttpInfo,fraudUpdateCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
