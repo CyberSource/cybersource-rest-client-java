@@ -76,8 +76,9 @@ public class UnifiedCheckoutCaptureContextApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateUnifiedCheckoutCaptureContextRequest, GenerateUnifiedCheckoutCaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "generateUnifiedCheckoutCaptureContext,generateUnifiedCheckoutCaptureContextAsync,generateUnifiedCheckoutCaptureContextWithHttpInfo,generateUnifiedCheckoutCaptureContextCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "generateUnifiedCheckoutCaptureContext,generateUnifiedCheckoutCaptureContextAsync,generateUnifiedCheckoutCaptureContextWithHttpInfo,generateUnifiedCheckoutCaptureContextCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

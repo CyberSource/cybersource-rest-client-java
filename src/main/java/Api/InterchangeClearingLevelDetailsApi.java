@@ -81,8 +81,9 @@ public class InterchangeClearingLevelDetailsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsAsync,getInterchangeClearingLevelDetailsWithHttpInfo,getInterchangeClearingLevelDetailsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsAsync,getInterchangeClearingLevelDetailsWithHttpInfo,getInterchangeClearingLevelDetailsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

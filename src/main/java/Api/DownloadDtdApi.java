@@ -77,8 +77,9 @@ public class DownloadDtdApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getDTDV2,getDTDV2Async,getDTDV2WithHttpInfo,getDTDV2Call")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getDTDV2,getDTDV2Async,getDTDV2WithHttpInfo,getDTDV2Call")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -85,8 +85,9 @@ public class PaymentBatchSummariesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentBatchSummary,getPaymentBatchSummaryAsync,getPaymentBatchSummaryWithHttpInfo,getPaymentBatchSummaryCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPaymentBatchSummary,getPaymentBatchSummaryAsync,getPaymentBatchSummaryWithHttpInfo,getPaymentBatchSummaryCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -81,8 +81,9 @@ public class ChargebackSummariesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getChargebackSummaries,getChargebackSummariesAsync,getChargebackSummariesWithHttpInfo,getChargebackSummariesCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getChargebackSummaries,getChargebackSummariesAsync,getChargebackSummariesWithHttpInfo,getChargebackSummariesCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

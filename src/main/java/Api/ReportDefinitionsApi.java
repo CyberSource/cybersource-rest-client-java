@@ -83,8 +83,9 @@ public class ReportDefinitionsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getResourceInfoByReportDefinition,getResourceInfoByReportDefinitionAsync,getResourceInfoByReportDefinitionWithHttpInfo,getResourceInfoByReportDefinitionCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getResourceInfoByReportDefinition,getResourceInfoByReportDefinitionAsync,getResourceInfoByReportDefinitionWithHttpInfo,getResourceInfoByReportDefinitionCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -244,8 +245,9 @@ public class ReportDefinitionsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getResourceV2Info,getResourceV2InfoAsync,getResourceV2InfoWithHttpInfo,getResourceV2InfoCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getResourceV2Info,getResourceV2InfoAsync,getResourceV2InfoWithHttpInfo,getResourceV2InfoCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

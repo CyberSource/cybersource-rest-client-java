@@ -86,8 +86,9 @@ public class TokenApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCardArtAsset,getCardArtAssetAsync,getCardArtAssetWithHttpInfo,getCardArtAssetCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCardArtAsset,getCardArtAssetAsync,getCardArtAssetWithHttpInfo,getCardArtAssetCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -250,8 +251,9 @@ public class TokenApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

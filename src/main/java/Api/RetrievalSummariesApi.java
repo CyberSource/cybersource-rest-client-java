@@ -81,8 +81,9 @@ public class RetrievalSummariesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getRetrievalSummary,getRetrievalSummaryAsync,getRetrievalSummaryWithHttpInfo,getRetrievalSummaryCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getRetrievalSummary,getRetrievalSummaryAsync,getRetrievalSummaryWithHttpInfo,getRetrievalSummaryCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

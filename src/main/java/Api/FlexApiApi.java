@@ -76,8 +76,9 @@ public class FlexApiApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateFlexAPICaptureContextRequest, GenerateFlexAPICaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "generateFlexAPICaptureContext,generateFlexAPICaptureContextAsync,generateFlexAPICaptureContextWithHttpInfo,generateFlexAPICaptureContextCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "generateFlexAPICaptureContext,generateFlexAPICaptureContextAsync,generateFlexAPICaptureContextWithHttpInfo,generateFlexAPICaptureContextCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -82,8 +82,9 @@ public class ConversionDetailsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getConversionDetail,getConversionDetailAsync,getConversionDetailWithHttpInfo,getConversionDetailCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getConversionDetail,getConversionDetailAsync,getConversionDetailWithHttpInfo,getConversionDetailCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -83,8 +83,9 @@ public class DeviceDeAssociationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deAssociationRequestBody, DeAssociationRequestBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteTerminalAssociation,deleteTerminalAssociationAsync,deleteTerminalAssociationWithHttpInfo,deleteTerminalAssociationCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteTerminalAssociation,deleteTerminalAssociationAsync,deleteTerminalAssociationWithHttpInfo,deleteTerminalAssociationCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -220,8 +221,9 @@ public class DeviceDeAssociationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deviceDeAssociateV3Request, DeviceDeAssociateV3Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postDeAssociateV3Terminal,postDeAssociateV3TerminalAsync,postDeAssociateV3TerminalWithHttpInfo,postDeAssociateV3TerminalCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postDeAssociateV3Terminal,postDeAssociateV3TerminalAsync,postDeAssociateV3TerminalWithHttpInfo,postDeAssociateV3TerminalCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

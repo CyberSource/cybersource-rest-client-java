@@ -87,8 +87,9 @@ public class TransactionBatchesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionBatchDetails,getTransactionBatchDetailsAsync,getTransactionBatchDetailsWithHttpInfo,getTransactionBatchDetailsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTransactionBatchDetails,getTransactionBatchDetailsAsync,getTransactionBatchDetailsWithHttpInfo,getTransactionBatchDetailsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -238,8 +239,9 @@ public class TransactionBatchesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionBatchId,getTransactionBatchIdAsync,getTransactionBatchIdWithHttpInfo,getTransactionBatchIdCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTransactionBatchId,getTransactionBatchIdAsync,getTransactionBatchIdWithHttpInfo,getTransactionBatchIdCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -384,8 +386,9 @@ public class TransactionBatchesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionBatches,getTransactionBatchesAsync,getTransactionBatchesWithHttpInfo,getTransactionBatchesCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTransactionBatches,getTransactionBatchesAsync,getTransactionBatchesWithHttpInfo,getTransactionBatchesCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -541,8 +544,9 @@ public class TransactionBatchesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "uploadTransactionBatch,uploadTransactionBatchAsync,uploadTransactionBatchWithHttpInfo,uploadTransactionBatchCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "uploadTransactionBatch,uploadTransactionBatchAsync,uploadTransactionBatchWithHttpInfo,uploadTransactionBatchCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -81,8 +81,9 @@ public class NotificationOfChangesApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getNotificationOfChangeReport,getNotificationOfChangeReportAsync,getNotificationOfChangeReportWithHttpInfo,getNotificationOfChangeReportCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getNotificationOfChangeReport,getNotificationOfChangeReportAsync,getNotificationOfChangeReportWithHttpInfo,getNotificationOfChangeReportCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
