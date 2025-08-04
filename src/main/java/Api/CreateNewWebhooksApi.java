@@ -30,8 +30,8 @@ import java.io.InputStream;
 
 import Model.CreateWebhook;
 import Model.InlineResponse2003;
-import Model.InlineResponse2013;
 import Model.InlineResponse2014;
+import Model.InlineResponse2015;
 import Model.SaveSymEgressKey;
 
 import java.lang.reflect.Type;
@@ -290,12 +290,12 @@ public class CreateNewWebhooksApi {
      * Create a New Webhook Subscription
      * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
      * @param createWebhook The webhook payload (optional)
-     * @return InlineResponse2014
+     * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2014 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException {
+    public InlineResponse2015 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' STARTED");
-        ApiResponse<InlineResponse2014> resp = notificationSubscriptionsV2WebhooksPostWithHttpInfo(createWebhook);
+        ApiResponse<InlineResponse2015> resp = notificationSubscriptionsV2WebhooksPostWithHttpInfo(createWebhook);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' ENDED");
         return resp.getData();
     }
@@ -304,13 +304,13 @@ public class CreateNewWebhooksApi {
      * Create a New Webhook Subscription
      * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
      * @param createWebhook The webhook payload (optional)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2014> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException {
+    public ApiResponse<InlineResponse2015> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -322,7 +322,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2014> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2015> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -345,7 +345,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -450,12 +450,12 @@ public class CreateNewWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return InlineResponse2013
+     * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
+    public InlineResponse2014 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
-        ApiResponse<InlineResponse2013> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+        ApiResponse<InlineResponse2014> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
     }
@@ -467,13 +467,13 @@ public class CreateNewWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;InlineResponse2014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
+    public ApiResponse<InlineResponse2014> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -488,7 +488,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2014> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -511,7 +511,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

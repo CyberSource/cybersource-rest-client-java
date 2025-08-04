@@ -56,6 +56,12 @@ public class Ptsv2intentsOrderInformationShipTo {
   @SerializedName("method")
   private String method = null;
 
+  @SerializedName("email")
+  private String email = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
+
   public Ptsv2intentsOrderInformationShipTo firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -218,6 +224,42 @@ public class Ptsv2intentsOrderInformationShipTo {
     this.method = method;
   }
 
+  public Ptsv2intentsOrderInformationShipTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Customer's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public Ptsv2intentsOrderInformationShipTo phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Phone number associated with the shipping address. 
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(value = "Phone number associated with the shipping address. ")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,12 +278,14 @@ public class Ptsv2intentsOrderInformationShipTo {
         Objects.equals(this.administrativeArea, ptsv2intentsOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.postalCode, ptsv2intentsOrderInformationShipTo.postalCode) &&
         Objects.equals(this.country, ptsv2intentsOrderInformationShipTo.country) &&
-        Objects.equals(this.method, ptsv2intentsOrderInformationShipTo.method);
+        Objects.equals(this.method, ptsv2intentsOrderInformationShipTo.method) &&
+        Objects.equals(this.email, ptsv2intentsOrderInformationShipTo.email) &&
+        Objects.equals(this.phoneNumber, ptsv2intentsOrderInformationShipTo.phoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, address1, address2, locality, administrativeArea, postalCode, country, method);
+    return Objects.hash(firstName, lastName, address1, address2, locality, administrativeArea, postalCode, country, method, email, phoneNumber);
   }
 
 
@@ -259,6 +303,8 @@ public class Ptsv2intentsOrderInformationShipTo {
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
     if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

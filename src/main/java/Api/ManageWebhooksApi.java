@@ -29,9 +29,9 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse2004;
-import Model.InlineResponse2014;
 import Model.InlineResponse2015;
 import Model.InlineResponse2016;
+import Model.InlineResponse2017;
 import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
 import Model.UpdateStatus;
@@ -299,12 +299,12 @@ public class ManageWebhooksApi {
      * Get Details On a Single Webhook
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * @param webhookId The webhook Identifier (required)
-     * @return InlineResponse2014
+     * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2014 getWebhookSubscriptionById(String webhookId) throws ApiException {
+    public InlineResponse2015 getWebhookSubscriptionById(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' STARTED");
-        ApiResponse<InlineResponse2014> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
+        ApiResponse<InlineResponse2015> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' ENDED");
         return resp.getData();
     }
@@ -313,13 +313,13 @@ public class ManageWebhooksApi {
      * Get Details On a Single Webhook
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * @param webhookId The webhook Identifier (required)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2014> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<InlineResponse2015> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -331,7 +331,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2014> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2015> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -354,7 +354,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -604,12 +604,12 @@ public class ManageWebhooksApi {
      * Test a Webhook Configuration
      * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
      * @param webhookId The Webhook Identifier. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2016
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 notificationSubscriptionsV1WebhooksWebhookIdPost(String webhookId) throws ApiException {
+    public InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV1WebhooksWebhookIdPost' STARTED");
-        ApiResponse<InlineResponse2015> resp = notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(webhookId);
+        ApiResponse<InlineResponse2016> resp = notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV1WebhooksWebhookIdPost' ENDED");
         return resp.getData();
     }
@@ -618,13 +618,13 @@ public class ManageWebhooksApi {
      * Test a Webhook Configuration
      * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
      * @param webhookId The Webhook Identifier. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;InlineResponse2016&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<InlineResponse2016> notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(String webhookId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV1WebhooksWebhookIdPostValidateBeforeCall(webhookId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -636,7 +636,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostAsync(String webhookId, final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostAsync(String webhookId, final ApiCallback<InlineResponse2016> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -659,7 +659,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = notificationSubscriptionsV1WebhooksWebhookIdPostValidateBeforeCall(webhookId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1056,12 +1056,12 @@ public class ManageWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
-     * @return InlineResponse2016
+     * @return InlineResponse2017
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2016 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public InlineResponse2017 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");
-        ApiResponse<InlineResponse2016> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        ApiResponse<InlineResponse2017> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
         logger.info("CALL TO METHOD 'saveAsymEgressKey' ENDED");
         return resp.getData();
     }
@@ -1073,13 +1073,13 @@ public class ManageWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse&lt;InlineResponse2017&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2016> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public ApiResponse<InlineResponse2017> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1094,7 +1094,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2016> callback) throws ApiException {
+    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2017> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1117,7 +1117,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

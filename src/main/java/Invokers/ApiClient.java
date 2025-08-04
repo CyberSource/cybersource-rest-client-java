@@ -1452,8 +1452,8 @@ public class ApiClient {
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			} else {
-				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
-			}
+                requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
+            }
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());

@@ -19,7 +19,7 @@ import Model.CaseManagementCommentsRequest;
 import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
 import Model.InlineResponse2001;
-import Model.InlineResponse201;
+import Model.InlineResponse2011;
 import Model.InlineResponse4002;
 import Model.InlineResponse4031;
 import Model.InlineResponse422;
@@ -95,7 +95,7 @@ public class DecisionManagerApiTest {
     public void commentDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementCommentsRequest caseManagementCommentsRequest = null;
-        InlineResponse201 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
+        InlineResponse2011 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
 
         // TODO: test validations
     }
