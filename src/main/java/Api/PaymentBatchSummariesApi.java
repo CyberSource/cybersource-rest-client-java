@@ -95,6 +95,8 @@ public class PaymentBatchSummariesApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getPaymentBatchSummary,getPaymentBatchSummaryAsync,getPaymentBatchSummaryWithHttpInfo,getPaymentBatchSummaryCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/payment-batch-summaries";
@@ -142,7 +144,7 @@ public class PaymentBatchSummariesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

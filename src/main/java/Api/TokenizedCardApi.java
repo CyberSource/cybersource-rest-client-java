@@ -95,6 +95,8 @@ public class TokenizedCardApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteTokenizedCard,deleteTokenizedCardAsync,deleteTokenizedCardWithHttpInfo,deleteTokenizedCardCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokenized-cards/{tokenizedCardId}"
@@ -133,7 +135,7 @@ public class TokenizedCardApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -243,6 +245,8 @@ public class TokenizedCardApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getTokenizedCard,getTokenizedCardAsync,getTokenizedCardWithHttpInfo,getTokenizedCardCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokenized-cards/{tokenizedCardId}"
@@ -281,7 +285,7 @@ public class TokenizedCardApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -392,6 +396,8 @@ public class TokenizedCardApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postTokenizedCard,postTokenizedCardAsync,postTokenizedCardWithHttpInfo,postTokenizedCardCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokenized-cards";
@@ -429,7 +435,7 @@ public class TokenizedCardApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

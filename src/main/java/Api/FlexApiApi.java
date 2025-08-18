@@ -86,6 +86,8 @@ public class FlexApiApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "generateFlexAPICaptureContext,generateFlexAPICaptureContextAsync,generateFlexAPICaptureContextWithHttpInfo,generateFlexAPICaptureContextCall");
         
         // create path and map variables
         String localVarPath = "/flex/v2/sessions";
@@ -121,7 +123,7 @@ public class FlexApiApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

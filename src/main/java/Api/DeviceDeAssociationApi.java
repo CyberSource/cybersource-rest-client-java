@@ -93,6 +93,8 @@ public class DeviceDeAssociationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteTerminalAssociation,deleteTerminalAssociationAsync,deleteTerminalAssociationWithHttpInfo,deleteTerminalAssociationCall");
         
         // create path and map variables
         String localVarPath = "/dms/v2/devices/deassociate";
@@ -128,7 +130,7 @@ public class DeviceDeAssociationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -231,6 +233,8 @@ public class DeviceDeAssociationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postDeAssociateV3Terminal,postDeAssociateV3TerminalAsync,postDeAssociateV3TerminalWithHttpInfo,postDeAssociateV3TerminalCall");
         
         // create path and map variables
         String localVarPath = "/dms/v3/devices/deassociate";
@@ -266,7 +270,7 @@ public class DeviceDeAssociationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

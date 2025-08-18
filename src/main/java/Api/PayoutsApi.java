@@ -78,7 +78,7 @@ public class PayoutsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(octCreatePaymentRequest, OctCreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "mandatory";
+        String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "octCreatePayment,octCreatePaymentAsync,octCreatePaymentWithHttpInfo,octCreatePaymentCall")) {
             try {
@@ -88,6 +88,8 @@ public class PayoutsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "octCreatePayment,octCreatePaymentAsync,octCreatePaymentWithHttpInfo,octCreatePaymentCall");
         
         // create path and map variables
         String localVarPath = "/pts/v2/payouts";
@@ -123,7 +125,7 @@ public class PayoutsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

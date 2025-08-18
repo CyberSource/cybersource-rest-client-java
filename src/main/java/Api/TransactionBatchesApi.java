@@ -97,6 +97,8 @@ public class TransactionBatchesApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getTransactionBatchDetails,getTransactionBatchDetailsAsync,getTransactionBatchDetailsWithHttpInfo,getTransactionBatchDetailsCall");
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batch-details/{id}"
@@ -137,7 +139,7 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -249,6 +251,8 @@ public class TransactionBatchesApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getTransactionBatchId,getTransactionBatchIdAsync,getTransactionBatchIdWithHttpInfo,getTransactionBatchIdCall");
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batches/{id}"
@@ -285,7 +289,7 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -396,6 +400,8 @@ public class TransactionBatchesApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getTransactionBatches,getTransactionBatchesAsync,getTransactionBatchesWithHttpInfo,getTransactionBatchesCall");
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batches";
@@ -435,7 +441,7 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -554,6 +560,8 @@ public class TransactionBatchesApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "uploadTransactionBatch,uploadTransactionBatchAsync,uploadTransactionBatchWithHttpInfo,uploadTransactionBatchCall");
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batch-upload";
@@ -591,7 +599,7 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

@@ -99,6 +99,8 @@ public class CustomerPaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentAsync,deleteCustomerPaymentInstrumentWithHttpInfo,deleteCustomerPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -138,7 +140,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -258,6 +260,8 @@ public class CustomerPaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentAsync,getCustomerPaymentInstrumentWithHttpInfo,getCustomerPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -297,7 +301,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -422,6 +426,8 @@ public class CustomerPaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListAsync,getCustomerPaymentInstrumentsListWithHttpInfo,getCustomerPaymentInstrumentsListCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"
@@ -464,7 +470,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -584,6 +590,8 @@ public class CustomerPaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -625,7 +633,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -758,6 +766,8 @@ public class CustomerPaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"
@@ -796,7 +806,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

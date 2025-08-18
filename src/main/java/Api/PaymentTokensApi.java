@@ -78,8 +78,9 @@ public class PaymentTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(request, Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -87,6 +88,8 @@ public class PaymentTokensApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall");
         
         // create path and map variables
         String localVarPath = "/pts/v2/payment-tokens";
@@ -122,7 +125,7 @@ public class PaymentTokensApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
