@@ -1327,7 +1327,7 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+			ProgressRequestBody.ProgressRequestListener progressRequestListener, boolean isResponseMLEforApi) throws ApiException {
 
 		//create reqHeader parameter here 
 		Map<String, String> requestHeaderMap = new HashMap<String, String>();
@@ -1347,7 +1347,7 @@ public class ApiClient {
 		}
 		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
 		
-		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
+		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap, isResponseMLEforApi);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1384,7 +1384,7 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
+	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap, boolean isResponseMLEforApi) {
 
 		try {
 			String requestTarget = null;
@@ -1424,7 +1424,7 @@ public class ApiClient {
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
 				String date = PropertiesUtil.getNewDate();
-				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
+				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date, isResponseMLEforApi);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					requestHeaderMap.put("Date", date);
