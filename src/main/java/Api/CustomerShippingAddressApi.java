@@ -89,8 +89,9 @@ public class CustomerShippingAddressApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteCustomerShippingAddress,deleteCustomerShippingAddressAsync,deleteCustomerShippingAddressWithHttpInfo,deleteCustomerShippingAddressCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteCustomerShippingAddress,deleteCustomerShippingAddressAsync,deleteCustomerShippingAddressWithHttpInfo,deleteCustomerShippingAddressCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -247,8 +248,9 @@ public class CustomerShippingAddressApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerShippingAddress,getCustomerShippingAddressAsync,getCustomerShippingAddressWithHttpInfo,getCustomerShippingAddressCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerShippingAddress,getCustomerShippingAddressAsync,getCustomerShippingAddressWithHttpInfo,getCustomerShippingAddressCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -410,8 +412,9 @@ public class CustomerShippingAddressApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerShippingAddressesList,getCustomerShippingAddressesListAsync,getCustomerShippingAddressesListWithHttpInfo,getCustomerShippingAddressesListCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerShippingAddressesList,getCustomerShippingAddressesListAsync,getCustomerShippingAddressesListWithHttpInfo,getCustomerShippingAddressesListCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -571,8 +574,9 @@ public class CustomerShippingAddressApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "patchCustomersShippingAddress,patchCustomersShippingAddressAsync,patchCustomersShippingAddressWithHttpInfo,patchCustomersShippingAddressCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomersShippingAddress,patchCustomersShippingAddressAsync,patchCustomersShippingAddressWithHttpInfo,patchCustomersShippingAddressCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -744,8 +748,9 @@ public class CustomerShippingAddressApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postCustomerShippingAddress,postCustomerShippingAddressAsync,postCustomerShippingAddressWithHttpInfo,postCustomerShippingAddressCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomerShippingAddress,postCustomerShippingAddressAsync,postCustomerShippingAddressWithHttpInfo,postCustomerShippingAddressCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

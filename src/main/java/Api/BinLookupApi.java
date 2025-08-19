@@ -78,8 +78,9 @@ public class BinLookupApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBinLookupRequest, CreateBinLookupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getAccountInfo,getAccountInfoAsync,getAccountInfoWithHttpInfo,getAccountInfoCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAccountInfo,getAccountInfoAsync,getAccountInfoWithHttpInfo,getAccountInfoCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

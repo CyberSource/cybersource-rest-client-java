@@ -81,8 +81,9 @@ public class RetrievalDetailsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getRetrievalDetails,getRetrievalDetailsAsync,getRetrievalDetailsWithHttpInfo,getRetrievalDetailsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getRetrievalDetails,getRetrievalDetailsAsync,getRetrievalDetailsWithHttpInfo,getRetrievalDetailsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

@@ -77,8 +77,9 @@ public class TransientTokenDataApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenAsync,getPaymentCredentialsForTransientTokenWithHttpInfo,getPaymentCredentialsForTransientTokenCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenAsync,getPaymentCredentialsForTransientTokenWithHttpInfo,getPaymentCredentialsForTransientTokenCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -222,8 +223,9 @@ public class TransientTokenDataApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionForTransientToken,getTransactionForTransientTokenAsync,getTransactionForTransientTokenWithHttpInfo,getTransactionForTransientTokenCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTransactionForTransientToken,getTransactionForTransientTokenAsync,getTransactionForTransientTokenWithHttpInfo,getTransactionForTransientTokenCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

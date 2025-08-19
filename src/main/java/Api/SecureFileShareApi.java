@@ -81,8 +81,9 @@ public class SecureFileShareApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getFile,getFileAsync,getFileWithHttpInfo,getFileCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFile,getFileAsync,getFileWithHttpInfo,getFileCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -230,8 +231,9 @@ public class SecureFileShareApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getFileDetail,getFileDetailAsync,getFileDetailWithHttpInfo,getFileDetailCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFileDetail,getFileDetailAsync,getFileDetailWithHttpInfo,getFileDetailCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

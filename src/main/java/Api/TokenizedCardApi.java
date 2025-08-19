@@ -85,8 +85,9 @@ public class TokenizedCardApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteTokenizedCard,deleteTokenizedCardAsync,deleteTokenizedCardWithHttpInfo,deleteTokenizedCardCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteTokenizedCard,deleteTokenizedCardAsync,deleteTokenizedCardWithHttpInfo,deleteTokenizedCardCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -232,8 +233,9 @@ public class TokenizedCardApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTokenizedCard,getTokenizedCardAsync,getTokenizedCardWithHttpInfo,getTokenizedCardCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTokenizedCard,getTokenizedCardAsync,getTokenizedCardWithHttpInfo,getTokenizedCardCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -380,8 +382,9 @@ public class TokenizedCardApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(tokenizedcardRequest, TokenizedcardRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postTokenizedCard,postTokenizedCardAsync,postTokenizedCardWithHttpInfo,postTokenizedCardCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenizedCard,postTokenizedCardAsync,postTokenizedCardWithHttpInfo,postTokenizedCardCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

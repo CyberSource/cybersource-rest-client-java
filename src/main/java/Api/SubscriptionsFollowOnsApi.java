@@ -81,8 +81,9 @@ public class SubscriptionsFollowOnsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createFollowOnSubscription,createFollowOnSubscriptionAsync,createFollowOnSubscriptionWithHttpInfo,createFollowOnSubscriptionCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createFollowOnSubscription,createFollowOnSubscriptionAsync,createFollowOnSubscriptionWithHttpInfo,createFollowOnSubscriptionCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -235,8 +236,9 @@ public class SubscriptionsFollowOnsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getFollowOnSubscription,getFollowOnSubscriptionAsync,getFollowOnSubscriptionWithHttpInfo,getFollowOnSubscriptionCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFollowOnSubscription,getFollowOnSubscriptionAsync,getFollowOnSubscriptionWithHttpInfo,getFollowOnSubscriptionCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
