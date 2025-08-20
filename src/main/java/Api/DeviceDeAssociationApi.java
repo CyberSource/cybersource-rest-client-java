@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
-import Model.InlineResponse2006;
+import Model.InlineResponse2007;
 import Model.InlineResponse206;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
@@ -292,12 +292,12 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return List&lt;InlineResponse2006&gt;
+     * @return List&lt;InlineResponse2007&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2006> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
+    public List<InlineResponse2007> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' STARTED");
-        ApiResponse<List<InlineResponse2006>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
+        ApiResponse<List<InlineResponse2007>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' ENDED");
         return resp.getData();
     }
@@ -306,13 +306,13 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2006&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2007&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2006>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
+    public ApiResponse<List<InlineResponse2007>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2007>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -324,7 +324,7 @@ public class DeviceDeAssociationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<InlineResponse2006>> callback) throws ApiException {
+    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<InlineResponse2007>> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -347,7 +347,7 @@ public class DeviceDeAssociationApi {
         }
 
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2007>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

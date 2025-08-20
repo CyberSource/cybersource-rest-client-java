@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="postSearchQuery"></a>
 # **postSearchQuery**
-> InlineResponse2005 postSearchQuery(postDeviceSearchRequest)
+> InlineResponse2006 postSearchQuery(postDeviceSearchRequest)
 
 Retrieve List of Devices for a given search query V2
 
@@ -26,7 +26,7 @@ Retrieves list of terminals in paginated format.
 DeviceSearchApi apiInstance = new DeviceSearchApi();
 PostDeviceSearchRequest postDeviceSearchRequest = new PostDeviceSearchRequest(); // PostDeviceSearchRequest | 
 try {
-    InlineResponse2005 result = apiInstance.postSearchQuery(postDeviceSearchRequest);
+    InlineResponse2006 result = apiInstance.postSearchQuery(postDeviceSearchRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeviceSearchApi#postSearchQuery");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 
 <a name="postSearchQueryV3"></a>
 # **postSearchQueryV3**
-> InlineResponse2007 postSearchQueryV3(postDeviceSearchRequestV3)
+> InlineResponse2008 postSearchQueryV3(postDeviceSearchRequestV3)
 
 Retrieve List of Devices for a given search query
 
@@ -71,7 +71,7 @@ Search for devices matching a given search query.  The search query supports ser
 DeviceSearchApi apiInstance = new DeviceSearchApi();
 PostDeviceSearchRequestV3 postDeviceSearchRequestV3 = new PostDeviceSearchRequestV3(); // PostDeviceSearchRequestV3 | 
 try {
-    InlineResponse2007 result = apiInstance.postSearchQueryV3(postDeviceSearchRequestV3);
+    InlineResponse2008 result = apiInstance.postSearchQueryV3(postDeviceSearchRequestV3);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeviceSearchApi#postSearchQueryV3");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 

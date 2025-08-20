@@ -37,6 +37,7 @@ import Model.InvoicingV2InvoicesCancel200Response;
 import Model.InvoicingV2InvoicesGet200Response;
 import Model.InvoicingV2InvoicesPost201Response;
 import Model.InvoicingV2InvoicesPost202Response;
+import Model.InvoicingV2InvoicesPublish200Response;
 import Model.InvoicingV2InvoicesPut200Response;
 import Model.InvoicingV2InvoicesSend200Response;
 import Model.UpdateInvoiceRequest;
@@ -670,6 +671,152 @@ public class InvoicesApi {
 
         okhttp3.Call call = performCancelActionValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesCancel200Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for performPublishAction
+     * @param id The invoice number. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call performPublishActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "performPublishAction,performPublishActionAsync,performPublishActionWithHttpInfo,performPublishActionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
+        // create path and map variables
+        String localVarPath = "/invoicing/v2/invoices/{id}/publication"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json", "application/hal+json", "application/json;charset=utf-8", "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call performPublishActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling performPublishAction(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling performPublishAction(Async)");
+        }
+        
+        
+        okhttp3.Call call = performPublishActionCall(id, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Publish an Invoice
+     * You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+     * @param id The invoice number. (required)
+     * @return InvoicingV2InvoicesPublish200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public InvoicingV2InvoicesPublish200Response performPublishAction(String id) throws ApiException {
+        logger.info("CALL TO METHOD 'performPublishAction' STARTED");
+        ApiResponse<InvoicingV2InvoicesPublish200Response> resp = performPublishActionWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'performPublishAction' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Publish an Invoice
+     * You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+     * @param id The invoice number. (required)
+     * @return ApiResponse&lt;InvoicingV2InvoicesPublish200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<InvoicingV2InvoicesPublish200Response> performPublishActionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = performPublishActionValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPublish200Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Publish an Invoice (asynchronously)
+     * You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+     * @param id The invoice number. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call performPublishActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPublish200Response> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = performPublishActionValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPublish200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

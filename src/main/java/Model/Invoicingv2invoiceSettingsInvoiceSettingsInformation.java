@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle;
+import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,6 +25,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Invoicingv2invoiceSettingsInvoiceSettingsInformation
@@ -71,6 +74,9 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
 
   @SerializedName("enableMerchantEmailNotifications")
   private Boolean enableMerchantEmailNotifications = false;
+
+  @SerializedName("customLabels")
+  private List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels = null;
 
   public Invoicingv2invoiceSettingsInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
@@ -324,6 +330,32 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     this.enableMerchantEmailNotifications = enableMerchantEmailNotifications;
   }
 
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation customLabels(List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels) {
+    this.customLabels = customLabels;
+    return this;
+  }
+
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation addCustomLabelsItem(InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels customLabelsItem) {
+    if (this.customLabels == null) {
+      this.customLabels = new ArrayList<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels>();
+    }
+    this.customLabels.add(customLabelsItem);
+    return this;
+  }
+
+   /**
+   * A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. 
+   * @return customLabels
+  **/
+  @ApiModelProperty(value = "A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. ")
+  public List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> getCustomLabels() {
+    return customLabels;
+  }
+
+  public void setCustomLabels(List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels) {
+    this.customLabels = customLabels;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,12 +379,13 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
         Objects.equals(this.shipTo, invoicingv2invoiceSettingsInvoiceSettingsInformation.shipTo) &&
         Objects.equals(this.phoneNumber, invoicingv2invoiceSettingsInvoiceSettingsInformation.phoneNumber) &&
         Objects.equals(this.email, invoicingv2invoiceSettingsInvoiceSettingsInformation.email) &&
-        Objects.equals(this.enableMerchantEmailNotifications, invoicingv2invoiceSettingsInvoiceSettingsInformation.enableMerchantEmailNotifications);
+        Objects.equals(this.enableMerchantEmailNotifications, invoicingv2invoiceSettingsInvoiceSettingsInformation.enableMerchantEmailNotifications) &&
+        Objects.equals(this.customLabels, invoicingv2invoiceSettingsInvoiceSettingsInformation.customLabels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications, customLabels);
   }
 
 
@@ -375,6 +408,7 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(toIndentedString(enableMerchantEmailNotifications)).append("\n");
+    if (customLabels != null) sb.append("    customLabels: ").append(toIndentedString(customLabels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

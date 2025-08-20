@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getBatchReport"></a>
 # **getBatchReport**
-> InlineResponse20010 getBatchReport(batchId)
+> InlineResponse20011 getBatchReport(batchId)
 
 Retrieve a Batch Report
 
@@ -28,10 +28,55 @@ Retrieve a Batch Report
 BatchesApi apiInstance = new BatchesApi();
 String batchId = "batchId_example"; // String | Unique identification number assigned to the submitted request.
 try {
-    InlineResponse20010 result = apiInstance.getBatchReport(batchId);
+    InlineResponse20011 result = apiInstance.getBatchReport(batchId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#getBatchReport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batchId** | **String**| Unique identification number assigned to the submitted request. |
+
+### Return type
+
+[**InlineResponse20011**](InlineResponse20011.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="getBatchStatus"></a>
+# **getBatchStatus**
+> InlineResponse20010 getBatchStatus(batchId)
+
+Retrieve a Batch Status
+
+**Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.BatchesApi;
+
+
+BatchesApi apiInstance = new BatchesApi();
+String batchId = "batchId_example"; // String | Unique identification number assigned to the submitted request.
+try {
+    InlineResponse20010 result = apiInstance.getBatchStatus(batchId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BatchesApi#getBatchStatus");
     e.printStackTrace();
 }
 ```
@@ -55,54 +100,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
-<a name="getBatchStatus"></a>
-# **getBatchStatus**
-> InlineResponse2009 getBatchStatus(batchId)
-
-Retrieve a Batch Status
-
-**Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.BatchesApi;
-
-
-BatchesApi apiInstance = new BatchesApi();
-String batchId = "batchId_example"; // String | Unique identification number assigned to the submitted request.
-try {
-    InlineResponse2009 result = apiInstance.getBatchStatus(batchId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BatchesApi#getBatchStatus");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **batchId** | **String**| Unique identification number assigned to the submitted request. |
-
-### Return type
-
-[**InlineResponse2009**](InlineResponse2009.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a name="getBatchesList"></a>
 # **getBatchesList**
-> InlineResponse2008 getBatchesList(offset, limit, fromDate, toDate)
+> InlineResponse2009 getBatchesList(offset, limit, fromDate, toDate)
 
 List Batches
 
@@ -121,7 +121,7 @@ Long limit = 20L; // Long | The maximum number that can be returned in the array
 String fromDate = "fromDate_example"; // String | ISO-8601 format: yyyyMMddTHHmmssZ
 String toDate = "toDate_example"; // String | ISO-8601 format: yyyyMMddTHHmmssZ
 try {
-    InlineResponse2008 result = apiInstance.getBatchesList(offset, limit, fromDate, toDate);
+    InlineResponse2009 result = apiInstance.getBatchesList(offset, limit, fromDate, toDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#getBatchesList");
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 

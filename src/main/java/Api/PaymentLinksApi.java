@@ -151,7 +151,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @return PblPaymentLinksPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -165,7 +165,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -179,7 +179,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link (asynchronously)
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -612,7 +612,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return PblPaymentLinksPost201Response
@@ -627,7 +627,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
@@ -642,7 +642,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link (asynchronously)
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @param callback The callback to be executed when the API call finishes

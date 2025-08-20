@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Notificationsubscriptionsv2webhooksProducts1;
 import Model.Notificationsubscriptionsv2webhooksRetryPolicy;
-import Model.Notificationsubscriptionsv2webhooksSecurityPolicy1;
+import Model.Notificationsubscriptionsv2webhooksSecurityPolicy;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -55,8 +55,11 @@ public class CreateWebhook {
   @SerializedName("retryPolicy")
   private Notificationsubscriptionsv2webhooksRetryPolicy retryPolicy = null;
 
+  @SerializedName("notificationScope")
+  private String notificationScope = "DESCENDANTS";
+
   @SerializedName("securityPolicy")
-  private Notificationsubscriptionsv2webhooksSecurityPolicy1 securityPolicy = null;
+  private Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy = null;
 
   public CreateWebhook name(String name) {
     this.name = name;
@@ -162,10 +165,10 @@ public class CreateWebhook {
   }
 
    /**
-   * The client&#39;s health check endpoint (URL). This should be as close as possible to the actual webhookUrl. If the user does not provide the health check URL, it is the user&#39;s responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. 
+   * The client&#39;s health check endpoint (URL). If the user does not provide the health check URL, it is the user&#39;s responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. 
    * @return healthCheckUrl
   **/
-  @ApiModelProperty(value = "The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl. If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. ")
+  @ApiModelProperty(value = "The client's health check endpoint (URL). If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. ")
   public String getHealthCheckUrl() {
     return healthCheckUrl;
   }
@@ -192,7 +195,25 @@ public class CreateWebhook {
     this.retryPolicy = retryPolicy;
   }
 
-  public CreateWebhook securityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy1 securityPolicy) {
+  public CreateWebhook notificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
+    return this;
+  }
+
+   /**
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @return notificationScope
+  **/
+  @ApiModelProperty(value = "The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS")
+  public String getNotificationScope() {
+    return notificationScope;
+  }
+
+  public void setNotificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
+  }
+
+  public CreateWebhook securityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy) {
     this.securityPolicy = securityPolicy;
     return this;
   }
@@ -202,11 +223,11 @@ public class CreateWebhook {
    * @return securityPolicy
   **/
   @ApiModelProperty(value = "")
-  public Notificationsubscriptionsv2webhooksSecurityPolicy1 getSecurityPolicy() {
+  public Notificationsubscriptionsv2webhooksSecurityPolicy getSecurityPolicy() {
     return securityPolicy;
   }
 
-  public void setSecurityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy1 securityPolicy) {
+  public void setSecurityPolicy(Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy) {
     this.securityPolicy = securityPolicy;
   }
 
@@ -227,12 +248,13 @@ public class CreateWebhook {
         Objects.equals(this.webhookUrl, createWebhook.webhookUrl) &&
         Objects.equals(this.healthCheckUrl, createWebhook.healthCheckUrl) &&
         Objects.equals(this.retryPolicy, createWebhook.retryPolicy) &&
+        Objects.equals(this.notificationScope, createWebhook.notificationScope) &&
         Objects.equals(this.securityPolicy, createWebhook.securityPolicy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, organizationId, products, webhookUrl, healthCheckUrl, retryPolicy, securityPolicy);
+    return Objects.hash(name, description, organizationId, products, webhookUrl, healthCheckUrl, retryPolicy, notificationScope, securityPolicy);
   }
 
 
@@ -248,6 +270,7 @@ public class CreateWebhook {
     if (webhookUrl != null) sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     if (healthCheckUrl != null) sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
     if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
+    if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
     if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
     sb.append("}");
     return sb.toString();

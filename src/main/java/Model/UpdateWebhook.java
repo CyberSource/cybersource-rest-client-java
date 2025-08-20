@@ -27,7 +27,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * UpdateWebhook
@@ -49,14 +48,14 @@ public class UpdateWebhook {
   @SerializedName("webhookUrl")
   private String webhookUrl = null;
 
+  @SerializedName("notificationScope")
+  private String notificationScope = "DESCENDANTS";
+
   @SerializedName("healthCheckUrl")
   private String healthCheckUrl = null;
 
   @SerializedName("securityPolicy")
   private Notificationsubscriptionsv2webhooksSecurityPolicy securityPolicy = null;
-
-  @SerializedName("additionalAttributes")
-  private List<Map<String, String>> additionalAttributes = null;
 
   public UpdateWebhook name(String name) {
     this.name = name;
@@ -156,16 +155,34 @@ public class UpdateWebhook {
     this.webhookUrl = webhookUrl;
   }
 
+  public UpdateWebhook notificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
+    return this;
+  }
+
+   /**
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @return notificationScope
+  **/
+  @ApiModelProperty(value = "The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS")
+  public String getNotificationScope() {
+    return notificationScope;
+  }
+
+  public void setNotificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
+  }
+
   public UpdateWebhook healthCheckUrl(String healthCheckUrl) {
     this.healthCheckUrl = healthCheckUrl;
     return this;
   }
 
    /**
-   * The client&#39;s health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+   * The client&#39;s health check endpoint (URL).
    * @return healthCheckUrl
   **/
-  @ApiModelProperty(value = "The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.")
+  @ApiModelProperty(value = "The client's health check endpoint (URL).")
   public String getHealthCheckUrl() {
     return healthCheckUrl;
   }
@@ -192,32 +209,6 @@ public class UpdateWebhook {
     this.securityPolicy = securityPolicy;
   }
 
-  public UpdateWebhook additionalAttributes(List<Map<String, String>> additionalAttributes) {
-    this.additionalAttributes = additionalAttributes;
-    return this;
-  }
-
-  public UpdateWebhook addAdditionalAttributesItem(Map<String, String> additionalAttributesItem) {
-    if (this.additionalAttributes == null) {
-      this.additionalAttributes = new ArrayList<Map<String, String>>();
-    }
-    this.additionalAttributes.add(additionalAttributesItem);
-    return this;
-  }
-
-   /**
-   * Additional, free form configuration data.
-   * @return additionalAttributes
-  **/
-  @ApiModelProperty(value = "Additional, free form configuration data.")
-  public List<Map<String, String>> getAdditionalAttributes() {
-    return additionalAttributes;
-  }
-
-  public void setAdditionalAttributes(List<Map<String, String>> additionalAttributes) {
-    this.additionalAttributes = additionalAttributes;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,14 +224,14 @@ public class UpdateWebhook {
         Objects.equals(this.description, updateWebhook.description) &&
         Objects.equals(this.products, updateWebhook.products) &&
         Objects.equals(this.webhookUrl, updateWebhook.webhookUrl) &&
+        Objects.equals(this.notificationScope, updateWebhook.notificationScope) &&
         Objects.equals(this.healthCheckUrl, updateWebhook.healthCheckUrl) &&
-        Objects.equals(this.securityPolicy, updateWebhook.securityPolicy) &&
-        Objects.equals(this.additionalAttributes, updateWebhook.additionalAttributes);
+        Objects.equals(this.securityPolicy, updateWebhook.securityPolicy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, organizationId, description, products, webhookUrl, healthCheckUrl, securityPolicy, additionalAttributes);
+    return Objects.hash(name, organizationId, description, products, webhookUrl, notificationScope, healthCheckUrl, securityPolicy);
   }
 
 
@@ -254,9 +245,9 @@ public class UpdateWebhook {
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (products != null) sb.append("    products: ").append(toIndentedString(products)).append("\n");
     if (webhookUrl != null) sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
+    if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
     if (healthCheckUrl != null) sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
     if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
-    if (additionalAttributes != null) sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

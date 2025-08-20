@@ -38,10 +38,10 @@ public class Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod {
   }
 
    /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - &#x60;KCP&#x60; : Local Card, Bank Transfer and Carrier Billing. - &#x60;PAYCO&#x60; - &#x60;KAKAOPAY&#x60; - &#x60;NAVERPAY&#x60; 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, bofaPayByBank, payToPayByBank, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - &#x60;KCP&#x60; : Local Card, Bank Transfer and Carrier Billing. - &#x60;PAYCO&#x60; - &#x60;KAKAOPAY&#x60; - &#x60;NAVERPAY&#x60; 
    * @return name
   **/
-  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - `KCP` : Local Card, Bank Transfer and Carrier Billing. - `PAYCO` - `KAKAOPAY` - `NAVERPAY` ")
+  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, bofaPayByBank, payToPayByBank, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - `KCP` : Local Card, Bank Transfer and Carrier Billing. - `PAYCO` - `KAKAOPAY` - `NAVERPAY` ")
   public String getName() {
     return name;
   }
