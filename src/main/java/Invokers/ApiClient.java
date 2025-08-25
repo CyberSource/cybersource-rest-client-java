@@ -14,7 +14,6 @@ package Invokers;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.net.HttpRetryException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URLConnection;
@@ -29,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,24 +36,12 @@ import javax.net.ssl.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import okhttp3.*;
+import okhttp3.EventListener;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import okhttp3.Authenticator;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.ConnectionPool;
-import okhttp3.Credentials;
-import okhttp3.FormBody;
-import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.Route;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
@@ -83,7 +71,7 @@ public class ApiClient {
 	public static final double JAVA_VERSION;
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
-
+	private static final String DEFAULT_HTTP_CLIENT_KEY = "DEFAULT_HTTP_CLIENT";
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -127,12 +115,12 @@ public class ApiClient {
 	private KeyManager[] keyManagers;
 	private String acceptHeader = "";
 
-	private static OkHttpClient httpClient;
+	private OkHttpClient httpClient;
 	private final OkHttpClient classHttpClient = initializeFinalVariables();
-
+	private static final ConcurrentHashMap<String, OkHttpClient> apiClientMap = new ConcurrentHashMap<>();
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
+	private static ConnectionPool connectionPool = new ConnectionPool(5, 5 * 60 - 2, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -186,11 +174,16 @@ public class ApiClient {
 		versionInfo = getClientID();
 
 		try {
-			httpClient = classHttpClient.newBuilder()
-					.retryOnConnectionFailure(true)
-					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-					.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-					.build();
+			if (apiClientMap.containsKey(DEFAULT_HTTP_CLIENT_KEY)) {
+				httpClient = apiClientMap.get(DEFAULT_HTTP_CLIENT_KEY);
+			} else {
+				httpClient = classHttpClient.newBuilder()
+						.retryOnConnectionFailure(true)
+						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+						.build();
+				apiClientMap.put(DEFAULT_HTTP_CLIENT_KEY,httpClient);
+			}
+
 		}
 		catch (Exception ex)
 		{
@@ -248,7 +241,8 @@ public class ApiClient {
 		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
 		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
 		int keepAliveDuration = Math.max(merchantConfig.getUserDefinedKeepAliveDuration(), 10);
-		connectionPool = new ConnectionPool(5, keepAliveDuration, TimeUnit.SECONDS);
+		int maxIdleConnection = merchantConfig.getUserDefinedMaxIdleConnections();
+		connectionPool = new ConnectionPool(maxIdleConnection, keepAliveDuration, TimeUnit.SECONDS);
 
 		Authenticator proxyAuthenticator;
 
@@ -283,17 +277,23 @@ public class ApiClient {
 			}
 
             try {
-				httpClient = classHttpClient.newBuilder()
-						.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
-						.proxyAuthenticator(proxyAuthenticator)
-						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-						.readTimeout(readTimeout, TimeUnit.SECONDS)
-						.retryOnConnectionFailure(true)
-						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-						.connectionPool(ApiClient.connectionPool)
-						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-						.build();
+				String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
+				if (apiClientMap.containsKey(apiClientConfigHash)) {
+					httpClient = apiClientMap.get(apiClientConfigHash);
+				} else {
+					httpClient = classHttpClient.newBuilder()
+							.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
+							.proxyAuthenticator(proxyAuthenticator)
+							.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+							.writeTimeout(writeTimeout, TimeUnit.SECONDS)
+							.readTimeout(readTimeout, TimeUnit.SECONDS)
+							.retryOnConnectionFailure(true)
+							.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+							.connectionPool(ApiClient.connectionPool)
+							//.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
+							.build();
+					apiClientMap.put(apiClientConfigHash,httpClient);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -306,15 +306,22 @@ public class ApiClient {
 		{
 			// override the custom timeout in HTTPClient
 			try {
-				httpClient = classHttpClient.newBuilder()
-						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-						.readTimeout(readTimeout, TimeUnit.SECONDS)
-						.connectionPool(ApiClient.connectionPool)
-						.retryOnConnectionFailure(true)
-						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-						.build();
+				String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
+				if (apiClientMap.containsKey(apiClientConfigHash)) {
+					httpClient = apiClientMap.get(apiClientConfigHash);
+				} else {
+					httpClient = classHttpClient.newBuilder()
+							.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+							.writeTimeout(writeTimeout, TimeUnit.SECONDS)
+							.readTimeout(readTimeout, TimeUnit.SECONDS)
+							.connectionPool(ApiClient.connectionPool)
+							.retryOnConnectionFailure(true)
+							.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+							//.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
+							.build();
+					apiClientMap.put(apiClientConfigHash, httpClient);
+
+				}
 			}
 			catch (Exception ex)
 			{
@@ -372,7 +379,7 @@ public class ApiClient {
 	 * @return Api Client
 	 */
 	public ApiClient setHttpClient(OkHttpClient httpClient) {
-		ApiClient.httpClient = httpClient;
+		this.httpClient = httpClient;
 		return this;
 	}
 
