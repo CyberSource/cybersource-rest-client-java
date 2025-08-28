@@ -12,13 +12,23 @@
 
 package Invokers;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.security.*;
+import java.security.GeneralSecurityException;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.UnrecoverableKeyException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
@@ -26,18 +36,47 @@ import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Map;
+import java.util.TimeZone;
+import java.util.HashMap;
+import java.util.Collections;
+import java.util.Properties;
+import java.util.Date;
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.net.ssl.*;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import okhttp3.*;
+import okhttp3.Authenticator;
+import okhttp3.Call;
+import okhttp3.ConnectionPool;
+import okhttp3.Connection;
+import okhttp3.Interceptor;
 import okhttp3.EventListener;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.FormBody;
+import okhttp3.Headers;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.Credentials;
+import okhttp3.RequestBody;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -72,6 +111,7 @@ public class ApiClient {
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
 	private static final String DEFAULT_HTTP_CLIENT_KEY = "DEFAULT_HTTP_CLIENT";
+	private static final int MAX_IDLE_TIME_SEC = 298;
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -120,7 +160,7 @@ public class ApiClient {
 	private static final ConcurrentHashMap<String, OkHttpClient> apiClientMap = new ConcurrentHashMap<>();
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(5, 5 * 60 - 2, TimeUnit.SECONDS);
+	private static ConnectionPool connectionPool = new ConnectionPool(5, MAX_IDLE_TIME_SEC, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -248,87 +288,37 @@ public class ApiClient {
 
 		if (useProxy && (proxyHost != null && !proxyHost.isEmpty())) {
 			if ((username != null && !username.isEmpty()) && (password != null && !password.isEmpty())) {
-				proxyAuthenticator = new Authenticator() {
-					// private int proxyCounter = 0;
+                // private int proxyCounter = 0;
+                proxyAuthenticator = (route, response) -> {
+                    // if (proxyCounter++ > 0) {
+                        // if (response.code() == 407) {
+                            // logger.error("HttpRetryException : 407 Proxy Authentication Missing or Incorrect");
+                            // throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
+                        // } else {
+                            // logger.error("IOException : " + response.message());
+                            // throw new IOException(response.message());
+                        // }
+                    // }
 
-					@Override
-					public Request authenticate(Route route, Response response) throws IOException {
-						// if (proxyCounter++ > 0) {
-							// if (response.code() == 407) {
-								// logger.error("HttpRetryException : 407 Proxy Authentication Missing or Incorrect");
-								// throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
-							// } else {
-								// logger.error("IOException : " + response.message());
-								// throw new IOException(response.message());
-							// }
-						// }
-
-						String credential = Credentials.basic(username, password);
-						return response.request().newBuilder().header("Proxy-Authorization", credential).build();
-					}
-				};
+                    String credential = Credentials.basic(username, password);
+                    return response.request().newBuilder().header("Proxy-Authorization", credential).build();
+                };
 			} else {
-				proxyAuthenticator = new Authenticator() {
-					@Override
-					public Request authenticate(Route route, Response response) throws IOException {
-						return response.request().newBuilder().build();
-					}
-				};
+				proxyAuthenticator = (route, response) -> response.request().newBuilder().build();
 			}
 
-            try {
-				String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
-				if (apiClientMap.containsKey(apiClientConfigHash)) {
-					httpClient = apiClientMap.get(apiClientConfigHash);
-				} else {
-					httpClient = classHttpClient.newBuilder()
-							.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
-							.proxyAuthenticator(proxyAuthenticator)
-							.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-							.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-							.readTimeout(readTimeout, TimeUnit.SECONDS)
-							.retryOnConnectionFailure(true)
-							.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-							.connectionPool(ApiClient.connectionPool)
-							//.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-							.build();
-					apiClientMap.put(apiClientConfigHash,httpClient);
-				}
-			}
-			catch (Exception ex)
-			{
-				logger.error("Error in creating HTTP Client");
-			}
-
-			this.setHttpClient(httpClient);
+			String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
+			OkHttpClient.Builder builder = getBaseHttpClientBuilder(connectionTimeout, readTimeout, writeTimeout)
+					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
+					.proxyAuthenticator(proxyAuthenticator);
+			
+			httpClient = getOrCreateHttpClient(apiClientConfigHash, builder);
 		}
 		else
 		{
-			// override the custom timeout in HTTPClient
-			try {
-				String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
-				if (apiClientMap.containsKey(apiClientConfigHash)) {
-					httpClient = apiClientMap.get(apiClientConfigHash);
-				} else {
-					httpClient = classHttpClient.newBuilder()
-							.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-							.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-							.readTimeout(readTimeout, TimeUnit.SECONDS)
-							.connectionPool(ApiClient.connectionPool)
-							.retryOnConnectionFailure(true)
-							.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-							//.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-							.build();
-					apiClientMap.put(apiClientConfigHash, httpClient);
-
-				}
-			}
-			catch (Exception ex)
-			{
-				logger.error("Error in creating HTTP Client");
-			}
-
-			this.setHttpClient(httpClient);
+			String apiClientConfigHash = merchantConfig.generateApiClientConfigHash();
+			OkHttpClient.Builder builder = getBaseHttpClientBuilder(connectionTimeout, readTimeout, writeTimeout);
+			httpClient = getOrCreateHttpClient(apiClientConfigHash, builder);
 		}
 
 		this.merchantConfig = merchantConfig;
@@ -1818,6 +1808,32 @@ public class ApiClient {
 		} catch (IOException e) {
 			logger.error("AssertionError : " + e);
 			throw new AssertionError(e);
+		}
+	}
+
+	private OkHttpClient.Builder getBaseHttpClientBuilder(int connectionTimeout, int readTimeout, int writeTimeout) {
+		return classHttpClient.newBuilder()
+				.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+				.writeTimeout(writeTimeout, TimeUnit.SECONDS)
+				.readTimeout(readTimeout, TimeUnit.SECONDS)
+				.connectionPool(ApiClient.connectionPool)
+				.retryOnConnectionFailure(true)
+				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics));
+	}
+
+	private OkHttpClient getOrCreateHttpClient(String apiClientConfigHash, OkHttpClient.Builder builder) {
+		try {
+			if (apiClientMap.containsKey(apiClientConfigHash)) {
+				return apiClientMap.get(apiClientConfigHash);
+			} else {
+				OkHttpClient client = builder.build();
+				apiClientMap.put(apiClientConfigHash, client);
+				this.setHttpClient(client);
+				return client;
+			}
+		} catch (Exception ex) {
+			logger.error("Error in creating HTTP Client {}", ex.getMessage());
+			return null;
 		}
 	}
 
