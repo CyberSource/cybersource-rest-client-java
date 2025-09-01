@@ -64,9 +64,6 @@ import com.google.gson.reflect.TypeToken;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.ConnectionPool;
-import okhttp3.Connection;
-import okhttp3.Interceptor;
-import okhttp3.EventListener;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.FormBody;
@@ -103,7 +100,6 @@ import Invokers.auth.HttpBasicAuth;
 import Invokers.auth.OAuth;
 
 import utilities.interceptors.RetryInterceptor;
-import utilities.listeners.NetworkEventListener;
 import utilities.telemetry.RequestTransactionMetrics;
 
 public class ApiClient {
