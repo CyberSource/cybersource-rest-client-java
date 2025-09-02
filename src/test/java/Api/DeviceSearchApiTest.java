@@ -13,8 +13,8 @@
 
 package Api;
 
-import Model.InlineResponse2005;
-import Model.InlineResponse2007;
+import Model.InlineResponse2006;
+import Model.InlineResponse2008;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
@@ -51,7 +51,7 @@ public class DeviceSearchApiTest {
     @Test
     public void postSearchQueryTest() throws Exception {
         PostDeviceSearchRequest postDeviceSearchRequest = null;
-        InlineResponse2005 response = api.postSearchQuery(postDeviceSearchRequest);
+        InlineResponse2006 response = api.postSearchQuery(postDeviceSearchRequest);
 
         // TODO: test validations
     }
@@ -67,7 +67,7 @@ public class DeviceSearchApiTest {
     @Test
     public void postSearchQueryV3Test() throws Exception {
         PostDeviceSearchRequestV3 postDeviceSearchRequestV3 = null;
-        InlineResponse2007 response = api.postSearchQueryV3(postDeviceSearchRequestV3);
+        InlineResponse2008 response = api.postSearchQueryV3(postDeviceSearchRequestV3);
 
         // TODO: test validations
     }

@@ -78,8 +78,9 @@ public class PaymentTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(request, Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

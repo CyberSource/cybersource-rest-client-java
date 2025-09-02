@@ -14,6 +14,7 @@
 package Api;
 
 import Model.InlineResponse2004;
+import Model.InlineResponse2005;
 import Model.InlineResponse2015;
 import Model.InlineResponse2016;
 import Model.InlineResponse2017;
@@ -117,7 +118,7 @@ public class ManageWebhooksApiTest {
     public void notificationSubscriptionsV2WebhooksWebhookIdPatchTest() throws Exception {
         String webhookId = null;
         UpdateWebhook updateWebhook = null;
-        api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+        InlineResponse2005 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
 
         // TODO: test validations
     }

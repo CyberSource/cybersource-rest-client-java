@@ -77,8 +77,9 @@ public class DownloadXsdApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getXSDV2,getXSDV2Async,getXSDV2WithHttpInfo,getXSDV2Call")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getXSDV2,getXSDV2Async,getXSDV2WithHttpInfo,getXSDV2Call")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

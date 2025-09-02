@@ -29,6 +29,7 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse2004;
+import Model.InlineResponse2005;
 import Model.InlineResponse2015;
 import Model.InlineResponse2016;
 import Model.InlineResponse2017;
@@ -85,8 +86,9 @@ public class ManageWebhooksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteWebhookSubscription,deleteWebhookSubscriptionAsync,deleteWebhookSubscriptionWithHttpInfo,deleteWebhookSubscriptionCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteWebhookSubscription,deleteWebhookSubscriptionAsync,deleteWebhookSubscriptionWithHttpInfo,deleteWebhookSubscriptionCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -226,8 +228,9 @@ public class ManageWebhooksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getWebhookSubscriptionById,getWebhookSubscriptionByIdAsync,getWebhookSubscriptionByIdWithHttpInfo,getWebhookSubscriptionByIdCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getWebhookSubscriptionById,getWebhookSubscriptionByIdAsync,getWebhookSubscriptionByIdWithHttpInfo,getWebhookSubscriptionByIdCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -373,8 +376,9 @@ public class ManageWebhooksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgAsync,getWebhookSubscriptionsByOrgWithHttpInfo,getWebhookSubscriptionsByOrgCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgAsync,getWebhookSubscriptionsByOrgWithHttpInfo,getWebhookSubscriptionsByOrgCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -529,8 +533,9 @@ public class ManageWebhooksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostAsync,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo,notificationSubscriptionsV1WebhooksWebhookIdPostCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostAsync,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo,notificationSubscriptionsV1WebhooksWebhookIdPostCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -672,8 +677,9 @@ public class ManageWebhooksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhook, UpdateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchAsync,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo,notificationSubscriptionsV2WebhooksWebhookIdPatchCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchAsync,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo,notificationSubscriptionsV2WebhooksWebhookIdPatchCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -744,12 +750,14 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription.
      * @param webhookId The Webhook Identifier. (required)
      * @param updateWebhook The webhook payload or changes to apply. (optional)
+     * @return InlineResponse2005
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
+    public InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' STARTED");
-        notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(webhookId, updateWebhook);
-
+        ApiResponse<InlineResponse2005> resp = notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(webhookId, updateWebhook);
+        logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' ENDED");
+        return resp.getData();
     }
 
     /**
@@ -757,13 +765,14 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription.
      * @param webhookId The Webhook Identifier. (required)
      * @param updateWebhook The webhook payload or changes to apply. (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;InlineResponse2005&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
+    public ApiResponse<InlineResponse2005> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(webhookId, updateWebhook, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -775,7 +784,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<InlineResponse2005> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -798,7 +807,8 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(webhookId, updateWebhook, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -814,8 +824,9 @@ public class ManageWebhooksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateStatus, UpdateStatus.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "notificationSubscriptionsV2WebhooksWebhookIdStatusPut,notificationSubscriptionsV2WebhooksWebhookIdStatusPutAsync,notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo,notificationSubscriptionsV2WebhooksWebhookIdStatusPutCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdStatusPut,notificationSubscriptionsV2WebhooksWebhookIdStatusPutAsync,notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo,notificationSubscriptionsV2WebhooksWebhookIdStatusPutCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -958,8 +969,9 @@ public class ManageWebhooksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveAsymEgressKey, SaveAsymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "saveAsymEgressKey,saveAsymEgressKeyAsync,saveAsymEgressKeyWithHttpInfo,saveAsymEgressKeyCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "saveAsymEgressKey,saveAsymEgressKeyAsync,saveAsymEgressKeyWithHttpInfo,saveAsymEgressKeyCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

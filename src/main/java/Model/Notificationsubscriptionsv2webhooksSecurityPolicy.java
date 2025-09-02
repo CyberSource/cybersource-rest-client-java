@@ -43,10 +43,10 @@ public class Notificationsubscriptionsv2webhooksSecurityPolicy {
   }
 
    /**
-   * Security Policy of the client server.
+   * Security Policy of the client server.  Possible values: - key - oAuth - oAuth_JWT
    * @return securityType
   **/
-  @ApiModelProperty(value = "Security Policy of the client server.")
+  @ApiModelProperty(value = "Security Policy of the client server.  Possible values: - key - oAuth - oAuth_JWT")
   public String getSecurityType() {
     return securityType;
   }

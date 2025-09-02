@@ -82,8 +82,9 @@ public class PaymentLinksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPaymentLinkRequest, CreatePaymentLinkRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createPaymentLink,createPaymentLinkAsync,createPaymentLinkWithHttpInfo,createPaymentLinkCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPaymentLink,createPaymentLinkAsync,createPaymentLinkWithHttpInfo,createPaymentLinkCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -150,7 +151,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @return PblPaymentLinksPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,7 +165,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -178,7 +179,7 @@ public class PaymentLinksApi {
 
     /**
      * Create a Payment Link (asynchronously)
-     * Create a new payment link.
+     * Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
      * @param createPaymentLinkRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -228,8 +229,9 @@ public class PaymentLinksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getAllPaymentLinks,getAllPaymentLinksAsync,getAllPaymentLinksWithHttpInfo,getAllPaymentLinksCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAllPaymentLinks,getAllPaymentLinksAsync,getAllPaymentLinksWithHttpInfo,getAllPaymentLinksCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -390,8 +392,9 @@ public class PaymentLinksApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentLink,getPaymentLinkAsync,getPaymentLinkWithHttpInfo,getPaymentLinkCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPaymentLink,getPaymentLinkAsync,getPaymentLinkWithHttpInfo,getPaymentLinkCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -533,8 +536,9 @@ public class PaymentLinksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePaymentLinkRequest, UpdatePaymentLinkRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "updatePaymentLink,updatePaymentLinkAsync,updatePaymentLinkWithHttpInfo,updatePaymentLinkCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updatePaymentLink,updatePaymentLinkAsync,updatePaymentLinkWithHttpInfo,updatePaymentLinkCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -608,7 +612,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return PblPaymentLinksPost201Response
@@ -623,7 +627,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
@@ -638,7 +642,7 @@ public class PaymentLinksApi {
 
     /**
      * Update a Payment Link (asynchronously)
-     * You can update all information except the payment link number until any payment is received for a payment link.
+     * You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
      * @param id The purchase number. (required)
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @param callback The callback to be executed when the API call finishes

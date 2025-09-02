@@ -20,6 +20,7 @@ import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsUnscheduledPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
+import Model.TssV2TransactionsGet200ResponseBankAccountValidation;
 import Model.TssV2TransactionsGet200ResponseBuyerInformation;
 import Model.TssV2TransactionsGet200ResponseClientReferenceInformation;
 import Model.TssV2TransactionsGet200ResponseConsumerAuthenticationInformation;
@@ -75,6 +76,9 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("applicationInformation")
   private TssV2TransactionsGet200ResponseApplicationInformation applicationInformation = null;
+
+  @SerializedName("bankAccountValidation")
+  private TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation = null;
 
   @SerializedName("buyerInformation")
   private TssV2TransactionsGet200ResponseBuyerInformation buyerInformation = null;
@@ -269,6 +273,24 @@ public class TssV2TransactionsGet200Response {
 
   public void setApplicationInformation(TssV2TransactionsGet200ResponseApplicationInformation applicationInformation) {
     this.applicationInformation = applicationInformation;
+  }
+
+  public TssV2TransactionsGet200Response bankAccountValidation(TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
+    return this;
+  }
+
+   /**
+   * Get bankAccountValidation
+   * @return bankAccountValidation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseBankAccountValidation getBankAccountValidation() {
+    return bankAccountValidation;
+  }
+
+  public void setBankAccountValidation(TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
   }
 
   public TssV2TransactionsGet200Response buyerInformation(TssV2TransactionsGet200ResponseBuyerInformation buyerInformation) {
@@ -710,6 +732,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.submitTimeUTC, tssV2TransactionsGet200Response.submitTimeUTC) &&
         Objects.equals(this.status, tssV2TransactionsGet200Response.status) &&
         Objects.equals(this.applicationInformation, tssV2TransactionsGet200Response.applicationInformation) &&
+        Objects.equals(this.bankAccountValidation, tssV2TransactionsGet200Response.bankAccountValidation) &&
         Objects.equals(this.buyerInformation, tssV2TransactionsGet200Response.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, tssV2TransactionsGet200Response.clientReferenceInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, tssV2TransactionsGet200Response.consumerAuthenticationInformation) &&
@@ -737,7 +760,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, unscheduledPaymentInformation, processingInformation, processorInformation, recurringPaymentInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, bankAccountValidation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, unscheduledPaymentInformation, processingInformation, processorInformation, recurringPaymentInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -753,6 +776,7 @@ public class TssV2TransactionsGet200Response {
     if (submitTimeUTC != null) sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (applicationInformation != null) sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
+    if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");

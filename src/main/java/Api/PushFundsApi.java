@@ -86,8 +86,9 @@ public class PushFundsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pushFundsRequest, PushFundsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = true;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createPushFundsTransfer,createPushFundsTransferAsync,createPushFundsTransferWithHttpInfo,createPushFundsTransferCall")) {
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPushFundsTransfer,createPushFundsTransferAsync,createPushFundsTransferWithHttpInfo,createPushFundsTransferCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

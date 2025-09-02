@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class Notificationsubscriptionsv2webhooksRetryPolicy {
   @SerializedName("algorithm")
-  private String algorithm = null;
+  private String algorithm = "ARITHMETIC";
 
   @SerializedName("firstRetry")
   private Integer firstRetry = null;

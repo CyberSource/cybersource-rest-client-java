@@ -83,8 +83,9 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = true;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationAsync,billingAgreementsDeRegistrationWithHttpInfo,billingAgreementsDeRegistrationCall")) {
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationAsync,billingAgreementsDeRegistrationWithHttpInfo,billingAgreementsDeRegistrationCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -235,8 +236,9 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = true;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsIntimation,billingAgreementsIntimationAsync,billingAgreementsIntimationWithHttpInfo,billingAgreementsIntimationCall")) {
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsIntimation,billingAgreementsIntimationAsync,billingAgreementsIntimationWithHttpInfo,billingAgreementsIntimationCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -386,8 +388,9 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        boolean isMLESupportedByCybsForApi = true;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "billingAgreementsRegistration,billingAgreementsRegistrationAsync,billingAgreementsRegistrationWithHttpInfo,billingAgreementsRegistrationCall")) {
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsRegistration,billingAgreementsRegistrationAsync,billingAgreementsRegistrationWithHttpInfo,billingAgreementsRegistrationCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {

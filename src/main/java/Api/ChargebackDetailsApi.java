@@ -81,8 +81,9 @@ public class ChargebackDetailsApi {
             localVarPostBody = "{}";
         }
         
-        boolean isMLESupportedByCybsForApi = false;
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getChargebackDetails,getChargebackDetailsAsync,getChargebackDetailsWithHttpInfo,getChargebackDetailsCall")) {
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getChargebackDetails,getChargebackDetailsAsync,getChargebackDetailsWithHttpInfo,getChargebackDetailsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
