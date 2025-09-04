@@ -42,7 +42,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   private String propertyClass = null;
 
   @SerializedName("stopoverIndicator")
-  private Integer stopoverIndicator = null;
+  private String stopoverIndicator = null;
 
   @SerializedName("departureDate")
   private String departureDate = null;
@@ -66,13 +66,13 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   private String couponNumber = null;
 
   @SerializedName("departureTime")
-  private Integer departureTime = null;
+  private String departureTime = null;
 
   @SerializedName("departureTimeMeridian")
   private String departureTimeMeridian = null;
 
   @SerializedName("arrivalTime")
-  private Integer arrivalTime = null;
+  private String arrivalTime = null;
 
   @SerializedName("arrivalTimeMeridian")
   private String arrivalTimeMeridian = null;
@@ -161,7 +161,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
     this.propertyClass = propertyClass;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineLegs stopoverIndicator(Integer stopoverIndicator) {
+  public Ptsv2paymentsTravelInformationTransitAirlineLegs stopoverIndicator(String stopoverIndicator) {
     this.stopoverIndicator = stopoverIndicator;
     return this;
   }
@@ -171,11 +171,11 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
    * @return stopoverIndicator
   **/
   @ApiModelProperty(value = "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter \"O\") (default): Stopover allowed - `X` (capital letter \"X\"): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
-  public Integer getStopoverIndicator() {
+  public String getStopoverIndicator() {
     return stopoverIndicator;
   }
 
-  public void setStopoverIndicator(Integer stopoverIndicator) {
+  public void setStopoverIndicator(String stopoverIndicator) {
     this.stopoverIndicator = stopoverIndicator;
   }
 
@@ -185,10 +185,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Departure date for the first leg of the trip. Format: &#x60;YYYYMMDD&#x60;. Format: English characters only. Optional request field for travel legs. 
+   * Departure date for the first leg of the trip. Format: &#x60;MMDDYY&#x60;. Format: English characters only. Optional request field for travel legs. 
    * @return departureDate
   **/
-  @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: `YYYYMMDD`. Format: English characters only. Optional request field for travel legs. ")
+  @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: `MMDDYY`. Format: English characters only. Optional request field for travel legs. ")
   public String getDepartureDate() {
     return departureDate;
   }
@@ -305,7 +305,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
     this.couponNumber = couponNumber;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineLegs departureTime(Integer departureTime) {
+  public Ptsv2paymentsTravelInformationTransitAirlineLegs departureTime(String departureTime) {
     this.departureTime = departureTime;
     return this;
   }
@@ -315,11 +315,11 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
    * @return departureTime
   **/
   @ApiModelProperty(value = "Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs. ")
-  public Integer getDepartureTime() {
+  public String getDepartureTime() {
     return departureTime;
   }
 
-  public void setDepartureTime(Integer departureTime) {
+  public void setDepartureTime(String departureTime) {
     this.departureTime = departureTime;
   }
 
@@ -341,7 +341,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
     this.departureTimeMeridian = departureTimeMeridian;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineLegs arrivalTime(Integer arrivalTime) {
+  public Ptsv2paymentsTravelInformationTransitAirlineLegs arrivalTime(String arrivalTime) {
     this.arrivalTime = arrivalTime;
     return this;
   }
@@ -351,11 +351,11 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
    * @return arrivalTime
   **/
   @ApiModelProperty(value = "Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59` Format: English characters only. Optional request field for travel legs. ")
-  public Integer getArrivalTime() {
+  public String getArrivalTime() {
     return arrivalTime;
   }
 
-  public void setArrivalTime(Integer arrivalTime) {
+  public void setArrivalTime(String arrivalTime) {
     this.arrivalTime = arrivalTime;
   }
 
