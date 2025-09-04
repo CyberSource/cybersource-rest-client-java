@@ -56,7 +56,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   private Integer restrictedTicketIndicator = null;
 
   @SerializedName("transactionType")
-  private Integer transactionType = null;
+  private String transactionType = null;
 
   @SerializedName("extendedPaymentCode")
   private String extendedPaymentCode = null;
@@ -295,7 +295,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     this.restrictedTicketIndicator = restrictedTicketIndicator;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirline transactionType(Integer transactionType) {
+  public Ptsv2paymentsTravelInformationTransitAirline transactionType(String transactionType) {
     this.transactionType = transactionType;
     return this;
   }
@@ -305,11 +305,11 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
    * @return transactionType
   **/
   @ApiModelProperty(value = "Type of charge. Possible values: - 01: Charge is for an airline ticket - 02: Charge is for an item that is not an airline ticket ")
-  public Integer getTransactionType() {
+  public String getTransactionType() {
     return transactionType;
   }
 
-  public void setTransactionType(Integer transactionType) {
+  public void setTransactionType(String transactionType) {
     this.transactionType = transactionType;
   }
 
