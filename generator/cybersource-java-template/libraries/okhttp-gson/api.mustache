@@ -14,6 +14,7 @@ import {{invokerPackage}}.ProgressResponseBody;
 import {{invokerPackage}}.BeanValidationException;
 {{/performBeanValidation}}
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -145,7 +146,7 @@ public class {{classname}} {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call {{operationId}}ValidateBeforeCall({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call {{operationId}}ValidateBeforeCall({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         {{^performBeanValidation}}
         {{#allParams}}{{#required}}
         // verify the required parameter '{{paramName}}' is set
@@ -199,7 +200,7 @@ public class {{classname}} {
      * @return {{returnType}}{{/returnType}}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+    public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD '{{operationId}}' STARTED");
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
         {{#returnType}}
@@ -214,7 +215,7 @@ public class {{classname}} {
      * @return ApiResponse&lt;{{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}Void{{/returnType}}&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<{{#vendorExtensions.x-streaming}}InputStream{{/vendorExtensions.x-streaming}}{{^vendorExtensions.x-streaming}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}{{/vendorExtensions.x-streaming}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+    public ApiResponse<{{#vendorExtensions.x-streaming}}InputStream{{/vendorExtensions.x-streaming}}{{^vendorExtensions.x-streaming}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}{{/vendorExtensions.x-streaming}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call {{localVariablePrefix}}call = {{operationId}}ValidateBeforeCall({{#allParams}}{{paramName}}, {{/allParams}}null, null);
         {{#returnType}}Type {{localVariablePrefix}}localVarReturnType = new TypeToken<{{{returnType}}}>(){}.getType();
@@ -229,7 +230,7 @@ public class {{classname}} {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ApiCallback<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}> {{localVariablePrefix}}callback) throws ApiException {
+    public okhttp3.Call {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ApiCallback<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}> {{localVariablePrefix}}callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
