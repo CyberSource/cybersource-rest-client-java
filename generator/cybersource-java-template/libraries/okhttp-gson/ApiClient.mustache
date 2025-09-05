@@ -234,8 +234,8 @@ public class ApiClient {
 		}
 
 		additionalSettings.setCustomRetryOnConnectionFailure(true);
-        additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
-        additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
+		additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
+		additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
 
 		this.merchantConfig = merchantConfig;
 	}
@@ -1245,11 +1245,11 @@ public class ApiClient {
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		try {
-            httpClient = HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
-        } catch (ConfigException e) {
-            throw e;
-        }
-        return httpClient.newCall(request);
+			httpClient = HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+		} catch (ConfigException e) {
+			throw e;
+		}
+		return httpClient.newCall(request);
 	}
 	
 	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
@@ -1335,8 +1335,8 @@ public class ApiClient {
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			} else {
-                requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
-            }
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
+			}
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
@@ -1596,8 +1596,8 @@ public class ApiClient {
 				public java.security.cert.X509Certificate[] getAcceptedIssuers() {
 					return new java.security.cert.X509Certificate[] {};
 				}
-                    }
-            };
+					}
+			};
 
 			KeyStore merchantKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
 			FileInputStream file = new FileInputStream(
@@ -1611,7 +1611,7 @@ public class ApiClient {
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			sslContext.init(keyManagerFactory.getKeyManagers(), trustAllCerts, new SecureRandom());
 			additionalSettings.setCustomSSLSocketFactory(sslContext.getSocketFactory());
-            additionalSettings.setCustomX509TrustManager((X509TrustManager) trustAllCerts[0]);
+			additionalSettings.setCustomX509TrustManager((X509TrustManager) trustAllCerts[0]);
 		} catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException
 				| KeyManagementException | UnrecoverableKeyException ex) {
 
