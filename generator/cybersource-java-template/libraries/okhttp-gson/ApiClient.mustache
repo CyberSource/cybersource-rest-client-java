@@ -1205,7 +1205,7 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
 
 		//create reqHeader parameter here 
 		Map<String, String> requestHeaderMap = new HashMap<String, String>();
