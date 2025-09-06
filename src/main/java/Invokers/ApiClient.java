@@ -1335,8 +1335,8 @@ public class ApiClient {
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			} else {
-                requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
-            }
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
+			}
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
@@ -1596,8 +1596,8 @@ public class ApiClient {
 				public java.security.cert.X509Certificate[] getAcceptedIssuers() {
 					return new java.security.cert.X509Certificate[] {};
 				}
-                    }
-            };
+					}
+			};
 
 			KeyStore merchantKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
 			FileInputStream file = new FileInputStream(

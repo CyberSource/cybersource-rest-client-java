@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class PayoutsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call octCreatePaymentCall(OctCreatePaymentRequest octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call octCreatePaymentCall(OctCreatePaymentRequest octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(octCreatePaymentRequest, OctCreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -127,7 +128,7 @@ public class PayoutsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call octCreatePaymentValidateBeforeCall(OctCreatePaymentRequest octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call octCreatePaymentValidateBeforeCall(OctCreatePaymentRequest octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'octCreatePaymentRequest' is set
         if (octCreatePaymentRequest == null) {
@@ -152,7 +153,7 @@ public class PayoutsApi {
      * @return PtsV2PayoutsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
+    public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'octCreatePayment' STARTED");
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
         logger.info("CALL TO METHOD 'octCreatePayment' ENDED");
@@ -166,7 +167,7 @@ public class PayoutsApi {
      * @return ApiResponse&lt;PtsV2PayoutsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PayoutsPost201Response> octCreatePaymentWithHttpInfo(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
+    public ApiResponse<PtsV2PayoutsPost201Response> octCreatePaymentWithHttpInfo(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PayoutsPost201Response>(){}.getType();
@@ -181,7 +182,7 @@ public class PayoutsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call octCreatePaymentAsync(OctCreatePaymentRequest octCreatePaymentRequest, final ApiCallback<PtsV2PayoutsPost201Response> callback) throws ApiException {
+    public okhttp3.Call octCreatePaymentAsync(OctCreatePaymentRequest octCreatePaymentRequest, final ApiCallback<PtsV2PayoutsPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

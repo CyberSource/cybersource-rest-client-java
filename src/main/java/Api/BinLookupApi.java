@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class BinLookupApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getAccountInfoCall(CreateBinLookupRequest createBinLookupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAccountInfoCall(CreateBinLookupRequest createBinLookupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBinLookupRequest, CreateBinLookupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -127,7 +128,7 @@ public class BinLookupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAccountInfoValidateBeforeCall(CreateBinLookupRequest createBinLookupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAccountInfoValidateBeforeCall(CreateBinLookupRequest createBinLookupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createBinLookupRequest' is set
         if (createBinLookupRequest == null) {
@@ -153,7 +154,7 @@ public class BinLookupApi {
      * @return InlineResponse2012
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 getAccountInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException {
+    public InlineResponse2012 getAccountInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAccountInfo' STARTED");
         ApiResponse<InlineResponse2012> resp = getAccountInfoWithHttpInfo(createBinLookupRequest);
         logger.info("CALL TO METHOD 'getAccountInfo' ENDED");
@@ -167,7 +168,7 @@ public class BinLookupApi {
      * @return ApiResponse&lt;InlineResponse2012&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> getAccountInfoWithHttpInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException {
+    public ApiResponse<InlineResponse2012> getAccountInfoWithHttpInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAccountInfoValidateBeforeCall(createBinLookupRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
@@ -182,7 +183,7 @@ public class BinLookupApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAccountInfoAsync(CreateBinLookupRequest createBinLookupRequest, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public okhttp3.Call getAccountInfoAsync(CreateBinLookupRequest createBinLookupRequest, final ApiCallback<InlineResponse2012> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -82,7 +83,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -141,7 +142,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
@@ -166,7 +167,7 @@ public class InstrumentIdentifierApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
+    public void deleteInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
 
@@ -180,7 +181,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException {
+    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, null, null);
         return apiClient.execute(call);
@@ -195,7 +196,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -231,7 +232,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -292,7 +293,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
@@ -319,7 +320,7 @@ public class InstrumentIdentifierApi {
      * @return PostInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostInstrumentIdentifierRequest getInstrumentIdentifier(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public PostInstrumentIdentifierRequest getInstrumentIdentifier(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
         ApiResponse<PostInstrumentIdentifierRequest> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
@@ -335,7 +336,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;PostInstrumentIdentifierRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostInstrumentIdentifierRequest> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public ApiResponse<PostInstrumentIdentifierRequest> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostInstrumentIdentifierRequest>(){}.getType();
@@ -352,7 +353,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostInstrumentIdentifierRequest> callback) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostInstrumentIdentifierRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -391,7 +392,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -456,7 +457,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
@@ -485,7 +486,7 @@ public class InstrumentIdentifierApi {
      * @return PaymentInstrumentList1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit) throws ApiException {
+    public PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
         ApiResponse<PaymentInstrumentList1> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit);
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' ENDED");
@@ -503,7 +504,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;PaymentInstrumentList1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentInstrumentList1> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit) throws ApiException {
+    public ApiResponse<PaymentInstrumentList1> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaymentInstrumentList1>(){}.getType();
@@ -522,7 +523,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ApiCallback<PaymentInstrumentList1> callback) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit, final ApiCallback<PaymentInstrumentList1> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -561,7 +562,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchInstrumentIdentifierCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchInstrumentIdentifierCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchInstrumentIdentifierRequest, PatchInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -621,7 +622,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
@@ -656,7 +657,7 @@ public class InstrumentIdentifierApi {
      * @return PatchInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PatchInstrumentIdentifierRequest patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
+    public PatchInstrumentIdentifierRequest patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
         ApiResponse<PatchInstrumentIdentifierRequest> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, retrieveBinDetails, ifMatch);
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
@@ -674,7 +675,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;PatchInstrumentIdentifierRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PatchInstrumentIdentifierRequest> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
+    public ApiResponse<PatchInstrumentIdentifierRequest> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, retrieveBinDetails, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchInstrumentIdentifierRequest>(){}.getType();
@@ -693,7 +694,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchInstrumentIdentifierRequest> callback) throws ApiException {
+    public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchInstrumentIdentifierRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -730,7 +731,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierRequest, PostInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -787,7 +788,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postInstrumentIdentifierValidateBeforeCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postInstrumentIdentifierValidateBeforeCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postInstrumentIdentifierRequest' is set
         if (postInstrumentIdentifierRequest == null) {
@@ -814,7 +815,7 @@ public class InstrumentIdentifierApi {
      * @return PostInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostInstrumentIdentifierRequest postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public PostInstrumentIdentifierRequest postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
         ApiResponse<PostInstrumentIdentifierRequest> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
@@ -830,7 +831,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;PostInstrumentIdentifierRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostInstrumentIdentifierRequest> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public ApiResponse<PostInstrumentIdentifierRequest> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostInstrumentIdentifierRequest>(){}.getType();
@@ -847,7 +848,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostInstrumentIdentifierRequest> callback) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostInstrumentIdentifierRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -884,7 +885,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -940,7 +941,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postInstrumentIdentifierEnrollmentValidateBeforeCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postInstrumentIdentifierEnrollmentValidateBeforeCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
@@ -972,7 +973,7 @@ public class InstrumentIdentifierApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void postInstrumentIdentifierEnrollment(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+    public void postInstrumentIdentifierEnrollment(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, profileId);
 
@@ -987,7 +988,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> postInstrumentIdentifierEnrollmentWithHttpInfo(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+    public ApiResponse<Void> postInstrumentIdentifierEnrollmentWithHttpInfo(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postInstrumentIdentifierEnrollmentValidateBeforeCall(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, profileId, null, null);
         return apiClient.execute(call);
@@ -1003,7 +1004,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierEnrollmentAsync(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierEnrollmentAsync(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

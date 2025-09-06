@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -77,7 +78,7 @@ public class SubscriptionsFollowOnsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createFollowOnSubscriptionCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createFollowOnSubscriptionCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -131,7 +132,7 @@ public class SubscriptionsFollowOnsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFollowOnSubscriptionValidateBeforeCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createFollowOnSubscriptionValidateBeforeCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'requestId' is set
         if (requestId == null) {
@@ -163,7 +164,7 @@ public class SubscriptionsFollowOnsApi {
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateSubscriptionResponse createFollowOnSubscription(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException {
+    public CreateSubscriptionResponse createFollowOnSubscription(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createFollowOnSubscription' STARTED");
         ApiResponse<CreateSubscriptionResponse> resp = createFollowOnSubscriptionWithHttpInfo(requestId, createSubscriptionRequest);
         logger.info("CALL TO METHOD 'createFollowOnSubscription' ENDED");
@@ -178,7 +179,7 @@ public class SubscriptionsFollowOnsApi {
      * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateSubscriptionResponse> createFollowOnSubscriptionWithHttpInfo(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException {
+    public ApiResponse<CreateSubscriptionResponse> createFollowOnSubscriptionWithHttpInfo(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createFollowOnSubscriptionValidateBeforeCall(requestId, createSubscriptionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
@@ -194,7 +195,7 @@ public class SubscriptionsFollowOnsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createFollowOnSubscriptionAsync(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call createFollowOnSubscriptionAsync(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -229,7 +230,7 @@ public class SubscriptionsFollowOnsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getFollowOnSubscriptionCall(String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFollowOnSubscriptionCall(String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -286,7 +287,7 @@ public class SubscriptionsFollowOnsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFollowOnSubscriptionValidateBeforeCall(String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFollowOnSubscriptionValidateBeforeCall(String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'requestId' is set
         if (requestId == null) {
@@ -311,7 +312,7 @@ public class SubscriptionsFollowOnsApi {
      * @return GetSubscriptionResponse1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSubscriptionResponse1 getFollowOnSubscription(String requestId) throws ApiException {
+    public GetSubscriptionResponse1 getFollowOnSubscription(String requestId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getFollowOnSubscription' STARTED");
         ApiResponse<GetSubscriptionResponse1> resp = getFollowOnSubscriptionWithHttpInfo(requestId);
         logger.info("CALL TO METHOD 'getFollowOnSubscription' ENDED");
@@ -325,7 +326,7 @@ public class SubscriptionsFollowOnsApi {
      * @return ApiResponse&lt;GetSubscriptionResponse1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSubscriptionResponse1> getFollowOnSubscriptionWithHttpInfo(String requestId) throws ApiException {
+    public ApiResponse<GetSubscriptionResponse1> getFollowOnSubscriptionWithHttpInfo(String requestId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFollowOnSubscriptionValidateBeforeCall(requestId, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse1>(){}.getType();
@@ -340,7 +341,7 @@ public class SubscriptionsFollowOnsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getFollowOnSubscriptionAsync(String requestId, final ApiCallback<GetSubscriptionResponse1> callback) throws ApiException {
+    public okhttp3.Call getFollowOnSubscriptionAsync(String requestId, final ApiCallback<GetSubscriptionResponse1> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -80,7 +81,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -139,7 +140,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
@@ -164,7 +165,7 @@ public class PaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
+    public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
         deletePaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
 
@@ -178,7 +179,7 @@ public class PaymentInstrumentApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
@@ -193,7 +194,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -229,7 +230,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -290,7 +291,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
@@ -317,7 +318,7 @@ public class PaymentInstrumentApi {
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
         ApiResponse<PostPaymentInstrumentRequest> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
@@ -333,7 +334,7 @@ public class PaymentInstrumentApi {
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
@@ -350,7 +351,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -389,7 +390,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchPaymentInstrumentRequest, PatchPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -449,7 +450,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
@@ -484,7 +485,7 @@ public class PaymentInstrumentApi {
      * @return PatchPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
+    public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
         ApiResponse<PatchPaymentInstrumentRequest> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch);
         logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
@@ -502,7 +503,7 @@ public class PaymentInstrumentApi {
      * @return ApiResponse&lt;PatchPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
+    public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchPaymentInstrumentRequest>(){}.getType();
@@ -521,7 +522,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -558,7 +559,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentInstrumentRequest, PostPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -615,7 +616,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postPaymentInstrumentValidateBeforeCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postPaymentInstrumentValidateBeforeCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postPaymentInstrumentRequest' is set
         if (postPaymentInstrumentRequest == null) {
@@ -642,7 +643,7 @@ public class PaymentInstrumentApi {
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");
         ApiResponse<PostPaymentInstrumentRequest> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId, retrieveBinDetails);
         logger.info("CALL TO METHOD 'postPaymentInstrument' ENDED");
@@ -658,7 +659,7 @@ public class PaymentInstrumentApi {
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
+    public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, retrieveBinDetails, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
@@ -675,7 +676,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

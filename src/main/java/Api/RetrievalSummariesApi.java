@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class RetrievalSummariesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getRetrievalSummaryCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getRetrievalSummaryCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -136,7 +137,7 @@ public class RetrievalSummariesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRetrievalSummaryValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getRetrievalSummaryValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -169,7 +170,7 @@ public class RetrievalSummariesApi {
      * @return ReportingV3RetrievalSummariesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3RetrievalSummariesGet200Response getRetrievalSummary(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+    public ReportingV3RetrievalSummariesGet200Response getRetrievalSummary(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRetrievalSummary' STARTED");
         ApiResponse<ReportingV3RetrievalSummariesGet200Response> resp = getRetrievalSummaryWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getRetrievalSummary' ENDED");
@@ -185,7 +186,7 @@ public class RetrievalSummariesApi {
      * @return ApiResponse&lt;ReportingV3RetrievalSummariesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3RetrievalSummariesGet200Response> getRetrievalSummaryWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+    public ApiResponse<ReportingV3RetrievalSummariesGet200Response> getRetrievalSummaryWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRetrievalSummaryValidateBeforeCall(startTime, endTime, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3RetrievalSummariesGet200Response>(){}.getType();
@@ -202,7 +203,7 @@ public class RetrievalSummariesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getRetrievalSummaryAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3RetrievalSummariesGet200Response> callback) throws ApiException {
+    public okhttp3.Call getRetrievalSummaryAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3RetrievalSummariesGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
