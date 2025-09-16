@@ -69,6 +69,8 @@ import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PrettyPrintingMap;
 import com.cybersource.authsdk.util.PropertiesUtil;
+import com.cybersource.authsdk.util.mle.MLEException;
+import com.cybersource.authsdk.util.mle.MLEUtility;
 
 import Invokers.auth.ApiKeyAuth;
 import Invokers.auth.Authentication;
@@ -1065,6 +1067,18 @@ public class ApiClient {
 			// ensuring a default content type
 			contentType = "application/json";
 		}
+		
+		// Check the response body first if it is mle encrypted then do deserialize
+		if(MLEUtility.checkIsMleEncryptedResponse(respBody)) {
+			try {
+				respBody = MLEUtility.decryptMleResponsePayload(this.merchantConfig, respBody);
+			} catch (MLEException e) {
+				logger.error("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage());
+				throw new ApiException("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage(),
+						response.code(), response.headers().toMultimap(), respBody);
+			}
+		}
+		
 		if (isJsonMime(contentType)) {
 			return json.deserialize(respBody, returnType);
 		} else if (returnType.equals(String.class)) {
