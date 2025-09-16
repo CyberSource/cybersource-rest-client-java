@@ -22,6 +22,7 @@ import Model.InvoicingV2InvoicesCancel200Response;
 import Model.InvoicingV2InvoicesGet200Response;
 import Model.InvoicingV2InvoicesPost201Response;
 import Model.InvoicingV2InvoicesPost202Response;
+import Model.InvoicingV2InvoicesPublish200Response;
 import Model.InvoicingV2InvoicesPut200Response;
 import Model.InvoicingV2InvoicesSend200Response;
 import Model.UpdateInvoiceRequest;
@@ -105,6 +106,22 @@ public class InvoicesApiTest {
     public void performCancelActionTest() throws Exception {
         String id = null;
         InvoicingV2InvoicesCancel200Response response = api.performCancelAction(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Publish an Invoice
+     *
+     * You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void performPublishActionTest() throws Exception {
+        String id = null;
+        InvoicingV2InvoicesPublish200Response response = api.performPublishAction(id);
 
         // TODO: test validations
     }

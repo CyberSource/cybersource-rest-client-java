@@ -67,8 +67,8 @@ public class InlineResponse2015 {
   @SerializedName("createdOn")
   private String createdOn = null;
 
-  @SerializedName("updatedOn")
-  private String updatedOn = null;
+  @SerializedName("notificationScope")
+  private String notificationScope = "DESCENDANTS";
 
   public InlineResponse2015 webhookId(String webhookId) {
     this.webhookId = webhookId;
@@ -156,10 +156,10 @@ public class InlineResponse2015 {
   }
 
    /**
-   * The client&#39;s health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+   * The client&#39;s health check endpoint (URL).
    * @return healthCheckUrl
   **/
-  @ApiModelProperty(value = "The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.")
+  @ApiModelProperty(value = "The client's health check endpoint (URL).")
   public String getHealthCheckUrl() {
     return healthCheckUrl;
   }
@@ -276,22 +276,22 @@ public class InlineResponse2015 {
     this.createdOn = createdOn;
   }
 
-  public InlineResponse2015 updatedOn(String updatedOn) {
-    this.updatedOn = updatedOn;
+  public InlineResponse2015 notificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
     return this;
   }
 
    /**
-   * Date on which webhook was most recently updated.
-   * @return updatedOn
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @return notificationScope
   **/
-  @ApiModelProperty(value = "Date on which webhook was most recently updated.")
-  public String getUpdatedOn() {
-    return updatedOn;
+  @ApiModelProperty(value = "The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS")
+  public String getNotificationScope() {
+    return notificationScope;
   }
 
-  public void setUpdatedOn(String updatedOn) {
-    this.updatedOn = updatedOn;
+  public void setNotificationScope(String notificationScope) {
+    this.notificationScope = notificationScope;
   }
 
 
@@ -315,12 +315,12 @@ public class InlineResponse2015 {
         Objects.equals(this.retryPolicy, inlineResponse2015.retryPolicy) &&
         Objects.equals(this.securityPolicy, inlineResponse2015.securityPolicy) &&
         Objects.equals(this.createdOn, inlineResponse2015.createdOn) &&
-        Objects.equals(this.updatedOn, inlineResponse2015.updatedOn);
+        Objects.equals(this.notificationScope, inlineResponse2015.notificationScope);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, status, name, description, retryPolicy, securityPolicy, createdOn, updatedOn);
+    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, status, name, description, retryPolicy, securityPolicy, createdOn, notificationScope);
   }
 
 
@@ -340,7 +340,7 @@ public class InlineResponse2015 {
     if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
     if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
     if (createdOn != null) sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    if (updatedOn != null) sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
+    if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
     sb.append("}");
     return sb.toString();
   }

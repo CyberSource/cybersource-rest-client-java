@@ -83,7 +83,7 @@ public class PayerAuthenticationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(checkPayerAuthEnrollmentRequest, CheckPayerAuthEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "checkPayerAuthEnrollment,checkPayerAuthEnrollmentAsync,checkPayerAuthEnrollmentWithHttpInfo,checkPayerAuthEnrollmentCall")) {
             try {
@@ -227,7 +227,7 @@ public class PayerAuthenticationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(payerAuthSetupRequest, PayerAuthSetupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "payerAuthSetup,payerAuthSetupAsync,payerAuthSetupWithHttpInfo,payerAuthSetupCall")) {
             try {
@@ -371,7 +371,7 @@ public class PayerAuthenticationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateRequest, ValidateRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "validateAuthenticationResults,validateAuthenticationResultsAsync,validateAuthenticationResultsWithHttpInfo,validateAuthenticationResultsCall")) {
             try {

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,32 +31,14 @@ import java.io.IOException;
 @ApiModel(description = "Optional configuration object for if your API or server requires oAuth for an incoming webhook.")
 
 public class Notificationsubscriptionsv2webhooksSecurityPolicyConfig {
-  @SerializedName("oAuthTokenExpiry")
-  private String oAuthTokenExpiry = null;
-
   @SerializedName("oAuthURL")
   private String oAuthURL = null;
 
   @SerializedName("oAuthTokenType")
   private String oAuthTokenType = null;
 
-  public Notificationsubscriptionsv2webhooksSecurityPolicyConfig oAuthTokenExpiry(String oAuthTokenExpiry) {
-    this.oAuthTokenExpiry = oAuthTokenExpiry;
-    return this;
-  }
-
-   /**
-   * Token expiration for the oAuth server.
-   * @return oAuthTokenExpiry
-  **/
-  @ApiModelProperty(value = "Token expiration for the oAuth server.")
-  public String getOAuthTokenExpiry() {
-    return oAuthTokenExpiry;
-  }
-
-  public void setOAuthTokenExpiry(String oAuthTokenExpiry) {
-    this.oAuthTokenExpiry = oAuthTokenExpiry;
-  }
+  @SerializedName("additionalConfig")
+  private Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig additionalConfig = null;
 
   public Notificationsubscriptionsv2webhooksSecurityPolicyConfig oAuthURL(String oAuthURL) {
     this.oAuthURL = oAuthURL;
@@ -81,16 +64,34 @@ public class Notificationsubscriptionsv2webhooksSecurityPolicyConfig {
   }
 
    /**
-   * Token type for the oAuth config.
+   * Token type for the oAuth config.  Possible values: - Bearer
    * @return oAuthTokenType
   **/
-  @ApiModelProperty(value = "Token type for the oAuth config.")
+  @ApiModelProperty(value = "Token type for the oAuth config.  Possible values: - Bearer")
   public String getOAuthTokenType() {
     return oAuthTokenType;
   }
 
   public void setOAuthTokenType(String oAuthTokenType) {
     this.oAuthTokenType = oAuthTokenType;
+  }
+
+  public Notificationsubscriptionsv2webhooksSecurityPolicyConfig additionalConfig(Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig additionalConfig) {
+    this.additionalConfig = additionalConfig;
+    return this;
+  }
+
+   /**
+   * Get additionalConfig
+   * @return additionalConfig
+  **/
+  @ApiModelProperty(value = "")
+  public Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig getAdditionalConfig() {
+    return additionalConfig;
+  }
+
+  public void setAdditionalConfig(Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig additionalConfig) {
+    this.additionalConfig = additionalConfig;
   }
 
 
@@ -103,14 +104,14 @@ public class Notificationsubscriptionsv2webhooksSecurityPolicyConfig {
       return false;
     }
     Notificationsubscriptionsv2webhooksSecurityPolicyConfig notificationsubscriptionsv2webhooksSecurityPolicyConfig = (Notificationsubscriptionsv2webhooksSecurityPolicyConfig) o;
-    return Objects.equals(this.oAuthTokenExpiry, notificationsubscriptionsv2webhooksSecurityPolicyConfig.oAuthTokenExpiry) &&
-        Objects.equals(this.oAuthURL, notificationsubscriptionsv2webhooksSecurityPolicyConfig.oAuthURL) &&
-        Objects.equals(this.oAuthTokenType, notificationsubscriptionsv2webhooksSecurityPolicyConfig.oAuthTokenType);
+    return Objects.equals(this.oAuthURL, notificationsubscriptionsv2webhooksSecurityPolicyConfig.oAuthURL) &&
+        Objects.equals(this.oAuthTokenType, notificationsubscriptionsv2webhooksSecurityPolicyConfig.oAuthTokenType) &&
+        Objects.equals(this.additionalConfig, notificationsubscriptionsv2webhooksSecurityPolicyConfig.additionalConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(oAuthTokenExpiry, oAuthURL, oAuthTokenType);
+    return Objects.hash(oAuthURL, oAuthTokenType, additionalConfig);
   }
 
 
@@ -119,9 +120,9 @@ public class Notificationsubscriptionsv2webhooksSecurityPolicyConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv2webhooksSecurityPolicyConfig {\n");
     
-    if (oAuthTokenExpiry != null) sb.append("    oAuthTokenExpiry: ").append(toIndentedString(oAuthTokenExpiry)).append("\n");
     if (oAuthURL != null) sb.append("    oAuthURL: ").append(toIndentedString(oAuthURL)).append("\n");
     if (oAuthTokenType != null) sb.append("    oAuthTokenType: ").append(toIndentedString(oAuthTokenType)).append("\n");
+    if (additionalConfig != null) sb.append("    additionalConfig: ").append(toIndentedString(additionalConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

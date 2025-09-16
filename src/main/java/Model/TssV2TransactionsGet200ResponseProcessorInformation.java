@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
 import Model.Riskv1decisionsProcessorInformationCardVerification;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting;
@@ -84,6 +85,9 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @SerializedName("paymentAccountReferenceNumber")
   private String paymentAccountReferenceNumber = null;
+
+  @SerializedName("routing")
+  private PtsV2PaymentsPost201ResponseProcessorInformationRouting routing = null;
 
   public TssV2TransactionsGet200ResponseProcessorInformation processor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
@@ -381,6 +385,24 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.paymentAccountReferenceNumber = paymentAccountReferenceNumber;
   }
 
+  public TssV2TransactionsGet200ResponseProcessorInformation routing(PtsV2PaymentsPost201ResponseProcessorInformationRouting routing) {
+    this.routing = routing;
+    return this;
+  }
+
+   /**
+   * Get routing
+   * @return routing
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationRouting getRouting() {
+    return routing;
+  }
+
+  public void setRouting(PtsV2PaymentsPost201ResponseProcessorInformationRouting routing) {
+    this.routing = routing;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -406,12 +428,13 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.eventStatus, tssV2TransactionsGet200ResponseProcessorInformation.eventStatus) &&
         Objects.equals(this.systemTraceAuditNumber, tssV2TransactionsGet200ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource) &&
-        Objects.equals(this.paymentAccountReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.paymentAccountReferenceNumber);
+        Objects.equals(this.paymentAccountReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.paymentAccountReferenceNumber) &&
+        Objects.equals(this.routing, tssV2TransactionsGet200ResponseProcessorInformation.routing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, eventStatus, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, eventStatus, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber, routing);
   }
 
 
@@ -436,6 +459,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("}");
     return sb.toString();
   }

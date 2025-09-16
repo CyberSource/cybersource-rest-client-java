@@ -15,8 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2008Embedded;
-import Model.InlineResponse2008Links;
+import Model.InlineResponse2008Devices;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,11 +32,8 @@ import java.util.List;
  */
 
 public class InlineResponse2008 {
-  @SerializedName("_links")
-  private List<InlineResponse2008Links> links = null;
-
-  @SerializedName("object")
-  private String object = null;
+  @SerializedName("totalCount")
+  private Integer totalCount = null;
 
   @SerializedName("offset")
   private Integer offset = null;
@@ -45,57 +41,31 @@ public class InlineResponse2008 {
   @SerializedName("limit")
   private Integer limit = null;
 
+  @SerializedName("sort")
+  private String sort = null;
+
   @SerializedName("count")
   private Integer count = null;
 
-  @SerializedName("total")
-  private Integer total = null;
+  @SerializedName("devices")
+  private List<InlineResponse2008Devices> devices = null;
 
-  @SerializedName("_embedded")
-  private InlineResponse2008Embedded embedded = null;
-
-  public InlineResponse2008 links(List<InlineResponse2008Links> links) {
-    this.links = links;
-    return this;
-  }
-
-  public InlineResponse2008 addLinksItem(InlineResponse2008Links linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<InlineResponse2008Links>();
-    }
-    this.links.add(linksItem);
+  public InlineResponse2008 totalCount(Integer totalCount) {
+    this.totalCount = totalCount;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Total number of results.
+   * @return totalCount
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse2008Links> getLinks() {
-    return links;
+  @ApiModelProperty(value = "Total number of results.")
+  public Integer getTotalCount() {
+    return totalCount;
   }
 
-  public void setLinks(List<InlineResponse2008Links> links) {
-    this.links = links;
-  }
-
-  public InlineResponse2008 object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Get object
-   * @return object
-  **/
-  @ApiModelProperty(example = "collection", value = "")
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
+  public void setTotalCount(Integer totalCount) {
+    this.totalCount = totalCount;
   }
 
   public InlineResponse2008 offset(Integer offset) {
@@ -104,10 +74,10 @@ public class InlineResponse2008 {
   }
 
    /**
-   * Get offset
+   * Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit&#x3D;5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  &#x60;offset&#x3D;0&#x60; &#x60;offset&#x3D;5&#x60; &#x60;offset&#x3D;10&#x60;  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. 
    * @return offset
   **/
-  @ApiModelProperty(example = "0", value = "")
+  @ApiModelProperty(value = "Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. ")
   public Integer getOffset() {
     return offset;
   }
@@ -122,10 +92,10 @@ public class InlineResponse2008 {
   }
 
    /**
-   * Get limit
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
    * @return limit
   **/
-  @ApiModelProperty(example = "20", value = "")
+  @ApiModelProperty(value = "Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. ")
   public Integer getLimit() {
     return limit;
   }
@@ -134,16 +104,34 @@ public class InlineResponse2008 {
     this.limit = limit;
   }
 
+  public InlineResponse2008 sort(String sort) {
+    this.sort = sort;
+    return this;
+  }
+
+   /**
+   * A comma separated list of the following form:  &#x60;terminalCreationDate:desc or serialNumber or terminalUpdationDate&#x60; 
+   * @return sort
+  **/
+  @ApiModelProperty(value = "A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate` ")
+  public String getSort() {
+    return sort;
+  }
+
+  public void setSort(String sort) {
+    this.sort = sort;
+  }
+
   public InlineResponse2008 count(Integer count) {
     this.count = count;
     return this;
   }
 
    /**
-   * Get count
+   * Results for this page, this could be below the limit.
    * @return count
   **/
-  @ApiModelProperty(example = "1", value = "")
+  @ApiModelProperty(value = "Results for this page, this could be below the limit.")
   public Integer getCount() {
     return count;
   }
@@ -152,40 +140,30 @@ public class InlineResponse2008 {
     this.count = count;
   }
 
-  public InlineResponse2008 total(Integer total) {
-    this.total = total;
+  public InlineResponse2008 devices(List<InlineResponse2008Devices> devices) {
+    this.devices = devices;
+    return this;
+  }
+
+  public InlineResponse2008 addDevicesItem(InlineResponse2008Devices devicesItem) {
+    if (this.devices == null) {
+      this.devices = new ArrayList<InlineResponse2008Devices>();
+    }
+    this.devices.add(devicesItem);
     return this;
   }
 
    /**
-   * Get total
-   * @return total
+   * A collection of devices
+   * @return devices
   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getTotal() {
-    return total;
+  @ApiModelProperty(value = "A collection of devices")
+  public List<InlineResponse2008Devices> getDevices() {
+    return devices;
   }
 
-  public void setTotal(Integer total) {
-    this.total = total;
-  }
-
-  public InlineResponse2008 embedded(InlineResponse2008Embedded embedded) {
-    this.embedded = embedded;
-    return this;
-  }
-
-   /**
-   * Get embedded
-   * @return embedded
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2008Embedded getEmbedded() {
-    return embedded;
-  }
-
-  public void setEmbedded(InlineResponse2008Embedded embedded) {
-    this.embedded = embedded;
+  public void setDevices(List<InlineResponse2008Devices> devices) {
+    this.devices = devices;
   }
 
 
@@ -198,18 +176,17 @@ public class InlineResponse2008 {
       return false;
     }
     InlineResponse2008 inlineResponse2008 = (InlineResponse2008) o;
-    return Objects.equals(this.links, inlineResponse2008.links) &&
-        Objects.equals(this.object, inlineResponse2008.object) &&
+    return Objects.equals(this.totalCount, inlineResponse2008.totalCount) &&
         Objects.equals(this.offset, inlineResponse2008.offset) &&
         Objects.equals(this.limit, inlineResponse2008.limit) &&
+        Objects.equals(this.sort, inlineResponse2008.sort) &&
         Objects.equals(this.count, inlineResponse2008.count) &&
-        Objects.equals(this.total, inlineResponse2008.total) &&
-        Objects.equals(this.embedded, inlineResponse2008.embedded);
+        Objects.equals(this.devices, inlineResponse2008.devices);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, object, offset, limit, count, total, embedded);
+    return Objects.hash(totalCount, offset, limit, sort, count, devices);
   }
 
 
@@ -218,13 +195,12 @@ public class InlineResponse2008 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2008 {\n");
     
-    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
     if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    if (sort != null) sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    if (total != null) sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (devices != null) sb.append("    devices: ").append(toIndentedString(devices)).append("\n");
     sb.append("}");
     return sb.toString();
   }

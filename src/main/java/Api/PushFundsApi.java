@@ -86,7 +86,7 @@ public class PushFundsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pushFundsRequest, PushFundsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPushFundsTransfer,createPushFundsTransferAsync,createPushFundsTransferWithHttpInfo,createPushFundsTransferCall")) {
             try {

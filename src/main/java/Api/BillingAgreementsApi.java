@@ -83,7 +83,7 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationAsync,billingAgreementsDeRegistrationWithHttpInfo,billingAgreementsDeRegistrationCall")) {
             try {
@@ -238,7 +238,7 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsIntimation,billingAgreementsIntimationAsync,billingAgreementsIntimationWithHttpInfo,billingAgreementsIntimationCall")) {
             try {
@@ -392,7 +392,7 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsRegistration,billingAgreementsRegistrationAsync,billingAgreementsRegistrationWithHttpInfo,billingAgreementsRegistrationCall")) {
             try {

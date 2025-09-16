@@ -89,7 +89,7 @@ public class {{classname}} {
         }
         {{/bodyParam}}
         
-        String inboundMLEStatus = "{{#vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{/vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{^vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}false{{/vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}";
+        String inboundMLEStatus = "{{#vendorExtensions.x-devcenter-metaData.mleForRequest}}{{vendorExtensions.x-devcenter-metaData.mleForRequest}}{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}{{^vendorExtensions.x-devcenter-metaData.mleForRequest}}false{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "{{operationId}},{{operationId}}Async,{{operationId}}WithHttpInfo,{{operationId}}Call")) {
             try {

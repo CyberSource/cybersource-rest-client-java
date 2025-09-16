@@ -28,8 +28,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2005;
-import Model.InlineResponse2007;
+import Model.InlineResponse2006;
+import Model.InlineResponse2008;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
@@ -156,12 +156,12 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return InlineResponse2005
+     * @return InlineResponse2006
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public InlineResponse2006 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'postSearchQuery' STARTED");
-        ApiResponse<InlineResponse2005> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
+        ApiResponse<InlineResponse2006> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
         logger.info("CALL TO METHOD 'postSearchQuery' ENDED");
         return resp.getData();
     }
@@ -170,13 +170,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;InlineResponse2006&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public ApiResponse<InlineResponse2006> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -188,7 +188,7 @@ public class DeviceSearchApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2006> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -211,7 +211,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -300,12 +300,12 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return InlineResponse2007
+     * @return InlineResponse2008
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2007 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public InlineResponse2008 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
         logger.info("CALL TO METHOD 'postSearchQueryV3' STARTED");
-        ApiResponse<InlineResponse2007> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
+        ApiResponse<InlineResponse2008> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
         logger.info("CALL TO METHOD 'postSearchQueryV3' ENDED");
         return resp.getData();
     }
@@ -314,13 +314,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;InlineResponse2008&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2007> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public ApiResponse<InlineResponse2008> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -332,7 +332,7 @@ public class DeviceSearchApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2007> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2008> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -355,7 +355,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

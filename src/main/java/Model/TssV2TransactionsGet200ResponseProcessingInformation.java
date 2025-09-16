@@ -66,6 +66,9 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
   @SerializedName("japanPaymentOptions")
   private TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
 
+  @SerializedName("validationLevel")
+  private Integer validationLevel = null;
+
   public TssV2TransactionsGet200ResponseProcessingInformation binSource(String binSource) {
     this.binSource = binSource;
     return this;
@@ -264,6 +267,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     this.japanPaymentOptions = japanPaymentOptions;
   }
 
+  public TssV2TransactionsGet200ResponseProcessingInformation validationLevel(Integer validationLevel) {
+    this.validationLevel = validationLevel;
+    return this;
+  }
+
+   /**
+   * Enter 1 for routing and account number validation. 
+   * @return validationLevel
+  **/
+  @ApiModelProperty(value = "Enter 1 for routing and account number validation. ")
+  public Integer getValidationLevel() {
+    return validationLevel;
+  }
+
+  public void setValidationLevel(Integer validationLevel) {
+    this.validationLevel = validationLevel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -284,12 +305,13 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
         Objects.equals(this.bankTransferOptions, tssV2TransactionsGet200ResponseProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.captureOptions, tssV2TransactionsGet200ResponseProcessingInformation.captureOptions) &&
         Objects.equals(this.reconciliationId, tssV2TransactionsGet200ResponseProcessingInformation.reconciliationId) &&
-        Objects.equals(this.japanPaymentOptions, tssV2TransactionsGet200ResponseProcessingInformation.japanPaymentOptions);
+        Objects.equals(this.japanPaymentOptions, tssV2TransactionsGet200ResponseProcessingInformation.japanPaymentOptions) &&
+        Objects.equals(this.validationLevel, tssV2TransactionsGet200ResponseProcessingInformation.validationLevel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(binSource, industryDataType, paymentSolution, commerceIndicator, commerceIndicatorLabel, businessApplicationId, authorizationOptions, bankTransferOptions, captureOptions, reconciliationId, japanPaymentOptions);
+    return Objects.hash(binSource, industryDataType, paymentSolution, commerceIndicator, commerceIndicatorLabel, businessApplicationId, authorizationOptions, bankTransferOptions, captureOptions, reconciliationId, japanPaymentOptions, validationLevel);
   }
 
 
@@ -309,6 +331,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
+    if (validationLevel != null) sb.append("    validationLevel: ").append(toIndentedString(validationLevel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

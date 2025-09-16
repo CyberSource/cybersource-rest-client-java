@@ -82,7 +82,7 @@ public class VoidApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(mitVoidRequest, MitVoidRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "mitVoid,mitVoidAsync,mitVoidWithHttpInfo,mitVoidCall")) {
             try {
@@ -227,7 +227,7 @@ public class VoidApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCaptureRequest, VoidCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "voidCapture,voidCaptureAsync,voidCaptureWithHttpInfo,voidCaptureCall")) {
             try {
@@ -382,7 +382,7 @@ public class VoidApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCreditRequest, VoidCreditRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "voidCredit,voidCreditAsync,voidCreditWithHttpInfo,voidCreditCall")) {
             try {
@@ -537,7 +537,7 @@ public class VoidApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidPaymentRequest, VoidPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "voidPayment,voidPaymentAsync,voidPaymentWithHttpInfo,voidPaymentCall")) {
             try {
@@ -692,7 +692,7 @@ public class VoidApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidRefundRequest, VoidRefundRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "voidRefund,voidRefundAsync,voidRefundWithHttpInfo,voidRefundCall")) {
             try {

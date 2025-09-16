@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +24,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.joda.time.LocalDate;
 
 /**
@@ -51,6 +54,9 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
 
   @SerializedName("deliveryMode")
   private String deliveryMode = null;
+
+  @SerializedName("customLabels")
+  private List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels = null;
 
   public InvoicingV2InvoicesPost201ResponseInvoiceInformation invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -178,6 +184,32 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     this.deliveryMode = deliveryMode;
   }
 
+  public InvoicingV2InvoicesPost201ResponseInvoiceInformation customLabels(List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels) {
+    this.customLabels = customLabels;
+    return this;
+  }
+
+  public InvoicingV2InvoicesPost201ResponseInvoiceInformation addCustomLabelsItem(InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels customLabelsItem) {
+    if (this.customLabels == null) {
+      this.customLabels = new ArrayList<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels>();
+    }
+    this.customLabels.add(customLabelsItem);
+    return this;
+  }
+
+   /**
+   * A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. 
+   * @return customLabels
+  **/
+  @ApiModelProperty(value = "A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. ")
+  public List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> getCustomLabels() {
+    return customLabels;
+  }
+
+  public void setCustomLabels(List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels) {
+    this.customLabels = customLabels;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,12 +226,13 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
         Objects.equals(this.expirationDate, invoicingV2InvoicesPost201ResponseInvoiceInformation.expirationDate) &&
         Objects.equals(this.allowPartialPayments, invoicingV2InvoicesPost201ResponseInvoiceInformation.allowPartialPayments) &&
         Objects.equals(this.paymentLink, invoicingV2InvoicesPost201ResponseInvoiceInformation.paymentLink) &&
-        Objects.equals(this.deliveryMode, invoicingV2InvoicesPost201ResponseInvoiceInformation.deliveryMode);
+        Objects.equals(this.deliveryMode, invoicingV2InvoicesPost201ResponseInvoiceInformation.deliveryMode) &&
+        Objects.equals(this.customLabels, invoicingV2InvoicesPost201ResponseInvoiceInformation.customLabels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, description, dueDate, expirationDate, allowPartialPayments, paymentLink, deliveryMode);
+    return Objects.hash(invoiceNumber, description, dueDate, expirationDate, allowPartialPayments, paymentLink, deliveryMode, customLabels);
   }
 
 
@@ -215,6 +248,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     if (allowPartialPayments != null) sb.append("    allowPartialPayments: ").append(toIndentedString(allowPartialPayments)).append("\n");
     if (paymentLink != null) sb.append("    paymentLink: ").append(toIndentedString(paymentLink)).append("\n");
     if (deliveryMode != null) sb.append("    deliveryMode: ").append(toIndentedString(deliveryMode)).append("\n");
+    if (customLabels != null) sb.append("    customLabels: ").append(toIndentedString(customLabels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

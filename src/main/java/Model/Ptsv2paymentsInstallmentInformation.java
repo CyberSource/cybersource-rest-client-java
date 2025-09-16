@@ -77,6 +77,12 @@ public class Ptsv2paymentsInstallmentInformation {
   @SerializedName("annualInterestRate")
   private String annualInterestRate = null;
 
+  @SerializedName("interestIndicator")
+  private String interestIndicator = null;
+
+  @SerializedName("isGovernmentPlan")
+  private Boolean isGovernmentPlan = null;
+
   public Ptsv2paymentsInstallmentInformation amount(String amount) {
     this.amount = amount;
     return this;
@@ -367,6 +373,42 @@ public class Ptsv2paymentsInstallmentInformation {
     this.annualInterestRate = annualInterestRate;
   }
 
+  public Ptsv2paymentsInstallmentInformation interestIndicator(String interestIndicator) {
+    this.interestIndicator = interestIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available 
+   * @return interestIndicator
+  **/
+  @ApiModelProperty(value = "Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available ")
+  public String getInterestIndicator() {
+    return interestIndicator;
+  }
+
+  public void setInterestIndicator(String interestIndicator) {
+    this.interestIndicator = interestIndicator;
+  }
+
+  public Ptsv2paymentsInstallmentInformation isGovernmentPlan(Boolean isGovernmentPlan) {
+    this.isGovernmentPlan = isGovernmentPlan;
+    return this;
+  }
+
+   /**
+   * Indicates if an installment plan is a government sponsored or part of a government program.  Possible values:  -true -false  This field defaults to false when no value is provided. 
+   * @return isGovernmentPlan
+  **/
+  @ApiModelProperty(value = "Indicates if an installment plan is a government sponsored or part of a government program.  Possible values:  -true -false  This field defaults to false when no value is provided. ")
+  public Boolean IsGovernmentPlan() {
+    return isGovernmentPlan;
+  }
+
+  public void setIsGovernmentPlan(Boolean isGovernmentPlan) {
+    this.isGovernmentPlan = isGovernmentPlan;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -392,12 +434,14 @@ public class Ptsv2paymentsInstallmentInformation {
         Objects.equals(this.firstInstallmentAmount, ptsv2paymentsInstallmentInformation.firstInstallmentAmount) &&
         Objects.equals(this.validationIndicator, ptsv2paymentsInstallmentInformation.validationIndicator) &&
         Objects.equals(this.identifier, ptsv2paymentsInstallmentInformation.identifier) &&
-        Objects.equals(this.annualInterestRate, ptsv2paymentsInstallmentInformation.annualInterestRate);
+        Objects.equals(this.annualInterestRate, ptsv2paymentsInstallmentInformation.annualInterestRate) &&
+        Objects.equals(this.interestIndicator, ptsv2paymentsInstallmentInformation.interestIndicator) &&
+        Objects.equals(this.isGovernmentPlan, ptsv2paymentsInstallmentInformation.isGovernmentPlan);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount, validationIndicator, identifier, annualInterestRate);
+    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount, validationIndicator, identifier, annualInterestRate, interestIndicator, isGovernmentPlan);
   }
 
 
@@ -422,6 +466,8 @@ public class Ptsv2paymentsInstallmentInformation {
     if (validationIndicator != null) sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
     if (identifier != null) sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
+    if (interestIndicator != null) sb.append("    interestIndicator: ").append(toIndentedString(interestIndicator)).append("\n");
+    if (isGovernmentPlan != null) sb.append("    isGovernmentPlan: ").append(toIndentedString(isGovernmentPlan)).append("\n");
     sb.append("}");
     return sb.toString();
   }
