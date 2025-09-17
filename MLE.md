@@ -19,15 +19,25 @@ MLE supports both **Request Encryption** (encrypting outgoing request payloads) 
 
 Configure global settings for request MLE using these properties in your `merchantConfig`:
 
+##### Primary Configuration
+
 - **Variable**: `enableRequestMLEForOptionalApisGlobally`
 - **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: Enables request MLE globally for all APIs that have optional MLE support when set to `true`.
 
+---
+
+##### Deprecated Configuration (Backward Compatibility)
+
 - **Variable**: `useMLEGlobally` ⚠️ **DEPRECATED**
 - **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: **DEPRECATED** - Use `enableRequestMLEForOptionalApisGlobally` instead. This field is maintained for backward compatibility and will be used as an alias for `enableRequestMLEForOptionalApisGlobally`.
+
+---
+
+##### Advanced Configuration
 
 - **Variable**: `disableRequestMLEForMandatoryApisGlobally`
 - **Type**: `Boolean`
@@ -36,17 +46,27 @@ Configure global settings for request MLE using these properties in your `mercha
 
 #### Request MLE Certificate Configuration
 
+##### Certificate File Path (Optional)
+
 - **Variable**: `mleForRequestPublicCertPath`
 - **Type**: `String`
 - **Optional**: `true`
 - **Description**: Path to the public certificate file used for request encryption. Supported formats: `.pem`, `.crt`. 
   - **Note**: This parameter is optional when using JWT authentication. If not provided, the request MLE certificate will be automatically fetched from the JWT authentication P12 file using the `requestMleKeyAlias`.
 
+---
+
+##### Key Alias Configuration
+
 - **Variable**: `requestMleKeyAlias`
 - **Type**: `String`
 - **Optional**: `true`
 - **Default**: `CyberSource_SJC_US`
 - **Description**: Key alias used to retrieve the MLE certificate from the certificate file. When `mleForRequestPublicCertPath` is not provided, this alias is used to fetch the certificate from the JWT authentication P12 file. If not specified, the SDK will automatically use the default value `CyberSource_SJC_US`.
+
+---
+
+##### Deprecated Key Alias (Backward Compatibility)
 
 - **Variable**: `mleKeyAlias` ⚠️ **DEPRECATED**
 - **Type**: `String`
@@ -65,15 +85,23 @@ Configure global settings for request MLE using these properties in your `mercha
 
 #### Response MLE Private Key Configuration
 
-**Option 1: Provide Private Key Object**
+##### Option 1: Provide Private Key Object
+
 - **Variable**: `responseMlePrivateKey`
 - **Type**: `PrivateKey`
 - **Description**: Direct private key object for response decryption.
 
-**Option 2: Provide Private Key File Path**
+---
+
+##### Option 2: Provide Private Key File Path
+
 - **Variable**: `responseMlePrivateKeyFilePath`
 - **Type**: `String`
 - **Description**: Path to the private key file. Supported formats: `.p12`, `.pfx`, `.pem`, `.key`, `.p8`
+
+---
+
+##### Private Key File Password
 
 - **Variable**: `responseMlePrivateKeyFilePassword`
 - **Type**: `char[]`
@@ -88,7 +116,7 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ### API-level MLE Control
 
-Control MLE settings for individual APIs using the `mapToControlMLEonAPI` configuration:
+##### Map Configuration
 
 - **Variable**: `mapToControlMLEonAPI`
 - **Type**: `Map<String, String>`
