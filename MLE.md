@@ -210,7 +210,7 @@ merchantProps.setProperty("responseMleKID", "your-key-id");
 
 // API-specific control
 Map<String, String> mleControlMap = new HashMap<>();
-mleControlMap.put("getPaymentDetails", "::true");  // Enable response MLE only
+mleControlMap.put("createPayment", "::true");  // Enable response MLE only for this API
 merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ```
 
@@ -246,10 +246,10 @@ merchantProps.setProperty("responseMleKID", "your-key-id");
 
 // API-specific control for both request and response
 Map<String, String> mleControlMap = new HashMap<>();
-mleControlMap.put("createPayment", "true::true");     // Enable both request and response MLE
-mleControlMap.put("updatePayment", "false::true");    // Disable request, enable response MLE
-mleControlMap.put("deletePayment", "true::false");    // Enable request, disable response MLE
-mleControlMap.put("getPayment", "::true");            // Use global request setting, enable response MLE
+mleControlMap.put("createPayment", "true::true");     // Enable both request and response MLE for this API
+mleControlMap.put("capturePayment", "false::true");    // Disable request, enable response MLE for this API
+mleControlMap.put("refundPayment", "true::false");    // Enable request, disable response MLE for this API
+mleControlMap.put("createCredit", "::true");            // Use global request setting, enable response MLE for this API
 merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ```
 
@@ -323,7 +323,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
     "responseMlePrivateKeyFilePassword": "password",
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
-      "getPaymentDetails": "::true"
+      "createPayment": "::true"
     }
   }
 }
@@ -341,9 +341,9 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
       "createPayment": "true::true",
-      "updatePayment": "false::true",
-      "deletePayment": "true::false",
-      "getPayment": "::true"
+      "capturePayment": "false::true",
+      "refundPayment": "true::false",
+      "createCredit": "::true"
     }
   }
 }
