@@ -11,15 +11,17 @@ MLE supports both **Request Encryption** (encrypting outgoing request payloads) 
 - **Request MLE**: Only supported with `JWT (JSON Web Token)` authentication type
 - **Response MLE**: Only supported with `JWT (JSON Web Token)` authentication type
 
+<br/>
+
 ## Configuration
 
-### Request MLE Configuration
+##  1. Request MLE Configuration 
 
-#### Global Request MLE Configuration
+#### 1.1 Global Request MLE Configuration
 
 Configure global settings for request MLE using these properties in your `merchantConfig`:
 
-##### Primary Configuration
+##### (i) Primary Configuration
 
 - **Variable**: `enableRequestMLEForOptionalApisGlobally`
 - **Type**: `Boolean`
@@ -28,7 +30,7 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ---
 
-##### Deprecated Configuration (Backward Compatibility)
+##### (ii) Deprecated Configuration (Backward Compatibility)
 
 - **Variable**: `useMLEGlobally` ⚠️ **DEPRECATED**
 - **Type**: `Boolean`
@@ -37,16 +39,18 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ---
 
-##### Advanced Configuration
+##### (iii) Advanced Configuration
 
 - **Variable**: `disableRequestMLEForMandatoryApisGlobally`
 - **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: Disables request MLE for APIs that have mandatory MLE requirement when set to `true`.
 
-#### Request MLE Certificate Configuration
+---
 
-##### Certificate File Path (Optional)
+#### 1.2 Request MLE Certificate Configuration [Optional Params]
+
+##### (i) Certificate File Path (Optional)
 
 - **Variable**: `mleForRequestPublicCertPath`
 - **Type**: `String`
@@ -56,7 +60,7 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ---
 
-##### Key Alias Configuration
+##### (ii) Key Alias Configuration (Optional)
 
 - **Variable**: `requestMleKeyAlias`
 - **Type**: `String`
@@ -66,7 +70,7 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ---
 
-##### Deprecated Key Alias (Backward Compatibility)
+##### (iii) Deprecated Key Alias (Backward Compatibility) (Optional)
 
 - **Variable**: `mleKeyAlias` ⚠️ **DEPRECATED**
 - **Type**: `String`
@@ -74,18 +78,22 @@ Configure global settings for request MLE using these properties in your `mercha
 - **Default**: `CyberSource_SJC_US`
 - **Description**: **DEPRECATED** - Use `requestMleKeyAlias` instead. This field is maintained for backward compatibility and will be used as an alias for `requestMleKeyAlias`.
 
-### Response MLE Configuration
+<br />
 
-#### Global Response MLE Configuration
+## 2. Response MLE Configuration
+
+#### 2.1 Global Response MLE Configuration
 
 - **Variable**: `enableResponseMleGlobally`
 - **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: Enables response MLE globally for all APIs that support MLE responses when set to `true`.
 
-#### Response MLE Private Key Configuration
+----
 
-##### Option 1: Provide Private Key Object
+#### 2.2 Response MLE Private Key Configuration
+
+##### (i) Option 1: Provide Private Key Object
 
 - **Variable**: `responseMlePrivateKey`
 - **Type**: `PrivateKey`
@@ -93,38 +101,41 @@ Configure global settings for request MLE using these properties in your `mercha
 
 ---
 
-##### Option 2: Provide Private Key File Path
+##### (ii) Option 2: Provide Private Key File Path
 
 - **Variable**: `responseMlePrivateKeyFilePath`
 - **Type**: `String`
-- **Description**: Path to the private key file. Supported formats: `.p12`, `.pfx`, `.pem`, `.key`, `.p8`
+- **Description**: Path to the private key file. Supported formats: `.p12`, `.pfx`, `.pem`, `.key`, `.p8`. Recommendation use encrypted private Key (password protection) for MLE response.
 
 ---
 
-##### Private Key File Password
+##### (iii) Private Key File Password
 
 - **Variable**: `responseMlePrivateKeyFilePassword`
 - **Type**: `char[]`
 - **Description**: Password for the private key file (required for `.p12/.pfx` files or encrypted private keys).
-
-#### Response MLE Additional Configuration
+---
+#### 2.3 Response MLE Additional Configuration
 
 - **Variable**: `responseMleKID`
 - **Type**: `String`
 - **Required**: `true` (when response MLE is enabled)
 - **Description**: Key ID value for the MLE response certificate (provided in merchant portal).
 
-### API-level MLE Control
+<br/>
 
-##### Map Configuration
+## 3. API-level MLE Control for Request and Response MLE
+
+### Map Configuration
 
 - **Variable**: `mapToControlMLEonAPI`
 - **Type**: `Map<String, String>`
 - **Description**: Overrides global MLE settings for specific APIs. The key is the API function name, and the value controls both request and response MLE.
+- **Example**: `Map<'apiFunctionName', 'true::true'>`
 
-#### Value Formats:
+#### Structure of Values in Map:
 
-1. **"requestMLE::responseMLE"** - Control both request and response MLE
+(i) **"requestMLE::responseMLE"** - Control both request and response MLE
    - `"true::true"` - Enable both request and response MLE
    - `"false::false"` - Disable both request and response MLE
    - `"true::false"` - Enable request MLE, disable response MLE
@@ -134,13 +145,15 @@ Configure global settings for request MLE using these properties in your `mercha
    - `"::false"` - Use global setting for request, disable response MLE
    - `"false::"` - Disable request MLE, use global setting for response
 
-2. **"requestMLE"** - Control request MLE only (response uses global setting)
+(ii) **"requestMLE"** - Control request MLE only (response uses global setting)
    - `"true"` - Enable request MLE
    - `"false"` - Disable request MLE
 
-## Example Configurations
+<br/>
 
-### Minimal Request MLE Configuration
+## 4. Example Configurations
+
+### (i) Minimal Request MLE Configuration
 
 ```java
 // Properties-based configuration - Uses defaults (most common scenario)
@@ -150,7 +163,7 @@ merchantProps.setProperty("enableRequestMLEForOptionalApisGlobally", "true");
 // SDK will use JWT P12 file with default alias "CyberSource_SJC_US"
 ```
 
-### Request MLE with Deprecated Parameters (Backward Compatibility)
+### (ii) Request MLE with Deprecated Parameters (Backward Compatibility)
 
 ```java
 // Using deprecated parameters - still supported but not recommended
@@ -159,7 +172,7 @@ merchantProps.setProperty("useMLEGlobally", "true");  // Deprecated - use enable
 merchantProps.setProperty("mleKeyAlias", "Custom_Key_Alias");  // Deprecated - use requestMleKeyAlias
 ```
 
-### Request MLE with Custom Key Alias
+### (iii) Request MLE with Custom Key Alias
 
 ```java
 // Properties-based configuration - With custom key alias only
@@ -169,7 +182,7 @@ merchantProps.setProperty("requestMleKeyAlias", "Custom_Key_Alias");
 // Will fetch from JWT P12 file using custom alias
 ```
 
-### Request MLE with Separate Certificate File
+### (iv) Request MLE with Separate Certificate File
 
 ```java
 // Properties-based configuration - With separate MLE certificate file
@@ -185,7 +198,7 @@ mleControlMap.put("capturePayment", "false");   // Disable request MLE for this 
 merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ```
 
-### Response MLE Configuration with Private Key File
+### (v) Response MLE Configuration with Private Key File
 
 ```java
 // Properties-based configuration
@@ -201,7 +214,7 @@ mleControlMap.put("getPaymentDetails", "::true");  // Enable response MLE only
 merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ```
 
-### Response MLE Configuration with Private Key Object
+### (vi) Response MLE Configuration with Private Key Object
 
 ```java
 // Load private key programmatically
@@ -216,7 +229,7 @@ merchantProps.setProperty("responseMleKID", "your-key-id");
 MerchantConfig merchantConfig = new MerchantConfig(merchantProps, privateKey);
 ```
 
-### Both Request and Response MLE Configuration
+### (vii) Both Request and Response MLE Configuration
 
 ```java
 // Properties-based configuration
@@ -240,7 +253,7 @@ mleControlMap.put("getPayment", "::true");            // Use global request sett
 merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ```
 
-### Mixed Configuration (New and Deprecated Parameters)
+### (viii) Mixed Configuration (New and Deprecated Parameters)
 
 ```java
 // Example showing both new and deprecated parameters (deprecated will be used as aliases)
@@ -259,9 +272,11 @@ merchantProps.setProperty("requestMleKeyAlias", "New_Alias");
 merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
 ```
 
-## JSON Configuration Examples
+<br/>
 
-### Minimal Request MLE
+## 5. JSON Configuration Examples
+
+### (i) Minimal Request MLE
 
 ```json
 {
@@ -271,7 +286,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
 }
 ```
 
-### Request MLE with Deprecated Parameters
+### (ii) Request MLE with Deprecated Parameters
 
 ```json
 {
@@ -282,7 +297,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
 }
 ```
 
-### Request MLE with Custom Configuration
+### (iii) Request MLE with Custom Configuration
 
 ```json
 {
@@ -298,7 +313,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
 }
 ```
 
-### Response MLE Only
+### (iv) Response MLE Only
 
 ```json
 {
@@ -314,7 +329,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
 }
 ```
 
-### Both Request and Response MLE
+### (v) Both Request and Response MLE
 
 ```json
 {
@@ -333,17 +348,20 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
   }
 }
 ```
+<br/>
 
-## Supported Private Key File Formats
+## 6. Supported Private Key File Formats
 
 For Response MLE private key files, the following formats are supported:
 
 - **PKCS#12**: `.p12`, `.pfx` (requires password)
 - **PEM**: `.pem`, `.key`, `.p8` (supports both encrypted and unencrypted)
 
-## Important Notes
+<br/>
 
-### Request MLE
+## 7. Important Notes
+
+### (i) Request MLE
 - Both `mleForRequestPublicCertPath` and `requestMleKeyAlias` are **optional** parameters
 - If `mleForRequestPublicCertPath` is not provided, the SDK will automatically fetch the MLE certificate from the JWT authentication P12 file
 - If `requestMleKeyAlias` is not provided, the SDK will use the default value `CyberSource_SJC_US`
@@ -353,32 +371,34 @@ For Response MLE private key files, the following formats are supported:
 - If `mapToControlMLEonAPI` doesn't contain a specific API, the global setting applies
 - For HTTP Signature authentication, request MLE will fall back to non-encrypted requests with a warning
 
-### Response MLE
+### (ii) Response MLE
 - Response MLE requires either `responseMlePrivateKey` object OR `responseMlePrivateKeyFilePath` (not both)
 - The `responseMleKID` parameter is mandatory when response MLE is enabled
 - If an API expects a mandatory MLE response but the map specifies non-MLE response, the API might return an error
 - Both the private key object and file path approaches are mutually exclusive
 
-### Backward Compatibility
+### (iii) Backward Compatibility
 - `useMLEGlobally` is **deprecated** but still supported as an alias for `enableRequestMLEForOptionalApisGlobally`
 - `mleKeyAlias` is **deprecated** but still supported as an alias for `requestMleKeyAlias`
 - If both new and deprecated parameters are provided with the **same value**, it works fine
 - If both new and deprecated parameters are provided with **different values**, it will cause a `ConfigException`
 - When both new and deprecated parameters are provided, the **new parameter takes precedence**
 
-### API-level Control Validation
+### (iv) API-level Control Validation
 - The `mapToControlMLEonAPI` values are validated for proper format
 - Invalid formats (empty values, multiple separators, non-boolean values) will cause configuration errors
 - Empty string after `::` separator will use global defaults
 - The map also supports backward compatibility with `Map<String, Boolean>` format, which will be automatically converted to `Map<String, String>`
 
-### Configuration Validation
+### (v) Configuration Validation
 - The SDK performs comprehensive validation of MLE configuration parameters
 - Conflicting values between new and deprecated parameters will result in `ConfigException`
 - File path validation is performed for certificate and private key files
 - Invalid boolean values in `mapToControlMLEonAPI` will cause parsing errors
 
-## Error Handling
+<br/>
+
+## 8. Error Handling
 
 The SDK provides specific error messages for common MLE issues:
 - Invalid private key for response decryption
@@ -389,27 +409,31 @@ The SDK provides specific error messages for common MLE issues:
 - Conflicting parameter values between new and deprecated fields
 - Invalid format in `mapToControlMLEonAPI` values
 
-## Sample Code Repository
+<br/>
+
+## 9. Sample Code Repository
 
 For comprehensive examples and sample implementations, please refer to:
 [Cybersource Java Sample Code Repository (on GitHub)](https://github.com/CyberSource/cybersource-rest-samples-java)
 
-## Additional Information
+<br/>
 
-### API Support
+## 10. Additional Information
+
+### (i) API Support
 - MLE is designed to support specific APIs that have been enabled for encryption
 - Support can be extended to additional APIs based on requirements and updates
 
-### Using the SDK
+### (ii) Using the SDK
 To use the MLE feature in the SDK, configure the `merchantConfig` object as shown above and pass it to the SDK initialization. The SDK will automatically handle encryption and decryption based on your configuration.
 
-### MerchantConfig Constructors
+### (iii) MerchantConfig Constructors
 The SDK provides multiple constructors to accommodate different MLE configuration approaches:
 - `MerchantConfig(Properties props)` - Standard configuration
 - `MerchantConfig(Properties props, PrivateKey responseMlePrivateKey)` - With private key object
 - `MerchantConfig(Properties props, Map<String, String> defaultHeaders, PrivateKey responseMlePrivateKey)` - Full configuration
 
-### Migration from Deprecated Parameters
+### (iv) Migration from Deprecated Parameters
 
 If you're currently using deprecated parameters, here's how to migrate:
 
@@ -425,5 +449,7 @@ merchantProps.setProperty("requestMleKeyAlias", "Custom_Alias");
 
 The deprecated parameters will continue to work but are not recommended for new implementations.
 
-## Contact
+<br/>
+
+## 11. Contact
 For any issues or further assistance, please open an issue on the GitHub repository or contact our support team.
