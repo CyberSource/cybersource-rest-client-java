@@ -86,6 +86,8 @@ public class UnifiedCheckoutCaptureContextApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "generateUnifiedCheckoutCaptureContext,generateUnifiedCheckoutCaptureContextAsync,generateUnifiedCheckoutCaptureContextWithHttpInfo,generateUnifiedCheckoutCaptureContextCall");
         
         // create path and map variables
         String localVarPath = "/up/v1/capture-contexts";
@@ -121,7 +123,7 @@ public class UnifiedCheckoutCaptureContextApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

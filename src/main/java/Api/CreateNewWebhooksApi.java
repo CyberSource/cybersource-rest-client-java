@@ -92,6 +92,8 @@ public class CreateNewWebhooksApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "findProductsToSubscribe,findProductsToSubscribeAsync,findProductsToSubscribeWithHttpInfo,findProductsToSubscribeCall");
         
         // create path and map variables
         String localVarPath = "/notification-subscriptions/v2/products/{organizationId}"
@@ -128,7 +130,7 @@ public class CreateNewWebhooksApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -235,6 +237,8 @@ public class CreateNewWebhooksApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "notificationSubscriptionsV2WebhooksPost,notificationSubscriptionsV2WebhooksPostAsync,notificationSubscriptionsV2WebhooksPostWithHttpInfo,notificationSubscriptionsV2WebhooksPostCall");
         
         // create path and map variables
         String localVarPath = "/notification-subscriptions/v2/webhooks";
@@ -270,7 +274,7 @@ public class CreateNewWebhooksApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -374,6 +378,8 @@ public class CreateNewWebhooksApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "saveSymEgressKey,saveSymEgressKeyAsync,saveSymEgressKeyWithHttpInfo,saveSymEgressKeyCall");
         
         // create path and map variables
         String localVarPath = "/kms/egress/v2/keys-sym";
@@ -415,7 +421,7 @@ public class CreateNewWebhooksApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

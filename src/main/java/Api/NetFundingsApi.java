@@ -93,6 +93,8 @@ public class NetFundingsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getNetFundingDetails,getNetFundingDetailsAsync,getNetFundingDetailsWithHttpInfo,getNetFundingDetailsCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/net-fundings";
@@ -136,7 +138,7 @@ public class NetFundingsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

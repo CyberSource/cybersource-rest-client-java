@@ -93,6 +93,8 @@ public class PayerAuthenticationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "checkPayerAuthEnrollment,checkPayerAuthEnrollmentAsync,checkPayerAuthEnrollmentWithHttpInfo,checkPayerAuthEnrollmentCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentications";
@@ -128,7 +130,7 @@ public class PayerAuthenticationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -235,6 +237,8 @@ public class PayerAuthenticationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "payerAuthSetup,payerAuthSetupAsync,payerAuthSetupWithHttpInfo,payerAuthSetupCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-setups";
@@ -270,7 +274,7 @@ public class PayerAuthenticationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -377,6 +381,8 @@ public class PayerAuthenticationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "validateAuthenticationResults,validateAuthenticationResultsAsync,validateAuthenticationResultsWithHttpInfo,validateAuthenticationResultsCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-results";
@@ -412,7 +418,7 @@ public class PayerAuthenticationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
