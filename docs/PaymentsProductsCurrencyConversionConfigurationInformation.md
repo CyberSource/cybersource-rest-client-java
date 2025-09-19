@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**templateId** | [**UUID**](UUID.md) |  |  [optional]
+**templateId** | **String** |  |  [optional]
 **configurations** | [**PaymentsProductsCurrencyConversionConfigurationInformationConfigurations**](PaymentsProductsCurrencyConversionConfigurationInformationConfigurations.md) |  |  [optional]
 
 

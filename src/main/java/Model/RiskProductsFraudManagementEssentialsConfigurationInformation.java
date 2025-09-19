@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * RiskProductsFraudManagementEssentialsConfigurationInformation
@@ -31,9 +30,9 @@ import java.util.UUID;
 
 public class RiskProductsFraudManagementEssentialsConfigurationInformation {
   @SerializedName("templateId")
-  private UUID templateId = null;
+  private String templateId = null;
 
-  public RiskProductsFraudManagementEssentialsConfigurationInformation templateId(UUID templateId) {
+  public RiskProductsFraudManagementEssentialsConfigurationInformation templateId(String templateId) {
     this.templateId = templateId;
     return this;
   }
@@ -43,11 +42,11 @@ public class RiskProductsFraudManagementEssentialsConfigurationInformation {
    * @return templateId
   **/
   @ApiModelProperty(value = "")
-  public UUID getTemplateId() {
+  public String getTemplateId() {
     return templateId;
   }
 
-  public void setTemplateId(UUID templateId) {
+  public void setTemplateId(String templateId) {
     this.templateId = templateId;
   }
 
