@@ -24,7 +24,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * PaymentsProductsVirtualTerminalConfigurationInformation
@@ -32,12 +31,12 @@ import java.util.UUID;
 
 public class PaymentsProductsVirtualTerminalConfigurationInformation {
   @SerializedName("templateId")
-  private UUID templateId = null;
+  private String templateId = null;
 
   @SerializedName("configurations")
   private VTConfig configurations = null;
 
-  public PaymentsProductsVirtualTerminalConfigurationInformation templateId(UUID templateId) {
+  public PaymentsProductsVirtualTerminalConfigurationInformation templateId(String templateId) {
     this.templateId = templateId;
     return this;
   }
@@ -47,11 +46,11 @@ public class PaymentsProductsVirtualTerminalConfigurationInformation {
    * @return templateId
   **/
   @ApiModelProperty(value = "")
-  public UUID getTemplateId() {
+  public String getTemplateId() {
     return templateId;
   }
 
-  public void setTemplateId(UUID templateId) {
+  public void setTemplateId(String templateId) {
     this.templateId = templateId;
   }
 

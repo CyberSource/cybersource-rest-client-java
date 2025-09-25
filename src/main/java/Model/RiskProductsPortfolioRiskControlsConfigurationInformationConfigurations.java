@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations
@@ -31,9 +30,9 @@ import java.util.UUID;
 
 public class RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations {
   @SerializedName("profileId")
-  private UUID profileId = null;
+  private String profileId = null;
 
-  public RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations profileId(UUID profileId) {
+  public RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations profileId(String profileId) {
     this.profileId = profileId;
     return this;
   }
@@ -43,11 +42,11 @@ public class RiskProductsPortfolioRiskControlsConfigurationInformationConfigurat
    * @return profileId
   **/
   @ApiModelProperty(value = "")
-  public UUID getProfileId() {
+  public String getProfileId() {
     return profileId;
   }
 
-  public void setProfileId(UUID profileId) {
+  public void setProfileId(String profileId) {
     this.profileId = profileId;
   }
 

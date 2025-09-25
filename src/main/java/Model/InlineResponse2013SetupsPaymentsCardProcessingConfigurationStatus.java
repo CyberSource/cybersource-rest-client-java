@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus
@@ -34,7 +33,7 @@ import java.util.UUID;
 
 public class InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus {
   @SerializedName("configurationId")
-  private UUID configurationId = null;
+  private String configurationId = null;
 
   @SerializedName("version")
   private String version = null;
@@ -54,7 +53,7 @@ public class InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus {
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus configurationId(UUID configurationId) {
+  public InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus configurationId(String configurationId) {
     this.configurationId = configurationId;
     return this;
   }
@@ -64,11 +63,11 @@ public class InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus {
    * @return configurationId
   **/
   @ApiModelProperty(value = "This is NOT for MVP")
-  public UUID getConfigurationId() {
+  public String getConfigurationId() {
     return configurationId;
   }
 
-  public void setConfigurationId(UUID configurationId) {
+  public void setConfigurationId(String configurationId) {
     this.configurationId = configurationId;
   }
 
