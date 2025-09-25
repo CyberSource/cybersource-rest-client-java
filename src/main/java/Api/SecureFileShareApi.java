@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class SecureFileShareApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -133,7 +134,7 @@ public class SecureFileShareApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileValidateBeforeCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFileValidateBeforeCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
@@ -158,7 +159,7 @@ public class SecureFileShareApi {
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getFile(String fileId, String organizationId) throws ApiException {
+    public void getFile(String fileId, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getFile' STARTED");
         getFileWithHttpInfo(fileId, organizationId);
 
@@ -172,7 +173,7 @@ public class SecureFileShareApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+    public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
@@ -187,7 +188,7 @@ public class SecureFileShareApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -224,7 +225,7 @@ public class SecureFileShareApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -288,7 +289,7 @@ public class SecureFileShareApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
@@ -322,7 +323,7 @@ public class SecureFileShareApi {
      * @return V1FileDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+    public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getFileDetail' STARTED");
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         logger.info("CALL TO METHOD 'getFileDetail' ENDED");
@@ -339,7 +340,7 @@ public class SecureFileShareApi {
      * @return ApiResponse&lt;V1FileDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+    public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, name, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
@@ -357,7 +358,7 @@ public class SecureFileShareApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

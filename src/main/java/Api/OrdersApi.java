@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class OrdersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createOrderCall(CreateOrderRequest createOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createOrderCall(CreateOrderRequest createOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createOrderRequest, CreateOrderRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -129,7 +130,7 @@ public class OrdersApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOrderValidateBeforeCall(CreateOrderRequest createOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createOrderValidateBeforeCall(CreateOrderRequest createOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createOrderRequest' is set
         if (createOrderRequest == null) {
@@ -154,7 +155,7 @@ public class OrdersApi {
      * @return PtsV2CreateOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2CreateOrderPost201Response createOrder(CreateOrderRequest createOrderRequest) throws ApiException {
+    public PtsV2CreateOrderPost201Response createOrder(CreateOrderRequest createOrderRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOrder' STARTED");
         ApiResponse<PtsV2CreateOrderPost201Response> resp = createOrderWithHttpInfo(createOrderRequest);
         logger.info("CALL TO METHOD 'createOrder' ENDED");
@@ -168,7 +169,7 @@ public class OrdersApi {
      * @return ApiResponse&lt;PtsV2CreateOrderPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2CreateOrderPost201Response> createOrderWithHttpInfo(CreateOrderRequest createOrderRequest) throws ApiException {
+    public ApiResponse<PtsV2CreateOrderPost201Response> createOrderWithHttpInfo(CreateOrderRequest createOrderRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOrderValidateBeforeCall(createOrderRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateOrderPost201Response>(){}.getType();
@@ -183,7 +184,7 @@ public class OrdersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createOrderAsync(CreateOrderRequest createOrderRequest, final ApiCallback<PtsV2CreateOrderPost201Response> callback) throws ApiException {
+    public okhttp3.Call createOrderAsync(CreateOrderRequest createOrderRequest, final ApiCallback<PtsV2CreateOrderPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -219,7 +220,7 @@ public class OrdersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call updateOrderCall(String id, UpdateOrderRequest updateOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updateOrderCall(String id, UpdateOrderRequest updateOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateOrderRequest, UpdateOrderRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -273,7 +274,7 @@ public class OrdersApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOrderValidateBeforeCall(String id, UpdateOrderRequest updateOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updateOrderValidateBeforeCall(String id, UpdateOrderRequest updateOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -305,7 +306,7 @@ public class OrdersApi {
      * @return PtsV2UpdateOrderPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2UpdateOrderPatch201Response updateOrder(String id, UpdateOrderRequest updateOrderRequest) throws ApiException {
+    public PtsV2UpdateOrderPatch201Response updateOrder(String id, UpdateOrderRequest updateOrderRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateOrder' STARTED");
         ApiResponse<PtsV2UpdateOrderPatch201Response> resp = updateOrderWithHttpInfo(id, updateOrderRequest);
         logger.info("CALL TO METHOD 'updateOrder' ENDED");
@@ -320,7 +321,7 @@ public class OrdersApi {
      * @return ApiResponse&lt;PtsV2UpdateOrderPatch201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2UpdateOrderPatch201Response> updateOrderWithHttpInfo(String id, UpdateOrderRequest updateOrderRequest) throws ApiException {
+    public ApiResponse<PtsV2UpdateOrderPatch201Response> updateOrderWithHttpInfo(String id, UpdateOrderRequest updateOrderRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateOrderValidateBeforeCall(id, updateOrderRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2UpdateOrderPatch201Response>(){}.getType();
@@ -336,7 +337,7 @@ public class OrdersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateOrderAsync(String id, UpdateOrderRequest updateOrderRequest, final ApiCallback<PtsV2UpdateOrderPatch201Response> callback) throws ApiException {
+    public okhttp3.Call updateOrderAsync(String id, UpdateOrderRequest updateOrderRequest, final ApiCallback<PtsV2UpdateOrderPatch201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

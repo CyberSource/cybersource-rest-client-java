@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class ReversalApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call authReversalCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call authReversalCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(authReversalRequest, AuthReversalRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -130,7 +131,7 @@ public class ReversalApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call authReversalValidateBeforeCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call authReversalValidateBeforeCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -162,7 +163,7 @@ public class ReversalApi {
      * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
+    public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'authReversal' STARTED");
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest);
         logger.info("CALL TO METHOD 'authReversal' ENDED");
@@ -177,7 +178,7 @@ public class ReversalApi {
      * @return ApiResponse&lt;PtsV2PaymentsReversalsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException {
+    public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = authReversalValidateBeforeCall(id, authReversalRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
@@ -193,7 +194,7 @@ public class ReversalApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
+    public okhttp3.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -228,7 +229,7 @@ public class ReversalApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call mitReversalCall(MitReversalRequest mitReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call mitReversalCall(MitReversalRequest mitReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(mitReversalRequest, MitReversalRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -281,7 +282,7 @@ public class ReversalApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call mitReversalValidateBeforeCall(MitReversalRequest mitReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call mitReversalValidateBeforeCall(MitReversalRequest mitReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'mitReversalRequest' is set
         if (mitReversalRequest == null) {
@@ -306,7 +307,7 @@ public class ReversalApi {
      * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException {
+    public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'mitReversal' STARTED");
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = mitReversalWithHttpInfo(mitReversalRequest);
         logger.info("CALL TO METHOD 'mitReversal' ENDED");
@@ -320,7 +321,7 @@ public class ReversalApi {
      * @return ApiResponse&lt;PtsV2PaymentsReversalsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsReversalsPost201Response> mitReversalWithHttpInfo(MitReversalRequest mitReversalRequest) throws ApiException {
+    public ApiResponse<PtsV2PaymentsReversalsPost201Response> mitReversalWithHttpInfo(MitReversalRequest mitReversalRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = mitReversalValidateBeforeCall(mitReversalRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
@@ -335,7 +336,7 @@ public class ReversalApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call mitReversalAsync(MitReversalRequest mitReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
+    public okhttp3.Call mitReversalAsync(MitReversalRequest mitReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

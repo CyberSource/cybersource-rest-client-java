@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -89,7 +90,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call actionDecisionManagerCaseCall(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call actionDecisionManagerCaseCall(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementActionsRequest, CaseManagementActionsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -143,7 +144,7 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call actionDecisionManagerCaseValidateBeforeCall(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call actionDecisionManagerCaseValidateBeforeCall(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -175,7 +176,7 @@ public class DecisionManagerApi {
      * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 actionDecisionManagerCase(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException {
+    public InlineResponse2001 actionDecisionManagerCase(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'actionDecisionManagerCase' STARTED");
         ApiResponse<InlineResponse2001> resp = actionDecisionManagerCaseWithHttpInfo(id, caseManagementActionsRequest);
         logger.info("CALL TO METHOD 'actionDecisionManagerCase' ENDED");
@@ -190,7 +191,7 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> actionDecisionManagerCaseWithHttpInfo(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException {
+    public ApiResponse<InlineResponse2001> actionDecisionManagerCaseWithHttpInfo(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = actionDecisionManagerCaseValidateBeforeCall(id, caseManagementActionsRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
@@ -206,7 +207,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call actionDecisionManagerCaseAsync(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public okhttp3.Call actionDecisionManagerCaseAsync(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ApiCallback<InlineResponse2001> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -242,7 +243,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call addNegativeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call addNegativeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addNegativeListRequest, AddNegativeListRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -296,7 +297,7 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addNegativeValidateBeforeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call addNegativeValidateBeforeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'type' is set
         if (type == null) {
@@ -328,7 +329,7 @@ public class DecisionManagerApi {
      * @return RiskV1UpdatePost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+    public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'addNegative' STARTED");
         ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
         logger.info("CALL TO METHOD 'addNegative' ENDED");
@@ -343,7 +344,7 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;RiskV1UpdatePost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1UpdatePost201Response> addNegativeWithHttpInfo(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+    public ApiResponse<RiskV1UpdatePost201Response> addNegativeWithHttpInfo(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = addNegativeValidateBeforeCall(type, addNegativeListRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
@@ -359,7 +360,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call addNegativeAsync(String type, AddNegativeListRequest addNegativeListRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
+    public okhttp3.Call addNegativeAsync(String type, AddNegativeListRequest addNegativeListRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -395,7 +396,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call commentDecisionManagerCaseCall(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call commentDecisionManagerCaseCall(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementCommentsRequest, CaseManagementCommentsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -449,7 +450,7 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentDecisionManagerCaseValidateBeforeCall(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call commentDecisionManagerCaseValidateBeforeCall(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -481,7 +482,7 @@ public class DecisionManagerApi {
      * @return InlineResponse2011
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 commentDecisionManagerCase(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException {
+    public InlineResponse2011 commentDecisionManagerCase(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'commentDecisionManagerCase' STARTED");
         ApiResponse<InlineResponse2011> resp = commentDecisionManagerCaseWithHttpInfo(id, caseManagementCommentsRequest);
         logger.info("CALL TO METHOD 'commentDecisionManagerCase' ENDED");
@@ -496,7 +497,7 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;InlineResponse2011&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> commentDecisionManagerCaseWithHttpInfo(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException {
+    public ApiResponse<InlineResponse2011> commentDecisionManagerCaseWithHttpInfo(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = commentDecisionManagerCaseValidateBeforeCall(id, caseManagementCommentsRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
@@ -512,7 +513,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call commentDecisionManagerCaseAsync(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public okhttp3.Call commentDecisionManagerCaseAsync(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -547,7 +548,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createBundledDecisionManagerCaseCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createBundledDecisionManagerCaseCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBundledDecisionManagerCaseRequest, CreateBundledDecisionManagerCaseRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -600,7 +601,7 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBundledDecisionManagerCaseValidateBeforeCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createBundledDecisionManagerCaseValidateBeforeCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
         if (createBundledDecisionManagerCaseRequest == null) {
@@ -625,7 +626,7 @@ public class DecisionManagerApi {
      * @return RiskV1DecisionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
+    public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' STARTED");
         ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' ENDED");
@@ -639,7 +640,7 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;RiskV1DecisionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1DecisionsPost201Response> createBundledDecisionManagerCaseWithHttpInfo(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
+    public ApiResponse<RiskV1DecisionsPost201Response> createBundledDecisionManagerCaseWithHttpInfo(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createBundledDecisionManagerCaseValidateBeforeCall(createBundledDecisionManagerCaseRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1DecisionsPost201Response>(){}.getType();
@@ -654,7 +655,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createBundledDecisionManagerCaseAsync(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ApiCallback<RiskV1DecisionsPost201Response> callback) throws ApiException {
+    public okhttp3.Call createBundledDecisionManagerCaseAsync(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ApiCallback<RiskV1DecisionsPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -690,7 +691,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call fraudUpdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call fraudUpdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(fraudMarkingActionRequest, FraudMarkingActionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -744,7 +745,7 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fraudUpdateValidateBeforeCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call fraudUpdateValidateBeforeCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -776,7 +777,7 @@ public class DecisionManagerApi {
      * @return RiskV1UpdatePost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+    public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'fraudUpdate' STARTED");
         ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
         logger.info("CALL TO METHOD 'fraudUpdate' ENDED");
@@ -791,7 +792,7 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;RiskV1UpdatePost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1UpdatePost201Response> fraudUpdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+    public ApiResponse<RiskV1UpdatePost201Response> fraudUpdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = fraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
@@ -807,7 +808,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call fraudUpdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
+    public okhttp3.Call fraudUpdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

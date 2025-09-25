@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -72,7 +73,7 @@ public class FlexApiApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call generateFlexAPICaptureContextCall(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call generateFlexAPICaptureContextCall(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateFlexAPICaptureContextRequest, GenerateFlexAPICaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -125,7 +126,7 @@ public class FlexApiApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generateFlexAPICaptureContextValidateBeforeCall(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call generateFlexAPICaptureContextValidateBeforeCall(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'generateFlexAPICaptureContextRequest' is set
         if (generateFlexAPICaptureContextRequest == null) {
@@ -150,7 +151,7 @@ public class FlexApiApi {
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String generateFlexAPICaptureContext(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException {
+    public String generateFlexAPICaptureContext(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'generateFlexAPICaptureContext' STARTED");
         ApiResponse<String> resp = generateFlexAPICaptureContextWithHttpInfo(generateFlexAPICaptureContextRequest);
         logger.info("CALL TO METHOD 'generateFlexAPICaptureContext' ENDED");
@@ -164,7 +165,7 @@ public class FlexApiApi {
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> generateFlexAPICaptureContextWithHttpInfo(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException {
+    public ApiResponse<String> generateFlexAPICaptureContextWithHttpInfo(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateFlexAPICaptureContextValidateBeforeCall(generateFlexAPICaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -179,7 +180,7 @@ public class FlexApiApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call generateFlexAPICaptureContextAsync(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ApiCallback<String> callback) throws ApiException {
+    public okhttp3.Call generateFlexAPICaptureContextAsync(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ApiCallback<String> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -79,7 +80,7 @@ public class DeviceSearchApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postSearchQueryCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postSearchQueryCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequest, PostDeviceSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -132,7 +133,7 @@ public class DeviceSearchApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSearchQueryValidateBeforeCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postSearchQueryValidateBeforeCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postDeviceSearchRequest' is set
         if (postDeviceSearchRequest == null) {
@@ -157,7 +158,7 @@ public class DeviceSearchApi {
      * @return InlineResponse2006
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2006 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public InlineResponse2006 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQuery' STARTED");
         ApiResponse<InlineResponse2006> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
         logger.info("CALL TO METHOD 'postSearchQuery' ENDED");
@@ -171,7 +172,7 @@ public class DeviceSearchApi {
      * @return ApiResponse&lt;InlineResponse2006&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2006> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public ApiResponse<InlineResponse2006> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
@@ -186,7 +187,7 @@ public class DeviceSearchApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2006> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2006> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -221,7 +222,7 @@ public class DeviceSearchApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postSearchQueryV3Call(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postSearchQueryV3Call(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequestV3, PostDeviceSearchRequestV3.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -274,7 +275,7 @@ public class DeviceSearchApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSearchQueryV3ValidateBeforeCall(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postSearchQueryV3ValidateBeforeCall(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postDeviceSearchRequestV3' is set
         if (postDeviceSearchRequestV3 == null) {
@@ -299,7 +300,7 @@ public class DeviceSearchApi {
      * @return InlineResponse2008
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2008 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public InlineResponse2008 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQueryV3' STARTED");
         ApiResponse<InlineResponse2008> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
         logger.info("CALL TO METHOD 'postSearchQueryV3' ENDED");
@@ -313,7 +314,7 @@ public class DeviceSearchApi {
      * @return ApiResponse&lt;InlineResponse2008&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2008> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public ApiResponse<InlineResponse2008> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
@@ -328,7 +329,7 @@ public class DeviceSearchApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2008> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2008> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

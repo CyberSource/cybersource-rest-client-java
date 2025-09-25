@@ -14,7 +14,6 @@ package Invokers;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.net.HttpRetryException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URLConnection;
@@ -29,7 +28,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.net.ssl.*;
@@ -43,7 +41,6 @@ import org.apache.logging.log4j.Logger;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.Headers;
@@ -127,12 +124,11 @@ public class ApiClient {
 	private KeyManager[] keyManagers;
 	private String acceptHeader = "";
 
-	private static OkHttpClient httpClient;
-	private final OkHttpClient classHttpClient = initializeFinalVariables();
+	private OkHttpClient httpClient;
+	private HttpClientFactoryAdditionalSettings additionalSettings = new HttpClientFactoryAdditionalSettings();
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -158,44 +154,14 @@ public class ApiClient {
 	public MerchantConfig merchantConfig;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 
-	public static OkHttpClient initializeFinalVariables() {
-		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-		logging.setLevel(Level.NONE);
-		// connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
-
-		try {
-			return new OkHttpClient.Builder()
-								.connectTimeout(1, TimeUnit.SECONDS)
-								.writeTimeout(60, TimeUnit.SECONDS)
-								.readTimeout(60, TimeUnit.SECONDS)
-								.connectionPool(ApiClient.connectionPool)
-								.addInterceptor(logging)
-								.build();
-		}
-		catch (Exception ex)
-		{
-			logger.error("Error in creating HTTP Client");
-			return null;
-		}
-    }
-
 	/*
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
 		versionInfo = getClientID();
-
-		try {
-			httpClient = classHttpClient.newBuilder()
-					.retryOnConnectionFailure(true)
-					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-					.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-					.build();
-		}
-		catch (Exception ex)
-		{
-			logger.error("Error in creating HTTP Client");
-		}
+		additionalSettings.setCustomRetryOnConnectionFailure(true);
+		additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
+		additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
 
 		verifyingSsl = true;
 
@@ -243,32 +209,13 @@ public class ApiClient {
 		int proxyPort = merchantConfig.getProxyPort();
 		String proxyHost = merchantConfig.getProxyAddress();
 
-		// User Defined Timeout for HTTP Client
-		int connectionTimeout = Math.max(merchantConfig.getUserDefinedConnectionTimeout(), 1);
-		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
-		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
-		int keepAliveDuration = Math.max(merchantConfig.getUserDefinedKeepAliveDuration(), 10);
-		connectionPool = new ConnectionPool(5, keepAliveDuration, TimeUnit.SECONDS);
-
 		Authenticator proxyAuthenticator;
 
 		if (useProxy && (proxyHost != null && !proxyHost.isEmpty())) {
 			if ((username != null && !username.isEmpty()) && (password != null && !password.isEmpty())) {
 				proxyAuthenticator = new Authenticator() {
-					// private int proxyCounter = 0;
-
 					@Override
 					public Request authenticate(Route route, Response response) throws IOException {
-						// if (proxyCounter++ > 0) {
-							// if (response.code() == 407) {
-								// logger.error("HttpRetryException : 407 Proxy Authentication Missing or Incorrect");
-								// throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
-							// } else {
-								// logger.error("IOException : " + response.message());
-								// throw new IOException(response.message());
-							// }
-						// }
-
 						String credential = Credentials.basic(username, password);
 						return response.request().newBuilder().header("Proxy-Authorization", credential).build();
 					}
@@ -282,51 +229,15 @@ public class ApiClient {
 				};
 			}
 
-            try {
-				httpClient = classHttpClient.newBuilder()
-						.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
-						.proxyAuthenticator(proxyAuthenticator)
-						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-						.readTimeout(readTimeout, TimeUnit.SECONDS)
-						.retryOnConnectionFailure(true)
-						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-						.connectionPool(ApiClient.connectionPool)
-						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-						.build();
-			}
-			catch (Exception ex)
-			{
-				logger.error("Error in creating HTTP Client");
-			}
-
-			this.setHttpClient(httpClient);
+			additionalSettings.setCustomProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)));
+			additionalSettings.setCustomProxyAuthenticator(proxyAuthenticator);
 		}
-		else
-		{
-			// override the custom timeout in HTTPClient
-			try {
-				httpClient = classHttpClient.newBuilder()
-						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
-						.readTimeout(readTimeout, TimeUnit.SECONDS)
-						.connectionPool(ApiClient.connectionPool)
-						.retryOnConnectionFailure(true)
-						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-						.build();
-			}
-			catch (Exception ex)
-			{
-				logger.error("Error in creating HTTP Client");
-			}
 
-			this.setHttpClient(httpClient);
-		}
+		additionalSettings.setCustomRetryOnConnectionFailure(true);
+		additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
+		additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
 
 		this.merchantConfig = merchantConfig;
-		// RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
-		// RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -363,17 +274,6 @@ public class ApiClient {
 	 */
 	public OkHttpClient getHttpClient() {
 		return httpClient;
-	}
-
-	/**
-	 * Set HTTP client
-	 *
-	 * @param httpClient An instance of OkHttpClient
-	 * @return Api Client
-	 */
-	public ApiClient setHttpClient(OkHttpClient httpClient) {
-		ApiClient.httpClient = httpClient;
-		return this;
 	}
 
 	/**
@@ -780,9 +680,9 @@ public class ApiClient {
 			if (debugging) {
 				loggingInterceptor = new HttpLoggingInterceptor();
 				loggingInterceptor.setLevel(Level.BODY);
-				httpClient.interceptors().add(loggingInterceptor);
+				additionalSettings.setCustomLoggingInterceptor(loggingInterceptor);
 			} else {
-				httpClient.interceptors().remove(loggingInterceptor);
+				additionalSettings.setCustomLoggingInterceptor(null);
 				loggingInterceptor = null;
 			}
 		}
@@ -813,27 +713,6 @@ public class ApiClient {
 		this.tempFolderPath = tempFolderPath;
 		return this;
 	}
-
-	// /**
-	 // * Get connection timeout (in milliseconds).
-	 // *
-	 // * @return Timeout in milliseconds
-	 // */
-	// public int getConnectTimeout() {
-		// return httpClient.connectTimeoutMillis();
-	// }
-
-	// /**
-	 // * Sets the connect timeout (in milliseconds). A value of 0 means no timeout,
-	 // * otherwise values must be between 1 and
-	 // *
-	 // * @param connectionTimeout connection timeout in milliseconds
-	 // * @return Api client
-	 // */
-	// public ApiClient setConnectTimeout(int connectionTimeout) {
-		// ApiClient.httpClient = ApiClient.httpClient.newBuilder().connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS).build();
-		// return this;
-	// }
 
 	/**
 	 * @return the computationStartTime
@@ -1071,8 +950,7 @@ public class ApiClient {
 			// Expecting string, return the raw response body.
 			return (T) respBody;
 		} else {
-			logger.error(
-					"ApiException : Content type \"" + contentType + "\" is not supported for type: " + returnType);
+			logger.error("ApiException : Content type \"" + contentType + "\" is not supported for type: " + returnType);
 			throw new ApiException("Content type \"" + contentType + "\" is not supported for type: " + returnType,
 					response.code(), response.headers().toMultimap(), respBody);
 		}
@@ -1327,7 +1205,7 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
 
 		//create reqHeader parameter here 
 		Map<String, String> requestHeaderMap = new HashMap<String, String>();
@@ -1366,6 +1244,11 @@ public class ApiClient {
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
+		try {
+			httpClient = HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+		} catch (ConfigException e) {
+			throw e;
+		}
 		return httpClient.newCall(request);
 	}
 	
@@ -1452,8 +1335,8 @@ public class ApiClient {
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			} else {
-                requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
-            }
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
+			}
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
@@ -1713,8 +1596,8 @@ public class ApiClient {
 				public java.security.cert.X509Certificate[] getAcceptedIssuers() {
 					return new java.security.cert.X509Certificate[] {};
 				}
-                    }
-            };
+					}
+			};
 
 			KeyStore merchantKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
 			FileInputStream file = new FileInputStream(
@@ -1727,9 +1610,8 @@ public class ApiClient {
 
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			sslContext.init(keyManagerFactory.getKeyManagers(), trustAllCerts, new SecureRandom());
-			httpClient = httpClient.newBuilder()
-					.sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustAllCerts[0]).build();
-
+			additionalSettings.setCustomSSLSocketFactory(sslContext.getSocketFactory());
+			additionalSettings.setCustomX509TrustManager((X509TrustManager) trustAllCerts[0]);
 		} catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException
 				| KeyManagementException | UnrecoverableKeyException ex) {
 
@@ -1792,11 +1674,11 @@ public class ApiClient {
 			if (keyManagers != null || trustManagers != null) {
 				SSLContext sslContext = SSLContext.getInstance("TLS");
 				sslContext.init(keyManagers, trustManagers, new SecureRandom());
-				httpClient = httpClient.newBuilder().sslSocketFactory(sslContext.getSocketFactory()).build();
+				additionalSettings.setCustomSSLSocketFactory(sslContext.getSocketFactory());
 			} else {
-				httpClient = httpClient.newBuilder().sslSocketFactory(null).build();
+				additionalSettings.setCustomSSLSocketFactory(null);
 			}
-			httpClient = httpClient.newBuilder().hostnameVerifier(hostnameVerifier).build();
+			additionalSettings.setCustomHostnameVerifier(hostnameVerifier);
 		} catch (GeneralSecurityException e) {
 			logger.error("RuntimeException : " + e);
 			throw new RuntimeException(e);

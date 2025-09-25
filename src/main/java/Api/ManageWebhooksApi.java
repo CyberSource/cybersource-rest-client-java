@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -79,7 +80,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteWebhookSubscriptionCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteWebhookSubscriptionCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -136,7 +137,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookSubscriptionValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteWebhookSubscriptionValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -160,7 +161,7 @@ public class ManageWebhooksApi {
      * @param webhookId The webhook identifier. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteWebhookSubscription(String webhookId) throws ApiException {
+    public void deleteWebhookSubscription(String webhookId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteWebhookSubscription' STARTED");
         deleteWebhookSubscriptionWithHttpInfo(webhookId);
 
@@ -173,7 +174,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteWebhookSubscriptionWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<Void> deleteWebhookSubscriptionWithHttpInfo(String webhookId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteWebhookSubscriptionValidateBeforeCall(webhookId, null, null);
         return apiClient.execute(call);
@@ -187,7 +188,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteWebhookSubscriptionAsync(String webhookId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteWebhookSubscriptionAsync(String webhookId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -221,7 +222,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionByIdCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionByIdCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -278,7 +279,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookSubscriptionByIdValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getWebhookSubscriptionByIdValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -303,7 +304,7 @@ public class ManageWebhooksApi {
      * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 getWebhookSubscriptionById(String webhookId) throws ApiException {
+    public InlineResponse2015 getWebhookSubscriptionById(String webhookId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' STARTED");
         ApiResponse<InlineResponse2015> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' ENDED");
@@ -317,7 +318,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<InlineResponse2015> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
@@ -332,7 +333,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -369,7 +370,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionsByOrgCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -431,7 +432,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookSubscriptionsByOrgValidateBeforeCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getWebhookSubscriptionsByOrgValidateBeforeCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -458,7 +459,7 @@ public class ManageWebhooksApi {
      * @return List&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2004> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException {
+    public List<InlineResponse2004> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' STARTED");
         ApiResponse<List<InlineResponse2004>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' ENDED");
@@ -474,7 +475,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2004>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
+    public ApiResponse<List<InlineResponse2004>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
@@ -491,7 +492,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -526,7 +527,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -583,7 +584,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -608,7 +609,7 @@ public class ManageWebhooksApi {
      * @return InlineResponse2016
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(String webhookId) throws ApiException {
+    public InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(String webhookId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV1WebhooksWebhookIdPost' STARTED");
         ApiResponse<InlineResponse2016> resp = notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV1WebhooksWebhookIdPost' ENDED");
@@ -622,7 +623,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;InlineResponse2016&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2016> notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<InlineResponse2016> notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo(String webhookId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV1WebhooksWebhookIdPostValidateBeforeCall(webhookId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
@@ -637,7 +638,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostAsync(String webhookId, final ApiCallback<InlineResponse2016> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV1WebhooksWebhookIdPostAsync(String webhookId, final ApiCallback<InlineResponse2016> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -673,7 +674,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhook, UpdateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -727,7 +728,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -753,7 +754,7 @@ public class ManageWebhooksApi {
      * @return InlineResponse2005
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
+    public InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' STARTED");
         ApiResponse<InlineResponse2005> resp = notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(webhookId, updateWebhook);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' ENDED");
@@ -768,7 +769,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;InlineResponse2005&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
+    public ApiResponse<InlineResponse2005> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(webhookId, updateWebhook, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
@@ -784,7 +785,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<InlineResponse2005> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -820,7 +821,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutCall(String webhookId, UpdateStatus updateStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutCall(String webhookId, UpdateStatus updateStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateStatus, UpdateStatus.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -874,7 +875,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutValidateBeforeCall(String webhookId, UpdateStatus updateStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutValidateBeforeCall(String webhookId, UpdateStatus updateStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -899,7 +900,7 @@ public class ManageWebhooksApi {
      * @param updateStatus The status that the subscription should be updated to. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void notificationSubscriptionsV2WebhooksWebhookIdStatusPut(String webhookId, UpdateStatus updateStatus) throws ApiException {
+    public void notificationSubscriptionsV2WebhooksWebhookIdStatusPut(String webhookId, UpdateStatus updateStatus) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdStatusPut' STARTED");
         notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo(webhookId, updateStatus);
 
@@ -913,7 +914,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo(String webhookId, UpdateStatus updateStatus) throws ApiException {
+    public ApiResponse<Void> notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo(String webhookId, UpdateStatus updateStatus) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdStatusPutValidateBeforeCall(webhookId, updateStatus, null, null);
         return apiClient.execute(call);
@@ -928,7 +929,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutAsync(String webhookId, UpdateStatus updateStatus, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdStatusPutAsync(String webhookId, UpdateStatus updateStatus, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -965,7 +966,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call saveAsymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call saveAsymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveAsymEgressKey, SaveAsymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -1024,7 +1025,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call saveAsymEgressKeyValidateBeforeCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call saveAsymEgressKeyValidateBeforeCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'vCSenderOrganizationId' is set
         if (vCSenderOrganizationId == null) {
@@ -1064,7 +1065,7 @@ public class ManageWebhooksApi {
      * @return InlineResponse2017
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2017 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public InlineResponse2017 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");
         ApiResponse<InlineResponse2017> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
         logger.info("CALL TO METHOD 'saveAsymEgressKey' ENDED");
@@ -1081,7 +1082,7 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;InlineResponse2017&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2017> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public ApiResponse<InlineResponse2017> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
@@ -1099,7 +1100,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2017> callback) throws ApiException {
+    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2017> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

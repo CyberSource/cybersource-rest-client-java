@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class NotificationOfChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -134,7 +135,7 @@ public class NotificationOfChangesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNotificationOfChangeReportValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getNotificationOfChangeReportValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -166,7 +167,7 @@ public class NotificationOfChangesApi {
      * @return ReportingV3NotificationofChangesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
+    public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' ENDED");
@@ -181,7 +182,7 @@ public class NotificationOfChangesApi {
      * @return ApiResponse&lt;ReportingV3NotificationofChangesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3NotificationofChangesGet200Response> getNotificationOfChangeReportWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
+    public ApiResponse<ReportingV3NotificationofChangesGet200Response> getNotificationOfChangeReportWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getNotificationOfChangeReportValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3NotificationofChangesGet200Response>(){}.getType();
@@ -197,7 +198,7 @@ public class NotificationOfChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getNotificationOfChangeReportAsync(DateTime startTime, DateTime endTime, final ApiCallback<ReportingV3NotificationofChangesGet200Response> callback) throws ApiException {
+    public okhttp3.Call getNotificationOfChangeReportAsync(DateTime startTime, DateTime endTime, final ApiCallback<ReportingV3NotificationofChangesGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -77,7 +78,7 @@ public class MerchantBoardingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getRegistrationCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getRegistrationCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -134,7 +135,7 @@ public class MerchantBoardingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRegistrationValidateBeforeCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getRegistrationValidateBeforeCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'registrationId' is set
         if (registrationId == null) {
@@ -159,7 +160,7 @@ public class MerchantBoardingApi {
      * @return InlineResponse2002
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 getRegistration(String registrationId) throws ApiException {
+    public InlineResponse2002 getRegistration(String registrationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
         ApiResponse<InlineResponse2002> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
@@ -173,7 +174,7 @@ public class MerchantBoardingApi {
      * @return ApiResponse&lt;InlineResponse2002&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> getRegistrationWithHttpInfo(String registrationId) throws ApiException {
+    public ApiResponse<InlineResponse2002> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
@@ -188,7 +189,7 @@ public class MerchantBoardingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2002> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -224,7 +225,7 @@ public class MerchantBoardingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postRegistrationCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postRegistrationCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -279,7 +280,7 @@ public class MerchantBoardingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRegistrationValidateBeforeCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postRegistrationValidateBeforeCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postRegistrationBody' is set
         if (postRegistrationBody == null) {
@@ -305,7 +306,7 @@ public class MerchantBoardingApi {
      * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
+    public InlineResponse2013 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
         ApiResponse<InlineResponse2013> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
@@ -320,7 +321,7 @@ public class MerchantBoardingApi {
      * @return ApiResponse&lt;InlineResponse2013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
+    public ApiResponse<InlineResponse2013> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
@@ -336,7 +337,7 @@ public class MerchantBoardingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2013> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

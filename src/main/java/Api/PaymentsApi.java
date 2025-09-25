@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -85,7 +86,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createOrderRequestCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createOrderRequestCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(orderPaymentRequest, OrderPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -139,7 +140,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOrderRequestValidateBeforeCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createOrderRequestValidateBeforeCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'orderPaymentRequest' is set
         if (orderPaymentRequest == null) {
@@ -171,7 +172,7 @@ public class PaymentsApi {
      * @return PtsV2PaymentsOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
+    public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOrderRequest' STARTED");
         ApiResponse<PtsV2PaymentsOrderPost201Response> resp = createOrderRequestWithHttpInfo(orderPaymentRequest, id);
         logger.info("CALL TO METHOD 'createOrderRequest' ENDED");
@@ -186,7 +187,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2PaymentsOrderPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
+    public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOrderRequestValidateBeforeCall(orderPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsOrderPost201Response>(){}.getType();
@@ -202,7 +203,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createOrderRequestAsync(OrderPaymentRequest orderPaymentRequest, String id, final ApiCallback<PtsV2PaymentsOrderPost201Response> callback) throws ApiException {
+    public okhttp3.Call createOrderRequestAsync(OrderPaymentRequest orderPaymentRequest, String id, final ApiCallback<PtsV2PaymentsOrderPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -237,7 +238,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createPaymentCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createPaymentCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPaymentRequest, CreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -290,7 +291,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPaymentValidateBeforeCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createPaymentValidateBeforeCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createPaymentRequest' is set
         if (createPaymentRequest == null) {
@@ -315,7 +316,7 @@ public class PaymentsApi {
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
+    public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createPayment' STARTED");
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         logger.info("CALL TO METHOD 'createPayment' ENDED");
@@ -329,7 +330,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException {
+    public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPaymentValidateBeforeCall(createPaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
@@ -344,7 +345,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException {
+    public okhttp3.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -379,7 +380,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createSessionRequestCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createSessionRequestCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionReq, CreateSessionReq.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -432,7 +433,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSessionRequestValidateBeforeCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createSessionRequestValidateBeforeCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createSessionReq' is set
         if (createSessionReq == null) {
@@ -457,7 +458,7 @@ public class PaymentsApi {
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException {
+    public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
         ApiResponse<PtsV2PaymentsPost201Response2> resp = createSessionRequestWithHttpInfo(createSessionReq);
         logger.info("CALL TO METHOD 'createSessionRequest' ENDED");
@@ -471,7 +472,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException {
+    public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
@@ -486,7 +487,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException {
+    public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -522,7 +523,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call incrementAuthCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call incrementAuthCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(incrementAuthRequest, IncrementAuthRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -576,7 +577,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call incrementAuthValidateBeforeCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call incrementAuthValidateBeforeCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -608,7 +609,7 @@ public class PaymentsApi {
      * @return PtsV2IncrementalAuthorizationPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
+    public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'incrementAuth' STARTED");
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
         logger.info("CALL TO METHOD 'incrementAuth' ENDED");
@@ -623,7 +624,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2IncrementalAuthorizationPatch201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> incrementAuthWithHttpInfo(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
+    public ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> incrementAuthWithHttpInfo(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = incrementAuthValidateBeforeCall(id, incrementAuthRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2IncrementalAuthorizationPatch201Response>(){}.getType();
@@ -639,7 +640,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call incrementAuthAsync(String id, IncrementAuthRequest incrementAuthRequest, final ApiCallback<PtsV2IncrementalAuthorizationPatch201Response> callback) throws ApiException {
+    public okhttp3.Call incrementAuthAsync(String id, IncrementAuthRequest incrementAuthRequest, final ApiCallback<PtsV2IncrementalAuthorizationPatch201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -675,7 +676,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call refreshPaymentStatusCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call refreshPaymentStatusCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refreshPaymentStatusRequest, RefreshPaymentStatusRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -729,7 +730,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refreshPaymentStatusValidateBeforeCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call refreshPaymentStatusValidateBeforeCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -761,7 +762,7 @@ public class PaymentsApi {
      * @return PtsV2PaymentsPost201Response1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
+    public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
         ApiResponse<PtsV2PaymentsPost201Response1> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
         logger.info("CALL TO METHOD 'refreshPaymentStatus' ENDED");
@@ -776,7 +777,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
+    public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
@@ -792,7 +793,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<PtsV2PaymentsPost201Response1> callback) throws ApiException {
+    public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<PtsV2PaymentsPost201Response1> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -828,7 +829,7 @@ public class PaymentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call updateSessionReqCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updateSessionReqCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionRequest, CreateSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -882,7 +883,7 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSessionReqValidateBeforeCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updateSessionReqValidateBeforeCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createSessionRequest' is set
         if (createSessionRequest == null) {
@@ -914,7 +915,7 @@ public class PaymentsApi {
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException {
+    public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateSessionReq' STARTED");
         ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionReqWithHttpInfo(createSessionRequest, id);
         logger.info("CALL TO METHOD 'updateSessionReq' ENDED");
@@ -929,7 +930,7 @@ public class PaymentsApi {
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException {
+    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
@@ -945,7 +946,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateSessionReqAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException {
+    public okhttp3.Call updateSessionReqAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

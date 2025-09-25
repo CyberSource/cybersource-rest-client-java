@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class BatchesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getBatchReportCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getBatchReportCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -133,7 +134,7 @@ public class BatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBatchReportValidateBeforeCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getBatchReportValidateBeforeCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
@@ -158,7 +159,7 @@ public class BatchesApi {
      * @return InlineResponse20011
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20011 getBatchReport(String batchId) throws ApiException {
+    public InlineResponse20011 getBatchReport(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchReport' STARTED");
         ApiResponse<InlineResponse20011> resp = getBatchReportWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchReport' ENDED");
@@ -172,7 +173,7 @@ public class BatchesApi {
      * @return ApiResponse&lt;InlineResponse20011&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20011> getBatchReportWithHttpInfo(String batchId) throws ApiException {
+    public ApiResponse<InlineResponse20011> getBatchReportWithHttpInfo(String batchId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
@@ -187,7 +188,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<InlineResponse20011> callback) throws ApiException {
+    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<InlineResponse20011> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -222,7 +223,7 @@ public class BatchesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getBatchStatusCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getBatchStatusCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -279,7 +280,7 @@ public class BatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBatchStatusValidateBeforeCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getBatchStatusValidateBeforeCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
@@ -304,7 +305,7 @@ public class BatchesApi {
      * @return InlineResponse20010
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20010 getBatchStatus(String batchId) throws ApiException {
+    public InlineResponse20010 getBatchStatus(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
         ApiResponse<InlineResponse20010> resp = getBatchStatusWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchStatus' ENDED");
@@ -318,7 +319,7 @@ public class BatchesApi {
      * @return ApiResponse&lt;InlineResponse20010&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20010> getBatchStatusWithHttpInfo(String batchId) throws ApiException {
+    public ApiResponse<InlineResponse20010> getBatchStatusWithHttpInfo(String batchId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
@@ -333,7 +334,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<InlineResponse20010> callback) throws ApiException {
+    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<InlineResponse20010> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -371,7 +372,7 @@ public class BatchesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getBatchesListCall(Long offset, Long limit, String fromDate, String toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getBatchesListCall(Long offset, Long limit, String fromDate, String toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -435,7 +436,7 @@ public class BatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBatchesListValidateBeforeCall(Long offset, Long limit, String fromDate, String toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getBatchesListValidateBeforeCall(Long offset, Long limit, String fromDate, String toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getBatchesListCall(offset, limit, fromDate, toDate, progressListener, progressRequestListener);
@@ -457,7 +458,7 @@ public class BatchesApi {
      * @return InlineResponse2009
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2009 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
+    public InlineResponse2009 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchesList' STARTED");
         ApiResponse<InlineResponse2009> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
         logger.info("CALL TO METHOD 'getBatchesList' ENDED");
@@ -474,7 +475,7 @@ public class BatchesApi {
      * @return ApiResponse&lt;InlineResponse2009&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2009> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
+    public ApiResponse<InlineResponse2009> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
@@ -492,7 +493,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<InlineResponse2009> callback) throws ApiException {
+    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<InlineResponse2009> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -527,7 +528,7 @@ public class BatchesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postBatchCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postBatchCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -580,7 +581,7 @@ public class BatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postBatchValidateBeforeCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postBatchValidateBeforeCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -605,7 +606,7 @@ public class BatchesApi {
      * @return InlineResponse202
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse202 postBatch(Body body) throws ApiException {
+    public InlineResponse202 postBatch(Body body) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postBatch' STARTED");
         ApiResponse<InlineResponse202> resp = postBatchWithHttpInfo(body);
         logger.info("CALL TO METHOD 'postBatch' ENDED");
@@ -619,7 +620,7 @@ public class BatchesApi {
      * @return ApiResponse&lt;InlineResponse202&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse202> postBatchWithHttpInfo(Body body) throws ApiException {
+    public ApiResponse<InlineResponse202> postBatchWithHttpInfo(Body body) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postBatchValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
@@ -634,7 +635,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postBatchAsync(Body body, final ApiCallback<InlineResponse202> callback) throws ApiException {
+    public okhttp3.Call postBatchAsync(Body body, final ApiCallback<InlineResponse202> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
