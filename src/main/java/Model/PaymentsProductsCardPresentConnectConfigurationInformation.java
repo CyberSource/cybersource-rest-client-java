@@ -24,7 +24,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * PaymentsProductsCardPresentConnectConfigurationInformation
@@ -32,12 +31,12 @@ import java.util.UUID;
 
 public class PaymentsProductsCardPresentConnectConfigurationInformation {
   @SerializedName("templateId")
-  private UUID templateId = null;
+  private String templateId = null;
 
   @SerializedName("configurations")
   private PaymentsProductsCardPresentConnectConfigurationInformationConfigurations configurations = null;
 
-  public PaymentsProductsCardPresentConnectConfigurationInformation templateId(UUID templateId) {
+  public PaymentsProductsCardPresentConnectConfigurationInformation templateId(String templateId) {
     this.templateId = templateId;
     return this;
   }
@@ -47,11 +46,11 @@ public class PaymentsProductsCardPresentConnectConfigurationInformation {
    * @return templateId
   **/
   @ApiModelProperty(value = "")
-  public UUID getTemplateId() {
+  public String getTemplateId() {
     return templateId;
   }
 
-  public void setTemplateId(UUID templateId) {
+  public void setTemplateId(String templateId) {
     this.templateId = templateId;
   }
 
