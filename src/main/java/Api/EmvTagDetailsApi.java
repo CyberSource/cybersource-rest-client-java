@@ -72,6 +72,7 @@ public class EmvTagDetailsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getEmvTagsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -146,6 +147,7 @@ public class EmvTagDetailsApi {
      * Returns the entire EMV tag dictionary
      * @return TssV2GetEmvTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public TssV2GetEmvTags200Response getEmvTags() throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getEmvTags' STARTED");
@@ -159,6 +161,7 @@ public class EmvTagDetailsApi {
      * Returns the entire EMV tag dictionary
      * @return ApiResponse&lt;TssV2GetEmvTags200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<TssV2GetEmvTags200Response> getEmvTagsWithHttpInfo() throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -173,6 +176,7 @@ public class EmvTagDetailsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getEmvTagsAsync(final ApiCallback<TssV2GetEmvTags200Response> callback) throws ApiException, ConfigException {
 
@@ -208,6 +212,7 @@ public class EmvTagDetailsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call parseEmvTagsCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -286,6 +291,7 @@ public class EmvTagDetailsApi {
      * @param body  (required)
      * @return TssV2PostEmvTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public TssV2PostEmvTags200Response parseEmvTags(Body body) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
@@ -300,6 +306,7 @@ public class EmvTagDetailsApi {
      * @param body  (required)
      * @return ApiResponse&lt;TssV2PostEmvTags200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(Body body) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -315,6 +322,7 @@ public class EmvTagDetailsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call parseEmvTagsAsync(Body body, final ApiCallback<TssV2PostEmvTags200Response> callback) throws ApiException, ConfigException {
 

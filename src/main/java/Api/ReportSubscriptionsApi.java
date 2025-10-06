@@ -77,6 +77,7 @@ public class ReportSubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createStandardOrClassicSubscriptionCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -157,6 +158,7 @@ public class ReportSubscriptionsApi {
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
@@ -171,6 +173,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> createStandardOrClassicSubscriptionWithHttpInfo(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -186,6 +189,7 @@ public class ReportSubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createStandardOrClassicSubscriptionAsync(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
@@ -221,6 +225,7 @@ public class ReportSubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -301,6 +306,7 @@ public class ReportSubscriptionsApi {
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
@@ -315,6 +321,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> createSubscriptionWithHttpInfo(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -330,6 +337,7 @@ public class ReportSubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createSubscriptionAsync(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
@@ -365,6 +373,7 @@ public class ReportSubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -449,6 +458,7 @@ public class ReportSubscriptionsApi {
      * @param reportName Name of the Report to Delete (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
@@ -463,6 +473,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -478,6 +489,7 @@ public class ReportSubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteSubscriptionAsync(String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
@@ -512,6 +524,7 @@ public class ReportSubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAllSubscriptionsCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -589,6 +602,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
@@ -603,6 +617,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo(String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -618,6 +633,7 @@ public class ReportSubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAllSubscriptionsAsync(String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException, ConfigException {
 
@@ -654,6 +670,7 @@ public class ReportSubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -739,6 +756,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
@@ -754,6 +772,7 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -770,6 +789,7 @@ public class ReportSubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getSubscriptionAsync(String reportName, String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException, ConfigException {
 

@@ -77,6 +77,7 @@ public class TaxesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call calculateTaxCall(TaxRequest taxRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -155,6 +156,7 @@ public class TaxesApi {
      * @param taxRequest  (required)
      * @return VasV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'calculateTax' STARTED");
@@ -169,6 +171,7 @@ public class TaxesApi {
      * @param taxRequest  (required)
      * @return ApiResponse&lt;VasV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<VasV2PaymentsPost201Response> calculateTaxWithHttpInfo(TaxRequest taxRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -184,6 +187,7 @@ public class TaxesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call calculateTaxAsync(TaxRequest taxRequest, final ApiCallback<VasV2PaymentsPost201Response> callback) throws ApiException, ConfigException {
 
@@ -220,6 +224,7 @@ public class TaxesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call voidTaxCall(VoidTaxRequest voidTaxRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -306,6 +311,7 @@ public class TaxesApi {
      * @param id The tax ID returned from a previous request. (required)
      * @return VasV2TaxVoid200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'voidTax' STARTED");
@@ -321,6 +327,7 @@ public class TaxesApi {
      * @param id The tax ID returned from a previous request. (required)
      * @return ApiResponse&lt;VasV2TaxVoid200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<VasV2TaxVoid200Response> voidTaxWithHttpInfo(VoidTaxRequest voidTaxRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -337,6 +344,7 @@ public class TaxesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call voidTaxAsync(VoidTaxRequest voidTaxRequest, String id, final ApiCallback<VasV2TaxVoid200Response> callback) throws ApiException, ConfigException {
 

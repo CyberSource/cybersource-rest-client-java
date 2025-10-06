@@ -20,6 +20,7 @@ import Model.Ptsv2paymentsidreversalsOrderInformation;
 import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsProcessingInformation;
 import Model.Ptsv2paymentsidreversalsReversalInformation;
+import Model.Ptsv2reversalsProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,6 +49,9 @@ public class MitReversalRequest {
 
   @SerializedName("pointOfSaleInformation")
   private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("processorInformation")
+  private Ptsv2reversalsProcessorInformation processorInformation = null;
 
   public MitReversalRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -139,6 +143,24 @@ public class MitReversalRequest {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
+  public MitReversalRequest processorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+    return this;
+  }
+
+   /**
+   * Get processorInformation
+   * @return processorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2reversalsProcessorInformation getProcessorInformation() {
+    return processorInformation;
+  }
+
+  public void setProcessorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +175,13 @@ public class MitReversalRequest {
         Objects.equals(this.reversalInformation, mitReversalRequest.reversalInformation) &&
         Objects.equals(this.processingInformation, mitReversalRequest.processingInformation) &&
         Objects.equals(this.orderInformation, mitReversalRequest.orderInformation) &&
-        Objects.equals(this.pointOfSaleInformation, mitReversalRequest.pointOfSaleInformation);
+        Objects.equals(this.pointOfSaleInformation, mitReversalRequest.pointOfSaleInformation) &&
+        Objects.equals(this.processorInformation, mitReversalRequest.processorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, reversalInformation, processingInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(clientReferenceInformation, reversalInformation, processingInformation, orderInformation, pointOfSaleInformation, processorInformation);
   }
 
 
@@ -172,6 +195,7 @@ public class MitReversalRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -24,6 +24,7 @@ import Model.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -173,6 +174,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("merchantRiskPrediction")
   private String merchantRiskPrediction = null;
 
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -305,10 +309,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @return responseDetails
   **/
-  @ApiModelProperty(value = "This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. ")
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
   public String getResponseDetails() {
     return responseDetails;
   }
@@ -983,6 +987,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.merchantRiskPrediction = merchantRiskPrediction;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1037,12 +1059,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.expirationTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.expirationTimeUtc) &&
         Objects.equals(this.orderId, ptsV2PaymentsPost201ResponseProcessorInformation.orderId) &&
         Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus) &&
-        Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction);
+        Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction) &&
+        Objects.equals(this.network, ptsV2PaymentsPost201ResponseProcessorInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction, network);
   }
 
 
@@ -1096,6 +1119,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     if (orderId != null) sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     if (orderStatus != null) sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
     if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

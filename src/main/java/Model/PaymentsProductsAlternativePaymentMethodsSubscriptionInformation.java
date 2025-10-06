@@ -32,9 +32,6 @@ public class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation {
   @SerializedName("enabled")
   private Boolean enabled = null;
 
-  @SerializedName("selfServiceability")
-  private String selfServiceability = "NOT_SELF_SERVICEABLE";
-
   public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
@@ -53,24 +50,6 @@ public class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation {
     this.enabled = enabled;
   }
 
-  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation selfServiceability(String selfServiceability) {
-    this.selfServiceability = selfServiceability;
-    return this;
-  }
-
-   /**
-   * Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY
-   * @return selfServiceability
-  **/
-  @ApiModelProperty(value = "Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY")
-  public String getSelfServiceability() {
-    return selfServiceability;
-  }
-
-  public void setSelfServiceability(String selfServiceability) {
-    this.selfServiceability = selfServiceability;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +60,12 @@ public class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation {
       return false;
     }
     PaymentsProductsAlternativePaymentMethodsSubscriptionInformation paymentsProductsAlternativePaymentMethodsSubscriptionInformation = (PaymentsProductsAlternativePaymentMethodsSubscriptionInformation) o;
-    return Objects.equals(this.enabled, paymentsProductsAlternativePaymentMethodsSubscriptionInformation.enabled) &&
-        Objects.equals(this.selfServiceability, paymentsProductsAlternativePaymentMethodsSubscriptionInformation.selfServiceability);
+    return Objects.equals(this.enabled, paymentsProductsAlternativePaymentMethodsSubscriptionInformation.enabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, selfServiceability);
+    return Objects.hash(enabled);
   }
 
 
@@ -97,7 +75,6 @@ public class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation {
     sb.append("class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation {\n");
     
     if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    if (selfServiceability != null) sb.append("    selfServiceability: ").append(toIndentedString(selfServiceability)).append("\n");
     sb.append("}");
     return sb.toString();
   }

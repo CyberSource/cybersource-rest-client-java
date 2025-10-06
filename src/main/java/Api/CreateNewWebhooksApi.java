@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.CreateWebhook;
-import Model.InlineResponse2003;
+import Model.InlineResponse2004;
 import Model.InlineResponse2014;
 import Model.InlineResponse2015;
 import Model.SaveSymEgressKey;
@@ -75,6 +75,7 @@ public class CreateNewWebhooksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call findProductsToSubscribeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -155,12 +156,13 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return List&lt;InlineResponse2003&gt;
+     * @return List&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2003> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
+    public List<InlineResponse2004> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
-        ApiResponse<List<InlineResponse2003>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
+        ApiResponse<List<InlineResponse2004>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
     }
@@ -169,13 +171,14 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2003&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2003>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
+    public ApiResponse<List<InlineResponse2004>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -186,8 +189,9 @@ public class CreateNewWebhooksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2003>> callback) throws ApiException, ConfigException {
+    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -210,7 +214,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -221,6 +225,7 @@ public class CreateNewWebhooksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call notificationSubscriptionsV2WebhooksPostCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -293,6 +298,7 @@ public class CreateNewWebhooksApi {
      * @param createWebhook The webhook payload (optional)
      * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public InlineResponse2015 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' STARTED");
@@ -307,6 +313,7 @@ public class CreateNewWebhooksApi {
      * @param createWebhook The webhook payload (optional)
      * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InlineResponse2015> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -322,6 +329,7 @@ public class CreateNewWebhooksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
 
@@ -360,6 +368,7 @@ public class CreateNewWebhooksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call saveSymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -453,6 +462,7 @@ public class CreateNewWebhooksApi {
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public InlineResponse2014 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
@@ -470,6 +480,7 @@ public class CreateNewWebhooksApi {
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @return ApiResponse&lt;InlineResponse2014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InlineResponse2014> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -488,6 +499,7 @@ public class CreateNewWebhooksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
 

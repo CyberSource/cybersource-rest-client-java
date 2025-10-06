@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
+import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import Model.PaymentsProductsVirtualTerminalConfigurationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class PaymentsProductsVirtualTerminal {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private PaymentsProductsVirtualTerminalConfigurationInformation configurationInformation = null;
 
-  public PaymentsProductsVirtualTerminal subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
+  public PaymentsProductsVirtualTerminal subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class PaymentsProductsVirtualTerminal {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 

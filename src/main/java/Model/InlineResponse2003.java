@@ -15,7 +15,12 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Notificationsubscriptionsv2productsorganizationIdEventTypes;
+import Model.Boardingv1registrationsDocumentInformation;
+import Model.Boardingv1registrationsOrganizationInformation;
+import Model.Boardingv1registrationsProductInformation;
+import Model.Boardingv1registrationsRegistrationInformation;
+import Model.InlineResponse2003IntegrationInformation;
+import Model.InlineResponse2013ProductInformationSetups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,82 +30,176 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * InlineResponse2003
  */
 
 public class InlineResponse2003 {
-  @SerializedName("productId")
-  private String productId = null;
+  @SerializedName("registrationInformation")
+  private Boardingv1registrationsRegistrationInformation registrationInformation = null;
 
-  @SerializedName("productName")
-  private String productName = null;
+  @SerializedName("integrationInformation")
+  private InlineResponse2003IntegrationInformation integrationInformation = null;
 
-  @SerializedName("eventTypes")
-  private List<Notificationsubscriptionsv2productsorganizationIdEventTypes> eventTypes = null;
+  @SerializedName("organizationInformation")
+  private Boardingv1registrationsOrganizationInformation organizationInformation = null;
 
-  public InlineResponse2003 productId(String productId) {
-    this.productId = productId;
+  @SerializedName("productInformation")
+  private Boardingv1registrationsProductInformation productInformation = null;
+
+  @SerializedName("productInformationSetups")
+  private List<InlineResponse2013ProductInformationSetups> productInformationSetups = null;
+
+  @SerializedName("documentInformation")
+  private Boardingv1registrationsDocumentInformation documentInformation = null;
+
+  @SerializedName("details")
+  private Map<String, List<Object>> details = null;
+
+  public InlineResponse2003 registrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
     return this;
   }
 
    /**
-   * Product ID.
-   * @return productId
-  **/
-  @ApiModelProperty(value = "Product ID.")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public InlineResponse2003 productName(String productName) {
-    this.productName = productName;
-    return this;
-  }
-
-   /**
-   * Product Name.
-   * @return productName
-  **/
-  @ApiModelProperty(value = "Product Name.")
-  public String getProductName() {
-    return productName;
-  }
-
-  public void setProductName(String productName) {
-    this.productName = productName;
-  }
-
-  public InlineResponse2003 eventTypes(List<Notificationsubscriptionsv2productsorganizationIdEventTypes> eventTypes) {
-    this.eventTypes = eventTypes;
-    return this;
-  }
-
-  public InlineResponse2003 addEventTypesItem(Notificationsubscriptionsv2productsorganizationIdEventTypes eventTypesItem) {
-    if (this.eventTypes == null) {
-      this.eventTypes = new ArrayList<Notificationsubscriptionsv2productsorganizationIdEventTypes>();
-    }
-    this.eventTypes.add(eventTypesItem);
-    return this;
-  }
-
-   /**
-   * Get eventTypes
-   * @return eventTypes
+   * Get registrationInformation
+   * @return registrationInformation
   **/
   @ApiModelProperty(value = "")
-  public List<Notificationsubscriptionsv2productsorganizationIdEventTypes> getEventTypes() {
-    return eventTypes;
+  public Boardingv1registrationsRegistrationInformation getRegistrationInformation() {
+    return registrationInformation;
   }
 
-  public void setEventTypes(List<Notificationsubscriptionsv2productsorganizationIdEventTypes> eventTypes) {
-    this.eventTypes = eventTypes;
+  public void setRegistrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
+  }
+
+  public InlineResponse2003 integrationInformation(InlineResponse2003IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
+    return this;
+  }
+
+   /**
+   * Get integrationInformation
+   * @return integrationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2003IntegrationInformation getIntegrationInformation() {
+    return integrationInformation;
+  }
+
+  public void setIntegrationInformation(InlineResponse2003IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
+  }
+
+  public InlineResponse2003 organizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+    return this;
+  }
+
+   /**
+   * Get organizationInformation
+   * @return organizationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsOrganizationInformation getOrganizationInformation() {
+    return organizationInformation;
+  }
+
+  public void setOrganizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+  }
+
+  public InlineResponse2003 productInformation(Boardingv1registrationsProductInformation productInformation) {
+    this.productInformation = productInformation;
+    return this;
+  }
+
+   /**
+   * Get productInformation
+   * @return productInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsProductInformation getProductInformation() {
+    return productInformation;
+  }
+
+  public void setProductInformation(Boardingv1registrationsProductInformation productInformation) {
+    this.productInformation = productInformation;
+  }
+
+  public InlineResponse2003 productInformationSetups(List<InlineResponse2013ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+    return this;
+  }
+
+  public InlineResponse2003 addProductInformationSetupsItem(InlineResponse2013ProductInformationSetups productInformationSetupsItem) {
+    if (this.productInformationSetups == null) {
+      this.productInformationSetups = new ArrayList<InlineResponse2013ProductInformationSetups>();
+    }
+    this.productInformationSetups.add(productInformationSetupsItem);
+    return this;
+  }
+
+   /**
+   * Get productInformationSetups
+   * @return productInformationSetups
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2013ProductInformationSetups> getProductInformationSetups() {
+    return productInformationSetups;
+  }
+
+  public void setProductInformationSetups(List<InlineResponse2013ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+  }
+
+  public InlineResponse2003 documentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
+    this.documentInformation = documentInformation;
+    return this;
+  }
+
+   /**
+   * Get documentInformation
+   * @return documentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsDocumentInformation getDocumentInformation() {
+    return documentInformation;
+  }
+
+  public void setDocumentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
+    this.documentInformation = documentInformation;
+  }
+
+  public InlineResponse2003 details(Map<String, List<Object>> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse2003 putDetailsItem(String key, List<Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<String, List<Object>>();
+    }
+    this.details.put(key, detailsItem);
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, List<Object>> getDetails() {
+    return details;
+  }
+
+  public void setDetails(Map<String, List<Object>> details) {
+    this.details = details;
   }
 
 
@@ -113,14 +212,18 @@ public class InlineResponse2003 {
       return false;
     }
     InlineResponse2003 inlineResponse2003 = (InlineResponse2003) o;
-    return Objects.equals(this.productId, inlineResponse2003.productId) &&
-        Objects.equals(this.productName, inlineResponse2003.productName) &&
-        Objects.equals(this.eventTypes, inlineResponse2003.eventTypes);
+    return Objects.equals(this.registrationInformation, inlineResponse2003.registrationInformation) &&
+        Objects.equals(this.integrationInformation, inlineResponse2003.integrationInformation) &&
+        Objects.equals(this.organizationInformation, inlineResponse2003.organizationInformation) &&
+        Objects.equals(this.productInformation, inlineResponse2003.productInformation) &&
+        Objects.equals(this.productInformationSetups, inlineResponse2003.productInformationSetups) &&
+        Objects.equals(this.documentInformation, inlineResponse2003.documentInformation) &&
+        Objects.equals(this.details, inlineResponse2003.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productId, productName, eventTypes);
+    return Objects.hash(registrationInformation, integrationInformation, organizationInformation, productInformation, productInformationSetups, documentInformation, details);
   }
 
 
@@ -129,9 +232,13 @@ public class InlineResponse2003 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2003 {\n");
     
-    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    if (eventTypes != null) sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (productInformation != null) sb.append("    productInformation: ").append(toIndentedString(productInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    if (documentInformation != null) sb.append("    documentInformation: ").append(toIndentedString(documentInformation)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

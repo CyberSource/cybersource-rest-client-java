@@ -73,6 +73,7 @@ public class UserManagementSearchApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call searchUsersCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -151,6 +152,7 @@ public class UserManagementSearchApi {
      * @param searchRequest  (required)
      * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'searchUsers' STARTED");
@@ -165,6 +167,7 @@ public class UserManagementSearchApi {
      * @param searchRequest  (required)
      * @return ApiResponse&lt;UmsV1UsersGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<UmsV1UsersGet200Response> searchUsersWithHttpInfo(SearchRequest searchRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -180,6 +183,7 @@ public class UserManagementSearchApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call searchUsersAsync(SearchRequest searchRequest, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException, ConfigException {
 

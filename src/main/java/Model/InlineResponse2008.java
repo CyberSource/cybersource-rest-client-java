@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2008Devices;
+import Model.Dmsv3devicesdeassociateDevices;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,137 +32,53 @@ import java.util.List;
  */
 
 public class InlineResponse2008 {
-  @SerializedName("totalCount")
-  private Integer totalCount = null;
-
-  @SerializedName("offset")
-  private Integer offset = null;
-
-  @SerializedName("limit")
-  private Integer limit = null;
-
-  @SerializedName("sort")
-  private String sort = null;
-
-  @SerializedName("count")
-  private Integer count = null;
+  @SerializedName("status")
+  private String status = null;
 
   @SerializedName("devices")
-  private List<InlineResponse2008Devices> devices = null;
+  private List<Dmsv3devicesdeassociateDevices> devices = null;
 
-  public InlineResponse2008 totalCount(Integer totalCount) {
-    this.totalCount = totalCount;
+  public InlineResponse2008 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * Total number of results.
-   * @return totalCount
+   * Possible values: - OK
+   * @return status
   **/
-  @ApiModelProperty(value = "Total number of results.")
-  public Integer getTotalCount() {
-    return totalCount;
+  @ApiModelProperty(value = "Possible values: - OK")
+  public String getStatus() {
+    return status;
   }
 
-  public void setTotalCount(Integer totalCount) {
-    this.totalCount = totalCount;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public InlineResponse2008 offset(Integer offset) {
-    this.offset = offset;
-    return this;
-  }
-
-   /**
-   * Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit&#x3D;5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  &#x60;offset&#x3D;0&#x60; &#x60;offset&#x3D;5&#x60; &#x60;offset&#x3D;10&#x60;  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. 
-   * @return offset
-  **/
-  @ApiModelProperty(value = "Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. ")
-  public Integer getOffset() {
-    return offset;
-  }
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-  public InlineResponse2008 limit(Integer limit) {
-    this.limit = limit;
-    return this;
-  }
-
-   /**
-   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
-   * @return limit
-  **/
-  @ApiModelProperty(value = "Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. ")
-  public Integer getLimit() {
-    return limit;
-  }
-
-  public void setLimit(Integer limit) {
-    this.limit = limit;
-  }
-
-  public InlineResponse2008 sort(String sort) {
-    this.sort = sort;
-    return this;
-  }
-
-   /**
-   * A comma separated list of the following form:  &#x60;terminalCreationDate:desc or serialNumber or terminalUpdationDate&#x60; 
-   * @return sort
-  **/
-  @ApiModelProperty(value = "A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate` ")
-  public String getSort() {
-    return sort;
-  }
-
-  public void setSort(String sort) {
-    this.sort = sort;
-  }
-
-  public InlineResponse2008 count(Integer count) {
-    this.count = count;
-    return this;
-  }
-
-   /**
-   * Results for this page, this could be below the limit.
-   * @return count
-  **/
-  @ApiModelProperty(value = "Results for this page, this could be below the limit.")
-  public Integer getCount() {
-    return count;
-  }
-
-  public void setCount(Integer count) {
-    this.count = count;
-  }
-
-  public InlineResponse2008 devices(List<InlineResponse2008Devices> devices) {
+  public InlineResponse2008 devices(List<Dmsv3devicesdeassociateDevices> devices) {
     this.devices = devices;
     return this;
   }
 
-  public InlineResponse2008 addDevicesItem(InlineResponse2008Devices devicesItem) {
+  public InlineResponse2008 addDevicesItem(Dmsv3devicesdeassociateDevices devicesItem) {
     if (this.devices == null) {
-      this.devices = new ArrayList<InlineResponse2008Devices>();
+      this.devices = new ArrayList<Dmsv3devicesdeassociateDevices>();
     }
     this.devices.add(devicesItem);
     return this;
   }
 
    /**
-   * A collection of devices
+   * Get devices
    * @return devices
   **/
-  @ApiModelProperty(value = "A collection of devices")
-  public List<InlineResponse2008Devices> getDevices() {
+  @ApiModelProperty(value = "")
+  public List<Dmsv3devicesdeassociateDevices> getDevices() {
     return devices;
   }
 
-  public void setDevices(List<InlineResponse2008Devices> devices) {
+  public void setDevices(List<Dmsv3devicesdeassociateDevices> devices) {
     this.devices = devices;
   }
 
@@ -176,17 +92,13 @@ public class InlineResponse2008 {
       return false;
     }
     InlineResponse2008 inlineResponse2008 = (InlineResponse2008) o;
-    return Objects.equals(this.totalCount, inlineResponse2008.totalCount) &&
-        Objects.equals(this.offset, inlineResponse2008.offset) &&
-        Objects.equals(this.limit, inlineResponse2008.limit) &&
-        Objects.equals(this.sort, inlineResponse2008.sort) &&
-        Objects.equals(this.count, inlineResponse2008.count) &&
+    return Objects.equals(this.status, inlineResponse2008.status) &&
         Objects.equals(this.devices, inlineResponse2008.devices);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalCount, offset, limit, sort, count, devices);
+    return Objects.hash(status, devices);
   }
 
 
@@ -195,11 +107,7 @@ public class InlineResponse2008 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2008 {\n");
     
-    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    if (sort != null) sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (devices != null) sb.append("    devices: ").append(toIndentedString(devices)).append("\n");
     sb.append("}");
     return sb.toString();

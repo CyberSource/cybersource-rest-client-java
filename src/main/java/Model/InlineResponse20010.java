@@ -15,9 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse20010Billing;
+import Model.InlineResponse20010Embedded;
 import Model.InlineResponse20010Links;
-import Model.InlineResponse2009EmbeddedTotals;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,6 +25,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse20010
@@ -33,37 +34,36 @@ import java.io.IOException;
 
 public class InlineResponse20010 {
   @SerializedName("_links")
-  private InlineResponse20010Links links = null;
+  private List<InlineResponse20010Links> links = null;
 
-  @SerializedName("batchId")
-  private String batchId = null;
+  @SerializedName("object")
+  private String object = null;
 
-  @SerializedName("batchCreatedDate")
-  private String batchCreatedDate = null;
+  @SerializedName("offset")
+  private Integer offset = null;
 
-  @SerializedName("batchSource")
-  private String batchSource = null;
+  @SerializedName("limit")
+  private Integer limit = null;
 
-  @SerializedName("merchantReference")
-  private String merchantReference = null;
+  @SerializedName("count")
+  private Integer count = null;
 
-  @SerializedName("batchCaEndpoints")
-  private String batchCaEndpoints = null;
+  @SerializedName("total")
+  private Integer total = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("_embedded")
+  private InlineResponse20010Embedded embedded = null;
 
-  @SerializedName("totals")
-  private InlineResponse2009EmbeddedTotals totals = null;
-
-  @SerializedName("billing")
-  private InlineResponse20010Billing billing = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  public InlineResponse20010 links(InlineResponse20010Links links) {
+  public InlineResponse20010 links(List<InlineResponse20010Links> links) {
     this.links = links;
+    return this;
+  }
+
+  public InlineResponse20010 addLinksItem(InlineResponse20010Links linksItem) {
+    if (this.links == null) {
+      this.links = new ArrayList<InlineResponse20010Links>();
+    }
+    this.links.add(linksItem);
     return this;
   }
 
@@ -72,174 +72,120 @@ public class InlineResponse20010 {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse20010Links getLinks() {
+  public List<InlineResponse20010Links> getLinks() {
     return links;
   }
 
-  public void setLinks(InlineResponse20010Links links) {
+  public void setLinks(List<InlineResponse20010Links> links) {
     this.links = links;
   }
 
-  public InlineResponse20010 batchId(String batchId) {
-    this.batchId = batchId;
+  public InlineResponse20010 object(String object) {
+    this.object = object;
     return this;
   }
 
    /**
-   * Unique identification number assigned to the submitted request.
-   * @return batchId
+   * Get object
+   * @return object
   **/
-  @ApiModelProperty(example = "16188390061150001062041064", value = "Unique identification number assigned to the submitted request.")
-  public String getBatchId() {
-    return batchId;
+  @ApiModelProperty(example = "collection", value = "")
+  public String getObject() {
+    return object;
   }
 
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
+  public void setObject(String object) {
+    this.object = object;
   }
 
-  public InlineResponse20010 batchCreatedDate(String batchCreatedDate) {
-    this.batchCreatedDate = batchCreatedDate;
+  public InlineResponse20010 offset(Integer offset) {
+    this.offset = offset;
     return this;
   }
 
    /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @return batchCreatedDate
+   * Get offset
+   * @return offset
   **/
-  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
-  public String getBatchCreatedDate() {
-    return batchCreatedDate;
+  @ApiModelProperty(example = "0", value = "")
+  public Integer getOffset() {
+    return offset;
   }
 
-  public void setBatchCreatedDate(String batchCreatedDate) {
-    this.batchCreatedDate = batchCreatedDate;
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
-  public InlineResponse20010 batchSource(String batchSource) {
-    this.batchSource = batchSource;
+  public InlineResponse20010 limit(Integer limit) {
+    this.limit = limit;
     return this;
   }
 
    /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @return batchSource
+   * Get limit
+   * @return limit
   **/
-  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
-  public String getBatchSource() {
-    return batchSource;
+  @ApiModelProperty(example = "20", value = "")
+  public Integer getLimit() {
+    return limit;
   }
 
-  public void setBatchSource(String batchSource) {
-    this.batchSource = batchSource;
+  public void setLimit(Integer limit) {
+    this.limit = limit;
   }
 
-  public InlineResponse20010 merchantReference(String merchantReference) {
-    this.merchantReference = merchantReference;
+  public InlineResponse20010 count(Integer count) {
+    this.count = count;
     return this;
   }
 
    /**
-   * Reference used by merchant to identify batch.
-   * @return merchantReference
+   * Get count
+   * @return count
   **/
-  @ApiModelProperty(example = "TC50171_3", value = "Reference used by merchant to identify batch.")
-  public String getMerchantReference() {
-    return merchantReference;
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getCount() {
+    return count;
   }
 
-  public void setMerchantReference(String merchantReference) {
-    this.merchantReference = merchantReference;
+  public void setCount(Integer count) {
+    this.count = count;
   }
 
-  public InlineResponse20010 batchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
+  public InlineResponse20010 total(Integer total) {
+    this.total = total;
     return this;
   }
 
    /**
-   * Get batchCaEndpoints
-   * @return batchCaEndpoints
+   * Get total
+   * @return total
   **/
-  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
-  public String getBatchCaEndpoints() {
-    return batchCaEndpoints;
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getTotal() {
+    return total;
   }
 
-  public void setBatchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
+  public void setTotal(Integer total) {
+    this.total = total;
   }
 
-  public InlineResponse20010 status(String status) {
-    this.status = status;
+  public InlineResponse20010 embedded(InlineResponse20010Embedded embedded) {
+    this.embedded = embedded;
     return this;
   }
 
    /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @return status
-  **/
-  @ApiModelProperty(value = "Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED ")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse20010 totals(InlineResponse2009EmbeddedTotals totals) {
-    this.totals = totals;
-    return this;
-  }
-
-   /**
-   * Get totals
-   * @return totals
+   * Get embedded
+   * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2009EmbeddedTotals getTotals() {
-    return totals;
+  public InlineResponse20010Embedded getEmbedded() {
+    return embedded;
   }
 
-  public void setTotals(InlineResponse2009EmbeddedTotals totals) {
-    this.totals = totals;
-  }
-
-  public InlineResponse20010 billing(InlineResponse20010Billing billing) {
-    this.billing = billing;
-    return this;
-  }
-
-   /**
-   * Get billing
-   * @return billing
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse20010Billing getBilling() {
-    return billing;
-  }
-
-  public void setBilling(InlineResponse20010Billing billing) {
-    this.billing = billing;
-  }
-
-  public InlineResponse20010 description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(example = "Your batch has been received, and is being checked for errors.", value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setEmbedded(InlineResponse20010Embedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -253,20 +199,17 @@ public class InlineResponse20010 {
     }
     InlineResponse20010 inlineResponse20010 = (InlineResponse20010) o;
     return Objects.equals(this.links, inlineResponse20010.links) &&
-        Objects.equals(this.batchId, inlineResponse20010.batchId) &&
-        Objects.equals(this.batchCreatedDate, inlineResponse20010.batchCreatedDate) &&
-        Objects.equals(this.batchSource, inlineResponse20010.batchSource) &&
-        Objects.equals(this.merchantReference, inlineResponse20010.merchantReference) &&
-        Objects.equals(this.batchCaEndpoints, inlineResponse20010.batchCaEndpoints) &&
-        Objects.equals(this.status, inlineResponse20010.status) &&
-        Objects.equals(this.totals, inlineResponse20010.totals) &&
-        Objects.equals(this.billing, inlineResponse20010.billing) &&
-        Objects.equals(this.description, inlineResponse20010.description);
+        Objects.equals(this.object, inlineResponse20010.object) &&
+        Objects.equals(this.offset, inlineResponse20010.offset) &&
+        Objects.equals(this.limit, inlineResponse20010.limit) &&
+        Objects.equals(this.count, inlineResponse20010.count) &&
+        Objects.equals(this.total, inlineResponse20010.total) &&
+        Objects.equals(this.embedded, inlineResponse20010.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, batchId, batchCreatedDate, batchSource, merchantReference, batchCaEndpoints, status, totals, billing, description);
+    return Objects.hash(links, object, offset, limit, count, total, embedded);
   }
 
 
@@ -276,15 +219,12 @@ public class InlineResponse20010 {
     sb.append("class InlineResponse20010 {\n");
     
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    if (batchId != null) sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    if (batchCreatedDate != null) sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
-    if (batchSource != null) sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
-    if (merchantReference != null) sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
-    if (batchCaEndpoints != null) sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
-    if (billing != null) sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
-    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (total != null) sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

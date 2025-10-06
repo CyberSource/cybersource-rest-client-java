@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.InlineResponse2004;
 import Model.InlineResponse2005;
+import Model.InlineResponse2006;
 import Model.InlineResponse2015;
 import Model.InlineResponse2016;
 import Model.InlineResponse2017;
-import Model.InlineResponse4042;
+import Model.InlineResponse4043;
 import Model.SaveAsymEgressKey;
 import Model.UpdateStatus;
 import Model.UpdateWebhook;
@@ -85,7 +85,7 @@ public class ManageWebhooksApiTest {
         String organizationId = null;
         String productId = null;
         String eventType = null;
-        List<InlineResponse2004> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+        List<InlineResponse2005> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
 
         // TODO: test validations
     }
@@ -118,7 +118,7 @@ public class ManageWebhooksApiTest {
     public void notificationSubscriptionsV2WebhooksWebhookIdPatchTest() throws Exception {
         String webhookId = null;
         UpdateWebhook updateWebhook = null;
-        InlineResponse2005 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+        InlineResponse2006 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
 
         // TODO: test validations
     }

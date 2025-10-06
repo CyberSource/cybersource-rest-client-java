@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge;
+import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures {
   @SerializedName("surcharge")
-  private PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge = null;
+  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation surcharge = null;
 
-  public PaymentsProductsDifferentialFeeSubscriptionInformationFeatures surcharge(PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge) {
+  public PaymentsProductsDifferentialFeeSubscriptionInformationFeatures surcharge(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation surcharge) {
     this.surcharge = surcharge;
     return this;
   }
@@ -43,11 +43,11 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures {
    * @return surcharge
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge getSurcharge() {
+  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSurcharge() {
     return surcharge;
   }
 
-  public void setSurcharge(PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge) {
+  public void setSurcharge(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation surcharge) {
     this.surcharge = surcharge;
   }
 

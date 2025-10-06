@@ -16,7 +16,7 @@ package Api;
 import Model.Body;
 import Model.InlineResponse20010;
 import Model.InlineResponse20011;
-import Model.InlineResponse2009;
+import Model.InlineResponse20012;
 import Model.InlineResponse202;
 import Model.InlineResponse4011;
 import org.junit.Test;
@@ -48,7 +48,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchReportTest() throws Exception {
         String batchId = null;
-        InlineResponse20011 response = api.getBatchReport(batchId);
+        InlineResponse20012 response = api.getBatchReport(batchId);
 
         // TODO: test validations
     }
@@ -64,7 +64,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchStatusTest() throws Exception {
         String batchId = null;
-        InlineResponse20010 response = api.getBatchStatus(batchId);
+        InlineResponse20011 response = api.getBatchStatus(batchId);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class BatchesApiTest {
         Long limit = null;
         String fromDate = null;
         String toDate = null;
-        InlineResponse2009 response = api.getBatchesList(offset, limit, fromDate, toDate);
+        InlineResponse20010 response = api.getBatchesList(offset, limit, fromDate, toDate);
 
         // TODO: test validations
     }

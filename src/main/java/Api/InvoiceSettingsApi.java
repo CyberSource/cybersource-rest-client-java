@@ -73,6 +73,7 @@ public class InvoiceSettingsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getInvoiceSettingsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -147,6 +148,7 @@ public class InvoiceSettingsApi {
      * Allows you to retrieve the invoice settings for the payment page.
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
@@ -160,6 +162,7 @@ public class InvoiceSettingsApi {
      * Allows you to retrieve the invoice settings for the payment page.
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> getInvoiceSettingsWithHttpInfo() throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -174,6 +177,7 @@ public class InvoiceSettingsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getInvoiceSettingsAsync(final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
 
@@ -209,6 +213,7 @@ public class InvoiceSettingsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateInvoiceSettingsCall(InvoiceSettingsRequest invoiceSettingsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -287,6 +292,7 @@ public class InvoiceSettingsApi {
      * @param invoiceSettingsRequest  (required)
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
@@ -301,6 +307,7 @@ public class InvoiceSettingsApi {
      * @param invoiceSettingsRequest  (required)
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> updateInvoiceSettingsWithHttpInfo(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -316,6 +323,7 @@ public class InvoiceSettingsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateInvoiceSettingsAsync(InvoiceSettingsRequest invoiceSettingsRequest, final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
 

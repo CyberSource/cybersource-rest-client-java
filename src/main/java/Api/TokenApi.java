@@ -79,6 +79,7 @@ public class TokenApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getCardArtAssetCall(String instrumentIdentifierId, String tokenProvider, String assetType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -177,6 +178,7 @@ public class TokenApi {
      * @param assetType The type of asset. (required)
      * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public InlineResponse200 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCardArtAsset' STARTED");
@@ -193,6 +195,7 @@ public class TokenApi {
      * @param assetType The type of asset. (required)
      * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InlineResponse200> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -210,6 +213,7 @@ public class TokenApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse200> callback) throws ApiException, ConfigException {
 
@@ -247,6 +251,7 @@ public class TokenApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -336,6 +341,7 @@ public class TokenApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
@@ -352,6 +358,7 @@ public class TokenApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -369,6 +376,7 @@ public class TokenApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException, ConfigException {
 

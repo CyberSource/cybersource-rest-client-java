@@ -1202,6 +1202,7 @@ public class ApiClient {
 	 * @param progressRequestListener Progress request listener
 	 * @return The HTTP call
 	 * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,

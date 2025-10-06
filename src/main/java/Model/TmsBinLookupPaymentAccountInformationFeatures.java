@@ -86,6 +86,21 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   @SerializedName("flexCredential")
   private Boolean flexCredential = null;
 
+  @SerializedName("productId")
+  private String productId = null;
+
+  @SerializedName("productIdSubtype")
+  private String productIdSubtype = null;
+
+  @SerializedName("threeDSSupport")
+  private Boolean threeDSSupport = null;
+
+  @SerializedName("siEligible")
+  private Boolean siEligible = null;
+
+  @SerializedName("emiEligible")
+  private Boolean emiEligible = null;
+
   public TmsBinLookupPaymentAccountInformationFeatures accountFundingSource(String accountFundingSource) {
     this.accountFundingSource = accountFundingSource;
     return this;
@@ -428,6 +443,96 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     this.flexCredential = flexCredential;
   }
 
+  public TmsBinLookupPaymentAccountInformationFeatures productId(String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+   /**
+   * This field contains the Visa-assigned product identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - Q4   - P   - AX 
+   * @return productId
+  **/
+  @ApiModelProperty(value = "This field contains the Visa-assigned product identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - Q4   - P   - AX ")
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures productIdSubtype(String productIdSubtype) {
+    this.productIdSubtype = productIdSubtype;
+    return this;
+  }
+
+   /**
+   * This field contains the Visa-assigned product subtype identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - BB   - EX   - L2   - C2 
+   * @return productIdSubtype
+  **/
+  @ApiModelProperty(value = "This field contains the Visa-assigned product subtype identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - BB   - EX   - L2   - C2 ")
+  public String getProductIdSubtype() {
+    return productIdSubtype;
+  }
+
+  public void setProductIdSubtype(String productIdSubtype) {
+    this.productIdSubtype = productIdSubtype;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures threeDSSupport(Boolean threeDSSupport) {
+    this.threeDSSupport = threeDSSupport;
+    return this;
+  }
+
+   /**
+   * This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return threeDSSupport
+  **/
+  @ApiModelProperty(value = "This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - `true`     - `false` ")
+  public Boolean ThreeDSSupport() {
+    return threeDSSupport;
+  }
+
+  public void setThreeDSSupport(Boolean threeDSSupport) {
+    this.threeDSSupport = threeDSSupport;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures siEligible(Boolean siEligible) {
+    this.siEligible = siEligible;
+    return this;
+  }
+
+   /**
+   * This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return siEligible
+  **/
+  @ApiModelProperty(value = "This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - `true`     - `false` ")
+  public Boolean SiEligible() {
+    return siEligible;
+  }
+
+  public void setSiEligible(Boolean siEligible) {
+    this.siEligible = siEligible;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures emiEligible(Boolean emiEligible) {
+    this.emiEligible = emiEligible;
+    return this;
+  }
+
+   /**
+   * This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return emiEligible
+  **/
+  @ApiModelProperty(value = "This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` ")
+  public Boolean EmiEligible() {
+    return emiEligible;
+  }
+
+  public void setEmiEligible(Boolean emiEligible) {
+    this.emiEligible = emiEligible;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -456,12 +561,17 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
         Objects.equals(this.accountLevelManagement, tmsBinLookupPaymentAccountInformationFeatures.accountLevelManagement) &&
         Objects.equals(this.onlineGamblingBlock, tmsBinLookupPaymentAccountInformationFeatures.onlineGamblingBlock) &&
         Objects.equals(this.autoSubstantiation, tmsBinLookupPaymentAccountInformationFeatures.autoSubstantiation) &&
-        Objects.equals(this.flexCredential, tmsBinLookupPaymentAccountInformationFeatures.flexCredential);
+        Objects.equals(this.flexCredential, tmsBinLookupPaymentAccountInformationFeatures.flexCredential) &&
+        Objects.equals(this.productId, tmsBinLookupPaymentAccountInformationFeatures.productId) &&
+        Objects.equals(this.productIdSubtype, tmsBinLookupPaymentAccountInformationFeatures.productIdSubtype) &&
+        Objects.equals(this.threeDSSupport, tmsBinLookupPaymentAccountInformationFeatures.threeDSSupport) &&
+        Objects.equals(this.siEligible, tmsBinLookupPaymentAccountInformationFeatures.siEligible) &&
+        Objects.equals(this.emiEligible, tmsBinLookupPaymentAccountInformationFeatures.emiEligible);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential);
+    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential, productId, productIdSubtype, threeDSSupport, siEligible, emiEligible);
   }
 
 
@@ -489,6 +599,11 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     if (onlineGamblingBlock != null) sb.append("    onlineGamblingBlock: ").append(toIndentedString(onlineGamblingBlock)).append("\n");
     if (autoSubstantiation != null) sb.append("    autoSubstantiation: ").append(toIndentedString(autoSubstantiation)).append("\n");
     if (flexCredential != null) sb.append("    flexCredential: ").append(toIndentedString(flexCredential)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    if (productIdSubtype != null) sb.append("    productIdSubtype: ").append(toIndentedString(productIdSubtype)).append("\n");
+    if (threeDSSupport != null) sb.append("    threeDSSupport: ").append(toIndentedString(threeDSSupport)).append("\n");
+    if (siEligible != null) sb.append("    siEligible: ").append(toIndentedString(siEligible)).append("\n");
+    if (emiEligible != null) sb.append("    emiEligible: ").append(toIndentedString(emiEligible)).append("\n");
     sb.append("}");
     return sb.toString();
   }

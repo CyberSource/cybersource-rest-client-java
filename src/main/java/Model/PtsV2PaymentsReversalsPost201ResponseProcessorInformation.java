@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -55,6 +56,9 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
 
   @SerializedName("providerResponse")
   private String providerResponse = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public PtsV2PaymentsReversalsPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -188,10 +192,10 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
   }
 
    /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @return responseDetails
   **/
-  @ApiModelProperty(value = "This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. ")
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
   public String getResponseDetails() {
     return responseDetails;
   }
@@ -218,6 +222,24 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     this.providerResponse = providerResponse;
   }
 
+  public PtsV2PaymentsReversalsPost201ResponseProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,12 +258,13 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
         Objects.equals(this.masterCardServiceCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceCode) &&
         Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceReplyCode) &&
         Objects.equals(this.responseDetails, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseDetails) &&
-        Objects.equals(this.providerResponse, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.providerResponse);
+        Objects.equals(this.providerResponse, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.providerResponse) &&
+        Objects.equals(this.network, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, networkTransactionId, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse);
+    return Objects.hash(transactionId, responseCode, networkTransactionId, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse, network);
   }
 
 
@@ -259,6 +282,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     if (masterCardServiceReplyCode != null) sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
     if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
     if (providerResponse != null) sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

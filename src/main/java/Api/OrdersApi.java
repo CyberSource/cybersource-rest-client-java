@@ -76,6 +76,7 @@ public class OrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createOrderCall(CreateOrderRequest createOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -154,6 +155,7 @@ public class OrdersApi {
      * @param createOrderRequest  (required)
      * @return PtsV2CreateOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2CreateOrderPost201Response createOrder(CreateOrderRequest createOrderRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOrder' STARTED");
@@ -168,6 +170,7 @@ public class OrdersApi {
      * @param createOrderRequest  (required)
      * @return ApiResponse&lt;PtsV2CreateOrderPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2CreateOrderPost201Response> createOrderWithHttpInfo(CreateOrderRequest createOrderRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -183,6 +186,7 @@ public class OrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createOrderAsync(CreateOrderRequest createOrderRequest, final ApiCallback<PtsV2CreateOrderPost201Response> callback) throws ApiException, ConfigException {
 
@@ -219,6 +223,7 @@ public class OrdersApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateOrderCall(String id, UpdateOrderRequest updateOrderRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -305,6 +310,7 @@ public class OrdersApi {
      * @param updateOrderRequest  (required)
      * @return PtsV2UpdateOrderPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2UpdateOrderPatch201Response updateOrder(String id, UpdateOrderRequest updateOrderRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateOrder' STARTED");
@@ -320,6 +326,7 @@ public class OrdersApi {
      * @param updateOrderRequest  (required)
      * @return ApiResponse&lt;PtsV2UpdateOrderPatch201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2UpdateOrderPatch201Response> updateOrderWithHttpInfo(String id, UpdateOrderRequest updateOrderRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -336,6 +343,7 @@ public class OrdersApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateOrderAsync(String id, UpdateOrderRequest updateOrderRequest, final ApiCallback<PtsV2UpdateOrderPatch201Response> callback) throws ApiException, ConfigException {
 

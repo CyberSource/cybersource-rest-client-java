@@ -78,6 +78,7 @@ public class PaymentBatchSummariesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentBatchSummaryCall(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -182,6 +183,7 @@ public class PaymentBatchSummariesApi {
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
      * @return ReportingV3PaymentBatchSummariesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ReportingV3PaymentBatchSummariesGet200Response getPaymentBatchSummary(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' STARTED");
@@ -201,6 +203,7 @@ public class PaymentBatchSummariesApi {
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
      * @return ApiResponse&lt;ReportingV3PaymentBatchSummariesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> getPaymentBatchSummaryWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -221,6 +224,7 @@ public class PaymentBatchSummariesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentBatchSummaryAsync(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek, final ApiCallback<ReportingV3PaymentBatchSummariesGet200Response> callback) throws ApiException, ConfigException {
 

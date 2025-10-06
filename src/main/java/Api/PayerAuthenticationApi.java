@@ -79,6 +79,7 @@ public class PayerAuthenticationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call checkPayerAuthEnrollmentCall(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -157,6 +158,7 @@ public class PayerAuthenticationApi {
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @return RiskV1AuthenticationsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' STARTED");
@@ -171,6 +173,7 @@ public class PayerAuthenticationApi {
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<RiskV1AuthenticationsPost201Response> checkPayerAuthEnrollmentWithHttpInfo(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -186,6 +189,7 @@ public class PayerAuthenticationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call checkPayerAuthEnrollmentAsync(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest, final ApiCallback<RiskV1AuthenticationsPost201Response> callback) throws ApiException, ConfigException {
 
@@ -221,6 +225,7 @@ public class PayerAuthenticationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call payerAuthSetupCall(PayerAuthSetupRequest payerAuthSetupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -299,6 +304,7 @@ public class PayerAuthenticationApi {
      * @param payerAuthSetupRequest  (required)
      * @return RiskV1AuthenticationSetupsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'payerAuthSetup' STARTED");
@@ -313,6 +319,7 @@ public class PayerAuthenticationApi {
      * @param payerAuthSetupRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationSetupsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<RiskV1AuthenticationSetupsPost201Response> payerAuthSetupWithHttpInfo(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -328,6 +335,7 @@ public class PayerAuthenticationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call payerAuthSetupAsync(PayerAuthSetupRequest payerAuthSetupRequest, final ApiCallback<RiskV1AuthenticationSetupsPost201Response> callback) throws ApiException, ConfigException {
 
@@ -363,6 +371,7 @@ public class PayerAuthenticationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call validateAuthenticationResultsCall(ValidateRequest validateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -441,6 +450,7 @@ public class PayerAuthenticationApi {
      * @param validateRequest  (required)
      * @return RiskV1AuthenticationResultsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'validateAuthenticationResults' STARTED");
@@ -455,6 +465,7 @@ public class PayerAuthenticationApi {
      * @param validateRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationResultsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<RiskV1AuthenticationResultsPost201Response> validateAuthenticationResultsWithHttpInfo(ValidateRequest validateRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -470,6 +481,7 @@ public class PayerAuthenticationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call validateAuthenticationResultsAsync(ValidateRequest validateRequest, final ApiCallback<RiskV1AuthenticationResultsPost201Response> callback) throws ApiException, ConfigException {
 
