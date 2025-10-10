@@ -1,0 +1,14 @@
+# {{classname}}
+## Properties
+Name | API Attribute Name | Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+{{#vars}}**{{name}}** | {{baseName}} | {{#isEnum}}[**{{datatypeWithEnum}}**](#{{datatypeWithEnum}}){{/isEnum}}{{^isEnum}}{{#isPrimitiveType}}**{{datatype}}**{{/isPrimitiveType}}{{^isPrimitiveType}}[**{{datatype}}**]({{complexType}}.md){{/isPrimitiveType}}{{/isEnum}} | {{description}} | {{^required}} [optional]{{/required}}{{#readOnly}} [readonly]{{/readOnly}}
+{{/vars}}
+{{#vars}}{{#isEnum}}
+
+<a name="{{{datatypeWithEnum}}}"></a>
+## Enum: {{datatypeWithEnum}}
+Name | Value
+---- | -----{{#allowableValues}}{{#enumVars}}
+{{name}} | {{value}}{{/enumVars}}{{/allowableValues}}
+{{/isEnum}}{{/vars}}
