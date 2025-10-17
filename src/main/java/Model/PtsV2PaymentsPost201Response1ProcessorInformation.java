@@ -97,10 +97,10 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   }
 
    /**
-   * This field is set to the value of failure reason returned by the processor. 
+   * Failure reason returned by the processor.
    * @return rawResponse
   **/
-  @ApiModelProperty(value = "This field is set to the value of failure reason returned by the processor. ")
+  @ApiModelProperty(value = "Failure reason returned by the processor.")
   public String getRawResponse() {
     return rawResponse;
   }
@@ -115,10 +115,10 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   }
 
    /**
-   * This field is set to the value of failure reason returned by the processor in the local language of the processor. 
+   * Failure reason returned by the processor in the local language of the processor.
    * @return rawResponseLocal
   **/
-  @ApiModelProperty(value = "This field is set to the value of failure reason returned by the processor in the local language of the processor. ")
+  @ApiModelProperty(value = "Failure reason returned by the processor in the local language of the processor.")
   public String getRawResponseLocal() {
     return rawResponseLocal;
   }

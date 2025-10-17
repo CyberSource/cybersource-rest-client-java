@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Invoicingv2invoicesClientReferenceInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesInvoiceInformation;
+import Model.Invoicingv2invoicesMerchantDefinedFieldValues;
 import Model.Invoicingv2invoicesOrderInformation;
 import Model.Invoicingv2invoicesProcessingInformation;
 import com.google.gson.TypeAdapter;
@@ -28,6 +29,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CreateInvoiceRequest
@@ -48,6 +51,9 @@ public class CreateInvoiceRequest {
 
   @SerializedName("orderInformation")
   private Invoicingv2invoicesOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValues")
+  private List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues = null;
 
   public CreateInvoiceRequest clientReferenceInformation(Invoicingv2invoicesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -139,6 +145,32 @@ public class CreateInvoiceRequest {
     this.orderInformation = orderInformation;
   }
 
+  public CreateInvoiceRequest merchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+    return this;
+  }
+
+  public CreateInvoiceRequest addMerchantDefinedFieldValuesItem(Invoicingv2invoicesMerchantDefinedFieldValues merchantDefinedFieldValuesItem) {
+    if (this.merchantDefinedFieldValues == null) {
+      this.merchantDefinedFieldValues = new ArrayList<Invoicingv2invoicesMerchantDefinedFieldValues>();
+    }
+    this.merchantDefinedFieldValues.add(merchantDefinedFieldValuesItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValues
+   * @return merchantDefinedFieldValues
+  **/
+  @ApiModelProperty(value = "")
+  public List<Invoicingv2invoicesMerchantDefinedFieldValues> getMerchantDefinedFieldValues() {
+    return merchantDefinedFieldValues;
+  }
+
+  public void setMerchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +185,13 @@ public class CreateInvoiceRequest {
         Objects.equals(this.customerInformation, createInvoiceRequest.customerInformation) &&
         Objects.equals(this.processingInformation, createInvoiceRequest.processingInformation) &&
         Objects.equals(this.invoiceInformation, createInvoiceRequest.invoiceInformation) &&
-        Objects.equals(this.orderInformation, createInvoiceRequest.orderInformation);
+        Objects.equals(this.orderInformation, createInvoiceRequest.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValues, createInvoiceRequest.merchantDefinedFieldValues);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, customerInformation, processingInformation, invoiceInformation, orderInformation);
+    return Objects.hash(clientReferenceInformation, customerInformation, processingInformation, invoiceInformation, orderInformation, merchantDefinedFieldValues);
   }
 
 
@@ -172,6 +205,7 @@ public class CreateInvoiceRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValues != null) sb.append("    merchantDefinedFieldValues: ").append(toIndentedString(merchantDefinedFieldValues)).append("\n");
     sb.append("}");
     return sb.toString();
   }

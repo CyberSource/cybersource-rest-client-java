@@ -22,18 +22,19 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2006;
-import Model.InlineResponse2008;
+import Model.InlineResponse2007;
+import Model.InlineResponse2009;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
-import Model.InlineResponse4043;
+import Model.InlineResponse4044;
 import Model.InlineResponse5003;
 import Model.PostDeviceSearchRequest;
 import Model.PostDeviceSearchRequestV3;
@@ -78,8 +79,9 @@ public class DeviceSearchApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postSearchQueryCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequest, PostDeviceSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -132,7 +134,7 @@ public class DeviceSearchApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSearchQueryValidateBeforeCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postSearchQueryValidateBeforeCall(PostDeviceSearchRequest postDeviceSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postDeviceSearchRequest' is set
         if (postDeviceSearchRequest == null) {
@@ -154,12 +156,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return InlineResponse2006
+     * @return InlineResponse2007
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2006 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public InlineResponse2007 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQuery' STARTED");
-        ApiResponse<InlineResponse2006> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
+        ApiResponse<InlineResponse2007> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
         logger.info("CALL TO METHOD 'postSearchQuery' ENDED");
         return resp.getData();
     }
@@ -168,13 +171,14 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;InlineResponse2007&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2006> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException {
+    public ApiResponse<InlineResponse2007> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -185,8 +189,9 @@ public class DeviceSearchApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2006> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2007> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -209,7 +214,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -220,8 +225,9 @@ public class DeviceSearchApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryV3Call(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postSearchQueryV3Call(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequestV3, PostDeviceSearchRequestV3.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -274,7 +280,7 @@ public class DeviceSearchApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSearchQueryV3ValidateBeforeCall(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postSearchQueryV3ValidateBeforeCall(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postDeviceSearchRequestV3' is set
         if (postDeviceSearchRequestV3 == null) {
@@ -296,12 +302,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return InlineResponse2008
+     * @return InlineResponse2009
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2008 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public InlineResponse2009 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQueryV3' STARTED");
-        ApiResponse<InlineResponse2008> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
+        ApiResponse<InlineResponse2009> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
         logger.info("CALL TO METHOD 'postSearchQueryV3' ENDED");
         return resp.getData();
     }
@@ -310,13 +317,14 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse&lt;InlineResponse2009&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2008> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException {
+    public ApiResponse<InlineResponse2009> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -327,8 +335,9 @@ public class DeviceSearchApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2008> callback) throws ApiException {
+    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse2009> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -351,7 +360,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

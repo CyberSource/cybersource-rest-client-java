@@ -37,6 +37,9 @@ import java.util.List;
  */
 
 public class Ptsv2paymentsOrderInformationAmountDetails {
+  @SerializedName("refundBalance")
+  private String refundBalance = null;
+
   @SerializedName("giftWrapAmount")
   private String giftWrapAmount = null;
 
@@ -129,6 +132,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @SerializedName("anticipatedAmount")
   private String anticipatedAmount = null;
+
+  public Ptsv2paymentsOrderInformationAmountDetails refundBalance(String refundBalance) {
+    this.refundBalance = refundBalance;
+    return this;
+  }
+
+   /**
+   * The remaining amount which can be refunded.
+   * @return refundBalance
+  **/
+  @ApiModelProperty(value = "The remaining amount which can be refunded.")
+  public String getRefundBalance() {
+    return refundBalance;
+  }
+
+  public void setRefundBalance(String refundBalance) {
+    this.refundBalance = refundBalance;
+  }
 
   public Ptsv2paymentsOrderInformationAmountDetails giftWrapAmount(String giftWrapAmount) {
     this.giftWrapAmount = giftWrapAmount;
@@ -714,7 +735,8 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
       return false;
     }
     Ptsv2paymentsOrderInformationAmountDetails ptsv2paymentsOrderInformationAmountDetails = (Ptsv2paymentsOrderInformationAmountDetails) o;
-    return Objects.equals(this.giftWrapAmount, ptsv2paymentsOrderInformationAmountDetails.giftWrapAmount) &&
+    return Objects.equals(this.refundBalance, ptsv2paymentsOrderInformationAmountDetails.refundBalance) &&
+        Objects.equals(this.giftWrapAmount, ptsv2paymentsOrderInformationAmountDetails.giftWrapAmount) &&
         Objects.equals(this.invoiceAmount, ptsv2paymentsOrderInformationAmountDetails.invoiceAmount) &&
         Objects.equals(this.totalAmount, ptsv2paymentsOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.subTotalAmount, ptsv2paymentsOrderInformationAmountDetails.subTotalAmount) &&
@@ -749,7 +771,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(giftWrapAmount, invoiceAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, octSurcharge, order, anticipatedAmount);
+    return Objects.hash(refundBalance, giftWrapAmount, invoiceAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, octSurcharge, order, anticipatedAmount);
   }
 
 
@@ -758,6 +780,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetails {\n");
     
+    if (refundBalance != null) sb.append("    refundBalance: ").append(toIndentedString(refundBalance)).append("\n");
     if (giftWrapAmount != null) sb.append("    giftWrapAmount: ").append(toIndentedString(giftWrapAmount)).append("\n");
     if (invoiceAmount != null) sb.append("    invoiceAmount: ").append(toIndentedString(invoiceAmount)).append("\n");
     if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");

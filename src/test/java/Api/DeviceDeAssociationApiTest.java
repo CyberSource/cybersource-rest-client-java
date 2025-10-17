@@ -15,12 +15,12 @@ package Api;
 
 import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
-import Model.InlineResponse2007;
+import Model.InlineResponse2008;
 import Model.InlineResponse206;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
-import Model.InlineResponse4043;
+import Model.InlineResponse4044;
 import Model.InlineResponse5003;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -67,7 +67,7 @@ public class DeviceDeAssociationApiTest {
     @Test
     public void postDeAssociateV3TerminalTest() throws Exception {
         List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request = null;
-        List<InlineResponse2007> response = api.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
+        List<InlineResponse2008> response = api.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
 
         // TODO: test validations
     }

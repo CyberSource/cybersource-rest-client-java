@@ -39,7 +39,7 @@ public class Ptsv2intentsPaymentInformationTokenizedPaymentMethod {
   private String usageType = null;
 
   @SerializedName("allowMultipleTokens")
-  private Boolean allowMultipleTokens = null;
+  private String allowMultipleTokens = null;
 
   public Ptsv2intentsPaymentInformationTokenizedPaymentMethod description(String description) {
     this.description = description;
@@ -95,7 +95,7 @@ public class Ptsv2intentsPaymentInformationTokenizedPaymentMethod {
     this.usageType = usageType;
   }
 
-  public Ptsv2intentsPaymentInformationTokenizedPaymentMethod allowMultipleTokens(Boolean allowMultipleTokens) {
+  public Ptsv2intentsPaymentInformationTokenizedPaymentMethod allowMultipleTokens(String allowMultipleTokens) {
     this.allowMultipleTokens = allowMultipleTokens;
     return this;
   }
@@ -105,11 +105,11 @@ public class Ptsv2intentsPaymentInformationTokenizedPaymentMethod {
    * @return allowMultipleTokens
   **/
   @ApiModelProperty(value = "Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account. ")
-  public Boolean AllowMultipleTokens() {
+  public String getAllowMultipleTokens() {
     return allowMultipleTokens;
   }
 
-  public void setAllowMultipleTokens(Boolean allowMultipleTokens) {
+  public void setAllowMultipleTokens(String allowMultipleTokens) {
     this.allowMultipleTokens = allowMultipleTokens;
   }
 

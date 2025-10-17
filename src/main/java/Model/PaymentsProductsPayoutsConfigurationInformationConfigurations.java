@@ -15,8 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds;
-import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds;
+import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,62 +33,54 @@ import java.util.Map;
  */
 
 public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
-  @SerializedName("pullfunds")
-  private Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds> pullfunds = null;
+  @SerializedName("common")
+  private PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon common = null;
 
-  @SerializedName("pushfunds")
-  private Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds> pushfunds = null;
+  @SerializedName("processors")
+  private Map<String, Object> processors = null;
 
-  public PaymentsProductsPayoutsConfigurationInformationConfigurations pullfunds(Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds> pullfunds) {
-    this.pullfunds = pullfunds;
-    return this;
-  }
-
-  public PaymentsProductsPayoutsConfigurationInformationConfigurations putPullfundsItem(String key, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds pullfundsItem) {
-    if (this.pullfunds == null) {
-      this.pullfunds = new HashMap<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds>();
-    }
-    this.pullfunds.put(key, pullfundsItem);
+  public PaymentsProductsPayoutsConfigurationInformationConfigurations common(PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon common) {
+    this.common = common;
     return this;
   }
 
    /**
-   * Get pullfunds
-   * @return pullfunds
+   * Get common
+   * @return common
   **/
   @ApiModelProperty(value = "")
-  public Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds> getPullfunds() {
-    return pullfunds;
+  public PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon getCommon() {
+    return common;
   }
 
-  public void setPullfunds(Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds> pullfunds) {
-    this.pullfunds = pullfunds;
+  public void setCommon(PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon common) {
+    this.common = common;
   }
 
-  public PaymentsProductsPayoutsConfigurationInformationConfigurations pushfunds(Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds> pushfunds) {
-    this.pushfunds = pushfunds;
+  public PaymentsProductsPayoutsConfigurationInformationConfigurations processors(Map<String, Object> processors) {
+    this.processors = processors;
     return this;
   }
 
-  public PaymentsProductsPayoutsConfigurationInformationConfigurations putPushfundsItem(String key, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds pushfundsItem) {
-    if (this.pushfunds == null) {
-      this.pushfunds = new HashMap<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds>();
+  public PaymentsProductsPayoutsConfigurationInformationConfigurations putProcessorsItem(String key, Object processorsItem) {
+    if (this.processors == null) {
+      this.processors = new HashMap<String, Object>();
     }
-    this.pushfunds.put(key, pushfundsItem);
+    this.processors.put(key, processorsItem);
     return this;
   }
 
    /**
-   * Get pushfunds
-   * @return pushfunds
+   * Get processors
+   * @return processors
   **/
   @ApiModelProperty(value = "")
-  public Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds> getPushfunds() {
-    return pushfunds;
+  public Map<String, Object> getProcessors() {
+    return processors;
   }
 
-  public void setPushfunds(Map<String, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds> pushfunds) {
-    this.pushfunds = pushfunds;
+  public void setProcessors(Map<String, Object> processors) {
+    this.processors = processors;
   }
 
 
@@ -102,13 +93,13 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
       return false;
     }
     PaymentsProductsPayoutsConfigurationInformationConfigurations paymentsProductsPayoutsConfigurationInformationConfigurations = (PaymentsProductsPayoutsConfigurationInformationConfigurations) o;
-    return Objects.equals(this.pullfunds, paymentsProductsPayoutsConfigurationInformationConfigurations.pullfunds) &&
-        Objects.equals(this.pushfunds, paymentsProductsPayoutsConfigurationInformationConfigurations.pushfunds);
+    return Objects.equals(this.common, paymentsProductsPayoutsConfigurationInformationConfigurations.common) &&
+        Objects.equals(this.processors, paymentsProductsPayoutsConfigurationInformationConfigurations.processors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pullfunds, pushfunds);
+    return Objects.hash(common, processors);
   }
 
 
@@ -117,8 +108,8 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayoutsConfigurationInformationConfigurations {\n");
     
-    if (pullfunds != null) sb.append("    pullfunds: ").append(toIndentedString(pullfunds)).append("\n");
-    if (pushfunds != null) sb.append("    pushfunds: ").append(toIndentedString(pushfunds)).append("\n");
+    if (common != null) sb.append("    common: ").append(toIndentedString(common)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

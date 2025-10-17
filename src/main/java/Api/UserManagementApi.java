@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -74,8 +75,9 @@ public class UserManagementApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -139,7 +141,7 @@ public class UserManagementApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getUsersCall(organizationId, userName, permissionId, roleId, progressListener, progressRequestListener);
@@ -160,8 +162,9 @@ public class UserManagementApi {
      * @param roleId role of the user you are trying to search on. (optional)
      * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
+    public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getUsers' STARTED");
         ApiResponse<UmsV1UsersGet200Response> resp = getUsersWithHttpInfo(organizationId, userName, permissionId, roleId);
         logger.info("CALL TO METHOD 'getUsers' ENDED");
@@ -177,8 +180,9 @@ public class UserManagementApi {
      * @param roleId role of the user you are trying to search on. (optional)
      * @return ApiResponse&lt;UmsV1UsersGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
+    public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
@@ -195,8 +199,9 @@ public class UserManagementApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
+    public okhttp3.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -81,8 +82,9 @@ public class CustomerPaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -142,7 +144,7 @@ public class CustomerPaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteCustomerPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -173,8 +175,9 @@ public class CustomerPaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void deleteCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public void deleteCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteCustomerPaymentInstrument' STARTED");
         deleteCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
 
@@ -188,8 +191,9 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> deleteCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public ApiResponse<Void> deleteCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
@@ -204,8 +208,9 @@ public class CustomerPaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -240,8 +245,9 @@ public class CustomerPaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -301,7 +307,7 @@ public class CustomerPaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -333,8 +339,9 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' STARTED");
         ApiResponse<PostCustomerPaymentInstrumentRequest> resp = getCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' ENDED");
@@ -349,8 +356,9 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerPaymentInstrumentRequest> getCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerPaymentInstrumentRequest> getCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
@@ -366,8 +374,9 @@ public class CustomerPaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -404,8 +413,9 @@ public class CustomerPaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerPaymentInstrumentsListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerPaymentInstrumentsListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -468,7 +478,7 @@ public class CustomerPaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerPaymentInstrumentsListValidateBeforeCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerPaymentInstrumentsListValidateBeforeCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -495,8 +505,9 @@ public class CustomerPaymentInstrumentApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return PaymentInstrumentList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PaymentInstrumentList getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+    public PaymentInstrumentList getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' STARTED");
         ApiResponse<PaymentInstrumentList> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' ENDED");
@@ -512,8 +523,9 @@ public class CustomerPaymentInstrumentApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ApiResponse&lt;PaymentInstrumentList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PaymentInstrumentList> getCustomerPaymentInstrumentsListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+    public ApiResponse<PaymentInstrumentList> getCustomerPaymentInstrumentsListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerPaymentInstrumentsListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaymentInstrumentList>(){}.getType();
@@ -530,8 +542,9 @@ public class CustomerPaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList> callback) throws ApiException {
+    public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -569,8 +582,9 @@ public class CustomerPaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomersPaymentInstrumentCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchCustomersPaymentInstrumentCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -629,7 +643,7 @@ public class CustomerPaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomersPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchCustomersPaymentInstrumentValidateBeforeCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -669,8 +683,9 @@ public class CustomerPaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' STARTED");
         ApiResponse<PatchCustomerPaymentInstrumentRequest> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' ENDED");
@@ -687,8 +702,9 @@ public class CustomerPaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;PatchCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PatchCustomerPaymentInstrumentRequest> patchCustomersPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<PatchCustomerPaymentInstrumentRequest> patchCustomersPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomersPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerPaymentInstrumentRequest>(){}.getType();
@@ -706,8 +722,9 @@ public class CustomerPaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -743,8 +760,9 @@ public class CustomerPaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerPaymentInstrumentCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postCustomerPaymentInstrumentCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -800,7 +818,7 @@ public class CustomerPaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomerPaymentInstrumentValidateBeforeCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postCustomerPaymentInstrumentValidateBeforeCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -832,8 +850,9 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
+    public PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' STARTED");
         ApiResponse<PostCustomerPaymentInstrumentRequest> resp = postCustomerPaymentInstrumentWithHttpInfo(customerId, postCustomerPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' ENDED");
@@ -848,8 +867,9 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerPaymentInstrumentRequest> postCustomerPaymentInstrumentWithHttpInfo(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerPaymentInstrumentRequest> postCustomerPaymentInstrumentWithHttpInfo(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerPaymentInstrumentValidateBeforeCall(customerId, postCustomerPaymentInstrumentRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
@@ -865,8 +885,9 @@ public class CustomerPaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException {
+    public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

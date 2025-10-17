@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation;
+import Model.InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,6 +36,9 @@ public class InvoicingV2InvoiceSettingsGet200Response {
 
   @SerializedName("invoiceSettingsInformation")
   private InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation invoiceSettingsInformation = null;
+
+  @SerializedName("merchantInformation")
+  private InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation merchantInformation = null;
 
   public InvoicingV2InvoiceSettingsGet200Response submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -72,6 +76,24 @@ public class InvoicingV2InvoiceSettingsGet200Response {
     this.invoiceSettingsInformation = invoiceSettingsInformation;
   }
 
+  public InvoicingV2InvoiceSettingsGet200Response merchantInformation(InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class InvoicingV2InvoiceSettingsGet200Response {
     }
     InvoicingV2InvoiceSettingsGet200Response invoicingV2InvoiceSettingsGet200Response = (InvoicingV2InvoiceSettingsGet200Response) o;
     return Objects.equals(this.submitTimeUtc, invoicingV2InvoiceSettingsGet200Response.submitTimeUtc) &&
-        Objects.equals(this.invoiceSettingsInformation, invoicingV2InvoiceSettingsGet200Response.invoiceSettingsInformation);
+        Objects.equals(this.invoiceSettingsInformation, invoicingV2InvoiceSettingsGet200Response.invoiceSettingsInformation) &&
+        Objects.equals(this.merchantInformation, invoicingV2InvoiceSettingsGet200Response.merchantInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, invoiceSettingsInformation);
+    return Objects.hash(submitTimeUtc, invoiceSettingsInformation, merchantInformation);
   }
 
 
@@ -99,6 +122,7 @@ public class InvoicingV2InvoiceSettingsGet200Response {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (invoiceSettingsInformation != null) sb.append("    invoiceSettingsInformation: ").append(toIndentedString(invoiceSettingsInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

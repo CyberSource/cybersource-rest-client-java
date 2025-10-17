@@ -48,6 +48,9 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
   @SerializedName("settlementCurrency")
   private String settlementCurrency = null;
 
+  @SerializedName("refundBalance")
+  private String refundBalance = null;
+
   @SerializedName("surcharge")
   private Ptsv2payoutsOrderInformationAmountDetailsSurcharge surcharge = null;
 
@@ -159,6 +162,24 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     this.settlementCurrency = settlementCurrency;
   }
 
+  public TssV2TransactionsGet200ResponseOrderInformationAmountDetails refundBalance(String refundBalance) {
+    this.refundBalance = refundBalance;
+    return this;
+  }
+
+   /**
+   * The remaining amount which can be refunded.
+   * @return refundBalance
+  **/
+  @ApiModelProperty(value = "The remaining amount which can be refunded.")
+  public String getRefundBalance() {
+    return refundBalance;
+  }
+
+  public void setRefundBalance(String refundBalance) {
+    this.refundBalance = refundBalance;
+  }
+
   public TssV2TransactionsGet200ResponseOrderInformationAmountDetails surcharge(Ptsv2payoutsOrderInformationAmountDetailsSurcharge surcharge) {
     this.surcharge = surcharge;
     return this;
@@ -193,12 +214,13 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
         Objects.equals(this.authorizedAmount, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.authorizedAmount) &&
         Objects.equals(this.settlementAmount, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.settlementAmount) &&
         Objects.equals(this.settlementCurrency, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.settlementCurrency) &&
+        Objects.equals(this.refundBalance, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.refundBalance) &&
         Objects.equals(this.surcharge, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.surcharge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, taxAmount, authorizedAmount, settlementAmount, settlementCurrency, surcharge);
+    return Objects.hash(totalAmount, currency, taxAmount, authorizedAmount, settlementAmount, settlementCurrency, refundBalance, surcharge);
   }
 
 
@@ -213,6 +235,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
     if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
     if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (refundBalance != null) sb.append("    refundBalance: ").append(toIndentedString(refundBalance)).append("\n");
     if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();

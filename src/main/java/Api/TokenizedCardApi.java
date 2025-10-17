@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -34,6 +35,7 @@ import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
+import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.TokenizedcardRequest;
 
 import java.lang.reflect.Type;
@@ -77,8 +79,9 @@ public class TokenizedCardApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteTokenizedCardCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteTokenizedCardCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -137,7 +140,7 @@ public class TokenizedCardApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTokenizedCardValidateBeforeCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteTokenizedCardValidateBeforeCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenizedCardId' is set
         if (tokenizedCardId == null) {
@@ -161,8 +164,9 @@ public class TokenizedCardApi {
      * @param tokenizedCardId The Id of a tokenized card. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void deleteTokenizedCard(String tokenizedCardId, String profileId) throws ApiException {
+    public void deleteTokenizedCard(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteTokenizedCard' STARTED");
         deleteTokenizedCardWithHttpInfo(tokenizedCardId, profileId);
 
@@ -175,8 +179,9 @@ public class TokenizedCardApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> deleteTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException {
+    public ApiResponse<Void> deleteTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteTokenizedCardValidateBeforeCall(tokenizedCardId, profileId, null, null);
         return apiClient.execute(call);
@@ -190,8 +195,9 @@ public class TokenizedCardApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -225,8 +231,9 @@ public class TokenizedCardApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTokenizedCardCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTokenizedCardCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -285,7 +292,7 @@ public class TokenizedCardApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTokenizedCardValidateBeforeCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTokenizedCardValidateBeforeCall(String tokenizedCardId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenizedCardId' is set
         if (tokenizedCardId == null) {
@@ -310,8 +317,9 @@ public class TokenizedCardApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return TokenizedcardRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public TokenizedcardRequest getTokenizedCard(String tokenizedCardId, String profileId) throws ApiException {
+    public TokenizedcardRequest getTokenizedCard(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTokenizedCard' STARTED");
         ApiResponse<TokenizedcardRequest> resp = getTokenizedCardWithHttpInfo(tokenizedCardId, profileId);
         logger.info("CALL TO METHOD 'getTokenizedCard' ENDED");
@@ -325,8 +333,9 @@ public class TokenizedCardApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;TokenizedcardRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<TokenizedcardRequest> getTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException {
+    public ApiResponse<TokenizedcardRequest> getTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTokenizedCardValidateBeforeCall(tokenizedCardId, profileId, null, null);
         Type localVarReturnType = new TypeToken<TokenizedcardRequest>(){}.getType();
@@ -341,8 +350,9 @@ public class TokenizedCardApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<TokenizedcardRequest> callback) throws ApiException {
+    public okhttp3.Call getTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<TokenizedcardRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -370,6 +380,171 @@ public class TokenizedCardApi {
         return call;
     }
     /**
+     * Build call for postIssuerLifeCycleSimulation
+     * @param profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param tokenizedCardId The Id of a tokenized card. (required)
+     * @param postIssuerLifeCycleSimulationRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call postIssuerLifeCycleSimulationCall(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postIssuerLifeCycleSimulationRequest, PostIssuerLifeCycleSimulationRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postIssuerLifeCycleSimulation,postIssuerLifeCycleSimulationAsync,postIssuerLifeCycleSimulationWithHttpInfo,postIssuerLifeCycleSimulationCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
+        // create path and map variables
+        String localVarPath = "/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations"
+            .replaceAll("\\{" + "tokenizedCardId" + "\\}", apiClient.escapeString(tokenizedCardId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postIssuerLifeCycleSimulationValidateBeforeCall(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'profileId' is set
+        if (profileId == null) {
+            logger.error("Missing the required parameter 'profileId' when calling postIssuerLifeCycleSimulation(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling postIssuerLifeCycleSimulation(Async)");
+        }
+        
+        // verify the required parameter 'tokenizedCardId' is set
+        if (tokenizedCardId == null) {
+            logger.error("Missing the required parameter 'tokenizedCardId' when calling postIssuerLifeCycleSimulation(Async)");
+            throw new ApiException("Missing the required parameter 'tokenizedCardId' when calling postIssuerLifeCycleSimulation(Async)");
+        }
+        
+        // verify the required parameter 'postIssuerLifeCycleSimulationRequest' is set
+        if (postIssuerLifeCycleSimulationRequest == null) {
+            logger.error("Missing the required parameter 'postIssuerLifeCycleSimulationRequest' when calling postIssuerLifeCycleSimulation(Async)");
+            throw new ApiException("Missing the required parameter 'postIssuerLifeCycleSimulationRequest' when calling postIssuerLifeCycleSimulation(Async)");
+        }
+        
+        
+        okhttp3.Call call = postIssuerLifeCycleSimulationCall(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Simulate Issuer Life Cycle Management Events
+     * **Lifecycle Management Events**&lt;br&gt;Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
+     * @param profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param tokenizedCardId The Id of a tokenized card. (required)
+     * @param postIssuerLifeCycleSimulationRequest  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public void postIssuerLifeCycleSimulation(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'postIssuerLifeCycleSimulation' STARTED");
+        postIssuerLifeCycleSimulationWithHttpInfo(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest);
+
+    }
+
+    /**
+     * Simulate Issuer Life Cycle Management Events
+     * **Lifecycle Management Events**&lt;br&gt;Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
+     * @param profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param tokenizedCardId The Id of a tokenized card. (required)
+     * @param postIssuerLifeCycleSimulationRequest  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<Void> postIssuerLifeCycleSimulationWithHttpInfo(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = postIssuerLifeCycleSimulationValidateBeforeCall(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Simulate Issuer Life Cycle Management Events (asynchronously)
+     * **Lifecycle Management Events**&lt;br&gt;Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
+     * @param profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param tokenizedCardId The Id of a tokenized card. (required)
+     * @param postIssuerLifeCycleSimulationRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call postIssuerLifeCycleSimulationAsync(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest, final ApiCallback<Void> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = postIssuerLifeCycleSimulationValidateBeforeCall(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for postTokenizedCard
      * @param tokenizedcardRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
@@ -377,8 +552,9 @@ public class TokenizedCardApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenizedCardCall(TokenizedcardRequest tokenizedcardRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postTokenizedCardCall(TokenizedcardRequest tokenizedcardRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(tokenizedcardRequest, TokenizedcardRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -433,7 +609,7 @@ public class TokenizedCardApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenizedCardValidateBeforeCall(TokenizedcardRequest tokenizedcardRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postTokenizedCardValidateBeforeCall(TokenizedcardRequest tokenizedcardRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenizedcardRequest' is set
         if (tokenizedcardRequest == null) {
@@ -458,8 +634,9 @@ public class TokenizedCardApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return TokenizedcardRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public TokenizedcardRequest postTokenizedCard(TokenizedcardRequest tokenizedcardRequest, String profileId) throws ApiException {
+    public TokenizedcardRequest postTokenizedCard(TokenizedcardRequest tokenizedcardRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenizedCard' STARTED");
         ApiResponse<TokenizedcardRequest> resp = postTokenizedCardWithHttpInfo(tokenizedcardRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenizedCard' ENDED");
@@ -473,8 +650,9 @@ public class TokenizedCardApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;TokenizedcardRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<TokenizedcardRequest> postTokenizedCardWithHttpInfo(TokenizedcardRequest tokenizedcardRequest, String profileId) throws ApiException {
+    public ApiResponse<TokenizedcardRequest> postTokenizedCardWithHttpInfo(TokenizedcardRequest tokenizedcardRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenizedCardValidateBeforeCall(tokenizedcardRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<TokenizedcardRequest>(){}.getType();
@@ -489,8 +667,9 @@ public class TokenizedCardApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenizedCardAsync(TokenizedcardRequest tokenizedcardRequest, String profileId, final ApiCallback<TokenizedcardRequest> callback) throws ApiException {
+    public okhttp3.Call postTokenizedCardAsync(TokenizedcardRequest tokenizedcardRequest, String profileId, final ApiCallback<TokenizedcardRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

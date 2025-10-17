@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -73,8 +74,9 @@ public class PaymentTokensApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call retrieveOrDeletePaymentTokenCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call retrieveOrDeletePaymentTokenCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(request, Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -127,7 +129,7 @@ public class PaymentTokensApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retrieveOrDeletePaymentTokenValidateBeforeCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call retrieveOrDeletePaymentTokenValidateBeforeCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'request' is set
         if (request == null) {
@@ -151,8 +153,9 @@ public class PaymentTokensApi {
      * @param request  (required)
      * @return InlineResponse201
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse201 retrieveOrDeletePaymentToken(Request request) throws ApiException {
+    public InlineResponse201 retrieveOrDeletePaymentToken(Request request) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'retrieveOrDeletePaymentToken' STARTED");
         ApiResponse<InlineResponse201> resp = retrieveOrDeletePaymentTokenWithHttpInfo(request);
         logger.info("CALL TO METHOD 'retrieveOrDeletePaymentToken' ENDED");
@@ -165,8 +168,9 @@ public class PaymentTokensApi {
      * @param request  (required)
      * @return ApiResponse&lt;InlineResponse201&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse201> retrieveOrDeletePaymentTokenWithHttpInfo(Request request) throws ApiException {
+    public ApiResponse<InlineResponse201> retrieveOrDeletePaymentTokenWithHttpInfo(Request request) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = retrieveOrDeletePaymentTokenValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
@@ -180,8 +184,9 @@ public class PaymentTokensApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call retrieveOrDeletePaymentTokenAsync(Request request, final ApiCallback<InlineResponse201> callback) throws ApiException {
+    public okhttp3.Call retrieveOrDeletePaymentTokenAsync(Request request, final ApiCallback<InlineResponse201> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

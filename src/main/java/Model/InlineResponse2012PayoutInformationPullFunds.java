@@ -41,10 +41,10 @@ public class InlineResponse2012PayoutInformationPullFunds {
   }
 
    /**
-   * This field indicates if domestic AFTs (pull funds) are allowed. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service(PPGS). Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
+   * This field indicates if domestic AFTs (pull funds) are allowed. Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
    * @return domesticParticipant
   **/
-  @ApiModelProperty(value = "This field indicates if domestic AFTs (pull funds) are allowed. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false` ")
+  @ApiModelProperty(value = "This field indicates if domestic AFTs (pull funds) are allowed. Possible values:   - `true`   - `false` ")
   public String getDomesticParticipant() {
     return domesticParticipant;
   }
@@ -59,10 +59,10 @@ public class InlineResponse2012PayoutInformationPullFunds {
   }
 
    /**
-   * This field indicates if cross-border AFTs (pull funds) are allowed. Note: Supported only in US for cross-border transactions involving Push Payments Gateway Service(PPGS). Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
+   * This field indicates if cross-border AFTs (pull funds) are allowed. Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
    * @return crossBorderParticipant
   **/
-  @ApiModelProperty(value = "This field indicates if cross-border AFTs (pull funds) are allowed. Note: Supported only in US for cross-border transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false` ")
+  @ApiModelProperty(value = "This field indicates if cross-border AFTs (pull funds) are allowed. Possible values:   - `true`   - `false` ")
   public String getCrossBorderParticipant() {
     return crossBorderParticipant;
   }

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201Response1PaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
@@ -47,6 +48,9 @@ import java.util.List;
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("eWallet")
+  private PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet = null;
 
   @SerializedName("customer")
   private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
@@ -103,6 +107,24 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   public void setPaymentType(TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation eWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1PaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
   }
 
   public TssV2TransactionsGet200ResponsePaymentInformation customer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
@@ -358,6 +380,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     }
     TssV2TransactionsGet200ResponsePaymentInformation tssV2TransactionsGet200ResponsePaymentInformation = (TssV2TransactionsGet200ResponsePaymentInformation) o;
     return Objects.equals(this.paymentType, tssV2TransactionsGet200ResponsePaymentInformation.paymentType) &&
+        Objects.equals(this.eWallet, tssV2TransactionsGet200ResponsePaymentInformation.eWallet) &&
         Objects.equals(this.customer, tssV2TransactionsGet200ResponsePaymentInformation.customer) &&
         Objects.equals(this.card, tssV2TransactionsGet200ResponsePaymentInformation.card) &&
         Objects.equals(this.brands, tssV2TransactionsGet200ResponsePaymentInformation.brands) &&
@@ -375,7 +398,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, card, brands, features, invoice, network, issuerInformation, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress, fluidData);
+    return Objects.hash(paymentType, eWallet, customer, card, brands, features, invoice, network, issuerInformation, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress, fluidData);
   }
 
 
@@ -385,6 +408,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformation {\n");
     
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
     if (brands != null) sb.append("    brands: ").append(toIndentedString(brands)).append("\n");

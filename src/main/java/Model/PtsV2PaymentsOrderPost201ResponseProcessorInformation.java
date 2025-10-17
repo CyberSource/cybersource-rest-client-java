@@ -103,10 +103,10 @@ public class PtsV2PaymentsOrderPost201ResponseProcessorInformation {
   }
 
    /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @return responseDetails
   **/
-  @ApiModelProperty(value = "This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. ")
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
   public String getResponseDetails() {
     return responseDetails;
   }

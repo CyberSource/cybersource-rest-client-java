@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -78,8 +79,9 @@ public class BillingAgreementsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsDeRegistrationCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call billingAgreementsDeRegistrationCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -133,7 +135,7 @@ public class BillingAgreementsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call billingAgreementsDeRegistrationValidateBeforeCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call billingAgreementsDeRegistrationValidateBeforeCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'modifyBillingAgreement' is set
         if (modifyBillingAgreement == null) {
@@ -164,8 +166,9 @@ public class BillingAgreementsApi {
      * @param id ID for de-registration or cancellation of Billing Agreement (required)
      * @return PtsV2ModifyBillingAgreementPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2ModifyBillingAgreementPost201Response billingAgreementsDeRegistration(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
+    public PtsV2ModifyBillingAgreementPost201Response billingAgreementsDeRegistration(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' STARTED");
         ApiResponse<PtsV2ModifyBillingAgreementPost201Response> resp = billingAgreementsDeRegistrationWithHttpInfo(modifyBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' ENDED");
@@ -179,8 +182,9 @@ public class BillingAgreementsApi {
      * @param id ID for de-registration or cancellation of Billing Agreement (required)
      * @return ApiResponse&lt;PtsV2ModifyBillingAgreementPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2ModifyBillingAgreementPost201Response> billingAgreementsDeRegistrationWithHttpInfo(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
+    public ApiResponse<PtsV2ModifyBillingAgreementPost201Response> billingAgreementsDeRegistrationWithHttpInfo(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsDeRegistrationValidateBeforeCall(modifyBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2ModifyBillingAgreementPost201Response>(){}.getType();
@@ -195,8 +199,9 @@ public class BillingAgreementsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsDeRegistrationAsync(ModifyBillingAgreement modifyBillingAgreement, String id, final ApiCallback<PtsV2ModifyBillingAgreementPost201Response> callback) throws ApiException {
+    public okhttp3.Call billingAgreementsDeRegistrationAsync(ModifyBillingAgreement modifyBillingAgreement, String id, final ApiCallback<PtsV2ModifyBillingAgreementPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -231,8 +236,9 @@ public class BillingAgreementsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsIntimationCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call billingAgreementsIntimationCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -286,7 +292,7 @@ public class BillingAgreementsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call billingAgreementsIntimationValidateBeforeCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call billingAgreementsIntimationValidateBeforeCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'intimateBillingAgreement' is set
         if (intimateBillingAgreement == null) {
@@ -317,8 +323,9 @@ public class BillingAgreementsApi {
      * @param id ID for intimation of Billing Agreement (required)
      * @return PtsV2CreditsPost201Response1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
+    public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' STARTED");
         ApiResponse<PtsV2CreditsPost201Response1> resp = billingAgreementsIntimationWithHttpInfo(intimateBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' ENDED");
@@ -332,8 +339,9 @@ public class BillingAgreementsApi {
      * @param id ID for intimation of Billing Agreement (required)
      * @return ApiResponse&lt;PtsV2CreditsPost201Response1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2CreditsPost201Response1> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
+    public ApiResponse<PtsV2CreditsPost201Response1> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsIntimationValidateBeforeCall(intimateBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response1>(){}.getType();
@@ -348,8 +356,9 @@ public class BillingAgreementsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsIntimationAsync(IntimateBillingAgreement intimateBillingAgreement, String id, final ApiCallback<PtsV2CreditsPost201Response1> callback) throws ApiException {
+    public okhttp3.Call billingAgreementsIntimationAsync(IntimateBillingAgreement intimateBillingAgreement, String id, final ApiCallback<PtsV2CreditsPost201Response1> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -383,8 +392,9 @@ public class BillingAgreementsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsRegistrationCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call billingAgreementsRegistrationCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -437,7 +447,7 @@ public class BillingAgreementsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call billingAgreementsRegistrationValidateBeforeCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call billingAgreementsRegistrationValidateBeforeCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createBillingAgreement' is set
         if (createBillingAgreement == null) {
@@ -461,8 +471,9 @@ public class BillingAgreementsApi {
      * @param createBillingAgreement  (required)
      * @return PtsV2CreateBillingAgreementPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2CreateBillingAgreementPost201Response billingAgreementsRegistration(CreateBillingAgreement createBillingAgreement) throws ApiException {
+    public PtsV2CreateBillingAgreementPost201Response billingAgreementsRegistration(CreateBillingAgreement createBillingAgreement) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' STARTED");
         ApiResponse<PtsV2CreateBillingAgreementPost201Response> resp = billingAgreementsRegistrationWithHttpInfo(createBillingAgreement);
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' ENDED");
@@ -475,8 +486,9 @@ public class BillingAgreementsApi {
      * @param createBillingAgreement  (required)
      * @return ApiResponse&lt;PtsV2CreateBillingAgreementPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2CreateBillingAgreementPost201Response> billingAgreementsRegistrationWithHttpInfo(CreateBillingAgreement createBillingAgreement) throws ApiException {
+    public ApiResponse<PtsV2CreateBillingAgreementPost201Response> billingAgreementsRegistrationWithHttpInfo(CreateBillingAgreement createBillingAgreement) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsRegistrationValidateBeforeCall(createBillingAgreement, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateBillingAgreementPost201Response>(){}.getType();
@@ -490,8 +502,9 @@ public class BillingAgreementsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsRegistrationAsync(CreateBillingAgreement createBillingAgreement, final ApiCallback<PtsV2CreateBillingAgreementPost201Response> callback) throws ApiException {
+    public okhttp3.Call billingAgreementsRegistrationAsync(CreateBillingAgreement createBillingAgreement, final ApiCallback<PtsV2CreateBillingAgreementPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

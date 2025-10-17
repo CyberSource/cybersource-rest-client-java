@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -30,12 +31,12 @@ import java.io.InputStream;
 
 import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
-import Model.InlineResponse2007;
+import Model.InlineResponse2008;
 import Model.InlineResponse206;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
-import Model.InlineResponse4043;
+import Model.InlineResponse4044;
 import Model.InlineResponse5003;
 
 import java.lang.reflect.Type;
@@ -78,8 +79,9 @@ public class DeviceDeAssociationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteTerminalAssociationCall(DeAssociationRequestBody deAssociationRequestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteTerminalAssociationCall(DeAssociationRequestBody deAssociationRequestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deAssociationRequestBody, DeAssociationRequestBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -132,7 +134,7 @@ public class DeviceDeAssociationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTerminalAssociationValidateBeforeCall(DeAssociationRequestBody deAssociationRequestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteTerminalAssociationValidateBeforeCall(DeAssociationRequestBody deAssociationRequestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'deAssociationRequestBody' is set
         if (deAssociationRequestBody == null) {
@@ -155,8 +157,9 @@ public class DeviceDeAssociationApi {
      * The current association of the device will be removed and will be assigned back to parent in the hierarchy based on internal logic
      * @param deAssociationRequestBody de association of the deviceId in the request body. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void deleteTerminalAssociation(DeAssociationRequestBody deAssociationRequestBody) throws ApiException {
+    public void deleteTerminalAssociation(DeAssociationRequestBody deAssociationRequestBody) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteTerminalAssociation' STARTED");
         deleteTerminalAssociationWithHttpInfo(deAssociationRequestBody);
 
@@ -168,8 +171,9 @@ public class DeviceDeAssociationApi {
      * @param deAssociationRequestBody de association of the deviceId in the request body. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> deleteTerminalAssociationWithHttpInfo(DeAssociationRequestBody deAssociationRequestBody) throws ApiException {
+    public ApiResponse<Void> deleteTerminalAssociationWithHttpInfo(DeAssociationRequestBody deAssociationRequestBody) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteTerminalAssociationValidateBeforeCall(deAssociationRequestBody, null, null);
         return apiClient.execute(call);
@@ -182,8 +186,9 @@ public class DeviceDeAssociationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteTerminalAssociationAsync(DeAssociationRequestBody deAssociationRequestBody, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteTerminalAssociationAsync(DeAssociationRequestBody deAssociationRequestBody, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -216,8 +221,9 @@ public class DeviceDeAssociationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postDeAssociateV3TerminalCall(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postDeAssociateV3TerminalCall(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deviceDeAssociateV3Request, DeviceDeAssociateV3Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -270,7 +276,7 @@ public class DeviceDeAssociationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postDeAssociateV3TerminalValidateBeforeCall(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postDeAssociateV3TerminalValidateBeforeCall(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'deviceDeAssociateV3Request' is set
         if (deviceDeAssociateV3Request == null) {
@@ -292,12 +298,13 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return List&lt;InlineResponse2007&gt;
+     * @return List&lt;InlineResponse2008&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2007> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
+    public List<InlineResponse2008> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' STARTED");
-        ApiResponse<List<InlineResponse2007>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
+        ApiResponse<List<InlineResponse2008>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' ENDED");
         return resp.getData();
     }
@@ -306,13 +313,14 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2007&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2008&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2007>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException {
+    public ApiResponse<List<InlineResponse2008>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2007>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2008>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -323,8 +331,9 @@ public class DeviceDeAssociationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<InlineResponse2007>> callback) throws ApiException {
+    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<InlineResponse2008>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -347,7 +356,7 @@ public class DeviceDeAssociationApi {
         }
 
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2007>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2008>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

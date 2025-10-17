@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -75,8 +76,9 @@ public class ReportDefinitionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -139,7 +141,7 @@ public class ReportDefinitionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getResourceInfoByReportDefinitionValidateBeforeCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getResourceInfoByReportDefinitionValidateBeforeCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'reportDefinitionName' is set
         if (reportDefinitionName == null) {
@@ -166,8 +168,9 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsNameGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+    public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' ENDED");
@@ -183,8 +186,9 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsNameGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+    public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, subscriptionType, reportMimeType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
@@ -201,8 +205,9 @@ public class ReportDefinitionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException {
+    public okhttp3.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -237,8 +242,9 @@ public class ReportDefinitionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getResourceV2InfoCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getResourceV2InfoCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -298,7 +304,7 @@ public class ReportDefinitionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getResourceV2InfoValidateBeforeCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getResourceV2InfoValidateBeforeCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getResourceV2InfoCall(subscriptionType, organizationId, progressListener, progressRequestListener);
@@ -317,8 +323,9 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
+    public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         logger.info("CALL TO METHOD 'getResourceV2Info' ENDED");
@@ -332,8 +339,9 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String subscriptionType, String organizationId) throws ApiException {
+    public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String subscriptionType, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getResourceV2InfoValidateBeforeCall(subscriptionType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
@@ -348,8 +356,9 @@ public class ReportDefinitionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getResourceV2InfoAsync(String subscriptionType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getResourceV2InfoAsync(String subscriptionType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

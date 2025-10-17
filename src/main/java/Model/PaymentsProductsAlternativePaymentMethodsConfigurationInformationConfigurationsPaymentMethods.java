@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations;
+import Model.UnderwritingConfiguration;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,9 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
 
   @SerializedName("redirectFailureUrl")
   private String redirectFailureUrl = null;
+
+  @SerializedName("underwriting")
+  private UnderwritingConfiguration underwriting = null;
 
   @SerializedName("additionalConfigurations")
   private List<PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations> additionalConfigurations = null;
@@ -141,6 +145,24 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
     this.redirectFailureUrl = redirectFailureUrl;
   }
 
+  public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods underwriting(UnderwritingConfiguration underwriting) {
+    this.underwriting = underwriting;
+    return this;
+  }
+
+   /**
+   * Get underwriting
+   * @return underwriting
+  **/
+  @ApiModelProperty(value = "")
+  public UnderwritingConfiguration getUnderwriting() {
+    return underwriting;
+  }
+
+  public void setUnderwriting(UnderwritingConfiguration underwriting) {
+    this.underwriting = underwriting;
+  }
+
   public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods additionalConfigurations(List<PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations> additionalConfigurations) {
     this.additionalConfigurations = additionalConfigurations;
     return this;
@@ -182,12 +204,13 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
         Objects.equals(this.redirectSuccessUrl, paymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods.redirectSuccessUrl) &&
         Objects.equals(this.redirectCancelUrl, paymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods.redirectCancelUrl) &&
         Objects.equals(this.redirectFailureUrl, paymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods.redirectFailureUrl) &&
+        Objects.equals(this.underwriting, paymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods.underwriting) &&
         Objects.equals(this.additionalConfigurations, paymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods.additionalConfigurations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, logoUrl, redirectSuccessUrl, redirectCancelUrl, redirectFailureUrl, additionalConfigurations);
+    return Objects.hash(merchantId, logoUrl, redirectSuccessUrl, redirectCancelUrl, redirectFailureUrl, underwriting, additionalConfigurations);
   }
 
 
@@ -201,6 +224,7 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
     if (redirectSuccessUrl != null) sb.append("    redirectSuccessUrl: ").append(toIndentedString(redirectSuccessUrl)).append("\n");
     if (redirectCancelUrl != null) sb.append("    redirectCancelUrl: ").append(toIndentedString(redirectCancelUrl)).append("\n");
     if (redirectFailureUrl != null) sb.append("    redirectFailureUrl: ").append(toIndentedString(redirectFailureUrl)).append("\n");
+    if (underwriting != null) sb.append("    underwriting: ").append(toIndentedString(underwriting)).append("\n");
     if (additionalConfigurations != null) sb.append("    additionalConfigurations: ").append(toIndentedString(additionalConfigurations)).append("\n");
     sb.append("}");
     return sb.toString();

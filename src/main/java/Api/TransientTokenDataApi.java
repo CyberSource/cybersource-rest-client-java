@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -69,8 +70,9 @@ public class TransientTokenDataApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPaymentCredentialsForTransientTokenCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentCredentialsForTransientTokenCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -127,7 +129,7 @@ public class TransientTokenDataApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentCredentialsForTransientTokenValidateBeforeCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentCredentialsForTransientTokenValidateBeforeCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'paymentCredentialsReference' is set
         if (paymentCredentialsReference == null) {
@@ -151,8 +153,9 @@ public class TransientTokenDataApi {
      * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public String getPaymentCredentialsForTransientToken(String paymentCredentialsReference) throws ApiException {
+    public String getPaymentCredentialsForTransientToken(String paymentCredentialsReference) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' STARTED");
         ApiResponse<String> resp = getPaymentCredentialsForTransientTokenWithHttpInfo(paymentCredentialsReference);
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' ENDED");
@@ -165,8 +168,9 @@ public class TransientTokenDataApi {
      * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<String> getPaymentCredentialsForTransientTokenWithHttpInfo(String paymentCredentialsReference) throws ApiException {
+    public ApiResponse<String> getPaymentCredentialsForTransientTokenWithHttpInfo(String paymentCredentialsReference) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(paymentCredentialsReference, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -180,8 +184,9 @@ public class TransientTokenDataApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPaymentCredentialsForTransientTokenAsync(String paymentCredentialsReference, final ApiCallback<String> callback) throws ApiException {
+    public okhttp3.Call getPaymentCredentialsForTransientTokenAsync(String paymentCredentialsReference, final ApiCallback<String> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -215,8 +220,9 @@ public class TransientTokenDataApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionForTransientTokenCall(String transientToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTransactionForTransientTokenCall(String transientToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -273,7 +279,7 @@ public class TransientTokenDataApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransactionForTransientTokenValidateBeforeCall(String transientToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTransactionForTransientTokenValidateBeforeCall(String transientToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'transientToken' is set
         if (transientToken == null) {
@@ -296,8 +302,9 @@ public class TransientTokenDataApi {
      * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void getTransactionForTransientToken(String transientToken) throws ApiException {
+    public void getTransactionForTransientToken(String transientToken) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTransactionForTransientToken' STARTED");
         getTransactionForTransientTokenWithHttpInfo(transientToken);
 
@@ -309,8 +316,9 @@ public class TransientTokenDataApi {
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> getTransactionForTransientTokenWithHttpInfo(String transientToken) throws ApiException {
+    public ApiResponse<Void> getTransactionForTransientTokenWithHttpInfo(String transientToken) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionForTransientTokenValidateBeforeCall(transientToken, null, null);
         return apiClient.execute(call);
@@ -323,8 +331,9 @@ public class TransientTokenDataApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionForTransientTokenAsync(String transientToken, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getTransactionForTransientTokenAsync(String transientToken, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

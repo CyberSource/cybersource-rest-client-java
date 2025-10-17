@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getRegistration"></a>
 # **getRegistration**
-> InlineResponse2002 getRegistration(registrationId)
+> InlineResponse2003 getRegistration(registrationId)
 
 Gets all the information on a boarding registration
 
@@ -26,7 +26,7 @@ This end point will get all information of a boarding registration
 MerchantBoardingApi apiInstance = new MerchantBoardingApi();
 String registrationId = "registrationId_example"; // String | Identifies the boarding registration to be updated
 try {
-    InlineResponse2002 result = apiInstance.getRegistration(registrationId);
+    InlineResponse2003 result = apiInstance.getRegistration(registrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantBoardingApi#getRegistration");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

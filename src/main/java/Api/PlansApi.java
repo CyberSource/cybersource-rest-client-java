@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -81,8 +82,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call activatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -139,7 +141,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call activatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -163,8 +165,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateDeactivatePlanResponse activatePlan(String id) throws ApiException {
+    public ActivateDeactivatePlanResponse activatePlan(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'activatePlan' STARTED");
         ApiResponse<ActivateDeactivatePlanResponse> resp = activatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activatePlan' ENDED");
@@ -177,8 +180,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ApiResponse&lt;ActivateDeactivatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateDeactivatePlanResponse> activatePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateDeactivatePlanResponse> activatePlanWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
@@ -192,8 +196,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException {
+    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -227,8 +232,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createPlanCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createPlanCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPlanRequest, CreatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -281,7 +287,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPlanValidateBeforeCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createPlanValidateBeforeCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createPlanRequest' is set
         if (createPlanRequest == null) {
@@ -305,8 +311,9 @@ public class PlansApi {
      * @param createPlanRequest  (required)
      * @return CreatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public CreatePlanResponse createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
+    public CreatePlanResponse createPlan(CreatePlanRequest createPlanRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createPlan' STARTED");
         ApiResponse<CreatePlanResponse> resp = createPlanWithHttpInfo(createPlanRequest);
         logger.info("CALL TO METHOD 'createPlan' ENDED");
@@ -319,8 +326,9 @@ public class PlansApi {
      * @param createPlanRequest  (required)
      * @return ApiResponse&lt;CreatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<CreatePlanResponse> createPlanWithHttpInfo(CreatePlanRequest createPlanRequest) throws ApiException {
+    public ApiResponse<CreatePlanResponse> createPlanWithHttpInfo(CreatePlanRequest createPlanRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPlanValidateBeforeCall(createPlanRequest, null, null);
         Type localVarReturnType = new TypeToken<CreatePlanResponse>(){}.getType();
@@ -334,8 +342,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createPlanAsync(CreatePlanRequest createPlanRequest, final ApiCallback<CreatePlanResponse> callback) throws ApiException {
+    public okhttp3.Call createPlanAsync(CreatePlanRequest createPlanRequest, final ApiCallback<CreatePlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -369,8 +378,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deactivatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deactivatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -427,7 +437,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -451,8 +461,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateDeactivatePlanResponse deactivatePlan(String id) throws ApiException {
+    public ActivateDeactivatePlanResponse deactivatePlan(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
         ApiResponse<ActivateDeactivatePlanResponse> resp = deactivatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deactivatePlan' ENDED");
@@ -465,8 +476,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ApiResponse&lt;ActivateDeactivatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateDeactivatePlanResponse> deactivatePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateDeactivatePlanResponse> deactivatePlanWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deactivatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
@@ -480,8 +492,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException {
+    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -515,8 +528,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deletePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deletePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -573,7 +587,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deletePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -597,8 +611,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return DeletePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public DeletePlanResponse deletePlan(String id) throws ApiException {
+    public DeletePlanResponse deletePlan(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deletePlan' STARTED");
         ApiResponse<DeletePlanResponse> resp = deletePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deletePlan' ENDED");
@@ -611,8 +626,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ApiResponse&lt;DeletePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<DeletePlanResponse> deletePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<DeletePlanResponse> deletePlanWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<DeletePlanResponse>(){}.getType();
@@ -626,8 +642,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deletePlanAsync(String id, final ApiCallback<DeletePlanResponse> callback) throws ApiException {
+    public okhttp3.Call deletePlanAsync(String id, final ApiCallback<DeletePlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -661,8 +678,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -719,7 +737,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -743,8 +761,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return GetPlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetPlanResponse getPlan(String id) throws ApiException {
+    public GetPlanResponse getPlan(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPlan' STARTED");
         ApiResponse<GetPlanResponse> resp = getPlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getPlan' ENDED");
@@ -757,8 +776,9 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ApiResponse&lt;GetPlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetPlanResponse> getPlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<GetPlanResponse> getPlanWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<GetPlanResponse>(){}.getType();
@@ -772,8 +792,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlanAsync(String id, final ApiCallback<GetPlanResponse> callback) throws ApiException {
+    public okhttp3.Call getPlanAsync(String id, final ApiCallback<GetPlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -806,8 +827,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlanCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPlanCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -863,7 +885,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPlanCodeValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPlanCodeValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getPlanCodeCall(progressListener, progressRequestListener);
@@ -880,8 +902,9 @@ public class PlansApi {
      * Get a Unique Plan Code
      * @return GetPlanCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetPlanCodeResponse getPlanCode() throws ApiException {
+    public GetPlanCodeResponse getPlanCode() throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPlanCode' STARTED");
         ApiResponse<GetPlanCodeResponse> resp = getPlanCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getPlanCode' ENDED");
@@ -893,8 +916,9 @@ public class PlansApi {
      * Get a Unique Plan Code
      * @return ApiResponse&lt;GetPlanCodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetPlanCodeResponse> getPlanCodeWithHttpInfo() throws ApiException {
+    public ApiResponse<GetPlanCodeResponse> getPlanCodeWithHttpInfo() throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlanCodeValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetPlanCodeResponse>(){}.getType();
@@ -907,8 +931,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlanCodeAsync(final ApiCallback<GetPlanCodeResponse> callback) throws ApiException {
+    public okhttp3.Call getPlanCodeAsync(final ApiCallback<GetPlanCodeResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -946,8 +971,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlansCall(Integer offset, Integer limit, String code, String status, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPlansCall(Integer offset, Integer limit, String code, String status, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -1013,7 +1039,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPlansValidateBeforeCall(Integer offset, Integer limit, String code, String status, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPlansValidateBeforeCall(Integer offset, Integer limit, String code, String status, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getPlansCall(offset, limit, code, status, name, progressListener, progressRequestListener);
@@ -1035,8 +1061,9 @@ public class PlansApi {
      * @param name Filter by Plan Name. (First sub string or full string) **[Not Recommended]**  (optional)
      * @return GetAllPlansResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetAllPlansResponse getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
+    public GetAllPlansResponse getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPlans' STARTED");
         ApiResponse<GetAllPlansResponse> resp = getPlansWithHttpInfo(offset, limit, code, status, name);
         logger.info("CALL TO METHOD 'getPlans' ENDED");
@@ -1053,8 +1080,9 @@ public class PlansApi {
      * @param name Filter by Plan Name. (First sub string or full string) **[Not Recommended]**  (optional)
      * @return ApiResponse&lt;GetAllPlansResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetAllPlansResponse> getPlansWithHttpInfo(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
+    public ApiResponse<GetAllPlansResponse> getPlansWithHttpInfo(Integer offset, Integer limit, String code, String status, String name) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPlansValidateBeforeCall(offset, limit, code, status, name, null, null);
         Type localVarReturnType = new TypeToken<GetAllPlansResponse>(){}.getType();
@@ -1072,8 +1100,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPlansAsync(Integer offset, Integer limit, String code, String status, String name, final ApiCallback<GetAllPlansResponse> callback) throws ApiException {
+    public okhttp3.Call getPlansAsync(Integer offset, Integer limit, String code, String status, String name, final ApiCallback<GetAllPlansResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1108,8 +1137,9 @@ public class PlansApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updatePlanCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updatePlanCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePlanRequest, UpdatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -1163,7 +1193,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePlanValidateBeforeCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updatePlanValidateBeforeCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1194,8 +1224,9 @@ public class PlansApi {
      * @param updatePlanRequest  (required)
      * @return UpdatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public UpdatePlanResponse updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
+    public UpdatePlanResponse updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updatePlan' STARTED");
         ApiResponse<UpdatePlanResponse> resp = updatePlanWithHttpInfo(id, updatePlanRequest);
         logger.info("CALL TO METHOD 'updatePlan' ENDED");
@@ -1209,8 +1240,9 @@ public class PlansApi {
      * @param updatePlanRequest  (required)
      * @return ApiResponse&lt;UpdatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<UpdatePlanResponse> updatePlanWithHttpInfo(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
+    public ApiResponse<UpdatePlanResponse> updatePlanWithHttpInfo(String id, UpdatePlanRequest updatePlanRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updatePlanValidateBeforeCall(id, updatePlanRequest, null, null);
         Type localVarReturnType = new TypeToken<UpdatePlanResponse>(){}.getType();
@@ -1225,8 +1257,9 @@ public class PlansApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updatePlanAsync(String id, UpdatePlanRequest updatePlanRequest, final ApiCallback<UpdatePlanResponse> callback) throws ApiException {
+    public okhttp3.Call updatePlanAsync(String id, UpdatePlanRequest updatePlanRequest, final ApiCallback<UpdatePlanResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

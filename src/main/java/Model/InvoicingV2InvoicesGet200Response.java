@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import Model.InvoicingV2InvoicesGet200ResponseInvoiceHistory;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
+import Model.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesProcessingInformation;
@@ -60,6 +61,9 @@ public class InvoicingV2InvoicesGet200Response {
 
   @SerializedName("orderInformation")
   private InvoicingV2InvoicesPost201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValuesWithDefinition")
+  private List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition = null;
 
   @SerializedName("invoiceHistory")
   private List<InvoicingV2InvoicesGet200ResponseInvoiceHistory> invoiceHistory = null;
@@ -208,6 +212,32 @@ public class InvoicingV2InvoicesGet200Response {
     this.orderInformation = orderInformation;
   }
 
+  public InvoicingV2InvoicesGet200Response merchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+    return this;
+  }
+
+  public InvoicingV2InvoicesGet200Response addMerchantDefinedFieldValuesWithDefinitionItem(InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition merchantDefinedFieldValuesWithDefinitionItem) {
+    if (this.merchantDefinedFieldValuesWithDefinition == null) {
+      this.merchantDefinedFieldValuesWithDefinition = new ArrayList<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition>();
+    }
+    this.merchantDefinedFieldValuesWithDefinition.add(merchantDefinedFieldValuesWithDefinitionItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValuesWithDefinition
+   * @return merchantDefinedFieldValuesWithDefinition
+  **/
+  @ApiModelProperty(value = "")
+  public List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> getMerchantDefinedFieldValuesWithDefinition() {
+    return merchantDefinedFieldValuesWithDefinition;
+  }
+
+  public void setMerchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+  }
+
   public InvoicingV2InvoicesGet200Response invoiceHistory(List<InvoicingV2InvoicesGet200ResponseInvoiceHistory> invoiceHistory) {
     this.invoiceHistory = invoiceHistory;
     return this;
@@ -252,12 +282,13 @@ public class InvoicingV2InvoicesGet200Response {
         Objects.equals(this.processingInformation, invoicingV2InvoicesGet200Response.processingInformation) &&
         Objects.equals(this.invoiceInformation, invoicingV2InvoicesGet200Response.invoiceInformation) &&
         Objects.equals(this.orderInformation, invoicingV2InvoicesGet200Response.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValuesWithDefinition, invoicingV2InvoicesGet200Response.merchantDefinedFieldValuesWithDefinition) &&
         Objects.equals(this.invoiceHistory, invoicingV2InvoicesGet200Response.invoiceHistory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation, invoiceHistory);
+    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation, merchantDefinedFieldValuesWithDefinition, invoiceHistory);
   }
 
 
@@ -274,6 +305,7 @@ public class InvoicingV2InvoicesGet200Response {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValuesWithDefinition != null) sb.append("    merchantDefinedFieldValuesWithDefinition: ").append(toIndentedString(merchantDefinedFieldValuesWithDefinition)).append("\n");
     if (invoiceHistory != null) sb.append("    invoiceHistory: ").append(toIndentedString(invoiceHistory)).append("\n");
     sb.append("}");
     return sb.toString();
