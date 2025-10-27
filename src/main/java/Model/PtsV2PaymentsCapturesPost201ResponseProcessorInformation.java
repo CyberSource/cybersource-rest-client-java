@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,6 +47,9 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
 
   @SerializedName("updateTimeUtc")
   private String updateTimeUtc = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public PtsV2PaymentsCapturesPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -155,6 +159,24 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
     this.updateTimeUtc = updateTimeUtc;
   }
 
+  public PtsV2PaymentsCapturesPost201ResponseProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,12 +192,13 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
         Objects.equals(this.responseDetails, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.responseDetails) &&
         Objects.equals(this.responseCode, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.providerResponse, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.providerResponse) &&
-        Objects.equals(this.updateTimeUtc, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.updateTimeUtc);
+        Objects.equals(this.updateTimeUtc, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.updateTimeUtc) &&
+        Objects.equals(this.network, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, networkTransactionId, responseDetails, responseCode, providerResponse, updateTimeUtc);
+    return Objects.hash(transactionId, networkTransactionId, responseDetails, responseCode, providerResponse, updateTimeUtc, network);
   }
 
 
@@ -190,6 +213,7 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
     if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     if (providerResponse != null) sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
     if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,6 +27,7 @@ import Model.Ptsv2paymentsidrefundsOrderInformation;
 import Model.Ptsv2paymentsidrefundsPaymentInformation;
 import Model.Ptsv2paymentsidrefundsPointOfSaleInformation;
 import Model.Ptsv2paymentsidrefundsProcessingInformation;
+import Model.Ptsv2reversalsProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -78,6 +79,9 @@ public class RefundCaptureRequest {
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
+
+  @SerializedName("processorInformation")
+  private Ptsv2reversalsProcessorInformation processorInformation = null;
 
   public RefundCaptureRequest clientReferenceInformation(Ptsv2paymentsidrefundsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -303,6 +307,24 @@ public class RefundCaptureRequest {
     this.promotionInformation = promotionInformation;
   }
 
+  public RefundCaptureRequest processorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+    return this;
+  }
+
+   /**
+   * Get processorInformation
+   * @return processorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2reversalsProcessorInformation getProcessorInformation() {
+    return processorInformation;
+  }
+
+  public void setProcessorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -324,12 +346,13 @@ public class RefundCaptureRequest {
         Objects.equals(this.pointOfSaleInformation, refundCaptureRequest.pointOfSaleInformation) &&
         Objects.equals(this.merchantDefinedInformation, refundCaptureRequest.merchantDefinedInformation) &&
         Objects.equals(this.travelInformation, refundCaptureRequest.travelInformation) &&
-        Objects.equals(this.promotionInformation, refundCaptureRequest.promotionInformation);
+        Objects.equals(this.promotionInformation, refundCaptureRequest.promotionInformation) &&
+        Objects.equals(this.processorInformation, refundCaptureRequest.processorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, travelInformation, promotionInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, travelInformation, promotionInformation, processorInformation);
   }
 
 
@@ -350,6 +373,7 @@ public class RefundCaptureRequest {
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
     if (promotionInformation != null) sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

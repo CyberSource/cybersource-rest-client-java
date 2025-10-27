@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import Model.Ptsv2paymentsidProcessingInformationAuthorizationOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,6 +33,9 @@ import java.io.IOException;
 public class Ptsv2paymentsidProcessingInformation {
   @SerializedName("authorizationOptions")
   private Ptsv2paymentsidProcessingInformationAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public Ptsv2paymentsidProcessingInformation authorizationOptions(Ptsv2paymentsidProcessingInformationAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
@@ -51,6 +55,24 @@ public class Ptsv2paymentsidProcessingInformation {
     this.authorizationOptions = authorizationOptions;
   }
 
+  public Ptsv2paymentsidProcessingInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +83,13 @@ public class Ptsv2paymentsidProcessingInformation {
       return false;
     }
     Ptsv2paymentsidProcessingInformation ptsv2paymentsidProcessingInformation = (Ptsv2paymentsidProcessingInformation) o;
-    return Objects.equals(this.authorizationOptions, ptsv2paymentsidProcessingInformation.authorizationOptions);
+    return Objects.equals(this.authorizationOptions, ptsv2paymentsidProcessingInformation.authorizationOptions) &&
+        Objects.equals(this.network, ptsv2paymentsidProcessingInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorizationOptions);
+    return Objects.hash(authorizationOptions, network);
   }
 
 
@@ -76,6 +99,7 @@ public class Ptsv2paymentsidProcessingInformation {
     sb.append("class Ptsv2paymentsidProcessingInformation {\n");
     
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,6 +32,9 @@ import java.io.IOException;
 public class Ptsv2paymentsProcessorInformationReversal {
   @SerializedName("preApprovalToken")
   private String preApprovalToken = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public Ptsv2paymentsProcessorInformationReversal preApprovalToken(String preApprovalToken) {
     this.preApprovalToken = preApprovalToken;
@@ -50,6 +54,24 @@ public class Ptsv2paymentsProcessorInformationReversal {
     this.preApprovalToken = preApprovalToken;
   }
 
+  public Ptsv2paymentsProcessorInformationReversal network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class Ptsv2paymentsProcessorInformationReversal {
       return false;
     }
     Ptsv2paymentsProcessorInformationReversal ptsv2paymentsProcessorInformationReversal = (Ptsv2paymentsProcessorInformationReversal) o;
-    return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformationReversal.preApprovalToken);
+    return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformationReversal.preApprovalToken) &&
+        Objects.equals(this.network, ptsv2paymentsProcessorInformationReversal.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(preApprovalToken);
+    return Objects.hash(preApprovalToken, network);
   }
 
 
@@ -75,6 +98,7 @@ public class Ptsv2paymentsProcessorInformationReversal {
     sb.append("class Ptsv2paymentsProcessorInformationReversal {\n");
     
     if (preApprovalToken != null) sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

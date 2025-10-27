@@ -104,7 +104,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> List&lt;InlineResponse2004&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
+> List&lt;InlineResponse2005&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -122,7 +122,7 @@ String organizationId = "organizationId_example"; // String | The Organization I
 String productId = "productId_example"; // String | The Product Identifier.
 String eventType = "eventType_example"; // String | The Event Type.
 try {
-    List<InlineResponse2004> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+    List<InlineResponse2005> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionsByOrg");
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;InlineResponse2005&gt;**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
+> InlineResponse2006 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
 
 Update a Webhook Subscription
 
@@ -215,7 +215,7 @@ ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The Webhook Identifier.
 UpdateWebhook updateWebhook = new UpdateWebhook(); // UpdateWebhook | The webhook payload or changes to apply.
 try {
-    InlineResponse2005 result = apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+    InlineResponse2006 result = apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV2WebhooksWebhookIdPatch");
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

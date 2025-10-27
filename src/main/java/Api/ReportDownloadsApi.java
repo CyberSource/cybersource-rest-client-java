@@ -74,6 +74,7 @@ public class ReportDownloadsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call downloadReportCall(LocalDate reportDate, String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -168,6 +169,7 @@ public class ReportDownloadsApi {
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'downloadReport' STARTED");
@@ -183,6 +185,7 @@ public class ReportDownloadsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -199,6 +202,7 @@ public class ReportDownloadsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call downloadReportAsync(LocalDate reportDate, String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 

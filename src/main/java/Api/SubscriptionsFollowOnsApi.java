@@ -77,6 +77,7 @@ public class SubscriptionsFollowOnsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createFollowOnSubscriptionCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -163,6 +164,7 @@ public class SubscriptionsFollowOnsApi {
      * @param createSubscriptionRequest  (required)
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public CreateSubscriptionResponse createFollowOnSubscription(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createFollowOnSubscription' STARTED");
@@ -178,6 +180,7 @@ public class SubscriptionsFollowOnsApi {
      * @param createSubscriptionRequest  (required)
      * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<CreateSubscriptionResponse> createFollowOnSubscriptionWithHttpInfo(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -194,6 +197,7 @@ public class SubscriptionsFollowOnsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createFollowOnSubscriptionAsync(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
@@ -229,6 +233,7 @@ public class SubscriptionsFollowOnsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getFollowOnSubscriptionCall(String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -311,6 +316,7 @@ public class SubscriptionsFollowOnsApi {
      * @param requestId Request Id of an existing successful Transaction (required)
      * @return GetSubscriptionResponse1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public GetSubscriptionResponse1 getFollowOnSubscription(String requestId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getFollowOnSubscription' STARTED");
@@ -325,6 +331,7 @@ public class SubscriptionsFollowOnsApi {
      * @param requestId Request Id of an existing successful Transaction (required)
      * @return ApiResponse&lt;GetSubscriptionResponse1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<GetSubscriptionResponse1> getFollowOnSubscriptionWithHttpInfo(String requestId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -340,6 +347,7 @@ public class SubscriptionsFollowOnsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getFollowOnSubscriptionAsync(String requestId, final ApiCallback<GetSubscriptionResponse1> callback) throws ApiException, ConfigException {
 

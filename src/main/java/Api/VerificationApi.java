@@ -76,6 +76,7 @@ public class VerificationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call validateExportComplianceCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -154,6 +155,7 @@ public class VerificationApi {
      * @param validateExportComplianceRequest  (required)
      * @return RiskV1ExportComplianceInquiriesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'validateExportCompliance' STARTED");
@@ -168,6 +170,7 @@ public class VerificationApi {
      * @param validateExportComplianceRequest  (required)
      * @return ApiResponse&lt;RiskV1ExportComplianceInquiriesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> validateExportComplianceWithHttpInfo(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -183,6 +186,7 @@ public class VerificationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call validateExportComplianceAsync(ValidateExportComplianceRequest validateExportComplianceRequest, final ApiCallback<RiskV1ExportComplianceInquiriesPost201Response> callback) throws ApiException, ConfigException {
 
@@ -218,6 +222,7 @@ public class VerificationApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call verifyCustomerAddressCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -296,6 +301,7 @@ public class VerificationApi {
      * @param verifyCustomerAddressRequest  (required)
      * @return RiskV1AddressVerificationsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'verifyCustomerAddress' STARTED");
@@ -310,6 +316,7 @@ public class VerificationApi {
      * @param verifyCustomerAddressRequest  (required)
      * @return ApiResponse&lt;RiskV1AddressVerificationsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<RiskV1AddressVerificationsPost201Response> verifyCustomerAddressWithHttpInfo(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -325,6 +332,7 @@ public class VerificationApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call verifyCustomerAddressAsync(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ApiCallback<RiskV1AddressVerificationsPost201Response> callback) throws ApiException, ConfigException {
 

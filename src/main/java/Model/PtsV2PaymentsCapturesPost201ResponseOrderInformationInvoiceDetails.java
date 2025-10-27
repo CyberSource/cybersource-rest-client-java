@@ -30,23 +30,23 @@ import java.io.IOException;
 
 public class PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails {
   @SerializedName("level3TransmissionStatus")
-  private Boolean level3TransmissionStatus = null;
+  private String level3TransmissionStatus = null;
 
-  public PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails level3TransmissionStatus(Boolean level3TransmissionStatus) {
+  public PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails level3TransmissionStatus(String level3TransmissionStatus) {
     this.level3TransmissionStatus = level3TransmissionStatus;
     return this;
   }
 
    /**
-   * Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **true** - **false** 
+   * Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **Y** for true - **N** for false 
    * @return level3TransmissionStatus
   **/
-  @ApiModelProperty(value = "Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **true** - **false** ")
-  public Boolean Level3TransmissionStatus() {
+  @ApiModelProperty(value = "Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **Y** for true - **N** for false ")
+  public String getLevel3TransmissionStatus() {
     return level3TransmissionStatus;
   }
 
-  public void setLevel3TransmissionStatus(Boolean level3TransmissionStatus) {
+  public void setLevel3TransmissionStatus(String level3TransmissionStatus) {
     this.level3TransmissionStatus = level3TransmissionStatus;
   }
 

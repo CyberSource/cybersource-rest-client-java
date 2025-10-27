@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsProcessorInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessorInformationReversal;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +41,9 @@ public class Ptsv2paymentsProcessorInformation {
 
   @SerializedName("reversal")
   private Ptsv2paymentsProcessorInformationReversal reversal = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public Ptsv2paymentsProcessorInformation preApprovalToken(String preApprovalToken) {
     this.preApprovalToken = preApprovalToken;
@@ -95,6 +99,24 @@ public class Ptsv2paymentsProcessorInformation {
     this.reversal = reversal;
   }
 
+  public Ptsv2paymentsProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +129,13 @@ public class Ptsv2paymentsProcessorInformation {
     Ptsv2paymentsProcessorInformation ptsv2paymentsProcessorInformation = (Ptsv2paymentsProcessorInformation) o;
     return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformation.preApprovalToken) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsProcessorInformation.authorizationOptions) &&
-        Objects.equals(this.reversal, ptsv2paymentsProcessorInformation.reversal);
+        Objects.equals(this.reversal, ptsv2paymentsProcessorInformation.reversal) &&
+        Objects.equals(this.network, ptsv2paymentsProcessorInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(preApprovalToken, authorizationOptions, reversal);
+    return Objects.hash(preApprovalToken, authorizationOptions, reversal, network);
   }
 
 
@@ -124,6 +147,7 @@ public class Ptsv2paymentsProcessorInformation {
     if (preApprovalToken != null) sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     if (reversal != null) sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

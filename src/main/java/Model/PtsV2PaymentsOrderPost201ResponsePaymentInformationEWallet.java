@@ -101,10 +101,10 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
   }
 
    /**
-   * The Venmo user name chosen by the user, also know as a Venmo handle. 
+   * The Venmo user name chosen by the user, also known as a Venmo handle. 
    * @return userName
   **/
-  @ApiModelProperty(value = "The Venmo user name chosen by the user, also know as a Venmo handle. ")
+  @ApiModelProperty(value = "The Venmo user name chosen by the user, also known as a Venmo handle. ")
   public String getUserName() {
     return userName;
   }

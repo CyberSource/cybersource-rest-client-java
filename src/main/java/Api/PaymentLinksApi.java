@@ -78,6 +78,7 @@ public class PaymentLinksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createPaymentLinkCall(CreatePaymentLinkRequest createPaymentLinkRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -156,6 +157,7 @@ public class PaymentLinksApi {
      * @param createPaymentLinkRequest  (required)
      * @return PblPaymentLinksPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PblPaymentLinksPost201Response createPaymentLink(CreatePaymentLinkRequest createPaymentLinkRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createPaymentLink' STARTED");
@@ -170,6 +172,7 @@ public class PaymentLinksApi {
      * @param createPaymentLinkRequest  (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PblPaymentLinksPost201Response> createPaymentLinkWithHttpInfo(CreatePaymentLinkRequest createPaymentLinkRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -185,6 +188,7 @@ public class PaymentLinksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createPaymentLinkAsync(CreatePaymentLinkRequest createPaymentLinkRequest, final ApiCallback<PblPaymentLinksPost201Response> callback) throws ApiException, ConfigException {
 
@@ -222,6 +226,7 @@ public class PaymentLinksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAllPaymentLinksCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -317,6 +322,7 @@ public class PaymentLinksApi {
      * @param status The status of the purchase or donation link.  Possible values:   - ACTIVE   - INACTIVE  (optional)
      * @return PblPaymentLinksAllGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PblPaymentLinksAllGet200Response getAllPaymentLinks(Integer offset, Integer limit, String status) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllPaymentLinks' STARTED");
@@ -333,6 +339,7 @@ public class PaymentLinksApi {
      * @param status The status of the purchase or donation link.  Possible values:   - ACTIVE   - INACTIVE  (optional)
      * @return ApiResponse&lt;PblPaymentLinksAllGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PblPaymentLinksAllGet200Response> getAllPaymentLinksWithHttpInfo(Integer offset, Integer limit, String status) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -350,6 +357,7 @@ public class PaymentLinksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAllPaymentLinksAsync(Integer offset, Integer limit, String status, final ApiCallback<PblPaymentLinksAllGet200Response> callback) throws ApiException, ConfigException {
 
@@ -385,6 +393,7 @@ public class PaymentLinksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentLinkCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -467,6 +476,7 @@ public class PaymentLinksApi {
      * @param id The purchase number. (required)
      * @return PblPaymentLinksGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PblPaymentLinksGet200Response getPaymentLink(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPaymentLink' STARTED");
@@ -481,6 +491,7 @@ public class PaymentLinksApi {
      * @param id The purchase number. (required)
      * @return ApiResponse&lt;PblPaymentLinksGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PblPaymentLinksGet200Response> getPaymentLinkWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -496,6 +507,7 @@ public class PaymentLinksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentLinkAsync(String id, final ApiCallback<PblPaymentLinksGet200Response> callback) throws ApiException, ConfigException {
 
@@ -532,6 +544,7 @@ public class PaymentLinksApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updatePaymentLinkCall(String id, UpdatePaymentLinkRequest updatePaymentLinkRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -618,6 +631,7 @@ public class PaymentLinksApi {
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return PblPaymentLinksPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PblPaymentLinksPost201Response updatePaymentLink(String id, UpdatePaymentLinkRequest updatePaymentLinkRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updatePaymentLink' STARTED");
@@ -633,6 +647,7 @@ public class PaymentLinksApi {
      * @param updatePaymentLinkRequest Updating the purchase or donation link does not resend the link automatically. You must resend the purchase or donation link separately. (required)
      * @return ApiResponse&lt;PblPaymentLinksPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PblPaymentLinksPost201Response> updatePaymentLinkWithHttpInfo(String id, UpdatePaymentLinkRequest updatePaymentLinkRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -649,6 +664,7 @@ public class PaymentLinksApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updatePaymentLinkAsync(String id, UpdatePaymentLinkRequest updatePaymentLinkRequest, final ApiCallback<PblPaymentLinksPost201Response> callback) throws ApiException, ConfigException {
 

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Upv1capturecontextsCaptureMandateCPF;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -59,7 +60,7 @@ public class Upv1capturecontextsCaptureMandate {
   private Boolean comboCard = null;
 
   @SerializedName("CPF")
-  private Boolean CPF = null;
+  private Upv1capturecontextsCaptureMandateCPF CPF = null;
 
   public Upv1capturecontextsCaptureMandate billingType(String billingType) {
     this.billingType = billingType;
@@ -231,21 +232,21 @@ public class Upv1capturecontextsCaptureMandate {
     this.comboCard = comboCard;
   }
 
-  public Upv1capturecontextsCaptureMandate CPF(Boolean CPF) {
+  public Upv1capturecontextsCaptureMandate CPF(Upv1capturecontextsCaptureMandateCPF CPF) {
     this.CPF = CPF;
     return this;
   }
 
    /**
-   * Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False&lt;br&gt;&lt;br&gt;  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.&lt;br&gt;&lt;br&gt;  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. 
+   * Get CPF
    * @return CPF
   **/
-  @ApiModelProperty(value = "Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False<br><br>  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.<br><br>  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. ")
-  public Boolean CPF() {
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsCaptureMandateCPF getCPF() {
     return CPF;
   }
 
-  public void setCPF(Boolean CPF) {
+  public void setCPF(Upv1capturecontextsCaptureMandateCPF CPF) {
     this.CPF = CPF;
   }
 

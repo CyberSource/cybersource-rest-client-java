@@ -85,6 +85,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createOrderRequestCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -171,6 +172,7 @@ public class PaymentsApi {
      * @param id Request identifier number for the order request.  (required)
      * @return PtsV2PaymentsOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOrderRequest' STARTED");
@@ -186,6 +188,7 @@ public class PaymentsApi {
      * @param id Request identifier number for the order request.  (required)
      * @return ApiResponse&lt;PtsV2PaymentsOrderPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -202,6 +205,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createOrderRequestAsync(OrderPaymentRequest orderPaymentRequest, String id, final ApiCallback<PtsV2PaymentsOrderPost201Response> callback) throws ApiException, ConfigException {
 
@@ -237,6 +241,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createPaymentCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -315,6 +320,7 @@ public class PaymentsApi {
      * @param createPaymentRequest  (required)
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createPayment' STARTED");
@@ -329,6 +335,7 @@ public class PaymentsApi {
      * @param createPaymentRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -344,6 +351,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException, ConfigException {
 
@@ -379,6 +387,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createSessionRequestCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -457,6 +466,7 @@ public class PaymentsApi {
      * @param createSessionReq  (required)
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
@@ -471,6 +481,7 @@ public class PaymentsApi {
      * @param createSessionReq  (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -486,6 +497,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
 
@@ -522,6 +534,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call incrementAuthCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -608,6 +621,7 @@ public class PaymentsApi {
      * @param incrementAuthRequest  (required)
      * @return PtsV2IncrementalAuthorizationPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'incrementAuth' STARTED");
@@ -623,6 +637,7 @@ public class PaymentsApi {
      * @param incrementAuthRequest  (required)
      * @return ApiResponse&lt;PtsV2IncrementalAuthorizationPatch201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> incrementAuthWithHttpInfo(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -639,6 +654,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call incrementAuthAsync(String id, IncrementAuthRequest incrementAuthRequest, final ApiCallback<PtsV2IncrementalAuthorizationPatch201Response> callback) throws ApiException, ConfigException {
 
@@ -675,6 +691,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call refreshPaymentStatusCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -761,6 +778,7 @@ public class PaymentsApi {
      * @param refreshPaymentStatusRequest  (required)
      * @return PtsV2PaymentsPost201Response1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
@@ -776,6 +794,7 @@ public class PaymentsApi {
      * @param refreshPaymentStatusRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -792,6 +811,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<PtsV2PaymentsPost201Response1> callback) throws ApiException, ConfigException {
 
@@ -828,6 +848,7 @@ public class PaymentsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateSessionReqCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -914,6 +935,7 @@ public class PaymentsApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateSessionReq' STARTED");
@@ -929,6 +951,7 @@ public class PaymentsApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -945,6 +968,7 @@ public class PaymentsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateSessionReqAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
 

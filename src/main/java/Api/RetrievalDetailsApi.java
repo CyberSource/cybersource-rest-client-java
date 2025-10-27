@@ -74,6 +74,7 @@ public class RetrievalDetailsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getRetrievalDetailsCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -169,6 +170,7 @@ public class RetrievalDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3RetrievalDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ReportingV3RetrievalDetailsGet200Response getRetrievalDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRetrievalDetails' STARTED");
@@ -185,6 +187,7 @@ public class RetrievalDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3RetrievalDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ReportingV3RetrievalDetailsGet200Response> getRetrievalDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -202,6 +205,7 @@ public class RetrievalDetailsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getRetrievalDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3RetrievalDetailsGet200Response> callback) throws ApiException, ConfigException {
 

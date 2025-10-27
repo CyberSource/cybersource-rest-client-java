@@ -80,6 +80,7 @@ public class PaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -164,6 +165,7 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
@@ -178,6 +180,7 @@ public class PaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -193,6 +196,7 @@ public class PaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
@@ -229,6 +233,7 @@ public class PaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -317,6 +322,7 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
@@ -333,6 +339,7 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -350,6 +357,7 @@ public class PaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
@@ -389,6 +397,7 @@ public class PaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -484,6 +493,7 @@ public class PaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
@@ -502,6 +512,7 @@ public class PaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;PatchPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -521,6 +532,7 @@ public class PaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch, final ApiCallback<PatchPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 
@@ -558,6 +570,7 @@ public class PaymentInstrumentApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -642,6 +655,7 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");
@@ -658,6 +672,7 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return ApiResponse&lt;PostPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -675,6 +690,7 @@ public class PaymentInstrumentApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, final ApiCallback<PostPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
 

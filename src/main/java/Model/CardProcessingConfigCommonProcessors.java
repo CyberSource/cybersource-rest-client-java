@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.CardProcessingConfigCommonAcquirer;
+import Model.CardProcessingConfigCommonAcquirers;
 import Model.CardProcessingConfigCommonCurrencies1;
 import Model.CardProcessingConfigCommonPaymentTypes;
 import com.google.gson.TypeAdapter;
@@ -49,6 +50,9 @@ public class CardProcessingConfigCommonProcessors {
 
   @SerializedName("acquirer")
   private CardProcessingConfigCommonAcquirer acquirer = null;
+
+  @SerializedName("acquirers")
+  private Map<String, CardProcessingConfigCommonAcquirers> acquirers = null;
 
   @SerializedName("merchantId")
   private String merchantId = null;
@@ -264,6 +268,32 @@ public class CardProcessingConfigCommonProcessors {
 
   public void setAcquirer(CardProcessingConfigCommonAcquirer acquirer) {
     this.acquirer = acquirer;
+  }
+
+  public CardProcessingConfigCommonProcessors acquirers(Map<String, CardProcessingConfigCommonAcquirers> acquirers) {
+    this.acquirers = acquirers;
+    return this;
+  }
+
+  public CardProcessingConfigCommonProcessors putAcquirersItem(String key, CardProcessingConfigCommonAcquirers acquirersItem) {
+    if (this.acquirers == null) {
+      this.acquirers = new HashMap<String, CardProcessingConfigCommonAcquirers>();
+    }
+    this.acquirers.put(key, acquirersItem);
+    return this;
+  }
+
+   /**
+   * Identifies the financial institution acting as the acquirer of this customer transaction. The acquirer is the member or system user that signed the merchant.
+   * @return acquirers
+  **/
+  @ApiModelProperty(value = "Identifies the financial institution acting as the acquirer of this customer transaction. The acquirer is the member or system user that signed the merchant.")
+  public Map<String, CardProcessingConfigCommonAcquirers> getAcquirers() {
+    return acquirers;
+  }
+
+  public void setAcquirers(Map<String, CardProcessingConfigCommonAcquirers> acquirers) {
+    this.acquirers = acquirers;
   }
 
   public CardProcessingConfigCommonProcessors merchantId(String merchantId) {
@@ -1053,6 +1083,7 @@ public class CardProcessingConfigCommonProcessors {
         Objects.equals(this.merchantVerificationValue, cardProcessingConfigCommonProcessors.merchantVerificationValue) &&
         Objects.equals(this.abaNumber, cardProcessingConfigCommonProcessors.abaNumber) &&
         Objects.equals(this.acquirer, cardProcessingConfigCommonProcessors.acquirer) &&
+        Objects.equals(this.acquirers, cardProcessingConfigCommonProcessors.acquirers) &&
         Objects.equals(this.merchantId, cardProcessingConfigCommonProcessors.merchantId) &&
         Objects.equals(this.terminalId, cardProcessingConfigCommonProcessors.terminalId) &&
         Objects.equals(this.paymentTypes, cardProcessingConfigCommonProcessors.paymentTypes) &&
@@ -1099,7 +1130,7 @@ public class CardProcessingConfigCommonProcessors {
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, merchantId, terminalId, paymentTypes, currencies, visaAggregatorId, amexAggregatorId, masterCardAggregatorId, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
+    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, acquirers, merchantId, terminalId, paymentTypes, currencies, visaAggregatorId, amexAggregatorId, masterCardAggregatorId, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
   }
 
 
@@ -1113,6 +1144,7 @@ public class CardProcessingConfigCommonProcessors {
     if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
     if (abaNumber != null) sb.append("    abaNumber: ").append(toIndentedString(abaNumber)).append("\n");
     if (acquirer != null) sb.append("    acquirer: ").append(toIndentedString(acquirer)).append("\n");
+    if (acquirers != null) sb.append("    acquirers: ").append(toIndentedString(acquirers)).append("\n");
     if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     if (paymentTypes != null) sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");

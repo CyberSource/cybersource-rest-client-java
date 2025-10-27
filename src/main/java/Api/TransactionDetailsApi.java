@@ -71,6 +71,7 @@ public class TransactionDetailsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getTransactionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
@@ -153,6 +154,7 @@ public class TransactionDetailsApi {
      * @param id Request ID.  (required)
      * @return TssV2TransactionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTransaction' STARTED");
@@ -167,6 +169,7 @@ public class TransactionDetailsApi {
      * @param id Request ID.  (required)
      * @return ApiResponse&lt;TssV2TransactionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<TssV2TransactionsGet200Response> getTransactionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
@@ -182,6 +185,7 @@ public class TransactionDetailsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getTransactionAsync(String id, final ApiCallback<TssV2TransactionsGet200Response> callback) throws ApiException, ConfigException {
 
