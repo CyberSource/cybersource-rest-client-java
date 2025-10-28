@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Upv1capturecontextsCompleteMandateTms;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,6 +33,9 @@ import java.io.IOException;
 public class Upv1capturecontextsCompleteMandate {
   @SerializedName("type")
   private String type = null;
+
+  @SerializedName("tms")
+  private Upv1capturecontextsCompleteMandateTms tms = null;
 
   @SerializedName("decisionManager")
   private Boolean decisionManager = null;
@@ -55,6 +59,24 @@ public class Upv1capturecontextsCompleteMandate {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public Upv1capturecontextsCompleteMandate tms(Upv1capturecontextsCompleteMandateTms tms) {
+    this.tms = tms;
+    return this;
+  }
+
+   /**
+   * Get tms
+   * @return tms
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsCompleteMandateTms getTms() {
+    return tms;
+  }
+
+  public void setTms(Upv1capturecontextsCompleteMandateTms tms) {
+    this.tms = tms;
   }
 
   public Upv1capturecontextsCompleteMandate decisionManager(Boolean decisionManager) {
@@ -104,13 +126,14 @@ public class Upv1capturecontextsCompleteMandate {
     }
     Upv1capturecontextsCompleteMandate upv1capturecontextsCompleteMandate = (Upv1capturecontextsCompleteMandate) o;
     return Objects.equals(this.type, upv1capturecontextsCompleteMandate.type) &&
+        Objects.equals(this.tms, upv1capturecontextsCompleteMandate.tms) &&
         Objects.equals(this.decisionManager, upv1capturecontextsCompleteMandate.decisionManager) &&
         Objects.equals(this.consumerAuthentication, upv1capturecontextsCompleteMandate.consumerAuthentication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, decisionManager, consumerAuthentication);
+    return Objects.hash(type, tms, decisionManager, consumerAuthentication);
   }
 
 
@@ -120,6 +143,7 @@ public class Upv1capturecontextsCompleteMandate {
     sb.append("class Upv1capturecontextsCompleteMandate {\n");
     
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (tms != null) sb.append("    tms: ").append(toIndentedString(tms)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     if (consumerAuthentication != null) sb.append("    consumerAuthentication: ").append(toIndentedString(consumerAuthentication)).append("\n");
     sb.append("}");

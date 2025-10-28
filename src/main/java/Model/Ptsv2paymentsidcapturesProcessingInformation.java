@@ -19,6 +19,7 @@ import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsProcessingInformationLoanOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions;
+import Model.Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -73,6 +74,9 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
 
   @SerializedName("actionList")
   private List<String> actionList = null;
+
+  @SerializedName("japanPaymentOptions")
+  private Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
 
   public Ptsv2paymentsidcapturesProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -316,6 +320,24 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     this.actionList = actionList;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformation japanPaymentOptions(Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions japanPaymentOptions) {
+    this.japanPaymentOptions = japanPaymentOptions;
+    return this;
+  }
+
+   /**
+   * Get japanPaymentOptions
+   * @return japanPaymentOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions getJapanPaymentOptions() {
+    return japanPaymentOptions;
+  }
+
+  public void setJapanPaymentOptions(Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions japanPaymentOptions) {
+    this.japanPaymentOptions = japanPaymentOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -338,12 +360,13 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
         Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions) &&
         Objects.equals(this.loanOptions, ptsv2paymentsidcapturesProcessingInformation.loanOptions) &&
         Objects.equals(this.payByPointsIndicator, ptsv2paymentsidcapturesProcessingInformation.payByPointsIndicator) &&
-        Objects.equals(this.actionList, ptsv2paymentsidcapturesProcessingInformation.actionList);
+        Objects.equals(this.actionList, ptsv2paymentsidcapturesProcessingInformation.actionList) &&
+        Objects.equals(this.japanPaymentOptions, ptsv2paymentsidcapturesProcessingInformation.japanPaymentOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator, actionList);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator, actionList, japanPaymentOptions);
   }
 
 
@@ -365,6 +388,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
     if (payByPointsIndicator != null) sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
     if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

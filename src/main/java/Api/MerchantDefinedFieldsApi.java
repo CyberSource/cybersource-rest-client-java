@@ -225,6 +225,163 @@ public class MerchantDefinedFieldsApi {
         return call;
     }
     /**
+     * Build call for deleteMerchantDefinedFieldsDefinitions
+     * @param referenceType  (required)
+     * @param id  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call deleteMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteMerchantDefinedFieldsDefinitions,deleteMerchantDefinedFieldsDefinitionsAsync,deleteMerchantDefinedFieldsDefinitionsWithHttpInfo,deleteMerchantDefinedFieldsDefinitionsCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
+        // create path and map variables
+        String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}"
+            .replaceAll("\\{" + "referenceType" + "\\}", apiClient.escapeString(referenceType.toString()))
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'referenceType' is set
+        if (referenceType == null) {
+            logger.error("Missing the required parameter 'referenceType' when calling deleteMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'referenceType' when calling deleteMerchantDefinedFieldsDefinitions(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling deleteMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling deleteMerchantDefinedFieldsDefinitions(Async)");
+        }
+        
+        
+        okhttp3.Call call = deleteMerchantDefinedFieldsDefinitionsCall(referenceType, id, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Delete a MerchantDefinedField by ID
+     * 
+     * @param referenceType  (required)
+     * @param id  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public void deleteMerchantDefinedFieldsDefinitions(String referenceType, Long id) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'deleteMerchantDefinedFieldsDefinitions' STARTED");
+        deleteMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id);
+
+    }
+
+    /**
+     * Delete a MerchantDefinedField by ID
+     * 
+     * @param referenceType  (required)
+     * @param id  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<Void> deleteMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = deleteMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete a MerchantDefinedField by ID (asynchronously)
+     * 
+     * @param referenceType  (required)
+     * @param id  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call deleteMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, final ApiCallback<Void> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = deleteMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for getMerchantDefinedFieldsDefinitions
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param progressListener Progress listener
@@ -375,164 +532,7 @@ public class MerchantDefinedFieldsApi {
         return call;
     }
     /**
-     * Build call for invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete
-     * @param referenceType  (required)
-     * @param id  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteCall(String referenceType, Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = null;
-        if ("DELETE".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
-        }
-        
-        String inboundMLEStatus = "false";
-
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete,invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteAsync,invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo,invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteCall")) {
-            try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
-            } catch (MLEException e) {
-                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
-                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
-            }
-        }
-        
-        // create path and map variables
-        String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}"
-            .replaceAll("\\{" + "referenceType" + "\\}", apiClient.escapeString(referenceType.toString()))
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteValidateBeforeCall(String referenceType, Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        
-        // verify the required parameter 'referenceType' is set
-        if (referenceType == null) {
-            logger.error("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(Async)");
-            throw new ApiException("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            logger.error("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(Async)");
-            throw new ApiException("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(Async)");
-        }
-        
-        
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteCall(referenceType, id, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Delete a MerchantDefinedField by ID
-     * 
-     * @param referenceType  (required)
-     * @param id  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public void invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(String referenceType, Long id) throws ApiException, ConfigException {
-        logger.info("CALL TO METHOD 'invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete' STARTED");
-        invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo(referenceType, id);
-
-    }
-
-    /**
-     * Delete a MerchantDefinedField by ID
-     * 
-     * @param referenceType  (required)
-     * @param id  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public ApiResponse<Void> invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo(String referenceType, Long id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteValidateBeforeCall(referenceType, id, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Delete a MerchantDefinedField by ID (asynchronously)
-     * 
-     * @param referenceType  (required)
-     * @param id  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteAsync(String referenceType, Long id, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteValidateBeforeCall(referenceType, id, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
-        return call;
-    }
-    /**
-     * Build call for invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut
+     * Build call for putMerchantDefinedFieldsDefinitions
      * @param referenceType  (required)
      * @param id  (required)
      * @param merchantDefinedFieldCore  (required)
@@ -542,13 +542,13 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call putMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantDefinedFieldCore, MerchantDefinedFieldCore.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         String inboundMLEStatus = "false";
 
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut,invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutAsync,invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo,invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutCall")) {
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsAsync,putMerchantDefinedFieldsDefinitionsWithHttpInfo,putMerchantDefinedFieldsDefinitionsCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -597,28 +597,28 @@ public class MerchantDefinedFieldsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutValidateBeforeCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call putMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'referenceType' is set
         if (referenceType == null) {
-            logger.error("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
-            throw new ApiException("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
+            logger.error("Missing the required parameter 'referenceType' when calling putMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'referenceType' when calling putMerchantDefinedFieldsDefinitions(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            logger.error("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
-            throw new ApiException("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
+            logger.error("Missing the required parameter 'id' when calling putMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling putMerchantDefinedFieldsDefinitions(Async)");
         }
         
         // verify the required parameter 'merchantDefinedFieldCore' is set
         if (merchantDefinedFieldCore == null) {
-            logger.error("Missing the required parameter 'merchantDefinedFieldCore' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
-            throw new ApiException("Missing the required parameter 'merchantDefinedFieldCore' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(Async)");
+            logger.error("Missing the required parameter 'merchantDefinedFieldCore' when calling putMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'merchantDefinedFieldCore' when calling putMerchantDefinedFieldsDefinitions(Async)");
         }
         
         
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
         return call;
 
         
@@ -637,10 +637,10 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2002> invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
-        logger.info("CALL TO METHOD 'invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut' STARTED");
-        ApiResponse<List<InlineResponse2002>> resp = invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo(referenceType, id, merchantDefinedFieldCore);
-        logger.info("CALL TO METHOD 'invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut' ENDED");
+    public List<InlineResponse2002> putMerchantDefinedFieldsDefinitions(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'putMerchantDefinedFieldsDefinitions' STARTED");
+        ApiResponse<List<InlineResponse2002>> resp = putMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id, merchantDefinedFieldCore);
+        logger.info("CALL TO METHOD 'putMerchantDefinedFieldsDefinitions' ENDED");
         return resp.getData();
     }
 
@@ -654,9 +654,9 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2002>> invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
+    public ApiResponse<List<InlineResponse2002>> putMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, null, null);
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2002>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -672,7 +672,7 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutAsync(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ApiCallback<List<InlineResponse2002>> callback) throws ApiException, ConfigException {
+    public okhttp3.Call putMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ApiCallback<List<InlineResponse2002>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -694,7 +694,7 @@ public class MerchantDefinedFieldsApi {
             };
         }
 
-        okhttp3.Call call = invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<InlineResponse2002>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
