@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,6 +44,9 @@ public class PtsV2PayoutsPost201ResponseProcessorInformation {
 
   @SerializedName("responseCodeSource")
   private String responseCodeSource = null;
+
+  @SerializedName("merchantAdvice")
+  private PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
 
   public PtsV2PayoutsPost201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
@@ -134,6 +138,24 @@ public class PtsV2PayoutsPost201ResponseProcessorInformation {
     this.responseCodeSource = responseCodeSource;
   }
 
+  public PtsV2PayoutsPost201ResponseProcessorInformation merchantAdvice(PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+    return this;
+  }
+
+   /**
+   * Get merchantAdvice
+   * @return merchantAdvice
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice getMerchantAdvice() {
+    return merchantAdvice;
+  }
+
+  public void setMerchantAdvice(PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +170,13 @@ public class PtsV2PayoutsPost201ResponseProcessorInformation {
         Objects.equals(this.responseCode, ptsV2PayoutsPost201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.transactionId, ptsV2PayoutsPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.systemTraceAuditNumber, ptsV2PayoutsPost201ResponseProcessorInformation.systemTraceAuditNumber) &&
-        Objects.equals(this.responseCodeSource, ptsV2PayoutsPost201ResponseProcessorInformation.responseCodeSource);
+        Objects.equals(this.responseCodeSource, ptsV2PayoutsPost201ResponseProcessorInformation.responseCodeSource) &&
+        Objects.equals(this.merchantAdvice, ptsV2PayoutsPost201ResponseProcessorInformation.merchantAdvice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, responseCode, transactionId, systemTraceAuditNumber, responseCodeSource);
+    return Objects.hash(approvalCode, responseCode, transactionId, systemTraceAuditNumber, responseCodeSource, merchantAdvice);
   }
 
 
@@ -167,6 +190,7 @@ public class PtsV2PayoutsPost201ResponseProcessorInformation {
     if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
     sb.append("}");
     return sb.toString();
   }

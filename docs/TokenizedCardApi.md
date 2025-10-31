@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteTokenizedCard**](TokenizedCardApi.md#deleteTokenizedCard) | **DELETE** /tms/v2/tokenized-cards/{tokenizedCardId} | Delete a Tokenized Card
 [**getTokenizedCard**](TokenizedCardApi.md#getTokenizedCard) | **GET** /tms/v2/tokenized-cards/{tokenizedCardId} | Retrieve a Tokenized Card
-[**postIssuerLifeCycleSimulation**](TokenizedCardApi.md#postIssuerLifeCycleSimulation) | **POST** /tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations | Simulate Issuer Life Cycle Management Events
 [**postTokenizedCard**](TokenizedCardApi.md#postTokenizedCard) | **POST** /tms/v2/tokenized-cards | Create a Tokenized Card
 
 
@@ -62,7 +61,7 @@ No authorization required
 
 Retrieve a Tokenized Card
 
-|  |  |  | | --- | --- | --- | |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.  
+|  |  |  | | --- | --- | --- | |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. 
 
 ### Example
 ```java
@@ -93,54 +92,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenizedcardRequest**](TokenizedcardRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="postIssuerLifeCycleSimulation"></a>
-# **postIssuerLifeCycleSimulation**
-> postIssuerLifeCycleSimulation(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest)
-
-Simulate Issuer Life Cycle Management Events
-
-**Lifecycle Management Events**&lt;br&gt;Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.TokenizedCardApi;
-
-
-TokenizedCardApi apiInstance = new TokenizedCardApi();
-String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
-String tokenizedCardId = "tokenizedCardId_example"; // String | The Id of a tokenized card.
-PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest = new PostIssuerLifeCycleSimulationRequest(); // PostIssuerLifeCycleSimulationRequest | 
-try {
-    apiInstance.postIssuerLifeCycleSimulation(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TokenizedCardApi#postIssuerLifeCycleSimulation");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The Id of a profile containing user specific TMS configuration. |
- **tokenizedCardId** | **String**| The Id of a tokenized card. |
- **postIssuerLifeCycleSimulationRequest** | [**PostIssuerLifeCycleSimulationRequest**](PostIssuerLifeCycleSimulationRequest.md)|  |
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

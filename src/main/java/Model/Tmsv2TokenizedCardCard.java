@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2TokenizedCardCardTermsAndConditions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.LocalDate;
 
 /**
  * Card object used to create a network token 
@@ -44,6 +46,21 @@ public class Tmsv2TokenizedCardCard {
 
   @SerializedName("suffix")
   private String suffix = null;
+
+  @SerializedName("issueDate")
+  private LocalDate issueDate = null;
+
+  @SerializedName("activationDate")
+  private LocalDate activationDate = null;
+
+  @SerializedName("expirationPrinted")
+  private Boolean expirationPrinted = null;
+
+  @SerializedName("securityCodePrinted")
+  private Boolean securityCodePrinted = null;
+
+  @SerializedName("termsAndConditions")
+  private Tmsv2TokenizedCardCardTermsAndConditions termsAndConditions = null;
 
   public Tmsv2TokenizedCardCard number(String number) {
     this.number = number;
@@ -126,6 +143,60 @@ public class Tmsv2TokenizedCardCard {
     return suffix;
   }
 
+   /**
+   * Card issuance date. XML date format: YYYY-MM-DD.
+   * @return issueDate
+  **/
+  @ApiModelProperty(example = "2030-12-15", value = "Card issuance date. XML date format: YYYY-MM-DD.")
+  public LocalDate getIssueDate() {
+    return issueDate;
+  }
+
+   /**
+   * Card activation date. XML date format: YYYY-MM-DD
+   * @return activationDate
+  **/
+  @ApiModelProperty(example = "2030-12-20", value = "Card activation date. XML date format: YYYY-MM-DD")
+  public LocalDate getActivationDate() {
+    return activationDate;
+  }
+
+   /**
+   * Indicates if the expiration date is printed on the card.
+   * @return expirationPrinted
+  **/
+  @ApiModelProperty(example = "true", value = "Indicates if the expiration date is printed on the card.")
+  public Boolean ExpirationPrinted() {
+    return expirationPrinted;
+  }
+
+   /**
+   * Indicates if the Card Verification Number is printed on the card.
+   * @return securityCodePrinted
+  **/
+  @ApiModelProperty(example = "true", value = "Indicates if the Card Verification Number is printed on the card.")
+  public Boolean SecurityCodePrinted() {
+    return securityCodePrinted;
+  }
+
+  public Tmsv2TokenizedCardCard termsAndConditions(Tmsv2TokenizedCardCardTermsAndConditions termsAndConditions) {
+    this.termsAndConditions = termsAndConditions;
+    return this;
+  }
+
+   /**
+   * Get termsAndConditions
+   * @return termsAndConditions
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardCardTermsAndConditions getTermsAndConditions() {
+    return termsAndConditions;
+  }
+
+  public void setTermsAndConditions(Tmsv2TokenizedCardCardTermsAndConditions termsAndConditions) {
+    this.termsAndConditions = termsAndConditions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +211,17 @@ public class Tmsv2TokenizedCardCard {
         Objects.equals(this.expirationMonth, tmsv2TokenizedCardCard.expirationMonth) &&
         Objects.equals(this.expirationYear, tmsv2TokenizedCardCard.expirationYear) &&
         Objects.equals(this.type, tmsv2TokenizedCardCard.type) &&
-        Objects.equals(this.suffix, tmsv2TokenizedCardCard.suffix);
+        Objects.equals(this.suffix, tmsv2TokenizedCardCard.suffix) &&
+        Objects.equals(this.issueDate, tmsv2TokenizedCardCard.issueDate) &&
+        Objects.equals(this.activationDate, tmsv2TokenizedCardCard.activationDate) &&
+        Objects.equals(this.expirationPrinted, tmsv2TokenizedCardCard.expirationPrinted) &&
+        Objects.equals(this.securityCodePrinted, tmsv2TokenizedCardCard.securityCodePrinted) &&
+        Objects.equals(this.termsAndConditions, tmsv2TokenizedCardCard.termsAndConditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, suffix);
+    return Objects.hash(number, expirationMonth, expirationYear, type, suffix, issueDate, activationDate, expirationPrinted, securityCodePrinted, termsAndConditions);
   }
 
 
@@ -159,6 +235,11 @@ public class Tmsv2TokenizedCardCard {
     if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (issueDate != null) sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    if (activationDate != null) sb.append("    activationDate: ").append(toIndentedString(activationDate)).append("\n");
+    if (expirationPrinted != null) sb.append("    expirationPrinted: ").append(toIndentedString(expirationPrinted)).append("\n");
+    if (securityCodePrinted != null) sb.append("    securityCodePrinted: ").append(toIndentedString(securityCodePrinted)).append("\n");
+    if (termsAndConditions != null) sb.append("    termsAndConditions: ").append(toIndentedString(termsAndConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -36,10 +36,10 @@ public class InlineResponse403Errors {
   private String message = null;
 
    /**
-   * The type of error.  Possible Values:   - forbidden 
+   * The type of error.  Possible Values:   - forbidden   - declined 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of error.  Possible Values:   - forbidden ")
+  @ApiModelProperty(value = "The type of error.  Possible Values:   - forbidden   - declined ")
   public String getType() {
     return type;
   }

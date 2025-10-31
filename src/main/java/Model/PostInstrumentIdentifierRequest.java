@@ -23,6 +23,7 @@ import Model.TmsEmbeddedInstrumentIdentifierEmbedded;
 import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
+import Model.TmsEmbeddedInstrumentIdentifierPointOfSaleInformation;
 import Model.TmsEmbeddedInstrumentIdentifierProcessingInformation;
 import Model.Tmsv2TokenizedCard;
 import com.google.gson.TypeAdapter;
@@ -54,11 +55,17 @@ public class PostInstrumentIdentifierRequest {
   @SerializedName("type")
   private String type = null;
 
+  @SerializedName("source")
+  private String source = null;
+
   @SerializedName("tokenProvisioningInformation")
   private Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation = null;
 
   @SerializedName("card")
   private TmsEmbeddedInstrumentIdentifierCard card = null;
+
+  @SerializedName("pointOfSaleInformation")
+  private TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("bankAccount")
   private TmsEmbeddedInstrumentIdentifierBankAccount bankAccount = null;
@@ -153,6 +160,24 @@ public class PostInstrumentIdentifierRequest {
     this.type = type;
   }
 
+  public PostInstrumentIdentifierRequest source(String source) {
+    this.source = source;
+    return this;
+  }
+
+   /**
+   * Source of the card details. Possible Values: - CONTACTLESS_TAP 
+   * @return source
+  **/
+  @ApiModelProperty(value = "Source of the card details. Possible Values: - CONTACTLESS_TAP ")
+  public String getSource() {
+    return source;
+  }
+
+  public void setSource(String source) {
+    this.source = source;
+  }
+
   public PostInstrumentIdentifierRequest tokenProvisioningInformation(Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation) {
     this.tokenProvisioningInformation = tokenProvisioningInformation;
     return this;
@@ -187,6 +212,24 @@ public class PostInstrumentIdentifierRequest {
 
   public void setCard(TmsEmbeddedInstrumentIdentifierCard card) {
     this.card = card;
+  }
+
+  public PostInstrumentIdentifierRequest pointOfSaleInformation(TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+    return this;
+  }
+
+   /**
+   * Get pointOfSaleInformation
+   * @return pointOfSaleInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TmsEmbeddedInstrumentIdentifierPointOfSaleInformation getPointOfSaleInformation() {
+    return pointOfSaleInformation;
+  }
+
+  public void setPointOfSaleInformation(TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
   public PostInstrumentIdentifierRequest bankAccount(TmsEmbeddedInstrumentIdentifierBankAccount bankAccount) {
@@ -330,8 +373,10 @@ public class PostInstrumentIdentifierRequest {
         Objects.equals(this.object, postInstrumentIdentifierRequest.object) &&
         Objects.equals(this.state, postInstrumentIdentifierRequest.state) &&
         Objects.equals(this.type, postInstrumentIdentifierRequest.type) &&
+        Objects.equals(this.source, postInstrumentIdentifierRequest.source) &&
         Objects.equals(this.tokenProvisioningInformation, postInstrumentIdentifierRequest.tokenProvisioningInformation) &&
         Objects.equals(this.card, postInstrumentIdentifierRequest.card) &&
+        Objects.equals(this.pointOfSaleInformation, postInstrumentIdentifierRequest.pointOfSaleInformation) &&
         Objects.equals(this.bankAccount, postInstrumentIdentifierRequest.bankAccount) &&
         Objects.equals(this.tokenizedCard, postInstrumentIdentifierRequest.tokenizedCard) &&
         Objects.equals(this.issuer, postInstrumentIdentifierRequest.issuer) &&
@@ -343,7 +388,7 @@ public class PostInstrumentIdentifierRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata, embedded);
+    return Objects.hash(links, id, object, state, type, source, tokenProvisioningInformation, card, pointOfSaleInformation, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata, embedded);
   }
 
 
@@ -357,8 +402,10 @@ public class PostInstrumentIdentifierRequest {
     if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
     if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (source != null) sb.append("    source: ").append(toIndentedString(source)).append("\n");
     if (tokenProvisioningInformation != null) sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     if (bankAccount != null) sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");

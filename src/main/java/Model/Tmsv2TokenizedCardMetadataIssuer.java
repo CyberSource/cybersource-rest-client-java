@@ -39,31 +39,67 @@ public class Tmsv2TokenizedCardMetadataIssuer {
   @SerializedName("longDescription")
   private String longDescription = null;
 
+  @SerializedName("email")
+  private String email = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
+
+  @SerializedName("url")
+  private String url = null;
+
    /**
-   * issuer name. 
+   * Issuer name. 
    * @return name
   **/
-  @ApiModelProperty(value = "issuer name. ")
+  @ApiModelProperty(value = "Issuer name. ")
   public String getName() {
     return name;
   }
 
    /**
-   * issuer short description. 
+   * Short description of the card. 
    * @return shortDescription
   **/
-  @ApiModelProperty(value = "issuer short description. ")
+  @ApiModelProperty(value = "Short description of the card. ")
   public String getShortDescription() {
     return shortDescription;
   }
 
    /**
-   * issuer long  description. 
+   * Long description of the card. 
    * @return longDescription
   **/
-  @ApiModelProperty(value = "issuer long  description. ")
+  @ApiModelProperty(value = "Long description of the card. ")
   public String getLongDescription() {
     return longDescription;
+  }
+
+   /**
+   * Issuer customer service email address.
+   * @return email
+  **/
+  @ApiModelProperty(value = "Issuer customer service email address.")
+  public String getEmail() {
+    return email;
+  }
+
+   /**
+   * Issuer customer service phone number.
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(value = "Issuer customer service phone number.")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+   /**
+   * Issuer customer service url.
+   * @return url
+  **/
+  @ApiModelProperty(value = "Issuer customer service url.")
+  public String getUrl() {
+    return url;
   }
 
 
@@ -78,12 +114,15 @@ public class Tmsv2TokenizedCardMetadataIssuer {
     Tmsv2TokenizedCardMetadataIssuer tmsv2TokenizedCardMetadataIssuer = (Tmsv2TokenizedCardMetadataIssuer) o;
     return Objects.equals(this.name, tmsv2TokenizedCardMetadataIssuer.name) &&
         Objects.equals(this.shortDescription, tmsv2TokenizedCardMetadataIssuer.shortDescription) &&
-        Objects.equals(this.longDescription, tmsv2TokenizedCardMetadataIssuer.longDescription);
+        Objects.equals(this.longDescription, tmsv2TokenizedCardMetadataIssuer.longDescription) &&
+        Objects.equals(this.email, tmsv2TokenizedCardMetadataIssuer.email) &&
+        Objects.equals(this.phoneNumber, tmsv2TokenizedCardMetadataIssuer.phoneNumber) &&
+        Objects.equals(this.url, tmsv2TokenizedCardMetadataIssuer.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, shortDescription, longDescription);
+    return Objects.hash(name, shortDescription, longDescription, email, phoneNumber, url);
   }
 
 
@@ -95,6 +134,9 @@ public class Tmsv2TokenizedCardMetadataIssuer {
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     if (shortDescription != null) sb.append("    shortDescription: ").append(toIndentedString(shortDescription)).append("\n");
     if (longDescription != null) sb.append("    longDescription: ").append(toIndentedString(longDescription)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,7 +19,6 @@ import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
-import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.TokenizedcardRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -59,7 +58,7 @@ public class TokenizedCardApiTest {
     /**
      * Retrieve a Tokenized Card
      *
-     * |  |  |  | | --- | --- | --- | |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.  
+     * |  |  |  | | --- | --- | --- | |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. 
      *
      * @throws Exception
      *          if the Api call fails
@@ -69,24 +68,6 @@ public class TokenizedCardApiTest {
         String tokenizedCardId = null;
         String profileId = null;
         TokenizedcardRequest response = api.getTokenizedCard(tokenizedCardId, profileId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Simulate Issuer Life Cycle Management Events
-     *
-     * **Lifecycle Management Events**&lt;br&gt;Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void postIssuerLifeCycleSimulationTest() throws Exception {
-        String profileId = null;
-        String tokenizedCardId = null;
-        PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest = null;
-        api.postIssuerLifeCycleSimulation(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest);
 
         // TODO: test validations
     }

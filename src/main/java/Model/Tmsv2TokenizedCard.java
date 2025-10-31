@@ -198,10 +198,10 @@ public class Tmsv2TokenizedCard {
   }
 
    /**
-   * Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER 
+   * Source of the card details. Possible Values: - ONFILE - TOKEN - ISSUER 
    * @return source
   **/
-  @ApiModelProperty(value = "Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER ")
+  @ApiModelProperty(value = "Source of the card details. Possible Values: - ONFILE - TOKEN - ISSUER ")
   public String getSource() {
     return source;
   }

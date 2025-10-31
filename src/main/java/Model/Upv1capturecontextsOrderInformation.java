@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Upv1capturecontextsDataOrderInformationBillTo;
+import Model.Upv1capturecontextsDataOrderInformationShipTo;
 import Model.Upv1capturecontextsOrderInformationAmountDetails;
-import Model.Upv1capturecontextsOrderInformationBillTo;
-import Model.Upv1capturecontextsOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,10 +36,10 @@ public class Upv1capturecontextsOrderInformation {
   private Upv1capturecontextsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("billTo")
-  private Upv1capturecontextsOrderInformationBillTo billTo = null;
+  private Upv1capturecontextsDataOrderInformationBillTo billTo = null;
 
   @SerializedName("shipTo")
-  private Upv1capturecontextsOrderInformationShipTo shipTo = null;
+  private Upv1capturecontextsDataOrderInformationShipTo shipTo = null;
 
   public Upv1capturecontextsOrderInformation amountDetails(Upv1capturecontextsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -59,7 +59,7 @@ public class Upv1capturecontextsOrderInformation {
     this.amountDetails = amountDetails;
   }
 
-  public Upv1capturecontextsOrderInformation billTo(Upv1capturecontextsOrderInformationBillTo billTo) {
+  public Upv1capturecontextsOrderInformation billTo(Upv1capturecontextsDataOrderInformationBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -69,15 +69,15 @@ public class Upv1capturecontextsOrderInformation {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsOrderInformationBillTo getBillTo() {
+  public Upv1capturecontextsDataOrderInformationBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Upv1capturecontextsOrderInformationBillTo billTo) {
+  public void setBillTo(Upv1capturecontextsDataOrderInformationBillTo billTo) {
     this.billTo = billTo;
   }
 
-  public Upv1capturecontextsOrderInformation shipTo(Upv1capturecontextsOrderInformationShipTo shipTo) {
+  public Upv1capturecontextsOrderInformation shipTo(Upv1capturecontextsDataOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -87,11 +87,11 @@ public class Upv1capturecontextsOrderInformation {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsOrderInformationShipTo getShipTo() {
+  public Upv1capturecontextsDataOrderInformationShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Upv1capturecontextsOrderInformationShipTo shipTo) {
+  public void setShipTo(Upv1capturecontextsDataOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
   }
 

@@ -44,6 +44,9 @@ public class Riskv1decisionsDeviceInformation {
   @SerializedName("fingerprintSessionId")
   private String fingerprintSessionId = null;
 
+  @SerializedName("useRawFingerprintSessionId")
+  private Boolean useRawFingerprintSessionId = null;
+
   @SerializedName("httpBrowserEmail")
   private String httpBrowserEmail = null;
 
@@ -153,6 +156,24 @@ public class Riskv1decisionsDeviceInformation {
 
   public void setFingerprintSessionId(String fingerprintSessionId) {
     this.fingerprintSessionId = fingerprintSessionId;
+  }
+
+  public Riskv1decisionsDeviceInformation useRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
+    return this;
+  }
+
+   /**
+   * Boolean that indicates whether request contains the device fingerprint information. Values: - &#x60;true&#x60;: Use raw fingerprintSessionId when looking up device details. - &#x60;false&#x60; (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. 
+   * @return useRawFingerprintSessionId
+  **/
+  @ApiModelProperty(value = "Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. ")
+  public Boolean UseRawFingerprintSessionId() {
+    return useRawFingerprintSessionId;
+  }
+
+  public void setUseRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
   }
 
   public Riskv1decisionsDeviceInformation httpBrowserEmail(String httpBrowserEmail) {
@@ -411,6 +432,7 @@ public class Riskv1decisionsDeviceInformation {
         Objects.equals(this.ipAddress, riskv1decisionsDeviceInformation.ipAddress) &&
         Objects.equals(this.hostName, riskv1decisionsDeviceInformation.hostName) &&
         Objects.equals(this.fingerprintSessionId, riskv1decisionsDeviceInformation.fingerprintSessionId) &&
+        Objects.equals(this.useRawFingerprintSessionId, riskv1decisionsDeviceInformation.useRawFingerprintSessionId) &&
         Objects.equals(this.httpBrowserEmail, riskv1decisionsDeviceInformation.httpBrowserEmail) &&
         Objects.equals(this.userAgent, riskv1decisionsDeviceInformation.userAgent) &&
         Objects.equals(this.rawData, riskv1decisionsDeviceInformation.rawData) &&
@@ -428,7 +450,7 @@ public class Riskv1decisionsDeviceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cookiesAccepted, ipAddress, hostName, fingerprintSessionId, httpBrowserEmail, userAgent, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
+    return Objects.hash(cookiesAccepted, ipAddress, hostName, fingerprintSessionId, useRawFingerprintSessionId, httpBrowserEmail, userAgent, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
   }
 
 
@@ -441,6 +463,7 @@ public class Riskv1decisionsDeviceInformation {
     if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     if (hostName != null) sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     if (fingerprintSessionId != null) sb.append("    fingerprintSessionId: ").append(toIndentedString(fingerprintSessionId)).append("\n");
+    if (useRawFingerprintSessionId != null) sb.append("    useRawFingerprintSessionId: ").append(toIndentedString(useRawFingerprintSessionId)).append("\n");
     if (httpBrowserEmail != null) sb.append("    httpBrowserEmail: ").append(toIndentedString(httpBrowserEmail)).append("\n");
     if (userAgent != null) sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
     if (rawData != null) sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
