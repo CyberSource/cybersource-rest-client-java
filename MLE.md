@@ -381,7 +381,7 @@ For Response MLE private key files, the following formats are supported:
 - `useMLEGlobally` is **deprecated** but still supported as an alias for `enableRequestMLEForOptionalApisGlobally`
 - `mleKeyAlias` is **deprecated** but still supported as an alias for `requestMleKeyAlias`
 - If both new and deprecated parameters are provided with the **same value**, it works fine
-- If both new and deprecated parameters are provided with **different values**, it will cause a `ConfigException`
+- If both new and deprecated parameters are provided with **different values**, it might cause a `ConfigException`
 - When both new and deprecated parameters are provided, the **new parameter takes precedence**
 
 ### (iv) API-level Control Validation
