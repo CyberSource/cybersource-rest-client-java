@@ -29,7 +29,7 @@ import Model.Ptsv2paymentsidcapturesOrderInformation;
 import Model.Ptsv2paymentsidcapturesPaymentInformation;
 import Model.Ptsv2paymentsidcapturesPointOfSaleInformation;
 import Model.Ptsv2paymentsidcapturesProcessingInformation;
-import Model.Ptsv2reversalsProcessorInformation;
+import Model.Ptsv2paymentsidcapturesProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -89,7 +89,7 @@ public class CapturePaymentRequest {
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
 
   @SerializedName("processorInformation")
-  private Ptsv2reversalsProcessorInformation processorInformation = null;
+  private Ptsv2paymentsidcapturesProcessorInformation processorInformation = null;
 
   public CapturePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -351,7 +351,7 @@ public class CapturePaymentRequest {
     this.promotionInformation = promotionInformation;
   }
 
-  public CapturePaymentRequest processorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+  public CapturePaymentRequest processorInformation(Ptsv2paymentsidcapturesProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
     return this;
   }
@@ -361,11 +361,11 @@ public class CapturePaymentRequest {
    * @return processorInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2reversalsProcessorInformation getProcessorInformation() {
+  public Ptsv2paymentsidcapturesProcessorInformation getProcessorInformation() {
     return processorInformation;
   }
 
-  public void setProcessorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
+  public void setProcessorInformation(Ptsv2paymentsidcapturesProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
   }
 
