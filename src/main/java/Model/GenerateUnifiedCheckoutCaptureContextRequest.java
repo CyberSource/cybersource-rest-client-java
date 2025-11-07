@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Microformv2sessionsTransientTokenResponseOptions;
 import Model.Upv1capturecontextsCaptureMandate;
 import Model.Upv1capturecontextsCompleteMandate;
+import Model.Upv1capturecontextsData;
 import Model.Upv1capturecontextsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -59,11 +60,14 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   @SerializedName("completeMandate")
   private Upv1capturecontextsCompleteMandate completeMandate = null;
 
-  @SerializedName("orderInformation")
-  private Upv1capturecontextsOrderInformation orderInformation = null;
-
   @SerializedName("transientTokenResponseOptions")
   private Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions = null;
+
+  @SerializedName("data")
+  private Upv1capturecontextsData data = null;
+
+  @SerializedName("orderInformation")
+  private Upv1capturecontextsOrderInformation orderInformation = null;
 
   public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
     this.clientVersion = clientVersion;
@@ -123,10 +127,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA     - PAYPAK 
+   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JAYWAN     - JCB     - JCREW     - KCP     - MADA     - MAESTRO     - MEEZA     - PAYPAK     - UATP 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA     - PAYPAK ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JAYWAN     - JCB     - JCREW     - KCP     - MADA     - MAESTRO     - MEEZA     - PAYPAK     - UATP ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
@@ -149,10 +153,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Unified Checkout also supports the following Alternative Payments:   - AFTERPAY&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \&quot;true\&quot;.   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \&quot;FULL\&quot; or \&quot;PARTIAL\&quot;.   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa&lt;br&gt;&lt;br&gt;  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \&quot;true\&quot;.   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \&quot;FULL\&quot; or \&quot;PARTIAL\&quot;.   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa&lt;br&gt;&lt;br&gt;  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout also supports the following Alternative Payments:   - AFTERPAY<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -233,24 +237,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.completeMandate = completeMandate;
   }
 
-  public GenerateUnifiedCheckoutCaptureContextRequest orderInformation(Upv1capturecontextsOrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
-    return this;
-  }
-
-   /**
-   * Get orderInformation
-   * @return orderInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Upv1capturecontextsOrderInformation getOrderInformation() {
-    return orderInformation;
-  }
-
-  public void setOrderInformation(Upv1capturecontextsOrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
-  }
-
   public GenerateUnifiedCheckoutCaptureContextRequest transientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
     this.transientTokenResponseOptions = transientTokenResponseOptions;
     return this;
@@ -267,6 +253,42 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   public void setTransientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
     this.transientTokenResponseOptions = transientTokenResponseOptions;
+  }
+
+  public GenerateUnifiedCheckoutCaptureContextRequest data(Upv1capturecontextsData data) {
+    this.data = data;
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsData getData() {
+    return data;
+  }
+
+  public void setData(Upv1capturecontextsData data) {
+    this.data = data;
+  }
+
+  public GenerateUnifiedCheckoutCaptureContextRequest orderInformation(Upv1capturecontextsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsOrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(Upv1capturecontextsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
   }
 
 
@@ -287,13 +309,14 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
         Objects.equals(this.locale, generateUnifiedCheckoutCaptureContextRequest.locale) &&
         Objects.equals(this.captureMandate, generateUnifiedCheckoutCaptureContextRequest.captureMandate) &&
         Objects.equals(this.completeMandate, generateUnifiedCheckoutCaptureContextRequest.completeMandate) &&
-        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation) &&
-        Objects.equals(this.transientTokenResponseOptions, generateUnifiedCheckoutCaptureContextRequest.transientTokenResponseOptions);
+        Objects.equals(this.transientTokenResponseOptions, generateUnifiedCheckoutCaptureContextRequest.transientTokenResponseOptions) &&
+        Objects.equals(this.data, generateUnifiedCheckoutCaptureContextRequest.data) &&
+        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, completeMandate, orderInformation, transientTokenResponseOptions);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, completeMandate, transientTokenResponseOptions, data, orderInformation);
   }
 
 
@@ -310,8 +333,9 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
     if (completeMandate != null) sb.append("    completeMandate: ").append(toIndentedString(completeMandate)).append("\n");
-    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
+    if (data != null) sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

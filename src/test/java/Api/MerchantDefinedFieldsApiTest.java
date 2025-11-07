@@ -53,6 +53,23 @@ public class MerchantDefinedFieldsApiTest {
     }
     
     /**
+     * Delete a MerchantDefinedField by ID
+     *
+     * 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteMerchantDefinedFieldsDefinitionsTest() throws Exception {
+        String referenceType = null;
+        Long id = null;
+        api.deleteMerchantDefinedFieldsDefinitions(referenceType, id);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get all merchant defined fields for a given reference type
      *
      * 
@@ -69,23 +86,6 @@ public class MerchantDefinedFieldsApiTest {
     }
     
     /**
-     * Delete a MerchantDefinedField by ID
-     *
-     * 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteTest() throws Exception {
-        String referenceType = null;
-        Long id = null;
-        api.invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(referenceType, id);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Update a MerchantDefinedField by ID
      *
      * 
@@ -94,11 +94,11 @@ public class MerchantDefinedFieldsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutTest() throws Exception {
+    public void putMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
         Long id = null;
         MerchantDefinedFieldCore merchantDefinedFieldCore = null;
-        List<InlineResponse2002> response = api.invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(referenceType, id, merchantDefinedFieldCore);
+        List<InlineResponse2002> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
 
         // TODO: test validations
     }

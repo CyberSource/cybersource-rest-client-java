@@ -15,6 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities;
+import Model.Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation;
+import Model.Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation;
+import Model.Tmsv2tokenstokenIdpaymentcredentialsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +27,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * PostPaymentCredentialsRequest
@@ -35,6 +41,21 @@ public class PostPaymentCredentialsRequest {
   @SerializedName("transactionType")
   private String transactionType = null;
 
+  @SerializedName("clientCorrelationId")
+  private String clientCorrelationId = null;
+
+  @SerializedName("orderInformation")
+  private Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation = null;
+
+  @SerializedName("merchantInformation")
+  private Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation = null;
+
+  @SerializedName("deviceInformation")
+  private Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation = null;
+
+  @SerializedName("authenticatedIdentities")
+  private List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities = null;
+
   public PostPaymentCredentialsRequest paymentCredentialType(String paymentCredentialType) {
     this.paymentCredentialType = paymentCredentialType;
     return this;
@@ -44,7 +65,7 @@ public class PostPaymentCredentialsRequest {
    * The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \&quot;NETWORK_TOKEN\&quot; is supplied then only network token card number will be returned and no cryptogram or dynamic CVV will be requested. If \&quot;SECURITY_CODE\&quot; is supplied then dynamic CVV will be requested and returned with the network token card number. Dynamic CVV is only supported for Amex and SCOF. If \&quot;CRYPTOGRAM\&quot; is supplied then cryptogram will be requested and returned with the network token card number. Cryptogram is NOT supported for Amex.  Possible Values:   - NETWORK_TOKEN   - SECURITY_CODE   - CRYPTOGRAM 
    * @return paymentCredentialType
   **/
-  @ApiModelProperty(value = "The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \"NETWORK_TOKEN\" is supplied then only network token card number will be returned and no cryptogram or dynamic CVV will be requested. If \"SECURITY_CODE\" is supplied then dynamic CVV will be requested and returned with the network token card number. Dynamic CVV is only supported for Amex and SCOF. If \"CRYPTOGRAM\" is supplied then cryptogram will be requested and returned with the network token card number. Cryptogram is NOT supported for Amex.  Possible Values:   - NETWORK_TOKEN   - SECURITY_CODE   - CRYPTOGRAM ")
+  @ApiModelProperty(example = "CRYPTOGRAM", value = "The type of payment credentials to be returned. By default, payment credentials include network token and cryptogram or dynamic CVV. If \"NETWORK_TOKEN\" is supplied then only network token card number will be returned and no cryptogram or dynamic CVV will be requested. If \"SECURITY_CODE\" is supplied then dynamic CVV will be requested and returned with the network token card number. Dynamic CVV is only supported for Amex and SCOF. If \"CRYPTOGRAM\" is supplied then cryptogram will be requested and returned with the network token card number. Cryptogram is NOT supported for Amex.  Possible Values:   - NETWORK_TOKEN   - SECURITY_CODE   - CRYPTOGRAM ")
   public String getPaymentCredentialType() {
     return paymentCredentialType;
   }
@@ -62,13 +83,111 @@ public class PostPaymentCredentialsRequest {
    * Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. 
    * @return transactionType
   **/
-  @ApiModelProperty(value = "Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. ")
+  @ApiModelProperty(example = "ECOM", value = "Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. ")
   public String getTransactionType() {
     return transactionType;
   }
 
   public void setTransactionType(String transactionType) {
     this.transactionType = transactionType;
+  }
+
+  public PostPaymentCredentialsRequest clientCorrelationId(String clientCorrelationId) {
+    this.clientCorrelationId = clientCorrelationId;
+    return this;
+  }
+
+   /**
+   * Used to correlate authentication and payment credential requests. 
+   * @return clientCorrelationId
+  **/
+  @ApiModelProperty(example = "ad30cf0c-b825-42ca-806c-bf06094b0b15", value = "Used to correlate authentication and payment credential requests. ")
+  public String getClientCorrelationId() {
+    return clientCorrelationId;
+  }
+
+  public void setClientCorrelationId(String clientCorrelationId) {
+    this.clientCorrelationId = clientCorrelationId;
+  }
+
+  public PostPaymentCredentialsRequest orderInformation(Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2tokenstokenIdpaymentcredentialsOrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+  }
+
+  public PostPaymentCredentialsRequest merchantInformation(Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+  }
+
+  public PostPaymentCredentialsRequest deviceInformation(Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+    return this;
+  }
+
+   /**
+   * Get deviceInformation
+   * @return deviceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation getDeviceInformation() {
+    return deviceInformation;
+  }
+
+  public void setDeviceInformation(Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+  }
+
+  public PostPaymentCredentialsRequest authenticatedIdentities(List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
+    this.authenticatedIdentities = authenticatedIdentities;
+    return this;
+  }
+
+  public PostPaymentCredentialsRequest addAuthenticatedIdentitiesItem(Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities authenticatedIdentitiesItem) {
+    if (this.authenticatedIdentities == null) {
+      this.authenticatedIdentities = new ArrayList<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities>();
+    }
+    this.authenticatedIdentities.add(authenticatedIdentitiesItem);
+    return this;
+  }
+
+   /**
+   * Get authenticatedIdentities
+   * @return authenticatedIdentities
+  **/
+  @ApiModelProperty(value = "")
+  public List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> getAuthenticatedIdentities() {
+    return authenticatedIdentities;
+  }
+
+  public void setAuthenticatedIdentities(List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
+    this.authenticatedIdentities = authenticatedIdentities;
   }
 
 
@@ -82,12 +201,17 @@ public class PostPaymentCredentialsRequest {
     }
     PostPaymentCredentialsRequest postPaymentCredentialsRequest = (PostPaymentCredentialsRequest) o;
     return Objects.equals(this.paymentCredentialType, postPaymentCredentialsRequest.paymentCredentialType) &&
-        Objects.equals(this.transactionType, postPaymentCredentialsRequest.transactionType);
+        Objects.equals(this.transactionType, postPaymentCredentialsRequest.transactionType) &&
+        Objects.equals(this.clientCorrelationId, postPaymentCredentialsRequest.clientCorrelationId) &&
+        Objects.equals(this.orderInformation, postPaymentCredentialsRequest.orderInformation) &&
+        Objects.equals(this.merchantInformation, postPaymentCredentialsRequest.merchantInformation) &&
+        Objects.equals(this.deviceInformation, postPaymentCredentialsRequest.deviceInformation) &&
+        Objects.equals(this.authenticatedIdentities, postPaymentCredentialsRequest.authenticatedIdentities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentCredentialType, transactionType);
+    return Objects.hash(paymentCredentialType, transactionType, clientCorrelationId, orderInformation, merchantInformation, deviceInformation, authenticatedIdentities);
   }
 
 
@@ -98,6 +222,11 @@ public class PostPaymentCredentialsRequest {
     
     if (paymentCredentialType != null) sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
     if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(toIndentedString(clientCorrelationId)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    if (authenticatedIdentities != null) sb.append("    authenticatedIdentities: ").append(toIndentedString(authenticatedIdentities)).append("\n");
     sb.append("}");
     return sb.toString();
   }
