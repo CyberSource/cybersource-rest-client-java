@@ -588,7 +588,7 @@ public class CustomerShippingAddressApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomersShippingAddress,patchCustomersShippingAddressAsync,patchCustomersShippingAddressWithHttpInfo,patchCustomersShippingAddressCall")) {
             try {
@@ -766,7 +766,7 @@ public class CustomerShippingAddressApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomerShippingAddress,postCustomerShippingAddressAsync,postCustomerShippingAddressWithHttpInfo,postCustomerShippingAddressCall")) {
             try {

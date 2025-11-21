@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **state** | **String** | Acquirer state. |  [optional]
 **postalCode** | **String** | Acquirer postal code. |  [optional]
 **country** | **String** | Acquirer country. |  [optional]
+**serviceProvidername** | **String** | Contains transfer service provider name. |  [optional]
 
 
 

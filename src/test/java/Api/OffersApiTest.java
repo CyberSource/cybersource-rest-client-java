@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.InlineResponse20014;
+import Model.InlineResponse20015;
 import Model.InlineResponse2018;
 import Model.InlineResponse40010;
 import Model.InlineResponse5022;
@@ -73,7 +73,7 @@ public class OffersApiTest {
         String vCCorrelationId = null;
         String vCOrganizationId = null;
         String id = null;
-        InlineResponse20014 response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
+        InlineResponse20015 response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
 
         // TODO: test validations
     }

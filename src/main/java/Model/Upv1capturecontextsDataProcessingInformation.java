@@ -42,10 +42,10 @@ public class Upv1capturecontextsDataProcessingInformation {
   }
 
    /**
-   * Get reconciliationId
+   * The reconciliation ID
    * @return reconciliationId
   **/
-  @ApiModelProperty(example = "01234567", value = "")
+  @ApiModelProperty(example = "01234567", value = "The reconciliation ID")
   public String getReconciliationId() {
     return reconciliationId;
   }

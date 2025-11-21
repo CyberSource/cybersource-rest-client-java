@@ -33,11 +33,26 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {
   @SerializedName("aftIndicator")
   private Boolean aftIndicator = null;
 
+  @SerializedName("authIndicator")
+  private String authIndicator = null;
+
+  @SerializedName("ignoreCvResult")
+  private Boolean ignoreCvResult = null;
+
+  @SerializedName("ignoreAvsResult")
+  private Boolean ignoreAvsResult = null;
+
   @SerializedName("initiator")
   private Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
+
+  @SerializedName("commerceIndicator")
+  private String commerceIndicator = null;
+
+  @SerializedName("processingInstruction")
+  private String processingInstruction = null;
 
   public Upv1capturecontextsDataProcessingInformationAuthorizationOptions aftIndicator(Boolean aftIndicator) {
     this.aftIndicator = aftIndicator;
@@ -45,16 +60,70 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Get aftIndicator
+   * The AFT indicator
    * @return aftIndicator
   **/
-  @ApiModelProperty(example = "true", value = "")
+  @ApiModelProperty(example = "true", value = "The AFT indicator")
   public Boolean AftIndicator() {
     return aftIndicator;
   }
 
   public void setAftIndicator(Boolean aftIndicator) {
     this.aftIndicator = aftIndicator;
+  }
+
+  public Upv1capturecontextsDataProcessingInformationAuthorizationOptions authIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+    return this;
+  }
+
+   /**
+   * The authorization indicator
+   * @return authIndicator
+  **/
+  @ApiModelProperty(example = "1", value = "The authorization indicator")
+  public String getAuthIndicator() {
+    return authIndicator;
+  }
+
+  public void setAuthIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+  }
+
+  public Upv1capturecontextsDataProcessingInformationAuthorizationOptions ignoreCvResult(Boolean ignoreCvResult) {
+    this.ignoreCvResult = ignoreCvResult;
+    return this;
+  }
+
+   /**
+   * Ignore the CV result
+   * @return ignoreCvResult
+  **/
+  @ApiModelProperty(example = "true", value = "Ignore the CV result")
+  public Boolean IgnoreCvResult() {
+    return ignoreCvResult;
+  }
+
+  public void setIgnoreCvResult(Boolean ignoreCvResult) {
+    this.ignoreCvResult = ignoreCvResult;
+  }
+
+  public Upv1capturecontextsDataProcessingInformationAuthorizationOptions ignoreAvsResult(Boolean ignoreAvsResult) {
+    this.ignoreAvsResult = ignoreAvsResult;
+    return this;
+  }
+
+   /**
+   * Ignore the AVS result
+   * @return ignoreAvsResult
+  **/
+  @ApiModelProperty(example = "true", value = "Ignore the AVS result")
+  public Boolean IgnoreAvsResult() {
+    return ignoreAvsResult;
+  }
+
+  public void setIgnoreAvsResult(Boolean ignoreAvsResult) {
+    this.ignoreAvsResult = ignoreAvsResult;
   }
 
   public Upv1capturecontextsDataProcessingInformationAuthorizationOptions initiator(Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator initiator) {
@@ -81,16 +150,52 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Get businessApplicationId
+   * The business application Id
    * @return businessApplicationId
   **/
-  @ApiModelProperty(example = "AA", value = "")
+  @ApiModelProperty(example = "AA", value = "The business application Id")
   public String getBusinessApplicationId() {
     return businessApplicationId;
   }
 
   public void setBusinessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
+  }
+
+  public Upv1capturecontextsDataProcessingInformationAuthorizationOptions commerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+    return this;
+  }
+
+   /**
+   * The commerce indicator
+   * @return commerceIndicator
+  **/
+  @ApiModelProperty(example = "INDICATOR", value = "The commerce indicator")
+  public String getCommerceIndicator() {
+    return commerceIndicator;
+  }
+
+  public void setCommerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+  }
+
+  public Upv1capturecontextsDataProcessingInformationAuthorizationOptions processingInstruction(String processingInstruction) {
+    this.processingInstruction = processingInstruction;
+    return this;
+  }
+
+   /**
+   * The processing instruction
+   * @return processingInstruction
+  **/
+  @ApiModelProperty(example = "ORDER_SAVED_EXPLICITLY", value = "The processing instruction")
+  public String getProcessingInstruction() {
+    return processingInstruction;
+  }
+
+  public void setProcessingInstruction(String processingInstruction) {
+    this.processingInstruction = processingInstruction;
   }
 
 
@@ -104,13 +209,18 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {
     }
     Upv1capturecontextsDataProcessingInformationAuthorizationOptions upv1capturecontextsDataProcessingInformationAuthorizationOptions = (Upv1capturecontextsDataProcessingInformationAuthorizationOptions) o;
     return Objects.equals(this.aftIndicator, upv1capturecontextsDataProcessingInformationAuthorizationOptions.aftIndicator) &&
+        Objects.equals(this.authIndicator, upv1capturecontextsDataProcessingInformationAuthorizationOptions.authIndicator) &&
+        Objects.equals(this.ignoreCvResult, upv1capturecontextsDataProcessingInformationAuthorizationOptions.ignoreCvResult) &&
+        Objects.equals(this.ignoreAvsResult, upv1capturecontextsDataProcessingInformationAuthorizationOptions.ignoreAvsResult) &&
         Objects.equals(this.initiator, upv1capturecontextsDataProcessingInformationAuthorizationOptions.initiator) &&
-        Objects.equals(this.businessApplicationId, upv1capturecontextsDataProcessingInformationAuthorizationOptions.businessApplicationId);
+        Objects.equals(this.businessApplicationId, upv1capturecontextsDataProcessingInformationAuthorizationOptions.businessApplicationId) &&
+        Objects.equals(this.commerceIndicator, upv1capturecontextsDataProcessingInformationAuthorizationOptions.commerceIndicator) &&
+        Objects.equals(this.processingInstruction, upv1capturecontextsDataProcessingInformationAuthorizationOptions.processingInstruction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aftIndicator, initiator, businessApplicationId);
+    return Objects.hash(aftIndicator, authIndicator, ignoreCvResult, ignoreAvsResult, initiator, businessApplicationId, commerceIndicator, processingInstruction);
   }
 
 
@@ -120,8 +230,13 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {
     sb.append("class Upv1capturecontextsDataProcessingInformationAuthorizationOptions {\n");
     
     if (aftIndicator != null) sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
+    if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    if (ignoreCvResult != null) sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
+    if (ignoreAvsResult != null) sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
     if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (processingInstruction != null) sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
     sb.append("}");
     return sb.toString();
   }

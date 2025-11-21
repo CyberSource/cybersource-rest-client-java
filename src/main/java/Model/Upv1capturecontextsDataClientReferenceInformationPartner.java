@@ -32,7 +32,7 @@ public class Upv1capturecontextsDataClientReferenceInformationPartner {
   @SerializedName("developerId")
   private String developerId = null;
 
-  @SerializedName("SolutionId")
+  @SerializedName("solutionId")
   private String solutionId = null;
 
   public Upv1capturecontextsDataClientReferenceInformationPartner developerId(String developerId) {

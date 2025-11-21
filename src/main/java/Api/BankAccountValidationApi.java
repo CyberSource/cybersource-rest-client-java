@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.AccountValidationsRequest;
-import Model.InlineResponse20013;
+import Model.InlineResponse20014;
 import Model.InlineResponse4009;
 import Model.InlineResponse4033;
 import Model.InlineResponse4045;
@@ -155,13 +155,13 @@ public class BankAccountValidationApi {
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer&#39;s routing and bank account number combination for ACH transactions. Merchant&#39;s can use this standalone product to validate their customer&#39;s account prior to processing an ACH transaction against the customer&#39;s account to comply with Nacha&#39;s account validation mandate for Web-debit transactions. 
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param accountValidationsRequest  (required)
-     * @return InlineResponse20013
+     * @return InlineResponse20014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20013 bankAccountValidationRequest(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
+    public InlineResponse20014 bankAccountValidationRequest(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'bankAccountValidationRequest' STARTED");
-        ApiResponse<InlineResponse20013> resp = bankAccountValidationRequestWithHttpInfo(accountValidationsRequest);
+        ApiResponse<InlineResponse20014> resp = bankAccountValidationRequestWithHttpInfo(accountValidationsRequest);
         logger.info("CALL TO METHOD 'bankAccountValidationRequest' ENDED");
         return resp.getData();
     }
@@ -170,14 +170,14 @@ public class BankAccountValidationApi {
      * Visa Bank Account Validation Service
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer&#39;s routing and bank account number combination for ACH transactions. Merchant&#39;s can use this standalone product to validate their customer&#39;s account prior to processing an ACH transaction against the customer&#39;s account to comply with Nacha&#39;s account validation mandate for Web-debit transactions. 
      * @param accountValidationsRequest  (required)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;InlineResponse20014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20013> bankAccountValidationRequestWithHttpInfo(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20014> bankAccountValidationRequestWithHttpInfo(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = bankAccountValidationRequestValidateBeforeCall(accountValidationsRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -190,7 +190,7 @@ public class BankAccountValidationApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call bankAccountValidationRequestAsync(AccountValidationsRequest accountValidationsRequest, final ApiCallback<InlineResponse20013> callback) throws ApiException, ConfigException {
+    public okhttp3.Call bankAccountValidationRequestAsync(AccountValidationsRequest accountValidationsRequest, final ApiCallback<InlineResponse20014> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -213,7 +213,7 @@ public class BankAccountValidationApi {
         }
 
         okhttp3.Call call = bankAccountValidationRequestValidateBeforeCall(accountValidationsRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

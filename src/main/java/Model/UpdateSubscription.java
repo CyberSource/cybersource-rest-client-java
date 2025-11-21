@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Rbsv1subscriptionsClientReferenceInformation;
+import Model.GetAllSubscriptionsResponseClientReferenceInformation;
 import Model.Rbsv1subscriptionsProcessingInformation;
 import Model.Rbsv1subscriptionsidOrderInformation;
 import Model.Rbsv1subscriptionsidPlanInformation;
@@ -35,7 +35,7 @@ import java.io.IOException;
 
 public class UpdateSubscription {
   @SerializedName("clientReferenceInformation")
-  private Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation = null;
+  private GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
   private Rbsv1subscriptionsProcessingInformation processingInformation = null;
@@ -49,7 +49,7 @@ public class UpdateSubscription {
   @SerializedName("orderInformation")
   private Rbsv1subscriptionsidOrderInformation orderInformation = null;
 
-  public UpdateSubscription clientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public UpdateSubscription clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -59,11 +59,11 @@ public class UpdateSubscription {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Rbsv1subscriptionsClientReferenceInformation getClientReferenceInformation() {
+  public GetAllSubscriptionsResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

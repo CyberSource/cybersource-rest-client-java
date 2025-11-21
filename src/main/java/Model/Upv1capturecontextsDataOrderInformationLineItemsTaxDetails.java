@@ -56,10 +56,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get type
+   * Type of tax
    * @return type
   **/
-  @ApiModelProperty(example = "VAT", value = "")
+  @ApiModelProperty(example = "VAT", value = "Type of tax")
   public String getType() {
     return type;
   }
@@ -74,10 +74,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get amount
+   * Tax amount
    * @return amount
   **/
-  @ApiModelProperty(example = "5.99", value = "")
+  @ApiModelProperty(example = "5.99", value = "Tax amount")
   public String getAmount() {
     return amount;
   }
@@ -92,10 +92,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get rate
+   * Tax rate
    * @return rate
   **/
-  @ApiModelProperty(example = "20", value = "")
+  @ApiModelProperty(example = "20", value = "Tax rate")
   public String getRate() {
     return rate;
   }
@@ -110,10 +110,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get code
+   * Tax code
    * @return code
   **/
-  @ApiModelProperty(example = "VAT", value = "")
+  @ApiModelProperty(example = "VAT", value = "Tax code")
   public String getCode() {
     return code;
   }
@@ -128,10 +128,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get taxId
+   * Tax Identifier
    * @return taxId
   **/
-  @ApiModelProperty(example = "TAXID12345", value = "")
+  @ApiModelProperty(example = "TAXID12345", value = "Tax Identifier")
   public String getTaxId() {
     return taxId;
   }
@@ -146,10 +146,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get applied
+   * Indicates if tax applied
    * @return applied
   **/
-  @ApiModelProperty(example = "true", value = "")
+  @ApiModelProperty(example = "true", value = "Indicates if tax applied")
   public Boolean Applied() {
     return applied;
   }
@@ -164,10 +164,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   }
 
    /**
-   * Get exemptionCode
+   * Tax exemption code
    * @return exemptionCode
   **/
-  @ApiModelProperty(example = "E", value = "")
+  @ApiModelProperty(example = "E", value = "Tax exemption code")
   public String getExemptionCode() {
     return exemptionCode;
   }

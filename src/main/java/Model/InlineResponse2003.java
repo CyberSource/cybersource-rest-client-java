@@ -15,12 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Boardingv1registrationsDocumentInformation;
-import Model.Boardingv1registrationsOrganizationInformation;
-import Model.Boardingv1registrationsProductInformation;
-import Model.Boardingv1registrationsRegistrationInformation;
-import Model.InlineResponse2003IntegrationInformation;
-import Model.InlineResponse2013ProductInformationSetups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,177 +23,262 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * InlineResponse2003
  */
 
 public class InlineResponse2003 {
-  @SerializedName("registrationInformation")
-  private Boardingv1registrationsRegistrationInformation registrationInformation = null;
+  @SerializedName("id")
+  private Long id = null;
 
-  @SerializedName("integrationInformation")
-  private InlineResponse2003IntegrationInformation integrationInformation = null;
+  @SerializedName("fieldType")
+  private String fieldType = null;
 
-  @SerializedName("organizationInformation")
-  private Boardingv1registrationsOrganizationInformation organizationInformation = null;
+  @SerializedName("label")
+  private String label = null;
 
-  @SerializedName("productInformation")
-  private Boardingv1registrationsProductInformation productInformation = null;
+  @SerializedName("customerVisible")
+  private Boolean customerVisible = null;
 
-  @SerializedName("productInformationSetups")
-  private List<InlineResponse2013ProductInformationSetups> productInformationSetups = null;
+  @SerializedName("textMinLength")
+  private Integer textMinLength = null;
 
-  @SerializedName("documentInformation")
-  private Boardingv1registrationsDocumentInformation documentInformation = null;
+  @SerializedName("textMaxLength")
+  private Integer textMaxLength = null;
 
-  @SerializedName("details")
-  private Map<String, List<Object>> details = null;
+  @SerializedName("possibleValues")
+  private String possibleValues = null;
 
-  public InlineResponse2003 registrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
-    this.registrationInformation = registrationInformation;
+  @SerializedName("textDefaultValue")
+  private String textDefaultValue = null;
+
+  @SerializedName("merchantId")
+  private String merchantId = null;
+
+  @SerializedName("referenceType")
+  private String referenceType = null;
+
+  @SerializedName("readOnly")
+  private Boolean readOnly = null;
+
+  @SerializedName("merchantDefinedDataIndex")
+  private Integer merchantDefinedDataIndex = null;
+
+  public InlineResponse2003 id(Long id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get registrationInformation
-   * @return registrationInformation
+   * Get id
+   * @return id
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsRegistrationInformation getRegistrationInformation() {
-    return registrationInformation;
+  public Long getId() {
+    return id;
   }
 
-  public void setRegistrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
-    this.registrationInformation = registrationInformation;
+  public void setId(Long id) {
+    this.id = id;
   }
 
-  public InlineResponse2003 integrationInformation(InlineResponse2003IntegrationInformation integrationInformation) {
-    this.integrationInformation = integrationInformation;
+  public InlineResponse2003 fieldType(String fieldType) {
+    this.fieldType = fieldType;
     return this;
   }
 
    /**
-   * Get integrationInformation
-   * @return integrationInformation
+   * Get fieldType
+   * @return fieldType
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2003IntegrationInformation getIntegrationInformation() {
-    return integrationInformation;
+  public String getFieldType() {
+    return fieldType;
   }
 
-  public void setIntegrationInformation(InlineResponse2003IntegrationInformation integrationInformation) {
-    this.integrationInformation = integrationInformation;
+  public void setFieldType(String fieldType) {
+    this.fieldType = fieldType;
   }
 
-  public InlineResponse2003 organizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
-    this.organizationInformation = organizationInformation;
+  public InlineResponse2003 label(String label) {
+    this.label = label;
     return this;
   }
 
    /**
-   * Get organizationInformation
-   * @return organizationInformation
+   * Get label
+   * @return label
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsOrganizationInformation getOrganizationInformation() {
-    return organizationInformation;
+  public String getLabel() {
+    return label;
   }
 
-  public void setOrganizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
-    this.organizationInformation = organizationInformation;
+  public void setLabel(String label) {
+    this.label = label;
   }
 
-  public InlineResponse2003 productInformation(Boardingv1registrationsProductInformation productInformation) {
-    this.productInformation = productInformation;
+  public InlineResponse2003 customerVisible(Boolean customerVisible) {
+    this.customerVisible = customerVisible;
     return this;
   }
 
    /**
-   * Get productInformation
-   * @return productInformation
+   * Get customerVisible
+   * @return customerVisible
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsProductInformation getProductInformation() {
-    return productInformation;
+  public Boolean CustomerVisible() {
+    return customerVisible;
   }
 
-  public void setProductInformation(Boardingv1registrationsProductInformation productInformation) {
-    this.productInformation = productInformation;
+  public void setCustomerVisible(Boolean customerVisible) {
+    this.customerVisible = customerVisible;
   }
 
-  public InlineResponse2003 productInformationSetups(List<InlineResponse2013ProductInformationSetups> productInformationSetups) {
-    this.productInformationSetups = productInformationSetups;
-    return this;
-  }
-
-  public InlineResponse2003 addProductInformationSetupsItem(InlineResponse2013ProductInformationSetups productInformationSetupsItem) {
-    if (this.productInformationSetups == null) {
-      this.productInformationSetups = new ArrayList<InlineResponse2013ProductInformationSetups>();
-    }
-    this.productInformationSetups.add(productInformationSetupsItem);
+  public InlineResponse2003 textMinLength(Integer textMinLength) {
+    this.textMinLength = textMinLength;
     return this;
   }
 
    /**
-   * Get productInformationSetups
-   * @return productInformationSetups
+   * Get textMinLength
+   * @return textMinLength
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2013ProductInformationSetups> getProductInformationSetups() {
-    return productInformationSetups;
+  public Integer getTextMinLength() {
+    return textMinLength;
   }
 
-  public void setProductInformationSetups(List<InlineResponse2013ProductInformationSetups> productInformationSetups) {
-    this.productInformationSetups = productInformationSetups;
+  public void setTextMinLength(Integer textMinLength) {
+    this.textMinLength = textMinLength;
   }
 
-  public InlineResponse2003 documentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
-    this.documentInformation = documentInformation;
+  public InlineResponse2003 textMaxLength(Integer textMaxLength) {
+    this.textMaxLength = textMaxLength;
     return this;
   }
 
    /**
-   * Get documentInformation
-   * @return documentInformation
+   * Get textMaxLength
+   * @return textMaxLength
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsDocumentInformation getDocumentInformation() {
-    return documentInformation;
+  public Integer getTextMaxLength() {
+    return textMaxLength;
   }
 
-  public void setDocumentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
-    this.documentInformation = documentInformation;
+  public void setTextMaxLength(Integer textMaxLength) {
+    this.textMaxLength = textMaxLength;
   }
 
-  public InlineResponse2003 details(Map<String, List<Object>> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse2003 putDetailsItem(String key, List<Object> detailsItem) {
-    if (this.details == null) {
-      this.details = new HashMap<String, List<Object>>();
-    }
-    this.details.put(key, detailsItem);
+  public InlineResponse2003 possibleValues(String possibleValues) {
+    this.possibleValues = possibleValues;
     return this;
   }
 
    /**
-   * Get details
-   * @return details
+   * Get possibleValues
+   * @return possibleValues
   **/
   @ApiModelProperty(value = "")
-  public Map<String, List<Object>> getDetails() {
-    return details;
+  public String getPossibleValues() {
+    return possibleValues;
   }
 
-  public void setDetails(Map<String, List<Object>> details) {
-    this.details = details;
+  public void setPossibleValues(String possibleValues) {
+    this.possibleValues = possibleValues;
+  }
+
+  public InlineResponse2003 textDefaultValue(String textDefaultValue) {
+    this.textDefaultValue = textDefaultValue;
+    return this;
+  }
+
+   /**
+   * Get textDefaultValue
+   * @return textDefaultValue
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextDefaultValue() {
+    return textDefaultValue;
+  }
+
+  public void setTextDefaultValue(String textDefaultValue) {
+    this.textDefaultValue = textDefaultValue;
+  }
+
+  public InlineResponse2003 merchantId(String merchantId) {
+    this.merchantId = merchantId;
+    return this;
+  }
+
+   /**
+   * Get merchantId
+   * @return merchantId
+  **/
+  @ApiModelProperty(value = "")
+  public String getMerchantId() {
+    return merchantId;
+  }
+
+  public void setMerchantId(String merchantId) {
+    this.merchantId = merchantId;
+  }
+
+  public InlineResponse2003 referenceType(String referenceType) {
+    this.referenceType = referenceType;
+    return this;
+  }
+
+   /**
+   * Get referenceType
+   * @return referenceType
+  **/
+  @ApiModelProperty(value = "")
+  public String getReferenceType() {
+    return referenceType;
+  }
+
+  public void setReferenceType(String referenceType) {
+    this.referenceType = referenceType;
+  }
+
+  public InlineResponse2003 readOnly(Boolean readOnly) {
+    this.readOnly = readOnly;
+    return this;
+  }
+
+   /**
+   * Get readOnly
+   * @return readOnly
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean ReadOnly() {
+    return readOnly;
+  }
+
+  public void setReadOnly(Boolean readOnly) {
+    this.readOnly = readOnly;
+  }
+
+  public InlineResponse2003 merchantDefinedDataIndex(Integer merchantDefinedDataIndex) {
+    this.merchantDefinedDataIndex = merchantDefinedDataIndex;
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedDataIndex
+   * @return merchantDefinedDataIndex
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getMerchantDefinedDataIndex() {
+    return merchantDefinedDataIndex;
+  }
+
+  public void setMerchantDefinedDataIndex(Integer merchantDefinedDataIndex) {
+    this.merchantDefinedDataIndex = merchantDefinedDataIndex;
   }
 
 
@@ -212,18 +291,23 @@ public class InlineResponse2003 {
       return false;
     }
     InlineResponse2003 inlineResponse2003 = (InlineResponse2003) o;
-    return Objects.equals(this.registrationInformation, inlineResponse2003.registrationInformation) &&
-        Objects.equals(this.integrationInformation, inlineResponse2003.integrationInformation) &&
-        Objects.equals(this.organizationInformation, inlineResponse2003.organizationInformation) &&
-        Objects.equals(this.productInformation, inlineResponse2003.productInformation) &&
-        Objects.equals(this.productInformationSetups, inlineResponse2003.productInformationSetups) &&
-        Objects.equals(this.documentInformation, inlineResponse2003.documentInformation) &&
-        Objects.equals(this.details, inlineResponse2003.details);
+    return Objects.equals(this.id, inlineResponse2003.id) &&
+        Objects.equals(this.fieldType, inlineResponse2003.fieldType) &&
+        Objects.equals(this.label, inlineResponse2003.label) &&
+        Objects.equals(this.customerVisible, inlineResponse2003.customerVisible) &&
+        Objects.equals(this.textMinLength, inlineResponse2003.textMinLength) &&
+        Objects.equals(this.textMaxLength, inlineResponse2003.textMaxLength) &&
+        Objects.equals(this.possibleValues, inlineResponse2003.possibleValues) &&
+        Objects.equals(this.textDefaultValue, inlineResponse2003.textDefaultValue) &&
+        Objects.equals(this.merchantId, inlineResponse2003.merchantId) &&
+        Objects.equals(this.referenceType, inlineResponse2003.referenceType) &&
+        Objects.equals(this.readOnly, inlineResponse2003.readOnly) &&
+        Objects.equals(this.merchantDefinedDataIndex, inlineResponse2003.merchantDefinedDataIndex);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(registrationInformation, integrationInformation, organizationInformation, productInformation, productInformationSetups, documentInformation, details);
+    return Objects.hash(id, fieldType, label, customerVisible, textMinLength, textMaxLength, possibleValues, textDefaultValue, merchantId, referenceType, readOnly, merchantDefinedDataIndex);
   }
 
 
@@ -232,13 +316,18 @@ public class InlineResponse2003 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2003 {\n");
     
-    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
-    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
-    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
-    if (productInformation != null) sb.append("    productInformation: ").append(toIndentedString(productInformation)).append("\n");
-    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
-    if (documentInformation != null) sb.append("    documentInformation: ").append(toIndentedString(documentInformation)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (fieldType != null) sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
+    if (label != null) sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    if (customerVisible != null) sb.append("    customerVisible: ").append(toIndentedString(customerVisible)).append("\n");
+    if (textMinLength != null) sb.append("    textMinLength: ").append(toIndentedString(textMinLength)).append("\n");
+    if (textMaxLength != null) sb.append("    textMaxLength: ").append(toIndentedString(textMaxLength)).append("\n");
+    if (possibleValues != null) sb.append("    possibleValues: ").append(toIndentedString(possibleValues)).append("\n");
+    if (textDefaultValue != null) sb.append("    textDefaultValue: ").append(toIndentedString(textDefaultValue)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (referenceType != null) sb.append("    referenceType: ").append(toIndentedString(referenceType)).append("\n");
+    if (readOnly != null) sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
+    if (merchantDefinedDataIndex != null) sb.append("    merchantDefinedDataIndex: ").append(toIndentedString(merchantDefinedDataIndex)).append("\n");
     sb.append("}");
     return sb.toString();
   }

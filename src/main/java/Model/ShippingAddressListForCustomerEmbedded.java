@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddress;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,14 +34,14 @@ import java.util.List;
 
 public class ShippingAddressListForCustomerEmbedded {
   @SerializedName("shippingAddresses")
-  private List<Tmsv2customersEmbeddedDefaultShippingAddress> shippingAddresses = null;
+  private List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress> shippingAddresses = null;
 
    /**
    * Get shippingAddresses
    * @return shippingAddresses
   **/
   @ApiModelProperty(value = "")
-  public List<Tmsv2customersEmbeddedDefaultShippingAddress> getShippingAddresses() {
+  public List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress> getShippingAddresses() {
     return shippingAddresses;
   }
 

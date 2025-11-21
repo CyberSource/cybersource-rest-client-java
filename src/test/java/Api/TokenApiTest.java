@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.InlineResponse200;
+import Model.InlineResponse2001;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse410;
@@ -51,7 +51,7 @@ public class TokenApiTest {
         String instrumentIdentifierId = null;
         String tokenProvider = null;
         String assetType = null;
-        InlineResponse200 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
+        InlineResponse2001 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
 
         // TODO: test validations
     }

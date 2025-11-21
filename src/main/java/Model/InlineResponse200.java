@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse200Content;
+import Model.InlineResponse200Responses;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,101 +28,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents the Card Art Asset associated to the Network Token. 
+ * InlineResponse200
  */
-@ApiModel(description = "Represents the Card Art Asset associated to the Network Token. ")
 
 public class InlineResponse200 {
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("responses")
+  private List<InlineResponse200Responses> responses = null;
 
-  @SerializedName("type")
-  private String type = null;
-
-  @SerializedName("provider")
-  private String provider = null;
-
-  @SerializedName("content")
-  private List<InlineResponse200Content> content = null;
-
-  public InlineResponse200 id(String id) {
-    this.id = id;
+  public InlineResponse200 responses(List<InlineResponse200Responses> responses) {
+    this.responses = responses;
     return this;
   }
 
-   /**
-   * Unique identifier for the Card Art Asset. 
-   * @return id
-  **/
-  @ApiModelProperty(example = "84cfb836a0000859be62c766bdc9e510", value = "Unique identifier for the Card Art Asset. ")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse200 type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * The type of Card Art Asset. 
-   * @return type
-  **/
-  @ApiModelProperty(example = "cardArtCombined", value = "The type of Card Art Asset. ")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public InlineResponse200 provider(String provider) {
-    this.provider = provider;
-    return this;
-  }
-
-   /**
-   * The provider of the Card Art Asset. 
-   * @return provider
-  **/
-  @ApiModelProperty(example = "vts", value = "The provider of the Card Art Asset. ")
-  public String getProvider() {
-    return provider;
-  }
-
-  public void setProvider(String provider) {
-    this.provider = provider;
-  }
-
-  public InlineResponse200 content(List<InlineResponse200Content> content) {
-    this.content = content;
-    return this;
-  }
-
-  public InlineResponse200 addContentItem(InlineResponse200Content contentItem) {
-    if (this.content == null) {
-      this.content = new ArrayList<InlineResponse200Content>();
+  public InlineResponse200 addResponsesItem(InlineResponse200Responses responsesItem) {
+    if (this.responses == null) {
+      this.responses = new ArrayList<InlineResponse200Responses>();
     }
-    this.content.add(contentItem);
+    this.responses.add(responsesItem);
     return this;
   }
 
    /**
-   * Array of content objects representing the Card Art Asset. 
-   * @return content
+   * Get responses
+   * @return responses
   **/
-  @ApiModelProperty(value = "Array of content objects representing the Card Art Asset. ")
-  public List<InlineResponse200Content> getContent() {
-    return content;
+  @ApiModelProperty(value = "")
+  public List<InlineResponse200Responses> getResponses() {
+    return responses;
   }
 
-  public void setContent(List<InlineResponse200Content> content) {
-    this.content = content;
+  public void setResponses(List<InlineResponse200Responses> responses) {
+    this.responses = responses;
   }
 
 
@@ -135,15 +71,12 @@ public class InlineResponse200 {
       return false;
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return Objects.equals(this.id, inlineResponse200.id) &&
-        Objects.equals(this.type, inlineResponse200.type) &&
-        Objects.equals(this.provider, inlineResponse200.provider) &&
-        Objects.equals(this.content, inlineResponse200.content);
+    return Objects.equals(this.responses, inlineResponse200.responses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, provider, content);
+    return Objects.hash(responses);
   }
 
 
@@ -152,10 +85,7 @@ public class InlineResponse200 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200 {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    if (content != null) sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    if (responses != null) sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

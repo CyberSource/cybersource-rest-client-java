@@ -29,46 +29,46 @@ import java.io.IOException;
  */
 
 public class GetSubscriptionResponseReactivationInformation {
-  @SerializedName("skippedPaymentsCount")
-  private String skippedPaymentsCount = null;
+  @SerializedName("missedPaymentsCount")
+  private String missedPaymentsCount = null;
 
-  @SerializedName("skippedPaymentsTotalAmount")
-  private String skippedPaymentsTotalAmount = null;
+  @SerializedName("missedPaymentsTotalAmount")
+  private String missedPaymentsTotalAmount = null;
 
-  public GetSubscriptionResponseReactivationInformation skippedPaymentsCount(String skippedPaymentsCount) {
-    this.skippedPaymentsCount = skippedPaymentsCount;
+  public GetSubscriptionResponseReactivationInformation missedPaymentsCount(String missedPaymentsCount) {
+    this.missedPaymentsCount = missedPaymentsCount;
     return this;
   }
 
    /**
    * Number of payments that should have occurred while the subscription was in a suspended status. 
-   * @return skippedPaymentsCount
+   * @return missedPaymentsCount
   **/
   @ApiModelProperty(value = "Number of payments that should have occurred while the subscription was in a suspended status. ")
-  public String getSkippedPaymentsCount() {
-    return skippedPaymentsCount;
+  public String getMissedPaymentsCount() {
+    return missedPaymentsCount;
   }
 
-  public void setSkippedPaymentsCount(String skippedPaymentsCount) {
-    this.skippedPaymentsCount = skippedPaymentsCount;
+  public void setMissedPaymentsCount(String missedPaymentsCount) {
+    this.missedPaymentsCount = missedPaymentsCount;
   }
 
-  public GetSubscriptionResponseReactivationInformation skippedPaymentsTotalAmount(String skippedPaymentsTotalAmount) {
-    this.skippedPaymentsTotalAmount = skippedPaymentsTotalAmount;
+  public GetSubscriptionResponseReactivationInformation missedPaymentsTotalAmount(String missedPaymentsTotalAmount) {
+    this.missedPaymentsTotalAmount = missedPaymentsTotalAmount;
     return this;
   }
 
    /**
-   * Total amount that will be charged upon reactivation if &#x60;processSkippedPayments&#x60; is set to &#x60;true&#x60;. 
-   * @return skippedPaymentsTotalAmount
+   * Total amount that will be charged upon reactivation if &#x60;processMissedPayments&#x60; is set to &#x60;true&#x60;. 
+   * @return missedPaymentsTotalAmount
   **/
-  @ApiModelProperty(value = "Total amount that will be charged upon reactivation if `processSkippedPayments` is set to `true`. ")
-  public String getSkippedPaymentsTotalAmount() {
-    return skippedPaymentsTotalAmount;
+  @ApiModelProperty(value = "Total amount that will be charged upon reactivation if `processMissedPayments` is set to `true`. ")
+  public String getMissedPaymentsTotalAmount() {
+    return missedPaymentsTotalAmount;
   }
 
-  public void setSkippedPaymentsTotalAmount(String skippedPaymentsTotalAmount) {
-    this.skippedPaymentsTotalAmount = skippedPaymentsTotalAmount;
+  public void setMissedPaymentsTotalAmount(String missedPaymentsTotalAmount) {
+    this.missedPaymentsTotalAmount = missedPaymentsTotalAmount;
   }
 
 
@@ -81,13 +81,13 @@ public class GetSubscriptionResponseReactivationInformation {
       return false;
     }
     GetSubscriptionResponseReactivationInformation getSubscriptionResponseReactivationInformation = (GetSubscriptionResponseReactivationInformation) o;
-    return Objects.equals(this.skippedPaymentsCount, getSubscriptionResponseReactivationInformation.skippedPaymentsCount) &&
-        Objects.equals(this.skippedPaymentsTotalAmount, getSubscriptionResponseReactivationInformation.skippedPaymentsTotalAmount);
+    return Objects.equals(this.missedPaymentsCount, getSubscriptionResponseReactivationInformation.missedPaymentsCount) &&
+        Objects.equals(this.missedPaymentsTotalAmount, getSubscriptionResponseReactivationInformation.missedPaymentsTotalAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(skippedPaymentsCount, skippedPaymentsTotalAmount);
+    return Objects.hash(missedPaymentsCount, missedPaymentsTotalAmount);
   }
 
 
@@ -96,8 +96,8 @@ public class GetSubscriptionResponseReactivationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubscriptionResponseReactivationInformation {\n");
     
-    if (skippedPaymentsCount != null) sb.append("    skippedPaymentsCount: ").append(toIndentedString(skippedPaymentsCount)).append("\n");
-    if (skippedPaymentsTotalAmount != null) sb.append("    skippedPaymentsTotalAmount: ").append(toIndentedString(skippedPaymentsTotalAmount)).append("\n");
+    if (missedPaymentsCount != null) sb.append("    missedPaymentsCount: ").append(toIndentedString(missedPaymentsCount)).append("\n");
+    if (missedPaymentsTotalAmount != null) sb.append("    missedPaymentsTotalAmount: ").append(toIndentedString(missedPaymentsTotalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

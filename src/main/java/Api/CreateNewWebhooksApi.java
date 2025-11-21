@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.CreateWebhook;
-import Model.InlineResponse2004;
+import Model.InlineResponse2005;
 import Model.InlineResponse2014;
 import Model.InlineResponse2015;
 import Model.SaveSymEgressKey;
@@ -156,13 +156,13 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @return List&lt;InlineResponse2005&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
+    public List<InlineResponse2005> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
+        ApiResponse<List<InlineResponse2005>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
     }
@@ -171,14 +171,14 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2005&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
+    public ApiResponse<List<InlineResponse2005>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2005>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -191,7 +191,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
+    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2005>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -214,7 +214,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2005>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
