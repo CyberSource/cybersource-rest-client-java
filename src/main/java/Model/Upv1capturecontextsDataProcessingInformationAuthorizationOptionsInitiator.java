@@ -42,10 +42,10 @@ public class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsIni
   }
 
    /**
-   * Get credentialStoredOnFile
+   * Store the credential on file
    * @return credentialStoredOnFile
   **/
-  @ApiModelProperty(example = "true", value = "")
+  @ApiModelProperty(example = "true", value = "Store the credential on file")
   public Boolean CredentialStoredOnFile() {
     return credentialStoredOnFile;
   }

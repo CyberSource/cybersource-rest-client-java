@@ -28,8 +28,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Upv1capturecontextsOrderInformation
+ * If you need to include any fields within the data object, you must use the orderInformation object that is nested inside the data object. This ensures proper structure and compliance with the Unified Checkout schema. This top-level orderInformation field is not intended for use when working with the data object.
  */
+@ApiModel(description = "If you need to include any fields within the data object, you must use the orderInformation object that is nested inside the data object. This ensures proper structure and compliance with the Unified Checkout schema. This top-level orderInformation field is not intended for use when working with the data object.")
 
 public class Upv1capturecontextsOrderInformation {
   @SerializedName("amountDetails")

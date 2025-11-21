@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse200;
+import Model.InlineResponse2001;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse410;
@@ -176,13 +176,13 @@ public class TokenApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse200 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
+    public InlineResponse2001 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCardArtAsset' STARTED");
-        ApiResponse<InlineResponse200> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
+        ApiResponse<InlineResponse2001> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
         logger.info("CALL TO METHOD 'getCardArtAsset' ENDED");
         return resp.getData();
     }
@@ -193,14 +193,14 @@ public class TokenApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse200> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2001> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -215,7 +215,7 @@ public class TokenApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse200> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse2001> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -238,7 +238,7 @@ public class TokenApi {
         }
 
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -257,7 +257,7 @@ public class TokenApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall")) {
             try {

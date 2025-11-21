@@ -38,10 +38,10 @@ public class Upv1capturecontextsDataBuyerInformationPersonalIdentification {
   }
 
    /**
-   * Get cpf
+   * CPF Number (Brazil).  Must be 11 digits in length. 
    * @return cpf
   **/
-  @ApiModelProperty(example = "12345678900", value = "")
+  @ApiModelProperty(example = "12345678900", value = "CPF Number (Brazil).  Must be 11 digits in length. ")
   public String getCpf() {
     return cpf;
   }

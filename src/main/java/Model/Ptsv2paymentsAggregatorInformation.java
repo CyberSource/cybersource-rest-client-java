@@ -54,6 +54,9 @@ public class Ptsv2paymentsAggregatorInformation {
   @SerializedName("country")
   private String country = null;
 
+  @SerializedName("serviceProvidername")
+  private String serviceProvidername = null;
+
   public Ptsv2paymentsAggregatorInformation aggregatorId(String aggregatorId) {
     this.aggregatorId = aggregatorId;
     return this;
@@ -198,6 +201,24 @@ public class Ptsv2paymentsAggregatorInformation {
     this.country = country;
   }
 
+  public Ptsv2paymentsAggregatorInformation serviceProvidername(String serviceProvidername) {
+    this.serviceProvidername = serviceProvidername;
+    return this;
+  }
+
+   /**
+   * Contains transfer service provider name.
+   * @return serviceProvidername
+  **/
+  @ApiModelProperty(value = "Contains transfer service provider name.")
+  public String getServiceProvidername() {
+    return serviceProvidername;
+  }
+
+  public void setServiceProvidername(String serviceProvidername) {
+    this.serviceProvidername = serviceProvidername;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,12 +236,13 @@ public class Ptsv2paymentsAggregatorInformation {
         Objects.equals(this.city, ptsv2paymentsAggregatorInformation.city) &&
         Objects.equals(this.state, ptsv2paymentsAggregatorInformation.state) &&
         Objects.equals(this.postalCode, ptsv2paymentsAggregatorInformation.postalCode) &&
-        Objects.equals(this.country, ptsv2paymentsAggregatorInformation.country);
+        Objects.equals(this.country, ptsv2paymentsAggregatorInformation.country) &&
+        Objects.equals(this.serviceProvidername, ptsv2paymentsAggregatorInformation.serviceProvidername);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregatorId, name, subMerchant, streetAddress, city, state, postalCode, country);
+    return Objects.hash(aggregatorId, name, subMerchant, streetAddress, city, state, postalCode, country, serviceProvidername);
   }
 
 
@@ -237,6 +259,7 @@ public class Ptsv2paymentsAggregatorInformation {
     if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (serviceProvidername != null) sb.append("    serviceProvidername: ").append(toIndentedString(serviceProvidername)).append("\n");
     sb.append("}");
     return sb.toString();
   }

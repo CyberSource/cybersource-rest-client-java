@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge;
+import Model.Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,6 +51,9 @@ public class Upv1capturecontextsDataOrderInformationAmountDetails {
 
   @SerializedName("taxAmount")
   private String taxAmount = null;
+
+  @SerializedName("taxDetails")
+  private Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails taxDetails = null;
 
   public Upv1capturecontextsDataOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -177,6 +181,24 @@ public class Upv1capturecontextsDataOrderInformationAmountDetails {
     this.taxAmount = taxAmount;
   }
 
+  public Upv1capturecontextsDataOrderInformationAmountDetails taxDetails(Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails taxDetails) {
+    this.taxDetails = taxDetails;
+    return this;
+  }
+
+   /**
+   * Get taxDetails
+   * @return taxDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails getTaxDetails() {
+    return taxDetails;
+  }
+
+  public void setTaxDetails(Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails taxDetails) {
+    this.taxDetails = taxDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,12 +215,13 @@ public class Upv1capturecontextsDataOrderInformationAmountDetails {
         Objects.equals(this.discountAmount, upv1capturecontextsDataOrderInformationAmountDetails.discountAmount) &&
         Objects.equals(this.subTotalAmount, upv1capturecontextsDataOrderInformationAmountDetails.subTotalAmount) &&
         Objects.equals(this.serviceFeeAmount, upv1capturecontextsDataOrderInformationAmountDetails.serviceFeeAmount) &&
-        Objects.equals(this.taxAmount, upv1capturecontextsDataOrderInformationAmountDetails.taxAmount);
+        Objects.equals(this.taxAmount, upv1capturecontextsDataOrderInformationAmountDetails.taxAmount) &&
+        Objects.equals(this.taxDetails, upv1capturecontextsDataOrderInformationAmountDetails.taxDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, surcharge, discountAmount, subTotalAmount, serviceFeeAmount, taxAmount);
+    return Objects.hash(totalAmount, currency, surcharge, discountAmount, subTotalAmount, serviceFeeAmount, taxAmount, taxDetails);
   }
 
 
@@ -214,6 +237,7 @@ public class Upv1capturecontextsDataOrderInformationAmountDetails {
     if (subTotalAmount != null) sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
     if (serviceFeeAmount != null) sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

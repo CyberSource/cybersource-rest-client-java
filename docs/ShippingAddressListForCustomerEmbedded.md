@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shippingAddresses** | [**List&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;**](Tmsv2customersEmbeddedDefaultShippingAddress.md) |  |  [optional]
+**shippingAddresses** | [**List&lt;Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress&gt;**](Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress.md) |  |  [optional]
 
 
 

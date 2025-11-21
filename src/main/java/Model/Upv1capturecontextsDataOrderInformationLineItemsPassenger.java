@@ -59,10 +59,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get type
+   * Passenger type
    * @return type
   **/
-  @ApiModelProperty(example = "Residential", value = "")
+  @ApiModelProperty(example = "Residential", value = "Passenger type")
   public String getType() {
     return type;
   }
@@ -77,10 +77,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get status
+   * Passenger status
    * @return status
   **/
-  @ApiModelProperty(example = "Gold", value = "")
+  @ApiModelProperty(example = "Gold", value = "Passenger status")
   public String getStatus() {
     return status;
   }
@@ -95,10 +95,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get phone
+   * Passenger phone number
    * @return phone
   **/
-  @ApiModelProperty(example = "123456789", value = "")
+  @ApiModelProperty(example = "123456789", value = "Passenger phone number")
   public String getPhone() {
     return phone;
   }
@@ -113,10 +113,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get firstName
+   * Passenger first name
    * @return firstName
   **/
-  @ApiModelProperty(example = "John", value = "")
+  @ApiModelProperty(example = "John", value = "Passenger first name")
   public String getFirstName() {
     return firstName;
   }
@@ -131,10 +131,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get lastName
+   * Passenger last name
    * @return lastName
   **/
-  @ApiModelProperty(example = "Doe", value = "")
+  @ApiModelProperty(example = "Doe", value = "Passenger last name")
   public String getLastName() {
     return lastName;
   }
@@ -149,10 +149,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get id
+   * Passenger ID
    * @return id
   **/
-  @ApiModelProperty(example = "AIR1234567", value = "")
+  @ApiModelProperty(example = "AIR1234567", value = "Passenger ID")
   public String getId() {
     return id;
   }
@@ -167,10 +167,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get email
+   * Passenger email
    * @return email
   **/
-  @ApiModelProperty(example = "john.doe@example.com", value = "")
+  @ApiModelProperty(example = "john.doe@example.com", value = "Passenger email")
   public String getEmail() {
     return email;
   }
@@ -185,10 +185,10 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   }
 
    /**
-   * Get nationality
+   * Passenger nationality
    * @return nationality
   **/
-  @ApiModelProperty(example = "US", value = "")
+  @ApiModelProperty(example = "US", value = "Passenger nationality")
   public String getNationality() {
     return nationality;
   }

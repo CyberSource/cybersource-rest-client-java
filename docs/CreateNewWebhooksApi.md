@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> List&lt;InlineResponse2004&gt; findProductsToSubscribe(organizationId)
+> List&lt;InlineResponse2005&gt; findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -27,7 +27,7 @@ Retrieve a list of products and event types that your account is eligible for. T
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 String organizationId = "organizationId_example"; // String | The Organization Identifier.
 try {
-    List<InlineResponse2004> result = apiInstance.findProductsToSubscribe(organizationId);
+    List<InlineResponse2005> result = apiInstance.findProductsToSubscribe(organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;InlineResponse2005&gt;**](InlineResponse2005.md)
 
 ### Authorization
 

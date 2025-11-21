@@ -30,9 +30,9 @@ import java.io.InputStream;
 
 
 import Model.Body;
-import Model.InlineResponse20010;
 import Model.InlineResponse20011;
 import Model.InlineResponse20012;
+import Model.InlineResponse20013;
 import Model.InlineResponse202;
 import Model.InlineResponse4011;
 
@@ -157,13 +157,13 @@ public class BatchesApi {
      * Retrieve a Batch Report
      * **Get Batch Report**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates &amp; card type. - Response record information including response code, reason, token ids, masked card number, expiration dates &amp; card type. 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return InlineResponse20012
+     * @return InlineResponse20013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20012 getBatchReport(String batchId) throws ApiException, ConfigException {
+    public InlineResponse20013 getBatchReport(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchReport' STARTED");
-        ApiResponse<InlineResponse20012> resp = getBatchReportWithHttpInfo(batchId);
+        ApiResponse<InlineResponse20013> resp = getBatchReportWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchReport' ENDED");
         return resp.getData();
     }
@@ -172,14 +172,14 @@ public class BatchesApi {
      * Retrieve a Batch Report
      * **Get Batch Report**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates &amp; card type. - Response record information including response code, reason, token ids, masked card number, expiration dates &amp; card type. 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;InlineResponse20013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20012> getBatchReportWithHttpInfo(String batchId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20013> getBatchReportWithHttpInfo(String batchId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -192,7 +192,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<InlineResponse20012> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<InlineResponse20013> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -215,7 +215,7 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -307,13 +307,13 @@ public class BatchesApi {
      * Retrieve a Batch Status
      * **Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return InlineResponse20011
+     * @return InlineResponse20012
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20011 getBatchStatus(String batchId) throws ApiException, ConfigException {
+    public InlineResponse20012 getBatchStatus(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
-        ApiResponse<InlineResponse20011> resp = getBatchStatusWithHttpInfo(batchId);
+        ApiResponse<InlineResponse20012> resp = getBatchStatusWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchStatus' ENDED");
         return resp.getData();
     }
@@ -322,14 +322,14 @@ public class BatchesApi {
      * Retrieve a Batch Status
      * **Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;InlineResponse20012&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20011> getBatchStatusWithHttpInfo(String batchId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20012> getBatchStatusWithHttpInfo(String batchId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -342,7 +342,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<InlineResponse20011> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<InlineResponse20012> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -365,7 +365,7 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -464,13 +464,13 @@ public class BatchesApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. (optional, default to 20)
      * @param fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
-     * @return InlineResponse20010
+     * @return InlineResponse20011
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20010 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
+    public InlineResponse20011 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchesList' STARTED");
-        ApiResponse<InlineResponse20010> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
+        ApiResponse<InlineResponse20011> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
         logger.info("CALL TO METHOD 'getBatchesList' ENDED");
         return resp.getData();
     }
@@ -482,14 +482,14 @@ public class BatchesApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. (optional, default to 20)
      * @param fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
-     * @return ApiResponse&lt;InlineResponse20010&gt;
+     * @return ApiResponse&lt;InlineResponse20011&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20010> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20011> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -505,7 +505,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<InlineResponse20010> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<InlineResponse20011> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -528,7 +528,7 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

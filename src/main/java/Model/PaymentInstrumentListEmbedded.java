@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,14 +34,14 @@ import java.util.List;
 
 public class PaymentInstrumentListEmbedded {
   @SerializedName("paymentInstruments")
-  private List<Tmsv2customersEmbeddedDefaultPaymentInstrument> paymentInstruments = null;
+  private List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument> paymentInstruments = null;
 
    /**
    * Get paymentInstruments
    * @return paymentInstruments
   **/
   @ApiModelProperty(value = "")
-  public List<Tmsv2customersEmbeddedDefaultPaymentInstrument> getPaymentInstruments() {
+  public List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument> getPaymentInstruments() {
     return paymentInstruments;
   }
 
