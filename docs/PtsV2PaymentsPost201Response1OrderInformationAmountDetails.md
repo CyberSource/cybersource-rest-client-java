@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**refundBalance** | **String** | This field will carry the remaning amount which can be refunded.  |  [optional]
+**refundBalance** | **String** | The remaining amount which can be refunded. |  [optional]
 
 
 

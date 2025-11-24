@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -81,8 +82,9 @@ public class CustomerShippingAddressApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -144,7 +146,7 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -175,8 +177,9 @@ public class CustomerShippingAddressApi {
      * @param shippingAddressId The Id of a shipping address. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void deleteCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public void deleteCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
         deleteCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
 
@@ -190,8 +193,9 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> deleteCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public ApiResponse<Void> deleteCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         return apiClient.execute(call);
@@ -206,8 +210,9 @@ public class CustomerShippingAddressApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -242,8 +247,9 @@ public class CustomerShippingAddressApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -305,7 +311,7 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -337,8 +343,9 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerShippingAddressRequest getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public PostCustomerShippingAddressRequest getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
         ApiResponse<PostCustomerShippingAddressRequest> resp = getCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
@@ -353,8 +360,9 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerShippingAddressRequest> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerShippingAddressRequest> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
@@ -370,8 +378,9 @@ public class CustomerShippingAddressApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -408,8 +417,9 @@ public class CustomerShippingAddressApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerShippingAddressesListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressesListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -474,7 +484,7 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerShippingAddressesListValidateBeforeCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerShippingAddressesListValidateBeforeCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -501,8 +511,9 @@ public class CustomerShippingAddressApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ShippingAddressListForCustomer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+    public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' STARTED");
         ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' ENDED");
@@ -518,8 +529,9 @@ public class CustomerShippingAddressApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ApiResponse&lt;ShippingAddressListForCustomer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ShippingAddressListForCustomer> getCustomerShippingAddressesListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+    public ApiResponse<ShippingAddressListForCustomer> getCustomerShippingAddressesListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<ShippingAddressListForCustomer>(){}.getType();
@@ -536,8 +548,9 @@ public class CustomerShippingAddressApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerShippingAddressesListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<ShippingAddressListForCustomer> callback) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressesListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<ShippingAddressListForCustomer> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -575,8 +588,9 @@ public class CustomerShippingAddressApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomersShippingAddressCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchCustomersShippingAddressCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -637,7 +651,7 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomersShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchCustomersShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -677,8 +691,9 @@ public class CustomerShippingAddressApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PatchCustomerShippingAddressRequest patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchCustomerShippingAddressRequest patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
         ApiResponse<PatchCustomerShippingAddressRequest> resp = patchCustomersShippingAddressWithHttpInfo(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
@@ -695,8 +710,9 @@ public class CustomerShippingAddressApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;PatchCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PatchCustomerShippingAddressRequest> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<PatchCustomerShippingAddressRequest> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerShippingAddressRequest>(){}.getType();
@@ -714,8 +730,9 @@ public class CustomerShippingAddressApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomersShippingAddressAsync(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerShippingAddressRequest> callback) throws ApiException {
+    public okhttp3.Call patchCustomersShippingAddressAsync(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerShippingAddressRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -751,8 +768,9 @@ public class CustomerShippingAddressApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerShippingAddressCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postCustomerShippingAddressCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -810,7 +828,7 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomerShippingAddressValidateBeforeCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postCustomerShippingAddressValidateBeforeCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -842,8 +860,9 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerShippingAddressRequest postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    public PostCustomerShippingAddressRequest postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");
         ApiResponse<PostCustomerShippingAddressRequest> resp = postCustomerShippingAddressWithHttpInfo(customerId, postCustomerShippingAddressRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
@@ -858,8 +877,9 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerShippingAddressRequest> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerShippingAddressRequest> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
@@ -875,8 +895,9 @@ public class CustomerShippingAddressApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerShippingAddressAsync(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException {
+    public okhttp3.Call postCustomerShippingAddressAsync(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

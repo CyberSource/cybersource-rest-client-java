@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -73,8 +74,9 @@ public class NotificationOfChangesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -136,7 +138,7 @@ public class NotificationOfChangesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNotificationOfChangeReportValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getNotificationOfChangeReportValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -167,8 +169,9 @@ public class NotificationOfChangesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @return ReportingV3NotificationofChangesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
+    public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' ENDED");
@@ -182,8 +185,9 @@ public class NotificationOfChangesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @return ApiResponse&lt;ReportingV3NotificationofChangesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ReportingV3NotificationofChangesGet200Response> getNotificationOfChangeReportWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
+    public ApiResponse<ReportingV3NotificationofChangesGet200Response> getNotificationOfChangeReportWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getNotificationOfChangeReportValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3NotificationofChangesGet200Response>(){}.getType();
@@ -198,8 +202,9 @@ public class NotificationOfChangesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getNotificationOfChangeReportAsync(DateTime startTime, DateTime endTime, final ApiCallback<ReportingV3NotificationofChangesGet200Response> callback) throws ApiException {
+    public okhttp3.Call getNotificationOfChangeReportAsync(DateTime startTime, DateTime endTime, final ApiCallback<ReportingV3NotificationofChangesGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

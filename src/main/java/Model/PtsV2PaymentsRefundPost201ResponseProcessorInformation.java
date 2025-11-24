@@ -16,6 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
+import Model.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -56,6 +58,12 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
 
   @SerializedName("updateTimeUtc")
   private String updateTimeUtc = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
+
+  @SerializedName("merchantAdvice")
+  private PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
 
   public PtsV2PaymentsRefundPost201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
@@ -219,6 +227,42 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     this.updateTimeUtc = updateTimeUtc;
   }
 
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation merchantAdvice(PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+    return this;
+  }
+
+   /**
+   * Get merchantAdvice
+   * @return merchantAdvice
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice getMerchantAdvice() {
+    return merchantAdvice;
+  }
+
+  public void setMerchantAdvice(PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,12 +281,14 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
         Objects.equals(this.achVerification, ptsV2PaymentsRefundPost201ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.networkTransactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.settlementDate, ptsV2PaymentsRefundPost201ResponseProcessorInformation.settlementDate) &&
-        Objects.equals(this.updateTimeUtc, ptsV2PaymentsRefundPost201ResponseProcessorInformation.updateTimeUtc);
+        Objects.equals(this.updateTimeUtc, ptsV2PaymentsRefundPost201ResponseProcessorInformation.updateTimeUtc) &&
+        Objects.equals(this.network, ptsV2PaymentsRefundPost201ResponseProcessorInformation.network) &&
+        Objects.equals(this.merchantAdvice, ptsV2PaymentsRefundPost201ResponseProcessorInformation.merchantAdvice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId, settlementDate, updateTimeUtc);
+    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId, settlementDate, updateTimeUtc, network, merchantAdvice);
   }
 
 
@@ -260,6 +306,8 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     if (settlementDate != null) sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
     if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Invoicingv2invoicesCustomerInformation;
+import Model.Invoicingv2invoicesMerchantDefinedFieldValues;
 import Model.Invoicingv2invoicesOrderInformation;
 import Model.Invoicingv2invoicesProcessingInformation;
 import Model.Invoicingv2invoicesidInvoiceInformation;
@@ -27,6 +28,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UpdateInvoiceRequest
@@ -44,6 +47,9 @@ public class UpdateInvoiceRequest {
 
   @SerializedName("orderInformation")
   private Invoicingv2invoicesOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValues")
+  private List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues = null;
 
   public UpdateInvoiceRequest customerInformation(Invoicingv2invoicesCustomerInformation customerInformation) {
     this.customerInformation = customerInformation;
@@ -117,6 +123,32 @@ public class UpdateInvoiceRequest {
     this.orderInformation = orderInformation;
   }
 
+  public UpdateInvoiceRequest merchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+    return this;
+  }
+
+  public UpdateInvoiceRequest addMerchantDefinedFieldValuesItem(Invoicingv2invoicesMerchantDefinedFieldValues merchantDefinedFieldValuesItem) {
+    if (this.merchantDefinedFieldValues == null) {
+      this.merchantDefinedFieldValues = new ArrayList<Invoicingv2invoicesMerchantDefinedFieldValues>();
+    }
+    this.merchantDefinedFieldValues.add(merchantDefinedFieldValuesItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValues
+   * @return merchantDefinedFieldValues
+  **/
+  @ApiModelProperty(value = "")
+  public List<Invoicingv2invoicesMerchantDefinedFieldValues> getMerchantDefinedFieldValues() {
+    return merchantDefinedFieldValues;
+  }
+
+  public void setMerchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +162,13 @@ public class UpdateInvoiceRequest {
     return Objects.equals(this.customerInformation, updateInvoiceRequest.customerInformation) &&
         Objects.equals(this.processingInformation, updateInvoiceRequest.processingInformation) &&
         Objects.equals(this.invoiceInformation, updateInvoiceRequest.invoiceInformation) &&
-        Objects.equals(this.orderInformation, updateInvoiceRequest.orderInformation);
+        Objects.equals(this.orderInformation, updateInvoiceRequest.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValues, updateInvoiceRequest.merchantDefinedFieldValues);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerInformation, processingInformation, invoiceInformation, orderInformation);
+    return Objects.hash(customerInformation, processingInformation, invoiceInformation, orderInformation, merchantDefinedFieldValues);
   }
 
 
@@ -148,6 +181,7 @@ public class UpdateInvoiceRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValues != null) sb.append("    merchantDefinedFieldValues: ").append(toIndentedString(merchantDefinedFieldValues)).append("\n");
     sb.append("}");
     return sb.toString();
   }

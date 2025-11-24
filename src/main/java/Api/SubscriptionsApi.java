@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -84,8 +85,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activateSubscriptionCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call activateSubscriptionCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -146,7 +148,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -171,8 +173,9 @@ public class SubscriptionsApi {
      * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @return ActivateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateSubscriptionResponse activateSubscription(String id, Boolean processSkippedPayments) throws ApiException {
+    public ActivateSubscriptionResponse activateSubscription(String id, Boolean processSkippedPayments) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
         ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id, processSkippedPayments);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
@@ -186,8 +189,9 @@ public class SubscriptionsApi {
      * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @return ApiResponse&lt;ActivateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processSkippedPayments) throws ApiException {
+    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processSkippedPayments) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processSkippedPayments, null, null);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
@@ -202,8 +206,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activateSubscriptionAsync(String id, Boolean processSkippedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call activateSubscriptionAsync(String id, Boolean processSkippedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -237,8 +242,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call cancelSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call cancelSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -297,7 +303,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call cancelSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -321,8 +327,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return CancelSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public CancelSubscriptionResponse cancelSubscription(String id) throws ApiException {
+    public CancelSubscriptionResponse cancelSubscription(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
         ApiResponse<CancelSubscriptionResponse> resp = cancelSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'cancelSubscription' ENDED");
@@ -335,8 +342,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return ApiResponse&lt;CancelSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<CancelSubscriptionResponse> cancelSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<CancelSubscriptionResponse> cancelSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = cancelSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<CancelSubscriptionResponse>(){}.getType();
@@ -350,8 +358,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call cancelSubscriptionAsync(String id, final ApiCallback<CancelSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call cancelSubscriptionAsync(String id, final ApiCallback<CancelSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -385,8 +394,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -441,7 +451,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSubscriptionValidateBeforeCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createSubscriptionValidateBeforeCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createSubscriptionRequest' is set
         if (createSubscriptionRequest == null) {
@@ -465,8 +475,9 @@ public class SubscriptionsApi {
      * @param createSubscriptionRequest  (required)
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
+    public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
         ApiResponse<CreateSubscriptionResponse> resp = createSubscriptionWithHttpInfo(createSubscriptionRequest);
         logger.info("CALL TO METHOD 'createSubscription' ENDED");
@@ -479,8 +490,9 @@ public class SubscriptionsApi {
      * @param createSubscriptionRequest  (required)
      * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
+    public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createSubscriptionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
@@ -494,8 +506,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -532,8 +545,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -599,7 +613,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getAllSubscriptionsCall(offset, limit, code, status, progressListener, progressRequestListener);
@@ -620,8 +634,9 @@ public class SubscriptionsApi {
      * @param status Filter by Subscription Status (optional)
      * @return GetAllSubscriptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
+    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
         ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
@@ -637,8 +652,9 @@ public class SubscriptionsApi {
      * @param status Filter by Subscription Status (optional)
      * @return ApiResponse&lt;GetAllSubscriptionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException {
+    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, null, null);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
@@ -655,8 +671,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -690,8 +707,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -750,7 +768,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -774,8 +792,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return GetSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetSubscriptionResponse getSubscription(String id) throws ApiException {
+    public GetSubscriptionResponse getSubscription(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
         ApiResponse<GetSubscriptionResponse> resp = getSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
@@ -788,8 +807,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return ApiResponse&lt;GetSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
@@ -803,8 +823,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getSubscriptionAsync(String id, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(String id, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -837,8 +858,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getSubscriptionCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -896,7 +918,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionCodeValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionCodeValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
         okhttp3.Call call = getSubscriptionCodeCall(progressListener, progressRequestListener);
@@ -913,8 +935,9 @@ public class SubscriptionsApi {
      * Get a Unique Subscription Code
      * @return GetSubscriptionCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetSubscriptionCodeResponse getSubscriptionCode() throws ApiException {
+    public GetSubscriptionCodeResponse getSubscriptionCode() throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
         ApiResponse<GetSubscriptionCodeResponse> resp = getSubscriptionCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getSubscriptionCode' ENDED");
@@ -926,8 +949,9 @@ public class SubscriptionsApi {
      * Get a Unique Subscription Code
      * @return ApiResponse&lt;GetSubscriptionCodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetSubscriptionCodeResponse> getSubscriptionCodeWithHttpInfo() throws ApiException {
+    public ApiResponse<GetSubscriptionCodeResponse> getSubscriptionCodeWithHttpInfo() throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
@@ -940,8 +964,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getSubscriptionCodeAsync(final ApiCallback<GetSubscriptionCodeResponse> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionCodeAsync(final ApiCallback<GetSubscriptionCodeResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -975,8 +1000,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call suspendSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call suspendSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -1035,7 +1061,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call suspendSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call suspendSubscriptionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1059,8 +1085,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return SuspendSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public SuspendSubscriptionResponse suspendSubscription(String id) throws ApiException {
+    public SuspendSubscriptionResponse suspendSubscription(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
         ApiResponse<SuspendSubscriptionResponse> resp = suspendSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'suspendSubscription' ENDED");
@@ -1073,8 +1100,9 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return ApiResponse&lt;SuspendSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<SuspendSubscriptionResponse> suspendSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<SuspendSubscriptionResponse> suspendSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = suspendSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<SuspendSubscriptionResponse>(){}.getType();
@@ -1088,8 +1116,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call suspendSubscriptionAsync(String id, final ApiCallback<SuspendSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call suspendSubscriptionAsync(String id, final ApiCallback<SuspendSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1124,8 +1153,9 @@ public class SubscriptionsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateSubscriptionCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updateSubscriptionCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -1181,7 +1211,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSubscriptionValidateBeforeCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updateSubscriptionValidateBeforeCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1212,8 +1242,9 @@ public class SubscriptionsApi {
      * @param updateSubscription Update Subscription (required)
      * @return UpdateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public UpdateSubscriptionResponse updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
+    public UpdateSubscriptionResponse updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateSubscription' STARTED");
         ApiResponse<UpdateSubscriptionResponse> resp = updateSubscriptionWithHttpInfo(id, updateSubscription);
         logger.info("CALL TO METHOD 'updateSubscription' ENDED");
@@ -1227,8 +1258,9 @@ public class SubscriptionsApi {
      * @param updateSubscription Update Subscription (required)
      * @return ApiResponse&lt;UpdateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<UpdateSubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException {
+    public ApiResponse<UpdateSubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateSubscriptionValidateBeforeCall(id, updateSubscription, null, null);
         Type localVarReturnType = new TypeToken<UpdateSubscriptionResponse>(){}.getType();
@@ -1243,8 +1275,9 @@ public class SubscriptionsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateSubscriptionAsync(String id, UpdateSubscription updateSubscription, final ApiCallback<UpdateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call updateSubscriptionAsync(String id, UpdateSubscription updateSubscription, final ApiCallback<UpdateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

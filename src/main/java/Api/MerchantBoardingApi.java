@@ -22,16 +22,17 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2002;
+import Model.InlineResponse2003;
 import Model.InlineResponse2013;
 import Model.InlineResponse4007;
-import Model.InlineResponse4041;
+import Model.InlineResponse4042;
 import Model.InlineResponse4221;
 import Model.InlineResponse5002;
 import Model.PostRegistrationBody;
@@ -76,8 +77,9 @@ public class MerchantBoardingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRegistrationCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getRegistrationCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -136,7 +138,7 @@ public class MerchantBoardingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRegistrationValidateBeforeCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getRegistrationValidateBeforeCall(String registrationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'registrationId' is set
         if (registrationId == null) {
@@ -158,12 +160,13 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return InlineResponse2002
+     * @return InlineResponse2003
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2002 getRegistration(String registrationId) throws ApiException {
+    public InlineResponse2003 getRegistration(String registrationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
-        ApiResponse<InlineResponse2002> resp = getRegistrationWithHttpInfo(registrationId);
+        ApiResponse<InlineResponse2003> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
         return resp.getData();
     }
@@ -172,13 +175,14 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;InlineResponse2003&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2002> getRegistrationWithHttpInfo(String registrationId) throws ApiException {
+    public ApiResponse<InlineResponse2003> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -189,8 +193,9 @@ public class MerchantBoardingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2003> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -213,7 +218,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -225,8 +230,9 @@ public class MerchantBoardingApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postRegistrationCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postRegistrationCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -283,7 +289,7 @@ public class MerchantBoardingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRegistrationValidateBeforeCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postRegistrationValidateBeforeCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postRegistrationBody' is set
         if (postRegistrationBody == null) {
@@ -308,8 +314,9 @@ public class MerchantBoardingApi {
      * @param vCIdempotencyId defines idempotency of the request (optional)
      * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2013 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
+    public InlineResponse2013 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
         ApiResponse<InlineResponse2013> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
@@ -323,8 +330,9 @@ public class MerchantBoardingApi {
      * @param vCIdempotencyId defines idempotency of the request (optional)
      * @return ApiResponse&lt;InlineResponse2013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2013> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
+    public ApiResponse<InlineResponse2013> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
@@ -339,8 +347,9 @@ public class MerchantBoardingApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2013> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

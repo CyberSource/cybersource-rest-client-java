@@ -10,6 +10,7 @@ import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
 import Model.*;
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -52,8 +53,9 @@ public class OAuthApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postAccessTokenFromAuthCodeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postAccessTokenFromAuthCodeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         Object localVarPostBody = createAccessTokenRequest;
 
         // create path and map variables
@@ -94,7 +96,7 @@ public class OAuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAccessTokenFromAuthCodeValidateBeforeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postAccessTokenFromAuthCodeValidateBeforeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
 
         // verify the required parameter 'CreateAccessTokenRequest' is set
         if (createAccessTokenRequest == null) {
@@ -111,8 +113,9 @@ public class OAuthApi {
      * @param createAccessTokenRequest  (required)
      * @return AccessTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public AccessTokenResponse postAccessTokenFromAuthCode(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
+    public AccessTokenResponse postAccessTokenFromAuthCode(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromAuthCodeWithHttpInfo(createAccessTokenRequest);
         return resp.getData();
@@ -124,9 +127,10 @@ public class OAuthApi {
      * @param createAccessTokenRequest  (required)
      * @return ApiResponse&lt;AccessTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
 
-    public ApiResponse<AccessTokenResponse> postAccessTokenFromAuthCodeWithHttpInfo(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
+    public ApiResponse<AccessTokenResponse> postAccessTokenFromAuthCodeWithHttpInfo(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
         okhttp3.Call call = postAccessTokenFromAuthCodeValidateBeforeCall(createAccessTokenRequest, null, null);
         Type localVarReturnType = new TypeToken<AccessTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -138,9 +142,10 @@ public class OAuthApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
 
-    public okhttp3.Call postAccessTokenFromAuthCodeAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException {
+    public okhttp3.Call postAccessTokenFromAuthCodeAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -176,8 +181,9 @@ public class OAuthApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postAccessTokenFromRefreshTokenCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postAccessTokenFromRefreshTokenCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         Object localVarPostBody = createAccessTokenRequest;
 
         // create path and map variables
@@ -218,7 +224,7 @@ public class OAuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAccessTokenFromRefreshTokenValidateBeforeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postAccessTokenFromRefreshTokenValidateBeforeCall(CreateAccessTokenRequest createAccessTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
 
         // verify the required parameter 'CreateAccessTokenRequest' is set
         if (createAccessTokenRequest == null) {
@@ -235,8 +241,9 @@ public class OAuthApi {
      * @param createAccessTokenRequest  (required)
      * @return AccessTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public AccessTokenResponse postAccessTokenFromRefreshToken(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
+    public AccessTokenResponse postAccessTokenFromRefreshToken(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromRefreshTokenWithHttpInfo(createAccessTokenRequest);
         return resp.getData();
@@ -248,9 +255,10 @@ public class OAuthApi {
      * @param createAccessTokenRequest  (required)
      * @return ApiResponse&lt;AccessTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
 
-    public ApiResponse<AccessTokenResponse> postAccessTokenFromRefreshTokenWithHttpInfo(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
+    public ApiResponse<AccessTokenResponse> postAccessTokenFromRefreshTokenWithHttpInfo(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
         okhttp3.Call call = postAccessTokenFromRefreshTokenValidateBeforeCall(createAccessTokenRequest, null, null);
         Type localVarReturnType = new TypeToken<AccessTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -262,9 +270,10 @@ public class OAuthApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
 
-    public okhttp3.Call postAccessTokenFromRefreshTokenAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException {
+    public okhttp3.Call postAccessTokenFromRefreshTokenAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

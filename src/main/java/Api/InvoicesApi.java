@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -82,8 +83,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createInvoiceCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createInvoiceCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createInvoiceRequest, CreateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -138,7 +140,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInvoiceValidateBeforeCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createInvoiceValidateBeforeCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createInvoiceRequest' is set
         if (createInvoiceRequest == null) {
@@ -162,8 +164,9 @@ public class InvoicesApi {
      * @param createInvoiceRequest  (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
+    public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createInvoice' STARTED");
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
         logger.info("CALL TO METHOD 'createInvoice' ENDED");
@@ -176,8 +179,9 @@ public class InvoicesApi {
      * @param createInvoiceRequest  (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesPost201Response> createInvoiceWithHttpInfo(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesPost201Response> createInvoiceWithHttpInfo(CreateInvoiceRequest createInvoiceRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createInvoiceValidateBeforeCall(createInvoiceRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
@@ -191,8 +195,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createInvoiceAsync(CreateInvoiceRequest createInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
+    public okhttp3.Call createInvoiceAsync(CreateInvoiceRequest createInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -228,8 +233,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllInvoicesCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAllInvoicesCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -293,7 +299,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllInvoicesValidateBeforeCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAllInvoicesValidateBeforeCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'offset' is set
         if (offset == null) {
@@ -325,8 +331,9 @@ public class InvoicesApi {
      * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @return InvoicingV2InvoicesAllGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
+    public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
         logger.info("CALL TO METHOD 'getAllInvoices' ENDED");
@@ -341,8 +348,9 @@ public class InvoicesApi {
      * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @return ApiResponse&lt;InvoicingV2InvoicesAllGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesAllGet200Response> getAllInvoicesWithHttpInfo(Integer offset, Integer limit, String status) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesAllGet200Response> getAllInvoicesWithHttpInfo(Integer offset, Integer limit, String status) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllInvoicesValidateBeforeCall(offset, limit, status, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesAllGet200Response>(){}.getType();
@@ -358,8 +366,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllInvoicesAsync(Integer offset, Integer limit, String status, final ApiCallback<InvoicingV2InvoicesAllGet200Response> callback) throws ApiException {
+    public okhttp3.Call getAllInvoicesAsync(Integer offset, Integer limit, String status, final ApiCallback<InvoicingV2InvoicesAllGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -393,8 +402,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getInvoiceCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getInvoiceCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -453,7 +463,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInvoiceValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getInvoiceValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -477,8 +487,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
+    public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getInvoice' STARTED");
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getInvoice' ENDED");
@@ -491,8 +502,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesGet200Response> getInvoiceWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesGet200Response> getInvoiceWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInvoiceValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesGet200Response>(){}.getType();
@@ -506,8 +518,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getInvoiceAsync(String id, final ApiCallback<InvoicingV2InvoicesGet200Response> callback) throws ApiException {
+    public okhttp3.Call getInvoiceAsync(String id, final ApiCallback<InvoicingV2InvoicesGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -541,8 +554,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performCancelActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call performCancelActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -601,7 +615,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call performCancelActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call performCancelActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -625,8 +639,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesCancel200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesCancel200Response performCancelAction(String id) throws ApiException {
+    public InvoicingV2InvoicesCancel200Response performCancelAction(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'performCancelAction' STARTED");
         ApiResponse<InvoicingV2InvoicesCancel200Response> resp = performCancelActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performCancelAction' ENDED");
@@ -639,8 +654,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesCancel200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesCancel200Response> performCancelActionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesCancel200Response> performCancelActionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performCancelActionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesCancel200Response>(){}.getType();
@@ -654,8 +670,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performCancelActionAsync(String id, final ApiCallback<InvoicingV2InvoicesCancel200Response> callback) throws ApiException {
+    public okhttp3.Call performCancelActionAsync(String id, final ApiCallback<InvoicingV2InvoicesCancel200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -689,8 +706,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performPublishActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call performPublishActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -749,7 +767,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call performPublishActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call performPublishActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -773,8 +791,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesPublish200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesPublish200Response performPublishAction(String id) throws ApiException {
+    public InvoicingV2InvoicesPublish200Response performPublishAction(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'performPublishAction' STARTED");
         ApiResponse<InvoicingV2InvoicesPublish200Response> resp = performPublishActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performPublishAction' ENDED");
@@ -787,8 +806,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesPublish200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesPublish200Response> performPublishActionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesPublish200Response> performPublishActionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performPublishActionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPublish200Response>(){}.getType();
@@ -802,8 +822,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performPublishActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPublish200Response> callback) throws ApiException {
+    public okhttp3.Call performPublishActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPublish200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -837,8 +858,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performSendActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call performSendActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -897,7 +919,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call performSendActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call performSendActionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -921,8 +943,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesSend200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesSend200Response performSendAction(String id) throws ApiException {
+    public InvoicingV2InvoicesSend200Response performSendAction(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'performSendAction' STARTED");
         ApiResponse<InvoicingV2InvoicesSend200Response> resp = performSendActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performSendAction' ENDED");
@@ -935,8 +958,9 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesSend200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesSend200Response> performSendActionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesSend200Response> performSendActionWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performSendActionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesSend200Response>(){}.getType();
@@ -950,8 +974,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call performSendActionAsync(String id, final ApiCallback<InvoicingV2InvoicesSend200Response> callback) throws ApiException {
+    public okhttp3.Call performSendActionAsync(String id, final ApiCallback<InvoicingV2InvoicesSend200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -986,8 +1011,9 @@ public class InvoicesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateInvoiceCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updateInvoiceCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateInvoiceRequest, UpdateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -1043,7 +1069,7 @@ public class InvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateInvoiceValidateBeforeCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updateInvoiceValidateBeforeCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1074,8 +1100,9 @@ public class InvoicesApi {
      * @param updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
      * @return InvoicingV2InvoicesPut200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoicesPut200Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+    public InvoicingV2InvoicesPut200Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateInvoice' STARTED");
         ApiResponse<InvoicingV2InvoicesPut200Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         logger.info("CALL TO METHOD 'updateInvoice' ENDED");
@@ -1089,8 +1116,9 @@ public class InvoicesApi {
      * @param updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesPut200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoicesPut200Response> updateInvoiceWithHttpInfo(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesPut200Response> updateInvoiceWithHttpInfo(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateInvoiceValidateBeforeCall(id, updateInvoiceRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPut200Response>(){}.getType();
@@ -1105,8 +1133,9 @@ public class InvoicesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateInvoiceAsync(String id, UpdateInvoiceRequest updateInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPut200Response> callback) throws ApiException {
+    public okhttp3.Call updateInvoiceAsync(String id, UpdateInvoiceRequest updateInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPut200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

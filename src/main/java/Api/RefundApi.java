@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -75,8 +76,9 @@ public class RefundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call refundCaptureCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call refundCaptureCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundCaptureRequest, RefundCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -132,7 +134,7 @@ public class RefundApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refundCaptureValidateBeforeCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call refundCaptureValidateBeforeCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'refundCaptureRequest' is set
         if (refundCaptureRequest == null) {
@@ -163,8 +165,9 @@ public class RefundApi {
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
+    public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'refundCapture' STARTED");
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
         logger.info("CALL TO METHOD 'refundCapture' ENDED");
@@ -178,8 +181,9 @@ public class RefundApi {
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
+    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
@@ -194,8 +198,9 @@ public class RefundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call refundCaptureAsync(RefundCaptureRequest refundCaptureRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
+    public okhttp3.Call refundCaptureAsync(RefundCaptureRequest refundCaptureRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -230,8 +235,9 @@ public class RefundApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call refundPaymentCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call refundPaymentCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundPaymentRequest, RefundPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -287,7 +293,7 @@ public class RefundApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refundPaymentValidateBeforeCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call refundPaymentValidateBeforeCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'refundPaymentRequest' is set
         if (refundPaymentRequest == null) {
@@ -318,8 +324,9 @@ public class RefundApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
+    public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'refundPayment' STARTED");
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
         logger.info("CALL TO METHOD 'refundPayment' ENDED");
@@ -333,8 +340,9 @@ public class RefundApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
+    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
@@ -349,8 +357,9 @@ public class RefundApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call refundPaymentAsync(RefundPaymentRequest refundPaymentRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
+    public okhttp3.Call refundPaymentAsync(RefundPaymentRequest refundPaymentRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4042Details;
+import Model.InlineResponse4007Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,12 +26,19 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse4042
  */
 
 public class InlineResponse4042 {
+  @SerializedName("submitTimeUtc")
+  private DateTime submitTimeUtc = null;
+
+  @SerializedName("status")
+  private String status = null;
+
   @SerializedName("reason")
   private String reason = null;
 
@@ -39,7 +46,34 @@ public class InlineResponse4042 {
   private String message = null;
 
   @SerializedName("details")
-  private List<InlineResponse4042Details> details = null;
+  private List<InlineResponse4007Details> details = null;
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public InlineResponse4042 status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The http status description of the submitted request.
+   * @return status
+  **/
+  @ApiModelProperty(example = "NOT_FOUND", value = "The http status description of the submitted request.")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
 
   public InlineResponse4042 reason(String reason) {
     this.reason = reason;
@@ -47,10 +81,10 @@ public class InlineResponse4042 {
   }
 
    /**
-   * Get reason
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;RESOURCE_NOT_FOUND&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND' ")
   public String getReason() {
     return reason;
   }
@@ -65,10 +99,10 @@ public class InlineResponse4042 {
   }
 
    /**
-   * Get message
+   * Descriptive message for the error.
    * @return message
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Descriptive message for the error.")
   public String getMessage() {
     return message;
   }
@@ -77,14 +111,14 @@ public class InlineResponse4042 {
     this.message = message;
   }
 
-  public InlineResponse4042 details(List<InlineResponse4042Details> details) {
+  public InlineResponse4042 details(List<InlineResponse4007Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4042 addDetailsItem(InlineResponse4042Details detailsItem) {
+  public InlineResponse4042 addDetailsItem(InlineResponse4007Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4042Details>();
+      this.details = new ArrayList<InlineResponse4007Details>();
     }
     this.details.add(detailsItem);
     return this;
@@ -95,11 +129,11 @@ public class InlineResponse4042 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse4042Details> getDetails() {
+  public List<InlineResponse4007Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse4042Details> details) {
+  public void setDetails(List<InlineResponse4007Details> details) {
     this.details = details;
   }
 
@@ -113,14 +147,16 @@ public class InlineResponse4042 {
       return false;
     }
     InlineResponse4042 inlineResponse4042 = (InlineResponse4042) o;
-    return Objects.equals(this.reason, inlineResponse4042.reason) &&
+    return Objects.equals(this.submitTimeUtc, inlineResponse4042.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse4042.status) &&
+        Objects.equals(this.reason, inlineResponse4042.reason) &&
         Objects.equals(this.message, inlineResponse4042.message) &&
         Objects.equals(this.details, inlineResponse4042.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, message, details);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -129,6 +165,8 @@ public class InlineResponse4042 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4042 {\n");
     
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");

@@ -59,10 +59,10 @@ public class PtsV2PaymentsPost201Response1IssuerInformation {
   }
 
    /**
-   * Unique code for card issuer provided by the processor. 
+   * Unique code for card issuer provided by the processor.
    * @return code
   **/
-  @ApiModelProperty(value = "Unique code for card issuer provided by the processor. ")
+  @ApiModelProperty(value = "Unique code for card issuer provided by the processor.")
   public String getCode() {
     return code;
   }

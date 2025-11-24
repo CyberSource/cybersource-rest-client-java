@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -72,8 +73,9 @@ public class UserManagementSearchApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call searchUsersCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call searchUsersCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(searchRequest, SearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -128,7 +130,7 @@ public class UserManagementSearchApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchUsersValidateBeforeCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call searchUsersValidateBeforeCall(SearchRequest searchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'searchRequest' is set
         if (searchRequest == null) {
@@ -152,8 +154,9 @@ public class UserManagementSearchApi {
      * @param searchRequest  (required)
      * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
+    public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'searchUsers' STARTED");
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
         logger.info("CALL TO METHOD 'searchUsers' ENDED");
@@ -166,8 +169,9 @@ public class UserManagementSearchApi {
      * @param searchRequest  (required)
      * @return ApiResponse&lt;UmsV1UsersGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<UmsV1UsersGet200Response> searchUsersWithHttpInfo(SearchRequest searchRequest) throws ApiException {
+    public ApiResponse<UmsV1UsersGet200Response> searchUsersWithHttpInfo(SearchRequest searchRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = searchUsersValidateBeforeCall(searchRequest, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
@@ -181,8 +185,9 @@ public class UserManagementSearchApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call searchUsersAsync(SearchRequest searchRequest, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
+    public okhttp3.Call searchUsersAsync(SearchRequest searchRequest, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

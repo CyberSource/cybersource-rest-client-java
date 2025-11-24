@@ -38,10 +38,10 @@ public class PtsV2PaymentsPost201Response1OrderInformationAmountDetails {
   }
 
    /**
-   * This field will carry the remaning amount which can be refunded. 
+   * The remaining amount which can be refunded.
    * @return refundBalance
   **/
-  @ApiModelProperty(value = "This field will carry the remaning amount which can be refunded. ")
+  @ApiModelProperty(value = "The remaining amount which can be refunded.")
   public String getRefundBalance() {
     return refundBalance;
   }

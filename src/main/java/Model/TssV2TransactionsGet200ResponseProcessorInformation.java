@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201Response1IssuerInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
@@ -74,6 +75,9 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("electronicVerificationResults")
   private TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
 
+  @SerializedName("issuerInformation")
+  private PtsV2PaymentsPost201Response1IssuerInformation issuerInformation = null;
+
   @SerializedName("eventStatus")
   private String eventStatus = null;
 
@@ -85,6 +89,15 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @SerializedName("paymentAccountReferenceNumber")
   private String paymentAccountReferenceNumber = null;
+
+  @SerializedName("responseDetails")
+  private String responseDetails = null;
+
+  @SerializedName("rawResponseLocal")
+  private String rawResponseLocal = null;
+
+  @SerializedName("rawResponse")
+  private String rawResponse = null;
 
   @SerializedName("routing")
   private PtsV2PaymentsPost201ResponseProcessorInformationRouting routing = null;
@@ -313,6 +326,24 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.electronicVerificationResults = electronicVerificationResults;
   }
 
+  public TssV2TransactionsGet200ResponseProcessorInformation issuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1IssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+  }
+
   public TssV2TransactionsGet200ResponseProcessorInformation eventStatus(String eventStatus) {
     this.eventStatus = eventStatus;
     return this;
@@ -385,6 +416,60 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.paymentAccountReferenceNumber = paymentAccountReferenceNumber;
   }
 
+  public TssV2TransactionsGet200ResponseProcessorInformation responseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+    return this;
+  }
+
+   /**
+   * This field might contain information about a decline. 
+   * @return responseDetails
+  **/
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
+  public String getResponseDetails() {
+    return responseDetails;
+  }
+
+  public void setResponseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation rawResponseLocal(String rawResponseLocal) {
+    this.rawResponseLocal = rawResponseLocal;
+    return this;
+  }
+
+   /**
+   * Failure reason returned by the processor in the local language of the processor.
+   * @return rawResponseLocal
+  **/
+  @ApiModelProperty(value = "Failure reason returned by the processor in the local language of the processor.")
+  public String getRawResponseLocal() {
+    return rawResponseLocal;
+  }
+
+  public void setRawResponseLocal(String rawResponseLocal) {
+    this.rawResponseLocal = rawResponseLocal;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation rawResponse(String rawResponse) {
+    this.rawResponse = rawResponse;
+    return this;
+  }
+
+   /**
+   * Failure reason returned by the processor.
+   * @return rawResponse
+  **/
+  @ApiModelProperty(value = "Failure reason returned by the processor.")
+  public String getRawResponse() {
+    return rawResponse;
+  }
+
+  public void setRawResponse(String rawResponse) {
+    this.rawResponse = rawResponse;
+  }
+
   public TssV2TransactionsGet200ResponseProcessorInformation routing(PtsV2PaymentsPost201ResponseProcessorInformationRouting routing) {
     this.routing = routing;
     return this;
@@ -425,16 +510,20 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.cardVerification, tssV2TransactionsGet200ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.achVerification, tssV2TransactionsGet200ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.electronicVerificationResults, tssV2TransactionsGet200ResponseProcessorInformation.electronicVerificationResults) &&
+        Objects.equals(this.issuerInformation, tssV2TransactionsGet200ResponseProcessorInformation.issuerInformation) &&
         Objects.equals(this.eventStatus, tssV2TransactionsGet200ResponseProcessorInformation.eventStatus) &&
         Objects.equals(this.systemTraceAuditNumber, tssV2TransactionsGet200ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource) &&
         Objects.equals(this.paymentAccountReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.paymentAccountReferenceNumber) &&
+        Objects.equals(this.responseDetails, tssV2TransactionsGet200ResponseProcessorInformation.responseDetails) &&
+        Objects.equals(this.rawResponseLocal, tssV2TransactionsGet200ResponseProcessorInformation.rawResponseLocal) &&
+        Objects.equals(this.rawResponse, tssV2TransactionsGet200ResponseProcessorInformation.rawResponse) &&
         Objects.equals(this.routing, tssV2TransactionsGet200ResponseProcessorInformation.routing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, eventStatus, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber, routing);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, issuerInformation, eventStatus, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber, responseDetails, rawResponseLocal, rawResponse, routing);
   }
 
 
@@ -455,10 +544,14 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     if (achVerification != null) sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     if (eventStatus != null) sb.append("    eventStatus: ").append(toIndentedString(eventStatus)).append("\n");
     if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (rawResponseLocal != null) sb.append("    rawResponseLocal: ").append(toIndentedString(rawResponseLocal)).append("\n");
+    if (rawResponse != null) sb.append("    rawResponse: ").append(toIndentedString(rawResponse)).append("\n");
     if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("}");
     return sb.toString();

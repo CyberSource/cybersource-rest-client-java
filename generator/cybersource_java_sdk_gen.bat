@@ -25,6 +25,8 @@ git checkout ..\src\main\java\Api\OAuthApi.java
 git checkout ..\src\main\java\Api\BatchUploadwithMTLSApi.java
 git checkout ..\src\main\java\Model\AccessTokenResponse.java
 git checkout ..\src\main\java\Model\CreateAccessTokenRequest.java
+git checkout ..\src\main\java\Invokers\HttpClientFactory.java
+git checkout ..\src\main\java\Invokers\HttpClientFactoryAdditionalSettings.java
 
 git checkout ..\pom.xml
 git checkout ..\README.md

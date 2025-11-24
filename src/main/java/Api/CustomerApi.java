@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -79,8 +80,9 @@ public class CustomerApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
@@ -141,7 +143,7 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -165,8 +167,9 @@ public class CustomerApi {
      * @param customerId The Id of a Customer. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void deleteCustomer(String customerId, String profileId) throws ApiException {
+    public void deleteCustomer(String customerId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
         deleteCustomerWithHttpInfo(customerId, profileId);
 
@@ -179,8 +182,9 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+    public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerValidateBeforeCall(customerId, profileId, null, null);
         return apiClient.execute(call);
@@ -194,8 +198,9 @@ public class CustomerApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call deleteCustomerAsync(String customerId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteCustomerAsync(String customerId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -229,8 +234,9 @@ public class CustomerApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -291,7 +297,7 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -316,8 +322,9 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerRequest getCustomer(String customerId, String profileId) throws ApiException {
+    public PostCustomerRequest getCustomer(String customerId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomer' STARTED");
         ApiResponse<PostCustomerRequest> resp = getCustomerWithHttpInfo(customerId, profileId);
         logger.info("CALL TO METHOD 'getCustomer' ENDED");
@@ -331,8 +338,9 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerRequest> getCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerRequest> getCustomerWithHttpInfo(String customerId, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerValidateBeforeCall(customerId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
@@ -347,8 +355,9 @@ public class CustomerApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerAsync(String customerId, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException {
+    public okhttp3.Call getCustomerAsync(String customerId, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -385,8 +394,9 @@ public class CustomerApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomerCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchCustomerCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerRequest, PatchCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -446,7 +456,7 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomerValidateBeforeCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchCustomerValidateBeforeCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
@@ -479,8 +489,9 @@ public class CustomerApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PatchCustomerRequest patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchCustomerRequest patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchCustomer' STARTED");
         ApiResponse<PatchCustomerRequest> resp = patchCustomerWithHttpInfo(customerId, patchCustomerRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomer' ENDED");
@@ -496,8 +507,9 @@ public class CustomerApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;PatchCustomerRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PatchCustomerRequest> patchCustomerWithHttpInfo(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<PatchCustomerRequest> patchCustomerWithHttpInfo(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomerValidateBeforeCall(customerId, patchCustomerRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerRequest>(){}.getType();
@@ -514,8 +526,9 @@ public class CustomerApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchCustomerAsync(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerRequest> callback) throws ApiException {
+    public okhttp3.Call patchCustomerAsync(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -550,8 +563,9 @@ public class CustomerApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerCall(PostCustomerRequest postCustomerRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postCustomerCall(PostCustomerRequest postCustomerRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerRequest, PostCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -608,7 +622,7 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomerValidateBeforeCall(PostCustomerRequest postCustomerRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postCustomerValidateBeforeCall(PostCustomerRequest postCustomerRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'postCustomerRequest' is set
         if (postCustomerRequest == null) {
@@ -633,8 +647,9 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PostCustomerRequest postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
+    public PostCustomerRequest postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postCustomer' STARTED");
         ApiResponse<PostCustomerRequest> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomer' ENDED");
@@ -648,8 +663,9 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;PostCustomerRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PostCustomerRequest> postCustomerWithHttpInfo(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerRequest> postCustomerWithHttpInfo(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerValidateBeforeCall(postCustomerRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
@@ -664,8 +680,9 @@ public class CustomerApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postCustomerAsync(PostCustomerRequest postCustomerRequest, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException {
+    public okhttp3.Call postCustomerAsync(PostCustomerRequest postCustomerRequest, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

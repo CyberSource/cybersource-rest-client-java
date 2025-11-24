@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
+import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -57,6 +58,9 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
 
   @SerializedName("sellerProtection")
   private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
+
+  @SerializedName("network")
+  private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
   public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
@@ -154,10 +158,10 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
   }
 
    /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @return responseDetails
   **/
-  @ApiModelProperty(value = "This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. ")
+  @ApiModelProperty(value = "This field might contain information about a decline. ")
   public String getResponseDetails() {
     return responseDetails;
   }
@@ -220,6 +224,24 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     this.sellerProtection = sellerProtection;
   }
 
+  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversalNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
+    this.network = network;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -238,12 +260,13 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
         Objects.equals(this.responseDetails, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseDetails) &&
         Objects.equals(this.merchantAdvice, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantAdvice) &&
         Objects.equals(this.merchantRiskPrediction, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantRiskPrediction) &&
-        Objects.equals(this.sellerProtection, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.sellerProtection);
+        Objects.equals(this.sellerProtection, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.sellerProtection) &&
+        Objects.equals(this.network, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, networkTransactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, merchantRiskPrediction, sellerProtection);
+    return Objects.hash(approvalCode, transactionId, networkTransactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, merchantRiskPrediction, sellerProtection, network);
   }
 
 
@@ -261,6 +284,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
     if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
     if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }

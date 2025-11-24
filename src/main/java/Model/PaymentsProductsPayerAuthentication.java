@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import Model.PaymentsProductsPayerAuthenticationConfigurationInformation;
+import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class PaymentsProductsPayerAuthentication {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private PaymentsProductsPayerAuthenticationConfigurationInformation configurationInformation = null;
 
-  public PaymentsProductsPayerAuthentication subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
+  public PaymentsProductsPayerAuthentication subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class PaymentsProductsPayerAuthentication {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 

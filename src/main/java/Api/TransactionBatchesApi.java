@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -79,8 +80,9 @@ public class TransactionBatchesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchDetailsCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTransactionBatchDetailsCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -143,7 +145,7 @@ public class TransactionBatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransactionBatchDetailsValidateBeforeCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTransactionBatchDetailsValidateBeforeCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -168,8 +170,9 @@ public class TransactionBatchesApi {
      * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
      * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
+    public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
 
@@ -183,8 +186,9 @@ public class TransactionBatchesApi {
      * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id, LocalDate uploadDate, String status) throws ApiException {
+    public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id, LocalDate uploadDate, String status) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, uploadDate, status, null, null);
         return apiClient.execute(call);
@@ -199,8 +203,9 @@ public class TransactionBatchesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchDetailsAsync(String id, LocalDate uploadDate, String status, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getTransactionBatchDetailsAsync(String id, LocalDate uploadDate, String status, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -233,8 +238,9 @@ public class TransactionBatchesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchIdCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTransactionBatchIdCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -293,7 +299,7 @@ public class TransactionBatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransactionBatchIdValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTransactionBatchIdValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -317,8 +323,9 @@ public class TransactionBatchesApi {
      * @param id The batch id assigned for the template. (required)
      * @return PtsV1TransactionBatchesIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
+    public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransactionBatchId' ENDED");
@@ -331,8 +338,9 @@ public class TransactionBatchesApi {
      * @param id The batch id assigned for the template. (required)
      * @return ApiResponse&lt;PtsV1TransactionBatchesIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV1TransactionBatchesIdGet200Response> getTransactionBatchIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesIdGet200Response> getTransactionBatchIdWithHttpInfo(String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchIdValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
@@ -346,8 +354,9 @@ public class TransactionBatchesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchIdAsync(String id, final ApiCallback<PtsV1TransactionBatchesIdGet200Response> callback) throws ApiException {
+    public okhttp3.Call getTransactionBatchIdAsync(String id, final ApiCallback<PtsV1TransactionBatchesIdGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -382,8 +391,9 @@ public class TransactionBatchesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchesCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTransactionBatchesCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -445,7 +455,7 @@ public class TransactionBatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransactionBatchesValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTransactionBatchesValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -476,8 +486,9 @@ public class TransactionBatchesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @return PtsV1TransactionBatchesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
+    public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getTransactionBatches' ENDED");
@@ -491,8 +502,9 @@ public class TransactionBatchesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @return ApiResponse&lt;PtsV1TransactionBatchesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> getTransactionBatchesWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> getTransactionBatchesWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchesValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
@@ -507,8 +519,9 @@ public class TransactionBatchesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTransactionBatchesAsync(DateTime startTime, DateTime endTime, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException {
+    public okhttp3.Call getTransactionBatchesAsync(DateTime startTime, DateTime endTime, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -542,8 +555,9 @@ public class TransactionBatchesApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call uploadTransactionBatchCall(File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call uploadTransactionBatchCall(File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -603,7 +617,7 @@ public class TransactionBatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadTransactionBatchValidateBeforeCall(File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call uploadTransactionBatchValidateBeforeCall(File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -626,8 +640,9 @@ public class TransactionBatchesApi {
      * This endpoint enables the upload of a batch file containing transactions for processing.
      * @param file The file to upload. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void uploadTransactionBatch(File file) throws ApiException {
+    public void uploadTransactionBatch(File file) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'uploadTransactionBatch' STARTED");
         uploadTransactionBatchWithHttpInfo(file);
 
@@ -639,8 +654,9 @@ public class TransactionBatchesApi {
      * @param file The file to upload. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> uploadTransactionBatchWithHttpInfo(File file) throws ApiException {
+    public ApiResponse<Void> uploadTransactionBatchWithHttpInfo(File file) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = uploadTransactionBatchValidateBeforeCall(file, null, null);
         return apiClient.execute(call);
@@ -653,8 +669,9 @@ public class TransactionBatchesApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call uploadTransactionBatchAsync(File file, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call uploadTransactionBatchAsync(File file, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

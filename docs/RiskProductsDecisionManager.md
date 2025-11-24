@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscriptionInformation** | [**PaymentsProductsAlternativePaymentMethodsSubscriptionInformation**](PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.md) |  |  [optional]
+**subscriptionInformation** | [**PaymentsProductsPayerAuthenticationSubscriptionInformation**](PaymentsProductsPayerAuthenticationSubscriptionInformation.md) |  |  [optional]
 **configurationInformation** | [**RiskProductsDecisionManagerConfigurationInformation**](RiskProductsDecisionManagerConfigurationInformation.md) |  |  [optional]
 
 

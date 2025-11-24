@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.ConfigException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -73,8 +74,9 @@ public class RetrievalDetailsApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRetrievalDetailsCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getRetrievalDetailsCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -138,7 +140,7 @@ public class RetrievalDetailsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRetrievalDetailsValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getRetrievalDetailsValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -170,8 +172,9 @@ public class RetrievalDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3RetrievalDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ReportingV3RetrievalDetailsGet200Response getRetrievalDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+    public ReportingV3RetrievalDetailsGet200Response getRetrievalDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRetrievalDetails' STARTED");
         ApiResponse<ReportingV3RetrievalDetailsGet200Response> resp = getRetrievalDetailsWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getRetrievalDetails' ENDED");
@@ -186,8 +189,9 @@ public class RetrievalDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3RetrievalDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ReportingV3RetrievalDetailsGet200Response> getRetrievalDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+    public ApiResponse<ReportingV3RetrievalDetailsGet200Response> getRetrievalDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRetrievalDetailsValidateBeforeCall(startTime, endTime, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3RetrievalDetailsGet200Response>(){}.getType();
@@ -203,8 +207,9 @@ public class RetrievalDetailsApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRetrievalDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3RetrievalDetailsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getRetrievalDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3RetrievalDetailsGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
