@@ -15,16 +15,16 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.TmsMerchantInformation;
 import Model.TmsPaymentInstrumentProcessingInfo;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentCard;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +40,7 @@ import java.io.IOException;
 
 public class PatchCustomerPaymentInstrumentRequest {
   @SerializedName("_links")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks links = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -58,33 +58,33 @@ public class PatchCustomerPaymentInstrumentRequest {
   private String type = null;
 
   @SerializedName("bankAccount")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount bankAccount = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount = null;
 
   @SerializedName("card")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentCard card = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card = null;
 
   @SerializedName("buyerInformation")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation = null;
 
   @SerializedName("billTo")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
 
   @SerializedName("processingInformation")
   private TmsPaymentInstrumentProcessingInfo processingInformation = null;
 
   @SerializedName("merchantInformation")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation merchantInformation = null;
+  private TmsMerchantInformation merchantInformation = null;
 
   @SerializedName("instrumentIdentifier")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier = null;
 
   @SerializedName("metadata")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata metadata = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata = null;
 
   @SerializedName("_embedded")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded embedded = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded = null;
 
-  public PatchCustomerPaymentInstrumentRequest links(Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks links) {
+  public PatchCustomerPaymentInstrumentRequest links(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links) {
     this.links = links;
     return this;
   }
@@ -94,11 +94,11 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks getLinks() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks links) {
+  public void setLinks(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links) {
     this.links = links;
   }
 
@@ -165,7 +165,7 @@ public class PatchCustomerPaymentInstrumentRequest {
     return type;
   }
 
-  public PatchCustomerPaymentInstrumentRequest bankAccount(Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
+  public PatchCustomerPaymentInstrumentRequest bankAccount(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
@@ -175,15 +175,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount getBankAccount() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
+  public void setBankAccount(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public PatchCustomerPaymentInstrumentRequest card(Tmsv2customersEmbeddedDefaultPaymentInstrumentCard card) {
+  public PatchCustomerPaymentInstrumentRequest card(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card) {
     this.card = card;
     return this;
   }
@@ -193,15 +193,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentCard getCard() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard getCard() {
     return card;
   }
 
-  public void setCard(Tmsv2customersEmbeddedDefaultPaymentInstrumentCard card) {
+  public void setCard(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card) {
     this.card = card;
   }
 
-  public PatchCustomerPaymentInstrumentRequest buyerInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
+  public PatchCustomerPaymentInstrumentRequest buyerInformation(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -211,15 +211,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation getBuyerInformation() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public PatchCustomerPaymentInstrumentRequest billTo(Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public PatchCustomerPaymentInstrumentRequest billTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -229,11 +229,11 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public void setBillTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
   }
 
@@ -255,7 +255,7 @@ public class PatchCustomerPaymentInstrumentRequest {
     this.processingInformation = processingInformation;
   }
 
-  public PatchCustomerPaymentInstrumentRequest merchantInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation merchantInformation) {
+  public PatchCustomerPaymentInstrumentRequest merchantInformation(TmsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -265,15 +265,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation getMerchantInformation() {
+  public TmsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation merchantInformation) {
+  public void setMerchantInformation(TmsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public PatchCustomerPaymentInstrumentRequest instrumentIdentifier(Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
+  public PatchCustomerPaymentInstrumentRequest instrumentIdentifier(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -283,15 +283,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier getInstrumentIdentifier() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 
-  public PatchCustomerPaymentInstrumentRequest metadata(Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata metadata) {
+  public PatchCustomerPaymentInstrumentRequest metadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -301,15 +301,15 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata getMetadata() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata metadata) {
+  public void setMetadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata) {
     this.metadata = metadata;
   }
 
-  public PatchCustomerPaymentInstrumentRequest embedded(Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
+  public PatchCustomerPaymentInstrumentRequest embedded(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -319,11 +319,11 @@ public class PatchCustomerPaymentInstrumentRequest {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded getEmbedded() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
+  public void setEmbedded(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
     this.embedded = embedded;
   }
 

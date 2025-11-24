@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.InlineResponse2003;
+import Model.InlineResponse2004;
 import Model.InlineResponse2013;
 import Model.InlineResponse4007;
 import Model.InlineResponse4042;
@@ -49,7 +49,7 @@ public class MerchantBoardingApiTest {
     @Test
     public void getRegistrationTest() throws Exception {
         String registrationId = null;
-        InlineResponse2003 response = api.getRegistration(registrationId);
+        InlineResponse2004 response = api.getRegistration(registrationId);
 
         // TODO: test validations
     }

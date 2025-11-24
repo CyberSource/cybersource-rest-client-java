@@ -15,8 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Bavsv1accountvalidationsClientReferenceInformation;
-import Model.TssV2TransactionsGet200ResponseBankAccountValidation;
+import Model.InlineResponse20011EmbeddedTotals;
+import Model.InlineResponse20012Billing;
+import Model.InlineResponse20013Records;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,94 +26,230 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse20013
  */
 
 public class InlineResponse20013 {
-  @SerializedName("clientReferenceInformation")
-  private Bavsv1accountvalidationsClientReferenceInformation clientReferenceInformation = null;
+  @SerializedName("version")
+  private String version = null;
 
-  @SerializedName("requestId")
-  private String requestId = null;
+  @SerializedName("reportCreatedDate")
+  private String reportCreatedDate = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("batchId")
+  private String batchId = null;
 
-  @SerializedName("bankAccountValidation")
-  private TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation = null;
+  @SerializedName("batchSource")
+  private String batchSource = null;
 
-  public InlineResponse20013 clientReferenceInformation(Bavsv1accountvalidationsClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  @SerializedName("batchCaEndpoints")
+  private String batchCaEndpoints = null;
+
+  @SerializedName("batchCreatedDate")
+  private String batchCreatedDate = null;
+
+  @SerializedName("merchantReference")
+  private String merchantReference = null;
+
+  @SerializedName("totals")
+  private InlineResponse20011EmbeddedTotals totals = null;
+
+  @SerializedName("billing")
+  private InlineResponse20012Billing billing = null;
+
+  @SerializedName("records")
+  private List<InlineResponse20013Records> records = null;
+
+  public InlineResponse20013 version(String version) {
+    this.version = version;
     return this;
   }
 
    /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * Get version
+   * @return version
+  **/
+  @ApiModelProperty(example = "1.0", value = "")
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+  public InlineResponse20013 reportCreatedDate(String reportCreatedDate) {
+    this.reportCreatedDate = reportCreatedDate;
+    return this;
+  }
+
+   /**
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @return reportCreatedDate
+  **/
+  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
+  public String getReportCreatedDate() {
+    return reportCreatedDate;
+  }
+
+  public void setReportCreatedDate(String reportCreatedDate) {
+    this.reportCreatedDate = reportCreatedDate;
+  }
+
+  public InlineResponse20013 batchId(String batchId) {
+    this.batchId = batchId;
+    return this;
+  }
+
+   /**
+   * Unique identification number assigned to the submitted request.
+   * @return batchId
+  **/
+  @ApiModelProperty(example = "16188390061150001062041064", value = "Unique identification number assigned to the submitted request.")
+  public String getBatchId() {
+    return batchId;
+  }
+
+  public void setBatchId(String batchId) {
+    this.batchId = batchId;
+  }
+
+  public InlineResponse20013 batchSource(String batchSource) {
+    this.batchSource = batchSource;
+    return this;
+  }
+
+   /**
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @return batchSource
+  **/
+  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
+  public String getBatchSource() {
+    return batchSource;
+  }
+
+  public void setBatchSource(String batchSource) {
+    this.batchSource = batchSource;
+  }
+
+  public InlineResponse20013 batchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+    return this;
+  }
+
+   /**
+   * Get batchCaEndpoints
+   * @return batchCaEndpoints
+  **/
+  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
+  public String getBatchCaEndpoints() {
+    return batchCaEndpoints;
+  }
+
+  public void setBatchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+  }
+
+  public InlineResponse20013 batchCreatedDate(String batchCreatedDate) {
+    this.batchCreatedDate = batchCreatedDate;
+    return this;
+  }
+
+   /**
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @return batchCreatedDate
+  **/
+  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
+  public String getBatchCreatedDate() {
+    return batchCreatedDate;
+  }
+
+  public void setBatchCreatedDate(String batchCreatedDate) {
+    this.batchCreatedDate = batchCreatedDate;
+  }
+
+  public InlineResponse20013 merchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
+    return this;
+  }
+
+   /**
+   * Reference used by merchant to identify batch.
+   * @return merchantReference
+  **/
+  @ApiModelProperty(example = "TC50171_3", value = "Reference used by merchant to identify batch.")
+  public String getMerchantReference() {
+    return merchantReference;
+  }
+
+  public void setMerchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
+  }
+
+  public InlineResponse20013 totals(InlineResponse20011EmbeddedTotals totals) {
+    this.totals = totals;
+    return this;
+  }
+
+   /**
+   * Get totals
+   * @return totals
   **/
   @ApiModelProperty(value = "")
-  public Bavsv1accountvalidationsClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
+  public InlineResponse20011EmbeddedTotals getTotals() {
+    return totals;
   }
 
-  public void setClientReferenceInformation(Bavsv1accountvalidationsClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public void setTotals(InlineResponse20011EmbeddedTotals totals) {
+    this.totals = totals;
   }
 
-  public InlineResponse20013 requestId(String requestId) {
-    this.requestId = requestId;
+  public InlineResponse20013 billing(InlineResponse20012Billing billing) {
+    this.billing = billing;
     return this;
   }
 
    /**
-   * Request Id sent as part of the request.
-   * @return requestId
-  **/
-  @ApiModelProperty(value = "Request Id sent as part of the request.")
-  public String getRequestId() {
-    return requestId;
-  }
-
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
-  }
-
-  public InlineResponse20013 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC.  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC.  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse20013 bankAccountValidation(TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation) {
-    this.bankAccountValidation = bankAccountValidation;
-    return this;
-  }
-
-   /**
-   * Get bankAccountValidation
-   * @return bankAccountValidation
+   * Get billing
+   * @return billing
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseBankAccountValidation getBankAccountValidation() {
-    return bankAccountValidation;
+  public InlineResponse20012Billing getBilling() {
+    return billing;
   }
 
-  public void setBankAccountValidation(TssV2TransactionsGet200ResponseBankAccountValidation bankAccountValidation) {
-    this.bankAccountValidation = bankAccountValidation;
+  public void setBilling(InlineResponse20012Billing billing) {
+    this.billing = billing;
+  }
+
+  public InlineResponse20013 records(List<InlineResponse20013Records> records) {
+    this.records = records;
+    return this;
+  }
+
+  public InlineResponse20013 addRecordsItem(InlineResponse20013Records recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<InlineResponse20013Records>();
+    }
+    this.records.add(recordsItem);
+    return this;
+  }
+
+   /**
+   * Get records
+   * @return records
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse20013Records> getRecords() {
+    return records;
+  }
+
+  public void setRecords(List<InlineResponse20013Records> records) {
+    this.records = records;
   }
 
 
@@ -125,15 +262,21 @@ public class InlineResponse20013 {
       return false;
     }
     InlineResponse20013 inlineResponse20013 = (InlineResponse20013) o;
-    return Objects.equals(this.clientReferenceInformation, inlineResponse20013.clientReferenceInformation) &&
-        Objects.equals(this.requestId, inlineResponse20013.requestId) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse20013.submitTimeUtc) &&
-        Objects.equals(this.bankAccountValidation, inlineResponse20013.bankAccountValidation);
+    return Objects.equals(this.version, inlineResponse20013.version) &&
+        Objects.equals(this.reportCreatedDate, inlineResponse20013.reportCreatedDate) &&
+        Objects.equals(this.batchId, inlineResponse20013.batchId) &&
+        Objects.equals(this.batchSource, inlineResponse20013.batchSource) &&
+        Objects.equals(this.batchCaEndpoints, inlineResponse20013.batchCaEndpoints) &&
+        Objects.equals(this.batchCreatedDate, inlineResponse20013.batchCreatedDate) &&
+        Objects.equals(this.merchantReference, inlineResponse20013.merchantReference) &&
+        Objects.equals(this.totals, inlineResponse20013.totals) &&
+        Objects.equals(this.billing, inlineResponse20013.billing) &&
+        Objects.equals(this.records, inlineResponse20013.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, requestId, submitTimeUtc, bankAccountValidation);
+    return Objects.hash(version, reportCreatedDate, batchId, batchSource, batchCaEndpoints, batchCreatedDate, merchantReference, totals, billing, records);
   }
 
 
@@ -142,10 +285,16 @@ public class InlineResponse20013 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20013 {\n");
     
-    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
+    if (version != null) sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    if (reportCreatedDate != null) sb.append("    reportCreatedDate: ").append(toIndentedString(reportCreatedDate)).append("\n");
+    if (batchId != null) sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    if (batchSource != null) sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
+    if (batchCaEndpoints != null) sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
+    if (batchCreatedDate != null) sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
+    if (merchantReference != null) sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
+    if (billing != null) sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
+    if (records != null) sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }

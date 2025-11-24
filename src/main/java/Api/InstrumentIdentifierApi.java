@@ -585,7 +585,7 @@ public class InstrumentIdentifierApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchInstrumentIdentifierRequest, PatchInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchInstrumentIdentifier,patchInstrumentIdentifierAsync,patchInstrumentIdentifierWithHttpInfo,patchInstrumentIdentifierCall")) {
             try {
@@ -760,7 +760,7 @@ public class InstrumentIdentifierApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierRequest, PostInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postInstrumentIdentifier,postInstrumentIdentifierAsync,postInstrumentIdentifierWithHttpInfo,postInstrumentIdentifierCall")) {
             try {
@@ -920,7 +920,7 @@ public class InstrumentIdentifierApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postInstrumentIdentifierEnrollment,postInstrumentIdentifierEnrollmentAsync,postInstrumentIdentifierEnrollmentWithHttpInfo,postInstrumentIdentifierEnrollmentCall")) {
             try {

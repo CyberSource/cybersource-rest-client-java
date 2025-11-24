@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.CreateSubscriptionResponseLinks;
 import Model.CreateSubscriptionResponseSubscriptionInformation;
+import Model.GetAllSubscriptionsResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,6 +46,9 @@ public class CreateSubscriptionResponse {
 
   @SerializedName("subscriptionInformation")
   private CreateSubscriptionResponseSubscriptionInformation subscriptionInformation = null;
+
+  @SerializedName("clientReferenceInformation")
+  private GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation = null;
 
   public CreateSubscriptionResponse links(CreateSubscriptionResponseLinks links) {
     this.links = links;
@@ -136,6 +140,24 @@ public class CreateSubscriptionResponse {
     this.subscriptionInformation = subscriptionInformation;
   }
 
+  public CreateSubscriptionResponse clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public GetAllSubscriptionsResponseClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,12 +172,13 @@ public class CreateSubscriptionResponse {
         Objects.equals(this.id, createSubscriptionResponse.id) &&
         Objects.equals(this.submitTimeUtc, createSubscriptionResponse.submitTimeUtc) &&
         Objects.equals(this.status, createSubscriptionResponse.status) &&
-        Objects.equals(this.subscriptionInformation, createSubscriptionResponse.subscriptionInformation);
+        Objects.equals(this.subscriptionInformation, createSubscriptionResponse.subscriptionInformation) &&
+        Objects.equals(this.clientReferenceInformation, createSubscriptionResponse.clientReferenceInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, subscriptionInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, subscriptionInformation, clientReferenceInformation);
   }
 
 
@@ -169,6 +192,7 @@ public class CreateSubscriptionResponse {
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

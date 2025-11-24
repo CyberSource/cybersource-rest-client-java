@@ -15,15 +15,15 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersBuyerInformation;
-import Model.Tmsv2customersClientReferenceInformation;
-import Model.Tmsv2customersDefaultPaymentInstrument;
-import Model.Tmsv2customersDefaultShippingAddress;
-import Model.Tmsv2customersEmbedded;
-import Model.Tmsv2customersLinks;
-import Model.Tmsv2customersMerchantDefinedInformation;
-import Model.Tmsv2customersMetadata;
-import Model.Tmsv2customersObjectInformation;
+import Model.Tmsv2tokenizeTokenInformationCustomerBuyerInformation;
+import Model.Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation;
+import Model.Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument;
+import Model.Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbedded;
+import Model.Tmsv2tokenizeTokenInformationCustomerLinks;
+import Model.Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation;
+import Model.Tmsv2tokenizeTokenInformationCustomerMetadata;
+import Model.Tmsv2tokenizeTokenInformationCustomerObjectInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,36 +41,36 @@ import java.util.List;
 
 public class PostCustomerRequest {
   @SerializedName("_links")
-  private Tmsv2customersLinks links = null;
+  private Tmsv2tokenizeTokenInformationCustomerLinks links = null;
 
   @SerializedName("id")
   private String id = null;
 
   @SerializedName("objectInformation")
-  private Tmsv2customersObjectInformation objectInformation = null;
+  private Tmsv2tokenizeTokenInformationCustomerObjectInformation objectInformation = null;
 
   @SerializedName("buyerInformation")
-  private Tmsv2customersBuyerInformation buyerInformation = null;
+  private Tmsv2tokenizeTokenInformationCustomerBuyerInformation buyerInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Tmsv2customersClientReferenceInformation clientReferenceInformation = null;
+  private Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<Tmsv2customersMerchantDefinedInformation> merchantDefinedInformation = null;
+  private List<Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation> merchantDefinedInformation = null;
 
   @SerializedName("defaultPaymentInstrument")
-  private Tmsv2customersDefaultPaymentInstrument defaultPaymentInstrument = null;
+  private Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument defaultPaymentInstrument = null;
 
   @SerializedName("defaultShippingAddress")
-  private Tmsv2customersDefaultShippingAddress defaultShippingAddress = null;
+  private Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress defaultShippingAddress = null;
 
   @SerializedName("metadata")
-  private Tmsv2customersMetadata metadata = null;
+  private Tmsv2tokenizeTokenInformationCustomerMetadata metadata = null;
 
   @SerializedName("_embedded")
-  private Tmsv2customersEmbedded embedded = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbedded embedded = null;
 
-  public PostCustomerRequest links(Tmsv2customersLinks links) {
+  public PostCustomerRequest links(Tmsv2tokenizeTokenInformationCustomerLinks links) {
     this.links = links;
     return this;
   }
@@ -80,11 +80,11 @@ public class PostCustomerRequest {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersLinks getLinks() {
+  public Tmsv2tokenizeTokenInformationCustomerLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv2customersLinks links) {
+  public void setLinks(Tmsv2tokenizeTokenInformationCustomerLinks links) {
     this.links = links;
   }
 
@@ -106,7 +106,7 @@ public class PostCustomerRequest {
     this.id = id;
   }
 
-  public PostCustomerRequest objectInformation(Tmsv2customersObjectInformation objectInformation) {
+  public PostCustomerRequest objectInformation(Tmsv2tokenizeTokenInformationCustomerObjectInformation objectInformation) {
     this.objectInformation = objectInformation;
     return this;
   }
@@ -116,15 +116,15 @@ public class PostCustomerRequest {
    * @return objectInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersObjectInformation getObjectInformation() {
+  public Tmsv2tokenizeTokenInformationCustomerObjectInformation getObjectInformation() {
     return objectInformation;
   }
 
-  public void setObjectInformation(Tmsv2customersObjectInformation objectInformation) {
+  public void setObjectInformation(Tmsv2tokenizeTokenInformationCustomerObjectInformation objectInformation) {
     this.objectInformation = objectInformation;
   }
 
-  public PostCustomerRequest buyerInformation(Tmsv2customersBuyerInformation buyerInformation) {
+  public PostCustomerRequest buyerInformation(Tmsv2tokenizeTokenInformationCustomerBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -134,15 +134,15 @@ public class PostCustomerRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersBuyerInformation getBuyerInformation() {
+  public Tmsv2tokenizeTokenInformationCustomerBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(Tmsv2customersBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Tmsv2tokenizeTokenInformationCustomerBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public PostCustomerRequest clientReferenceInformation(Tmsv2customersClientReferenceInformation clientReferenceInformation) {
+  public PostCustomerRequest clientReferenceInformation(Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -152,22 +152,22 @@ public class PostCustomerRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersClientReferenceInformation getClientReferenceInformation() {
+  public Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Tmsv2customersClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public PostCustomerRequest merchantDefinedInformation(List<Tmsv2customersMerchantDefinedInformation> merchantDefinedInformation) {
+  public PostCustomerRequest merchantDefinedInformation(List<Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public PostCustomerRequest addMerchantDefinedInformationItem(Tmsv2customersMerchantDefinedInformation merchantDefinedInformationItem) {
+  public PostCustomerRequest addMerchantDefinedInformationItem(Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation merchantDefinedInformationItem) {
     if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<Tmsv2customersMerchantDefinedInformation>();
+      this.merchantDefinedInformation = new ArrayList<Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation>();
     }
     this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
@@ -178,15 +178,15 @@ public class PostCustomerRequest {
    * @return merchantDefinedInformation
   **/
   @ApiModelProperty(value = "Object containing the custom data that the merchant defines. ")
-  public List<Tmsv2customersMerchantDefinedInformation> getMerchantDefinedInformation() {
+  public List<Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<Tmsv2customersMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
-  public PostCustomerRequest defaultPaymentInstrument(Tmsv2customersDefaultPaymentInstrument defaultPaymentInstrument) {
+  public PostCustomerRequest defaultPaymentInstrument(Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument defaultPaymentInstrument) {
     this.defaultPaymentInstrument = defaultPaymentInstrument;
     return this;
   }
@@ -196,15 +196,15 @@ public class PostCustomerRequest {
    * @return defaultPaymentInstrument
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersDefaultPaymentInstrument getDefaultPaymentInstrument() {
+  public Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument getDefaultPaymentInstrument() {
     return defaultPaymentInstrument;
   }
 
-  public void setDefaultPaymentInstrument(Tmsv2customersDefaultPaymentInstrument defaultPaymentInstrument) {
+  public void setDefaultPaymentInstrument(Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument defaultPaymentInstrument) {
     this.defaultPaymentInstrument = defaultPaymentInstrument;
   }
 
-  public PostCustomerRequest defaultShippingAddress(Tmsv2customersDefaultShippingAddress defaultShippingAddress) {
+  public PostCustomerRequest defaultShippingAddress(Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress defaultShippingAddress) {
     this.defaultShippingAddress = defaultShippingAddress;
     return this;
   }
@@ -214,15 +214,15 @@ public class PostCustomerRequest {
    * @return defaultShippingAddress
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersDefaultShippingAddress getDefaultShippingAddress() {
+  public Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress getDefaultShippingAddress() {
     return defaultShippingAddress;
   }
 
-  public void setDefaultShippingAddress(Tmsv2customersDefaultShippingAddress defaultShippingAddress) {
+  public void setDefaultShippingAddress(Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress defaultShippingAddress) {
     this.defaultShippingAddress = defaultShippingAddress;
   }
 
-  public PostCustomerRequest metadata(Tmsv2customersMetadata metadata) {
+  public PostCustomerRequest metadata(Tmsv2tokenizeTokenInformationCustomerMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -232,15 +232,15 @@ public class PostCustomerRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersMetadata getMetadata() {
+  public Tmsv2tokenizeTokenInformationCustomerMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2customersMetadata metadata) {
+  public void setMetadata(Tmsv2tokenizeTokenInformationCustomerMetadata metadata) {
     this.metadata = metadata;
   }
 
-  public PostCustomerRequest embedded(Tmsv2customersEmbedded embedded) {
+  public PostCustomerRequest embedded(Tmsv2tokenizeTokenInformationCustomerEmbedded embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -250,11 +250,11 @@ public class PostCustomerRequest {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbedded getEmbedded() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbedded getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Tmsv2customersEmbedded embedded) {
+  public void setEmbedded(Tmsv2tokenizeTokenInformationCustomerEmbedded embedded) {
     this.embedded = embedded;
   }
 

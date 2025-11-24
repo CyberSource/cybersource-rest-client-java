@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddressLinks;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddressMetadata;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddressShipTo;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class PatchCustomerShippingAddressRequest {
   @SerializedName("_links")
-  private Tmsv2customersEmbeddedDefaultShippingAddressLinks links = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -42,12 +42,12 @@ public class PatchCustomerShippingAddressRequest {
   private Boolean _default = null;
 
   @SerializedName("shipTo")
-  private Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo = null;
 
   @SerializedName("metadata")
-  private Tmsv2customersEmbeddedDefaultShippingAddressMetadata metadata = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata = null;
 
-  public PatchCustomerShippingAddressRequest links(Tmsv2customersEmbeddedDefaultShippingAddressLinks links) {
+  public PatchCustomerShippingAddressRequest links(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links) {
     this.links = links;
     return this;
   }
@@ -57,11 +57,11 @@ public class PatchCustomerShippingAddressRequest {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultShippingAddressLinks getLinks() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv2customersEmbeddedDefaultShippingAddressLinks links) {
+  public void setLinks(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links) {
     this.links = links;
   }
 
@@ -101,7 +101,7 @@ public class PatchCustomerShippingAddressRequest {
     this._default = _default;
   }
 
-  public PatchCustomerShippingAddressRequest shipTo(Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public PatchCustomerShippingAddressRequest shipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -111,15 +111,15 @@ public class PatchCustomerShippingAddressRequest {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultShippingAddressShipTo getShipTo() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public void setShipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
   }
 
-  public PatchCustomerShippingAddressRequest metadata(Tmsv2customersEmbeddedDefaultShippingAddressMetadata metadata) {
+  public PatchCustomerShippingAddressRequest metadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -129,11 +129,11 @@ public class PatchCustomerShippingAddressRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultShippingAddressMetadata getMetadata() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2customersEmbeddedDefaultShippingAddressMetadata metadata) {
+  public void setMetadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata) {
     this.metadata = metadata;
   }
 

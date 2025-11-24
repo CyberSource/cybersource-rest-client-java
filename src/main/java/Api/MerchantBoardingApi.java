@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2003;
+import Model.InlineResponse2004;
 import Model.InlineResponse2013;
 import Model.InlineResponse4007;
 import Model.InlineResponse4042;
@@ -160,13 +160,13 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return InlineResponse2003
+     * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2003 getRegistration(String registrationId) throws ApiException, ConfigException {
+    public InlineResponse2004 getRegistration(String registrationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
-        ApiResponse<InlineResponse2003> resp = getRegistrationWithHttpInfo(registrationId);
+        ApiResponse<InlineResponse2004> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
         return resp.getData();
     }
@@ -175,14 +175,14 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2003> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2004> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -195,7 +195,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2003> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2004> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -218,7 +218,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

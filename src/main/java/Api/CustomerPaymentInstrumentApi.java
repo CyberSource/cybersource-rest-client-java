@@ -594,7 +594,7 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall")) {
             try {
@@ -774,7 +774,7 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall")) {
             try {

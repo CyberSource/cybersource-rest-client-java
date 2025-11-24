@@ -44,7 +44,7 @@ public class Upv1capturecontextsDataMerchantDefinedInformation {
    * The key or identifier for the merchant-defined data field
    * @return key
   **/
-  @ApiModelProperty(value = "The key or identifier for the merchant-defined data field")
+  @ApiModelProperty(example = "1", value = "The key or identifier for the merchant-defined data field")
   public String getKey() {
     return key;
   }
@@ -62,7 +62,7 @@ public class Upv1capturecontextsDataMerchantDefinedInformation {
    * The value associated with the merchant-defined data field
    * @return value
   **/
-  @ApiModelProperty(value = "The value associated with the merchant-defined data field")
+  @ApiModelProperty(example = "123456", value = "The value associated with the merchant-defined data field")
   public String getValue() {
     return value;
   }

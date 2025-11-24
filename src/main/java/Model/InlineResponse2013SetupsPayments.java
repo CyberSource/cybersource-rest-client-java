@@ -89,6 +89,9 @@ public class InlineResponse2013SetupsPayments {
   @SerializedName("serviceFee")
   private InlineResponse2013SetupsPaymentsCardProcessing serviceFee = null;
 
+  @SerializedName("batchUpload")
+  private InlineResponse2013SetupsPaymentsDigitalPayments batchUpload = null;
+
   public InlineResponse2013SetupsPayments cardProcessing(InlineResponse2013SetupsPaymentsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
     return this;
@@ -431,6 +434,24 @@ public class InlineResponse2013SetupsPayments {
     this.serviceFee = serviceFee;
   }
 
+  public InlineResponse2013SetupsPayments batchUpload(InlineResponse2013SetupsPaymentsDigitalPayments batchUpload) {
+    this.batchUpload = batchUpload;
+    return this;
+  }
+
+   /**
+   * Get batchUpload
+   * @return batchUpload
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2013SetupsPaymentsDigitalPayments getBatchUpload() {
+    return batchUpload;
+  }
+
+  public void setBatchUpload(InlineResponse2013SetupsPaymentsDigitalPayments batchUpload) {
+    this.batchUpload = batchUpload;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -459,12 +480,13 @@ public class InlineResponse2013SetupsPayments {
         Objects.equals(this.payByLink, inlineResponse2013SetupsPayments.payByLink) &&
         Objects.equals(this.unifiedCheckout, inlineResponse2013SetupsPayments.unifiedCheckout) &&
         Objects.equals(this.receivablesManager, inlineResponse2013SetupsPayments.receivablesManager) &&
-        Objects.equals(this.serviceFee, inlineResponse2013SetupsPayments.serviceFee);
+        Objects.equals(this.serviceFee, inlineResponse2013SetupsPayments.serviceFee) &&
+        Objects.equals(this.batchUpload, inlineResponse2013SetupsPayments.batchUpload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload);
   }
 
 
@@ -492,6 +514,7 @@ public class InlineResponse2013SetupsPayments {
     if (unifiedCheckout != null) sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
+    if (batchUpload != null) sb.append("    batchUpload: ").append(toIndentedString(batchUpload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

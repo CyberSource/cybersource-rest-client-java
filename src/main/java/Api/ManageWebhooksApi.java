@@ -29,8 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2005;
 import Model.InlineResponse2006;
+import Model.InlineResponse2007;
 import Model.InlineResponse2015;
 import Model.InlineResponse2016;
 import Model.InlineResponse2017;
@@ -471,13 +471,13 @@ public class ManageWebhooksApi {
      * @param organizationId The Organization Identifier. (required)
      * @param productId The Product Identifier. (optional)
      * @param eventType The Event Type. (optional)
-     * @return List&lt;InlineResponse2005&gt;
+     * @return List&lt;InlineResponse2006&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2005> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
+    public List<InlineResponse2006> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' STARTED");
-        ApiResponse<List<InlineResponse2005>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
+        ApiResponse<List<InlineResponse2006>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' ENDED");
         return resp.getData();
     }
@@ -488,14 +488,14 @@ public class ManageWebhooksApi {
      * @param organizationId The Organization Identifier. (required)
      * @param productId The Product Identifier. (optional)
      * @param eventType The Event Type. (optional)
-     * @return ApiResponse&lt;List&lt;InlineResponse2005&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2006&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2005>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
+    public ApiResponse<List<InlineResponse2006>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2005>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -510,7 +510,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2005>> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2006>> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -533,7 +533,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2005>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -778,13 +778,13 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription.
      * @param webhookId The Webhook Identifier. (required)
      * @param updateWebhook The webhook payload or changes to apply. (optional)
-     * @return InlineResponse2006
+     * @return InlineResponse2007
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2006 notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
+    public InlineResponse2007 notificationSubscriptionsV2WebhooksWebhookIdPatch(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' STARTED");
-        ApiResponse<InlineResponse2006> resp = notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(webhookId, updateWebhook);
+        ApiResponse<InlineResponse2007> resp = notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(webhookId, updateWebhook);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksWebhookIdPatch' ENDED");
         return resp.getData();
     }
@@ -794,14 +794,14 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription.
      * @param webhookId The Webhook Identifier. (required)
      * @param updateWebhook The webhook payload or changes to apply. (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;InlineResponse2007&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2006> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2007> notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(webhookId, updateWebhook, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -815,7 +815,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<InlineResponse2006> callback) throws ApiException, ConfigException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksWebhookIdPatchAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<InlineResponse2007> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -838,7 +838,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = notificationSubscriptionsV2WebhooksWebhookIdPatchValidateBeforeCall(webhookId, updateWebhook, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

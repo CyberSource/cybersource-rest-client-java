@@ -104,6 +104,9 @@ public class PaymentsProducts {
   @SerializedName("serviceFee")
   private PaymentsProductsServiceFee serviceFee = null;
 
+  @SerializedName("batchUpload")
+  private PaymentsProductsTax batchUpload = null;
+
   public PaymentsProducts cardProcessing(PaymentsProductsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
     return this;
@@ -464,6 +467,24 @@ public class PaymentsProducts {
     this.serviceFee = serviceFee;
   }
 
+  public PaymentsProducts batchUpload(PaymentsProductsTax batchUpload) {
+    this.batchUpload = batchUpload;
+    return this;
+  }
+
+   /**
+   * Get batchUpload
+   * @return batchUpload
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getBatchUpload() {
+    return batchUpload;
+  }
+
+  public void setBatchUpload(PaymentsProductsTax batchUpload) {
+    this.batchUpload = batchUpload;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -493,12 +514,13 @@ public class PaymentsProducts {
         Objects.equals(this.payByLink, paymentsProducts.payByLink) &&
         Objects.equals(this.unifiedCheckout, paymentsProducts.unifiedCheckout) &&
         Objects.equals(this.receivablesManager, paymentsProducts.receivablesManager) &&
-        Objects.equals(this.serviceFee, paymentsProducts.serviceFee);
+        Objects.equals(this.serviceFee, paymentsProducts.serviceFee) &&
+        Objects.equals(this.batchUpload, paymentsProducts.batchUpload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload);
   }
 
 
@@ -527,6 +549,7 @@ public class PaymentsProducts {
     if (unifiedCheckout != null) sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
+    if (batchUpload != null) sb.append("    batchUpload: ").append(toIndentedString(batchUpload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

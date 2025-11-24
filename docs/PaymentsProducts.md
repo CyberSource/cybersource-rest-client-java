@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **unifiedCheckout** | [**PaymentsProductsUnifiedCheckout**](PaymentsProductsUnifiedCheckout.md) |  |  [optional]
 **receivablesManager** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
 **serviceFee** | [**PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  |  [optional]
+**batchUpload** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
 
 
 

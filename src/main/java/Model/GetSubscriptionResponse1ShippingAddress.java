@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddressShipTo;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class GetSubscriptionResponse1ShippingAddress {
   private String id = null;
 
   @SerializedName("shipTo")
-  private Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo = null;
 
   public GetSubscriptionResponse1ShippingAddress id(String id) {
     this.id = id;
@@ -55,7 +55,7 @@ public class GetSubscriptionResponse1ShippingAddress {
     this.id = id;
   }
 
-  public GetSubscriptionResponse1ShippingAddress shipTo(Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public GetSubscriptionResponse1ShippingAddress shipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -65,11 +65,11 @@ public class GetSubscriptionResponse1ShippingAddress {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultShippingAddressShipTo getShipTo() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public void setShipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
   }
 

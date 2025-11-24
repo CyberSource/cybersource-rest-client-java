@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Upv1capturecontextsDataOrderInformationAmountDetails;
 import Model.Upv1capturecontextsDataOrderInformationBillTo;
+import Model.Upv1capturecontextsDataOrderInformationInvoiceDetails;
 import Model.Upv1capturecontextsDataOrderInformationLineItems;
 import Model.Upv1capturecontextsDataOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
@@ -44,6 +45,9 @@ public class Upv1capturecontextsDataOrderInformation {
 
   @SerializedName("lineItems")
   private Upv1capturecontextsDataOrderInformationLineItems lineItems = null;
+
+  @SerializedName("invoiceDetails")
+  private Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails = null;
 
   public Upv1capturecontextsDataOrderInformation amountDetails(Upv1capturecontextsDataOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -117,6 +121,24 @@ public class Upv1capturecontextsDataOrderInformation {
     this.lineItems = lineItems;
   }
 
+  public Upv1capturecontextsDataOrderInformation invoiceDetails(Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+    return this;
+  }
+
+   /**
+   * Get invoiceDetails
+   * @return invoiceDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsDataOrderInformationInvoiceDetails getInvoiceDetails() {
+    return invoiceDetails;
+  }
+
+  public void setInvoiceDetails(Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +152,13 @@ public class Upv1capturecontextsDataOrderInformation {
     return Objects.equals(this.amountDetails, upv1capturecontextsDataOrderInformation.amountDetails) &&
         Objects.equals(this.billTo, upv1capturecontextsDataOrderInformation.billTo) &&
         Objects.equals(this.shipTo, upv1capturecontextsDataOrderInformation.shipTo) &&
-        Objects.equals(this.lineItems, upv1capturecontextsDataOrderInformation.lineItems);
+        Objects.equals(this.lineItems, upv1capturecontextsDataOrderInformation.lineItems) &&
+        Objects.equals(this.invoiceDetails, upv1capturecontextsDataOrderInformation.invoiceDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails);
   }
 
 
@@ -148,6 +171,7 @@ public class Upv1capturecontextsDataOrderInformation {
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
