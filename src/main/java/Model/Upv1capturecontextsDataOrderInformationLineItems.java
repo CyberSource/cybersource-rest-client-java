@@ -133,10 +133,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get productCode
+   * Code identifying the product.
    * @return productCode
   **/
-  @ApiModelProperty(example = "electronics", value = "")
+  @ApiModelProperty(example = "electronics", value = "Code identifying the product.")
   public String getProductCode() {
     return productCode;
   }
@@ -151,10 +151,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get productName
+   * Name of the product.
    * @return productName
   **/
-  @ApiModelProperty(example = "smartphone", value = "")
+  @ApiModelProperty(example = "smartphone", value = "Name of the product.")
   public String getProductName() {
     return productName;
   }
@@ -169,10 +169,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get productSku
+   * Stock Keeping Unit identifier
    * @return productSku
   **/
-  @ApiModelProperty(example = "SKU12345", value = "")
+  @ApiModelProperty(example = "SKU12345", value = "Stock Keeping Unit identifier")
   public String getProductSku() {
     return productSku;
   }
@@ -187,12 +187,12 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get quantity
+   * Quantity of the product
    * minimum: 1
    * maximum: 999999999
    * @return quantity
   **/
-  @ApiModelProperty(example = "2", value = "")
+  @ApiModelProperty(example = "2", value = "Quantity of the product")
   public Integer getQuantity() {
     return quantity;
   }
@@ -207,10 +207,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get unitPrice
+   * Price per unit
    * @return unitPrice
   **/
-  @ApiModelProperty(example = "399.99", value = "")
+  @ApiModelProperty(example = "399.99", value = "Price per unit")
   public String getUnitPrice() {
     return unitPrice;
   }
@@ -225,10 +225,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get unitOfMeasure
+   * Unit of measure (e.g. EA, KG, LB)
    * @return unitOfMeasure
   **/
-  @ApiModelProperty(example = "EA", value = "")
+  @ApiModelProperty(example = "EA", value = "Unit of measure (e.g. EA, KG, LB)")
   public String getUnitOfMeasure() {
     return unitOfMeasure;
   }
@@ -243,10 +243,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get totalAmount
+   * Total amount for the line item
    * @return totalAmount
   **/
-  @ApiModelProperty(example = "799.98", value = "")
+  @ApiModelProperty(example = "799.98", value = "Total amount for the line item")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -261,10 +261,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get taxAmount
+   * Tax amount applied
    * @return taxAmount
   **/
-  @ApiModelProperty(example = "64.00", value = "")
+  @ApiModelProperty(example = "64.00", value = "Tax amount applied")
   public String getTaxAmount() {
     return taxAmount;
   }
@@ -279,10 +279,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get taxRate
+   * Tax rate applied
    * @return taxRate
   **/
-  @ApiModelProperty(example = "0.88", value = "")
+  @ApiModelProperty(example = "0.88", value = "Tax rate applied")
   public String getTaxRate() {
     return taxRate;
   }
@@ -297,10 +297,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get taxAppliedAfterDiscount
+   * Indicates if tax applied after discount
    * @return taxAppliedAfterDiscount
   **/
-  @ApiModelProperty(example = "Y", value = "")
+  @ApiModelProperty(example = "Y", value = "Indicates if tax applied after discount")
   public String getTaxAppliedAfterDiscount() {
     return taxAppliedAfterDiscount;
   }
@@ -315,10 +315,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get taxStatusIndicator
+   * Tax status indicator
    * @return taxStatusIndicator
   **/
-  @ApiModelProperty(example = "N", value = "")
+  @ApiModelProperty(example = "N", value = "Tax status indicator")
   public String getTaxStatusIndicator() {
     return taxStatusIndicator;
   }
@@ -333,10 +333,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get taxTypeCode
+   * Tax type code
    * @return taxTypeCode
   **/
-  @ApiModelProperty(example = "VAT", value = "")
+  @ApiModelProperty(example = "VAT", value = "Tax type code")
   public String getTaxTypeCode() {
     return taxTypeCode;
   }
@@ -351,10 +351,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get amountIncludesTax
+   * Indicates if amount includes tax
    * @return amountIncludesTax
   **/
-  @ApiModelProperty(example = "false", value = "")
+  @ApiModelProperty(example = "false", value = "Indicates if amount includes tax")
   public Boolean AmountIncludesTax() {
     return amountIncludesTax;
   }
@@ -369,10 +369,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get typeOfSupply
+   * Type of supply
    * @return typeOfSupply
   **/
-  @ApiModelProperty(example = "GS", value = "")
+  @ApiModelProperty(example = "GS", value = "Type of supply")
   public String getTypeOfSupply() {
     return typeOfSupply;
   }
@@ -387,10 +387,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get commodityCode
+   * Commodity code
    * @return commodityCode
   **/
-  @ApiModelProperty(example = "123456", value = "")
+  @ApiModelProperty(example = "123456", value = "Commodity code")
   public String getCommodityCode() {
     return commodityCode;
   }
@@ -405,10 +405,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get discountAmount
+   * Discount amount applied
    * @return discountAmount
   **/
-  @ApiModelProperty(example = "10.00", value = "")
+  @ApiModelProperty(example = "10.00", value = "Discount amount applied")
   public String getDiscountAmount() {
     return discountAmount;
   }
@@ -423,10 +423,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get discountApplied
+   * Indicates if discount applied
    * @return discountApplied
   **/
-  @ApiModelProperty(example = "true", value = "")
+  @ApiModelProperty(example = "true", value = "Indicates if discount applied")
   public Boolean DiscountApplied() {
     return discountApplied;
   }
@@ -441,10 +441,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get discountRate
+   * Discount rate applied
    * @return discountRate
   **/
-  @ApiModelProperty(example = "0.05", value = "")
+  @ApiModelProperty(example = "0.05", value = "Discount rate applied")
   public String getDiscountRate() {
     return discountRate;
   }
@@ -459,10 +459,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get invoiceNumber
+   * Invoice number for the line item
    * @return invoiceNumber
   **/
-  @ApiModelProperty(example = "INV-001", value = "")
+  @ApiModelProperty(example = "INV-001", value = "Invoice number for the line item")
   public String getInvoiceNumber() {
     return invoiceNumber;
   }
@@ -495,10 +495,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get fulfillmentType
+   * Fulfillment type
    * @return fulfillmentType
   **/
-  @ApiModelProperty(example = "Delivery", value = "")
+  @ApiModelProperty(example = "Delivery", value = "Fulfillment type")
   public String getFulfillmentType() {
     return fulfillmentType;
   }
@@ -513,10 +513,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get weight
+   * Weight of the product
    * @return weight
   **/
-  @ApiModelProperty(example = "1.5", value = "")
+  @ApiModelProperty(example = "1.5", value = "Weight of the product")
   public String getWeight() {
     return weight;
   }
@@ -531,10 +531,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get weightIdentifier
+   * Weight identifier
    * @return weightIdentifier
   **/
-  @ApiModelProperty(example = "N", value = "")
+  @ApiModelProperty(example = "N", value = "Weight identifier")
   public String getWeightIdentifier() {
     return weightIdentifier;
   }
@@ -549,10 +549,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get weightUnit
+   * Unit of weight of the product
    * @return weightUnit
   **/
-  @ApiModelProperty(example = "KG", value = "")
+  @ApiModelProperty(example = "KG", value = "Unit of weight of the product")
   public String getWeightUnit() {
     return weightUnit;
   }
@@ -567,10 +567,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get referenceDataCode
+   * Reference data code
    * @return referenceDataCode
   **/
-  @ApiModelProperty(example = "REFCODE", value = "")
+  @ApiModelProperty(example = "REFCODE", value = "Reference data code")
   public String getReferenceDataCode() {
     return referenceDataCode;
   }
@@ -585,10 +585,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get referenceDataNumber
+   * Reference data number
    * @return referenceDataNumber
   **/
-  @ApiModelProperty(example = "REF123", value = "")
+  @ApiModelProperty(example = "REF123", value = "Reference data number")
   public String getReferenceDataNumber() {
     return referenceDataNumber;
   }
@@ -603,10 +603,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get unitTaxAmount
+   * Unit tax amount
    * @return unitTaxAmount
   **/
-  @ApiModelProperty(example = "3.20", value = "")
+  @ApiModelProperty(example = "3.20", value = "Unit tax amount")
   public String getUnitTaxAmount() {
     return unitTaxAmount;
   }
@@ -621,10 +621,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get productDescription
+   * Description of the product
    * @return productDescription
   **/
-  @ApiModelProperty(example = "Latest model smartphone", value = "")
+  @ApiModelProperty(example = "Latest model smartphone", value = "Description of the product")
   public String getProductDescription() {
     return productDescription;
   }
@@ -639,10 +639,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get giftCardCurrency
+   * Gift card currency
    * @return giftCardCurrency
   **/
-  @ApiModelProperty(example = "USD", value = "")
+  @ApiModelProperty(example = "USD", value = "Gift card currency")
   public String getGiftCardCurrency() {
     return giftCardCurrency;
   }
@@ -657,10 +657,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get shippingDestinationTypes
+   * Shipping destination types
    * @return shippingDestinationTypes
   **/
-  @ApiModelProperty(example = "Residential", value = "")
+  @ApiModelProperty(example = "Residential", value = "Shipping destination types")
   public String getShippingDestinationTypes() {
     return shippingDestinationTypes;
   }
@@ -675,10 +675,10 @@ public class Upv1capturecontextsDataOrderInformationLineItems {
   }
 
    /**
-   * Get gift
+   * Indicates if item is a gift
    * @return gift
   **/
-  @ApiModelProperty(example = "false", value = "")
+  @ApiModelProperty(example = "false", value = "Indicates if item is a gift")
   public Boolean Gift() {
     return gift;
   }

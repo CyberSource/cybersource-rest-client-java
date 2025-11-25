@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="bankAccountValidationRequest"></a>
 # **bankAccountValidationRequest**
-> InlineResponse20013 bankAccountValidationRequest(accountValidationsRequest)
+> InlineResponse20014 bankAccountValidationRequest(accountValidationsRequest)
 
 Visa Bank Account Validation Service
 
@@ -25,7 +25,7 @@ The Visa Bank Account Validation Service is a new standalone product designed to
 BankAccountValidationApi apiInstance = new BankAccountValidationApi();
 AccountValidationsRequest accountValidationsRequest = new AccountValidationsRequest(); // AccountValidationsRequest | 
 try {
-    InlineResponse20013 result = apiInstance.bankAccountValidationRequest(accountValidationsRequest);
+    InlineResponse20014 result = apiInstance.bankAccountValidationRequest(accountValidationsRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BankAccountValidationApi#bankAccountValidationRequest");
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

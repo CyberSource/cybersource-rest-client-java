@@ -39,6 +39,12 @@ public class Upv1capturecontextsDataBuyerInformation {
   @SerializedName("companyTaxId")
   private String companyTaxId = null;
 
+  @SerializedName("dateOfBirth")
+  private String dateOfBirth = null;
+
+  @SerializedName("language")
+  private String language = null;
+
   public Upv1capturecontextsDataBuyerInformation personalIdentification(Upv1capturecontextsDataBuyerInformationPersonalIdentification personalIdentification) {
     this.personalIdentification = personalIdentification;
     return this;
@@ -63,10 +69,10 @@ public class Upv1capturecontextsDataBuyerInformation {
   }
 
    /**
-   * Get merchantCustomerId
+   * The Merchant Customer ID 
    * @return merchantCustomerId
   **/
-  @ApiModelProperty(example = "M123456767", value = "")
+  @ApiModelProperty(example = "M123456767", value = "The Merchant Customer ID ")
   public String getMerchantCustomerId() {
     return merchantCustomerId;
   }
@@ -81,16 +87,52 @@ public class Upv1capturecontextsDataBuyerInformation {
   }
 
    /**
-   * Get companyTaxId
+   * The Company Tax ID 
    * @return companyTaxId
   **/
-  @ApiModelProperty(example = "", value = "")
+  @ApiModelProperty(example = "", value = "The Company Tax ID ")
   public String getCompanyTaxId() {
     return companyTaxId;
   }
 
   public void setCompanyTaxId(String companyTaxId) {
     this.companyTaxId = companyTaxId;
+  }
+
+  public Upv1capturecontextsDataBuyerInformation dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * The date of birth 
+   * @return dateOfBirth
+  **/
+  @ApiModelProperty(example = "12/03/1976", value = "The date of birth ")
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public Upv1capturecontextsDataBuyerInformation language(String language) {
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * The preferred language 
+   * @return language
+  **/
+  @ApiModelProperty(example = "English", value = "The preferred language ")
+  public String getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
   }
 
 
@@ -105,12 +147,14 @@ public class Upv1capturecontextsDataBuyerInformation {
     Upv1capturecontextsDataBuyerInformation upv1capturecontextsDataBuyerInformation = (Upv1capturecontextsDataBuyerInformation) o;
     return Objects.equals(this.personalIdentification, upv1capturecontextsDataBuyerInformation.personalIdentification) &&
         Objects.equals(this.merchantCustomerId, upv1capturecontextsDataBuyerInformation.merchantCustomerId) &&
-        Objects.equals(this.companyTaxId, upv1capturecontextsDataBuyerInformation.companyTaxId);
+        Objects.equals(this.companyTaxId, upv1capturecontextsDataBuyerInformation.companyTaxId) &&
+        Objects.equals(this.dateOfBirth, upv1capturecontextsDataBuyerInformation.dateOfBirth) &&
+        Objects.equals(this.language, upv1capturecontextsDataBuyerInformation.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(personalIdentification, merchantCustomerId, companyTaxId);
+    return Objects.hash(personalIdentification, merchantCustomerId, companyTaxId, dateOfBirth, language);
   }
 
 
@@ -122,6 +166,8 @@ public class Upv1capturecontextsDataBuyerInformation {
     if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     if (companyTaxId != null) sb.append("    companyTaxId: ").append(toIndentedString(companyTaxId)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (language != null) sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,16 +35,19 @@ public class Upv1capturecontextsDataConsumerAuthenticationInformation {
   @SerializedName("messageCategory")
   private String messageCategory = null;
 
+  @SerializedName("acsWindowSize")
+  private String acsWindowSize = null;
+
   public Upv1capturecontextsDataConsumerAuthenticationInformation challengeCode(String challengeCode) {
     this.challengeCode = challengeCode;
     return this;
   }
 
    /**
-   * Get challengeCode
+   * The challenge code 
    * @return challengeCode
   **/
-  @ApiModelProperty(example = "01", value = "")
+  @ApiModelProperty(example = "01", value = "The challenge code ")
   public String getChallengeCode() {
     return challengeCode;
   }
@@ -59,16 +62,34 @@ public class Upv1capturecontextsDataConsumerAuthenticationInformation {
   }
 
    /**
-   * Get messageCategory
+   * The message category 
    * @return messageCategory
   **/
-  @ApiModelProperty(example = "01", value = "")
+  @ApiModelProperty(example = "01", value = "The message category ")
   public String getMessageCategory() {
     return messageCategory;
   }
 
   public void setMessageCategory(String messageCategory) {
     this.messageCategory = messageCategory;
+  }
+
+  public Upv1capturecontextsDataConsumerAuthenticationInformation acsWindowSize(String acsWindowSize) {
+    this.acsWindowSize = acsWindowSize;
+    return this;
+  }
+
+   /**
+   * The acs window size 
+   * @return acsWindowSize
+  **/
+  @ApiModelProperty(example = "01", value = "The acs window size ")
+  public String getAcsWindowSize() {
+    return acsWindowSize;
+  }
+
+  public void setAcsWindowSize(String acsWindowSize) {
+    this.acsWindowSize = acsWindowSize;
   }
 
 
@@ -82,12 +103,13 @@ public class Upv1capturecontextsDataConsumerAuthenticationInformation {
     }
     Upv1capturecontextsDataConsumerAuthenticationInformation upv1capturecontextsDataConsumerAuthenticationInformation = (Upv1capturecontextsDataConsumerAuthenticationInformation) o;
     return Objects.equals(this.challengeCode, upv1capturecontextsDataConsumerAuthenticationInformation.challengeCode) &&
-        Objects.equals(this.messageCategory, upv1capturecontextsDataConsumerAuthenticationInformation.messageCategory);
+        Objects.equals(this.messageCategory, upv1capturecontextsDataConsumerAuthenticationInformation.messageCategory) &&
+        Objects.equals(this.acsWindowSize, upv1capturecontextsDataConsumerAuthenticationInformation.acsWindowSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(challengeCode, messageCategory);
+    return Objects.hash(challengeCode, messageCategory, acsWindowSize);
   }
 
 
@@ -98,6 +120,7 @@ public class Upv1capturecontextsDataConsumerAuthenticationInformation {
     
     if (challengeCode != null) sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
     if (messageCategory != null) sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
+    if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

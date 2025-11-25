@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2001Embedded;
+import Model.InlineResponse2001Content;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,23 +24,26 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * InlineResponse2001
+ * Represents the Card Art Asset associated to the Network Token. 
  */
+@ApiModel(description = "Represents the Card Art Asset associated to the Network Token. ")
 
 public class InlineResponse2001 {
   @SerializedName("id")
   private String id = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("type")
+  private String type = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("provider")
+  private String provider = null;
 
-  @SerializedName("_embedded")
-  private InlineResponse2001Embedded embedded = null;
+  @SerializedName("content")
+  private List<InlineResponse2001Content> content = null;
 
   public InlineResponse2001 id(String id) {
     this.id = id;
@@ -48,10 +51,10 @@ public class InlineResponse2001 {
   }
 
    /**
-   * UUID uniquely generated for this comments. 
+   * Unique identifier for the Card Art Asset. 
    * @return id
   **/
-  @ApiModelProperty(value = "UUID uniquely generated for this comments. ")
+  @ApiModelProperty(example = "84cfb836a0000859be62c766bdc9e510", value = "Unique identifier for the Card Art Asset. ")
   public String getId() {
     return id;
   }
@@ -60,58 +63,66 @@ public class InlineResponse2001 {
     this.id = id;
   }
 
-  public InlineResponse2001 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse2001 type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
+   * The type of Card Art Asset. 
+   * @return type
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(example = "cardArtCombined", value = "The type of Card Art Asset. ")
+  public String getType() {
+    return type;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public InlineResponse2001 status(String status) {
-    this.status = status;
+  public InlineResponse2001 provider(String provider) {
+    this.provider = provider;
     return this;
   }
 
    /**
-   * The status of the submitted transaction. Possible values are: - &#x60;ACCEPTED&#x60; - &#x60;REJECTED&#x60; 
-   * @return status
+   * The provider of the Card Art Asset. 
+   * @return provider
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(example = "vts", value = "The provider of the Card Art Asset. ")
+  public String getProvider() {
+    return provider;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setProvider(String provider) {
+    this.provider = provider;
   }
 
-  public InlineResponse2001 embedded(InlineResponse2001Embedded embedded) {
-    this.embedded = embedded;
+  public InlineResponse2001 content(List<InlineResponse2001Content> content) {
+    this.content = content;
+    return this;
+  }
+
+  public InlineResponse2001 addContentItem(InlineResponse2001Content contentItem) {
+    if (this.content == null) {
+      this.content = new ArrayList<InlineResponse2001Content>();
+    }
+    this.content.add(contentItem);
     return this;
   }
 
    /**
-   * Get embedded
-   * @return embedded
+   * Array of content objects representing the Card Art Asset. 
+   * @return content
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2001Embedded getEmbedded() {
-    return embedded;
+  @ApiModelProperty(value = "Array of content objects representing the Card Art Asset. ")
+  public List<InlineResponse2001Content> getContent() {
+    return content;
   }
 
-  public void setEmbedded(InlineResponse2001Embedded embedded) {
-    this.embedded = embedded;
+  public void setContent(List<InlineResponse2001Content> content) {
+    this.content = content;
   }
 
 
@@ -125,14 +136,14 @@ public class InlineResponse2001 {
     }
     InlineResponse2001 inlineResponse2001 = (InlineResponse2001) o;
     return Objects.equals(this.id, inlineResponse2001.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2001.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2001.status) &&
-        Objects.equals(this.embedded, inlineResponse2001.embedded);
+        Objects.equals(this.type, inlineResponse2001.type) &&
+        Objects.equals(this.provider, inlineResponse2001.provider) &&
+        Objects.equals(this.content, inlineResponse2001.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, status, embedded);
+    return Objects.hash(id, type, provider, content);
   }
 
 
@@ -142,9 +153,9 @@ public class InlineResponse2001 {
     sb.append("class InlineResponse2001 {\n");
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    if (content != null) sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }

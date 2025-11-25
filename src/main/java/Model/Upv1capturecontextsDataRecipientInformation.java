@@ -50,6 +50,12 @@ public class Upv1capturecontextsDataRecipientInformation {
   @SerializedName("accountType")
   private String accountType = null;
 
+  @SerializedName("dateOfBirth")
+  private String dateOfBirth = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
   public Upv1capturecontextsDataRecipientInformation firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -149,7 +155,7 @@ public class Upv1capturecontextsDataRecipientInformation {
    * The administrative area of the recipient
    * @return administrativeArea
   **/
-  @ApiModelProperty(example = "Devon", value = "The administrative area of the recipient")
+  @ApiModelProperty(example = "GB", value = "The administrative area of the recipient")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -167,13 +173,49 @@ public class Upv1capturecontextsDataRecipientInformation {
    * The account type of the recipient
    * @return accountType
   **/
-  @ApiModelProperty(example = "Checking", value = "The account type of the recipient")
+  @ApiModelProperty(example = "01", value = "The account type of the recipient")
   public String getAccountType() {
     return accountType;
   }
 
   public void setAccountType(String accountType) {
     this.accountType = accountType;
+  }
+
+  public Upv1capturecontextsDataRecipientInformation dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * The date of birth of the recipient
+   * @return dateOfBirth
+  **/
+  @ApiModelProperty(example = "05111999", value = "The date of birth of the recipient")
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public Upv1capturecontextsDataRecipientInformation postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * The postal code of the recipient
+   * @return postalCode
+  **/
+  @ApiModelProperty(example = "170056", value = "The postal code of the recipient")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
   }
 
 
@@ -192,12 +234,14 @@ public class Upv1capturecontextsDataRecipientInformation {
         Objects.equals(this.country, upv1capturecontextsDataRecipientInformation.country) &&
         Objects.equals(this.accountId, upv1capturecontextsDataRecipientInformation.accountId) &&
         Objects.equals(this.administrativeArea, upv1capturecontextsDataRecipientInformation.administrativeArea) &&
-        Objects.equals(this.accountType, upv1capturecontextsDataRecipientInformation.accountType);
+        Objects.equals(this.accountType, upv1capturecontextsDataRecipientInformation.accountType) &&
+        Objects.equals(this.dateOfBirth, upv1capturecontextsDataRecipientInformation.dateOfBirth) &&
+        Objects.equals(this.postalCode, upv1capturecontextsDataRecipientInformation.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleName, lastName, country, accountId, administrativeArea, accountType);
+    return Objects.hash(firstName, middleName, lastName, country, accountId, administrativeArea, accountType, dateOfBirth, postalCode);
   }
 
 
@@ -213,6 +257,8 @@ public class Upv1capturecontextsDataRecipientInformation {
     if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

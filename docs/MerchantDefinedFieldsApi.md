@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createMerchantDefinedFieldDefinition"></a>
 # **createMerchantDefinedFieldDefinition**
-> List&lt;InlineResponse2002&gt; createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> List&lt;InlineResponse2003&gt; createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
 
 Create merchant defined field for a given reference type
 
@@ -27,7 +27,7 @@ MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
 MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest = new MerchantDefinedFieldDefinitionRequest(); // MerchantDefinedFieldDefinitionRequest | 
 try {
-    List<InlineResponse2002> result = apiInstance.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+    List<InlineResponse2003> result = apiInstance.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#createMerchantDefinedFieldDefinition");
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2002&gt;**](InlineResponse2002.md)
+[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="getMerchantDefinedFieldsDefinitions"></a>
 # **getMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2002&gt; getMerchantDefinedFieldsDefinitions(referenceType)
+> List&lt;InlineResponse2003&gt; getMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all merchant defined fields for a given reference type
 
@@ -115,7 +115,7 @@ Get all merchant defined fields for a given reference type
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
 try {
-    List<InlineResponse2002> result = apiInstance.getMerchantDefinedFieldsDefinitions(referenceType);
+    List<InlineResponse2003> result = apiInstance.getMerchantDefinedFieldsDefinitions(referenceType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#getMerchantDefinedFieldsDefinitions");
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2002&gt;**](InlineResponse2002.md)
+[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ No authorization required
 
 <a name="putMerchantDefinedFieldsDefinitions"></a>
 # **putMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2002&gt; putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> List&lt;InlineResponse2003&gt; putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
 
 Update a MerchantDefinedField by ID
 
@@ -160,7 +160,7 @@ String referenceType = "referenceType_example"; // String |
 Long id = 789L; // Long | 
 MerchantDefinedFieldCore merchantDefinedFieldCore = new MerchantDefinedFieldCore(); // MerchantDefinedFieldCore | 
 try {
-    List<InlineResponse2002> result = apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+    List<InlineResponse2003> result = apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#putMerchantDefinedFieldsDefinitions");
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2002&gt;**](InlineResponse2002.md)
+[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 

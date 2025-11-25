@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reconciliationId** | **String** |  |  [optional]
+**reconciliationId** | **String** | The reconciliation ID |  [optional]
 **authorizationOptions** | [**Upv1capturecontextsDataProcessingInformationAuthorizationOptions**](Upv1capturecontextsDataProcessingInformationAuthorizationOptions.md) |  |  [optional]
 
 

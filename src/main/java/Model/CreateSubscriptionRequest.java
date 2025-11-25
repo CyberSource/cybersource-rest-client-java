@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.GetAllPlansResponseOrderInformation;
-import Model.Rbsv1subscriptionsClientReferenceInformation;
+import Model.GetAllSubscriptionsResponseClientReferenceInformation;
 import Model.Rbsv1subscriptionsPaymentInformation;
 import Model.Rbsv1subscriptionsPlanInformation;
 import Model.Rbsv1subscriptionsProcessingInformation;
@@ -36,7 +36,7 @@ import java.io.IOException;
 
 public class CreateSubscriptionRequest {
   @SerializedName("clientReferenceInformation")
-  private Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation = null;
+  private GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
   private Rbsv1subscriptionsProcessingInformation processingInformation = null;
@@ -53,7 +53,7 @@ public class CreateSubscriptionRequest {
   @SerializedName("orderInformation")
   private GetAllPlansResponseOrderInformation orderInformation = null;
 
-  public CreateSubscriptionRequest clientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public CreateSubscriptionRequest clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -63,11 +63,11 @@ public class CreateSubscriptionRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Rbsv1subscriptionsClientReferenceInformation getClientReferenceInformation() {
+  public GetAllSubscriptionsResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

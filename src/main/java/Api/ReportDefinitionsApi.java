@@ -95,6 +95,8 @@ public class ReportDefinitionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getResourceInfoByReportDefinition,getResourceInfoByReportDefinitionAsync,getResourceInfoByReportDefinitionWithHttpInfo,getResourceInfoByReportDefinitionCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-definitions/{reportDefinitionName}"
@@ -137,7 +139,7 @@ public class ReportDefinitionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -261,6 +263,8 @@ public class ReportDefinitionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getResourceV2Info,getResourceV2InfoAsync,getResourceV2InfoWithHttpInfo,getResourceV2InfoCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-definitions";
@@ -300,7 +304,7 @@ public class ReportDefinitionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
