@@ -119,8 +119,11 @@ Configure global settings for request MLE using these properties in your `mercha
 
 - **Variable**: `responseMleKID`
 - **Type**: `String`
-- **Required**: `true` (when response MLE is enabled)
-- **Description**: Key ID value for the MLE response certificate (provided in merchant portal).
+- **Optional**: `true` (when using CyberSource-generated P12 file)
+- **Required**: `true` (when using PEM files or private key object)
+- **Description**: Key ID value for the MLE response certificate (provided in merchant portal). 
+  - **Note**: This parameter is optional when `responseMlePrivateKeyFilePath` points to a CyberSource-generated P12 file. If not provided, the SDK will automatically fetch the Key ID from the P12 file. If provided, the SDK will use the user-provided value instead of the auto-fetched value.
+  - **Required** when using PEM format files (`.pem`, `.key`, `.p8`) or when providing `responseMlePrivateKey` object directly.
 
 <br/>
 
@@ -201,12 +204,26 @@ merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 ### (v) Response MLE Configuration with Private Key File
 
 ```java
-// Properties-based configuration
+// Properties-based configuration with CyberSource-generated P12 file
 Properties merchantProps = new Properties();
 merchantProps.setProperty("enableResponseMleGlobally", "true");
 merchantProps.setProperty("responseMlePrivateKeyFilePath", "/path/to/private/key.p12");
 merchantProps.setProperty("responseMlePrivateKeyFilePassword", "password");
-merchantProps.setProperty("responseMleKID", "your-key-id");
+// responseMleKID is optional for CyberSource-generated P12 files - SDK will auto-fetch if not provided
+// merchantProps.setProperty("responseMleKID", "your-key-id");  // Optional - overrides auto-fetched value
+
+// API-specific control
+Map<String, String> mleControlMap = new HashMap<>();
+mleControlMap.put("createPayment", "::true");  // Enable response MLE only for this API
+merchantProps.put("mapToControlMLEonAPI", mleControlMap);
+```
+
+```java
+// Properties-based configuration with PEM file (responseMleKID is required)
+Properties merchantProps = new Properties();
+merchantProps.setProperty("enableResponseMleGlobally", "true");
+merchantProps.setProperty("responseMlePrivateKeyFilePath", "/path/to/private/key.pem");
+merchantProps.setProperty("responseMleKID", "your-key-id");  // Required for PEM files
 
 // API-specific control
 Map<String, String> mleControlMap = new HashMap<>();
@@ -220,10 +237,10 @@ merchantProps.put("mapToControlMLEonAPI", mleControlMap);
 // Load private key programmatically
 PrivateKey privateKey = loadPrivateKeyFromSomewhere();
 
-// Create MerchantConfig with private key object
+// Create MerchantConfig with private key object (responseMleKID is required)
 Properties merchantProps = new Properties();
 merchantProps.setProperty("enableResponseMleGlobally", "true");
-merchantProps.setProperty("responseMleKID", "your-key-id");
+merchantProps.setProperty("responseMleKID", "your-key-id");  // Required when using private key object
 
 // Use constructor that accepts private key object
 MerchantConfig merchantConfig = new MerchantConfig(merchantProps, privateKey);
@@ -238,11 +255,12 @@ Properties merchantProps = new Properties();
 // Request MLE settings (minimal - uses defaults)
 merchantProps.setProperty("enableRequestMLEForOptionalApisGlobally", "true");
 
-// Response MLE settings
+// Response MLE settings (with CyberSource-generated P12 file)
 merchantProps.setProperty("enableResponseMleGlobally", "true");
 merchantProps.setProperty("responseMlePrivateKeyFilePath", "/path/to/private/key.p12");
 merchantProps.setProperty("responseMlePrivateKeyFilePassword", "password");
-merchantProps.setProperty("responseMleKID", "your-key-id");
+// responseMleKID is optional for CyberSource-generated P12 files
+// merchantProps.setProperty("responseMleKID", "your-key-id");  // Optional - overrides auto-fetched value
 
 // API-specific control for both request and response
 Map<String, String> mleControlMap = new HashMap<>();
@@ -321,6 +339,21 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
     "enableResponseMleGlobally": true,
     "responseMlePrivateKeyFilePath": "/path/to/private/key.p12",
     "responseMlePrivateKeyFilePassword": "password",
+    "// Note": "responseMleKID is optional for CyberSource-generated P12 files",
+    "responseMleKID": "your-key-id",
+    "mapToControlMLEonAPI": {
+      "createPayment": "::true"
+    }
+  }
+}
+```
+
+```json
+{
+  "merchantConfig": {
+    "enableResponseMleGlobally": true,
+    "responseMlePrivateKeyFilePath": "/path/to/private/key.pem",
+    "// Note": "responseMleKID is required for PEM files",
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
       "createPayment": "::true"
@@ -338,6 +371,7 @@ merchantProps.setProperty("mleKeyAlias", "Old_Alias");  // This will be ignored
     "enableResponseMleGlobally": true,
     "responseMlePrivateKeyFilePath": "/path/to/private/key.p12",
     "responseMlePrivateKeyFilePassword": "password",
+    "// Note": "responseMleKID is optional for CyberSource-generated P12 files - SDK will auto-fetch if not provided",
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
       "createPayment": "true::true",
@@ -373,7 +407,11 @@ For Response MLE private key files, the following formats are supported:
 
 ### (ii) Response MLE
 - Response MLE requires either `responseMlePrivateKey` object OR `responseMlePrivateKeyFilePath` (not both)
-- The `responseMleKID` parameter is mandatory when response MLE is enabled
+- The `responseMleKID` parameter behavior:
+  - **Optional** when `responseMlePrivateKeyFilePath` points to a CyberSource-generated P12 file (SDK auto-fetches from P12)
+  - **Required** when using PEM format files (`.pem`, `.key`, `.p8`)
+  - **Required** when using `responseMlePrivateKey` object directly
+  - When both auto-fetched and user-provided values exist, the user-provided value takes precedence
 - If an API expects a mandatory MLE response but the map specifies non-MLE response, the API might return an error
 - Both the private key object and file path approaches are mutually exclusive
 
