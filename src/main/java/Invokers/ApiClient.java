@@ -1190,6 +1190,16 @@ public class ApiClient {
 			if (response.body() != null) {
 				try {
 					respBody = response.body().string();
+					// Check the response body first if it is mle encrypted then do deserialize
+					if(MLEUtility.checkIsMleEncryptedResponse(respBody)) {
+						try {
+							respBody = MLEUtility.decryptMleResponsePayload(this.merchantConfig, respBody);
+						} catch (MLEException e) {
+							logger.error("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage());
+							throw new ApiException("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage(),
+									response.code(), response.headers().toMultimap(), respBody);
+						}
+					}
 					logger.info(respBody);
 				} catch (IOException e) {
 					logger.error("ApiException : " + e + " " + response.code() + " " + response.message());
