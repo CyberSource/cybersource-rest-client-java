@@ -1292,7 +1292,7 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap, boolean isResponseMLEforApi) {
+	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap, boolean isResponseMLEforApi) throws ConfigException {
 
 		try {
 			String requestTarget = null;
@@ -1365,6 +1365,7 @@ public class ApiClient {
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
+			throw new ConfigException(e.getMessage());
 		}
 
 	}
