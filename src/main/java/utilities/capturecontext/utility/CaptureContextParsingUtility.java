@@ -27,10 +27,10 @@ public class CaptureContextParsingUtility {
     private static CacheForPublicKeys cache = new CacheForPublicKeys();
 
     public static JsonObject parseCaptureContextResponse(
-            String jwtValue, MerchantConfig merchantConfig, boolean verifyJwt)
+            String jwtValue, MerchantConfig merchantConfig)
             throws InvalidJwtException, ConfigException, IOException, InvalidJwkException, JwtSignatureValidationException {
         SignedJWT signedJWT = JWTUtility.parse(jwtValue);
-
+        boolean verifyJwt = true;
         if (verifyJwt) {
             RSAPublicKey publicKey;
             boolean isJwtValid = false;
