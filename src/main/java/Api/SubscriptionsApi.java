@@ -80,14 +80,14 @@ public class SubscriptionsApi {
     /**
      * Build call for activateSubscription
      * @param id Subscription Id (required)
-     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored.  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activateSubscriptionCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call activateSubscriptionCall(String id, Boolean processMissedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
@@ -110,8 +110,8 @@ public class SubscriptionsApi {
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (processSkippedPayments != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "processSkippedPayments", processSkippedPayments));
+        if (processMissedPayments != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "processMissedPayments", processMissedPayments));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -146,7 +146,7 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, Boolean processSkippedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call activateSubscriptionValidateBeforeCall(String id, Boolean processMissedPayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -155,7 +155,7 @@ public class SubscriptionsApi {
         }
         
         
-        okhttp3.Call call = activateSubscriptionCall(id, processSkippedPayments, progressListener, progressRequestListener);
+        okhttp3.Call call = activateSubscriptionCall(id, processMissedPayments, progressListener, progressRequestListener);
         return call;
 
         
@@ -165,48 +165,48 @@ public class SubscriptionsApi {
     }
 
     /**
-     * Activate a Subscription
-     * Activate a &#x60;SUSPENDED&#x60; Subscription 
+     * Reactivating a Suspended Subscription
+     * # Reactivating a Suspended Subscription  You can reactivate a suspended subscription for the next billing cycle. You cannot reactivate a canceled or completed subscription.  You can specify whether you want to process missed payments for the period during which the subscription was suspended using the &#x60;processMissedPayments&#x60; query parameter by setting it to true or false.  If no value is specified, the system will default to &#x60;true&#x60;.  **Important:** The \&quot;processMissedPayments\&quot; query parameter is only effective when the Ask each time before reactivating option is selected in the reactivation settings. If any other option is chosen, the value provided in the request will be ignored by the system. For more information, see the [Recurring Billing User Guide](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/user/all/rest/recurring-billing-user/recurring-billing-user-about-guide.html).  You can check how many payments were missed and the total amount by retrieving the subscription details, where you will find the &#x60;reactivationInformation&#x60; object. See: [Retrieving a Subscription](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/developer/all/rest/recurring-billing-dev/recur-bill-subscriptions/recur-bill-getting-a-subscription.html). 
      * @param id Subscription Id (required)
-     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored.  (optional, default to true)
      * @return ActivateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateSubscriptionResponse activateSubscription(String id, Boolean processSkippedPayments) throws ApiException, ConfigException {
+    public ActivateSubscriptionResponse activateSubscription(String id, Boolean processMissedPayments) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
-        ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id, processSkippedPayments);
+        ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id, processMissedPayments);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
         return resp.getData();
     }
 
     /**
-     * Activate a Subscription
-     * Activate a &#x60;SUSPENDED&#x60; Subscription 
+     * Reactivating a Suspended Subscription
+     * # Reactivating a Suspended Subscription  You can reactivate a suspended subscription for the next billing cycle. You cannot reactivate a canceled or completed subscription.  You can specify whether you want to process missed payments for the period during which the subscription was suspended using the &#x60;processMissedPayments&#x60; query parameter by setting it to true or false.  If no value is specified, the system will default to &#x60;true&#x60;.  **Important:** The \&quot;processMissedPayments\&quot; query parameter is only effective when the Ask each time before reactivating option is selected in the reactivation settings. If any other option is chosen, the value provided in the request will be ignored by the system. For more information, see the [Recurring Billing User Guide](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/user/all/rest/recurring-billing-user/recurring-billing-user-about-guide.html).  You can check how many payments were missed and the total amount by retrieving the subscription details, where you will find the &#x60;reactivationInformation&#x60; object. See: [Retrieving a Subscription](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/developer/all/rest/recurring-billing-dev/recur-bill-subscriptions/recur-bill-getting-a-subscription.html). 
      * @param id Subscription Id (required)
-     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored.  (optional, default to true)
      * @return ApiResponse&lt;ActivateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processSkippedPayments) throws ApiException, ConfigException {
+    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processMissedPayments) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processSkippedPayments, null, null);
+        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processMissedPayments, null, null);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Activate a Subscription (asynchronously)
-     * Activate a &#x60;SUSPENDED&#x60; Subscription 
+     * Reactivating a Suspended Subscription (asynchronously)
+     * # Reactivating a Suspended Subscription  You can reactivate a suspended subscription for the next billing cycle. You cannot reactivate a canceled or completed subscription.  You can specify whether you want to process missed payments for the period during which the subscription was suspended using the &#x60;processMissedPayments&#x60; query parameter by setting it to true or false.  If no value is specified, the system will default to &#x60;true&#x60;.  **Important:** The \&quot;processMissedPayments\&quot; query parameter is only effective when the Ask each time before reactivating option is selected in the reactivation settings. If any other option is chosen, the value provided in the request will be ignored by the system. For more information, see the [Recurring Billing User Guide](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/user/all/rest/recurring-billing-user/recurring-billing-user-about-guide.html).  You can check how many payments were missed and the total amount by retrieving the subscription details, where you will find the &#x60;reactivationInformation&#x60; object. See: [Retrieving a Subscription](https://developer.cybersource.com/docs/cybs/en-us/recurring-billing/developer/all/rest/recurring-billing-dev/recur-bill-subscriptions/recur-bill-getting-a-subscription.html). 
      * @param id Subscription Id (required)
-     * @param processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored.  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call activateSubscriptionAsync(String id, Boolean processSkippedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException, ConfigException {
+    public okhttp3.Call activateSubscriptionAsync(String id, Boolean processMissedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -228,7 +228,7 @@ public class SubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processSkippedPayments, progressListener, progressRequestListener);
+        okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processMissedPayments, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1067,7 +1067,7 @@ public class SubscriptionsApi {
 
     /**
      * Suspend a Subscription
-     * Suspend a Subscription
+     * Suspend a Subscription 
      * @param id Subscription Id (required)
      * @return SuspendSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1082,7 +1082,7 @@ public class SubscriptionsApi {
 
     /**
      * Suspend a Subscription
-     * Suspend a Subscription
+     * Suspend a Subscription 
      * @param id Subscription Id (required)
      * @return ApiResponse&lt;SuspendSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1097,7 +1097,7 @@ public class SubscriptionsApi {
 
     /**
      * Suspend a Subscription (asynchronously)
-     * Suspend a Subscription
+     * Suspend a Subscription 
      * @param id Subscription Id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

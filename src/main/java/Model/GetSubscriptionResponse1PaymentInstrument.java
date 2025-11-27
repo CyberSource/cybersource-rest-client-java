@@ -18,7 +18,7 @@ import java.util.Arrays;
 import Model.GetSubscriptionResponse1PaymentInstrumentBankAccount;
 import Model.GetSubscriptionResponse1PaymentInstrumentBuyerInformation;
 import Model.GetSubscriptionResponse1PaymentInstrumentCard;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +44,7 @@ public class GetSubscriptionResponse1PaymentInstrument {
   private GetSubscriptionResponse1PaymentInstrumentCard card = null;
 
   @SerializedName("billTo")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
+  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
 
   @SerializedName("buyerInformation")
   private GetSubscriptionResponse1PaymentInstrumentBuyerInformation buyerInformation = null;
@@ -103,7 +103,7 @@ public class GetSubscriptionResponse1PaymentInstrument {
     this.card = card;
   }
 
-  public GetSubscriptionResponse1PaymentInstrument billTo(Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public GetSubscriptionResponse1PaymentInstrument billTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -113,11 +113,11 @@ public class GetSubscriptionResponse1PaymentInstrument {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
+  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public void setBillTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
   }
 

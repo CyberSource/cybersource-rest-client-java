@@ -18,7 +18,7 @@ import Model.CaseManagementActionsRequest;
 import Model.CaseManagementCommentsRequest;
 import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
-import Model.InlineResponse2001;
+import Model.InlineResponse2002;
 import Model.InlineResponse2011;
 import Model.InlineResponse4002;
 import Model.InlineResponse4031;
@@ -61,7 +61,7 @@ public class DecisionManagerApiTest {
     public void actionDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementActionsRequest caseManagementActionsRequest = null;
-        InlineResponse2001 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
+        InlineResponse2002 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
 
         // TODO: test validations
     }

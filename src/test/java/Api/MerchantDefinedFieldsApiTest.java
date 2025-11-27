@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.InlineResponse2002;
+import Model.InlineResponse2003;
 import Model.InlineResponse4041;
 import Model.MerchantDefinedFieldCore;
 import Model.MerchantDefinedFieldDefinitionRequest;
@@ -47,7 +47,7 @@ public class MerchantDefinedFieldsApiTest {
     public void createMerchantDefinedFieldDefinitionTest() throws Exception {
         String referenceType = null;
         MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest = null;
-        List<InlineResponse2002> response = api.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+        List<InlineResponse2003> response = api.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
 
         // TODO: test validations
     }
@@ -80,7 +80,7 @@ public class MerchantDefinedFieldsApiTest {
     @Test
     public void getMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
-        List<InlineResponse2002> response = api.getMerchantDefinedFieldsDefinitions(referenceType);
+        List<InlineResponse2003> response = api.getMerchantDefinedFieldsDefinitions(referenceType);
 
         // TODO: test validations
     }
@@ -98,7 +98,7 @@ public class MerchantDefinedFieldsApiTest {
         String referenceType = null;
         Long id = null;
         MerchantDefinedFieldCore merchantDefinedFieldCore = null;
-        List<InlineResponse2002> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+        List<InlineResponse2003> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
 
         // TODO: test validations
     }

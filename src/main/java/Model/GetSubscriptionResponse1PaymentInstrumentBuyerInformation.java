@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification;
+import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,7 +43,7 @@ public class GetSubscriptionResponse1PaymentInstrumentBuyerInformation {
   private LocalDate dateOfBirth = null;
 
   @SerializedName("personalIdentification")
-  private List<Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification = null;
+  private List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification = null;
 
   public GetSubscriptionResponse1PaymentInstrumentBuyerInformation companyTaxID(String companyTaxID) {
     this.companyTaxID = companyTaxID;
@@ -99,14 +99,14 @@ public class GetSubscriptionResponse1PaymentInstrumentBuyerInformation {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public GetSubscriptionResponse1PaymentInstrumentBuyerInformation personalIdentification(List<Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification) {
+  public GetSubscriptionResponse1PaymentInstrumentBuyerInformation personalIdentification(List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification) {
     this.personalIdentification = personalIdentification;
     return this;
   }
 
-  public GetSubscriptionResponse1PaymentInstrumentBuyerInformation addPersonalIdentificationItem(Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification personalIdentificationItem) {
+  public GetSubscriptionResponse1PaymentInstrumentBuyerInformation addPersonalIdentificationItem(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification personalIdentificationItem) {
     if (this.personalIdentification == null) {
-      this.personalIdentification = new ArrayList<Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification>();
+      this.personalIdentification = new ArrayList<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification>();
     }
     this.personalIdentification.add(personalIdentificationItem);
     return this;
@@ -117,11 +117,11 @@ public class GetSubscriptionResponse1PaymentInstrumentBuyerInformation {
    * @return personalIdentification
   **/
   @ApiModelProperty(value = "")
-  public List<Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> getPersonalIdentification() {
+  public List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> getPersonalIdentification() {
     return personalIdentification;
   }
 
-  public void setPersonalIdentification(List<Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification) {
+  public void setPersonalIdentification(List<Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification> personalIdentification) {
     this.personalIdentification = personalIdentification;
   }
 

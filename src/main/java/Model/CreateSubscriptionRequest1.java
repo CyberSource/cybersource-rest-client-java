@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.GetAllPlansResponseOrderInformation;
-import Model.Rbsv1subscriptionsClientReferenceInformation;
+import Model.GetAllSubscriptionsResponseClientReferenceInformation;
 import Model.Rbsv1subscriptionsPlanInformation;
 import Model.Rbsv1subscriptionsProcessingInformation;
 import Model.Rbsv1subscriptionsSubscriptionInformation;
@@ -35,7 +35,7 @@ import java.io.IOException;
 
 public class CreateSubscriptionRequest1 {
   @SerializedName("clientReferenceInformation")
-  private Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation = null;
+  private GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
   private Rbsv1subscriptionsProcessingInformation processingInformation = null;
@@ -49,7 +49,7 @@ public class CreateSubscriptionRequest1 {
   @SerializedName("orderInformation")
   private GetAllPlansResponseOrderInformation orderInformation = null;
 
-  public CreateSubscriptionRequest1 clientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public CreateSubscriptionRequest1 clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -59,11 +59,11 @@ public class CreateSubscriptionRequest1 {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Rbsv1subscriptionsClientReferenceInformation getClientReferenceInformation() {
+  public GetAllSubscriptionsResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Rbsv1subscriptionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2002Embedded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,255 +31,87 @@ import java.io.IOException;
 
 public class InlineResponse2002 {
   @SerializedName("id")
-  private Long id = null;
+  private String id = null;
 
-  @SerializedName("fieldType")
-  private String fieldType = null;
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
 
-  @SerializedName("label")
-  private String label = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("customerVisible")
-  private Boolean customerVisible = null;
+  @SerializedName("_embedded")
+  private InlineResponse2002Embedded embedded = null;
 
-  @SerializedName("textMinLength")
-  private Integer textMinLength = null;
-
-  @SerializedName("textMaxLength")
-  private Integer textMaxLength = null;
-
-  @SerializedName("possibleValues")
-  private String possibleValues = null;
-
-  @SerializedName("textDefaultValue")
-  private String textDefaultValue = null;
-
-  @SerializedName("merchantId")
-  private String merchantId = null;
-
-  @SerializedName("referenceType")
-  private String referenceType = null;
-
-  @SerializedName("readOnly")
-  private Boolean readOnly = null;
-
-  @SerializedName("merchantDefinedDataIndex")
-  private Integer merchantDefinedDataIndex = null;
-
-  public InlineResponse2002 id(Long id) {
+  public InlineResponse2002 id(String id) {
     this.id = id;
     return this;
   }
 
    /**
-   * Get id
+   * UUID uniquely generated for this comments. 
    * @return id
   **/
-  @ApiModelProperty(value = "")
-  public Long getId() {
+  @ApiModelProperty(value = "UUID uniquely generated for this comments. ")
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public InlineResponse2002 fieldType(String fieldType) {
-    this.fieldType = fieldType;
+  public InlineResponse2002 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
     return this;
   }
 
    /**
-   * Get fieldType
-   * @return fieldType
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "")
-  public String getFieldType() {
-    return fieldType;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
   }
 
-  public void setFieldType(String fieldType) {
-    this.fieldType = fieldType;
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse2002 label(String label) {
-    this.label = label;
+  public InlineResponse2002 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * Get label
-   * @return label
+   * The status of the submitted transaction. Possible values are: - &#x60;ACCEPTED&#x60; - &#x60;REJECTED&#x60; 
+   * @return status
   **/
-  @ApiModelProperty(value = "")
-  public String getLabel() {
-    return label;
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` ")
+  public String getStatus() {
+    return status;
   }
 
-  public void setLabel(String label) {
-    this.label = label;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public InlineResponse2002 customerVisible(Boolean customerVisible) {
-    this.customerVisible = customerVisible;
+  public InlineResponse2002 embedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
     return this;
   }
 
    /**
-   * Get customerVisible
-   * @return customerVisible
+   * Get embedded
+   * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Boolean CustomerVisible() {
-    return customerVisible;
+  public InlineResponse2002Embedded getEmbedded() {
+    return embedded;
   }
 
-  public void setCustomerVisible(Boolean customerVisible) {
-    this.customerVisible = customerVisible;
-  }
-
-  public InlineResponse2002 textMinLength(Integer textMinLength) {
-    this.textMinLength = textMinLength;
-    return this;
-  }
-
-   /**
-   * Get textMinLength
-   * @return textMinLength
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getTextMinLength() {
-    return textMinLength;
-  }
-
-  public void setTextMinLength(Integer textMinLength) {
-    this.textMinLength = textMinLength;
-  }
-
-  public InlineResponse2002 textMaxLength(Integer textMaxLength) {
-    this.textMaxLength = textMaxLength;
-    return this;
-  }
-
-   /**
-   * Get textMaxLength
-   * @return textMaxLength
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getTextMaxLength() {
-    return textMaxLength;
-  }
-
-  public void setTextMaxLength(Integer textMaxLength) {
-    this.textMaxLength = textMaxLength;
-  }
-
-  public InlineResponse2002 possibleValues(String possibleValues) {
-    this.possibleValues = possibleValues;
-    return this;
-  }
-
-   /**
-   * Get possibleValues
-   * @return possibleValues
-  **/
-  @ApiModelProperty(value = "")
-  public String getPossibleValues() {
-    return possibleValues;
-  }
-
-  public void setPossibleValues(String possibleValues) {
-    this.possibleValues = possibleValues;
-  }
-
-  public InlineResponse2002 textDefaultValue(String textDefaultValue) {
-    this.textDefaultValue = textDefaultValue;
-    return this;
-  }
-
-   /**
-   * Get textDefaultValue
-   * @return textDefaultValue
-  **/
-  @ApiModelProperty(value = "")
-  public String getTextDefaultValue() {
-    return textDefaultValue;
-  }
-
-  public void setTextDefaultValue(String textDefaultValue) {
-    this.textDefaultValue = textDefaultValue;
-  }
-
-  public InlineResponse2002 merchantId(String merchantId) {
-    this.merchantId = merchantId;
-    return this;
-  }
-
-   /**
-   * Get merchantId
-   * @return merchantId
-  **/
-  @ApiModelProperty(value = "")
-  public String getMerchantId() {
-    return merchantId;
-  }
-
-  public void setMerchantId(String merchantId) {
-    this.merchantId = merchantId;
-  }
-
-  public InlineResponse2002 referenceType(String referenceType) {
-    this.referenceType = referenceType;
-    return this;
-  }
-
-   /**
-   * Get referenceType
-   * @return referenceType
-  **/
-  @ApiModelProperty(value = "")
-  public String getReferenceType() {
-    return referenceType;
-  }
-
-  public void setReferenceType(String referenceType) {
-    this.referenceType = referenceType;
-  }
-
-  public InlineResponse2002 readOnly(Boolean readOnly) {
-    this.readOnly = readOnly;
-    return this;
-  }
-
-   /**
-   * Get readOnly
-   * @return readOnly
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean ReadOnly() {
-    return readOnly;
-  }
-
-  public void setReadOnly(Boolean readOnly) {
-    this.readOnly = readOnly;
-  }
-
-  public InlineResponse2002 merchantDefinedDataIndex(Integer merchantDefinedDataIndex) {
-    this.merchantDefinedDataIndex = merchantDefinedDataIndex;
-    return this;
-  }
-
-   /**
-   * Get merchantDefinedDataIndex
-   * @return merchantDefinedDataIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getMerchantDefinedDataIndex() {
-    return merchantDefinedDataIndex;
-  }
-
-  public void setMerchantDefinedDataIndex(Integer merchantDefinedDataIndex) {
-    this.merchantDefinedDataIndex = merchantDefinedDataIndex;
+  public void setEmbedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -292,22 +125,14 @@ public class InlineResponse2002 {
     }
     InlineResponse2002 inlineResponse2002 = (InlineResponse2002) o;
     return Objects.equals(this.id, inlineResponse2002.id) &&
-        Objects.equals(this.fieldType, inlineResponse2002.fieldType) &&
-        Objects.equals(this.label, inlineResponse2002.label) &&
-        Objects.equals(this.customerVisible, inlineResponse2002.customerVisible) &&
-        Objects.equals(this.textMinLength, inlineResponse2002.textMinLength) &&
-        Objects.equals(this.textMaxLength, inlineResponse2002.textMaxLength) &&
-        Objects.equals(this.possibleValues, inlineResponse2002.possibleValues) &&
-        Objects.equals(this.textDefaultValue, inlineResponse2002.textDefaultValue) &&
-        Objects.equals(this.merchantId, inlineResponse2002.merchantId) &&
-        Objects.equals(this.referenceType, inlineResponse2002.referenceType) &&
-        Objects.equals(this.readOnly, inlineResponse2002.readOnly) &&
-        Objects.equals(this.merchantDefinedDataIndex, inlineResponse2002.merchantDefinedDataIndex);
+        Objects.equals(this.submitTimeUtc, inlineResponse2002.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse2002.status) &&
+        Objects.equals(this.embedded, inlineResponse2002.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, fieldType, label, customerVisible, textMinLength, textMaxLength, possibleValues, textDefaultValue, merchantId, referenceType, readOnly, merchantDefinedDataIndex);
+    return Objects.hash(id, submitTimeUtc, status, embedded);
   }
 
 
@@ -317,17 +142,9 @@ public class InlineResponse2002 {
     sb.append("class InlineResponse2002 {\n");
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (fieldType != null) sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
-    if (label != null) sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    if (customerVisible != null) sb.append("    customerVisible: ").append(toIndentedString(customerVisible)).append("\n");
-    if (textMinLength != null) sb.append("    textMinLength: ").append(toIndentedString(textMinLength)).append("\n");
-    if (textMaxLength != null) sb.append("    textMaxLength: ").append(toIndentedString(textMaxLength)).append("\n");
-    if (possibleValues != null) sb.append("    possibleValues: ").append(toIndentedString(possibleValues)).append("\n");
-    if (textDefaultValue != null) sb.append("    textDefaultValue: ").append(toIndentedString(textDefaultValue)).append("\n");
-    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    if (referenceType != null) sb.append("    referenceType: ").append(toIndentedString(referenceType)).append("\n");
-    if (readOnly != null) sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
-    if (merchantDefinedDataIndex != null) sb.append("    merchantDefinedDataIndex: ").append(toIndentedString(merchantDefinedDataIndex)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,7 +15,7 @@ package Api;
 
 import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
-import Model.InlineResponse2008;
+import Model.InlineResponse2009;
 import Model.InlineResponse206;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
@@ -67,7 +67,7 @@ public class DeviceDeAssociationApiTest {
     @Test
     public void postDeAssociateV3TerminalTest() throws Exception {
         List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request = null;
-        List<InlineResponse2008> response = api.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
+        List<InlineResponse2009> response = api.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
 
         // TODO: test validations
     }
