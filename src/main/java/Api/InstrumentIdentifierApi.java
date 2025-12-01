@@ -101,6 +101,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteInstrumentIdentifier,deleteInstrumentIdentifierAsync,deleteInstrumentIdentifierWithHttpInfo,deleteInstrumentIdentifierCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}"
@@ -139,7 +141,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -254,6 +256,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getInstrumentIdentifier,getInstrumentIdentifierAsync,getInstrumentIdentifierWithHttpInfo,getInstrumentIdentifierCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}"
@@ -294,7 +298,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -418,6 +422,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getInstrumentIdentifierPaymentInstrumentsList,getInstrumentIdentifierPaymentInstrumentsListAsync,getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo,getInstrumentIdentifierPaymentInstrumentsListCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments"
@@ -462,7 +468,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -589,6 +595,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "patchInstrumentIdentifier,patchInstrumentIdentifierAsync,patchInstrumentIdentifierWithHttpInfo,patchInstrumentIdentifierCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}"
@@ -631,7 +639,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -762,6 +770,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postInstrumentIdentifier,postInstrumentIdentifierAsync,postInstrumentIdentifierWithHttpInfo,postInstrumentIdentifierCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers";
@@ -801,7 +811,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -920,6 +930,8 @@ public class InstrumentIdentifierApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postInstrumentIdentifierEnrollment,postInstrumentIdentifierEnrollmentAsync,postInstrumentIdentifierEnrollmentWithHttpInfo,postInstrumentIdentifierEnrollmentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment"
@@ -958,7 +970,7 @@ public class InstrumentIdentifierApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

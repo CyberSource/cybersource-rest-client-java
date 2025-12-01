@@ -93,6 +93,8 @@ public class BankAccountValidationApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "bankAccountValidationRequest,bankAccountValidationRequestAsync,bankAccountValidationRequestWithHttpInfo,bankAccountValidationRequestCall");
         
         // create path and map variables
         String localVarPath = "/bavs/v1/account-validations";
@@ -128,7 +130,7 @@ public class BankAccountValidationApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

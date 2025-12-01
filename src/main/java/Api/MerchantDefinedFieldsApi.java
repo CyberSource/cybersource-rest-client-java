@@ -91,6 +91,8 @@ public class MerchantDefinedFieldsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createMerchantDefinedFieldDefinition,createMerchantDefinedFieldDefinitionAsync,createMerchantDefinedFieldDefinitionWithHttpInfo,createMerchantDefinedFieldDefinitionCall");
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields"
@@ -127,7 +129,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -251,6 +253,8 @@ public class MerchantDefinedFieldsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteMerchantDefinedFieldsDefinitions,deleteMerchantDefinedFieldsDefinitionsAsync,deleteMerchantDefinedFieldsDefinitionsWithHttpInfo,deleteMerchantDefinedFieldsDefinitionsCall");
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}"
@@ -288,7 +292,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -407,6 +411,8 @@ public class MerchantDefinedFieldsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getMerchantDefinedFieldsDefinitions,getMerchantDefinedFieldsDefinitionsAsync,getMerchantDefinedFieldsDefinitionsWithHttpInfo,getMerchantDefinedFieldsDefinitionsCall");
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields"
@@ -443,7 +449,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -556,6 +562,8 @@ public class MerchantDefinedFieldsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsAsync,putMerchantDefinedFieldsDefinitionsWithHttpInfo,putMerchantDefinedFieldsDefinitionsCall");
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}"
@@ -593,7 +601,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

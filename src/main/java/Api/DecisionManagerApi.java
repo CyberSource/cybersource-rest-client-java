@@ -105,6 +105,8 @@ public class DecisionManagerApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "actionDecisionManagerCase,actionDecisionManagerCaseAsync,actionDecisionManagerCaseWithHttpInfo,actionDecisionManagerCaseCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/actions"
@@ -141,7 +143,7 @@ public class DecisionManagerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -262,6 +264,8 @@ public class DecisionManagerApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "addNegative,addNegativeAsync,addNegativeWithHttpInfo,addNegativeCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/lists/{type}/entries"
@@ -298,7 +302,7 @@ public class DecisionManagerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -419,6 +423,8 @@ public class DecisionManagerApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "commentDecisionManagerCase,commentDecisionManagerCaseAsync,commentDecisionManagerCaseWithHttpInfo,commentDecisionManagerCaseCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/comments"
@@ -455,7 +461,7 @@ public class DecisionManagerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -575,6 +581,8 @@ public class DecisionManagerApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createBundledDecisionManagerCase,createBundledDecisionManagerCaseAsync,createBundledDecisionManagerCaseWithHttpInfo,createBundledDecisionManagerCaseCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions";
@@ -610,7 +618,7 @@ public class DecisionManagerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -722,6 +730,8 @@ public class DecisionManagerApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "fraudUpdate,fraudUpdateAsync,fraudUpdateWithHttpInfo,fraudUpdateCall");
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/marking"
@@ -758,7 +768,7 @@ public class DecisionManagerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

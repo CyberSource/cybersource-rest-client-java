@@ -93,6 +93,8 @@ public class InterchangeClearingLevelDetailsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsAsync,getInterchangeClearingLevelDetailsWithHttpInfo,getInterchangeClearingLevelDetailsCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/interchange-clearing-level-details";
@@ -134,7 +136,7 @@ public class InterchangeClearingLevelDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

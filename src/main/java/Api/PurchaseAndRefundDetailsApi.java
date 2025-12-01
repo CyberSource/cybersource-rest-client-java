@@ -99,6 +99,8 @@ public class PurchaseAndRefundDetailsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getPurchaseAndRefundDetails,getPurchaseAndRefundDetailsAsync,getPurchaseAndRefundDetailsWithHttpInfo,getPurchaseAndRefundDetailsCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/purchase-refund-details";
@@ -150,7 +152,7 @@ public class PurchaseAndRefundDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

@@ -98,6 +98,8 @@ public class TokenApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getCardArtAsset,getCardArtAssetAsync,getCardArtAssetWithHttpInfo,getCardArtAssetCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}"
@@ -136,7 +138,7 @@ public class TokenApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -267,6 +269,8 @@ public class TokenApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall");
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokens/{tokenId}/payment-credentials"
@@ -305,7 +309,7 @@ public class TokenApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

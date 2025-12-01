@@ -66,6 +66,8 @@ import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PrettyPrintingMap;
 import com.cybersource.authsdk.util.PropertiesUtil;
+import com.cybersource.authsdk.util.mle.MLEException;
+import com.cybersource.authsdk.util.mle.MLEUtility;
 
 import Invokers.auth.ApiKeyAuth;
 import Invokers.auth.Authentication;
@@ -944,6 +946,18 @@ public class ApiClient {
 			// ensuring a default content type
 			contentType = "application/json";
 		}
+		
+		// Check the response body first if it is mle encrypted then do deserialize
+		if(MLEUtility.checkIsMleEncryptedResponse(respBody)) {
+			try {
+				respBody = MLEUtility.decryptMleResponsePayload(this.merchantConfig, respBody);
+			} catch (MLEException e) {
+				logger.error("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage());
+				throw new ApiException("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage(),
+						response.code(), response.headers().toMultimap(), respBody);
+			}
+		}
+		
 		if (isJsonMime(contentType)) {
 			return json.deserialize(respBody, returnType);
 		} else if (returnType.equals(String.class)) {
@@ -1176,6 +1190,16 @@ public class ApiClient {
 			if (response.body() != null) {
 				try {
 					respBody = response.body().string();
+					// Check the response body first if it is mle encrypted then do deserialize
+					if(MLEUtility.checkIsMleEncryptedResponse(respBody)) {
+						try {
+							respBody = MLEUtility.decryptMleResponsePayload(this.merchantConfig, respBody);
+						} catch (MLEException e) {
+							logger.error("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage());
+							throw new ApiException("MLE Encrypted Response Decryption Error Occurred. Error: " + e.getMessage(),
+									response.code(), response.headers().toMultimap(), respBody);
+						}
+					}
 					logger.info(respBody);
 				} catch (IOException e) {
 					logger.error("ApiException : " + e + " " + response.code() + " " + response.message());
@@ -1206,7 +1230,7 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+			ProgressRequestBody.ProgressRequestListener progressRequestListener, boolean isResponseMLEforApi) throws ApiException, ConfigException {
 
 		//create reqHeader parameter here 
 		Map<String, String> requestHeaderMap = new HashMap<String, String>();
@@ -1226,7 +1250,7 @@ public class ApiClient {
 		}
 		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
 		
-		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
+		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap, isResponseMLEforApi);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1268,7 +1292,7 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
+	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap, boolean isResponseMLEforApi) throws ConfigException {
 
 		try {
 			String requestTarget = null;
@@ -1308,7 +1332,7 @@ public class ApiClient {
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
 				String date = PropertiesUtil.getNewDate();
-				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
+				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date, isResponseMLEforApi);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					requestHeaderMap.put("Date", date);
@@ -1341,6 +1365,7 @@ public class ApiClient {
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
+			throw new ConfigException(e.getMessage());
 		}
 
 	}
