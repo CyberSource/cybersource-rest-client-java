@@ -18,9 +18,11 @@ import java.util.Arrays;
 import Model.Upv1capturecontextsDataBuyerInformation;
 import Model.Upv1capturecontextsDataClientReferenceInformation;
 import Model.Upv1capturecontextsDataConsumerAuthenticationInformation;
+import Model.Upv1capturecontextsDataDeviceInformation;
 import Model.Upv1capturecontextsDataMerchantDefinedInformation;
 import Model.Upv1capturecontextsDataMerchantInformation;
 import Model.Upv1capturecontextsDataOrderInformation;
+import Model.Upv1capturecontextsDataPaymentInformation;
 import Model.Upv1capturecontextsDataProcessingInformation;
 import Model.Upv1capturecontextsDataRecipientInformation;
 import com.google.gson.TypeAdapter;
@@ -60,6 +62,12 @@ public class Upv1capturecontextsData {
 
   @SerializedName("merchantDefinedInformation")
   private Upv1capturecontextsDataMerchantDefinedInformation merchantDefinedInformation = null;
+
+  @SerializedName("deviceInformation")
+  private Upv1capturecontextsDataDeviceInformation deviceInformation = null;
+
+  @SerializedName("paymentInformation")
+  private Upv1capturecontextsDataPaymentInformation paymentInformation = null;
 
   public Upv1capturecontextsData orderInformation(Upv1capturecontextsDataOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
@@ -205,6 +213,42 @@ public class Upv1capturecontextsData {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
+  public Upv1capturecontextsData deviceInformation(Upv1capturecontextsDataDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+    return this;
+  }
+
+   /**
+   * Get deviceInformation
+   * @return deviceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsDataDeviceInformation getDeviceInformation() {
+    return deviceInformation;
+  }
+
+  public void setDeviceInformation(Upv1capturecontextsDataDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+  }
+
+  public Upv1capturecontextsData paymentInformation(Upv1capturecontextsDataPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsDataPaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(Upv1capturecontextsDataPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,12 +266,14 @@ public class Upv1capturecontextsData {
         Objects.equals(this.merchantInformation, upv1capturecontextsData.merchantInformation) &&
         Objects.equals(this.processingInformation, upv1capturecontextsData.processingInformation) &&
         Objects.equals(this.recipientInformation, upv1capturecontextsData.recipientInformation) &&
-        Objects.equals(this.merchantDefinedInformation, upv1capturecontextsData.merchantDefinedInformation);
+        Objects.equals(this.merchantDefinedInformation, upv1capturecontextsData.merchantDefinedInformation) &&
+        Objects.equals(this.deviceInformation, upv1capturecontextsData.deviceInformation) &&
+        Objects.equals(this.paymentInformation, upv1capturecontextsData.paymentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, merchantDefinedInformation);
+    return Objects.hash(orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, merchantDefinedInformation, deviceInformation, paymentInformation);
   }
 
 
@@ -244,6 +290,8 @@ public class Upv1capturecontextsData {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

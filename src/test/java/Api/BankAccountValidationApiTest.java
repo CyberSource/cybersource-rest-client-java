@@ -14,7 +14,7 @@
 package Api;
 
 import Model.AccountValidationsRequest;
-import Model.InlineResponse20013;
+import Model.InlineResponse20014;
 import Model.InlineResponse4009;
 import Model.InlineResponse4033;
 import Model.InlineResponse4045;
@@ -49,7 +49,7 @@ public class BankAccountValidationApiTest {
     @Test
     public void bankAccountValidationRequestTest() throws Exception {
         AccountValidationsRequest accountValidationsRequest = null;
-        InlineResponse20013 response = api.bankAccountValidationRequest(accountValidationsRequest);
+        InlineResponse20014 response = api.bankAccountValidationRequest(accountValidationsRequest);
 
         // TODO: test validations
     }

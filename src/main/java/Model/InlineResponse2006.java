@@ -67,9 +67,6 @@ public class InlineResponse2006 {
   @SerializedName("createdOn")
   private String createdOn = null;
 
-  @SerializedName("updatedOn")
-  private String updatedOn = null;
-
   @SerializedName("notificationScope")
   private String notificationScope = "DESCENDANTS";
 
@@ -279,24 +276,6 @@ public class InlineResponse2006 {
     this.createdOn = createdOn;
   }
 
-  public InlineResponse2006 updatedOn(String updatedOn) {
-    this.updatedOn = updatedOn;
-    return this;
-  }
-
-   /**
-   * Date on which webhook was most recently updated.
-   * @return updatedOn
-  **/
-  @ApiModelProperty(value = "Date on which webhook was most recently updated.")
-  public String getUpdatedOn() {
-    return updatedOn;
-  }
-
-  public void setUpdatedOn(String updatedOn) {
-    this.updatedOn = updatedOn;
-  }
-
   public InlineResponse2006 notificationScope(String notificationScope) {
     this.notificationScope = notificationScope;
     return this;
@@ -336,13 +315,12 @@ public class InlineResponse2006 {
         Objects.equals(this.retryPolicy, inlineResponse2006.retryPolicy) &&
         Objects.equals(this.securityPolicy, inlineResponse2006.securityPolicy) &&
         Objects.equals(this.createdOn, inlineResponse2006.createdOn) &&
-        Objects.equals(this.updatedOn, inlineResponse2006.updatedOn) &&
         Objects.equals(this.notificationScope, inlineResponse2006.notificationScope);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, status, name, description, retryPolicy, securityPolicy, createdOn, updatedOn, notificationScope);
+    return Objects.hash(webhookId, organizationId, products, webhookUrl, healthCheckUrl, status, name, description, retryPolicy, securityPolicy, createdOn, notificationScope);
   }
 
 
@@ -362,7 +340,6 @@ public class InlineResponse2006 {
     if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
     if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
     if (createdOn != null) sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    if (updatedOn != null) sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
     if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
     sb.append("}");
     return sb.toString();

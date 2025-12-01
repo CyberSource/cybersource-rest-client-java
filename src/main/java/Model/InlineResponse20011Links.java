@@ -15,8 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse20011LinksReport;
-import Model.InlineResponse202LinksStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,62 +23,52 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse20011Links
  */
 
 public class InlineResponse20011Links {
-  @SerializedName("self")
-  private InlineResponse202LinksStatus self = null;
+  @SerializedName("rel")
+  private String rel = null;
 
-  @SerializedName("report")
-  private List<InlineResponse20011LinksReport> report = null;
+  @SerializedName("href")
+  private String href = null;
 
-  public InlineResponse20011Links self(InlineResponse202LinksStatus self) {
-    this.self = self;
+  public InlineResponse20011Links rel(String rel) {
+    this.rel = rel;
     return this;
   }
 
    /**
-   * Get self
-   * @return self
+   * Valid Values:   * self   * first   * last   * prev   * next 
+   * @return rel
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse202LinksStatus getSelf() {
-    return self;
+  @ApiModelProperty(value = "Valid Values:   * self   * first   * last   * prev   * next ")
+  public String getRel() {
+    return rel;
   }
 
-  public void setSelf(InlineResponse202LinksStatus self) {
-    this.self = self;
+  public void setRel(String rel) {
+    this.rel = rel;
   }
 
-  public InlineResponse20011Links report(List<InlineResponse20011LinksReport> report) {
-    this.report = report;
-    return this;
-  }
-
-  public InlineResponse20011Links addReportItem(InlineResponse20011LinksReport reportItem) {
-    if (this.report == null) {
-      this.report = new ArrayList<InlineResponse20011LinksReport>();
-    }
-    this.report.add(reportItem);
+  public InlineResponse20011Links href(String href) {
+    this.href = href;
     return this;
   }
 
    /**
-   * Get report
-   * @return report
+   * Get href
+   * @return href
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse20011LinksReport> getReport() {
-    return report;
+  @ApiModelProperty(example = "https://api.cybersource.com/accountupdater/v1/batches?offset=0&limit=20", value = "")
+  public String getHref() {
+    return href;
   }
 
-  public void setReport(List<InlineResponse20011LinksReport> report) {
-    this.report = report;
+  public void setHref(String href) {
+    this.href = href;
   }
 
 
@@ -93,13 +81,13 @@ public class InlineResponse20011Links {
       return false;
     }
     InlineResponse20011Links inlineResponse20011Links = (InlineResponse20011Links) o;
-    return Objects.equals(this.self, inlineResponse20011Links.self) &&
-        Objects.equals(this.report, inlineResponse20011Links.report);
+    return Objects.equals(this.rel, inlineResponse20011Links.rel) &&
+        Objects.equals(this.href, inlineResponse20011Links.href);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, report);
+    return Objects.hash(rel, href);
   }
 
 
@@ -108,8 +96,8 @@ public class InlineResponse20011Links {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20011Links {\n");
     
-    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    if (report != null) sb.append("    report: ").append(toIndentedString(report)).append("\n");
+    if (rel != null) sb.append("    rel: ").append(toIndentedString(rel)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");
     return sb.toString();
   }

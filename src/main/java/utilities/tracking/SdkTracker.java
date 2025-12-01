@@ -213,20 +213,20 @@ public class SdkTracker {
             case "CreatePlanRequest":
                 CreatePlanRequest createPlanRequest = (CreatePlanRequest)requestObj;
 
-                if (createPlanRequest.getClientReferenceInformation() == null)
-                {
-                    createPlanRequest.setClientReferenceInformation(new Rbsv1plansClientReferenceInformation());
-                }
+                // if (createPlanRequest.getClientReferenceInformation() == null)
+                // {
+                //     createPlanRequest.setClientReferenceInformation(new Rbsv1plansClientReferenceInformation());
+                // }
 
-                if (createPlanRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    createPlanRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
+                // if (createPlanRequest.getClientReferenceInformation().getPartner() == null)
+                // {
+                //     createPlanRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
+                // }
 
-                if (createPlanRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    createPlanRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
+                // if (createPlanRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
+                // {
+                //     createPlanRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
+                // }
 
                 return createPlanRequest;
             case "RefundCaptureRequest":
@@ -308,39 +308,39 @@ public class SdkTracker {
             case "CreateSubscriptionRequest":
                 CreateSubscriptionRequest createSubscriptionRequest = (CreateSubscriptionRequest)requestObj;
 
-                if (createSubscriptionRequest.getClientReferenceInformation() == null)
-                {
-                    createSubscriptionRequest.setClientReferenceInformation(new Rbsv1subscriptionsClientReferenceInformation());
-                }
+                // if (createSubscriptionRequest.getClientReferenceInformation() == null)
+                // {
+                //     createSubscriptionRequest.setClientReferenceInformation(new Rbsv1subscriptionsClientReferenceInformation());
+                // }
 
-                if (createSubscriptionRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    createSubscriptionRequest.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
-                }
+                // if (createSubscriptionRequest.getClientReferenceInformation().getPartner() == null)
+                // {
+                //     createSubscriptionRequest.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
+                // }
 
-                if (createSubscriptionRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    createSubscriptionRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
+                // if (createSubscriptionRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
+                // {
+                //     createSubscriptionRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
+                // }
 
                 return createSubscriptionRequest;
             case "UpdateSubscription":
                 UpdateSubscription updateSubscription = (UpdateSubscription)requestObj;
 
-                if (updateSubscription.getClientReferenceInformation() == null)
-                {
-                    updateSubscription.setClientReferenceInformation(new Rbsv1subscriptionsClientReferenceInformation());
-                }
+                // if (updateSubscription.getClientReferenceInformation() == null)
+                // {
+                //     updateSubscription.setClientReferenceInformation(new Rbsv1subscriptionsClientReferenceInformation());
+                // }
 
-                if (updateSubscription.getClientReferenceInformation().getPartner() == null)
-                {
-                    updateSubscription.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
-                }
+                // if (updateSubscription.getClientReferenceInformation().getPartner() == null)
+                // {
+                //     updateSubscription.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
+                // }
 
-                if (updateSubscription.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    updateSubscription.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
+                // if (updateSubscription.getClientReferenceInformation().getPartner().getDeveloperId() == null)
+                // {
+                //     updateSubscription.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
+                // }
 
                 return updateSubscription;
             case "TaxRequest":

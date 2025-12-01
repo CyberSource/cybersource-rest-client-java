@@ -32,6 +32,27 @@ public class Upv1capturecontextsDataMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("alternateName")
+  private String alternateName = null;
+
+  @SerializedName("locality")
+  private String locality = null;
+
+  @SerializedName("phone")
+  private String phone = null;
+
+  @SerializedName("country")
+  private String country = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
+  @SerializedName("administrativeArea")
+  private String administrativeArea = null;
+
+  @SerializedName("address1")
+  private String address1 = null;
+
   public Upv1capturecontextsDataMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
     return this;
@@ -50,6 +71,132 @@ public class Upv1capturecontextsDataMerchantInformationMerchantDescriptor {
     this.name = name;
   }
 
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor alternateName(String alternateName) {
+    this.alternateName = alternateName;
+    return this;
+  }
+
+   /**
+   * The alternate name of the merchant
+   * @return alternateName
+  **/
+  @ApiModelProperty(example = "Smyth Holdings PLC", value = "The alternate name of the merchant")
+  public String getAlternateName() {
+    return alternateName;
+  }
+
+  public void setAlternateName(String alternateName) {
+    this.alternateName = alternateName;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor locality(String locality) {
+    this.locality = locality;
+    return this;
+  }
+
+   /**
+   * The locality of the merchant
+   * @return locality
+  **/
+  @ApiModelProperty(example = "New York", value = "The locality of the merchant")
+  public String getLocality() {
+    return locality;
+  }
+
+  public void setLocality(String locality) {
+    this.locality = locality;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor phone(String phone) {
+    this.phone = phone;
+    return this;
+  }
+
+   /**
+   * The phone number of the merchant
+   * @return phone
+  **/
+  @ApiModelProperty(example = "555-555-123", value = "The phone number of the merchant")
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * The country code of the merchant
+   * @return country
+  **/
+  @ApiModelProperty(example = "US", value = "The country code of the merchant")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * The postal code of the merchant
+   * @return postalCode
+  **/
+  @ApiModelProperty(example = "170056", value = "The postal code of the merchant")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor administrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+    return this;
+  }
+
+   /**
+   * The administrative area of the merchant
+   * @return administrativeArea
+  **/
+  @ApiModelProperty(example = "NY", value = "The administrative area of the merchant")
+  public String getAdministrativeArea() {
+    return administrativeArea;
+  }
+
+  public void setAdministrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+  }
+
+  public Upv1capturecontextsDataMerchantInformationMerchantDescriptor address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * The first line of the merchant&#39;s address
+   * @return address1
+  **/
+  @ApiModelProperty(example = "123 47th Street", value = "The first line of the merchant's address")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +207,19 @@ public class Upv1capturecontextsDataMerchantInformationMerchantDescriptor {
       return false;
     }
     Upv1capturecontextsDataMerchantInformationMerchantDescriptor upv1capturecontextsDataMerchantInformationMerchantDescriptor = (Upv1capturecontextsDataMerchantInformationMerchantDescriptor) o;
-    return Objects.equals(this.name, upv1capturecontextsDataMerchantInformationMerchantDescriptor.name);
+    return Objects.equals(this.name, upv1capturecontextsDataMerchantInformationMerchantDescriptor.name) &&
+        Objects.equals(this.alternateName, upv1capturecontextsDataMerchantInformationMerchantDescriptor.alternateName) &&
+        Objects.equals(this.locality, upv1capturecontextsDataMerchantInformationMerchantDescriptor.locality) &&
+        Objects.equals(this.phone, upv1capturecontextsDataMerchantInformationMerchantDescriptor.phone) &&
+        Objects.equals(this.country, upv1capturecontextsDataMerchantInformationMerchantDescriptor.country) &&
+        Objects.equals(this.postalCode, upv1capturecontextsDataMerchantInformationMerchantDescriptor.postalCode) &&
+        Objects.equals(this.administrativeArea, upv1capturecontextsDataMerchantInformationMerchantDescriptor.administrativeArea) &&
+        Objects.equals(this.address1, upv1capturecontextsDataMerchantInformationMerchantDescriptor.address1);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, alternateName, locality, phone, country, postalCode, administrativeArea, address1);
   }
 
 
@@ -75,6 +229,13 @@ public class Upv1capturecontextsDataMerchantInformationMerchantDescriptor {
     sb.append("class Upv1capturecontextsDataMerchantInformationMerchantDescriptor {\n");
     
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (alternateName != null) sb.append("    alternateName: ").append(toIndentedString(alternateName)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (phone != null) sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.GetAllSubscriptionsResponseClientReferenceInformation;
 import Model.GetAllSubscriptionsResponseLinks;
 import Model.GetAllSubscriptionsResponseOrderInformation;
 import Model.GetAllSubscriptionsResponsePaymentInformation;
@@ -46,6 +47,9 @@ public class GetAllSubscriptionsResponseSubscriptions {
 
   @SerializedName("subscriptionInformation")
   private GetAllSubscriptionsResponseSubscriptionInformation subscriptionInformation = null;
+
+  @SerializedName("clientReferenceInformation")
+  private GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("paymentInformation")
   private GetAllSubscriptionsResponsePaymentInformation paymentInformation = null;
@@ -125,6 +129,24 @@ public class GetAllSubscriptionsResponseSubscriptions {
     this.subscriptionInformation = subscriptionInformation;
   }
 
+  public GetAllSubscriptionsResponseSubscriptions clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public GetAllSubscriptionsResponseClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
   public GetAllSubscriptionsResponseSubscriptions paymentInformation(GetAllSubscriptionsResponsePaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
@@ -175,13 +197,14 @@ public class GetAllSubscriptionsResponseSubscriptions {
         Objects.equals(this.id, getAllSubscriptionsResponseSubscriptions.id) &&
         Objects.equals(this.planInformation, getAllSubscriptionsResponseSubscriptions.planInformation) &&
         Objects.equals(this.subscriptionInformation, getAllSubscriptionsResponseSubscriptions.subscriptionInformation) &&
+        Objects.equals(this.clientReferenceInformation, getAllSubscriptionsResponseSubscriptions.clientReferenceInformation) &&
         Objects.equals(this.paymentInformation, getAllSubscriptionsResponseSubscriptions.paymentInformation) &&
         Objects.equals(this.orderInformation, getAllSubscriptionsResponseSubscriptions.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, planInformation, subscriptionInformation, paymentInformation, orderInformation);
+    return Objects.hash(links, id, planInformation, subscriptionInformation, clientReferenceInformation, paymentInformation, orderInformation);
   }
 
 
@@ -194,6 +217,7 @@ public class GetAllSubscriptionsResponseSubscriptions {
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (planInformation != null) sb.append("    planInformation: ").append(toIndentedString(planInformation)).append("\n");
     if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");

@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Rbsv1plansClientReferenceInformation;
 import Model.Rbsv1plansOrderInformation;
 import Model.Rbsv1plansPlanInformation;
 import com.google.gson.TypeAdapter;
@@ -32,32 +31,11 @@ import java.io.IOException;
  */
 
 public class CreatePlanRequest {
-  @SerializedName("clientReferenceInformation")
-  private Rbsv1plansClientReferenceInformation clientReferenceInformation = null;
-
   @SerializedName("planInformation")
   private Rbsv1plansPlanInformation planInformation = null;
 
   @SerializedName("orderInformation")
   private Rbsv1plansOrderInformation orderInformation = null;
-
-  public CreatePlanRequest clientReferenceInformation(Rbsv1plansClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-    return this;
-  }
-
-   /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Rbsv1plansClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
-  }
-
-  public void setClientReferenceInformation(Rbsv1plansClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-  }
 
   public CreatePlanRequest planInformation(Rbsv1plansPlanInformation planInformation) {
     this.planInformation = planInformation;
@@ -105,14 +83,13 @@ public class CreatePlanRequest {
       return false;
     }
     CreatePlanRequest createPlanRequest = (CreatePlanRequest) o;
-    return Objects.equals(this.clientReferenceInformation, createPlanRequest.clientReferenceInformation) &&
-        Objects.equals(this.planInformation, createPlanRequest.planInformation) &&
+    return Objects.equals(this.planInformation, createPlanRequest.planInformation) &&
         Objects.equals(this.orderInformation, createPlanRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, planInformation, orderInformation);
+    return Objects.hash(planInformation, orderInformation);
   }
 
 
@@ -121,7 +98,6 @@ public class CreatePlanRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreatePlanRequest {\n");
     
-    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (planInformation != null) sb.append("    planInformation: ").append(toIndentedString(planInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
