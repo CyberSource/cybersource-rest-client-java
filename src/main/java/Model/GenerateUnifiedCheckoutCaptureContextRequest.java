@@ -81,7 +81,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    * Specify the version of Unified Checkout that you want to use.
    * @return clientVersion
   **/
-  @ApiModelProperty(example = "0.32", value = "Specify the version of Unified Checkout that you want to use.")
+  @ApiModelProperty(example = "0.34", value = "Specify the version of Unified Checkout that you want to use.")
   public String getClientVersion() {
     return clientVersion;
   }

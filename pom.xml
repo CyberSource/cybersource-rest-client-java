@@ -5,7 +5,7 @@
 	<artifactId>cybersource-rest-client-java</artifactId>
 	<packaging>jar</packaging>
 	<name>cybersource-rest-client-java</name>
-	<version>0.0.85-SNAPSHOT</version>
+	<version>0.0.85</version>
 	<url>http://developer.cybersource.com</url>
 	<description>Cybersource Rest Client SDK</description>
 	
@@ -304,7 +304,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.40</version>
+			<version>0.0.41</version>
 		</dependency>
 		
 		<dependency>
@@ -326,6 +326,6 @@
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.13.2</junit-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<log4j.version>2.22.0</log4j.version>
+		<log4j.version>2.25.3</log4j.version>
 	</properties>
 </project>

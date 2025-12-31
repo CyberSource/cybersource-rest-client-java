@@ -93,6 +93,8 @@ public class ReportSubscriptionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createStandardOrClassicSubscription,createStandardOrClassicSubscriptionAsync,createStandardOrClassicSubscriptionWithHttpInfo,createStandardOrClassicSubscriptionCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/predefined-report-subscriptions";
@@ -130,7 +132,7 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -241,6 +243,8 @@ public class ReportSubscriptionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createSubscription,createSubscriptionAsync,createSubscriptionWithHttpInfo,createSubscriptionCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
@@ -278,7 +282,7 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -392,6 +396,8 @@ public class ReportSubscriptionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deleteSubscription,deleteSubscriptionAsync,deleteSubscriptionWithHttpInfo,deleteSubscriptionCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions/{reportName}"
@@ -430,7 +436,7 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -543,6 +549,8 @@ public class ReportSubscriptionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getAllSubscriptions,getAllSubscriptionsAsync,getAllSubscriptionsWithHttpInfo,getAllSubscriptionsCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
@@ -580,7 +588,7 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -689,6 +697,8 @@ public class ReportSubscriptionsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getSubscription,getSubscriptionAsync,getSubscriptionWithHttpInfo,getSubscriptionCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions/{reportName}"
@@ -727,7 +737,7 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

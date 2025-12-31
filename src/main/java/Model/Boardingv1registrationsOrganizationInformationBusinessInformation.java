@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformationAddress;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact;
+import Model.Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,6 +35,12 @@ import org.joda.time.LocalDate;
 public class Boardingv1registrationsOrganizationInformationBusinessInformation {
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("locale")
+  private String locale = null;
+
+  @SerializedName("localizedNames")
+  private Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames localizedNames = null;
 
   @SerializedName("doingBusinessAs")
   private String doingBusinessAs = null;
@@ -90,6 +97,42 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Boardingv1registrationsOrganizationInformationBusinessInformation locale(String locale) {
+    this.locale = locale;
+    return this;
+  }
+
+   /**
+   * Get locale
+   * @return locale
+  **/
+  @ApiModelProperty(example = "en-us", value = "")
+  public String getLocale() {
+    return locale;
+  }
+
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+  public Boardingv1registrationsOrganizationInformationBusinessInformation localizedNames(Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames localizedNames) {
+    this.localizedNames = localizedNames;
+    return this;
+  }
+
+   /**
+   * Get localizedNames
+   * @return localizedNames
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames getLocalizedNames() {
+    return localizedNames;
+  }
+
+  public void setLocalizedNames(Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames localizedNames) {
+    this.localizedNames = localizedNames;
   }
 
   public Boardingv1registrationsOrganizationInformationBusinessInformation doingBusinessAs(String doingBusinessAs) {
@@ -337,6 +380,8 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     }
     Boardingv1registrationsOrganizationInformationBusinessInformation boardingv1registrationsOrganizationInformationBusinessInformation = (Boardingv1registrationsOrganizationInformationBusinessInformation) o;
     return Objects.equals(this.name, boardingv1registrationsOrganizationInformationBusinessInformation.name) &&
+        Objects.equals(this.locale, boardingv1registrationsOrganizationInformationBusinessInformation.locale) &&
+        Objects.equals(this.localizedNames, boardingv1registrationsOrganizationInformationBusinessInformation.localizedNames) &&
         Objects.equals(this.doingBusinessAs, boardingv1registrationsOrganizationInformationBusinessInformation.doingBusinessAs) &&
         Objects.equals(this.description, boardingv1registrationsOrganizationInformationBusinessInformation.description) &&
         Objects.equals(this.startDate, boardingv1registrationsOrganizationInformationBusinessInformation.startDate) &&
@@ -354,7 +399,7 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, doingBusinessAs, description, startDate, address, timeZone, websiteUrl, type, taxId, phoneNumber, businessContact, technicalContact, emergencyContact, merchantCategoryCode);
+    return Objects.hash(name, locale, localizedNames, doingBusinessAs, description, startDate, address, timeZone, websiteUrl, type, taxId, phoneNumber, businessContact, technicalContact, emergencyContact, merchantCategoryCode);
   }
 
 
@@ -364,6 +409,8 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     sb.append("class Boardingv1registrationsOrganizationInformationBusinessInformation {\n");
     
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    if (localizedNames != null) sb.append("    localizedNames: ").append(toIndentedString(localizedNames)).append("\n");
     if (doingBusinessAs != null) sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");

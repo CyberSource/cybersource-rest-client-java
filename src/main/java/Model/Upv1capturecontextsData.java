@@ -33,6 +33,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Upv1capturecontextsData
@@ -61,7 +63,7 @@ public class Upv1capturecontextsData {
   private Upv1capturecontextsDataRecipientInformation recipientInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private Upv1capturecontextsDataMerchantDefinedInformation merchantDefinedInformation = null;
+  private List<Upv1capturecontextsDataMerchantDefinedInformation> merchantDefinedInformation = null;
 
   @SerializedName("deviceInformation")
   private Upv1capturecontextsDataDeviceInformation deviceInformation = null;
@@ -195,8 +197,16 @@ public class Upv1capturecontextsData {
     this.recipientInformation = recipientInformation;
   }
 
-  public Upv1capturecontextsData merchantDefinedInformation(Upv1capturecontextsDataMerchantDefinedInformation merchantDefinedInformation) {
+  public Upv1capturecontextsData merchantDefinedInformation(List<Upv1capturecontextsDataMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
+    return this;
+  }
+
+  public Upv1capturecontextsData addMerchantDefinedInformationItem(Upv1capturecontextsDataMerchantDefinedInformation merchantDefinedInformationItem) {
+    if (this.merchantDefinedInformation == null) {
+      this.merchantDefinedInformation = new ArrayList<Upv1capturecontextsDataMerchantDefinedInformation>();
+    }
+    this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
   }
 
@@ -205,11 +215,11 @@ public class Upv1capturecontextsData {
    * @return merchantDefinedInformation
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataMerchantDefinedInformation getMerchantDefinedInformation() {
+  public List<Upv1capturecontextsDataMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(Upv1capturecontextsDataMerchantDefinedInformation merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Upv1capturecontextsDataMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 

@@ -17,7 +17,6 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPromotionInformation;
-import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
 import Model.Ptsv2paymentsidcapturesDeviceInformation;
@@ -27,6 +26,7 @@ import Model.Ptsv2paymentsidrefundsOrderInformation;
 import Model.Ptsv2paymentsidrefundsPaymentInformation;
 import Model.Ptsv2paymentsidrefundsPointOfSaleInformation;
 import Model.Ptsv2paymentsidrefundsProcessingInformation;
+import Model.Ptsv2paymentsidrefundsTravelInformation;
 import Model.Ptsv2reversalsProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -75,7 +75,7 @@ public class RefundPaymentRequest {
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
 
   @SerializedName("travelInformation")
-  private Ptsv2paymentsTravelInformation travelInformation = null;
+  private Ptsv2paymentsidrefundsTravelInformation travelInformation = null;
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
@@ -271,7 +271,7 @@ public class RefundPaymentRequest {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
-  public RefundPaymentRequest travelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+  public RefundPaymentRequest travelInformation(Ptsv2paymentsidrefundsTravelInformation travelInformation) {
     this.travelInformation = travelInformation;
     return this;
   }
@@ -281,11 +281,11 @@ public class RefundPaymentRequest {
    * @return travelInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsTravelInformation getTravelInformation() {
+  public Ptsv2paymentsidrefundsTravelInformation getTravelInformation() {
     return travelInformation;
   }
 
-  public void setTravelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+  public void setTravelInformation(Ptsv2paymentsidrefundsTravelInformation travelInformation) {
     this.travelInformation = travelInformation;
   }
 

@@ -35,6 +35,12 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
   @SerializedName("subCategoryCode")
   private String subCategoryCode = null;
 
+  @SerializedName("feeAmount")
+  private String feeAmount = null;
+
+  @SerializedName("feeCode")
+  private String feeCode = null;
+
   public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService categoryCode(String categoryCode) {
     this.categoryCode = categoryCode;
     return this;
@@ -71,6 +77,42 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
     this.subCategoryCode = subCategoryCode;
   }
 
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService feeAmount(String feeAmount) {
+    this.feeAmount = feeAmount;
+    return this;
+  }
+
+   /**
+   * This field contains the fee amount. This value cannot be negative.  You can include a decimal point (.), but no other special characters. Format: String, 15 characters maximum. Optional field for ancillary services. 
+   * @return feeAmount
+  **/
+  @ApiModelProperty(value = "This field contains the fee amount. This value cannot be negative.  You can include a decimal point (.), but no other special characters. Format: String, 15 characters maximum. Optional field for ancillary services. ")
+  public String getFeeAmount() {
+    return feeAmount;
+  }
+
+  public void setFeeAmount(String feeAmount) {
+    this.feeAmount = feeAmount;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService feeCode(String feeCode) {
+    this.feeCode = feeCode;
+    return this;
+  }
+
+   /**
+   * This field contains the ancillary fee code. Format: Alphanumeric, 4 characters maximum. Optional field for ancillary services. 
+   * @return feeCode
+  **/
+  @ApiModelProperty(value = "This field contains the ancillary fee code. Format: Alphanumeric, 4 characters maximum. Optional field for ancillary services. ")
+  public String getFeeCode() {
+    return feeCode;
+  }
+
+  public void setFeeCode(String feeCode) {
+    this.feeCode = feeCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +124,14 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
     }
     Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService = (Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService) o;
     return Objects.equals(this.categoryCode, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService.categoryCode) &&
-        Objects.equals(this.subCategoryCode, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService.subCategoryCode);
+        Objects.equals(this.subCategoryCode, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService.subCategoryCode) &&
+        Objects.equals(this.feeAmount, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService.feeAmount) &&
+        Objects.equals(this.feeCode, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService.feeCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(categoryCode, subCategoryCode);
+    return Objects.hash(categoryCode, subCategoryCode, feeAmount, feeCode);
   }
 
 
@@ -98,6 +142,8 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
     
     if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     if (subCategoryCode != null) sb.append("    subCategoryCode: ").append(toIndentedString(subCategoryCode)).append("\n");
+    if (feeAmount != null) sb.append("    feeAmount: ").append(toIndentedString(feeAmount)).append("\n");
+    if (feeCode != null) sb.append("    feeCode: ").append(toIndentedString(feeCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
