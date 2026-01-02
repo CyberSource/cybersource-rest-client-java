@@ -92,6 +92,8 @@ public class RefundApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "refundCapture,refundCaptureAsync,refundCaptureWithHttpInfo,refundCaptureCall");
         
         // create path and map variables
         String localVarPath = "/pts/v2/captures/{id}/refunds"
@@ -128,7 +130,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -249,6 +251,8 @@ public class RefundApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "refundPayment,refundPaymentAsync,refundPaymentWithHttpInfo,refundPaymentCall");
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/refunds"
@@ -285,7 +289,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

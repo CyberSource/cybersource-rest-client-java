@@ -89,6 +89,8 @@ public class DownloadXsdApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getXSDV2,getXSDV2Async,getXSDV2WithHttpInfo,getXSDV2Call");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/xsds/{reportDefinitionNameVersion}"
@@ -125,7 +127,7 @@ public class DownloadXsdApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

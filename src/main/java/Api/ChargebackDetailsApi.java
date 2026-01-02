@@ -93,6 +93,8 @@ public class ChargebackDetailsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getChargebackDetails,getChargebackDetailsAsync,getChargebackDetailsWithHttpInfo,getChargebackDetailsCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/chargeback-details";
@@ -134,7 +136,7 @@ public class ChargebackDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

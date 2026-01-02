@@ -89,6 +89,8 @@ public class DownloadDtdApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getDTDV2,getDTDV2Async,getDTDV2WithHttpInfo,getDTDV2Call");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/dtds/{reportDefinitionNameVersion}"
@@ -125,7 +127,7 @@ public class DownloadDtdApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

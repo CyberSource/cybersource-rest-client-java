@@ -47,6 +47,9 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
   @SerializedName("service")
   private List<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService> service = null;
 
+  @SerializedName("feeDescription")
+  private String feeDescription = null;
+
   public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ticketNumber(String ticketNumber) {
     this.ticketNumber = ticketNumber;
     return this;
@@ -145,6 +148,24 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     this.service = service;
   }
 
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation feeDescription(String feeDescription) {
+    this.feeDescription = feeDescription;
+    return this;
+  }
+
+   /**
+   * This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. 
+   * @return feeDescription
+  **/
+  @ApiModelProperty(value = "This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. ")
+  public String getFeeDescription() {
+    return feeDescription;
+  }
+
+  public void setFeeDescription(String feeDescription) {
+    this.feeDescription = feeDescription;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,12 +180,13 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
         Objects.equals(this.passengerName, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.passengerName) &&
         Objects.equals(this.connectedTicketNumber, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.connectedTicketNumber) &&
         Objects.equals(this.creditReasonIndicator, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.creditReasonIndicator) &&
-        Objects.equals(this.service, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.service);
+        Objects.equals(this.service, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.service) &&
+        Objects.equals(this.feeDescription, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.feeDescription);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ticketNumber, passengerName, connectedTicketNumber, creditReasonIndicator, service);
+    return Objects.hash(ticketNumber, passengerName, connectedTicketNumber, creditReasonIndicator, service, feeDescription);
   }
 
 
@@ -178,6 +200,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     if (connectedTicketNumber != null) sb.append("    connectedTicketNumber: ").append(toIndentedString(connectedTicketNumber)).append("\n");
     if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
     if (service != null) sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    if (feeDescription != null) sb.append("    feeDescription: ").append(toIndentedString(feeDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

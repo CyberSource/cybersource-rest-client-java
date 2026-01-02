@@ -99,6 +99,8 @@ public class PaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deletePaymentInstrument,deletePaymentInstrumentAsync,deletePaymentInstrumentWithHttpInfo,deletePaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
@@ -137,7 +139,7 @@ public class PaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -252,6 +254,8 @@ public class PaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getPaymentInstrument,getPaymentInstrumentAsync,getPaymentInstrumentWithHttpInfo,getPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
@@ -292,7 +296,7 @@ public class PaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -413,6 +417,8 @@ public class PaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "patchPaymentInstrument,patchPaymentInstrumentAsync,patchPaymentInstrumentWithHttpInfo,patchPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
@@ -455,7 +461,7 @@ public class PaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")
@@ -586,6 +592,8 @@ public class PaymentInstrumentApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postPaymentInstrument,postPaymentInstrumentAsync,postPaymentInstrumentWithHttpInfo,postPaymentInstrumentCall");
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments";
@@ -625,7 +633,7 @@ public class PaymentInstrumentApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

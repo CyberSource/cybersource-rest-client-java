@@ -94,6 +94,8 @@ public class ConversionDetailsApi {
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getConversionDetail,getConversionDetailAsync,getConversionDetailWithHttpInfo,getConversionDetailCall");
         
         // create path and map variables
         String localVarPath = "/reporting/v3/conversion-details";
@@ -135,7 +137,7 @@ public class ConversionDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
     }
     
     @SuppressWarnings("rawtypes")

@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Upv1capturecontextsDataMerchantDefinedInformation
+ * Contains merchant-defined key-value pairs
  */
+@ApiModel(description = "Contains merchant-defined key-value pairs")
 
 public class Upv1capturecontextsDataMerchantDefinedInformation {
   @SerializedName("key")
@@ -41,10 +42,10 @@ public class Upv1capturecontextsDataMerchantDefinedInformation {
   }
 
    /**
-   * The key or identifier for the merchant-defined data field
+   * The key or identifier for the merchant-defined data field.  Valid values are 1 to 100.
    * @return key
   **/
-  @ApiModelProperty(example = "1", value = "The key or identifier for the merchant-defined data field")
+  @ApiModelProperty(example = "customer_id", value = "The key or identifier for the merchant-defined data field.  Valid values are 1 to 100.")
   public String getKey() {
     return key;
   }
@@ -59,10 +60,10 @@ public class Upv1capturecontextsDataMerchantDefinedInformation {
   }
 
    /**
-   * The value associated with the merchant-defined data field
+   * The value you assign for your merchant-defined data field.
    * @return value
   **/
-  @ApiModelProperty(example = "123456", value = "The value associated with the merchant-defined data field")
+  @ApiModelProperty(example = "123456", value = "The value you assign for your merchant-defined data field.")
   public String getValue() {
     return value;
   }
