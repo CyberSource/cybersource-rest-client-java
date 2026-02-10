@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getTokenizedCard"></a>
 # **getTokenizedCard**
-> TokenizedcardRequest getTokenizedCard(tokenizedCardId, profileId)
+> InlineResponse2001 getTokenizedCard(tokenizedCardId, profileId)
 
 Retrieve a Tokenized Card
 
@@ -75,7 +75,7 @@ TokenizedCardApi apiInstance = new TokenizedCardApi();
 String tokenizedCardId = "tokenizedCardId_example"; // String | The Id of a tokenized card.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TokenizedcardRequest result = apiInstance.getTokenizedCard(tokenizedCardId, profileId);
+    InlineResponse2001 result = apiInstance.getTokenizedCard(tokenizedCardId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokenizedCardApi#getTokenizedCard");
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenizedcardRequest**](TokenizedcardRequest.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="postTokenizedCard"></a>
 # **postTokenizedCard**
-> TokenizedcardRequest postTokenizedCard(tokenizedcardRequest, profileId)
+> InlineResponse2001 postTokenizedCard(postTokenizedCardRequest, profileId)
 
 Create a Tokenized Card
 
@@ -167,10 +167,10 @@ Create a Tokenized Card
 
 
 TokenizedCardApi apiInstance = new TokenizedCardApi();
-TokenizedcardRequest tokenizedcardRequest = new TokenizedcardRequest(); // TokenizedcardRequest | 
+PostTokenizedCardRequest postTokenizedCardRequest = new PostTokenizedCardRequest(); // PostTokenizedCardRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TokenizedcardRequest result = apiInstance.postTokenizedCard(tokenizedcardRequest, profileId);
+    InlineResponse2001 result = apiInstance.postTokenizedCard(postTokenizedCardRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokenizedCardApi#postTokenizedCard");
@@ -182,12 +182,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenizedcardRequest** | [**TokenizedcardRequest**](TokenizedcardRequest.md)|  |
+ **postTokenizedCardRequest** | [**PostTokenizedCardRequest**](PostTokenizedCardRequest.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
-[**TokenizedcardRequest**](TokenizedcardRequest.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

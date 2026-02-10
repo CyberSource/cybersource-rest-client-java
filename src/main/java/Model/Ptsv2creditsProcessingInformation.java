@@ -30,12 +30,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2creditsProcessingInformation
  */
 
 public class Ptsv2creditsProcessingInformation {
+  @SerializedName("actionList")
+  private List<String> actionList = null;
+
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
 
@@ -92,6 +97,32 @@ public class Ptsv2creditsProcessingInformation {
 
   @SerializedName("refundOptions")
   private Ptsv2creditsProcessingInformationRefundOptions refundOptions = null;
+
+  public Ptsv2creditsProcessingInformation actionList(List<String> actionList) {
+    this.actionList = actionList;
+    return this;
+  }
+
+  public Ptsv2creditsProcessingInformation addActionListItem(String actionListItem) {
+    if (this.actionList == null) {
+      this.actionList = new ArrayList<String>();
+    }
+    this.actionList.add(actionListItem);
+    return this;
+  }
+
+   /**
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with Standalone Credit.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s). 
+   * @return actionList
+  **/
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with Standalone Credit.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s). ")
+  public List<String> getActionList() {
+    return actionList;
+  }
+
+  public void setActionList(List<String> actionList) {
+    this.actionList = actionList;
+  }
 
   public Ptsv2creditsProcessingInformation commerceIndicator(String commerceIndicator) {
     this.commerceIndicator = commerceIndicator;
@@ -445,7 +476,8 @@ public class Ptsv2creditsProcessingInformation {
       return false;
     }
     Ptsv2creditsProcessingInformation ptsv2creditsProcessingInformation = (Ptsv2creditsProcessingInformation) o;
-    return Objects.equals(this.commerceIndicator, ptsv2creditsProcessingInformation.commerceIndicator) &&
+    return Objects.equals(this.actionList, ptsv2creditsProcessingInformation.actionList) &&
+        Objects.equals(this.commerceIndicator, ptsv2creditsProcessingInformation.commerceIndicator) &&
         Objects.equals(this.processorId, ptsv2creditsProcessingInformation.processorId) &&
         Objects.equals(this.paymentSolution, ptsv2creditsProcessingInformation.paymentSolution) &&
         Objects.equals(this.reconciliationId, ptsv2creditsProcessingInformation.reconciliationId) &&
@@ -468,7 +500,7 @@ public class Ptsv2creditsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions);
+    return Objects.hash(actionList, commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions);
   }
 
 
@@ -477,6 +509,7 @@ public class Ptsv2creditsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2creditsProcessingInformation {\n");
     
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     if (processorId != null) sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");

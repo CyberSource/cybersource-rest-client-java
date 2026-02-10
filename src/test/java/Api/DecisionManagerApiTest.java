@@ -18,8 +18,8 @@ import Model.CaseManagementActionsRequest;
 import Model.CaseManagementCommentsRequest;
 import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
-import Model.InlineResponse2002;
-import Model.InlineResponse2011;
+import Model.InlineResponse2003;
+import Model.InlineResponse2012;
 import Model.InlineResponse4002;
 import Model.InlineResponse4031;
 import Model.InlineResponse422;
@@ -61,7 +61,7 @@ public class DecisionManagerApiTest {
     public void actionDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementActionsRequest caseManagementActionsRequest = null;
-        InlineResponse2002 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
+        InlineResponse2003 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
 
         // TODO: test validations
     }
@@ -95,7 +95,7 @@ public class DecisionManagerApiTest {
     public void commentDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementCommentsRequest caseManagementCommentsRequest = null;
-        InlineResponse2011 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
+        InlineResponse2012 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
 
         // TODO: test validations
     }

@@ -13,11 +13,11 @@
 
 package Api;
 
-import Model.InlineResponse2006;
 import Model.InlineResponse2007;
-import Model.InlineResponse2015;
+import Model.InlineResponse2008;
 import Model.InlineResponse2016;
 import Model.InlineResponse2017;
+import Model.InlineResponse2018;
 import Model.InlineResponse4043;
 import Model.SaveAsymEgressKey;
 import Model.UpdateStatus;
@@ -67,7 +67,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void getWebhookSubscriptionByIdTest() throws Exception {
         String webhookId = null;
-        InlineResponse2015 response = api.getWebhookSubscriptionById(webhookId);
+        InlineResponse2016 response = api.getWebhookSubscriptionById(webhookId);
 
         // TODO: test validations
     }
@@ -85,7 +85,7 @@ public class ManageWebhooksApiTest {
         String organizationId = null;
         String productId = null;
         String eventType = null;
-        List<InlineResponse2006> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+        List<InlineResponse2007> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
 
         // TODO: test validations
     }
@@ -101,7 +101,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void notificationSubscriptionsV1WebhooksWebhookIdPostTest() throws Exception {
         String webhookId = null;
-        InlineResponse2016 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+        InlineResponse2017 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
 
         // TODO: test validations
     }
@@ -118,7 +118,7 @@ public class ManageWebhooksApiTest {
     public void notificationSubscriptionsV2WebhooksWebhookIdPatchTest() throws Exception {
         String webhookId = null;
         UpdateWebhook updateWebhook = null;
-        InlineResponse2007 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+        InlineResponse2008 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
 
         // TODO: test validations
     }
@@ -154,7 +154,7 @@ public class ManageWebhooksApiTest {
         String vCPermissions = null;
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
-        InlineResponse2017 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        InlineResponse2018 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
 
         // TODO: test validations
     }

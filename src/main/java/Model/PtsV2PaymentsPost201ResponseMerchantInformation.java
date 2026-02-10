@@ -36,6 +36,9 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
   @SerializedName("merchantDescriptor")
   private PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor = null;
 
+  @SerializedName("categoryCode")
+  private String categoryCode = null;
+
   @SerializedName("returnUrl")
   private String returnUrl = null;
 
@@ -75,6 +78,24 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
     this.merchantDescriptor = merchantDescriptor;
   }
 
+  public PtsV2PaymentsPost201ResponseMerchantInformation categoryCode(String categoryCode) {
+    this.categoryCode = categoryCode;
+    return this;
+  }
+
+   /**
+   * The value for this field is a four-digit number that the payment card industry uses to classify merchants into market segments. A payment card company assigned one or more of these values to your business when you started accepting the payment card company&#39;s cards. When you do not include this field in your request, Cybersource uses the value in your Cybersource account. Use this field only for clearing with your acquirer. 
+   * @return categoryCode
+  **/
+  @ApiModelProperty(value = "The value for this field is a four-digit number that the payment card industry uses to classify merchants into market segments. A payment card company assigned one or more of these values to your business when you started accepting the payment card company's cards. When you do not include this field in your request, Cybersource uses the value in your Cybersource account. Use this field only for clearing with your acquirer. ")
+  public String getCategoryCode() {
+    return categoryCode;
+  }
+
+  public void setCategoryCode(String categoryCode) {
+    this.categoryCode = categoryCode;
+  }
+
   public PtsV2PaymentsPost201ResponseMerchantInformation returnUrl(String returnUrl) {
     this.returnUrl = returnUrl;
     return this;
@@ -105,12 +126,13 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
     PtsV2PaymentsPost201ResponseMerchantInformation ptsV2PaymentsPost201ResponseMerchantInformation = (PtsV2PaymentsPost201ResponseMerchantInformation) o;
     return Objects.equals(this.merchantName, ptsV2PaymentsPost201ResponseMerchantInformation.merchantName) &&
         Objects.equals(this.merchantDescriptor, ptsV2PaymentsPost201ResponseMerchantInformation.merchantDescriptor) &&
+        Objects.equals(this.categoryCode, ptsV2PaymentsPost201ResponseMerchantInformation.categoryCode) &&
         Objects.equals(this.returnUrl, ptsV2PaymentsPost201ResponseMerchantInformation.returnUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantName, merchantDescriptor, returnUrl);
+    return Objects.hash(merchantName, merchantDescriptor, categoryCode, returnUrl);
   }
 
 
@@ -121,6 +143,7 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
     
     if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     if (returnUrl != null) sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("}");
     return sb.toString();

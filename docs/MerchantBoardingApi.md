@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getRegistration"></a>
 # **getRegistration**
-> InlineResponse2004 getRegistration(registrationId)
+> InlineResponse2005 getRegistration(registrationId)
 
 Gets all the information on a boarding registration
 
@@ -26,7 +26,7 @@ This end point will get all information of a boarding registration
 MerchantBoardingApi apiInstance = new MerchantBoardingApi();
 String registrationId = "registrationId_example"; // String | Identifies the boarding registration to be updated
 try {
-    InlineResponse2004 result = apiInstance.getRegistration(registrationId);
+    InlineResponse2005 result = apiInstance.getRegistration(registrationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantBoardingApi#getRegistration");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2013 postRegistration(postRegistrationBody, vCIdempotencyId)
+> InlineResponse2014 postRegistration(postRegistrationBody, vCIdempotencyId)
 
 Create a boarding registration
 
@@ -72,7 +72,7 @@ MerchantBoardingApi apiInstance = new MerchantBoardingApi();
 PostRegistrationBody postRegistrationBody = new PostRegistrationBody(); // PostRegistrationBody | Boarding registration data
 String vCIdempotencyId = "vCIdempotencyId_example"; // String | defines idempotency of the request
 try {
-    InlineResponse2013 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
+    InlineResponse2014 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantBoardingApi#postRegistration");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 

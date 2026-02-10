@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities;
-import Model.Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation;
-import Model.Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation;
-import Model.Tmsv2tokenstokenIdpaymentcredentialsOrderInformation;
+import Model.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities;
+import Model.Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation;
+import Model.Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation;
+import Model.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,16 +45,16 @@ public class PostPaymentCredentialsRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("orderInformation")
-  private Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation = null;
+  private Tmsv3tokenstokenIdpaymentcredentialsOrderInformation orderInformation = null;
 
   @SerializedName("merchantInformation")
-  private Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation = null;
+  private Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation = null;
 
   @SerializedName("deviceInformation")
-  private Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation = null;
+  private Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation = null;
 
   @SerializedName("authenticatedIdentities")
-  private List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities = null;
+  private List<Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities = null;
 
   public PostPaymentCredentialsRequest paymentCredentialType(String paymentCredentialType) {
     this.paymentCredentialType = paymentCredentialType;
@@ -110,7 +110,7 @@ public class PostPaymentCredentialsRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public PostPaymentCredentialsRequest orderInformation(Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
+  public PostPaymentCredentialsRequest orderInformation(Tmsv3tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -120,15 +120,15 @@ public class PostPaymentCredentialsRequest {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenstokenIdpaymentcredentialsOrderInformation getOrderInformation() {
+  public Tmsv3tokenstokenIdpaymentcredentialsOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(Tmsv2tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
+  public void setOrderInformation(Tmsv3tokenstokenIdpaymentcredentialsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 
-  public PostPaymentCredentialsRequest merchantInformation(Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+  public PostPaymentCredentialsRequest merchantInformation(Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -138,15 +138,15 @@ public class PostPaymentCredentialsRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation getMerchantInformation() {
+  public Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public PostPaymentCredentialsRequest deviceInformation(Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
+  public PostPaymentCredentialsRequest deviceInformation(Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -156,22 +156,22 @@ public class PostPaymentCredentialsRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation getDeviceInformation() {
+  public Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public PostPaymentCredentialsRequest authenticatedIdentities(List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
+  public PostPaymentCredentialsRequest authenticatedIdentities(List<Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
     this.authenticatedIdentities = authenticatedIdentities;
     return this;
   }
 
-  public PostPaymentCredentialsRequest addAuthenticatedIdentitiesItem(Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities authenticatedIdentitiesItem) {
+  public PostPaymentCredentialsRequest addAuthenticatedIdentitiesItem(Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities authenticatedIdentitiesItem) {
     if (this.authenticatedIdentities == null) {
-      this.authenticatedIdentities = new ArrayList<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities>();
+      this.authenticatedIdentities = new ArrayList<Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities>();
     }
     this.authenticatedIdentities.add(authenticatedIdentitiesItem);
     return this;
@@ -182,11 +182,11 @@ public class PostPaymentCredentialsRequest {
    * @return authenticatedIdentities
   **/
   @ApiModelProperty(value = "")
-  public List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> getAuthenticatedIdentities() {
+  public List<Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities> getAuthenticatedIdentities() {
     return authenticatedIdentities;
   }
 
-  public void setAuthenticatedIdentities(List<Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
+  public void setAuthenticatedIdentities(List<Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities> authenticatedIdentities) {
     this.authenticatedIdentities = authenticatedIdentities;
   }
 

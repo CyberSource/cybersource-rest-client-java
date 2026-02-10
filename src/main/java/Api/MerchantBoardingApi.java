@@ -29,8 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2004;
-import Model.InlineResponse2013;
+import Model.InlineResponse2005;
+import Model.InlineResponse2014;
 import Model.InlineResponse4007;
 import Model.InlineResponse4042;
 import Model.InlineResponse4221;
@@ -160,13 +160,13 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return InlineResponse2004
+     * @return InlineResponse2005
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2004 getRegistration(String registrationId) throws ApiException, ConfigException {
+    public InlineResponse2005 getRegistration(String registrationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
-        ApiResponse<InlineResponse2004> resp = getRegistrationWithHttpInfo(registrationId);
+        ApiResponse<InlineResponse2005> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
         return resp.getData();
     }
@@ -175,14 +175,14 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;InlineResponse2005&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2004> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2005> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -195,7 +195,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2004> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2005> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -218,7 +218,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -312,13 +312,13 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return InlineResponse2013
+     * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2013 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public InlineResponse2014 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
-        ApiResponse<InlineResponse2013> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
+        ApiResponse<InlineResponse2014> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
         return resp.getData();
     }
@@ -328,14 +328,14 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;InlineResponse2014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2013> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2014> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -349,7 +349,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2013> callback) throws ApiException, ConfigException {
+    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -372,7 +372,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

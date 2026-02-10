@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> List&lt;InlineResponse2005&gt; findProductsToSubscribe(organizationId)
+> List&lt;InlineResponse2006&gt; findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -27,7 +27,7 @@ Retrieve a list of products and event types that your account is eligible for. T
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 String organizationId = "organizationId_example"; // String | The Organization Identifier.
 try {
-    List<InlineResponse2005> result = apiInstance.findProductsToSubscribe(organizationId);
+    List<InlineResponse2006> result = apiInstance.findProductsToSubscribe(organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2005&gt;**](InlineResponse2005.md)
+[**List&lt;InlineResponse2006&gt;**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksPost"></a>
 # **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2015 notificationSubscriptionsV2WebhooksPost(createWebhook)
+> InlineResponse2016 notificationSubscriptionsV2WebhooksPost(createWebhook)
 
 Create a New Webhook Subscription
 
@@ -72,7 +72,7 @@ Create a new webhook subscription. Before creating a webhook, ensure that a sign
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 CreateWebhook createWebhook = new CreateWebhook(); // CreateWebhook | The webhook payload
 try {
-    InlineResponse2015 result = apiInstance.notificationSubscriptionsV2WebhooksPost(createWebhook);
+    InlineResponse2016 result = apiInstance.notificationSubscriptionsV2WebhooksPost(createWebhook);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#notificationSubscriptionsV2WebhooksPost");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2014 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey)
+> InlineResponse2015 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -120,7 +120,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 SaveSymEgressKey saveSymEgressKey = new SaveSymEgressKey(); // SaveSymEgressKey | Provide egress Symmetric key information to save (create or store or refresh)
 try {
-    InlineResponse2014 result = apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+    InlineResponse2015 result = apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#saveSymEgressKey");
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 

@@ -27,9 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Metadata associated with the tokenized card. 
+ * Tmsv2TokenizedCardMetadata
  */
-@ApiModel(description = "Metadata associated with the tokenized card. ")
 
 public class Tmsv2TokenizedCardMetadata {
   @SerializedName("cardArt")

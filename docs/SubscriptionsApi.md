@@ -153,7 +153,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> GetAllSubscriptionsResponse getAllSubscriptions(offset, limit, code, status)
+> GetAllSubscriptionsResponse getAllSubscriptions(offset, limit, code, status, customerId)
 
 Get a List of Subscriptions
 
@@ -171,8 +171,9 @@ Integer offset = 56; // Integer | Page offset number.
 Integer limit = 56; // Integer | Number of items to be returned. Default - `20`, Max - `100` 
 String code = "code_example"; // String | Filter by Subscription Code
 String status = "status_example"; // String | Filter by Subscription Status
+String customerId = "customerId_example"; // String | Filter by Customer Id
 try {
-    GetAllSubscriptionsResponse result = apiInstance.getAllSubscriptions(offset, limit, code, status);
+    GetAllSubscriptionsResponse result = apiInstance.getAllSubscriptions(offset, limit, code, status, customerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#getAllSubscriptions");
@@ -188,6 +189,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  | [optional]
  **code** | **String**| Filter by Subscription Code | [optional]
  **status** | **String**| Filter by Subscription Status | [optional]
+ **customerId** | **String**| Filter by Customer Id | [optional]
 
 ### Return type
 

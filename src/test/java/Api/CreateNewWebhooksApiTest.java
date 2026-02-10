@@ -14,9 +14,9 @@
 package Api;
 
 import Model.CreateWebhook;
-import Model.InlineResponse2005;
-import Model.InlineResponse2014;
+import Model.InlineResponse2006;
 import Model.InlineResponse2015;
+import Model.InlineResponse2016;
 import Model.SaveSymEgressKey;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -47,7 +47,7 @@ public class CreateNewWebhooksApiTest {
     @Test
     public void findProductsToSubscribeTest() throws Exception {
         String organizationId = null;
-        List<InlineResponse2005> response = api.findProductsToSubscribe(organizationId);
+        List<InlineResponse2006> response = api.findProductsToSubscribe(organizationId);
 
         // TODO: test validations
     }
@@ -63,7 +63,7 @@ public class CreateNewWebhooksApiTest {
     @Test
     public void notificationSubscriptionsV2WebhooksPostTest() throws Exception {
         CreateWebhook createWebhook = null;
-        InlineResponse2015 response = api.notificationSubscriptionsV2WebhooksPost(createWebhook);
+        InlineResponse2016 response = api.notificationSubscriptionsV2WebhooksPost(createWebhook);
 
         // TODO: test validations
     }
@@ -82,7 +82,7 @@ public class CreateNewWebhooksApiTest {
         String vCPermissions = null;
         String vCCorrelationId = null;
         SaveSymEgressKey saveSymEgressKey = null;
-        InlineResponse2014 response = api.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+        InlineResponse2015 response = api.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
 
         // TODO: test validations
     }

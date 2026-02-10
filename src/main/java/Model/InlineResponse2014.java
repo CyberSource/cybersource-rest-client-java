@@ -15,8 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014KeyInformation;
-import Model.Kmsegressv2keyssymClientReferenceInformation;
+import Model.InlineResponse2014IntegrationInformation;
+import Model.InlineResponse2014OrganizationInformation;
+import Model.InlineResponse2014ProductInformationSetups;
+import Model.InlineResponse2014RegistrationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,95 +27,202 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.joda.time.DateTime;
 
 /**
- * Egress Key Information Response 
+ * InlineResponse2014
  */
-@ApiModel(description = "Egress Key Information Response ")
 
 public class InlineResponse2014 {
+  @SerializedName("id")
+  private String id = null;
+
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("clientReferenceInformation")
-  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
+  @SerializedName("registrationInformation")
+  private InlineResponse2014RegistrationInformation registrationInformation = null;
 
-  @SerializedName("keyInformation")
-  private InlineResponse2014KeyInformation keyInformation = null;
+  @SerializedName("integrationInformation")
+  private InlineResponse2014IntegrationInformation integrationInformation = null;
 
-  public InlineResponse2014 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  @SerializedName("organizationInformation")
+  private InlineResponse2014OrganizationInformation organizationInformation = null;
+
+  @SerializedName("productInformationSetups")
+  private List<InlineResponse2014ProductInformationSetups> productInformationSetups = null;
+
+  @SerializedName("message")
+  private String message = null;
+
+  @SerializedName("details")
+  private Map<String, List<Object>> details = null;
+
+  public InlineResponse2014 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "12351234", value = "")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2014 status(String status) {
-    this.status = status;
-    return this;
-  }
-
    /**
-   * The status of the submitted transaction. Possible values:  - ACCEPTED 
+   * The status of Registration request Possible Values:   - &#39;INITIALIZED&#39;   - &#39;RECEIVED&#39;   - &#39;PROCESSING&#39;   - &#39;SUCCESS&#39;   - &#39;FAILURE&#39;   - &#39;PARTIAL&#39; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:  - ACCEPTED ")
+  @ApiModelProperty(value = "The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' ")
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse2014 clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public InlineResponse2014 registrationInformation(InlineResponse2014RegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
     return this;
   }
 
    /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * Get registrationInformation
+   * @return registrationInformation
   **/
   @ApiModelProperty(value = "")
-  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
+  public InlineResponse2014RegistrationInformation getRegistrationInformation() {
+    return registrationInformation;
   }
 
-  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public void setRegistrationInformation(InlineResponse2014RegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
   }
 
-  public InlineResponse2014 keyInformation(InlineResponse2014KeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public InlineResponse2014 integrationInformation(InlineResponse2014IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
     return this;
   }
 
    /**
-   * Get keyInformation
-   * @return keyInformation
+   * Get integrationInformation
+   * @return integrationInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014KeyInformation getKeyInformation() {
-    return keyInformation;
+  public InlineResponse2014IntegrationInformation getIntegrationInformation() {
+    return integrationInformation;
   }
 
-  public void setKeyInformation(InlineResponse2014KeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public void setIntegrationInformation(InlineResponse2014IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
+  }
+
+  public InlineResponse2014 organizationInformation(InlineResponse2014OrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+    return this;
+  }
+
+   /**
+   * Get organizationInformation
+   * @return organizationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014OrganizationInformation getOrganizationInformation() {
+    return organizationInformation;
+  }
+
+  public void setOrganizationInformation(InlineResponse2014OrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+  }
+
+  public InlineResponse2014 productInformationSetups(List<InlineResponse2014ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+    return this;
+  }
+
+  public InlineResponse2014 addProductInformationSetupsItem(InlineResponse2014ProductInformationSetups productInformationSetupsItem) {
+    if (this.productInformationSetups == null) {
+      this.productInformationSetups = new ArrayList<InlineResponse2014ProductInformationSetups>();
+    }
+    this.productInformationSetups.add(productInformationSetupsItem);
+    return this;
+  }
+
+   /**
+   * Get productInformationSetups
+   * @return productInformationSetups
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2014ProductInformationSetups> getProductInformationSetups() {
+    return productInformationSetups;
+  }
+
+  public void setProductInformationSetups(List<InlineResponse2014ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+  }
+
+  public InlineResponse2014 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Get message
+   * @return message
+  **/
+  @ApiModelProperty(example = "Request was processed succesfully.", value = "")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public InlineResponse2014 details(Map<String, List<Object>> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse2014 putDetailsItem(String key, List<Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<String, List<Object>>();
+    }
+    this.details.put(key, detailsItem);
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, List<Object>> getDetails() {
+    return details;
+  }
+
+  public void setDetails(Map<String, List<Object>> details) {
+    this.details = details;
   }
 
 
@@ -126,15 +235,20 @@ public class InlineResponse2014 {
       return false;
     }
     InlineResponse2014 inlineResponse2014 = (InlineResponse2014) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2014.submitTimeUtc) &&
+    return Objects.equals(this.id, inlineResponse2014.id) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse2014.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse2014.status) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2014.clientReferenceInformation) &&
-        Objects.equals(this.keyInformation, inlineResponse2014.keyInformation);
+        Objects.equals(this.registrationInformation, inlineResponse2014.registrationInformation) &&
+        Objects.equals(this.integrationInformation, inlineResponse2014.integrationInformation) &&
+        Objects.equals(this.organizationInformation, inlineResponse2014.organizationInformation) &&
+        Objects.equals(this.productInformationSetups, inlineResponse2014.productInformationSetups) &&
+        Objects.equals(this.message, inlineResponse2014.message) &&
+        Objects.equals(this.details, inlineResponse2014.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, clientReferenceInformation, keyInformation);
+    return Objects.hash(id, submitTimeUtc, status, registrationInformation, integrationInformation, organizationInformation, productInformationSetups, message, details);
   }
 
 
@@ -143,10 +257,15 @@ public class InlineResponse2014 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014 {\n");
     
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

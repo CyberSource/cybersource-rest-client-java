@@ -541,13 +541,14 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
+     * @param customerId Filter by Customer Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, String customerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -579,6 +580,8 @@ public class SubscriptionsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "code", code));
         if (status != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "status", status));
+        if (customerId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "customerId", customerId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -613,10 +616,10 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, String customerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
-        okhttp3.Call call = getAllSubscriptionsCall(offset, limit, code, status, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsCall(offset, limit, code, status, customerId, progressListener, progressRequestListener);
         return call;
 
         
@@ -632,13 +635,14 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
+     * @param customerId Filter by Customer Id (optional)
      * @return GetAllSubscriptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException, ConfigException {
+    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status, String customerId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
-        ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
+        ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status, customerId);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
     }
@@ -650,13 +654,14 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
+     * @param customerId Filter by Customer Id (optional)
      * @return ApiResponse&lt;GetAllSubscriptionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException, ConfigException {
+    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status, String customerId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, null, null);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, null, null);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -668,12 +673,13 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
+     * @param customerId Filter by Customer Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, String customerId, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -695,7 +701,7 @@ public class SubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

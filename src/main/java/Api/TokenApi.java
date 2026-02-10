@@ -29,13 +29,16 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2001;
+import Model.InlineResponse2002;
+import Model.InlineResponse2011;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
+import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PostPaymentCredentialsRequest;
+import Model.PostPaymentCredentialsRequest1;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -178,13 +181,13 @@ public class TokenApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return InlineResponse2001
+     * @return InlineResponse2002
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2001 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
+    public InlineResponse2002 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCardArtAsset' STARTED");
-        ApiResponse<InlineResponse2001> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
+        ApiResponse<InlineResponse2002> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
         logger.info("CALL TO METHOD 'getCardArtAsset' ENDED");
         return resp.getData();
     }
@@ -195,14 +198,14 @@ public class TokenApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;InlineResponse2002&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2001> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2002> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -217,7 +220,7 @@ public class TokenApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse2001> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse2002> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -240,7 +243,7 @@ public class TokenApi {
         }
 
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -255,9 +258,9 @@ public class TokenApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         String inboundMLEStatus = "optional";
 
@@ -313,7 +316,7 @@ public class TokenApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
@@ -338,8 +341,8 @@ public class TokenApi {
     }
 
     /**
-     * Generate Payment Credentials for a TMS Token
-     * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * Generate Payment Credentials v2
+     * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.&lt;br&gt; **Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.&lt;br&gt; **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
      * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
@@ -347,7 +350,7 @@ public class TokenApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+    public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
         ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");
@@ -355,8 +358,8 @@ public class TokenApi {
     }
 
     /**
-     * Generate Payment Credentials for a TMS Token
-     * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * Generate Payment Credentials v2
+     * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.&lt;br&gt; **Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.&lt;br&gt; **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
      * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
@@ -364,7 +367,7 @@ public class TokenApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -372,8 +375,8 @@ public class TokenApi {
     }
 
     /**
-     * Generate Payment Credentials for a TMS Token (asynchronously)
-     * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * Generate Payment Credentials v2 (asynchronously)
+     * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.&lt;br&gt; **Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.&lt;br&gt; **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
      * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
@@ -382,7 +385,7 @@ public class TokenApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -406,6 +409,171 @@ public class TokenApi {
 
         okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postTokenPaymentCredentialsV3
+     * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call postTokenPaymentCredentialsV3Call(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenPaymentCredentialsV3,postTokenPaymentCredentialsV3Async,postTokenPaymentCredentialsV3WithHttpInfo,postTokenPaymentCredentialsV3Call")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "postTokenPaymentCredentialsV3,postTokenPaymentCredentialsV3Async,postTokenPaymentCredentialsV3WithHttpInfo,postTokenPaymentCredentialsV3Call");
+        
+        // create path and map variables
+        String localVarPath = "/tms/v3/tokens/{tokenId}/payment-credentials"
+            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/jose;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postTokenPaymentCredentialsV3ValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'tokenId' is set
+        if (tokenId == null) {
+            logger.error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentialsV3(Async)");
+            throw new ApiException("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentialsV3(Async)");
+        }
+        
+        // verify the required parameter 'postPaymentCredentialsRequest' is set
+        if (postPaymentCredentialsRequest == null) {
+            logger.error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3(Async)");
+            throw new ApiException("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3(Async)");
+        }
+        
+        
+        okhttp3.Call call = postTokenPaymentCredentialsV3Call(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Generate Payment Credentials Latest Version v3
+     * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @return InlineResponse2011
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse2011 postTokenPaymentCredentialsV3(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'postTokenPaymentCredentialsV3' STARTED");
+        ApiResponse<InlineResponse2011> resp = postTokenPaymentCredentialsV3WithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
+        logger.info("CALL TO METHOD 'postTokenPaymentCredentialsV3' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Generate Payment Credentials Latest Version v3
+     * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse2011> postTokenPaymentCredentialsV3WithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Generate Payment Credentials Latest Version v3 (asynchronously)
+     * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call postTokenPaymentCredentialsV3Async(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<InlineResponse2011> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
