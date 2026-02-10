@@ -38,6 +38,9 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon
   @SerializedName("businessApplicationId")
   private List<String> businessApplicationId = null;
 
+  @SerializedName("defaultBusinessApplicationId")
+  private String defaultBusinessApplicationId = null;
+
   @SerializedName("aggregator")
   private PaymentsProductsPayoutsConfigurationInformationConfigurationsCommonAggregator aggregator = null;
 
@@ -93,6 +96,24 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon
     this.businessApplicationId = businessApplicationId;
   }
 
+  public PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon defaultBusinessApplicationId(String defaultBusinessApplicationId) {
+    this.defaultBusinessApplicationId = defaultBusinessApplicationId;
+    return this;
+  }
+
+   /**
+   * Default Business Application Indicator. Must match one of the values in businessApplicationId array.   Possible values: - AA - BB - BI - BP - CB - CD - CI - CO - CP - FD - FT - GD - GP - LA - LO - MD - MI - MP - OG - PD - PG - PP - PS - RP - TU - WT
+   * @return defaultBusinessApplicationId
+  **/
+  @ApiModelProperty(value = "Default Business Application Indicator. Must match one of the values in businessApplicationId array.   Possible values: - AA - BB - BI - BP - CB - CD - CI - CO - CP - FD - FT - GD - GP - LA - LO - MD - MI - MP - OG - PD - PG - PP - PS - RP - TU - WT")
+  public String getDefaultBusinessApplicationId() {
+    return defaultBusinessApplicationId;
+  }
+
+  public void setDefaultBusinessApplicationId(String defaultBusinessApplicationId) {
+    this.defaultBusinessApplicationId = defaultBusinessApplicationId;
+  }
+
   public PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon aggregator(PaymentsProductsPayoutsConfigurationInformationConfigurationsCommonAggregator aggregator) {
     this.aggregator = aggregator;
     return this;
@@ -123,12 +144,13 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon
     PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon paymentsProductsPayoutsConfigurationInformationConfigurationsCommon = (PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon) o;
     return Objects.equals(this.paymentTypes, paymentsProductsPayoutsConfigurationInformationConfigurationsCommon.paymentTypes) &&
         Objects.equals(this.businessApplicationId, paymentsProductsPayoutsConfigurationInformationConfigurationsCommon.businessApplicationId) &&
+        Objects.equals(this.defaultBusinessApplicationId, paymentsProductsPayoutsConfigurationInformationConfigurationsCommon.defaultBusinessApplicationId) &&
         Objects.equals(this.aggregator, paymentsProductsPayoutsConfigurationInformationConfigurationsCommon.aggregator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentTypes, businessApplicationId, aggregator);
+    return Objects.hash(paymentTypes, businessApplicationId, defaultBusinessApplicationId, aggregator);
   }
 
 
@@ -139,6 +161,7 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon
     
     if (paymentTypes != null) sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
     if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (defaultBusinessApplicationId != null) sb.append("    defaultBusinessApplicationId: ").append(toIndentedString(defaultBusinessApplicationId)).append("\n");
     if (aggregator != null) sb.append("    aggregator: ").append(toIndentedString(aggregator)).append("\n");
     sb.append("}");
     return sb.toString();

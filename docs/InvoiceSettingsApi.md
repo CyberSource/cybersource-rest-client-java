@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getInvoiceSettings"></a>
 # **getInvoiceSettings**
-> InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings()
+> InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings(productType)
 
 Get Invoice Settings
 
@@ -24,8 +24,9 @@ Allows you to retrieve the invoice settings for the payment page.
 
 
 InvoiceSettingsApi apiInstance = new InvoiceSettingsApi();
+String productType = "productType_example"; // String | Allows you to choose which product type settings you want to update.
 try {
-    InvoicingV2InvoiceSettingsGet200Response result = apiInstance.getInvoiceSettings();
+    InvoicingV2InvoiceSettingsGet200Response result = apiInstance.getInvoiceSettings(productType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceSettingsApi#getInvoiceSettings");
@@ -34,7 +35,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productType** | **String**| Allows you to choose which product type settings you want to update. | [optional] [enum: INVOICING, PAYBYLINK]
 
 ### Return type
 
@@ -51,7 +55,7 @@ No authorization required
 
 <a name="updateInvoiceSettings"></a>
 # **updateInvoiceSettings**
-> InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(invoiceSettingsRequest)
+> InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(invoiceSettingsRequest, productType)
 
 Update Invoice Settings
 
@@ -66,8 +70,9 @@ Allows you to customize the payment page, the checkout experience, email communi
 
 InvoiceSettingsApi apiInstance = new InvoiceSettingsApi();
 InvoiceSettingsRequest invoiceSettingsRequest = new InvoiceSettingsRequest(); // InvoiceSettingsRequest | 
+String productType = "productType_example"; // String | Allows you to choose which product type settings you want to update.
 try {
-    InvoicingV2InvoiceSettingsGet200Response result = apiInstance.updateInvoiceSettings(invoiceSettingsRequest);
+    InvoicingV2InvoiceSettingsGet200Response result = apiInstance.updateInvoiceSettings(invoiceSettingsRequest, productType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceSettingsApi#updateInvoiceSettings");
@@ -80,6 +85,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceSettingsRequest** | [**InvoiceSettingsRequest**](InvoiceSettingsRequest.md)|  |
+ **productType** | **String**| Allows you to choose which product type settings you want to update. | [optional] [enum: INVOICING, PAYBYLINK]
 
 ### Return type
 

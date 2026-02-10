@@ -15,7 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2001Content;
+import Model.InlineResponse2001Links;
+import Model.Tmsv2TokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,105 +25,52 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Represents the Card Art Asset associated to the Network Token. 
+ * InlineResponse2001
  */
-@ApiModel(description = "Represents the Card Art Asset associated to the Network Token. ")
 
 public class InlineResponse2001 {
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("_links")
+  private InlineResponse2001Links links = null;
 
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("tokenizedCard")
+  private Tmsv2TokenizedCard tokenizedCard = null;
 
-  @SerializedName("provider")
-  private String provider = null;
-
-  @SerializedName("content")
-  private List<InlineResponse2001Content> content = null;
-
-  public InlineResponse2001 id(String id) {
-    this.id = id;
+  public InlineResponse2001 links(InlineResponse2001Links links) {
+    this.links = links;
     return this;
   }
 
    /**
-   * Unique identifier for the Card Art Asset. 
-   * @return id
+   * Get links
+   * @return links
   **/
-  @ApiModelProperty(example = "84cfb836a0000859be62c766bdc9e510", value = "Unique identifier for the Card Art Asset. ")
-  public String getId() {
-    return id;
+  @ApiModelProperty(value = "")
+  public InlineResponse2001Links getLinks() {
+    return links;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setLinks(InlineResponse2001Links links) {
+    this.links = links;
   }
 
-  public InlineResponse2001 type(String type) {
-    this.type = type;
+  public InlineResponse2001 tokenizedCard(Tmsv2TokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
     return this;
   }
 
    /**
-   * The type of Card Art Asset. 
-   * @return type
+   * Get tokenizedCard
+   * @return tokenizedCard
   **/
-  @ApiModelProperty(example = "cardArtCombined", value = "The type of Card Art Asset. ")
-  public String getType() {
-    return type;
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCard getTokenizedCard() {
+    return tokenizedCard;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public InlineResponse2001 provider(String provider) {
-    this.provider = provider;
-    return this;
-  }
-
-   /**
-   * The provider of the Card Art Asset. 
-   * @return provider
-  **/
-  @ApiModelProperty(example = "vts", value = "The provider of the Card Art Asset. ")
-  public String getProvider() {
-    return provider;
-  }
-
-  public void setProvider(String provider) {
-    this.provider = provider;
-  }
-
-  public InlineResponse2001 content(List<InlineResponse2001Content> content) {
-    this.content = content;
-    return this;
-  }
-
-  public InlineResponse2001 addContentItem(InlineResponse2001Content contentItem) {
-    if (this.content == null) {
-      this.content = new ArrayList<InlineResponse2001Content>();
-    }
-    this.content.add(contentItem);
-    return this;
-  }
-
-   /**
-   * Array of content objects representing the Card Art Asset. 
-   * @return content
-  **/
-  @ApiModelProperty(value = "Array of content objects representing the Card Art Asset. ")
-  public List<InlineResponse2001Content> getContent() {
-    return content;
-  }
-
-  public void setContent(List<InlineResponse2001Content> content) {
-    this.content = content;
+  public void setTokenizedCard(Tmsv2TokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
   }
 
 
@@ -135,15 +83,13 @@ public class InlineResponse2001 {
       return false;
     }
     InlineResponse2001 inlineResponse2001 = (InlineResponse2001) o;
-    return Objects.equals(this.id, inlineResponse2001.id) &&
-        Objects.equals(this.type, inlineResponse2001.type) &&
-        Objects.equals(this.provider, inlineResponse2001.provider) &&
-        Objects.equals(this.content, inlineResponse2001.content);
+    return Objects.equals(this.links, inlineResponse2001.links) &&
+        Objects.equals(this.tokenizedCard, inlineResponse2001.tokenizedCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, provider, content);
+    return Objects.hash(links, tokenizedCard);
   }
 
 
@@ -152,10 +98,8 @@ public class InlineResponse2001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2001 {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    if (content != null) sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

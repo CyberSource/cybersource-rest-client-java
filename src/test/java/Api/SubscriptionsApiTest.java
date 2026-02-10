@@ -108,7 +108,8 @@ public class SubscriptionsApiTest {
         Integer limit = null;
         String code = null;
         String status = null;
-        GetAllSubscriptionsResponse response = api.getAllSubscriptions(offset, limit, code, status);
+        String customerId = null;
+        GetAllSubscriptionsResponse response = api.getAllSubscriptions(offset, limit, code, status, customerId);
 
         // TODO: test validations
     }

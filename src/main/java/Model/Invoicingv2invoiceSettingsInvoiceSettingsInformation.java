@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls;
 import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels;
 import com.google.gson.TypeAdapter;
@@ -77,6 +78,9 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
 
   @SerializedName("customLabels")
   private List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels = null;
+
+  @SerializedName("customRedirectUrls")
+  private InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls customRedirectUrls = null;
 
   public Invoicingv2invoiceSettingsInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
@@ -356,6 +360,24 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     this.customLabels = customLabels;
   }
 
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation customRedirectUrls(InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls customRedirectUrls) {
+    this.customRedirectUrls = customRedirectUrls;
+    return this;
+  }
+
+   /**
+   * Get customRedirectUrls
+   * @return customRedirectUrls
+  **/
+  @ApiModelProperty(value = "")
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls getCustomRedirectUrls() {
+    return customRedirectUrls;
+  }
+
+  public void setCustomRedirectUrls(InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls customRedirectUrls) {
+    this.customRedirectUrls = customRedirectUrls;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -380,12 +402,13 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
         Objects.equals(this.phoneNumber, invoicingv2invoiceSettingsInvoiceSettingsInformation.phoneNumber) &&
         Objects.equals(this.email, invoicingv2invoiceSettingsInvoiceSettingsInformation.email) &&
         Objects.equals(this.enableMerchantEmailNotifications, invoicingv2invoiceSettingsInvoiceSettingsInformation.enableMerchantEmailNotifications) &&
-        Objects.equals(this.customLabels, invoicingv2invoiceSettingsInvoiceSettingsInformation.customLabels);
+        Objects.equals(this.customLabels, invoicingv2invoiceSettingsInvoiceSettingsInformation.customLabels) &&
+        Objects.equals(this.customRedirectUrls, invoicingv2invoiceSettingsInvoiceSettingsInformation.customRedirectUrls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications, customLabels);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications, customLabels, customRedirectUrls);
   }
 
 
@@ -409,6 +432,7 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(toIndentedString(enableMerchantEmailNotifications)).append("\n");
     if (customLabels != null) sb.append("    customLabels: ").append(toIndentedString(customLabels)).append("\n");
+    if (customRedirectUrls != null) sb.append("    customRedirectUrls: ").append(toIndentedString(customRedirectUrls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

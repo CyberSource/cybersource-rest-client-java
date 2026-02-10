@@ -59,7 +59,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2015 getWebhookSubscriptionById(webhookId)
+> InlineResponse2016 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -75,7 +75,7 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The webhook Identifier
 try {
-    InlineResponse2015 result = apiInstance.getWebhookSubscriptionById(webhookId);
+    InlineResponse2016 result = apiInstance.getWebhookSubscriptionById(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionById");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> List&lt;InlineResponse2006&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
+> List&lt;InlineResponse2007&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -122,7 +122,7 @@ String organizationId = "organizationId_example"; // String | The Organization I
 String productId = "productId_example"; // String | The Product Identifier.
 String eventType = "eventType_example"; // String | The Event Type.
 try {
-    List<InlineResponse2006> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+    List<InlineResponse2007> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionsByOrg");
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2006&gt;**](InlineResponse2006.md)
+[**List&lt;InlineResponse2007&gt;**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
+> InlineResponse2017 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
 
 Test a Webhook Configuration
 
@@ -169,7 +169,7 @@ Test the webhook configuration by sending a sample webhook. Calling this endpoin
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The Webhook Identifier.
 try {
-    InlineResponse2016 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+    InlineResponse2017 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV1WebhooksWebhookIdPost");
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**InlineResponse2017**](InlineResponse2017.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> InlineResponse2007 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
+> InlineResponse2008 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
 
 Update a Webhook Subscription
 
@@ -215,7 +215,7 @@ ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The Webhook Identifier.
 UpdateWebhook updateWebhook = new UpdateWebhook(); // UpdateWebhook | The webhook payload or changes to apply.
 try {
-    InlineResponse2007 result = apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+    InlineResponse2008 result = apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV2WebhooksWebhookIdPatch");
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2017 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
+> InlineResponse2018 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
 
 Message Level Encryption
 
@@ -310,7 +310,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 SaveAsymEgressKey saveAsymEgressKey = new SaveAsymEgressKey(); // SaveAsymEgressKey | Provide egress Asymmetric key information to save (create or store)
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 try {
-    InlineResponse2017 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+    InlineResponse2018 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2017**](InlineResponse2017.md)
+[**InlineResponse2018**](InlineResponse2018.md)
 
 ### Authorization
 

@@ -13,13 +13,16 @@
 
 package Api;
 
-import Model.InlineResponse2001;
+import Model.InlineResponse2002;
+import Model.InlineResponse2011;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
+import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PostPaymentCredentialsRequest;
+import Model.PostPaymentCredentialsRequest1;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -51,15 +54,15 @@ public class TokenApiTest {
         String instrumentIdentifierId = null;
         String tokenProvider = null;
         String assetType = null;
-        InlineResponse2001 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
+        InlineResponse2002 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
 
         // TODO: test validations
     }
     
     /**
-     * Generate Payment Credentials for a TMS Token
+     * Generate Payment Credentials v2
      *
-     * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.&lt;br&gt; **Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.&lt;br&gt; **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      *
      * @throws Exception
      *          if the Api call fails
@@ -67,9 +70,27 @@ public class TokenApiTest {
     @Test
     public void postTokenPaymentCredentialsTest() throws Exception {
         String tokenId = null;
-        PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
+        PostPaymentCredentialsRequest1 postPaymentCredentialsRequest = null;
         String profileId = null;
         String response = api.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate Payment Credentials Latest Version v3
+     *
+     * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void postTokenPaymentCredentialsV3Test() throws Exception {
+        String tokenId = null;
+        PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
+        String profileId = null;
+        InlineResponse2011 response = api.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, profileId);
 
         // TODO: test validations
     }

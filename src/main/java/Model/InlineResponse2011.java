@@ -15,6 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2011Card;
+import Model.InlineResponse2011Links;
+import Model.InlineResponse2011TokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,67 +32,67 @@ import java.io.IOException;
  */
 
 public class InlineResponse2011 {
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("_links")
+  private InlineResponse2011Links links = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("card")
+  private InlineResponse2011Card card = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("tokenizedCard")
+  private InlineResponse2011TokenizedCard tokenizedCard = null;
 
-  public InlineResponse2011 id(String id) {
-    this.id = id;
+  public InlineResponse2011 links(InlineResponse2011Links links) {
+    this.links = links;
     return this;
   }
 
    /**
-   * UUID uniquely generated for this comments. 
-   * @return id
+   * Get links
+   * @return links
   **/
-  @ApiModelProperty(value = "UUID uniquely generated for this comments. ")
-  public String getId() {
-    return id;
+  @ApiModelProperty(value = "")
+  public InlineResponse2011Links getLinks() {
+    return links;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setLinks(InlineResponse2011Links links) {
+    this.links = links;
   }
 
-  public InlineResponse2011 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse2011 card(InlineResponse2011Card card) {
+    this.card = card;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
+   * Get card
+   * @return card
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "")
+  public InlineResponse2011Card getCard() {
+    return card;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setCard(InlineResponse2011Card card) {
+    this.card = card;
   }
 
-  public InlineResponse2011 status(String status) {
-    this.status = status;
+  public InlineResponse2011 tokenizedCard(InlineResponse2011TokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
     return this;
   }
 
    /**
-   * Status of the comment creation. Possible values are: - &#x60;COMPLETED&#x60; 
-   * @return status
+   * Get tokenizedCard
+   * @return tokenizedCard
   **/
-  @ApiModelProperty(value = "Status of the comment creation. Possible values are: - `COMPLETED` ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(value = "")
+  public InlineResponse2011TokenizedCard getTokenizedCard() {
+    return tokenizedCard;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setTokenizedCard(InlineResponse2011TokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
   }
 
 
@@ -102,14 +105,14 @@ public class InlineResponse2011 {
       return false;
     }
     InlineResponse2011 inlineResponse2011 = (InlineResponse2011) o;
-    return Objects.equals(this.id, inlineResponse2011.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2011.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2011.status);
+    return Objects.equals(this.links, inlineResponse2011.links) &&
+        Objects.equals(this.card, inlineResponse2011.card) &&
+        Objects.equals(this.tokenizedCard, inlineResponse2011.tokenizedCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, status);
+    return Objects.hash(links, card, tokenizedCard);
   }
 
 
@@ -118,9 +121,9 @@ public class InlineResponse2011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011 {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

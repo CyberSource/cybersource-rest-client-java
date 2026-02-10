@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseBuyerInformation;
+import Model.PtsV2PaymentsPost201ResponseClearingInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActions;
@@ -113,6 +114,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("merchantInformation")
   private PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation = null;
+
+  @SerializedName("clearingInformation")
+  private PtsV2PaymentsPost201ResponseClearingInformation clearingInformation = null;
 
   @SerializedName("embeddedActions")
   private PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions = null;
@@ -516,6 +520,24 @@ public class PtsV2PaymentsPost201Response {
     this.merchantInformation = merchantInformation;
   }
 
+  public PtsV2PaymentsPost201Response clearingInformation(PtsV2PaymentsPost201ResponseClearingInformation clearingInformation) {
+    this.clearingInformation = clearingInformation;
+    return this;
+  }
+
+   /**
+   * Get clearingInformation
+   * @return clearingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseClearingInformation getClearingInformation() {
+    return clearingInformation;
+  }
+
+  public void setClearingInformation(PtsV2PaymentsPost201ResponseClearingInformation clearingInformation) {
+    this.clearingInformation = clearingInformation;
+  }
+
   public PtsV2PaymentsPost201Response embeddedActions(PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions) {
     this.embeddedActions = embeddedActions;
     return this;
@@ -584,13 +606,14 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation) &&
         Objects.equals(this.merchantInformation, ptsV2PaymentsPost201Response.merchantInformation) &&
+        Objects.equals(this.clearingInformation, ptsV2PaymentsPost201Response.clearingInformation) &&
         Objects.equals(this.embeddedActions, ptsV2PaymentsPost201Response.embeddedActions) &&
         Objects.equals(this.watchlistScreeningInformation, ptsV2PaymentsPost201Response.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, merchantInformation, embeddedActions, watchlistScreeningInformation);
+    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, merchantInformation, clearingInformation, embeddedActions, watchlistScreeningInformation);
   }
 
 
@@ -621,6 +644,7 @@ public class PtsV2PaymentsPost201Response {
     if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (clearingInformation != null) sb.append("    clearingInformation: ").append(toIndentedString(clearingInformation)).append("\n");
     if (embeddedActions != null) sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
     if (watchlistScreeningInformation != null) sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");

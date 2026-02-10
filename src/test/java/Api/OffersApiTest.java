@@ -13,11 +13,8 @@
 
 package Api;
 
-import Model.InlineResponse20015;
-import Model.InlineResponse2018;
-import Model.InlineResponse40010;
-import Model.InlineResponse5022;
-import Model.OfferRequest;
+import Model.InlineResponse20016;
+import Model.InlineResponse5004;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -37,27 +34,6 @@ public class OffersApiTest {
 
     
     /**
-     * Create an Offer
-     *
-     * Creates an offer record on the provider system. 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void createOfferTest() throws Exception {
-        String contentType = null;
-        String xRequestid = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
-        String vCOrganizationId = null;
-        OfferRequest offerRequest = null;
-        InlineResponse2018 response = api.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Retrieve an Offer
      *
      * Retrieves an offer record from the system. 
@@ -73,7 +49,7 @@ public class OffersApiTest {
         String vCCorrelationId = null;
         String vCOrganizationId = null;
         String id = null;
-        InlineResponse20015 response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
+        InlineResponse20016 response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
 
         // TODO: test validations
     }

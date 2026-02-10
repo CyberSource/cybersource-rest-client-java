@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments;
 import Model.TmsEmbeddedInstrumentIdentifierLinksSelf;
+import Model.TmsEmbeddedInstrumentIdentifierLinksTokenizedcards;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,6 +37,9 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
 
   @SerializedName("paymentInstruments")
   private TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments paymentInstruments = null;
+
+  @SerializedName("tokenized-cards")
+  private TmsEmbeddedInstrumentIdentifierLinksTokenizedcards tokenizedCards = null;
 
   public TmsEmbeddedInstrumentIdentifierLinks self(TmsEmbeddedInstrumentIdentifierLinksSelf self) {
     this.self = self;
@@ -73,6 +77,24 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
     this.paymentInstruments = paymentInstruments;
   }
 
+  public TmsEmbeddedInstrumentIdentifierLinks tokenizedCards(TmsEmbeddedInstrumentIdentifierLinksTokenizedcards tokenizedCards) {
+    this.tokenizedCards = tokenizedCards;
+    return this;
+  }
+
+   /**
+   * Get tokenizedCards
+   * @return tokenizedCards
+  **/
+  @ApiModelProperty(value = "")
+  public TmsEmbeddedInstrumentIdentifierLinksTokenizedcards getTokenizedCards() {
+    return tokenizedCards;
+  }
+
+  public void setTokenizedCards(TmsEmbeddedInstrumentIdentifierLinksTokenizedcards tokenizedCards) {
+    this.tokenizedCards = tokenizedCards;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
     }
     TmsEmbeddedInstrumentIdentifierLinks tmsEmbeddedInstrumentIdentifierLinks = (TmsEmbeddedInstrumentIdentifierLinks) o;
     return Objects.equals(this.self, tmsEmbeddedInstrumentIdentifierLinks.self) &&
-        Objects.equals(this.paymentInstruments, tmsEmbeddedInstrumentIdentifierLinks.paymentInstruments);
+        Objects.equals(this.paymentInstruments, tmsEmbeddedInstrumentIdentifierLinks.paymentInstruments) &&
+        Objects.equals(this.tokenizedCards, tmsEmbeddedInstrumentIdentifierLinks.tokenizedCards);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, paymentInstruments);
+    return Objects.hash(self, paymentInstruments, tokenizedCards);
   }
 
 
@@ -100,6 +123,7 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
     
     if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
     if (paymentInstruments != null) sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
+    if (tokenizedCards != null) sb.append("    tokenizedCards: ").append(toIndentedString(tokenizedCards)).append("\n");
     sb.append("}");
     return sb.toString();
   }

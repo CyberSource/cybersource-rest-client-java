@@ -101,6 +101,9 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   @SerializedName("emiEligible")
   private Boolean emiEligible = null;
 
+  @SerializedName("fleetCard")
+  private Boolean fleetCard = null;
+
   public TmsBinLookupPaymentAccountInformationFeatures accountFundingSource(String accountFundingSource) {
     this.accountFundingSource = accountFundingSource;
     return this;
@@ -533,6 +536,24 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     this.emiEligible = emiEligible;
   }
 
+  public TmsBinLookupPaymentAccountInformationFeatures fleetCard(Boolean fleetCard) {
+    this.fleetCard = fleetCard;
+    return this;
+  }
+
+   /**
+   * This field indicates if the BIN is designated for fuel/fleet usage. These specialized BINs support additional Level2/Level 3 transaction data. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return fleetCard
+  **/
+  @ApiModelProperty(value = "This field indicates if the BIN is designated for fuel/fleet usage. These specialized BINs support additional Level2/Level 3 transaction data. Possible values:     - `true`     - `false` ")
+  public Boolean FleetCard() {
+    return fleetCard;
+  }
+
+  public void setFleetCard(Boolean fleetCard) {
+    this.fleetCard = fleetCard;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -566,12 +587,13 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
         Objects.equals(this.productIdSubtype, tmsBinLookupPaymentAccountInformationFeatures.productIdSubtype) &&
         Objects.equals(this.threeDSSupport, tmsBinLookupPaymentAccountInformationFeatures.threeDSSupport) &&
         Objects.equals(this.siEligible, tmsBinLookupPaymentAccountInformationFeatures.siEligible) &&
-        Objects.equals(this.emiEligible, tmsBinLookupPaymentAccountInformationFeatures.emiEligible);
+        Objects.equals(this.emiEligible, tmsBinLookupPaymentAccountInformationFeatures.emiEligible) &&
+        Objects.equals(this.fleetCard, tmsBinLookupPaymentAccountInformationFeatures.fleetCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential, productId, productIdSubtype, threeDSSupport, siEligible, emiEligible);
+    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential, productId, productIdSubtype, threeDSSupport, siEligible, emiEligible, fleetCard);
   }
 
 
@@ -604,6 +626,7 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     if (threeDSSupport != null) sb.append("    threeDSSupport: ").append(toIndentedString(threeDSSupport)).append("\n");
     if (siEligible != null) sb.append("    siEligible: ").append(toIndentedString(siEligible)).append("\n");
     if (emiEligible != null) sb.append("    emiEligible: ").append(toIndentedString(emiEligible)).append("\n");
+    if (fleetCard != null) sb.append("    fleetCard: ").append(toIndentedString(fleetCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

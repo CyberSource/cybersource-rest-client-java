@@ -45,7 +45,8 @@ public class InvoiceSettingsApiTest {
      */
     @Test
     public void getInvoiceSettingsTest() throws Exception {
-        InvoicingV2InvoiceSettingsGet200Response response = api.getInvoiceSettings();
+        String productType = null;
+        InvoicingV2InvoiceSettingsGet200Response response = api.getInvoiceSettings(productType);
 
         // TODO: test validations
     }
@@ -61,7 +62,8 @@ public class InvoiceSettingsApiTest {
     @Test
     public void updateInvoiceSettingsTest() throws Exception {
         InvoiceSettingsRequest invoiceSettingsRequest = null;
-        InvoicingV2InvoiceSettingsGet200Response response = api.updateInvoiceSettings(invoiceSettingsRequest);
+        String productType = null;
+        InvoicingV2InvoiceSettingsGet200Response response = api.updateInvoiceSettings(invoiceSettingsRequest, productType);
 
         // TODO: test validations
     }

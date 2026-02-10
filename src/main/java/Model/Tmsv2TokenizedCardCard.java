@@ -27,9 +27,8 @@ import java.io.IOException;
 import org.joda.time.LocalDate;
 
 /**
- * Card object used to create a network token 
+ * Tmsv2TokenizedCardCard
  */
-@ApiModel(description = "Card object used to create a network token ")
 
 public class Tmsv2TokenizedCardCard {
   @SerializedName("number")
@@ -68,10 +67,10 @@ public class Tmsv2TokenizedCardCard {
   }
 
    /**
-   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN). 
+   * The latest customer&#39;s payment card number associated to the network token. 
    * @return number
   **/
-  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN). ")
+  @ApiModelProperty(value = "The latest customer's payment card number associated to the network token. ")
   public String getNumber() {
     return number;
   }

@@ -69,13 +69,14 @@ public class InvoiceSettingsApi {
 
     /**
      * Build call for getInvoiceSettings
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getInvoiceSettingsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call getInvoiceSettingsCall(String productType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -99,6 +100,8 @@ public class InvoiceSettingsApi {
         String localVarPath = "/invoicing/v2/invoiceSettings";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (productType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "productType", productType));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -133,10 +136,10 @@ public class InvoiceSettingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInvoiceSettingsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call getInvoiceSettingsValidateBeforeCall(String productType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
-        okhttp3.Call call = getInvoiceSettingsCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getInvoiceSettingsCall(productType, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,13 +151,14 @@ public class InvoiceSettingsApi {
     /**
      * Get Invoice Settings
      * Allows you to retrieve the invoice settings for the payment page.
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException, ConfigException {
+    public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings(String productType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
-        ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
+        ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo(productType);
         logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
         return resp.getData();
     }
@@ -162,13 +166,14 @@ public class InvoiceSettingsApi {
     /**
      * Get Invoice Settings
      * Allows you to retrieve the invoice settings for the payment page.
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> getInvoiceSettingsWithHttpInfo() throws ApiException, ConfigException {
+    public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> getInvoiceSettingsWithHttpInfo(String productType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(null, null);
+        okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(productType, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -176,12 +181,13 @@ public class InvoiceSettingsApi {
     /**
      * Get Invoice Settings (asynchronously)
      * Allows you to retrieve the invoice settings for the payment page.
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getInvoiceSettingsAsync(final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getInvoiceSettingsAsync(String productType, final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -203,7 +209,7 @@ public class InvoiceSettingsApi {
             };
         }
 
-        okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(productType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -211,13 +217,14 @@ public class InvoiceSettingsApi {
     /**
      * Build call for updateInvoiceSettings
      * @param invoiceSettingsRequest  (required)
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateInvoiceSettingsCall(InvoiceSettingsRequest invoiceSettingsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call updateInvoiceSettingsCall(InvoiceSettingsRequest invoiceSettingsRequest, String productType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(invoiceSettingsRequest, InvoiceSettingsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -238,6 +245,8 @@ public class InvoiceSettingsApi {
         String localVarPath = "/invoicing/v2/invoiceSettings";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (productType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "productType", productType));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -272,7 +281,7 @@ public class InvoiceSettingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateInvoiceSettingsValidateBeforeCall(InvoiceSettingsRequest invoiceSettingsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call updateInvoiceSettingsValidateBeforeCall(InvoiceSettingsRequest invoiceSettingsRequest, String productType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'invoiceSettingsRequest' is set
         if (invoiceSettingsRequest == null) {
@@ -281,7 +290,7 @@ public class InvoiceSettingsApi {
         }
         
         
-        okhttp3.Call call = updateInvoiceSettingsCall(invoiceSettingsRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = updateInvoiceSettingsCall(invoiceSettingsRequest, productType, progressListener, progressRequestListener);
         return call;
 
         
@@ -294,13 +303,14 @@ public class InvoiceSettingsApi {
      * Update Invoice Settings
      * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException, ConfigException {
+    public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest, String productType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
-        ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
+        ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest, productType);
         logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");
         return resp.getData();
     }
@@ -309,13 +319,14 @@ public class InvoiceSettingsApi {
      * Update Invoice Settings
      * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> updateInvoiceSettingsWithHttpInfo(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException, ConfigException {
+    public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> updateInvoiceSettingsWithHttpInfo(InvoiceSettingsRequest invoiceSettingsRequest, String productType) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, null, null);
+        okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, productType, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -324,12 +335,13 @@ public class InvoiceSettingsApi {
      * Update Invoice Settings (asynchronously)
      * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
+     * @param productType Allows you to choose which product type settings you want to update. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateInvoiceSettingsAsync(InvoiceSettingsRequest invoiceSettingsRequest, final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
+    public okhttp3.Call updateInvoiceSettingsAsync(InvoiceSettingsRequest invoiceSettingsRequest, String productType, final ApiCallback<InvoicingV2InvoiceSettingsGet200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -351,7 +363,7 @@ public class InvoiceSettingsApi {
             };
         }
 
-        okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, productType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

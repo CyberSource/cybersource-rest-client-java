@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.CardProcessingConfigCommonAcquirerAgreement;
 import Model.CardProcessingConfigCommonMerchantDescriptorInformation;
 import Model.CardProcessingConfigCommonProcessors;
 import com.google.gson.TypeAdapter;
@@ -96,6 +97,9 @@ public class CardProcessingConfigCommon {
 
   @SerializedName("merchantDescriptorInformation")
   private CardProcessingConfigCommonMerchantDescriptorInformation merchantDescriptorInformation = null;
+
+  @SerializedName("acquirerAgreement")
+  private CardProcessingConfigCommonAcquirerAgreement acquirerAgreement = null;
 
   @SerializedName("governmentControlled")
   private Boolean governmentControlled = null;
@@ -489,6 +493,24 @@ public class CardProcessingConfigCommon {
     this.merchantDescriptorInformation = merchantDescriptorInformation;
   }
 
+  public CardProcessingConfigCommon acquirerAgreement(CardProcessingConfigCommonAcquirerAgreement acquirerAgreement) {
+    this.acquirerAgreement = acquirerAgreement;
+    return this;
+  }
+
+   /**
+   * Get acquirerAgreement
+   * @return acquirerAgreement
+  **/
+  @ApiModelProperty(value = "")
+  public CardProcessingConfigCommonAcquirerAgreement getAcquirerAgreement() {
+    return acquirerAgreement;
+  }
+
+  public void setAcquirerAgreement(CardProcessingConfigCommonAcquirerAgreement acquirerAgreement) {
+    this.acquirerAgreement = acquirerAgreement;
+  }
+
   public CardProcessingConfigCommon governmentControlled(Boolean governmentControlled) {
     this.governmentControlled = governmentControlled;
     return this;
@@ -556,13 +578,14 @@ public class CardProcessingConfigCommon {
         Objects.equals(this.subMerchantBusinessName, cardProcessingConfigCommon.subMerchantBusinessName) &&
         Objects.equals(this.preferCobadgedSecondaryBrand, cardProcessingConfigCommon.preferCobadgedSecondaryBrand) &&
         Objects.equals(this.merchantDescriptorInformation, cardProcessingConfigCommon.merchantDescriptorInformation) &&
+        Objects.equals(this.acquirerAgreement, cardProcessingConfigCommon.acquirerAgreement) &&
         Objects.equals(this.governmentControlled, cardProcessingConfigCommon.governmentControlled) &&
         Objects.equals(this.dropBillingInfo, cardProcessingConfigCommon.dropBillingInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processors, amexVendorCode, defaultAuthTypeCode, masterCardAssignedId, enablePartialAuth, merchantCategoryCode, sicCode, foodAndConsumerServiceId, enableSplitShipment, enableInterchangeOptimization, visaDelegatedAuthenticationId, creditCardRefundLimitPercent, businessCenterCreditCardRefundLimitPercent, allowCapturesGreaterThanAuthorizations, enableDuplicateMerchantReferenceNumberBlocking, domesticMerchantId, processLevel3Data, subMerchantId, subMerchantBusinessName, preferCobadgedSecondaryBrand, merchantDescriptorInformation, governmentControlled, dropBillingInfo);
+    return Objects.hash(processors, amexVendorCode, defaultAuthTypeCode, masterCardAssignedId, enablePartialAuth, merchantCategoryCode, sicCode, foodAndConsumerServiceId, enableSplitShipment, enableInterchangeOptimization, visaDelegatedAuthenticationId, creditCardRefundLimitPercent, businessCenterCreditCardRefundLimitPercent, allowCapturesGreaterThanAuthorizations, enableDuplicateMerchantReferenceNumberBlocking, domesticMerchantId, processLevel3Data, subMerchantId, subMerchantBusinessName, preferCobadgedSecondaryBrand, merchantDescriptorInformation, acquirerAgreement, governmentControlled, dropBillingInfo);
   }
 
 
@@ -592,6 +615,7 @@ public class CardProcessingConfigCommon {
     if (subMerchantBusinessName != null) sb.append("    subMerchantBusinessName: ").append(toIndentedString(subMerchantBusinessName)).append("\n");
     if (preferCobadgedSecondaryBrand != null) sb.append("    preferCobadgedSecondaryBrand: ").append(toIndentedString(preferCobadgedSecondaryBrand)).append("\n");
     if (merchantDescriptorInformation != null) sb.append("    merchantDescriptorInformation: ").append(toIndentedString(merchantDescriptorInformation)).append("\n");
+    if (acquirerAgreement != null) sb.append("    acquirerAgreement: ").append(toIndentedString(acquirerAgreement)).append("\n");
     if (governmentControlled != null) sb.append("    governmentControlled: ").append(toIndentedString(governmentControlled)).append("\n");
     if (dropBillingInfo != null) sb.append("    dropBillingInfo: ").append(toIndentedString(dropBillingInfo)).append("\n");
     sb.append("}");

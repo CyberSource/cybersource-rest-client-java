@@ -13,8 +13,8 @@
 
 package Api;
 
-import Model.InlineResponse2004;
-import Model.InlineResponse2013;
+import Model.InlineResponse2005;
+import Model.InlineResponse2014;
 import Model.InlineResponse4007;
 import Model.InlineResponse4042;
 import Model.InlineResponse4221;
@@ -49,7 +49,7 @@ public class MerchantBoardingApiTest {
     @Test
     public void getRegistrationTest() throws Exception {
         String registrationId = null;
-        InlineResponse2004 response = api.getRegistration(registrationId);
+        InlineResponse2005 response = api.getRegistration(registrationId);
 
         // TODO: test validations
     }
@@ -66,7 +66,7 @@ public class MerchantBoardingApiTest {
     public void postRegistrationTest() throws Exception {
         PostRegistrationBody postRegistrationBody = null;
         String vCIdempotencyId = null;
-        InlineResponse2013 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
+        InlineResponse2014 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
 
         // TODO: test validations
     }

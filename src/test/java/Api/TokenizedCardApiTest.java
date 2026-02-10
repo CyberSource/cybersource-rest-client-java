@@ -13,6 +13,7 @@
 
 package Api;
 
+import Model.InlineResponse2001;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse409;
@@ -20,7 +21,7 @@ import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PostIssuerLifeCycleSimulationRequest;
-import Model.TokenizedcardRequest;
+import Model.PostTokenizedCardRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -68,7 +69,7 @@ public class TokenizedCardApiTest {
     public void getTokenizedCardTest() throws Exception {
         String tokenizedCardId = null;
         String profileId = null;
-        TokenizedcardRequest response = api.getTokenizedCard(tokenizedCardId, profileId);
+        InlineResponse2001 response = api.getTokenizedCard(tokenizedCardId, profileId);
 
         // TODO: test validations
     }
@@ -101,9 +102,9 @@ public class TokenizedCardApiTest {
      */
     @Test
     public void postTokenizedCardTest() throws Exception {
-        TokenizedcardRequest tokenizedcardRequest = null;
+        PostTokenizedCardRequest postTokenizedCardRequest = null;
         String profileId = null;
-        TokenizedcardRequest response = api.postTokenizedCard(tokenizedcardRequest, profileId);
+        InlineResponse2001 response = api.postTokenizedCard(postTokenizedCardRequest, profileId);
 
         // TODO: test validations
     }

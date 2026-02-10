@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **threeDSSupport** | **Boolean** | This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60;  |  [optional]
 **siEligible** | **Boolean** | This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60;  |  [optional]
 **emiEligible** | **Boolean** | This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60;  |  [optional]
+**fleetCard** | **Boolean** | This field indicates if the BIN is designated for fuel/fleet usage. These specialized BINs support additional Level2/Level 3 transaction data. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60;  |  [optional]
 
 
 

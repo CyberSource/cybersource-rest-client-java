@@ -35,6 +35,9 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
   @SerializedName("authorizedAmount")
   private String authorizedAmount = null;
 
+  @SerializedName("cashbackAmount")
+  private String cashbackAmount = null;
+
   @SerializedName("currency")
   private String currency = null;
 
@@ -99,6 +102,24 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
 
   public void setAuthorizedAmount(String authorizedAmount) {
     this.authorizedAmount = authorizedAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails cashbackAmount(String cashbackAmount) {
+    this.cashbackAmount = cashbackAmount;
+    return this;
+  }
+
+   /**
+   * This field contains the purchase cashback amount expressed in the acquirer transaction currency.  Use this field only for clearing with your acquirer. 
+   * @return cashbackAmount
+  **/
+  @ApiModelProperty(value = "This field contains the purchase cashback amount expressed in the acquirer transaction currency.  Use this field only for clearing with your acquirer. ")
+  public String getCashbackAmount() {
+    return cashbackAmount;
+  }
+
+  public void setCashbackAmount(String cashbackAmount) {
+    this.cashbackAmount = cashbackAmount;
   }
 
   public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails currency(String currency) {
@@ -293,6 +314,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     PtsV2PaymentsPost201ResponseOrderInformationAmountDetails ptsV2PaymentsPost201ResponseOrderInformationAmountDetails = (PtsV2PaymentsPost201ResponseOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.authorizedAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.authorizedAmount) &&
+        Objects.equals(this.cashbackAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.cashbackAmount) &&
         Objects.equals(this.currency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.currency) &&
         Objects.equals(this.settlementAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.settlementAmount) &&
         Objects.equals(this.settlementCurrency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.settlementCurrency) &&
@@ -307,7 +329,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, authorizedAmount, currency, settlementAmount, settlementCurrency, originalAmount, originalCurrency, processorTransactionFee, exchangeRate, foreignCurrency, foreignAmount, discountAmount);
+    return Objects.hash(totalAmount, authorizedAmount, cashbackAmount, currency, settlementAmount, settlementCurrency, originalAmount, originalCurrency, processorTransactionFee, exchangeRate, foreignCurrency, foreignAmount, discountAmount);
   }
 
 
@@ -318,6 +340,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     
     if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
+    if (cashbackAmount != null) sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
     if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
