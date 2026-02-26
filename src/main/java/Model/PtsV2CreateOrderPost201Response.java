@@ -33,6 +33,9 @@ import java.io.IOException;
  */
 
 public class PtsV2CreateOrderPost201Response {
+  @SerializedName("id")
+  private String id = null;
+
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
@@ -56,6 +59,24 @@ public class PtsV2CreateOrderPost201Response {
 
   @SerializedName("buyerInformation")
   private PtsV2CreateOrderPost201ResponseBuyerInformation buyerInformation = null;
+
+  public PtsV2CreateOrderPost201Response id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * A unique identification number assigned by CyberSource to identify the order request. Use this id to call subsequent services such as the authorization API.
+   * @return id
+  **/
+  @ApiModelProperty(value = "A unique identification number assigned by CyberSource to identify the order request. Use this id to call subsequent services such as the authorization API.")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
   public PtsV2CreateOrderPost201Response submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -211,7 +232,8 @@ public class PtsV2CreateOrderPost201Response {
       return false;
     }
     PtsV2CreateOrderPost201Response ptsV2CreateOrderPost201Response = (PtsV2CreateOrderPost201Response) o;
-    return Objects.equals(this.submitTimeUtc, ptsV2CreateOrderPost201Response.submitTimeUtc) &&
+    return Objects.equals(this.id, ptsV2CreateOrderPost201Response.id) &&
+        Objects.equals(this.submitTimeUtc, ptsV2CreateOrderPost201Response.submitTimeUtc) &&
         Objects.equals(this.updateTimeUtc, ptsV2CreateOrderPost201Response.updateTimeUtc) &&
         Objects.equals(this.status, ptsV2CreateOrderPost201Response.status) &&
         Objects.equals(this.reconciliationId, ptsV2CreateOrderPost201Response.reconciliationId) &&
@@ -223,7 +245,7 @@ public class PtsV2CreateOrderPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, updateTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, paymentInformation, buyerInformation);
+    return Objects.hash(id, submitTimeUtc, updateTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, paymentInformation, buyerInformation);
   }
 
 
@@ -232,6 +254,7 @@ public class PtsV2CreateOrderPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateOrderPost201Response {\n");
     
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
