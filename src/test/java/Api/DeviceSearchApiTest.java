@@ -18,7 +18,7 @@ import Model.InlineResponse2009;
 import Model.InlineResponse4008;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
-import Model.InlineResponse4044;
+import Model.InlineResponse4045;
 import Model.InlineResponse5003;
 import Model.PostDeviceSearchRequest;
 import Model.PostDeviceSearchRequestV3;

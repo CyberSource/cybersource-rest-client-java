@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.Riskv1liststypeentriesBuyerInformation;
-import Model.Riskv1liststypeentriesClientReferenceInformation;
 import Model.Riskv1liststypeentriesDeviceInformation;
 import Model.Riskv1liststypeentriesOrderInformation;
 import Model.Riskv1liststypeentriesPaymentInformation;
@@ -42,7 +42,7 @@ public class AddNegativeListRequest {
   private Riskv1liststypeentriesPaymentInformation paymentInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("deviceInformation")
   private Riskv1liststypeentriesDeviceInformation deviceInformation = null;
@@ -89,7 +89,7 @@ public class AddNegativeListRequest {
     this.paymentInformation = paymentInformation;
   }
 
-  public AddNegativeListRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public AddNegativeListRequest clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -99,11 +99,11 @@ public class AddNegativeListRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

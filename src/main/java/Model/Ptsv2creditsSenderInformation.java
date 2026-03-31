@@ -45,6 +45,9 @@ public class Ptsv2creditsSenderInformation {
   @SerializedName("countryCode")
   private String countryCode = null;
 
+  @SerializedName("administrativeArea")
+  private String administrativeArea = null;
+
   @SerializedName("account")
   private Ptsv2creditsSenderInformationAccount account = null;
 
@@ -138,6 +141,24 @@ public class Ptsv2creditsSenderInformation {
     this.countryCode = countryCode;
   }
 
+  public Ptsv2creditsSenderInformation administrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+    return this;
+  }
+
+   /**
+   * The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value 
+   * @return administrativeArea
+  **/
+  @ApiModelProperty(value = "The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value ")
+  public String getAdministrativeArea() {
+    return administrativeArea;
+  }
+
+  public void setAdministrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+  }
+
   public Ptsv2creditsSenderInformation account(Ptsv2creditsSenderInformationAccount account) {
     this.account = account;
     return this;
@@ -171,12 +192,13 @@ public class Ptsv2creditsSenderInformation {
         Objects.equals(this.address1, ptsv2creditsSenderInformation.address1) &&
         Objects.equals(this.locality, ptsv2creditsSenderInformation.locality) &&
         Objects.equals(this.countryCode, ptsv2creditsSenderInformation.countryCode) &&
+        Objects.equals(this.administrativeArea, ptsv2creditsSenderInformation.administrativeArea) &&
         Objects.equals(this.account, ptsv2creditsSenderInformation.account);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, address1, locality, countryCode, account);
+    return Objects.hash(firstName, lastName, address1, locality, countryCode, administrativeArea, account);
   }
 
 
@@ -190,6 +212,7 @@ public class Ptsv2creditsSenderInformation {
     if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("}");
     return sb.toString();

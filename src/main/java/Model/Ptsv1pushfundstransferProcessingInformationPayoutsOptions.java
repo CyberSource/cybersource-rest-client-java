@@ -122,10 +122,10 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
   }
 
    /**
-   * Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. 
+   * Visa (maxLength of 15) or MasterCard (maxLength of 40) generated transaction identifier (TID) that is unique for each original authorization and financial request. 
    * @return accountFundingReferenceId
   **/
-  @ApiModelProperty(value = "Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. ")
+  @ApiModelProperty(value = "Visa (maxLength of 15) or MasterCard (maxLength of 40) generated transaction identifier (TID) that is unique for each original authorization and financial request. ")
   public String getAccountFundingReferenceId() {
     return accountFundingReferenceId;
   }

@@ -180,7 +180,7 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
    * &#x60;Format: YYYY-MM-DD&#x60; Example 2016-08-11 equals August 11, 2016 
    * @return startDate
   **/
-  @ApiModelProperty(example = "2019-06-11T00:00:00.000Z", value = "`Format: YYYY-MM-DD` Example 2016-08-11 equals August 11, 2016 ")
+  @ApiModelProperty(example = "2019-06-11", value = "`Format: YYYY-MM-DD` Example 2016-08-11 equals August 11, 2016 ")
   public LocalDate getStartDate() {
     return startDate;
   }

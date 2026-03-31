@@ -104,10 +104,10 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
   }
 
    /**
-   * Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. 
+   * Visa (maxLength of 15) or MasterCard (maxLength of 40) generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. 
    * @return accountFundingReferenceId
   **/
-  @ApiModelProperty(value = "Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. ")
+  @ApiModelProperty(value = "Visa (maxLength of 15) or MasterCard (maxLength of 40) generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. ")
   public String getAccountFundingReferenceId() {
     return accountFundingReferenceId;
   }

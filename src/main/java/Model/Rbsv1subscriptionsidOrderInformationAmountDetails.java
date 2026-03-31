@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,6 +35,9 @@ public class Rbsv1subscriptionsidOrderInformationAmountDetails {
 
   @SerializedName("setupFee")
   private String setupFee = null;
+
+  @SerializedName("surcharge")
+  private GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge surcharge = null;
 
   public Rbsv1subscriptionsidOrderInformationAmountDetails billingAmount(String billingAmount) {
     this.billingAmount = billingAmount;
@@ -71,6 +75,24 @@ public class Rbsv1subscriptionsidOrderInformationAmountDetails {
     this.setupFee = setupFee;
   }
 
+  public Rbsv1subscriptionsidOrderInformationAmountDetails surcharge(GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge surcharge) {
+    this.surcharge = surcharge;
+    return this;
+  }
+
+   /**
+   * Get surcharge
+   * @return surcharge
+  **/
+  @ApiModelProperty(value = "")
+  public GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge getSurcharge() {
+    return surcharge;
+  }
+
+  public void setSurcharge(GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge surcharge) {
+    this.surcharge = surcharge;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +104,13 @@ public class Rbsv1subscriptionsidOrderInformationAmountDetails {
     }
     Rbsv1subscriptionsidOrderInformationAmountDetails rbsv1subscriptionsidOrderInformationAmountDetails = (Rbsv1subscriptionsidOrderInformationAmountDetails) o;
     return Objects.equals(this.billingAmount, rbsv1subscriptionsidOrderInformationAmountDetails.billingAmount) &&
-        Objects.equals(this.setupFee, rbsv1subscriptionsidOrderInformationAmountDetails.setupFee);
+        Objects.equals(this.setupFee, rbsv1subscriptionsidOrderInformationAmountDetails.setupFee) &&
+        Objects.equals(this.surcharge, rbsv1subscriptionsidOrderInformationAmountDetails.surcharge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAmount, setupFee);
+    return Objects.hash(billingAmount, setupFee, surcharge);
   }
 
 
@@ -98,6 +121,7 @@ public class Rbsv1subscriptionsidOrderInformationAmountDetails {
     
     if (billingAmount != null) sb.append("    billingAmount: ").append(toIndentedString(billingAmount)).append("\n");
     if (setupFee != null) sb.append("    setupFee: ").append(toIndentedString(setupFee)).append("\n");
+    if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

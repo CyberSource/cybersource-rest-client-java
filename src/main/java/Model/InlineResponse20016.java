@@ -16,8 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.InlineResponse20016ClientReferenceInformation;
-import Model.InlineResponse20016ErrorInformation;
-import Model.InlineResponse20016OrderInformation;
+import Model.InlineResponse2019ErrorInformation;
+import Model.InlineResponse2019OrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,10 +45,10 @@ public class InlineResponse20016 {
   private String status = null;
 
   @SerializedName("errorInformation")
-  private InlineResponse20016ErrorInformation errorInformation = null;
+  private InlineResponse2019ErrorInformation errorInformation = null;
 
   @SerializedName("orderInformation")
-  private InlineResponse20016OrderInformation orderInformation = null;
+  private InlineResponse2019OrderInformation orderInformation = null;
 
   public InlineResponse20016 clientReferenceInformation(InlineResponse20016ClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -122,7 +122,7 @@ public class InlineResponse20016 {
     this.status = status;
   }
 
-  public InlineResponse20016 errorInformation(InlineResponse20016ErrorInformation errorInformation) {
+  public InlineResponse20016 errorInformation(InlineResponse2019ErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -132,15 +132,15 @@ public class InlineResponse20016 {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse20016ErrorInformation getErrorInformation() {
+  public InlineResponse2019ErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(InlineResponse20016ErrorInformation errorInformation) {
+  public void setErrorInformation(InlineResponse2019ErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
-  public InlineResponse20016 orderInformation(InlineResponse20016OrderInformation orderInformation) {
+  public InlineResponse20016 orderInformation(InlineResponse2019OrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -150,11 +150,11 @@ public class InlineResponse20016 {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse20016OrderInformation getOrderInformation() {
+  public InlineResponse2019OrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(InlineResponse20016OrderInformation orderInformation) {
+  public void setOrderInformation(InlineResponse2019OrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 

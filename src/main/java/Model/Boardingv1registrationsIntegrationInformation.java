@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Boardingv1registrationsIntegrationInformationMsd;
 import Model.Boardingv1registrationsIntegrationInformationOauth2;
 import Model.Boardingv1registrationsIntegrationInformationTenantConfigurations;
 import com.google.gson.TypeAdapter;
@@ -38,6 +39,9 @@ public class Boardingv1registrationsIntegrationInformation {
 
   @SerializedName("tenantConfigurations")
   private List<Boardingv1registrationsIntegrationInformationTenantConfigurations> tenantConfigurations = null;
+
+  @SerializedName("msd")
+  private Boardingv1registrationsIntegrationInformationMsd msd = null;
 
   public Boardingv1registrationsIntegrationInformation oauth2(List<Boardingv1registrationsIntegrationInformationOauth2> oauth2) {
     this.oauth2 = oauth2;
@@ -91,6 +95,24 @@ public class Boardingv1registrationsIntegrationInformation {
     this.tenantConfigurations = tenantConfigurations;
   }
 
+  public Boardingv1registrationsIntegrationInformation msd(Boardingv1registrationsIntegrationInformationMsd msd) {
+    this.msd = msd;
+    return this;
+  }
+
+   /**
+   * Get msd
+   * @return msd
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsIntegrationInformationMsd getMsd() {
+    return msd;
+  }
+
+  public void setMsd(Boardingv1registrationsIntegrationInformationMsd msd) {
+    this.msd = msd;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,12 +124,13 @@ public class Boardingv1registrationsIntegrationInformation {
     }
     Boardingv1registrationsIntegrationInformation boardingv1registrationsIntegrationInformation = (Boardingv1registrationsIntegrationInformation) o;
     return Objects.equals(this.oauth2, boardingv1registrationsIntegrationInformation.oauth2) &&
-        Objects.equals(this.tenantConfigurations, boardingv1registrationsIntegrationInformation.tenantConfigurations);
+        Objects.equals(this.tenantConfigurations, boardingv1registrationsIntegrationInformation.tenantConfigurations) &&
+        Objects.equals(this.msd, boardingv1registrationsIntegrationInformation.msd);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(oauth2, tenantConfigurations);
+    return Objects.hash(oauth2, tenantConfigurations, msd);
   }
 
 
@@ -118,6 +141,7 @@ public class Boardingv1registrationsIntegrationInformation {
     
     if (oauth2 != null) sb.append("    oauth2: ").append(toIndentedString(oauth2)).append("\n");
     if (tenantConfigurations != null) sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
+    if (msd != null) sb.append("    msd: ").append(toIndentedString(msd)).append("\n");
     sb.append("}");
     return sb.toString();
   }

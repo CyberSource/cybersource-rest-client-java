@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.Riskv1decisionsidmarkingRiskInformation;
-import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class FraudMarkingActionRequest {
   private Riskv1decisionsidmarkingRiskInformation riskInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   public FraudMarkingActionRequest riskInformation(Riskv1decisionsidmarkingRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
@@ -55,7 +55,7 @@ public class FraudMarkingActionRequest {
     this.riskInformation = riskInformation;
   }
 
-  public FraudMarkingActionRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public FraudMarkingActionRequest clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -65,11 +65,11 @@ public class FraudMarkingActionRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

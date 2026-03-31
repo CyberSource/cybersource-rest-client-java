@@ -122,10 +122,10 @@ public class Tmsv2TokenizedCard {
   }
 
    /**
-   * State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token. 
+   * State of the network token or network token provision. Possible Values:   - ACTIVE : Network token is active.   - SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   - DELETED : This is a final state for a network token instance.   - UNPROVISIONED : A previous network token. 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token. ")
+  @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision. Possible Values:   - ACTIVE : Network token is active.   - SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   - DELETED : This is a final state for a network token instance.   - UNPROVISIONED : A previous network token. ")
   public String getState() {
     return state;
   }

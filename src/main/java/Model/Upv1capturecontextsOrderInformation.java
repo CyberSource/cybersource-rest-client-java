@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Upv1capturecontextsDataOrderInformationBillTo;
 import Model.Upv1capturecontextsDataOrderInformationShipTo;
 import Model.Upv1capturecontextsOrderInformationAmountDetails;
+import Model.Upv1capturecontextsOrderInformationBillTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,7 @@ public class Upv1capturecontextsOrderInformation {
   private Upv1capturecontextsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("billTo")
-  private Upv1capturecontextsDataOrderInformationBillTo billTo = null;
+  private Upv1capturecontextsOrderInformationBillTo billTo = null;
 
   @SerializedName("shipTo")
   private Upv1capturecontextsDataOrderInformationShipTo shipTo = null;
@@ -60,7 +60,7 @@ public class Upv1capturecontextsOrderInformation {
     this.amountDetails = amountDetails;
   }
 
-  public Upv1capturecontextsOrderInformation billTo(Upv1capturecontextsDataOrderInformationBillTo billTo) {
+  public Upv1capturecontextsOrderInformation billTo(Upv1capturecontextsOrderInformationBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -70,11 +70,11 @@ public class Upv1capturecontextsOrderInformation {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationBillTo getBillTo() {
+  public Upv1capturecontextsOrderInformationBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Upv1capturecontextsDataOrderInformationBillTo billTo) {
+  public void setBillTo(Upv1capturecontextsOrderInformationBillTo billTo) {
     this.billTo = billTo;
   }
 

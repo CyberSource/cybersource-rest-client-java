@@ -120,6 +120,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("nationalNetDomesticData")
   private String nationalNetDomesticData = null;
 
+  @SerializedName("merchantVerificationValue")
+  private String merchantVerificationValue = null;
+
   @SerializedName("japanPaymentOptions")
   private Ptsv2paymentsProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
 
@@ -668,6 +671,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.nationalNetDomesticData = nationalNetDomesticData;
   }
 
+  public Ptsv2paymentsProcessingInformation merchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+    return this;
+  }
+
+   /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: &#x60;101010&#x60; 
+   * @return merchantVerificationValue
+  **/
+  @ApiModelProperty(value = "The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` ")
+  public String getMerchantVerificationValue() {
+    return merchantVerificationValue;
+  }
+
+  public void setMerchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+  }
+
   public Ptsv2paymentsProcessingInformation japanPaymentOptions(Ptsv2paymentsProcessingInformationJapanPaymentOptions japanPaymentOptions) {
     this.japanPaymentOptions = japanPaymentOptions;
     return this;
@@ -975,6 +996,7 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.loanOptions, ptsv2paymentsProcessingInformation.loanOptions) &&
         Objects.equals(this.walletType, ptsv2paymentsProcessingInformation.walletType) &&
         Objects.equals(this.nationalNetDomesticData, ptsv2paymentsProcessingInformation.nationalNetDomesticData) &&
+        Objects.equals(this.merchantVerificationValue, ptsv2paymentsProcessingInformation.merchantVerificationValue) &&
         Objects.equals(this.japanPaymentOptions, ptsv2paymentsProcessingInformation.japanPaymentOptions) &&
         Objects.equals(this.mobileRemotePaymentType, ptsv2paymentsProcessingInformation.mobileRemotePaymentType) &&
         Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
@@ -994,7 +1016,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId);
   }
 
 
@@ -1030,6 +1052,7 @@ public class Ptsv2paymentsProcessingInformation {
     if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
     if (walletType != null) sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
     if (nationalNetDomesticData != null) sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
     if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
     if (mobileRemotePaymentType != null) sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
     if (extendedCreditTotalCount != null) sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");

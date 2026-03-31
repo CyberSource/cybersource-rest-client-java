@@ -51,6 +51,9 @@ public class Ptsv1pushfundstransferProcessingInformation {
   @SerializedName("purposeOfPayment")
   private String purposeOfPayment = null;
 
+  @SerializedName("reconciliationId")
+  private String reconciliationId = null;
+
   public Ptsv1pushfundstransferProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
     return this;
@@ -177,6 +180,24 @@ public class Ptsv1pushfundstransferProcessingInformation {
     this.purposeOfPayment = purposeOfPayment;
   }
 
+  public Ptsv1pushfundstransferProcessingInformation reconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+    return this;
+  }
+
+   /**
+   * Transaction&#39;s reference number.
+   * @return reconciliationId
+  **/
+  @ApiModelProperty(value = "Transaction's reference number.")
+  public String getReconciliationId() {
+    return reconciliationId;
+  }
+
+  public void setReconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,12 +214,13 @@ public class Ptsv1pushfundstransferProcessingInformation {
         Objects.equals(this.networkPartnerId, ptsv1pushfundstransferProcessingInformation.networkPartnerId) &&
         Objects.equals(this.processingCode, ptsv1pushfundstransferProcessingInformation.processingCode) &&
         Objects.equals(this.sharingGroupCode, ptsv1pushfundstransferProcessingInformation.sharingGroupCode) &&
-        Objects.equals(this.purposeOfPayment, ptsv1pushfundstransferProcessingInformation.purposeOfPayment);
+        Objects.equals(this.purposeOfPayment, ptsv1pushfundstransferProcessingInformation.purposeOfPayment) &&
+        Objects.equals(this.reconciliationId, ptsv1pushfundstransferProcessingInformation.reconciliationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, payoutsOptions, feeProgramId, networkPartnerId, processingCode, sharingGroupCode, purposeOfPayment);
+    return Objects.hash(businessApplicationId, payoutsOptions, feeProgramId, networkPartnerId, processingCode, sharingGroupCode, purposeOfPayment, reconciliationId);
   }
 
 
@@ -214,6 +236,7 @@ public class Ptsv1pushfundstransferProcessingInformation {
     if (processingCode != null) sb.append("    processingCode: ").append(toIndentedString(processingCode)).append("\n");
     if (sharingGroupCode != null) sb.append("    sharingGroupCode: ").append(toIndentedString(sharingGroupCode)).append("\n");
     if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

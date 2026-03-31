@@ -51,10 +51,10 @@ public class Tmsv2tokenizeProcessingInformation {
   }
 
    /**
-   * Array of actions (one or more) to be included in the tokenize request.  Possible Values:   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your tokenize request. 
+   * Array of actions (one or more) to be included in the tokenize request.  Possible Values:  - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your tokenize request. 
    * @return actionList
   **/
-  @ApiModelProperty(example = "[\"TOKEN_CREATE\"]", value = "Array of actions (one or more) to be included in the tokenize request.  Possible Values:   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your tokenize request. ")
+  @ApiModelProperty(example = "[\"TOKEN_CREATE\"]", value = "Array of actions (one or more) to be included in the tokenize request.  Possible Values:  - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your tokenize request. ")
   public List<String> getActionList() {
     return actionList;
   }

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.GetAllPlansResponseOrderInformationAmountDetails;
+import Model.GetAllSubscriptionsResponseOrderInformationAmountDetails;
 import Model.GetAllSubscriptionsResponseOrderInformationBillTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class GetAllSubscriptionsResponseOrderInformation {
   @SerializedName("amountDetails")
-  private GetAllPlansResponseOrderInformationAmountDetails amountDetails = null;
+  private GetAllSubscriptionsResponseOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("billTo")
   private GetAllSubscriptionsResponseOrderInformationBillTo billTo = null;
 
-  public GetAllSubscriptionsResponseOrderInformation amountDetails(GetAllPlansResponseOrderInformationAmountDetails amountDetails) {
+  public GetAllSubscriptionsResponseOrderInformation amountDetails(GetAllSubscriptionsResponseOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -47,11 +47,11 @@ public class GetAllSubscriptionsResponseOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public GetAllPlansResponseOrderInformationAmountDetails getAmountDetails() {
+  public GetAllSubscriptionsResponseOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(GetAllPlansResponseOrderInformationAmountDetails amountDetails) {
+  public void setAmountDetails(GetAllSubscriptionsResponseOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
   }
 

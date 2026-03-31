@@ -33,7 +33,7 @@ import Model.CreateSubscriptionRequest1;
 import Model.CreateSubscriptionResponse;
 import Model.GetSubscriptionResponse1;
 import Model.InlineResponse4005;
-import Model.InlineResponse404;
+import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;

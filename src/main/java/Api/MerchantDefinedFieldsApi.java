@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse2004;
-import Model.InlineResponse4041;
+import Model.InlineResponse4042;
 import Model.MerchantDefinedFieldCore;
 import Model.MerchantDefinedFieldDefinitionRequest;
 

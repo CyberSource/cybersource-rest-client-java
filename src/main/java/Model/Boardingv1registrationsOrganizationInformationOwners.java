@@ -137,7 +137,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * &#x60;Format: YYYY-MM-DD&#x60; Example 2016-08-11 equals August 11, 2016 
    * @return birthDate
   **/
-  @ApiModelProperty(example = "2016-08-11T00:00:00.000Z", required = true, value = "`Format: YYYY-MM-DD` Example 2016-08-11 equals August 11, 2016 ")
+  @ApiModelProperty(example = "2016-08-11", required = true, value = "`Format: YYYY-MM-DD` Example 2016-08-11 equals August 11, 2016 ")
   public LocalDate getBirthDate() {
     return birthDate;
   }

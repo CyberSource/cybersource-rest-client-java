@@ -420,7 +420,7 @@ public class Upv1capturecontextsDataOrderInformationBillTo {
    * Customer&#39;s phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work 
    * @return phoneType
   **/
-  @ApiModelProperty(example = "phoneType", value = "Customer's phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work ")
+  @ApiModelProperty(example = "day", value = "Customer's phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work ")
   public String getPhoneType() {
     return phoneType;
   }

@@ -15,7 +15,27 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesAfterPay;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesApplePay;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesBancontact;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesClickToPay;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDecisionManager;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDragonPay;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesECheck;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesGooglePay;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesIdeal;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesKonbini;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMultibanco;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMyBank;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesP24;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayPal;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayerAuthentication;
 import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPazeForUnifiedCheckout;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPortfolioAccessofSensitiveData;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTinkPayByBank;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTokenManagement;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesUnifiedClickToPaySDK;
+import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesVenmo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,6 +52,66 @@ import java.io.IOException;
 public class PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures {
   @SerializedName("pazeForUnifiedCheckout")
   private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPazeForUnifiedCheckout pazeForUnifiedCheckout = null;
+
+  @SerializedName("tokenManagement")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTokenManagement tokenManagement = null;
+
+  @SerializedName("payPal")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayPal payPal = null;
+
+  @SerializedName("venmo")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesVenmo venmo = null;
+
+  @SerializedName("applePay")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesApplePay applePay = null;
+
+  @SerializedName("googlePay")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesGooglePay googlePay = null;
+
+  @SerializedName("tinkPayByBank")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTinkPayByBank tinkPayByBank = null;
+
+  @SerializedName("eCheck")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesECheck eCheck = null;
+
+  @SerializedName("p24")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesP24 p24 = null;
+
+  @SerializedName("myBank")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMyBank myBank = null;
+
+  @SerializedName("konbini")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesKonbini konbini = null;
+
+  @SerializedName("dragonPay")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDragonPay dragonPay = null;
+
+  @SerializedName("decisionManager")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDecisionManager decisionManager = null;
+
+  @SerializedName("payerAuthentication")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayerAuthentication payerAuthentication = null;
+
+  @SerializedName("afterPay")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesAfterPay afterPay = null;
+
+  @SerializedName("ideal")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesIdeal ideal = null;
+
+  @SerializedName("multibanco")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMultibanco multibanco = null;
+
+  @SerializedName("bancontact")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesBancontact bancontact = null;
+
+  @SerializedName("clickToPay")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesClickToPay clickToPay = null;
+
+  @SerializedName("unifiedClickToPaySDK")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesUnifiedClickToPaySDK unifiedClickToPaySDK = null;
+
+  @SerializedName("portfolioAccessofSensitiveData")
+  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPortfolioAccessofSensitiveData portfolioAccessofSensitiveData = null;
 
   public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures pazeForUnifiedCheckout(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPazeForUnifiedCheckout pazeForUnifiedCheckout) {
     this.pazeForUnifiedCheckout = pazeForUnifiedCheckout;
@@ -51,6 +131,366 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures {
     this.pazeForUnifiedCheckout = pazeForUnifiedCheckout;
   }
 
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures tokenManagement(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTokenManagement tokenManagement) {
+    this.tokenManagement = tokenManagement;
+    return this;
+  }
+
+   /**
+   * Get tokenManagement
+   * @return tokenManagement
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTokenManagement getTokenManagement() {
+    return tokenManagement;
+  }
+
+  public void setTokenManagement(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTokenManagement tokenManagement) {
+    this.tokenManagement = tokenManagement;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures payPal(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayPal payPal) {
+    this.payPal = payPal;
+    return this;
+  }
+
+   /**
+   * Get payPal
+   * @return payPal
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayPal getPayPal() {
+    return payPal;
+  }
+
+  public void setPayPal(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayPal payPal) {
+    this.payPal = payPal;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures venmo(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesVenmo venmo) {
+    this.venmo = venmo;
+    return this;
+  }
+
+   /**
+   * Get venmo
+   * @return venmo
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesVenmo getVenmo() {
+    return venmo;
+  }
+
+  public void setVenmo(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesVenmo venmo) {
+    this.venmo = venmo;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures applePay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesApplePay applePay) {
+    this.applePay = applePay;
+    return this;
+  }
+
+   /**
+   * Get applePay
+   * @return applePay
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesApplePay getApplePay() {
+    return applePay;
+  }
+
+  public void setApplePay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesApplePay applePay) {
+    this.applePay = applePay;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures googlePay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesGooglePay googlePay) {
+    this.googlePay = googlePay;
+    return this;
+  }
+
+   /**
+   * Get googlePay
+   * @return googlePay
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesGooglePay getGooglePay() {
+    return googlePay;
+  }
+
+  public void setGooglePay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesGooglePay googlePay) {
+    this.googlePay = googlePay;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures tinkPayByBank(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTinkPayByBank tinkPayByBank) {
+    this.tinkPayByBank = tinkPayByBank;
+    return this;
+  }
+
+   /**
+   * Get tinkPayByBank
+   * @return tinkPayByBank
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTinkPayByBank getTinkPayByBank() {
+    return tinkPayByBank;
+  }
+
+  public void setTinkPayByBank(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesTinkPayByBank tinkPayByBank) {
+    this.tinkPayByBank = tinkPayByBank;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures eCheck(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesECheck eCheck) {
+    this.eCheck = eCheck;
+    return this;
+  }
+
+   /**
+   * Get eCheck
+   * @return eCheck
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesECheck getECheck() {
+    return eCheck;
+  }
+
+  public void setECheck(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesECheck eCheck) {
+    this.eCheck = eCheck;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures p24(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesP24 p24) {
+    this.p24 = p24;
+    return this;
+  }
+
+   /**
+   * Get p24
+   * @return p24
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesP24 getP24() {
+    return p24;
+  }
+
+  public void setP24(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesP24 p24) {
+    this.p24 = p24;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures myBank(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMyBank myBank) {
+    this.myBank = myBank;
+    return this;
+  }
+
+   /**
+   * Get myBank
+   * @return myBank
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMyBank getMyBank() {
+    return myBank;
+  }
+
+  public void setMyBank(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMyBank myBank) {
+    this.myBank = myBank;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures konbini(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesKonbini konbini) {
+    this.konbini = konbini;
+    return this;
+  }
+
+   /**
+   * Get konbini
+   * @return konbini
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesKonbini getKonbini() {
+    return konbini;
+  }
+
+  public void setKonbini(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesKonbini konbini) {
+    this.konbini = konbini;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures dragonPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDragonPay dragonPay) {
+    this.dragonPay = dragonPay;
+    return this;
+  }
+
+   /**
+   * Get dragonPay
+   * @return dragonPay
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDragonPay getDragonPay() {
+    return dragonPay;
+  }
+
+  public void setDragonPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDragonPay dragonPay) {
+    this.dragonPay = dragonPay;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures decisionManager(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDecisionManager decisionManager) {
+    this.decisionManager = decisionManager;
+    return this;
+  }
+
+   /**
+   * Get decisionManager
+   * @return decisionManager
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDecisionManager getDecisionManager() {
+    return decisionManager;
+  }
+
+  public void setDecisionManager(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesDecisionManager decisionManager) {
+    this.decisionManager = decisionManager;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures payerAuthentication(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayerAuthentication payerAuthentication) {
+    this.payerAuthentication = payerAuthentication;
+    return this;
+  }
+
+   /**
+   * Get payerAuthentication
+   * @return payerAuthentication
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayerAuthentication getPayerAuthentication() {
+    return payerAuthentication;
+  }
+
+  public void setPayerAuthentication(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPayerAuthentication payerAuthentication) {
+    this.payerAuthentication = payerAuthentication;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures afterPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesAfterPay afterPay) {
+    this.afterPay = afterPay;
+    return this;
+  }
+
+   /**
+   * Get afterPay
+   * @return afterPay
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesAfterPay getAfterPay() {
+    return afterPay;
+  }
+
+  public void setAfterPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesAfterPay afterPay) {
+    this.afterPay = afterPay;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures ideal(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesIdeal ideal) {
+    this.ideal = ideal;
+    return this;
+  }
+
+   /**
+   * Get ideal
+   * @return ideal
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesIdeal getIdeal() {
+    return ideal;
+  }
+
+  public void setIdeal(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesIdeal ideal) {
+    this.ideal = ideal;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures multibanco(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMultibanco multibanco) {
+    this.multibanco = multibanco;
+    return this;
+  }
+
+   /**
+   * Get multibanco
+   * @return multibanco
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMultibanco getMultibanco() {
+    return multibanco;
+  }
+
+  public void setMultibanco(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesMultibanco multibanco) {
+    this.multibanco = multibanco;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures bancontact(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesBancontact bancontact) {
+    this.bancontact = bancontact;
+    return this;
+  }
+
+   /**
+   * Get bancontact
+   * @return bancontact
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesBancontact getBancontact() {
+    return bancontact;
+  }
+
+  public void setBancontact(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesBancontact bancontact) {
+    this.bancontact = bancontact;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures clickToPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesClickToPay clickToPay) {
+    this.clickToPay = clickToPay;
+    return this;
+  }
+
+   /**
+   * Get clickToPay
+   * @return clickToPay
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesClickToPay getClickToPay() {
+    return clickToPay;
+  }
+
+  public void setClickToPay(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesClickToPay clickToPay) {
+    this.clickToPay = clickToPay;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures unifiedClickToPaySDK(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesUnifiedClickToPaySDK unifiedClickToPaySDK) {
+    this.unifiedClickToPaySDK = unifiedClickToPaySDK;
+    return this;
+  }
+
+   /**
+   * Get unifiedClickToPaySDK
+   * @return unifiedClickToPaySDK
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesUnifiedClickToPaySDK getUnifiedClickToPaySDK() {
+    return unifiedClickToPaySDK;
+  }
+
+  public void setUnifiedClickToPaySDK(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesUnifiedClickToPaySDK unifiedClickToPaySDK) {
+    this.unifiedClickToPaySDK = unifiedClickToPaySDK;
+  }
+
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures portfolioAccessofSensitiveData(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPortfolioAccessofSensitiveData portfolioAccessofSensitiveData) {
+    this.portfolioAccessofSensitiveData = portfolioAccessofSensitiveData;
+    return this;
+  }
+
+   /**
+   * Get portfolioAccessofSensitiveData
+   * @return portfolioAccessofSensitiveData
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPortfolioAccessofSensitiveData getPortfolioAccessofSensitiveData() {
+    return portfolioAccessofSensitiveData;
+  }
+
+  public void setPortfolioAccessofSensitiveData(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeaturesPortfolioAccessofSensitiveData portfolioAccessofSensitiveData) {
+    this.portfolioAccessofSensitiveData = portfolioAccessofSensitiveData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +501,32 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures {
       return false;
     }
     PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures = (PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures) o;
-    return Objects.equals(this.pazeForUnifiedCheckout, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.pazeForUnifiedCheckout);
+    return Objects.equals(this.pazeForUnifiedCheckout, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.pazeForUnifiedCheckout) &&
+        Objects.equals(this.tokenManagement, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.tokenManagement) &&
+        Objects.equals(this.payPal, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.payPal) &&
+        Objects.equals(this.venmo, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.venmo) &&
+        Objects.equals(this.applePay, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.applePay) &&
+        Objects.equals(this.googlePay, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.googlePay) &&
+        Objects.equals(this.tinkPayByBank, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.tinkPayByBank) &&
+        Objects.equals(this.eCheck, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.eCheck) &&
+        Objects.equals(this.p24, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.p24) &&
+        Objects.equals(this.myBank, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.myBank) &&
+        Objects.equals(this.konbini, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.konbini) &&
+        Objects.equals(this.dragonPay, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.dragonPay) &&
+        Objects.equals(this.decisionManager, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.decisionManager) &&
+        Objects.equals(this.payerAuthentication, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.payerAuthentication) &&
+        Objects.equals(this.afterPay, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.afterPay) &&
+        Objects.equals(this.ideal, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.ideal) &&
+        Objects.equals(this.multibanco, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.multibanco) &&
+        Objects.equals(this.bancontact, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.bancontact) &&
+        Objects.equals(this.clickToPay, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.clickToPay) &&
+        Objects.equals(this.unifiedClickToPaySDK, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.unifiedClickToPaySDK) &&
+        Objects.equals(this.portfolioAccessofSensitiveData, paymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.portfolioAccessofSensitiveData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pazeForUnifiedCheckout);
+    return Objects.hash(pazeForUnifiedCheckout, tokenManagement, payPal, venmo, applePay, googlePay, tinkPayByBank, eCheck, p24, myBank, konbini, dragonPay, decisionManager, payerAuthentication, afterPay, ideal, multibanco, bancontact, clickToPay, unifiedClickToPaySDK, portfolioAccessofSensitiveData);
   }
 
 
@@ -76,6 +536,26 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures {
     sb.append("class PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures {\n");
     
     if (pazeForUnifiedCheckout != null) sb.append("    pazeForUnifiedCheckout: ").append(toIndentedString(pazeForUnifiedCheckout)).append("\n");
+    if (tokenManagement != null) sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
+    if (payPal != null) sb.append("    payPal: ").append(toIndentedString(payPal)).append("\n");
+    if (venmo != null) sb.append("    venmo: ").append(toIndentedString(venmo)).append("\n");
+    if (applePay != null) sb.append("    applePay: ").append(toIndentedString(applePay)).append("\n");
+    if (googlePay != null) sb.append("    googlePay: ").append(toIndentedString(googlePay)).append("\n");
+    if (tinkPayByBank != null) sb.append("    tinkPayByBank: ").append(toIndentedString(tinkPayByBank)).append("\n");
+    if (eCheck != null) sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
+    if (p24 != null) sb.append("    p24: ").append(toIndentedString(p24)).append("\n");
+    if (myBank != null) sb.append("    myBank: ").append(toIndentedString(myBank)).append("\n");
+    if (konbini != null) sb.append("    konbini: ").append(toIndentedString(konbini)).append("\n");
+    if (dragonPay != null) sb.append("    dragonPay: ").append(toIndentedString(dragonPay)).append("\n");
+    if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (payerAuthentication != null) sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
+    if (afterPay != null) sb.append("    afterPay: ").append(toIndentedString(afterPay)).append("\n");
+    if (ideal != null) sb.append("    ideal: ").append(toIndentedString(ideal)).append("\n");
+    if (multibanco != null) sb.append("    multibanco: ").append(toIndentedString(multibanco)).append("\n");
+    if (bancontact != null) sb.append("    bancontact: ").append(toIndentedString(bancontact)).append("\n");
+    if (clickToPay != null) sb.append("    clickToPay: ").append(toIndentedString(clickToPay)).append("\n");
+    if (unifiedClickToPaySDK != null) sb.append("    unifiedClickToPaySDK: ").append(toIndentedString(unifiedClickToPaySDK)).append("\n");
+    if (portfolioAccessofSensitiveData != null) sb.append("    portfolioAccessofSensitiveData: ").append(toIndentedString(portfolioAccessofSensitiveData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

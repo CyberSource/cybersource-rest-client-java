@@ -63,7 +63,7 @@ public class SdkTracker {
 
                 if (addNegativeListRequest.getClientReferenceInformation() == null)
                 {
-                    addNegativeListRequest.setClientReferenceInformation(new Riskv1liststypeentriesClientReferenceInformation());
+                    addNegativeListRequest.setClientReferenceInformation(new RiskV1DecisionsPost201ResponseClientReferenceInformation());
                 }
 
                 if (addNegativeListRequest.getClientReferenceInformation().getPartner() == null)
@@ -101,7 +101,7 @@ public class SdkTracker {
 
                 if (fraudMarkingActionRequest.getClientReferenceInformation() == null)
                 {
-                    fraudMarkingActionRequest.setClientReferenceInformation(new Riskv1liststypeentriesClientReferenceInformation());
+                    fraudMarkingActionRequest.setClientReferenceInformation(new RiskV1DecisionsPost201ResponseClientReferenceInformation());
                 }
 
                 if (fraudMarkingActionRequest.getClientReferenceInformation().getPartner() == null)
@@ -120,7 +120,7 @@ public class SdkTracker {
 
                 if (checkPayerAuthEnrollmentRequest.getClientReferenceInformation() == null)
                 {
-                    checkPayerAuthEnrollmentRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
+                    checkPayerAuthEnrollmentRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
                 }
 
                 if (checkPayerAuthEnrollmentRequest.getClientReferenceInformation().getPartner() == null)
@@ -139,7 +139,7 @@ public class SdkTracker {
 
                 if (payerAuthSetupRequest.getClientReferenceInformation() == null)
                 {
-                    payerAuthSetupRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
+                    payerAuthSetupRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
                 }
 
                 if (payerAuthSetupRequest.getClientReferenceInformation().getPartner() == null)
@@ -158,7 +158,7 @@ public class SdkTracker {
 
                 if (validateRequest.getClientReferenceInformation() == null)
                 {
-                    validateRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
+                    validateRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
                 }
 
                 if (validateRequest.getClientReferenceInformation().getPartner() == null)
@@ -386,7 +386,7 @@ public class SdkTracker {
 
                 if (validateExportComplianceRequest.getClientReferenceInformation() == null)
                 {
-                    validateExportComplianceRequest.setClientReferenceInformation(new Riskv1liststypeentriesClientReferenceInformation());
+                    validateExportComplianceRequest.setClientReferenceInformation(new RiskV1DecisionsPost201ResponseClientReferenceInformation());
                 }
 
                 if (validateExportComplianceRequest.getClientReferenceInformation().getPartner() == null)
@@ -405,7 +405,7 @@ public class SdkTracker {
 
                 if (verifyCustomerAddressRequest.getClientReferenceInformation() == null)
                 {
-                    verifyCustomerAddressRequest.setClientReferenceInformation(new Riskv1liststypeentriesClientReferenceInformation());
+                    verifyCustomerAddressRequest.setClientReferenceInformation(new RiskV1DecisionsPost201ResponseClientReferenceInformation());
                 }
 
                 if (verifyCustomerAddressRequest.getClientReferenceInformation().getPartner() == null)

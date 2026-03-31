@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv1pushfundstransferMerchantInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,24 +31,46 @@ import java.io.IOException;
 
 public class Ptsv1pushfundstransferMerchantInformation {
   @SerializedName("categoryCode")
-  private String categoryCode = null;
+  private Integer categoryCode = null;
 
-  public Ptsv1pushfundstransferMerchantInformation categoryCode(String categoryCode) {
+  @SerializedName("merchantDescriptor")
+  private Ptsv1pushfundstransferMerchantInformationMerchantDescriptor merchantDescriptor = null;
+
+  public Ptsv1pushfundstransferMerchantInformation categoryCode(Integer categoryCode) {
     this.categoryCode = categoryCode;
     return this;
   }
 
    /**
    * The value for this field is a four-digit number that the payment card industry uses to  classify merchants into market segments. A payment card company assigned one or more of  these values to your business when you started accepting the payment card company&#39;s cards.  When you do not include this field in your request, CyberSource uses the value in your CyberSource account. 
+   * maximum: 9999
    * @return categoryCode
   **/
   @ApiModelProperty(value = "The value for this field is a four-digit number that the payment card industry uses to  classify merchants into market segments. A payment card company assigned one or more of  these values to your business when you started accepting the payment card company's cards.  When you do not include this field in your request, CyberSource uses the value in your CyberSource account. ")
-  public String getCategoryCode() {
+  public Integer getCategoryCode() {
     return categoryCode;
   }
 
-  public void setCategoryCode(String categoryCode) {
+  public void setCategoryCode(Integer categoryCode) {
     this.categoryCode = categoryCode;
+  }
+
+  public Ptsv1pushfundstransferMerchantInformation merchantDescriptor(Ptsv1pushfundstransferMerchantInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
+    return this;
+  }
+
+   /**
+   * Get merchantDescriptor
+   * @return merchantDescriptor
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv1pushfundstransferMerchantInformationMerchantDescriptor getMerchantDescriptor() {
+    return merchantDescriptor;
+  }
+
+  public void setMerchantDescriptor(Ptsv1pushfundstransferMerchantInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
   }
 
 
@@ -60,12 +83,13 @@ public class Ptsv1pushfundstransferMerchantInformation {
       return false;
     }
     Ptsv1pushfundstransferMerchantInformation ptsv1pushfundstransferMerchantInformation = (Ptsv1pushfundstransferMerchantInformation) o;
-    return Objects.equals(this.categoryCode, ptsv1pushfundstransferMerchantInformation.categoryCode);
+    return Objects.equals(this.categoryCode, ptsv1pushfundstransferMerchantInformation.categoryCode) &&
+        Objects.equals(this.merchantDescriptor, ptsv1pushfundstransferMerchantInformation.merchantDescriptor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(categoryCode);
+    return Objects.hash(categoryCode, merchantDescriptor);
   }
 
 
@@ -75,6 +99,7 @@ public class Ptsv1pushfundstransferMerchantInformation {
     sb.append("class Ptsv1pushfundstransferMerchantInformation {\n");
     
     if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

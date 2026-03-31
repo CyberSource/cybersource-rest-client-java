@@ -4,11 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **String** | The time the response was submitted |  [optional]
-**status** | **Integer** | The status code of the response |  [optional]
-**reason** | **String** | The reason for the response |  [optional]
-**message** | **String** | The message of the response |  [optional]
-**details** | [**List&lt;InlineResponse4041Details&gt;**](InlineResponse4041Details.md) | The details of the validation error |  [optional]
+**submitTimeUtc** | **String** | Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services.  |  [optional]
+**status** | **String** | The status of the submitted transaction.  Possible values:  - NOT_FOUND  |  [optional]
 
 
 
