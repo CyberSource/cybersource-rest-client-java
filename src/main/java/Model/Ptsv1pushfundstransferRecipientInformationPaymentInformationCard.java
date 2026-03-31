@@ -80,10 +80,10 @@ public class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard {
   }
 
    /**
-   * 3-digit value that indicates the cardCvv2Value. Values can be 0-9. 
+   * 4-digit value that indicates the cardCvv2Value. Values can be 0-9. 
    * @return securityCode
   **/
-  @ApiModelProperty(value = "3-digit value that indicates the cardCvv2Value. Values can be 0-9. ")
+  @ApiModelProperty(value = "4-digit value that indicates the cardCvv2Value. Values can be 0-9. ")
   public String getSecurityCode() {
     return securityCode;
   }

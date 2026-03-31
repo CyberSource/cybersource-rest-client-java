@@ -38,7 +38,7 @@ import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
 import Model.InlineResponse4003;
 import Model.InlineResponse4004;
-import Model.InlineResponse404;
+import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 import Model.SuspendSubscriptionResponse;
 import Model.UpdateSubscription;

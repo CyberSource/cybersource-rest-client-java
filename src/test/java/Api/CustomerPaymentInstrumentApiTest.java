@@ -15,6 +15,7 @@ package Api;
 
 import Model.InlineResponse400;
 import Model.InlineResponse403;
+import Model.InlineResponse404;
 import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse412;

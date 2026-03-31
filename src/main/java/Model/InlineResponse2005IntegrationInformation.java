@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Boardingv1registrationsIntegrationInformationMsd;
 import Model.Boardingv1registrationsIntegrationInformationOauth2;
 import Model.InlineResponse2005IntegrationInformationTenantConfigurations;
 import com.google.gson.TypeAdapter;
@@ -38,6 +39,9 @@ public class InlineResponse2005IntegrationInformation {
 
   @SerializedName("tenantConfigurations")
   private List<InlineResponse2005IntegrationInformationTenantConfigurations> tenantConfigurations = null;
+
+  @SerializedName("msd")
+  private Boardingv1registrationsIntegrationInformationMsd msd = null;
 
   public InlineResponse2005IntegrationInformation oauth2(List<Boardingv1registrationsIntegrationInformationOauth2> oauth2) {
     this.oauth2 = oauth2;
@@ -91,6 +95,24 @@ public class InlineResponse2005IntegrationInformation {
     this.tenantConfigurations = tenantConfigurations;
   }
 
+  public InlineResponse2005IntegrationInformation msd(Boardingv1registrationsIntegrationInformationMsd msd) {
+    this.msd = msd;
+    return this;
+  }
+
+   /**
+   * Get msd
+   * @return msd
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsIntegrationInformationMsd getMsd() {
+    return msd;
+  }
+
+  public void setMsd(Boardingv1registrationsIntegrationInformationMsd msd) {
+    this.msd = msd;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,12 +124,13 @@ public class InlineResponse2005IntegrationInformation {
     }
     InlineResponse2005IntegrationInformation inlineResponse2005IntegrationInformation = (InlineResponse2005IntegrationInformation) o;
     return Objects.equals(this.oauth2, inlineResponse2005IntegrationInformation.oauth2) &&
-        Objects.equals(this.tenantConfigurations, inlineResponse2005IntegrationInformation.tenantConfigurations);
+        Objects.equals(this.tenantConfigurations, inlineResponse2005IntegrationInformation.tenantConfigurations) &&
+        Objects.equals(this.msd, inlineResponse2005IntegrationInformation.msd);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(oauth2, tenantConfigurations);
+    return Objects.hash(oauth2, tenantConfigurations, msd);
   }
 
 
@@ -118,6 +141,7 @@ public class InlineResponse2005IntegrationInformation {
     
     if (oauth2 != null) sb.append("    oauth2: ").append(toIndentedString(oauth2)).append("\n");
     if (tenantConfigurations != null) sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
+    if (msd != null) sb.append("    msd: ").append(toIndentedString(msd)).append("\n");
     sb.append("}");
     return sb.toString();
   }

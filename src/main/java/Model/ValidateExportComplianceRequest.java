@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.Riskv1addressverificationsBuyerInformation;
 import Model.Riskv1exportcomplianceinquiriesDeviceInformation;
 import Model.Riskv1exportcomplianceinquiriesExportComplianceInformation;
 import Model.Riskv1exportcomplianceinquiriesOrderInformation;
-import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ import java.io.IOException;
 
 public class ValidateExportComplianceRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1exportcomplianceinquiriesOrderInformation orderInformation = null;
@@ -49,7 +49,7 @@ public class ValidateExportComplianceRequest {
   @SerializedName("exportComplianceInformation")
   private Riskv1exportcomplianceinquiriesExportComplianceInformation exportComplianceInformation = null;
 
-  public ValidateExportComplianceRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public ValidateExportComplianceRequest clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -59,11 +59,11 @@ public class ValidateExportComplianceRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

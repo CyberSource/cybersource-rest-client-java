@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.Riskv1addressverificationsBuyerInformation;
 import Model.Riskv1addressverificationsOrderInformation;
-import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class VerifyCustomerAddressRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1addressverificationsOrderInformation orderInformation = null;
@@ -41,7 +41,7 @@ public class VerifyCustomerAddressRequest {
   @SerializedName("buyerInformation")
   private Riskv1addressverificationsBuyerInformation buyerInformation = null;
 
-  public VerifyCustomerAddressRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public VerifyCustomerAddressRequest clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -51,11 +51,11 @@ public class VerifyCustomerAddressRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

@@ -146,7 +146,7 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformationAd
    * Postal code for the billing address. The postal code must consist of 5 to 9 digits. Required for United States and Canada.
    * @return postalCode
   **/
-  @ApiModelProperty(example = "3384", value = "Postal code for the billing address. The postal code must consist of 5 to 9 digits. Required for United States and Canada.")
+  @ApiModelProperty(example = "6470", value = "Postal code for the billing address. The postal code must consist of 5 to 9 digits. Required for United States and Canada.")
   public String getPostalCode() {
     return postalCode;
   }

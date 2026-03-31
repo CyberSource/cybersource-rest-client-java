@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.GetAllPlansResponseOrderInformation;
 import Model.GetAllSubscriptionsResponseClientReferenceInformation;
+import Model.Rbsv1subscriptionsOrderInformation;
 import Model.Rbsv1subscriptionsPlanInformation;
 import Model.Rbsv1subscriptionsProcessingInformation;
 import Model.Rbsv1subscriptionsSubscriptionInformation;
@@ -47,7 +47,7 @@ public class CreateSubscriptionRequest1 {
   private Rbsv1subscriptionsSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("orderInformation")
-  private GetAllPlansResponseOrderInformation orderInformation = null;
+  private Rbsv1subscriptionsOrderInformation orderInformation = null;
 
   public CreateSubscriptionRequest1 clientReferenceInformation(GetAllSubscriptionsResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -121,7 +121,7 @@ public class CreateSubscriptionRequest1 {
     this.subscriptionInformation = subscriptionInformation;
   }
 
-  public CreateSubscriptionRequest1 orderInformation(GetAllPlansResponseOrderInformation orderInformation) {
+  public CreateSubscriptionRequest1 orderInformation(Rbsv1subscriptionsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -131,11 +131,11 @@ public class CreateSubscriptionRequest1 {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public GetAllPlansResponseOrderInformation getOrderInformation() {
+  public Rbsv1subscriptionsOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(GetAllPlansResponseOrderInformation orderInformation) {
+  public void setOrderInformation(Rbsv1subscriptionsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 

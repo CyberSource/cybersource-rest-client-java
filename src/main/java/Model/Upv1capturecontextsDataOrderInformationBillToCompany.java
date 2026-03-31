@@ -47,11 +47,11 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
 
-  @SerializedName("buildingNumber")
-  private String buildingNumber = null;
-
   @SerializedName("country")
   private String country = null;
+
+  @SerializedName("buildingNumber")
+  private String buildingNumber = null;
 
   @SerializedName("district")
   private String district = null;
@@ -122,10 +122,10 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
   }
 
    /**
-   * Additional address information (third line of the billing address)
+   * Additional address information (third line of the billing address) Optional field. 
    * @return address3
   **/
-  @ApiModelProperty(example = "Desk NY-50110", value = "Additional address information (third line of the billing address)")
+  @ApiModelProperty(example = "Desk NY-50110", value = "Additional address information (third line of the billing address) Optional field. ")
   public String getAddress3() {
     return address3;
   }
@@ -140,10 +140,10 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
   }
 
    /**
-   * Additional address information (fourth line of the billing address) 
+   * Additional address information (fourth line of the billing address) Optional field 
    * @return address4
   **/
-  @ApiModelProperty(example = "address4", value = "Additional address information (fourth line of the billing address) ")
+  @ApiModelProperty(example = "address4", value = "Additional address information (fourth line of the billing address) Optional field ")
   public String getAddress4() {
     return address4;
   }
@@ -170,24 +170,6 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
     this.administrativeArea = administrativeArea;
   }
 
-  public Upv1capturecontextsDataOrderInformationBillToCompany buildingNumber(String buildingNumber) {
-    this.buildingNumber = buildingNumber;
-    return this;
-  }
-
-   /**
-   * Building number in the street address. 
-   * @return buildingNumber
-  **/
-  @ApiModelProperty(example = "buildingNumber", value = "Building number in the street address. ")
-  public String getBuildingNumber() {
-    return buildingNumber;
-  }
-
-  public void setBuildingNumber(String buildingNumber) {
-    this.buildingNumber = buildingNumber;
-  }
-
   public Upv1capturecontextsDataOrderInformationBillToCompany country(String country) {
     this.country = country;
     return this;
@@ -204,6 +186,24 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  public Upv1capturecontextsDataOrderInformationBillToCompany buildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
+    return this;
+  }
+
+   /**
+   * Building number in the street address. 
+   * @return buildingNumber
+  **/
+  @ApiModelProperty(example = "buildingNumber", value = "Building number in the street address. ")
+  public String getBuildingNumber() {
+    return buildingNumber;
+  }
+
+  public void setBuildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
   }
 
   public Upv1capturecontextsDataOrderInformationBillToCompany district(String district) {
@@ -276,8 +276,8 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
         Objects.equals(this.address3, upv1capturecontextsDataOrderInformationBillToCompany.address3) &&
         Objects.equals(this.address4, upv1capturecontextsDataOrderInformationBillToCompany.address4) &&
         Objects.equals(this.administrativeArea, upv1capturecontextsDataOrderInformationBillToCompany.administrativeArea) &&
-        Objects.equals(this.buildingNumber, upv1capturecontextsDataOrderInformationBillToCompany.buildingNumber) &&
         Objects.equals(this.country, upv1capturecontextsDataOrderInformationBillToCompany.country) &&
+        Objects.equals(this.buildingNumber, upv1capturecontextsDataOrderInformationBillToCompany.buildingNumber) &&
         Objects.equals(this.district, upv1capturecontextsDataOrderInformationBillToCompany.district) &&
         Objects.equals(this.locality, upv1capturecontextsDataOrderInformationBillToCompany.locality) &&
         Objects.equals(this.postalCode, upv1capturecontextsDataOrderInformationBillToCompany.postalCode);
@@ -285,7 +285,7 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address1, address2, address3, address4, administrativeArea, buildingNumber, country, district, locality, postalCode);
+    return Objects.hash(name, address1, address2, address3, address4, administrativeArea, country, buildingNumber, district, locality, postalCode);
   }
 
 
@@ -300,8 +300,8 @@ public class Upv1capturecontextsDataOrderInformationBillToCompany {
     if (address3 != null) sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
     if (address4 != null) sb.append("    address4: ").append(toIndentedString(address4)).append("\n");
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    if (buildingNumber != null) sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (buildingNumber != null) sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
     if (district != null) sb.append("    district: ").append(toIndentedString(district)).append("\n");
     if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");

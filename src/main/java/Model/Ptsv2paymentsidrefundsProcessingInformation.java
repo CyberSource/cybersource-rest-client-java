@@ -69,6 +69,9 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
   @SerializedName("transactionTypeIndicator")
   private String transactionTypeIndicator = null;
 
+  @SerializedName("merchantVerificationValue")
+  private String merchantVerificationValue = null;
+
   public Ptsv2paymentsidrefundsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -293,6 +296,24 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     this.transactionTypeIndicator = transactionTypeIndicator;
   }
 
+  public Ptsv2paymentsidrefundsProcessingInformation merchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+    return this;
+  }
+
+   /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: &#x60;101010&#x60; 
+   * @return merchantVerificationValue
+  **/
+  @ApiModelProperty(value = "The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` ")
+  public String getMerchantVerificationValue() {
+    return merchantVerificationValue;
+  }
+
+  public void setMerchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -314,12 +335,13 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
         Objects.equals(this.industryDataType, ptsv2paymentsidrefundsProcessingInformation.industryDataType) &&
         Objects.equals(this.paymentType, ptsv2paymentsidrefundsProcessingInformation.paymentType) &&
         Objects.equals(this.refundOptions, ptsv2paymentsidrefundsProcessingInformation.refundOptions) &&
-        Objects.equals(this.transactionTypeIndicator, ptsv2paymentsidrefundsProcessingInformation.transactionTypeIndicator);
+        Objects.equals(this.transactionTypeIndicator, ptsv2paymentsidrefundsProcessingInformation.transactionTypeIndicator) &&
+        Objects.equals(this.merchantVerificationValue, ptsv2paymentsidrefundsProcessingInformation.merchantVerificationValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions, industryDataType, paymentType, refundOptions, transactionTypeIndicator);
+    return Objects.hash(actionList, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions, industryDataType, paymentType, refundOptions, transactionTypeIndicator, merchantVerificationValue);
   }
 
 
@@ -340,6 +362,7 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     if (refundOptions != null) sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
     if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,7 +30,10 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse20016;
-import Model.InlineResponse5004;
+import Model.InlineResponse2019;
+import Model.InlineResponse40010;
+import Model.InlineResponse5022;
+import Model.OfferRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -65,6 +68,215 @@ public class OffersApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createOffer
+     * @param contentType  (required)
+     * @param xRequestid  (required)
+     * @param vCMerchantId  (required)
+     * @param vCCorrelationId  (required)
+     * @param vCOrganizationId  (required)
+     * @param offerRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createOfferCall(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(offerRequest, OfferRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createOffer,createOfferAsync,createOfferWithHttpInfo,createOfferCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createOffer,createOfferAsync,createOfferWithHttpInfo,createOfferCall");
+        
+        // create path and map variables
+        String localVarPath = "/vas/v1/currencyconversion";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (contentType != null)
+        localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+        if (xRequestid != null)
+        localVarHeaderParams.put("x-requestid", apiClient.parameterToString(xRequestid));
+        if (vCMerchantId != null)
+        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
+        if (vCCorrelationId != null)
+        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
+        if (vCOrganizationId != null)
+        localVarHeaderParams.put("v-c-organization-id", apiClient.parameterToString(vCOrganizationId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createOfferValidateBeforeCall(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'contentType' is set
+        if (contentType == null) {
+            logger.error("Missing the required parameter 'contentType' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'contentType' when calling createOffer(Async)");
+        }
+        
+        // verify the required parameter 'xRequestid' is set
+        if (xRequestid == null) {
+            logger.error("Missing the required parameter 'xRequestid' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'xRequestid' when calling createOffer(Async)");
+        }
+        
+        // verify the required parameter 'vCMerchantId' is set
+        if (vCMerchantId == null) {
+            logger.error("Missing the required parameter 'vCMerchantId' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling createOffer(Async)");
+        }
+        
+        // verify the required parameter 'vCCorrelationId' is set
+        if (vCCorrelationId == null) {
+            logger.error("Missing the required parameter 'vCCorrelationId' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling createOffer(Async)");
+        }
+        
+        // verify the required parameter 'vCOrganizationId' is set
+        if (vCOrganizationId == null) {
+            logger.error("Missing the required parameter 'vCOrganizationId' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'vCOrganizationId' when calling createOffer(Async)");
+        }
+        
+        // verify the required parameter 'offerRequest' is set
+        if (offerRequest == null) {
+            logger.error("Missing the required parameter 'offerRequest' when calling createOffer(Async)");
+            throw new ApiException("Missing the required parameter 'offerRequest' when calling createOffer(Async)");
+        }
+        
+        
+        okhttp3.Call call = createOfferCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create an Offer
+     * Empower global transactions with transparency and choice. Our Dynamic Currency Conversion API lets merchants offer customers the option to pay in their home currency at checkout, delivering real-time exchange rates.  &lt;div style&#x3D;\&quot;display: flex; gap: 2rem;\&quot;&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Key Benefits:** - **Enhanced Customer Experience:** Provide clarity and convenience for international shoppers. - **Real-Time Rates:** Accurate currency conversion with all the data required for acquirers and their merchants to maintain compliance with card network rules. - **Seamless Integration:** Flexible API endpoints for rate lookup, authorization, and capture. - **Regulatory Compliance:** Provides the data required for acquirers and merchants to meet and maintain card scheme requirements for disclosure and consent.  &lt;br&gt;  Ideal for merchants and payment partners seeking to boost trust and conversion in cross-border commerce.  &lt;br&gt;  **Key Features:** - **Rate Lookup:** Retrieves the most up-to-date exchange rate for eligible cards before authorization. - **Currency Choice:** Enables the merchant to offer customers the option to select between the merchant&#39;s local currency and their card&#39;s billing currency. - **Compliance:** Ensures merchants have the data required to adhere to card network regulations; exchange rates, markups, etc.  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Scenarios:** - Dynamic Currency Conversion when cardholder&#39;s billing currency differs from merchant&#39;s pricing currency. - Merchant and acquirer must support the cardholder&#39;s billing currency. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Processors:** - VPC - FDI Global &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Compliance &amp; Disclosure:**  Merchants must: - Adhere to card network rules for Dynamic Currency Conversion (DCC) transactions. - Display the converted amount, exchange rate, and markup percentage and other required disclosures. - Obtain explicit cardholder consent before applying DCC. - Work with your acquirer to obtain full set of compliance requirements. &lt;/div&gt;  &lt;/div&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Core API Endpoints:**  **Currency Conversion API**  Returns eligibility and exchange rate details, including: - exchangeRate - marginRate - reconciliationId and Id (for subsequent payment requests)  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Payment Authorization with DCC***  POST /pts/v2/payments  Required fields include: - orderInformation.amountDetails.currency - orderInformation.amountDetails.originalCurrency - orderInformation.amountDetails.originalAmount - orderInformation.amountDetails.exchangeRate - currencyConversion.indicator (e.g., 1 &#x3D; Converted, 2 &#x3D; Nonconvertible, 3 &#x3D; Declined) &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Capture with DCC***  POST /pts/v2/payments/{id}/captures  Maps from original authorization and includes original and converted amounts. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Refund with DCC***  POST /pts/v2/captures/{id}/refunds  Maps from original authorization and includes original and converted amounts.  *Note: DCC is only supported on select processors. Contact your acquirer or account manager for more information.* &lt;/div&gt;  &lt;/div&gt; &lt;/div&gt;  &lt;br&gt;  For more information, see the [Currency Conversion Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/currency-conversion/developer/all/rest/currency-conversion/cc-intro.html). 
+     * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
+     * @param contentType  (required)
+     * @param xRequestid  (required)
+     * @param vCMerchantId  (required)
+     * @param vCCorrelationId  (required)
+     * @param vCOrganizationId  (required)
+     * @param offerRequest  (required)
+     * @return InlineResponse2019
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse2019 createOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'createOffer' STARTED");
+        ApiResponse<InlineResponse2019> resp = createOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
+        logger.info("CALL TO METHOD 'createOffer' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create an Offer
+     * Empower global transactions with transparency and choice. Our Dynamic Currency Conversion API lets merchants offer customers the option to pay in their home currency at checkout, delivering real-time exchange rates.  &lt;div style&#x3D;\&quot;display: flex; gap: 2rem;\&quot;&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Key Benefits:** - **Enhanced Customer Experience:** Provide clarity and convenience for international shoppers. - **Real-Time Rates:** Accurate currency conversion with all the data required for acquirers and their merchants to maintain compliance with card network rules. - **Seamless Integration:** Flexible API endpoints for rate lookup, authorization, and capture. - **Regulatory Compliance:** Provides the data required for acquirers and merchants to meet and maintain card scheme requirements for disclosure and consent.  &lt;br&gt;  Ideal for merchants and payment partners seeking to boost trust and conversion in cross-border commerce.  &lt;br&gt;  **Key Features:** - **Rate Lookup:** Retrieves the most up-to-date exchange rate for eligible cards before authorization. - **Currency Choice:** Enables the merchant to offer customers the option to select between the merchant&#39;s local currency and their card&#39;s billing currency. - **Compliance:** Ensures merchants have the data required to adhere to card network regulations; exchange rates, markups, etc.  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Scenarios:** - Dynamic Currency Conversion when cardholder&#39;s billing currency differs from merchant&#39;s pricing currency. - Merchant and acquirer must support the cardholder&#39;s billing currency. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Processors:** - VPC - FDI Global &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Compliance &amp; Disclosure:**  Merchants must: - Adhere to card network rules for Dynamic Currency Conversion (DCC) transactions. - Display the converted amount, exchange rate, and markup percentage and other required disclosures. - Obtain explicit cardholder consent before applying DCC. - Work with your acquirer to obtain full set of compliance requirements. &lt;/div&gt;  &lt;/div&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Core API Endpoints:**  **Currency Conversion API**  Returns eligibility and exchange rate details, including: - exchangeRate - marginRate - reconciliationId and Id (for subsequent payment requests)  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Payment Authorization with DCC***  POST /pts/v2/payments  Required fields include: - orderInformation.amountDetails.currency - orderInformation.amountDetails.originalCurrency - orderInformation.amountDetails.originalAmount - orderInformation.amountDetails.exchangeRate - currencyConversion.indicator (e.g., 1 &#x3D; Converted, 2 &#x3D; Nonconvertible, 3 &#x3D; Declined) &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Capture with DCC***  POST /pts/v2/payments/{id}/captures  Maps from original authorization and includes original and converted amounts. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Refund with DCC***  POST /pts/v2/captures/{id}/refunds  Maps from original authorization and includes original and converted amounts.  *Note: DCC is only supported on select processors. Contact your acquirer or account manager for more information.* &lt;/div&gt;  &lt;/div&gt; &lt;/div&gt;  &lt;br&gt;  For more information, see the [Currency Conversion Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/currency-conversion/developer/all/rest/currency-conversion/cc-intro.html). 
+     * @param contentType  (required)
+     * @param xRequestid  (required)
+     * @param vCMerchantId  (required)
+     * @param vCCorrelationId  (required)
+     * @param vCOrganizationId  (required)
+     * @param offerRequest  (required)
+     * @return ApiResponse&lt;InlineResponse2019&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse2019> createOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create an Offer (asynchronously)
+     * Empower global transactions with transparency and choice. Our Dynamic Currency Conversion API lets merchants offer customers the option to pay in their home currency at checkout, delivering real-time exchange rates.  &lt;div style&#x3D;\&quot;display: flex; gap: 2rem;\&quot;&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Key Benefits:** - **Enhanced Customer Experience:** Provide clarity and convenience for international shoppers. - **Real-Time Rates:** Accurate currency conversion with all the data required for acquirers and their merchants to maintain compliance with card network rules. - **Seamless Integration:** Flexible API endpoints for rate lookup, authorization, and capture. - **Regulatory Compliance:** Provides the data required for acquirers and merchants to meet and maintain card scheme requirements for disclosure and consent.  &lt;br&gt;  Ideal for merchants and payment partners seeking to boost trust and conversion in cross-border commerce.  &lt;br&gt;  **Key Features:** - **Rate Lookup:** Retrieves the most up-to-date exchange rate for eligible cards before authorization. - **Currency Choice:** Enables the merchant to offer customers the option to select between the merchant&#39;s local currency and their card&#39;s billing currency. - **Compliance:** Ensures merchants have the data required to adhere to card network regulations; exchange rates, markups, etc.  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Scenarios:** - Dynamic Currency Conversion when cardholder&#39;s billing currency differs from merchant&#39;s pricing currency. - Merchant and acquirer must support the cardholder&#39;s billing currency. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Supported Processors:** - VPC - FDI Global &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Compliance &amp; Disclosure:**  Merchants must: - Adhere to card network rules for Dynamic Currency Conversion (DCC) transactions. - Display the converted amount, exchange rate, and markup percentage and other required disclosures. - Obtain explicit cardholder consent before applying DCC. - Work with your acquirer to obtain full set of compliance requirements. &lt;/div&gt;  &lt;/div&gt; &lt;div style&#x3D;\&quot;flex: 1;\&quot;&gt;  **Core API Endpoints:**  **Currency Conversion API**  Returns eligibility and exchange rate details, including: - exchangeRate - marginRate - reconciliationId and Id (for subsequent payment requests)  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Payment Authorization with DCC***  POST /pts/v2/payments  Required fields include: - orderInformation.amountDetails.currency - orderInformation.amountDetails.originalCurrency - orderInformation.amountDetails.originalAmount - orderInformation.amountDetails.exchangeRate - currencyConversion.indicator (e.g., 1 &#x3D; Converted, 2 &#x3D; Nonconvertible, 3 &#x3D; Declined) &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Capture with DCC***  POST /pts/v2/payments/{id}/captures  Maps from original authorization and includes original and converted amounts. &lt;/div&gt;  &lt;div style&#x3D;\&quot;margin-top: 1.5rem;\&quot;&gt;  **Refund with DCC***  POST /pts/v2/captures/{id}/refunds  Maps from original authorization and includes original and converted amounts.  *Note: DCC is only supported on select processors. Contact your acquirer or account manager for more information.* &lt;/div&gt;  &lt;/div&gt; &lt;/div&gt;  &lt;br&gt;  For more information, see the [Currency Conversion Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/currency-conversion/developer/all/rest/currency-conversion/cc-intro.html). 
+     * @param contentType  (required)
+     * @param xRequestid  (required)
+     * @param vCMerchantId  (required)
+     * @param vCCorrelationId  (required)
+     * @param vCOrganizationId  (required)
+     * @param offerRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ApiCallback<InlineResponse2019> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for getOffer
      * @param contentType  (required)

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PushFunds201ResponseProcessorInformationMerchantAdvice;
 import Model.PushFunds201ResponseProcessorInformationRouting;
 import Model.PushFunds201ResponseProcessorInformationSettlement;
 import com.google.gson.TypeAdapter;
@@ -60,6 +61,9 @@ public class PushFunds201ResponseProcessorInformation {
 
   @SerializedName("settlement")
   private PushFunds201ResponseProcessorInformationSettlement settlement = null;
+
+  @SerializedName("merchantAdvice")
+  private PushFunds201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
 
   public PushFunds201ResponseProcessorInformation transactionId(Integer transactionId) {
     this.transactionId = transactionId;
@@ -241,6 +245,24 @@ public class PushFunds201ResponseProcessorInformation {
     this.settlement = settlement;
   }
 
+  public PushFunds201ResponseProcessorInformation merchantAdvice(PushFunds201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+    return this;
+  }
+
+   /**
+   * Get merchantAdvice
+   * @return merchantAdvice
+  **/
+  @ApiModelProperty(value = "")
+  public PushFunds201ResponseProcessorInformationMerchantAdvice getMerchantAdvice() {
+    return merchantAdvice;
+  }
+
+  public void setMerchantAdvice(PushFunds201ResponseProcessorInformationMerchantAdvice merchantAdvice) {
+    this.merchantAdvice = merchantAdvice;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,12 +282,13 @@ public class PushFunds201ResponseProcessorInformation {
         Objects.equals(this.feeProgramIndicator, pushFunds201ResponseProcessorInformation.feeProgramIndicator) &&
         Objects.equals(this.name, pushFunds201ResponseProcessorInformation.name) &&
         Objects.equals(this.routing, pushFunds201ResponseProcessorInformation.routing) &&
-        Objects.equals(this.settlement, pushFunds201ResponseProcessorInformation.settlement);
+        Objects.equals(this.settlement, pushFunds201ResponseProcessorInformation.settlement) &&
+        Objects.equals(this.merchantAdvice, pushFunds201ResponseProcessorInformation.merchantAdvice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, systemTraceAuditNumber, retrievalReferenceNumber, actionCode, approvalCode, feeProgramIndicator, name, routing, settlement);
+    return Objects.hash(transactionId, responseCode, systemTraceAuditNumber, retrievalReferenceNumber, actionCode, approvalCode, feeProgramIndicator, name, routing, settlement, merchantAdvice);
   }
 
 
@@ -284,6 +307,7 @@ public class PushFunds201ResponseProcessorInformation {
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     if (settlement != null) sb.append("    settlement: ").append(toIndentedString(settlement)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
     sb.append("}");
     return sb.toString();
   }

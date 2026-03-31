@@ -104,6 +104,15 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   @SerializedName("fleetCard")
   private Boolean fleetCard = null;
 
+  @SerializedName("atmEnabled")
+  private Boolean atmEnabled = null;
+
+  @SerializedName("posEnabled")
+  private Boolean posEnabled = null;
+
+  @SerializedName("ecomEnabled")
+  private Boolean ecomEnabled = null;
+
   public TmsBinLookupPaymentAccountInformationFeatures accountFundingSource(String accountFundingSource) {
     this.accountFundingSource = accountFundingSource;
     return this;
@@ -524,10 +533,10 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   }
 
    /**
-   * This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * This field indicates if the payment instrument is eligible for Equated Monthly Installments (EMI). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
    * @return emiEligible
   **/
-  @ApiModelProperty(value = "This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` ")
+  @ApiModelProperty(value = "This field indicates if the payment instrument is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` ")
   public Boolean EmiEligible() {
     return emiEligible;
   }
@@ -552,6 +561,60 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
 
   public void setFleetCard(Boolean fleetCard) {
     this.fleetCard = fleetCard;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures atmEnabled(Boolean atmEnabled) {
+    this.atmEnabled = atmEnabled;
+    return this;
+  }
+
+   /**
+   * This field indicates if the payment instrument is enabled for ATM usage. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return atmEnabled
+  **/
+  @ApiModelProperty(value = "This field indicates if the payment instrument is enabled for ATM usage. Possible values:     - `true`     - `false` ")
+  public Boolean AtmEnabled() {
+    return atmEnabled;
+  }
+
+  public void setAtmEnabled(Boolean atmEnabled) {
+    this.atmEnabled = atmEnabled;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures posEnabled(Boolean posEnabled) {
+    this.posEnabled = posEnabled;
+    return this;
+  }
+
+   /**
+   * This field indicates if the payment instrument is enabled for POS usage. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return posEnabled
+  **/
+  @ApiModelProperty(value = "This field indicates if the payment instrument is enabled for POS usage. Possible values:     - `true`     - `false` ")
+  public Boolean PosEnabled() {
+    return posEnabled;
+  }
+
+  public void setPosEnabled(Boolean posEnabled) {
+    this.posEnabled = posEnabled;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures ecomEnabled(Boolean ecomEnabled) {
+    this.ecomEnabled = ecomEnabled;
+    return this;
+  }
+
+   /**
+   * This field indicates if the payment instrument is enabled for ECOM usage. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return ecomEnabled
+  **/
+  @ApiModelProperty(value = "This field indicates if the payment instrument is enabled for ECOM usage. Possible values:     - `true`     - `false` ")
+  public Boolean EcomEnabled() {
+    return ecomEnabled;
+  }
+
+  public void setEcomEnabled(Boolean ecomEnabled) {
+    this.ecomEnabled = ecomEnabled;
   }
 
 
@@ -588,12 +651,15 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
         Objects.equals(this.threeDSSupport, tmsBinLookupPaymentAccountInformationFeatures.threeDSSupport) &&
         Objects.equals(this.siEligible, tmsBinLookupPaymentAccountInformationFeatures.siEligible) &&
         Objects.equals(this.emiEligible, tmsBinLookupPaymentAccountInformationFeatures.emiEligible) &&
-        Objects.equals(this.fleetCard, tmsBinLookupPaymentAccountInformationFeatures.fleetCard);
+        Objects.equals(this.fleetCard, tmsBinLookupPaymentAccountInformationFeatures.fleetCard) &&
+        Objects.equals(this.atmEnabled, tmsBinLookupPaymentAccountInformationFeatures.atmEnabled) &&
+        Objects.equals(this.posEnabled, tmsBinLookupPaymentAccountInformationFeatures.posEnabled) &&
+        Objects.equals(this.ecomEnabled, tmsBinLookupPaymentAccountInformationFeatures.ecomEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential, productId, productIdSubtype, threeDSSupport, siEligible, emiEligible, fleetCard);
+    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential, productId, productIdSubtype, threeDSSupport, siEligible, emiEligible, fleetCard, atmEnabled, posEnabled, ecomEnabled);
   }
 
 
@@ -627,6 +693,9 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     if (siEligible != null) sb.append("    siEligible: ").append(toIndentedString(siEligible)).append("\n");
     if (emiEligible != null) sb.append("    emiEligible: ").append(toIndentedString(emiEligible)).append("\n");
     if (fleetCard != null) sb.append("    fleetCard: ").append(toIndentedString(fleetCard)).append("\n");
+    if (atmEnabled != null) sb.append("    atmEnabled: ").append(toIndentedString(atmEnabled)).append("\n");
+    if (posEnabled != null) sb.append("    posEnabled: ").append(toIndentedString(posEnabled)).append("\n");
+    if (ecomEnabled != null) sb.append("    ecomEnabled: ").append(toIndentedString(ecomEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

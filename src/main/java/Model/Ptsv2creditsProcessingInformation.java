@@ -98,6 +98,9 @@ public class Ptsv2creditsProcessingInformation {
   @SerializedName("refundOptions")
   private Ptsv2creditsProcessingInformationRefundOptions refundOptions = null;
 
+  @SerializedName("merchantVerificationValue")
+  private String merchantVerificationValue = null;
+
   public Ptsv2creditsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -466,6 +469,24 @@ public class Ptsv2creditsProcessingInformation {
     this.refundOptions = refundOptions;
   }
 
+  public Ptsv2creditsProcessingInformation merchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+    return this;
+  }
+
+   /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: &#x60;101010&#x60; 
+   * @return merchantVerificationValue
+  **/
+  @ApiModelProperty(value = "The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` ")
+  public String getMerchantVerificationValue() {
+    return merchantVerificationValue;
+  }
+
+  public void setMerchantVerificationValue(String merchantVerificationValue) {
+    this.merchantVerificationValue = merchantVerificationValue;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -495,12 +516,13 @@ public class Ptsv2creditsProcessingInformation {
         Objects.equals(this.electronicBenefitsTransfer, ptsv2creditsProcessingInformation.electronicBenefitsTransfer) &&
         Objects.equals(this.loanOptions, ptsv2creditsProcessingInformation.loanOptions) &&
         Objects.equals(this.japanPaymentOptions, ptsv2creditsProcessingInformation.japanPaymentOptions) &&
-        Objects.equals(this.refundOptions, ptsv2creditsProcessingInformation.refundOptions);
+        Objects.equals(this.refundOptions, ptsv2creditsProcessingInformation.refundOptions) &&
+        Objects.equals(this.merchantVerificationValue, ptsv2creditsProcessingInformation.merchantVerificationValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions);
+    return Objects.hash(actionList, commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions, merchantVerificationValue);
   }
 
 
@@ -529,6 +551,7 @@ public class Ptsv2creditsProcessingInformation {
     if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
     if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
     if (refundOptions != null) sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

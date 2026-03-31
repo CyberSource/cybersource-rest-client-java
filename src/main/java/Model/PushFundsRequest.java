@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Ptsv1pushfundstransferClientReferenceInformation;
 import Model.Ptsv1pushfundstransferMerchantInformation;
 import Model.Ptsv1pushfundstransferOrderInformation;
+import Model.Ptsv1pushfundstransferPaymentInformation;
 import Model.Ptsv1pushfundstransferPointOfServiceInformation;
 import Model.Ptsv1pushfundstransferProcessingInformation;
 import Model.Ptsv1pushfundstransferRecipientInformation;
@@ -57,6 +58,9 @@ public class PushFundsRequest {
 
   @SerializedName("merchantInformation")
   private Ptsv1pushfundstransferMerchantInformation merchantInformation = null;
+
+  @SerializedName("paymentInformation")
+  private Ptsv1pushfundstransferPaymentInformation paymentInformation = null;
 
   @SerializedName("pointOfServiceInformation")
   private Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation = null;
@@ -187,6 +191,24 @@ public class PushFundsRequest {
     this.merchantInformation = merchantInformation;
   }
 
+  public PushFundsRequest paymentInformation(Ptsv1pushfundstransferPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv1pushfundstransferPaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(Ptsv1pushfundstransferPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
   public PushFundsRequest pointOfServiceInformation(Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation) {
     this.pointOfServiceInformation = pointOfServiceInformation;
     return this;
@@ -222,12 +244,13 @@ public class PushFundsRequest {
         Objects.equals(this.recipientInformation, pushFundsRequest.recipientInformation) &&
         Objects.equals(this.senderInformation, pushFundsRequest.senderInformation) &&
         Objects.equals(this.merchantInformation, pushFundsRequest.merchantInformation) &&
+        Objects.equals(this.paymentInformation, pushFundsRequest.paymentInformation) &&
         Objects.equals(this.pointOfServiceInformation, pushFundsRequest.pointOfServiceInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregatorInformation, clientReferenceInformation, orderInformation, processingInformation, recipientInformation, senderInformation, merchantInformation, pointOfServiceInformation);
+    return Objects.hash(aggregatorInformation, clientReferenceInformation, orderInformation, processingInformation, recipientInformation, senderInformation, merchantInformation, paymentInformation, pointOfServiceInformation);
   }
 
 
@@ -243,6 +266,7 @@ public class PushFundsRequest {
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (pointOfServiceInformation != null) sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
     sb.append("}");
     return sb.toString();

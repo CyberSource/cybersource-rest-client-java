@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation;
+import Model.PtsV2PaymentsRefundPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
 import Model.PtsV2PaymentsRefundPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseProcessorInformation;
@@ -68,6 +69,9 @@ public class PtsV2PaymentsRefundPost201Response {
 
   @SerializedName("pointOfSaleInformation")
   private PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("errorInformation")
+  private PtsV2PaymentsRefundPost201ResponseErrorInformation errorInformation = null;
 
   public PtsV2PaymentsRefundPost201Response links(PtsV2PaymentsRefundPost201ResponseLinks links) {
     this.links = links;
@@ -267,6 +271,24 @@ public class PtsV2PaymentsRefundPost201Response {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
+  public PtsV2PaymentsRefundPost201Response errorInformation(PtsV2PaymentsRefundPost201ResponseErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+    return this;
+  }
+
+   /**
+   * Get errorInformation
+   * @return errorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsRefundPost201ResponseErrorInformation getErrorInformation() {
+    return errorInformation;
+  }
+
+  public void setErrorInformation(PtsV2PaymentsRefundPost201ResponseErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,12 +309,13 @@ public class PtsV2PaymentsRefundPost201Response {
         Objects.equals(this.processingInformation, ptsV2PaymentsRefundPost201Response.processingInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsRefundPost201Response.processorInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsRefundPost201Response.orderInformation) &&
-        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsRefundPost201Response.pointOfSaleInformation);
+        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsRefundPost201Response.pointOfSaleInformation) &&
+        Objects.equals(this.errorInformation, ptsV2PaymentsRefundPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, refundAmountDetails, processingInformation, processorInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, refundAmountDetails, processingInformation, processorInformation, orderInformation, pointOfSaleInformation, errorInformation);
   }
 
 
@@ -312,6 +335,7 @@ public class PtsV2PaymentsRefundPost201Response {
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

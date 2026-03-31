@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Kmsegressv2keysasymClientReferenceInformation;
 import Model.Kmsegressv2keysasymKeyInformation;
+import Model.Kmsegressv2keyssymClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,7 +32,7 @@ import java.io.IOException;
 
 public class SaveAsymEgressKey {
   @SerializedName("clientReferenceInformation")
-  private Kmsegressv2keysasymClientReferenceInformation clientReferenceInformation = null;
+  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("clientRequestAction")
   private String clientRequestAction = null;
@@ -40,7 +40,7 @@ public class SaveAsymEgressKey {
   @SerializedName("keyInformation")
   private Kmsegressv2keysasymKeyInformation keyInformation = null;
 
-  public SaveAsymEgressKey clientReferenceInformation(Kmsegressv2keysasymClientReferenceInformation clientReferenceInformation) {
+  public SaveAsymEgressKey clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -50,11 +50,11 @@ public class SaveAsymEgressKey {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Kmsegressv2keysasymClientReferenceInformation getClientReferenceInformation() {
+  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Kmsegressv2keysasymClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

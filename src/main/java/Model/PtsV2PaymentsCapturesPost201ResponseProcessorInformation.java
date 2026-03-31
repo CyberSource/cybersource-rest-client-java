@@ -75,10 +75,10 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
   }
 
    /**
-   * Network Transaction Identifier Applicable for online capture transactions only. 
+   * Same value as &#x60;processorInformation.transactionId&#x60;
    * @return networkTransactionId
   **/
-  @ApiModelProperty(value = "Network Transaction Identifier Applicable for online capture transactions only. ")
+  @ApiModelProperty(value = "Same value as `processorInformation.transactionId`")
   public String getNetworkTransactionId() {
     return networkTransactionId;
   }
