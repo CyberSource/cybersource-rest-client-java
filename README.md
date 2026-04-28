@@ -51,7 +51,7 @@ To get started using this SDK, it is highly recommended to download our sample c
 
 * [Cybersource Java Sample Code Repository (on GitHub)](https://github.com/CyberSource/cybersource-rest-samples-java)
 
-In that respository, we have comprehensive sample code for all common uses of our API:
+In that respository, we have comprehensive sample code for all common uses of our API.
 
 Additionally, you can find details and examples of how our API is structured in our API Reference Guide:
 
@@ -70,9 +70,12 @@ To learn more about how to use CyberSource's REST API SDKs, please use [Develope
 
 ### Example using Sample Code Application
 
-* Add the [CyberSource REST client as a dependency](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/pom.xml#L20C3-L24C16) in your java project.
+* Add the [CyberSource REST Client SDK as a dependency](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/pom.xml#L20C3-L24C16) in your java project.
+
 * Configure your credentials in a [Properties Object](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/src/main/java/Data/Configuration.java#L6C2-L55C3).
+
 * Create an instance of [ApiClient](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/src/main/java/samples/Payments/Payments/SimpleAuthorizationInternet.java#L83C4-L85C46) and set the required properties in it.
+
 * Use the created ApiClient instance to call CyberSource APIs. For example [SimpleAuthorizationInternet](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/src/main/java/samples/Payments/Payments/SimpleAuthorizationInternet.java#L87C4-L88C51)
 
 For more detailed examples, refer to the [cybersource-rest-samples-java](https://github.com/CyberSource/cybersource-rest-samples-java) repository.
