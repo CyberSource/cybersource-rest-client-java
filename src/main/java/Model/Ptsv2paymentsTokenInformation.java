@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsTokenInformationPaymentInstrument;
 import Model.Ptsv2paymentsTokenInformationShippingAddress;
+import Model.Ptsv2paymentsTokenInformationTokenAuthenticationInformation;
 import Model.Ptsv2paymentsTokenInformationTokenProvisioningInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -49,6 +50,12 @@ public class Ptsv2paymentsTokenInformation {
 
   @SerializedName("tokenProvisioningInformation")
   private Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation = null;
+
+  @SerializedName("clientCorrelationId")
+  private String clientCorrelationId = null;
+
+  @SerializedName("tokenAuthenticationInformation")
+  private Ptsv2paymentsTokenInformationTokenAuthenticationInformation tokenAuthenticationInformation = null;
 
   public Ptsv2paymentsTokenInformation jti(String jti) {
     this.jti = jti;
@@ -158,6 +165,42 @@ public class Ptsv2paymentsTokenInformation {
     this.tokenProvisioningInformation = tokenProvisioningInformation;
   }
 
+  public Ptsv2paymentsTokenInformation clientCorrelationId(String clientCorrelationId) {
+    this.clientCorrelationId = clientCorrelationId;
+    return this;
+  }
+
+   /**
+   * Client-generated unique identifier for correlating token operations across API calls. This value helps track and associate token-related transactions. 
+   * @return clientCorrelationId
+  **/
+  @ApiModelProperty(value = "Client-generated unique identifier for correlating token operations across API calls. This value helps track and associate token-related transactions. ")
+  public String getClientCorrelationId() {
+    return clientCorrelationId;
+  }
+
+  public void setClientCorrelationId(String clientCorrelationId) {
+    this.clientCorrelationId = clientCorrelationId;
+  }
+
+  public Ptsv2paymentsTokenInformation tokenAuthenticationInformation(Ptsv2paymentsTokenInformationTokenAuthenticationInformation tokenAuthenticationInformation) {
+    this.tokenAuthenticationInformation = tokenAuthenticationInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenAuthenticationInformation
+   * @return tokenAuthenticationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTokenInformationTokenAuthenticationInformation getTokenAuthenticationInformation() {
+    return tokenAuthenticationInformation;
+  }
+
+  public void setTokenAuthenticationInformation(Ptsv2paymentsTokenInformationTokenAuthenticationInformation tokenAuthenticationInformation) {
+    this.tokenAuthenticationInformation = tokenAuthenticationInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -173,12 +216,14 @@ public class Ptsv2paymentsTokenInformation {
         Objects.equals(this.paymentInstrument, ptsv2paymentsTokenInformation.paymentInstrument) &&
         Objects.equals(this.shippingAddress, ptsv2paymentsTokenInformation.shippingAddress) &&
         Objects.equals(this.networkTokenOption, ptsv2paymentsTokenInformation.networkTokenOption) &&
-        Objects.equals(this.tokenProvisioningInformation, ptsv2paymentsTokenInformation.tokenProvisioningInformation);
+        Objects.equals(this.tokenProvisioningInformation, ptsv2paymentsTokenInformation.tokenProvisioningInformation) &&
+        Objects.equals(this.clientCorrelationId, ptsv2paymentsTokenInformation.clientCorrelationId) &&
+        Objects.equals(this.tokenAuthenticationInformation, ptsv2paymentsTokenInformation.tokenAuthenticationInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jti, transientTokenJwt, paymentInstrument, shippingAddress, networkTokenOption, tokenProvisioningInformation);
+    return Objects.hash(jti, transientTokenJwt, paymentInstrument, shippingAddress, networkTokenOption, tokenProvisioningInformation, clientCorrelationId, tokenAuthenticationInformation);
   }
 
 
@@ -193,6 +238,8 @@ public class Ptsv2paymentsTokenInformation {
     if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     if (networkTokenOption != null) sb.append("    networkTokenOption: ").append(toIndentedString(networkTokenOption)).append("\n");
     if (tokenProvisioningInformation != null) sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(toIndentedString(clientCorrelationId)).append("\n");
+    if (tokenAuthenticationInformation != null) sb.append("    tokenAuthenticationInformation: ").append(toIndentedString(tokenAuthenticationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

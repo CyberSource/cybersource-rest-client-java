@@ -26,9 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Device and Application instance data.
+ * Device and Application instance data. Identifies the device and application from which the consumer is making the payment request.
  */
-@ApiModel(description = "Device and Application instance data.")
+@ApiModel(description = "Device and Application instance data. Identifies the device and application from which the consumer is making the payment request.")
 
 public class Acpv1tokensDeviceInformation {
   @SerializedName("userAgent")

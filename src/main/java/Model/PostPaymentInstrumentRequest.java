@@ -17,11 +17,11 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.TmsMerchantInformation;
 import Model.TmsPaymentInstrumentProcessingInfo;
+import Model.Tmsv1paymentinstrumentsEmbedded;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks;
 import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata;
@@ -82,7 +82,7 @@ public class PostPaymentInstrumentRequest {
   private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata = null;
 
   @SerializedName("_embedded")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded = null;
+  private Tmsv1paymentinstrumentsEmbedded embedded = null;
 
   public PostPaymentInstrumentRequest links(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links) {
     this.links = links;
@@ -309,7 +309,7 @@ public class PostPaymentInstrumentRequest {
     this.metadata = metadata;
   }
 
-  public PostPaymentInstrumentRequest embedded(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
+  public PostPaymentInstrumentRequest embedded(Tmsv1paymentinstrumentsEmbedded embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -319,11 +319,11 @@ public class PostPaymentInstrumentRequest {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded getEmbedded() {
+  public Tmsv1paymentinstrumentsEmbedded getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded embedded) {
+  public void setEmbedded(Tmsv1paymentinstrumentsEmbedded embedded) {
     this.embedded = embedded;
   }
 

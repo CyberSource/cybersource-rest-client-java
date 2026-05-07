@@ -17,7 +17,7 @@ import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
 import Model.InlineResponse20010;
 import Model.InlineResponse206;
-import Model.InlineResponse4008;
+import Model.InlineResponse40010;
 import Model.InlineResponse401;
 import Model.InlineResponse4032;
 import Model.InlineResponse4045;

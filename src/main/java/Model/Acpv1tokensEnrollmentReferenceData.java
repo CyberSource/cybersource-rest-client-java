@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Enrollment Reference Data.
+ * Enrollment Reference Data. Links the enrollment to an existing token reference.
  */
-@ApiModel(description = "Enrollment Reference Data.")
+@ApiModel(description = "Enrollment Reference Data. Links the enrollment to an existing token reference.")
 
 public class Acpv1tokensEnrollmentReferenceData {
   @SerializedName("enrollmentReferenceType")

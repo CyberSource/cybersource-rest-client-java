@@ -15,8 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2billingagreementsOrderInformationAmountDetails;
 import Model.Ptsv2billingagreementsOrderInformationBillTo;
-import Model.Ptsv2paymentsidreversalsReversalInformationAmountDetails;
+import Model.Ptsv2billingagreementsOrderInformationInvoiceDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,12 +33,15 @@ import java.io.IOException;
 
 public class Ptsv2billingagreementsOrderInformation {
   @SerializedName("amountDetails")
-  private Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails = null;
+  private Ptsv2billingagreementsOrderInformationAmountDetails amountDetails = null;
+
+  @SerializedName("invoiceDetails")
+  private Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails = null;
 
   @SerializedName("billTo")
   private Ptsv2billingagreementsOrderInformationBillTo billTo = null;
 
-  public Ptsv2billingagreementsOrderInformation amountDetails(Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails) {
+  public Ptsv2billingagreementsOrderInformation amountDetails(Ptsv2billingagreementsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -47,12 +51,30 @@ public class Ptsv2billingagreementsOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidreversalsReversalInformationAmountDetails getAmountDetails() {
+  public Ptsv2billingagreementsOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails) {
+  public void setAmountDetails(Ptsv2billingagreementsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
+  }
+
+  public Ptsv2billingagreementsOrderInformation invoiceDetails(Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+    return this;
+  }
+
+   /**
+   * Get invoiceDetails
+   * @return invoiceDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsOrderInformationInvoiceDetails getInvoiceDetails() {
+    return invoiceDetails;
+  }
+
+  public void setInvoiceDetails(Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
   }
 
   public Ptsv2billingagreementsOrderInformation billTo(Ptsv2billingagreementsOrderInformationBillTo billTo) {
@@ -84,12 +106,13 @@ public class Ptsv2billingagreementsOrderInformation {
     }
     Ptsv2billingagreementsOrderInformation ptsv2billingagreementsOrderInformation = (Ptsv2billingagreementsOrderInformation) o;
     return Objects.equals(this.amountDetails, ptsv2billingagreementsOrderInformation.amountDetails) &&
+        Objects.equals(this.invoiceDetails, ptsv2billingagreementsOrderInformation.invoiceDetails) &&
         Objects.equals(this.billTo, ptsv2billingagreementsOrderInformation.billTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo);
+    return Objects.hash(amountDetails, invoiceDetails, billTo);
   }
 
 
@@ -99,6 +122,7 @@ public class Ptsv2billingagreementsOrderInformation {
     sb.append("class Ptsv2billingagreementsOrderInformation {\n");
     
     if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     sb.append("}");
     return sb.toString();

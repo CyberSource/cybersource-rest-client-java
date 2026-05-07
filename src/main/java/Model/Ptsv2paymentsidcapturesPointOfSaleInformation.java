@@ -36,6 +36,9 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformation {
   @SerializedName("amexCapnData")
   private String amexCapnData = null;
 
+  @SerializedName("encryptedKeyId")
+  private String encryptedKeyId = null;
+
   public Ptsv2paymentsidcapturesPointOfSaleInformation emv(Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
@@ -72,6 +75,24 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformation {
     this.amexCapnData = amexCapnData;
   }
 
+  public Ptsv2paymentsidcapturesPointOfSaleInformation encryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+    return this;
+  }
+
+   /**
+   * Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. 
+   * @return encryptedKeyId
+  **/
+  @ApiModelProperty(value = "Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. ")
+  public String getEncryptedKeyId() {
+    return encryptedKeyId;
+  }
+
+  public void setEncryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformation {
     }
     Ptsv2paymentsidcapturesPointOfSaleInformation ptsv2paymentsidcapturesPointOfSaleInformation = (Ptsv2paymentsidcapturesPointOfSaleInformation) o;
     return Objects.equals(this.emv, ptsv2paymentsidcapturesPointOfSaleInformation.emv) &&
-        Objects.equals(this.amexCapnData, ptsv2paymentsidcapturesPointOfSaleInformation.amexCapnData);
+        Objects.equals(this.amexCapnData, ptsv2paymentsidcapturesPointOfSaleInformation.amexCapnData) &&
+        Objects.equals(this.encryptedKeyId, ptsv2paymentsidcapturesPointOfSaleInformation.encryptedKeyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emv, amexCapnData);
+    return Objects.hash(emv, amexCapnData, encryptedKeyId);
   }
 
 
@@ -99,6 +121,7 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformation {
     
     if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     if (amexCapnData != null) sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
+    if (encryptedKeyId != null) sb.append("    encryptedKeyId: ").append(toIndentedString(encryptedKeyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

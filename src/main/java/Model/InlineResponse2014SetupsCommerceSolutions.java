@@ -39,6 +39,9 @@ public class InlineResponse2014SetupsCommerceSolutions {
   @SerializedName("binLookup")
   private InlineResponse2014SetupsPaymentsCardProcessing binLookup = null;
 
+  @SerializedName("agenticCommerce")
+  private InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce = null;
+
   public InlineResponse2014SetupsCommerceSolutions tokenManagement(InlineResponse2014SetupsPaymentsCardProcessing tokenManagement) {
     this.tokenManagement = tokenManagement;
     return this;
@@ -93,6 +96,24 @@ public class InlineResponse2014SetupsCommerceSolutions {
     this.binLookup = binLookup;
   }
 
+  public InlineResponse2014SetupsCommerceSolutions agenticCommerce(InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce) {
+    this.agenticCommerce = agenticCommerce;
+    return this;
+  }
+
+   /**
+   * Get agenticCommerce
+   * @return agenticCommerce
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsCardProcessing getAgenticCommerce() {
+    return agenticCommerce;
+  }
+
+  public void setAgenticCommerce(InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce) {
+    this.agenticCommerce = agenticCommerce;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +126,13 @@ public class InlineResponse2014SetupsCommerceSolutions {
     InlineResponse2014SetupsCommerceSolutions inlineResponse2014SetupsCommerceSolutions = (InlineResponse2014SetupsCommerceSolutions) o;
     return Objects.equals(this.tokenManagement, inlineResponse2014SetupsCommerceSolutions.tokenManagement) &&
         Objects.equals(this.accountUpdater, inlineResponse2014SetupsCommerceSolutions.accountUpdater) &&
-        Objects.equals(this.binLookup, inlineResponse2014SetupsCommerceSolutions.binLookup);
+        Objects.equals(this.binLookup, inlineResponse2014SetupsCommerceSolutions.binLookup) &&
+        Objects.equals(this.agenticCommerce, inlineResponse2014SetupsCommerceSolutions.agenticCommerce);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokenManagement, accountUpdater, binLookup);
+    return Objects.hash(tokenManagement, accountUpdater, binLookup, agenticCommerce);
   }
 
 
@@ -122,6 +144,7 @@ public class InlineResponse2014SetupsCommerceSolutions {
     if (tokenManagement != null) sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
     if (accountUpdater != null) sb.append("    accountUpdater: ").append(toIndentedString(accountUpdater)).append("\n");
     if (binLookup != null) sb.append("    binLookup: ").append(toIndentedString(binLookup)).append("\n");
+    if (agenticCommerce != null) sb.append("    agenticCommerce: ").append(toIndentedString(agenticCommerce)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,6 +35,21 @@ public class Ptsv2billingagreementsAgreementInformation {
   @SerializedName("dateSigned")
   private String dateSigned = null;
 
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("frequency")
+  private String frequency = null;
+
+  @SerializedName("occurrencesPerPeriod")
+  private Integer occurrencesPerPeriod = null;
+
+  @SerializedName("startDate")
+  private String startDate = null;
+
+  @SerializedName("endDate")
+  private String endDate = null;
+
   public Ptsv2billingagreementsAgreementInformation id(String id) {
     this.id = id;
     return this;
@@ -71,6 +86,96 @@ public class Ptsv2billingagreementsAgreementInformation {
     this.dateSigned = dateSigned;
   }
 
+  public Ptsv2billingagreementsAgreementInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @return type
+  **/
+  @ApiModelProperty(value = "Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Ptsv2billingagreementsAgreementInformation frequency(String frequency) {
+    this.frequency = frequency;
+    return this;
+  }
+
+   /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @return frequency
+  **/
+  @ApiModelProperty(value = "Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly")
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
+  }
+
+  public Ptsv2billingagreementsAgreementInformation occurrencesPerPeriod(Integer occurrencesPerPeriod) {
+    this.occurrencesPerPeriod = occurrencesPerPeriod;
+    return this;
+  }
+
+   /**
+   * Number of occurrences during the specified period.
+   * @return occurrencesPerPeriod
+  **/
+  @ApiModelProperty(value = "Number of occurrences during the specified period.")
+  public Integer getOccurrencesPerPeriod() {
+    return occurrencesPerPeriod;
+  }
+
+  public void setOccurrencesPerPeriod(Integer occurrencesPerPeriod) {
+    this.occurrencesPerPeriod = occurrencesPerPeriod;
+  }
+
+  public Ptsv2billingagreementsAgreementInformation startDate(String startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Start date of the schedule.  Format YYYYMMdd
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "Start date of the schedule.  Format YYYYMMdd")
+  public String getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
+
+  public Ptsv2billingagreementsAgreementInformation endDate(String endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * End date of the schedule.  Format YYYYMMdd
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "End date of the schedule.  Format YYYYMMdd")
+  public String getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(String endDate) {
+    this.endDate = endDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +187,17 @@ public class Ptsv2billingagreementsAgreementInformation {
     }
     Ptsv2billingagreementsAgreementInformation ptsv2billingagreementsAgreementInformation = (Ptsv2billingagreementsAgreementInformation) o;
     return Objects.equals(this.id, ptsv2billingagreementsAgreementInformation.id) &&
-        Objects.equals(this.dateSigned, ptsv2billingagreementsAgreementInformation.dateSigned);
+        Objects.equals(this.dateSigned, ptsv2billingagreementsAgreementInformation.dateSigned) &&
+        Objects.equals(this.type, ptsv2billingagreementsAgreementInformation.type) &&
+        Objects.equals(this.frequency, ptsv2billingagreementsAgreementInformation.frequency) &&
+        Objects.equals(this.occurrencesPerPeriod, ptsv2billingagreementsAgreementInformation.occurrencesPerPeriod) &&
+        Objects.equals(this.startDate, ptsv2billingagreementsAgreementInformation.startDate) &&
+        Objects.equals(this.endDate, ptsv2billingagreementsAgreementInformation.endDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateSigned);
+    return Objects.hash(id, dateSigned, type, frequency, occurrencesPerPeriod, startDate, endDate);
   }
 
 
@@ -98,6 +208,11 @@ public class Ptsv2billingagreementsAgreementInformation {
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (dateSigned != null) sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (occurrencesPerPeriod != null) sb.append("    occurrencesPerPeriod: ").append(toIndentedString(occurrencesPerPeriod)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (endDate != null) sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,15 +15,18 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ucv1sessionsDataAggregatorInformation;
 import Model.Ucv1sessionsDataBuyerInformation;
 import Model.Ucv1sessionsDataConsumerAuthenticationInformation;
 import Model.Ucv1sessionsDataDeviceInformation;
+import Model.Ucv1sessionsDataInstallmentInformation;
 import Model.Ucv1sessionsDataMerchantDefinedInformation;
 import Model.Ucv1sessionsDataMerchantInformation;
 import Model.Ucv1sessionsDataOrderInformation;
 import Model.Ucv1sessionsDataPaymentInformation;
 import Model.Ucv1sessionsDataProcessingInformation;
 import Model.Ucv1sessionsDataRecipientInformation;
+import Model.Ucv1sessionsDataSenderInformation;
 import Model.Upv1capturecontextsDataClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -41,6 +44,9 @@ import java.util.List;
  */
 
 public class Ucv1sessionsData {
+  @SerializedName("aggregatorInformation")
+  private Ucv1sessionsDataAggregatorInformation aggregatorInformation = null;
+
   @SerializedName("orderInformation")
   private Ucv1sessionsDataOrderInformation orderInformation = null;
 
@@ -62,14 +68,38 @@ public class Ucv1sessionsData {
   @SerializedName("recipientInformation")
   private Ucv1sessionsDataRecipientInformation recipientInformation = null;
 
-  @SerializedName("merchantDefinedInformation")
-  private List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation = null;
+  @SerializedName("senderInformation")
+  private Ucv1sessionsDataSenderInformation senderInformation = null;
 
   @SerializedName("deviceInformation")
   private Ucv1sessionsDataDeviceInformation deviceInformation = null;
 
   @SerializedName("paymentInformation")
   private Ucv1sessionsDataPaymentInformation paymentInformation = null;
+
+  @SerializedName("installmentInformation")
+  private Ucv1sessionsDataInstallmentInformation installmentInformation = null;
+
+  @SerializedName("merchantDefinedInformation")
+  private List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  public Ucv1sessionsData aggregatorInformation(Ucv1sessionsDataAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+    return this;
+  }
+
+   /**
+   * Get aggregatorInformation
+   * @return aggregatorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataAggregatorInformation getAggregatorInformation() {
+    return aggregatorInformation;
+  }
+
+  public void setAggregatorInformation(Ucv1sessionsDataAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+  }
 
   public Ucv1sessionsData orderInformation(Ucv1sessionsDataOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
@@ -197,30 +227,22 @@ public class Ucv1sessionsData {
     this.recipientInformation = recipientInformation;
   }
 
-  public Ucv1sessionsData merchantDefinedInformation(List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation) {
-    this.merchantDefinedInformation = merchantDefinedInformation;
-    return this;
-  }
-
-  public Ucv1sessionsData addMerchantDefinedInformationItem(Ucv1sessionsDataMerchantDefinedInformation merchantDefinedInformationItem) {
-    if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<Ucv1sessionsDataMerchantDefinedInformation>();
-    }
-    this.merchantDefinedInformation.add(merchantDefinedInformationItem);
+  public Ucv1sessionsData senderInformation(Ucv1sessionsDataSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
     return this;
   }
 
    /**
-   * Get merchantDefinedInformation
-   * @return merchantDefinedInformation
+   * Get senderInformation
+   * @return senderInformation
   **/
   @ApiModelProperty(value = "")
-  public List<Ucv1sessionsDataMerchantDefinedInformation> getMerchantDefinedInformation() {
-    return merchantDefinedInformation;
+  public Ucv1sessionsDataSenderInformation getSenderInformation() {
+    return senderInformation;
   }
 
-  public void setMerchantDefinedInformation(List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation) {
-    this.merchantDefinedInformation = merchantDefinedInformation;
+  public void setSenderInformation(Ucv1sessionsDataSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
   }
 
   public Ucv1sessionsData deviceInformation(Ucv1sessionsDataDeviceInformation deviceInformation) {
@@ -259,6 +281,50 @@ public class Ucv1sessionsData {
     this.paymentInformation = paymentInformation;
   }
 
+  public Ucv1sessionsData installmentInformation(Ucv1sessionsDataInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+    return this;
+  }
+
+   /**
+   * Get installmentInformation
+   * @return installmentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataInstallmentInformation getInstallmentInformation() {
+    return installmentInformation;
+  }
+
+  public void setInstallmentInformation(Ucv1sessionsDataInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+  }
+
+  public Ucv1sessionsData merchantDefinedInformation(List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation) {
+    this.merchantDefinedInformation = merchantDefinedInformation;
+    return this;
+  }
+
+  public Ucv1sessionsData addMerchantDefinedInformationItem(Ucv1sessionsDataMerchantDefinedInformation merchantDefinedInformationItem) {
+    if (this.merchantDefinedInformation == null) {
+      this.merchantDefinedInformation = new ArrayList<Ucv1sessionsDataMerchantDefinedInformation>();
+    }
+    this.merchantDefinedInformation.add(merchantDefinedInformationItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedInformation
+   * @return merchantDefinedInformation
+  **/
+  @ApiModelProperty(value = "")
+  public List<Ucv1sessionsDataMerchantDefinedInformation> getMerchantDefinedInformation() {
+    return merchantDefinedInformation;
+  }
+
+  public void setMerchantDefinedInformation(List<Ucv1sessionsDataMerchantDefinedInformation> merchantDefinedInformation) {
+    this.merchantDefinedInformation = merchantDefinedInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -269,21 +335,24 @@ public class Ucv1sessionsData {
       return false;
     }
     Ucv1sessionsData ucv1sessionsData = (Ucv1sessionsData) o;
-    return Objects.equals(this.orderInformation, ucv1sessionsData.orderInformation) &&
+    return Objects.equals(this.aggregatorInformation, ucv1sessionsData.aggregatorInformation) &&
+        Objects.equals(this.orderInformation, ucv1sessionsData.orderInformation) &&
         Objects.equals(this.buyerInformation, ucv1sessionsData.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, ucv1sessionsData.clientReferenceInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ucv1sessionsData.consumerAuthenticationInformation) &&
         Objects.equals(this.merchantInformation, ucv1sessionsData.merchantInformation) &&
         Objects.equals(this.processingInformation, ucv1sessionsData.processingInformation) &&
         Objects.equals(this.recipientInformation, ucv1sessionsData.recipientInformation) &&
-        Objects.equals(this.merchantDefinedInformation, ucv1sessionsData.merchantDefinedInformation) &&
+        Objects.equals(this.senderInformation, ucv1sessionsData.senderInformation) &&
         Objects.equals(this.deviceInformation, ucv1sessionsData.deviceInformation) &&
-        Objects.equals(this.paymentInformation, ucv1sessionsData.paymentInformation);
+        Objects.equals(this.paymentInformation, ucv1sessionsData.paymentInformation) &&
+        Objects.equals(this.installmentInformation, ucv1sessionsData.installmentInformation) &&
+        Objects.equals(this.merchantDefinedInformation, ucv1sessionsData.merchantDefinedInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, merchantDefinedInformation, deviceInformation, paymentInformation);
+    return Objects.hash(aggregatorInformation, orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, senderInformation, deviceInformation, paymentInformation, installmentInformation, merchantDefinedInformation);
   }
 
 
@@ -292,6 +361,7 @@ public class Ucv1sessionsData {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsData {\n");
     
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
@@ -299,9 +369,11 @@ public class Ucv1sessionsData {
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
-    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (installmentInformation != null) sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

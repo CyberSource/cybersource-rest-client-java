@@ -27,9 +27,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Payment/Transaction Confirmation Data provided by the payment processor/acquirer
+ * Payment/Transaction Confirmation Data provided by the payment processor/acquirer.
  */
-@ApiModel(description = "Payment/Transaction Confirmation Data provided by the payment processor/acquirer")
+@ApiModel(description = "Payment/Transaction Confirmation Data provided by the payment processor/acquirer.")
 
 public class Acpv1instructionsinstructionIdconfirmationsProcessorInformation {
   @SerializedName("dynamicDataId")

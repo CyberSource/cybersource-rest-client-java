@@ -41,6 +41,12 @@ public class PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation {
   @SerializedName("dateRevoked")
   private String dateRevoked = null;
 
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("frequency")
+  private String frequency = null;
+
   @SerializedName("encodedHtml")
   private String encodedHtml = null;
 
@@ -123,6 +129,42 @@ public class PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation {
 
   public void setDateRevoked(String dateRevoked) {
     this.dateRevoked = dateRevoked;
+  }
+
+  public PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @return type
+  **/
+  @ApiModelProperty(value = "Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation frequency(String frequency) {
+    this.frequency = frequency;
+    return this;
+  }
+
+   /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @return frequency
+  **/
+  @ApiModelProperty(value = "Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly")
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
   }
 
   public PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation encodedHtml(String encodedHtml) {
@@ -211,6 +253,8 @@ public class PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation {
         Objects.equals(this.dateSigned, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.dateSigned) &&
         Objects.equals(this.dateCreated, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.dateCreated) &&
         Objects.equals(this.dateRevoked, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.dateRevoked) &&
+        Objects.equals(this.type, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.type) &&
+        Objects.equals(this.frequency, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.frequency) &&
         Objects.equals(this.encodedHtml, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.encodedHtml) &&
         Objects.equals(this.encodedHtmlPopup, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.encodedHtmlPopup) &&
         Objects.equals(this.url, ptsV2ModifyBillingAgreementPost201ResponseAgreementInformation.url) &&
@@ -219,7 +263,7 @@ public class PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateSigned, dateCreated, dateRevoked, encodedHtml, encodedHtmlPopup, url, transactionId);
+    return Objects.hash(id, dateSigned, dateCreated, dateRevoked, type, frequency, encodedHtml, encodedHtmlPopup, url, transactionId);
   }
 
 
@@ -232,6 +276,8 @@ public class PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation {
     if (dateSigned != null) sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
     if (dateCreated != null) sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     if (dateRevoked != null) sb.append("    dateRevoked: ").append(toIndentedString(dateRevoked)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
     if (encodedHtml != null) sb.append("    encodedHtml: ").append(toIndentedString(encodedHtml)).append("\n");
     if (encodedHtmlPopup != null) sb.append("    encodedHtmlPopup: ").append(toIndentedString(encodedHtmlPopup)).append("\n");
     if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");

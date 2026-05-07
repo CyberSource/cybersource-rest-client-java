@@ -20,11 +20,16 @@ import Model.CreateSubscriptionResponse;
 import Model.GetAllSubscriptionsResponse;
 import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
+import Model.GetSubscriptionsPaymentsResponse;
+import Model.GetSubscriptionsPaymentsResponse1;
 import Model.InlineResponse4003;
 import Model.InlineResponse4004;
+import Model.InlineResponse4006;
+import Model.InlineResponse4007;
 import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 import Model.SuspendSubscriptionResponse;
+import Model.UpdatePayments;
 import Model.UpdateSubscription;
 import Model.UpdateSubscriptionResponse;
 import org.junit.Test;
@@ -109,7 +114,8 @@ public class SubscriptionsApiTest {
         String code = null;
         String status = null;
         String customerId = null;
-        GetAllSubscriptionsResponse response = api.getAllSubscriptions(offset, limit, code, status, customerId);
+        String clientReferenceInformationCode = null;
+        GetAllSubscriptionsResponse response = api.getAllSubscriptions(offset, limit, code, status, customerId, clientReferenceInformationCode);
 
         // TODO: test validations
     }
@@ -141,6 +147,42 @@ public class SubscriptionsApiTest {
     @Test
     public void getSubscriptionCodeTest() throws Exception {
         GetSubscriptionCodeResponse response = api.getSubscriptionCode();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Payments for a Subscription
+     *
+     * Retrieve a list of payments for a specific subscription by its ID. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void subscriptionsIdPaymentsGetTest() throws Exception {
+        String id = null;
+        Integer offset = null;
+        Integer limit = null;
+        Integer scheduledPaymentsCount = null;
+        GetSubscriptionsPaymentsResponse response = api.subscriptionsIdPaymentsGet(id, offset, limit, scheduledPaymentsCount);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Payments for a subscription
+     *
+     * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void subscriptionsIdPaymentsPutTest() throws Exception {
+        String id = null;
+        UpdatePayments updatePayments = null;
+        GetSubscriptionsPaymentsResponse1 response = api.subscriptionsIdPaymentsPut(id, updatePayments);
 
         // TODO: test validations
     }

@@ -22,6 +22,7 @@ import Model.Ptsv2paymentsPaymentInformationLegacyToken;
 import Model.Ptsv2paymentsPaymentInformationPaymentAccountReference;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
+import Model.Ptsv2paymentsPaymentInformationThirdPartyToken;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsidrefundsPaymentInformationBank;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
@@ -76,6 +77,12 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
 
   @SerializedName("paymentAccountReference")
   private Ptsv2paymentsPaymentInformationPaymentAccountReference paymentAccountReference = null;
+
+  @SerializedName("thirdPartyToken")
+  private Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken = null;
+
+  @SerializedName("initiationChannel")
+  private String initiationChannel = null;
 
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
@@ -293,6 +300,42 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.paymentAccountReference = paymentAccountReference;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformation thirdPartyToken(Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+    return this;
+  }
+
+   /**
+   * Get thirdPartyToken
+   * @return thirdPartyToken
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationThirdPartyToken getThirdPartyToken() {
+    return thirdPartyToken;
+  }
+
+  public void setThirdPartyToken(Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation initiationChannel(String initiationChannel) {
+    this.initiationChannel = initiationChannel;
+    return this;
+  }
+
+   /**
+   * Mastercard-defined code that indicates how the account information was obtained for credit authorization transactions.  Possible values: - &#x60;00&#x60;: Card (default) - &#x60;01&#x60;: Mobile network operator (MNO) controlled removable secure element (SIM or UICC) personalized for use with a mobile phone or smartphone - &#x60;02&#x60;: Key fob - &#x60;03&#x60;: Watch - &#x60;04&#x60;: Mobile tag - &#x60;05&#x60;: Wristband - &#x60;06&#x60;: Mobile phone case or sleeve - &#x60;07&#x60;: Mobile phone or smartphone with fixed (nonremovable) secure element controlled by the MNO (for example, code division multiple access (CDMA)) - &#x60;08&#x60;: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a mobile phone or smartphone) - &#x60;09&#x60;: Mobile phone or smartphone with a fixed (nonremovable) secure element not controlled by the MNO - &#x60;10&#x60;: MNO-controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - &#x60;11&#x60;: Tablet or e-book with a fixed (nonremovable) secure element controlled by the MNO - &#x60;12&#x60;: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a tablet or e-book) - &#x60;13&#x60;: Tablet or e-book with fixed (nonremovable) secure element not controlled by the MNO - &#x60;14&#x60; - &#x60;99&#x60;: Reserved for future use  This field flows in ISO Field 104 DSID 65 Tag 04.  This field is supported for Mastercard credit authorization transactions.  #### Used by **Credit Authorization (Standalone)** Optional field. 
+   * @return initiationChannel
+  **/
+  @ApiModelProperty(value = "Mastercard-defined code that indicates how the account information was obtained for credit authorization transactions.  Possible values: - `00`: Card (default) - `01`: Mobile network operator (MNO) controlled removable secure element (SIM or UICC) personalized for use with a mobile phone or smartphone - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone or smartphone with fixed (nonremovable) secure element controlled by the MNO (for example, code division multiple access (CDMA)) - `08`: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a mobile phone or smartphone) - `09`: Mobile phone or smartphone with a fixed (nonremovable) secure element not controlled by the MNO - `10`: MNO-controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - `11`: Tablet or e-book with a fixed (nonremovable) secure element controlled by the MNO - `12`: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a tablet or e-book) - `13`: Tablet or e-book with fixed (nonremovable) secure element not controlled by the MNO - `14` - `99`: Reserved for future use  This field flows in ISO Field 104 DSID 65 Tag 04.  This field is supported for Mastercard credit authorization transactions.  #### Used by **Credit Authorization (Standalone)** Optional field. ")
+  public String getInitiationChannel() {
+    return initiationChannel;
+  }
+
+  public void setInitiationChannel(String initiationChannel) {
+    this.initiationChannel = initiationChannel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -314,12 +357,14 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
         Objects.equals(this.legacyToken, ptsv2paymentsidrefundsPaymentInformation.legacyToken) &&
         Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType) &&
         Objects.equals(this.eWallet, ptsv2paymentsidrefundsPaymentInformation.eWallet) &&
-        Objects.equals(this.paymentAccountReference, ptsv2paymentsidrefundsPaymentInformation.paymentAccountReference);
+        Objects.equals(this.paymentAccountReference, ptsv2paymentsidrefundsPaymentInformation.paymentAccountReference) &&
+        Objects.equals(this.thirdPartyToken, ptsv2paymentsidrefundsPaymentInformation.thirdPartyToken) &&
+        Objects.equals(this.initiationChannel, ptsv2paymentsidrefundsPaymentInformation.initiationChannel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType, eWallet, paymentAccountReference);
+    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType, eWallet, paymentAccountReference, thirdPartyToken, initiationChannel);
   }
 
 
@@ -340,6 +385,8 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (thirdPartyToken != null) sb.append("    thirdPartyToken: ").append(toIndentedString(thirdPartyToken)).append("\n");
+    if (initiationChannel != null) sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

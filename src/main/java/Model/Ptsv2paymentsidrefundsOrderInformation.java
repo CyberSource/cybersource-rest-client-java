@@ -15,12 +15,13 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsOrderInformationDigitalCurrency;
 import Model.Ptsv2paymentsidcapturesOrderInformationAmountDetails;
 import Model.Ptsv2paymentsidcapturesOrderInformationBillTo;
 import Model.Ptsv2paymentsidcapturesOrderInformationInvoiceDetails;
 import Model.Ptsv2paymentsidcapturesOrderInformationShipTo;
-import Model.Ptsv2paymentsidcapturesOrderInformationShippingDetails;
 import Model.Ptsv2paymentsidrefundsOrderInformationLineItems;
+import Model.Ptsv2paymentsidrefundsOrderInformationShippingDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -53,7 +54,10 @@ public class Ptsv2paymentsidrefundsOrderInformation {
   private Ptsv2paymentsidcapturesOrderInformationInvoiceDetails invoiceDetails = null;
 
   @SerializedName("shippingDetails")
-  private Ptsv2paymentsidcapturesOrderInformationShippingDetails shippingDetails = null;
+  private Ptsv2paymentsidrefundsOrderInformationShippingDetails shippingDetails = null;
+
+  @SerializedName("digitalCurrency")
+  private Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency = null;
 
   public Ptsv2paymentsidrefundsOrderInformation amountDetails(Ptsv2paymentsidcapturesOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -153,7 +157,7 @@ public class Ptsv2paymentsidrefundsOrderInformation {
     this.invoiceDetails = invoiceDetails;
   }
 
-  public Ptsv2paymentsidrefundsOrderInformation shippingDetails(Ptsv2paymentsidcapturesOrderInformationShippingDetails shippingDetails) {
+  public Ptsv2paymentsidrefundsOrderInformation shippingDetails(Ptsv2paymentsidrefundsOrderInformationShippingDetails shippingDetails) {
     this.shippingDetails = shippingDetails;
     return this;
   }
@@ -163,12 +167,30 @@ public class Ptsv2paymentsidrefundsOrderInformation {
    * @return shippingDetails
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidcapturesOrderInformationShippingDetails getShippingDetails() {
+  public Ptsv2paymentsidrefundsOrderInformationShippingDetails getShippingDetails() {
     return shippingDetails;
   }
 
-  public void setShippingDetails(Ptsv2paymentsidcapturesOrderInformationShippingDetails shippingDetails) {
+  public void setShippingDetails(Ptsv2paymentsidrefundsOrderInformationShippingDetails shippingDetails) {
     this.shippingDetails = shippingDetails;
+  }
+
+  public Ptsv2paymentsidrefundsOrderInformation digitalCurrency(Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency) {
+    this.digitalCurrency = digitalCurrency;
+    return this;
+  }
+
+   /**
+   * Get digitalCurrency
+   * @return digitalCurrency
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationDigitalCurrency getDigitalCurrency() {
+    return digitalCurrency;
+  }
+
+  public void setDigitalCurrency(Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency) {
+    this.digitalCurrency = digitalCurrency;
   }
 
 
@@ -186,12 +208,13 @@ public class Ptsv2paymentsidrefundsOrderInformation {
         Objects.equals(this.shipTo, ptsv2paymentsidrefundsOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, ptsv2paymentsidrefundsOrderInformation.lineItems) &&
         Objects.equals(this.invoiceDetails, ptsv2paymentsidrefundsOrderInformation.invoiceDetails) &&
-        Objects.equals(this.shippingDetails, ptsv2paymentsidrefundsOrderInformation.shippingDetails);
+        Objects.equals(this.shippingDetails, ptsv2paymentsidrefundsOrderInformation.shippingDetails) &&
+        Objects.equals(this.digitalCurrency, ptsv2paymentsidrefundsOrderInformation.digitalCurrency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, digitalCurrency);
   }
 
 
@@ -206,6 +229,7 @@ public class Ptsv2paymentsidrefundsOrderInformation {
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    if (digitalCurrency != null) sb.append("    digitalCurrency: ").append(toIndentedString(digitalCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

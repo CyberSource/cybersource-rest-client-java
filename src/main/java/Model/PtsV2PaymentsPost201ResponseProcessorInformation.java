@@ -180,6 +180,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("network")
   private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
+  @SerializedName("cedpVerifiedIndicator")
+  private String cedpVerifiedIndicator = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -978,10 +981,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * The order status.  Possible values: - &#x60;CREATED&#x60; - &#x60;VOIDED&#x60; - &#x60;COMPLETED&#x60; - &#x60;PAYER_ACTION_REQUIRED&#x60; 
+   * The order status.  Possible values: - &#x60;CREATED&#x60; - &#x60;VOIDED&#x60; - &#x60;COMPLETED&#x60; - &#x60;PAYER_ACTION_REQUIRED&#x60; - &#x60;STEP_UP_REQUIRED&#x60; 
    * @return orderStatus
   **/
-  @ApiModelProperty(value = "The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` ")
+  @ApiModelProperty(value = "The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` - `STEP_UP_REQUIRED` ")
   public String getOrderStatus() {
     return orderStatus;
   }
@@ -1024,6 +1027,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   public void setNetwork(Ptsv2paymentsProcessorInformationReversalNetwork network) {
     this.network = network;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation cedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
+    return this;
+  }
+
+   /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator received in authorization response messages for U.S. domestic transactions containing a credential for the commercial credit products.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - &#x60;Y&#x60;: Merchant CEDP verified  This field is for internal processing only (TC33A usage) and is not sent back to the merchant.  #### Used by **Authorization Response** Response field only. 
+   * @return cedpVerifiedIndicator
+  **/
+  @ApiModelProperty(value = "Merchant Commercial Enhanced Data Program (CEDP) verified indicator received in authorization response messages for U.S. domestic transactions containing a credential for the commercial credit products.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  This field is for internal processing only (TC33A usage) and is not sent back to the merchant.  #### Used by **Authorization Response** Response field only. ")
+  public String getCedpVerifiedIndicator() {
+    return cedpVerifiedIndicator;
+  }
+
+  public void setCedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
   }
 
 
@@ -1082,12 +1103,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.orderId, ptsV2PaymentsPost201ResponseProcessorInformation.orderId) &&
         Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus) &&
         Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction) &&
-        Objects.equals(this.network, ptsV2PaymentsPost201ResponseProcessorInformation.network);
+        Objects.equals(this.network, ptsV2PaymentsPost201ResponseProcessorInformation.network) &&
+        Objects.equals(this.cedpVerifiedIndicator, ptsV2PaymentsPost201ResponseProcessorInformation.cedpVerifiedIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, responseSourceCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction, network);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, responseSourceCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction, network, cedpVerifiedIndicator);
   }
 
 
@@ -1143,6 +1165,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     if (orderStatus != null) sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
     if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
     if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(toIndentedString(cedpVerifiedIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

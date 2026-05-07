@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsidreversalsDeviceInformation;
 import Model.Ptsv2paymentsidreversalsOrderInformation;
 import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsProcessingInformation;
@@ -49,6 +50,9 @@ public class MitReversalRequest {
 
   @SerializedName("pointOfSaleInformation")
   private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("deviceInformation")
+  private Ptsv2paymentsidreversalsDeviceInformation deviceInformation = null;
 
   @SerializedName("processorInformation")
   private Ptsv2reversalsProcessorInformation processorInformation = null;
@@ -143,6 +147,24 @@ public class MitReversalRequest {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
+  public MitReversalRequest deviceInformation(Ptsv2paymentsidreversalsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+    return this;
+  }
+
+   /**
+   * Get deviceInformation
+   * @return deviceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidreversalsDeviceInformation getDeviceInformation() {
+    return deviceInformation;
+  }
+
+  public void setDeviceInformation(Ptsv2paymentsidreversalsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+  }
+
   public MitReversalRequest processorInformation(Ptsv2reversalsProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
     return this;
@@ -176,12 +198,13 @@ public class MitReversalRequest {
         Objects.equals(this.processingInformation, mitReversalRequest.processingInformation) &&
         Objects.equals(this.orderInformation, mitReversalRequest.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, mitReversalRequest.pointOfSaleInformation) &&
+        Objects.equals(this.deviceInformation, mitReversalRequest.deviceInformation) &&
         Objects.equals(this.processorInformation, mitReversalRequest.processorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, reversalInformation, processingInformation, orderInformation, pointOfSaleInformation, processorInformation);
+    return Objects.hash(clientReferenceInformation, reversalInformation, processingInformation, orderInformation, pointOfSaleInformation, deviceInformation, processorInformation);
   }
 
 
@@ -195,6 +218,7 @@ public class MitReversalRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

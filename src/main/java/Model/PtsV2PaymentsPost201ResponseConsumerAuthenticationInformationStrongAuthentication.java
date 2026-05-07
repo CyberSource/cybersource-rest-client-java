@@ -33,6 +33,9 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
   @SerializedName("issuerInformation")
   private PaymentsStrongAuthIssuerInformation issuerInformation = null;
 
+  @SerializedName("outageExemptionIndicator")
+  private String outageExemptionIndicator = null;
+
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication issuerInformation(PaymentsStrongAuthIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
     return this;
@@ -51,6 +54,24 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     this.issuerInformation = issuerInformation;
   }
 
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication outageExemptionIndicator(String outageExemptionIndicator) {
+    this.outageExemptionIndicator = outageExemptionIndicator;
+    return this;
+  }
+
+   /**
+   * This field will contain the outage exemption indicator with one of the following values: Possible values: - &#x60;0&#x60;  (Outage Authentication exemption does not apply to the transaction) - &#x60;1&#x60; (Outage exempt from SCA as authentication could not be done due to outage) 
+   * @return outageExemptionIndicator
+  **/
+  @ApiModelProperty(value = "This field will contain the outage exemption indicator with one of the following values: Possible values: - `0`  (Outage Authentication exemption does not apply to the transaction) - `1` (Outage exempt from SCA as authentication could not be done due to outage) ")
+  public String getOutageExemptionIndicator() {
+    return outageExemptionIndicator;
+  }
+
+  public void setOutageExemptionIndicator(String outageExemptionIndicator) {
+    this.outageExemptionIndicator = outageExemptionIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
       return false;
     }
     PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication = (PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication) o;
-    return Objects.equals(this.issuerInformation, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.issuerInformation);
+    return Objects.equals(this.issuerInformation, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.issuerInformation) &&
+        Objects.equals(this.outageExemptionIndicator, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.outageExemptionIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(issuerInformation);
+    return Objects.hash(issuerInformation, outageExemptionIndicator);
   }
 
 
@@ -76,6 +98,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication {\n");
     
     if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (outageExemptionIndicator != null) sb.append("    outageExemptionIndicator: ").append(toIndentedString(outageExemptionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

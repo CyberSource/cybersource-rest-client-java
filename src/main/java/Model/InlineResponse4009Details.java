@@ -41,10 +41,10 @@ public class InlineResponse4009Details {
   }
 
    /**
-   * This is the flattened JSON object field name/path that is either missing or invalid. 
+   * This is the flattened JSON object field name/path that is either missing or invalid.
    * @return field
   **/
-  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid. ")
+  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid.")
   public String getField() {
     return field;
   }
@@ -59,10 +59,10 @@ public class InlineResponse4009Details {
   }
 
    /**
-   * Possible reasons for the error.  Possible values:   - &#x60;MISSING_FIELD&#x60;   - &#x60;INVALID_DATA&#x60; 
+   * Possible reasons for the error.
    * @return reason
   **/
-  @ApiModelProperty(value = "Possible reasons for the error.  Possible values:   - `MISSING_FIELD`   - `INVALID_DATA` ")
+  @ApiModelProperty(example = "MISSING_FIELD", value = "Possible reasons for the error.")
   public String getReason() {
     return reason;
   }

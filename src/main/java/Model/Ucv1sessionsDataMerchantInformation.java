@@ -33,6 +33,9 @@ public class Ucv1sessionsDataMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ucv1sessionsDataMerchantInformationMerchantDescriptor merchantDescriptor = null;
 
+  @SerializedName("vatRegistrationNumber")
+  private String vatRegistrationNumber = null;
+
   public Ucv1sessionsDataMerchantInformation merchantDescriptor(Ucv1sessionsDataMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
     return this;
@@ -51,6 +54,24 @@ public class Ucv1sessionsDataMerchantInformation {
     this.merchantDescriptor = merchantDescriptor;
   }
 
+  public Ucv1sessionsDataMerchantInformation vatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  #### CyberSource through VisaNet For CtV processors, the maximum length is 20. 
+   * @return vatRegistrationNumber
+  **/
+  @ApiModelProperty(value = "Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  #### CyberSource through VisaNet For CtV processors, the maximum length is 20. ")
+  public String getVatRegistrationNumber() {
+    return vatRegistrationNumber;
+  }
+
+  public void setVatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class Ucv1sessionsDataMerchantInformation {
       return false;
     }
     Ucv1sessionsDataMerchantInformation ucv1sessionsDataMerchantInformation = (Ucv1sessionsDataMerchantInformation) o;
-    return Objects.equals(this.merchantDescriptor, ucv1sessionsDataMerchantInformation.merchantDescriptor);
+    return Objects.equals(this.merchantDescriptor, ucv1sessionsDataMerchantInformation.merchantDescriptor) &&
+        Objects.equals(this.vatRegistrationNumber, ucv1sessionsDataMerchantInformation.vatRegistrationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor);
+    return Objects.hash(merchantDescriptor, vatRegistrationNumber);
   }
 
 
@@ -76,6 +98,7 @@ public class Ucv1sessionsDataMerchantInformation {
     sb.append("class Ucv1sessionsDataMerchantInformation {\n");
     
     if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

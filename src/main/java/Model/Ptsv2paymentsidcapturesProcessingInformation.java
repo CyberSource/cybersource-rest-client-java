@@ -57,6 +57,9 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   @SerializedName("industryDataType")
   private String industryDataType = null;
 
+  @SerializedName("digitalServiceIndicator")
+  private String digitalServiceIndicator = null;
+
   @SerializedName("issuer")
   private Ptsv2paymentsIssuerInformation issuer = null;
 
@@ -202,6 +205,24 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
 
   public void setIndustryDataType(String industryDataType) {
     this.industryDataType = industryDataType;
+  }
+
+  public Ptsv2paymentsidcapturesProcessingInformation digitalServiceIndicator(String digitalServiceIndicator) {
+    this.digitalServiceIndicator = digitalServiceIndicator;
+    return this;
+  }
+
+   /**
+   * Mastercard Digital Enablement Service (MDES) digital service indicators for force capture scenarios.   This field is used when the client is doing authorization with a different gateway and capture with CyberSource.   This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  #### Used by **Capture Request** Request field for force capture support when auth is done with a different gateway. 
+   * @return digitalServiceIndicator
+  **/
+  @ApiModelProperty(value = "Mastercard Digital Enablement Service (MDES) digital service indicators for force capture scenarios.   This field is used when the client is doing authorization with a different gateway and capture with CyberSource.   This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  #### Used by **Capture Request** Request field for force capture support when auth is done with a different gateway. ")
+  public String getDigitalServiceIndicator() {
+    return digitalServiceIndicator;
+  }
+
+  public void setDigitalServiceIndicator(String digitalServiceIndicator) {
+    this.digitalServiceIndicator = digitalServiceIndicator;
   }
 
   public Ptsv2paymentsidcapturesProcessingInformation issuer(Ptsv2paymentsIssuerInformation issuer) {
@@ -355,6 +376,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
         Objects.equals(this.visaCheckoutId, ptsv2paymentsidcapturesProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.purchaseLevel, ptsv2paymentsidcapturesProcessingInformation.purchaseLevel) &&
         Objects.equals(this.industryDataType, ptsv2paymentsidcapturesProcessingInformation.industryDataType) &&
+        Objects.equals(this.digitalServiceIndicator, ptsv2paymentsidcapturesProcessingInformation.digitalServiceIndicator) &&
         Objects.equals(this.issuer, ptsv2paymentsidcapturesProcessingInformation.issuer) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsidcapturesProcessingInformation.authorizationOptions) &&
         Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions) &&
@@ -366,7 +388,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator, actionList, japanPaymentOptions);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, digitalServiceIndicator, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator, actionList, japanPaymentOptions);
   }
 
 
@@ -382,6 +404,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
     if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (digitalServiceIndicator != null) sb.append("    digitalServiceIndicator: ").append(toIndentedString(digitalServiceIndicator)).append("\n");
     if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");

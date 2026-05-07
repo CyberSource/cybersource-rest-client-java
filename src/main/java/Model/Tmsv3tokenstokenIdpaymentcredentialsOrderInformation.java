@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2tokenizedcardsBillTo;
 import Model.Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails;
-import Model.Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class Tmsv3tokenstokenIdpaymentcredentialsOrderInformation {
   private Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("billTo")
-  private Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo billTo = null;
+  private Tmsv2tokenizedcardsBillTo billTo = null;
 
   public Tmsv3tokenstokenIdpaymentcredentialsOrderInformation amountDetails(Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -55,7 +55,7 @@ public class Tmsv3tokenstokenIdpaymentcredentialsOrderInformation {
     this.amountDetails = amountDetails;
   }
 
-  public Tmsv3tokenstokenIdpaymentcredentialsOrderInformation billTo(Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo billTo) {
+  public Tmsv3tokenstokenIdpaymentcredentialsOrderInformation billTo(Tmsv2tokenizedcardsBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -65,11 +65,11 @@ public class Tmsv3tokenstokenIdpaymentcredentialsOrderInformation {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo getBillTo() {
+  public Tmsv2tokenizedcardsBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo billTo) {
+  public void setBillTo(Tmsv2tokenizedcardsBillTo billTo) {
     this.billTo = billTo;
   }
 

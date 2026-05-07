@@ -112,7 +112,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -260,7 +260,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -419,7 +419,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -577,7 +577,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -727,7 +727,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -880,7 +880,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -993,17 +993,17 @@ public class ManageWebhooksApi {
     }
     /**
      * Build call for saveAsymEgressKey
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveAsymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call saveAsymEgressKeyCall(SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveAsymEgressKey, SaveAsymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -1036,7 +1036,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1064,19 +1064,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call saveAsymEgressKeyValidateBeforeCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        
-        // verify the required parameter 'vCSenderOrganizationId' is set
-        if (vCSenderOrganizationId == null) {
-            logger.error("Missing the required parameter 'vCSenderOrganizationId' when calling saveAsymEgressKey(Async)");
-            throw new ApiException("Missing the required parameter 'vCSenderOrganizationId' when calling saveAsymEgressKey(Async)");
-        }
-        
-        // verify the required parameter 'vCPermissions' is set
-        if (vCPermissions == null) {
-            logger.error("Missing the required parameter 'vCPermissions' when calling saveAsymEgressKey(Async)");
-            throw new ApiException("Missing the required parameter 'vCPermissions' when calling saveAsymEgressKey(Async)");
-        }
+    private okhttp3.Call saveAsymEgressKeyValidateBeforeCall(SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'saveAsymEgressKey' is set
         if (saveAsymEgressKey == null) {
@@ -1085,7 +1073,7 @@ public class ManageWebhooksApi {
         }
         
         
-        okhttp3.Call call = saveAsymEgressKeyCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, progressListener, progressRequestListener);
+        okhttp3.Call call = saveAsymEgressKeyCall(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions, progressListener, progressRequestListener);
         return call;
 
         
@@ -1097,17 +1085,17 @@ public class ManageWebhooksApi {
     /**
      * Message Level Encryption
      * Store and manage certificates that will be used to preform Message Level Encryption (MLE). Each new webhook will need its own unique asymmetric certificate. You can either use a digital certificate issued/signed by a CA or self-sign your own using the documentation available on the Developer Guide. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @return InlineResponse2018
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2018 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException, ConfigException {
+    public InlineResponse2018 saveAsymEgressKey(SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");
-        ApiResponse<InlineResponse2018> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        ApiResponse<InlineResponse2018> resp = saveAsymEgressKeyWithHttpInfo(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
         logger.info("CALL TO METHOD 'saveAsymEgressKey' ENDED");
         return resp.getData();
     }
@@ -1115,17 +1103,17 @@ public class ManageWebhooksApi {
     /**
      * Message Level Encryption
      * Store and manage certificates that will be used to preform Message Level Encryption (MLE). Each new webhook will need its own unique asymmetric certificate. You can either use a digital certificate issued/signed by a CA or self-sign your own using the documentation available on the Developer Guide. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @return ApiResponse&lt;InlineResponse2018&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2018> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2018> saveAsymEgressKeyWithHttpInfo(SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, null, null);
+        okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1133,16 +1121,16 @@ public class ManageWebhooksApi {
     /**
      * Message Level Encryption (asynchronously)
      * Store and manage certificates that will be used to preform Message Level Encryption (MLE). Each new webhook will need its own unique asymmetric certificate. You can either use a digital certificate issued/signed by a CA or self-sign your own using the documentation available on the Developer Guide. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2018> callback) throws ApiException, ConfigException {
+    public okhttp3.Call saveAsymEgressKeyAsync(SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, final ApiCallback<InlineResponse2018> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1164,7 +1152,7 @@ public class ManageWebhooksApi {
             };
         }
 
-        okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, progressListener, progressRequestListener);
+        okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

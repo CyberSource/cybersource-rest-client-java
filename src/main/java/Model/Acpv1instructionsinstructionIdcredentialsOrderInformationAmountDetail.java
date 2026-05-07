@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Amount Detail data.
+ * Amount Detail data. Breaks down the total transaction amount into components.
  */
-@ApiModel(description = "Amount Detail data.")
+@ApiModel(description = "Amount Detail data. Breaks down the total transaction amount into components.")
 
 public class Acpv1instructionsinstructionIdcredentialsOrderInformationAmountDetail {
   @SerializedName("totalAmount")

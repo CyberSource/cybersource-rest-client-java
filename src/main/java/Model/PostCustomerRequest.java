@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2customersEmbedded;
 import Model.Tmsv2tokenizeTokenInformationCustomerBuyerInformation;
 import Model.Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation;
 import Model.Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument;
 import Model.Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbedded;
 import Model.Tmsv2tokenizeTokenInformationCustomerLinks;
 import Model.Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation;
 import Model.Tmsv2tokenizeTokenInformationCustomerMetadata;
@@ -68,7 +68,7 @@ public class PostCustomerRequest {
   private Tmsv2tokenizeTokenInformationCustomerMetadata metadata = null;
 
   @SerializedName("_embedded")
-  private Tmsv2tokenizeTokenInformationCustomerEmbedded embedded = null;
+  private Tmsv2customersEmbedded embedded = null;
 
   public PostCustomerRequest links(Tmsv2tokenizeTokenInformationCustomerLinks links) {
     this.links = links;
@@ -240,7 +240,7 @@ public class PostCustomerRequest {
     this.metadata = metadata;
   }
 
-  public PostCustomerRequest embedded(Tmsv2tokenizeTokenInformationCustomerEmbedded embedded) {
+  public PostCustomerRequest embedded(Tmsv2customersEmbedded embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -250,11 +250,11 @@ public class PostCustomerRequest {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbedded getEmbedded() {
+  public Tmsv2customersEmbedded getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Tmsv2tokenizeTokenInformationCustomerEmbedded embedded) {
+  public void setEmbedded(Tmsv2customersEmbedded embedded) {
     this.embedded = embedded;
   }
 

@@ -36,6 +36,9 @@ public class InlineResponse2014SetupsRisk {
   @SerializedName("decisionManager")
   private InlineResponse2014SetupsPaymentsCardProcessing decisionManager = null;
 
+  @SerializedName("enhancedAuthentication")
+  private InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication = null;
+
   public InlineResponse2014SetupsRisk fraudManagementEssentials(InlineResponse2014SetupsPaymentsCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
     return this;
@@ -72,6 +75,24 @@ public class InlineResponse2014SetupsRisk {
     this.decisionManager = decisionManager;
   }
 
+  public InlineResponse2014SetupsRisk enhancedAuthentication(InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication) {
+    this.enhancedAuthentication = enhancedAuthentication;
+    return this;
+  }
+
+   /**
+   * Get enhancedAuthentication
+   * @return enhancedAuthentication
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsCardProcessing getEnhancedAuthentication() {
+    return enhancedAuthentication;
+  }
+
+  public void setEnhancedAuthentication(InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication) {
+    this.enhancedAuthentication = enhancedAuthentication;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class InlineResponse2014SetupsRisk {
     }
     InlineResponse2014SetupsRisk inlineResponse2014SetupsRisk = (InlineResponse2014SetupsRisk) o;
     return Objects.equals(this.fraudManagementEssentials, inlineResponse2014SetupsRisk.fraudManagementEssentials) &&
-        Objects.equals(this.decisionManager, inlineResponse2014SetupsRisk.decisionManager);
+        Objects.equals(this.decisionManager, inlineResponse2014SetupsRisk.decisionManager) &&
+        Objects.equals(this.enhancedAuthentication, inlineResponse2014SetupsRisk.enhancedAuthentication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fraudManagementEssentials, decisionManager);
+    return Objects.hash(fraudManagementEssentials, decisionManager, enhancedAuthentication);
   }
 
 
@@ -99,6 +121,7 @@ public class InlineResponse2014SetupsRisk {
     
     if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
+    if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(toIndentedString(enhancedAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

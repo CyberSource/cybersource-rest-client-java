@@ -38,7 +38,7 @@ import Model.InlineResponse412;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PatchCustomerPaymentInstrumentRequest;
-import Model.PaymentInstrumentList;
+import Model.PaymentInstrumentList1;
 import Model.PostCustomerPaymentInstrumentRequest;
 
 import java.lang.reflect.Type;
@@ -510,13 +510,13 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return PaymentInstrumentList
+     * @return PaymentInstrumentList1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PaymentInstrumentList getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
+    public PaymentInstrumentList1 getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' STARTED");
-        ApiResponse<PaymentInstrumentList> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerId, profileId, offset, limit);
+        ApiResponse<PaymentInstrumentList1> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' ENDED");
         return resp.getData();
     }
@@ -528,14 +528,14 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return ApiResponse&lt;PaymentInstrumentList&gt;
+     * @return ApiResponse&lt;PaymentInstrumentList1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PaymentInstrumentList> getCustomerPaymentInstrumentsListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
+    public ApiResponse<PaymentInstrumentList1> getCustomerPaymentInstrumentsListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerPaymentInstrumentsListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaymentInstrumentList>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentInstrumentList1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -551,7 +551,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList1> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -574,7 +574,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         okhttp3.Call call = getCustomerPaymentInstrumentsListValidateBeforeCall(customerId, profileId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentInstrumentList>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentInstrumentList1>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

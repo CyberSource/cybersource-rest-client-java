@@ -71,6 +71,12 @@ public class Riskv1decisionsOrderInformationShipTo {
   @SerializedName("method")
   private String method = null;
 
+  @SerializedName("email")
+  private String email = null;
+
+  @SerializedName("company")
+  private String company = null;
+
   public Riskv1decisionsOrderInformationShipTo address1(String address1) {
     this.address1 = address1;
     return this;
@@ -323,6 +329,42 @@ public class Riskv1decisionsOrderInformationShipTo {
     this.method = method;
   }
 
+  public Riskv1decisionsOrderInformationShipTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email of the recipient. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email of the recipient. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public Riskv1decisionsOrderInformationShipTo company(String company) {
+    this.company = company;
+    return this;
+  }
+
+   /**
+   * Name of the customer&#39;s company. 
+   * @return company
+  **/
+  @ApiModelProperty(value = "Name of the customer's company. ")
+  public String getCompany() {
+    return company;
+  }
+
+  public void setCompany(String company) {
+    this.company = company;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -346,12 +388,14 @@ public class Riskv1decisionsOrderInformationShipTo {
         Objects.equals(this.phoneNumber, riskv1decisionsOrderInformationShipTo.phoneNumber) &&
         Objects.equals(this.postalCode, riskv1decisionsOrderInformationShipTo.postalCode) &&
         Objects.equals(this.destinationCode, riskv1decisionsOrderInformationShipTo.destinationCode) &&
-        Objects.equals(this.method, riskv1decisionsOrderInformationShipTo.method);
+        Objects.equals(this.method, riskv1decisionsOrderInformationShipTo.method) &&
+        Objects.equals(this.email, riskv1decisionsOrderInformationShipTo.email) &&
+        Objects.equals(this.company, riskv1decisionsOrderInformationShipTo.company);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, address3, administrativeArea, country, destinationTypes, locality, firstName, lastName, middleName, phoneNumber, postalCode, destinationCode, method);
+    return Objects.hash(address1, address2, address3, administrativeArea, country, destinationTypes, locality, firstName, lastName, middleName, phoneNumber, postalCode, destinationCode, method, email, company);
   }
 
 
@@ -374,6 +418,8 @@ public class Riskv1decisionsOrderInformationShipTo {
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (destinationCode != null) sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");
     if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (company != null) sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("}");
     return sb.toString();
   }

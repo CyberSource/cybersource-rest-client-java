@@ -165,7 +165,7 @@ public class InstructionsApi {
 
     /**
      * Cancel a purchase intent
-     * Cancels an existing purchase intent identified by the transaction ID.
+     * Cancel an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer decides to abandon the purchase before payment credentials have been used. Requires device information and assurance data for identity verification. Returns status CANCELLED (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required before cancellation can proceed.
      * @param instructionId  (required)
      * @param agenticCancelPurchaseIntentRequest Unique identifier for the purchase intent instruction. (required)
      * @return AgenticCreatePurchaseIntentResponse200
@@ -181,7 +181,7 @@ public class InstructionsApi {
 
     /**
      * Cancel a purchase intent
-     * Cancels an existing purchase intent identified by the transaction ID.
+     * Cancel an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer decides to abandon the purchase before payment credentials have been used. Requires device information and assurance data for identity verification. Returns status CANCELLED (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required before cancellation can proceed.
      * @param instructionId  (required)
      * @param agenticCancelPurchaseIntentRequest Unique identifier for the purchase intent instruction. (required)
      * @return ApiResponse&lt;AgenticCreatePurchaseIntentResponse200&gt;
@@ -197,7 +197,7 @@ public class InstructionsApi {
 
     /**
      * Cancel a purchase intent (asynchronously)
-     * Cancels an existing purchase intent identified by the transaction ID.
+     * Cancel an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer decides to abandon the purchase before payment credentials have been used. Requires device information and assurance data for identity verification. Returns status CANCELLED (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required before cancellation can proceed.
      * @param instructionId  (required)
      * @param agenticCancelPurchaseIntentRequest Unique identifier for the purchase intent instruction. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -324,7 +324,7 @@ public class InstructionsApi {
 
     /**
      * Confirm transaction events
-     * Agents send the confirm transaction events to notify the payment processing is done
+     * Confirm transaction events for a completed purchase. The agent calls this endpoint after the payment has been submitted to notify the Intelligent Commerce Connect of the transaction outcome. The request includes processor information (transaction type, status, approval codes), order details (shipping, tracking, product information), and merchant information. Returns HTTP 202 acknowledging receipt of the confirmation.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticConfirmTransactionEventsRequest  (required)
      * @return AgenticConfirmTransactionEventsResponse202
@@ -340,7 +340,7 @@ public class InstructionsApi {
 
     /**
      * Confirm transaction events
-     * Agents send the confirm transaction events to notify the payment processing is done
+     * Confirm transaction events for a completed purchase. The agent calls this endpoint after the payment has been submitted to notify the Intelligent Commerce Connect of the transaction outcome. The request includes processor information (transaction type, status, approval codes), order details (shipping, tracking, product information), and merchant information. Returns HTTP 202 acknowledging receipt of the confirmation.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticConfirmTransactionEventsRequest  (required)
      * @return ApiResponse&lt;AgenticConfirmTransactionEventsResponse202&gt;
@@ -356,7 +356,7 @@ public class InstructionsApi {
 
     /**
      * Confirm transaction events (asynchronously)
-     * Agents send the confirm transaction events to notify the payment processing is done
+     * Confirm transaction events for a completed purchase. The agent calls this endpoint after the payment has been submitted to notify the Intelligent Commerce Connect of the transaction outcome. The request includes processor information (transaction type, status, approval codes), order details (shipping, tracking, product information), and merchant information. Returns HTTP 202 acknowledging receipt of the confirmation.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticConfirmTransactionEventsRequest  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -475,7 +475,7 @@ public class InstructionsApi {
 
     /**
      * Initiate a purchase intent
-     * Creates a new purchase intent with the provided details.
+     * Create a new purchase intent (instruction) for an agentic transaction. The agent calls this endpoint after a card has been enrolled to define what the consumer wants to buy. The request includes payment instrument references, device and assurance data, mandates (spending limits, merchant preferences, and product descriptions), and optional buyer information. Return an instructionId (HTTP 200) if the intent is created immediately, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required. The instructionId returned is used in all subsequent operations - update, cancel, retrieve credentials, and confirm transaction.
      * @param agenticCreatePurchaseIntentRequest  (required)
      * @return AgenticCreatePurchaseIntentResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -490,7 +490,7 @@ public class InstructionsApi {
 
     /**
      * Initiate a purchase intent
-     * Creates a new purchase intent with the provided details.
+     * Create a new purchase intent (instruction) for an agentic transaction. The agent calls this endpoint after a card has been enrolled to define what the consumer wants to buy. The request includes payment instrument references, device and assurance data, mandates (spending limits, merchant preferences, and product descriptions), and optional buyer information. Return an instructionId (HTTP 200) if the intent is created immediately, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required. The instructionId returned is used in all subsequent operations - update, cancel, retrieve credentials, and confirm transaction.
      * @param agenticCreatePurchaseIntentRequest  (required)
      * @return ApiResponse&lt;AgenticCreatePurchaseIntentResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -505,7 +505,7 @@ public class InstructionsApi {
 
     /**
      * Initiate a purchase intent (asynchronously)
-     * Creates a new purchase intent with the provided details.
+     * Create a new purchase intent (instruction) for an agentic transaction. The agent calls this endpoint after a card has been enrolled to define what the consumer wants to buy. The request includes payment instrument references, device and assurance data, mandates (spending limits, merchant preferences, and product descriptions), and optional buyer information. Return an instructionId (HTTP 200) if the intent is created immediately, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required. The instructionId returned is used in all subsequent operations - update, cancel, retrieve credentials, and confirm transaction.
      * @param agenticCreatePurchaseIntentRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -631,7 +631,7 @@ public class InstructionsApi {
 
     /**
      * Retrieve payment credentials
-     * Retrieve a customer&#39;s tokenized payment credentials to complete the transaction.
+     * Retrieve tokenized payment credentials for a purchase intent to complete the transaction at a merchant. The agent calls this endpoint after a purchase intent has been created and approved, providing transaction-level details including order information, merchant details, payment options, and production information. Returns COMPLETED (HTTP 200) with a signed payload containing encrypted payment credentials (authorization token and JWS-signed payload), or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required. The signed payload is used by the merchant&#39;s payment processor to complete the transaction.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticRetrievePaymentCredentialsRequest  (required)
      * @return AgenticRetrievePaymentCredentialsResponse200
@@ -647,7 +647,7 @@ public class InstructionsApi {
 
     /**
      * Retrieve payment credentials
-     * Retrieve a customer&#39;s tokenized payment credentials to complete the transaction.
+     * Retrieve tokenized payment credentials for a purchase intent to complete the transaction at a merchant. The agent calls this endpoint after a purchase intent has been created and approved, providing transaction-level details including order information, merchant details, payment options, and production information. Returns COMPLETED (HTTP 200) with a signed payload containing encrypted payment credentials (authorization token and JWS-signed payload), or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required. The signed payload is used by the merchant&#39;s payment processor to complete the transaction.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticRetrievePaymentCredentialsRequest  (required)
      * @return ApiResponse&lt;AgenticRetrievePaymentCredentialsResponse200&gt;
@@ -663,7 +663,7 @@ public class InstructionsApi {
 
     /**
      * Retrieve payment credentials (asynchronously)
-     * Retrieve a customer&#39;s tokenized payment credentials to complete the transaction.
+     * Retrieve tokenized payment credentials for a purchase intent to complete the transaction at a merchant. The agent calls this endpoint after a purchase intent has been created and approved, providing transaction-level details including order information, merchant details, payment options, and production information. Returns COMPLETED (HTTP 200) with a signed payload containing encrypted payment credentials (authorization token and JWS-signed payload), or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required. The signed payload is used by the merchant&#39;s payment processor to complete the transaction.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticRetrievePaymentCredentialsRequest  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -790,7 +790,7 @@ public class InstructionsApi {
 
     /**
      * Update a purchase intent
-     * Updates an existing purchase intent identified by the transaction ID.
+     * Update an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer modifies their order — for example, changing the quantity, updating mandates, switching payment instruments, or changing shipping details. The request body has the same structure as the initiate request. Returns the same instructionId (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required for the updated intent.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticUpdatePurchaseIntentRequest  (required)
      * @return AgenticCreatePurchaseIntentResponse200
@@ -806,7 +806,7 @@ public class InstructionsApi {
 
     /**
      * Update a purchase intent
-     * Updates an existing purchase intent identified by the transaction ID.
+     * Update an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer modifies their order — for example, changing the quantity, updating mandates, switching payment instruments, or changing shipping details. The request body has the same structure as the initiate request. Returns the same instructionId (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required for the updated intent.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticUpdatePurchaseIntentRequest  (required)
      * @return ApiResponse&lt;AgenticCreatePurchaseIntentResponse200&gt;
@@ -822,7 +822,7 @@ public class InstructionsApi {
 
     /**
      * Update a purchase intent (asynchronously)
-     * Updates an existing purchase intent identified by the transaction ID.
+     * Update an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer modifies their order — for example, changing the quantity, updating mandates, switching payment instruments, or changing shipping details. The request body has the same structure as the initiate request. Returns the same instructionId (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required for the updated intent.
      * @param instructionId Unique identifier for the purchase intent instruction. (required)
      * @param agenticUpdatePurchaseIntentRequest  (required)
      * @param callback The callback to be executed when the API call finishes

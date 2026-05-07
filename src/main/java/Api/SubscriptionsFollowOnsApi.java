@@ -244,7 +244,7 @@ public class SubscriptionsFollowOnsApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFollowOnSubscription,getFollowOnSubscriptionAsync,getFollowOnSubscriptionWithHttpInfo,getFollowOnSubscriptionCall")) {
             try {

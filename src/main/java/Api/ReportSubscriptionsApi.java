@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse4006;
+import Model.InlineResponse4008;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;

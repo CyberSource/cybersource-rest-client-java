@@ -17,8 +17,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ucv1sessionsDataOrderInformationAmountDetails;
 import Model.Ucv1sessionsDataOrderInformationBillTo;
-import Model.Upv1capturecontextsDataOrderInformationInvoiceDetails;
-import Model.Upv1capturecontextsDataOrderInformationLineItems;
+import Model.Ucv1sessionsDataOrderInformationInvoiceDetails;
+import Model.Ucv1sessionsDataOrderInformationLineItems;
+import Model.Ucv1sessionsDataOrderInformationShippingDetails;
 import Model.Upv1capturecontextsDataOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -46,10 +47,13 @@ public class Ucv1sessionsDataOrderInformation {
   private Upv1capturecontextsDataOrderInformationShipTo shipTo = null;
 
   @SerializedName("lineItems")
-  private List<Upv1capturecontextsDataOrderInformationLineItems> lineItems = null;
+  private List<Ucv1sessionsDataOrderInformationLineItems> lineItems = null;
 
   @SerializedName("invoiceDetails")
-  private Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails = null;
+  private Ucv1sessionsDataOrderInformationInvoiceDetails invoiceDetails = null;
+
+  @SerializedName("shippingDetails")
+  private Ucv1sessionsDataOrderInformationShippingDetails shippingDetails = null;
 
   public Ucv1sessionsDataOrderInformation amountDetails(Ucv1sessionsDataOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -105,14 +109,14 @@ public class Ucv1sessionsDataOrderInformation {
     this.shipTo = shipTo;
   }
 
-  public Ucv1sessionsDataOrderInformation lineItems(List<Upv1capturecontextsDataOrderInformationLineItems> lineItems) {
+  public Ucv1sessionsDataOrderInformation lineItems(List<Ucv1sessionsDataOrderInformationLineItems> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
 
-  public Ucv1sessionsDataOrderInformation addLineItemsItem(Upv1capturecontextsDataOrderInformationLineItems lineItemsItem) {
+  public Ucv1sessionsDataOrderInformation addLineItemsItem(Ucv1sessionsDataOrderInformationLineItems lineItemsItem) {
     if (this.lineItems == null) {
-      this.lineItems = new ArrayList<Upv1capturecontextsDataOrderInformationLineItems>();
+      this.lineItems = new ArrayList<Ucv1sessionsDataOrderInformationLineItems>();
     }
     this.lineItems.add(lineItemsItem);
     return this;
@@ -123,15 +127,15 @@ public class Ucv1sessionsDataOrderInformation {
    * @return lineItems
   **/
   @ApiModelProperty(value = "")
-  public List<Upv1capturecontextsDataOrderInformationLineItems> getLineItems() {
+  public List<Ucv1sessionsDataOrderInformationLineItems> getLineItems() {
     return lineItems;
   }
 
-  public void setLineItems(List<Upv1capturecontextsDataOrderInformationLineItems> lineItems) {
+  public void setLineItems(List<Ucv1sessionsDataOrderInformationLineItems> lineItems) {
     this.lineItems = lineItems;
   }
 
-  public Ucv1sessionsDataOrderInformation invoiceDetails(Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails) {
+  public Ucv1sessionsDataOrderInformation invoiceDetails(Ucv1sessionsDataOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
     return this;
   }
@@ -141,12 +145,30 @@ public class Ucv1sessionsDataOrderInformation {
    * @return invoiceDetails
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationInvoiceDetails getInvoiceDetails() {
+  public Ucv1sessionsDataOrderInformationInvoiceDetails getInvoiceDetails() {
     return invoiceDetails;
   }
 
-  public void setInvoiceDetails(Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails) {
+  public void setInvoiceDetails(Ucv1sessionsDataOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
+  }
+
+  public Ucv1sessionsDataOrderInformation shippingDetails(Ucv1sessionsDataOrderInformationShippingDetails shippingDetails) {
+    this.shippingDetails = shippingDetails;
+    return this;
+  }
+
+   /**
+   * Get shippingDetails
+   * @return shippingDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataOrderInformationShippingDetails getShippingDetails() {
+    return shippingDetails;
+  }
+
+  public void setShippingDetails(Ucv1sessionsDataOrderInformationShippingDetails shippingDetails) {
+    this.shippingDetails = shippingDetails;
   }
 
 
@@ -163,12 +185,13 @@ public class Ucv1sessionsDataOrderInformation {
         Objects.equals(this.billTo, ucv1sessionsDataOrderInformation.billTo) &&
         Objects.equals(this.shipTo, ucv1sessionsDataOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, ucv1sessionsDataOrderInformation.lineItems) &&
-        Objects.equals(this.invoiceDetails, ucv1sessionsDataOrderInformation.invoiceDetails);
+        Objects.equals(this.invoiceDetails, ucv1sessionsDataOrderInformation.invoiceDetails) &&
+        Objects.equals(this.shippingDetails, ucv1sessionsDataOrderInformation.shippingDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails);
   }
 
 
@@ -182,6 +205,7 @@ public class Ucv1sessionsDataOrderInformation {
     if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

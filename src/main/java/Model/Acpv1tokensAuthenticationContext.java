@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Authentication Context data.
+ * Authentication Context data. Describes the authentication action performed.
  */
-@ApiModel(description = "Authentication Context data.")
+@ApiModel(description = "Authentication Context data. Describes the authentication action performed.")
 
 public class Acpv1tokensAuthenticationContext {
   @SerializedName("action")

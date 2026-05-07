@@ -38,10 +38,10 @@ public class Bavsv1accountvalidationsPaymentInformationBankAccount {
   }
 
    /**
-   * Account Number.  Non-Negative Integer. example: 12345678901234577 
+   * Account Number.  Non-Negative String, containing only digits. 
    * @return number
   **/
-  @ApiModelProperty(required = true, value = "Account Number.  Non-Negative Integer. example: 12345678901234577 ")
+  @ApiModelProperty(example = "12345678901234577", required = true, value = "Account Number.  Non-Negative String, containing only digits. ")
   public String getNumber() {
     return number;
   }

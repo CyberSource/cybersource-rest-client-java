@@ -38,6 +38,9 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
   @SerializedName("acsWindowSize")
   private String acsWindowSize = null;
 
+  @SerializedName("productCode")
+  private String productCode = null;
+
   public Ucv1sessionsDataConsumerAuthenticationInformation challengeCode(String challengeCode) {
     this.challengeCode = challengeCode;
     return this;
@@ -92,6 +95,24 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     this.acsWindowSize = acsWindowSize;
   }
 
+  public Ucv1sessionsDataConsumerAuthenticationInformation productCode(String productCode) {
+    this.productCode = productCode;
+    return this;
+  }
+
+   /**
+   * Specifies the product code, which designates the type of transaction.&lt;br&gt;&lt;br&gt;  Specify one of the following values for this field:  - AIR: Airline purchase  Important Required for American Express SafeKey (U.S.).  - ACC: Accommodation Rental  - ACF: Account funding  - CHA: Check acceptance  - DIG: Digital Goods  - DSP: Cash Dispensing  - GAS: Fuel  - GEN: General Retail  - LUX: Luxury Retail  - PAL: Prepaid activation and load  - PHY: Goods or services purchase  - QCT: Quasi-cash transaction  - REN: Car Rental  - RES: Restaurant  - SVC: Services  - TBD: Other  - TRA: Travel&lt;br&gt;  **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @return productCode
+  **/
+  @ApiModelProperty(value = "Specifies the product code, which designates the type of transaction.<br><br>  Specify one of the following values for this field:  - AIR: Airline purchase  Important Required for American Express SafeKey (U.S.).  - ACC: Accommodation Rental  - ACF: Account funding  - CHA: Check acceptance  - DIG: Digital Goods  - DSP: Cash Dispensing  - GAS: Fuel  - GEN: General Retail  - LUX: Luxury Retail  - PAL: Prepaid activation and load  - PHY: Goods or services purchase  - QCT: Quasi-cash transaction  - REN: Car Rental  - RES: Restaurant  - SVC: Services  - TBD: Other  - TRA: Travel<br>  **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  public String getProductCode() {
+    return productCode;
+  }
+
+  public void setProductCode(String productCode) {
+    this.productCode = productCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     Ucv1sessionsDataConsumerAuthenticationInformation ucv1sessionsDataConsumerAuthenticationInformation = (Ucv1sessionsDataConsumerAuthenticationInformation) o;
     return Objects.equals(this.challengeCode, ucv1sessionsDataConsumerAuthenticationInformation.challengeCode) &&
         Objects.equals(this.messageCategory, ucv1sessionsDataConsumerAuthenticationInformation.messageCategory) &&
-        Objects.equals(this.acsWindowSize, ucv1sessionsDataConsumerAuthenticationInformation.acsWindowSize);
+        Objects.equals(this.acsWindowSize, ucv1sessionsDataConsumerAuthenticationInformation.acsWindowSize) &&
+        Objects.equals(this.productCode, ucv1sessionsDataConsumerAuthenticationInformation.productCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(challengeCode, messageCategory, acsWindowSize);
+    return Objects.hash(challengeCode, messageCategory, acsWindowSize, productCode);
   }
 
 
@@ -121,6 +143,7 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     if (challengeCode != null) sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
     if (messageCategory != null) sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
     if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

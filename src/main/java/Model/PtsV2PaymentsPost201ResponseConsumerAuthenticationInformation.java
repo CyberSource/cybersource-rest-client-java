@@ -160,6 +160,27 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
 
+  @SerializedName("token")
+  private String token = null;
+
+  @SerializedName("acsReferenceNumber")
+  private String acsReferenceNumber = null;
+
+  @SerializedName("acsOperatorID")
+  private String acsOperatorID = null;
+
+  @SerializedName("idciScore")
+  private Integer idciScore = null;
+
+  @SerializedName("idciDecision")
+  private String idciDecision = null;
+
+  @SerializedName("idciReasonCode1")
+  private String idciReasonCode1 = null;
+
+  @SerializedName("idciReasonCode2")
+  private String idciReasonCode2 = null;
+
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation accessToken(String accessToken) {
     this.accessToken = accessToken;
     return this;
@@ -934,6 +955,132 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     this.whiteListStatus = whiteListStatus;
   }
 
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation token(String token) {
+    this.token = token;
+    return this;
+  }
+
+   /**
+   * 
+   * @return token
+  **/
+  @ApiModelProperty(value = "")
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation acsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @return acsReferenceNumber
+  **/
+  @ApiModelProperty(value = "Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.")
+  public String getAcsReferenceNumber() {
+    return acsReferenceNumber;
+  }
+
+  public void setAcsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation acsOperatorID(String acsOperatorID) {
+    this.acsOperatorID = acsOperatorID;
+    return this;
+  }
+
+   /**
+   * Directory Server assigned ACS identifier.
+   * @return acsOperatorID
+  **/
+  @ApiModelProperty(value = "Directory Server assigned ACS identifier.")
+  public String getAcsOperatorID() {
+    return acsOperatorID;
+  }
+
+  public void setAcsOperatorID(String acsOperatorID) {
+    this.acsOperatorID = acsOperatorID;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation idciScore(Integer idciScore) {
+    this.idciScore = idciScore;
+    return this;
+  }
+
+   /**
+   * Risk Assessment from Mastercard
+   * @return idciScore
+  **/
+  @ApiModelProperty(value = "Risk Assessment from Mastercard")
+  public Integer getIdciScore() {
+    return idciScore;
+  }
+
+  public void setIdciScore(Integer idciScore) {
+    this.idciScore = idciScore;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation idciDecision(String idciDecision) {
+    this.idciDecision = idciDecision;
+    return this;
+  }
+
+   /**
+   * Decision on the Risk Assessment from Mastercard.
+   * @return idciDecision
+  **/
+  @ApiModelProperty(value = "Decision on the Risk Assessment from Mastercard.")
+  public String getIdciDecision() {
+    return idciDecision;
+  }
+
+  public void setIdciDecision(String idciDecision) {
+    this.idciDecision = idciDecision;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation idciReasonCode1(String idciReasonCode1) {
+    this.idciReasonCode1 = idciReasonCode1;
+    return this;
+  }
+
+   /**
+   * ReasonCode from Mastercard
+   * @return idciReasonCode1
+  **/
+  @ApiModelProperty(value = "ReasonCode from Mastercard")
+  public String getIdciReasonCode1() {
+    return idciReasonCode1;
+  }
+
+  public void setIdciReasonCode1(String idciReasonCode1) {
+    this.idciReasonCode1 = idciReasonCode1;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation idciReasonCode2(String idciReasonCode2) {
+    this.idciReasonCode2 = idciReasonCode2;
+    return this;
+  }
+
+   /**
+   * ReasonCode from Mastercard
+   * @return idciReasonCode2
+  **/
+  @ApiModelProperty(value = "ReasonCode from Mastercard")
+  public String getIdciReasonCode2() {
+    return idciReasonCode2;
+  }
+
+  public void setIdciReasonCode2(String idciReasonCode2) {
+    this.idciReasonCode2 = idciReasonCode2;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -986,12 +1133,19 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
         Objects.equals(this.authenticationStatusMsg, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.authenticationStatusMsg) &&
         Objects.equals(this.indicator, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.indicator) &&
         Objects.equals(this.interactionCounter, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.interactionCounter) &&
-        Objects.equals(this.whiteListStatus, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.whiteListStatus);
+        Objects.equals(this.whiteListStatus, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.token, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.token) &&
+        Objects.equals(this.acsReferenceNumber, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsReferenceNumber) &&
+        Objects.equals(this.acsOperatorID, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsOperatorID) &&
+        Objects.equals(this.idciScore, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.idciScore) &&
+        Objects.equals(this.idciDecision, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.idciDecision) &&
+        Objects.equals(this.idciReasonCode1, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.idciReasonCode1) &&
+        Objects.equals(this.idciReasonCode2, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.idciReasonCode2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, strongAuthentication, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, dataQualityIndicator, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, strongAuthentication, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, dataQualityIndicator, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus, token, acsReferenceNumber, acsOperatorID, idciScore, idciDecision, idciReasonCode1, idciReasonCode2);
   }
 
 
@@ -1043,6 +1197,13 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     if (indicator != null) sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
     if (interactionCounter != null) sb.append("    interactionCounter: ").append(toIndentedString(interactionCounter)).append("\n");
     if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    if (token != null) sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
+    if (acsOperatorID != null) sb.append("    acsOperatorID: ").append(toIndentedString(acsOperatorID)).append("\n");
+    if (idciScore != null) sb.append("    idciScore: ").append(toIndentedString(idciScore)).append("\n");
+    if (idciDecision != null) sb.append("    idciDecision: ").append(toIndentedString(idciDecision)).append("\n");
+    if (idciReasonCode1 != null) sb.append("    idciReasonCode1: ").append(toIndentedString(idciReasonCode1)).append("\n");
+    if (idciReasonCode2 != null) sb.append("    idciReasonCode2: ").append(toIndentedString(idciReasonCode2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

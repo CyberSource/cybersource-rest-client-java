@@ -133,10 +133,10 @@ public class PtsV2PaymentsRefundPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - PENDING 
+   * The status of the submitted transaction.  Possible values:  - PENDING  - DECLINED  - INVALID_REQUEST 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING  - DECLINED  - INVALID_REQUEST ")
   public String getStatus() {
     return status;
   }

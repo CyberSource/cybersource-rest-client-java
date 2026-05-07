@@ -16,6 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ucv1sessionsDataProcessingInformationAuthorizationOptions;
+import Model.Ucv1sessionsDataProcessingInformationBankTransferOptions;
+import Model.Ucv1sessionsDataProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,8 +35,17 @@ public class Ucv1sessionsDataProcessingInformation {
   @SerializedName("reconciliationId")
   private String reconciliationId = null;
 
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
+
   @SerializedName("authorizationOptions")
   private Ucv1sessionsDataProcessingInformationAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("recurringOptions")
+  private Ucv1sessionsDataProcessingInformationRecurringOptions recurringOptions = null;
+
+  @SerializedName("bankTransferOptions")
+  private Ucv1sessionsDataProcessingInformationBankTransferOptions bankTransferOptions = null;
 
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -63,6 +74,24 @@ public class Ucv1sessionsDataProcessingInformation {
     this.reconciliationId = reconciliationId;
   }
 
+  public Ucv1sessionsDataProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   * This field is applicable for AFT and OCT transactions.  For list of supported values, please refer to Developer Guide. 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = "This field is applicable for AFT and OCT transactions.  For list of supported values, please refer to Developer Guide. ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+  }
+
   public Ucv1sessionsDataProcessingInformation authorizationOptions(Ucv1sessionsDataProcessingInformationAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
     return this;
@@ -79,6 +108,42 @@ public class Ucv1sessionsDataProcessingInformation {
 
   public void setAuthorizationOptions(Ucv1sessionsDataProcessingInformationAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
+  }
+
+  public Ucv1sessionsDataProcessingInformation recurringOptions(Ucv1sessionsDataProcessingInformationRecurringOptions recurringOptions) {
+    this.recurringOptions = recurringOptions;
+    return this;
+  }
+
+   /**
+   * Get recurringOptions
+   * @return recurringOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataProcessingInformationRecurringOptions getRecurringOptions() {
+    return recurringOptions;
+  }
+
+  public void setRecurringOptions(Ucv1sessionsDataProcessingInformationRecurringOptions recurringOptions) {
+    this.recurringOptions = recurringOptions;
+  }
+
+  public Ucv1sessionsDataProcessingInformation bankTransferOptions(Ucv1sessionsDataProcessingInformationBankTransferOptions bankTransferOptions) {
+    this.bankTransferOptions = bankTransferOptions;
+    return this;
+  }
+
+   /**
+   * Get bankTransferOptions
+   * @return bankTransferOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataProcessingInformationBankTransferOptions getBankTransferOptions() {
+    return bankTransferOptions;
+  }
+
+  public void setBankTransferOptions(Ucv1sessionsDataProcessingInformationBankTransferOptions bankTransferOptions) {
+    this.bankTransferOptions = bankTransferOptions;
   }
 
   public Ucv1sessionsDataProcessingInformation businessApplicationId(String businessApplicationId) {
@@ -146,7 +211,10 @@ public class Ucv1sessionsDataProcessingInformation {
     }
     Ucv1sessionsDataProcessingInformation ucv1sessionsDataProcessingInformation = (Ucv1sessionsDataProcessingInformation) o;
     return Objects.equals(this.reconciliationId, ucv1sessionsDataProcessingInformation.reconciliationId) &&
+        Objects.equals(this.purposeOfPayment, ucv1sessionsDataProcessingInformation.purposeOfPayment) &&
         Objects.equals(this.authorizationOptions, ucv1sessionsDataProcessingInformation.authorizationOptions) &&
+        Objects.equals(this.recurringOptions, ucv1sessionsDataProcessingInformation.recurringOptions) &&
+        Objects.equals(this.bankTransferOptions, ucv1sessionsDataProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.businessApplicationId, ucv1sessionsDataProcessingInformation.businessApplicationId) &&
         Objects.equals(this.commerceIndicator, ucv1sessionsDataProcessingInformation.commerceIndicator) &&
         Objects.equals(this.processingInstruction, ucv1sessionsDataProcessingInformation.processingInstruction);
@@ -154,7 +222,7 @@ public class Ucv1sessionsDataProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reconciliationId, authorizationOptions, businessApplicationId, commerceIndicator, processingInstruction);
+    return Objects.hash(reconciliationId, purposeOfPayment, authorizationOptions, recurringOptions, bankTransferOptions, businessApplicationId, commerceIndicator, processingInstruction);
   }
 
 
@@ -164,7 +232,10 @@ public class Ucv1sessionsDataProcessingInformation {
     sb.append("class Ucv1sessionsDataProcessingInformation {\n");
     
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     if (processingInstruction != null) sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");

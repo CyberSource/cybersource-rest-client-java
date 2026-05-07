@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Bavsv1accountvalidationsClientReferenceInformation;
 import Model.Bavsv1accountvalidationsPaymentInformation;
 import Model.Bavsv1accountvalidationsProcessingInformation;
+import Model.Bavsv1accountvalidationsTokenInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +41,9 @@ public class AccountValidationsRequest {
 
   @SerializedName("paymentInformation")
   private Bavsv1accountvalidationsPaymentInformation paymentInformation = null;
+
+  @SerializedName("tokenInformation")
+  private Bavsv1accountvalidationsTokenInformation tokenInformation = null;
 
   public AccountValidationsRequest clientReferenceInformation(Bavsv1accountvalidationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -95,6 +99,24 @@ public class AccountValidationsRequest {
     this.paymentInformation = paymentInformation;
   }
 
+  public AccountValidationsRequest tokenInformation(Bavsv1accountvalidationsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Bavsv1accountvalidationsTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(Bavsv1accountvalidationsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +129,13 @@ public class AccountValidationsRequest {
     AccountValidationsRequest accountValidationsRequest = (AccountValidationsRequest) o;
     return Objects.equals(this.clientReferenceInformation, accountValidationsRequest.clientReferenceInformation) &&
         Objects.equals(this.processingInformation, accountValidationsRequest.processingInformation) &&
-        Objects.equals(this.paymentInformation, accountValidationsRequest.paymentInformation);
+        Objects.equals(this.paymentInformation, accountValidationsRequest.paymentInformation) &&
+        Objects.equals(this.tokenInformation, accountValidationsRequest.tokenInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, tokenInformation);
   }
 
 
@@ -124,6 +147,7 @@ public class AccountValidationsRequest {
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

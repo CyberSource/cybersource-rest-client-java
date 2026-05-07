@@ -16,11 +16,11 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard;
+import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
-import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
@@ -43,7 +43,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
   private PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card = null;
 
   @SerializedName("tokenizedCard")
-  private PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard = null;
+  private PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard = null;
 
   @SerializedName("tokenizedPaymentMethod")
   private PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod tokenizedPaymentMethod = null;
@@ -102,7 +102,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     this.card = card;
   }
 
-  public PtsV2PaymentsPost201ResponsePaymentInformation tokenizedCard(PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard) {
+  public PtsV2PaymentsPost201ResponsePaymentInformation tokenizedCard(PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
     return this;
   }
@@ -112,11 +112,11 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
    * @return tokenizedCard
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard getTokenizedCard() {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard getTokenizedCard() {
     return tokenizedCard;
   }
 
-  public void setTokenizedCard(PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard) {
+  public void setTokenizedCard(PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
   }
 

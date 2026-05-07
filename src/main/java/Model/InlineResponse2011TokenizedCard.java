@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Tmsv2TokenizedCardCard;
+import Model.Tmsv2TokenizedCardVerificationResults;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -78,8 +79,14 @@ public class InlineResponse2011TokenizedCard {
   @SerializedName("paymentAccountReference")
   private String paymentAccountReference = null;
 
+  @SerializedName("applicationTransactionCounter")
+  private String applicationTransactionCounter = null;
+
   @SerializedName("card")
   private Tmsv2TokenizedCardCard card = null;
+
+  @SerializedName("verificationResults")
+  private Tmsv2TokenizedCardVerificationResults verificationResults = null;
 
    /**
    * The Id of the Tokenized Card. 
@@ -243,6 +250,15 @@ public class InlineResponse2011TokenizedCard {
     return paymentAccountReference;
   }
 
+   /**
+   * A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens. 
+   * @return applicationTransactionCounter
+  **/
+  @ApiModelProperty(value = "A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens. ")
+  public String getApplicationTransactionCounter() {
+    return applicationTransactionCounter;
+  }
+
   public InlineResponse2011TokenizedCard card(Tmsv2TokenizedCardCard card) {
     this.card = card;
     return this;
@@ -259,6 +275,24 @@ public class InlineResponse2011TokenizedCard {
 
   public void setCard(Tmsv2TokenizedCardCard card) {
     this.card = card;
+  }
+
+  public InlineResponse2011TokenizedCard verificationResults(Tmsv2TokenizedCardVerificationResults verificationResults) {
+    this.verificationResults = verificationResults;
+    return this;
+  }
+
+   /**
+   * Get verificationResults
+   * @return verificationResults
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardVerificationResults getVerificationResults() {
+    return verificationResults;
+  }
+
+  public void setVerificationResults(Tmsv2TokenizedCardVerificationResults verificationResults) {
+    this.verificationResults = verificationResults;
   }
 
 
@@ -287,12 +321,14 @@ public class InlineResponse2011TokenizedCard {
         Objects.equals(this.eci, inlineResponse2011TokenizedCard.eci) &&
         Objects.equals(this.requestorId, inlineResponse2011TokenizedCard.requestorId) &&
         Objects.equals(this.paymentAccountReference, inlineResponse2011TokenizedCard.paymentAccountReference) &&
-        Objects.equals(this.card, inlineResponse2011TokenizedCard.card);
+        Objects.equals(this.applicationTransactionCounter, inlineResponse2011TokenizedCard.applicationTransactionCounter) &&
+        Objects.equals(this.card, inlineResponse2011TokenizedCard.card) &&
+        Objects.equals(this.verificationResults, inlineResponse2011TokenizedCard.verificationResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, object, source, state, enrollmentId, tokenReferenceId, number, expirationMonth, expirationYear, type, reason, cryptogram, securityCode, eci, requestorId, paymentAccountReference, card);
+    return Objects.hash(id, object, source, state, enrollmentId, tokenReferenceId, number, expirationMonth, expirationYear, type, reason, cryptogram, securityCode, eci, requestorId, paymentAccountReference, applicationTransactionCounter, card, verificationResults);
   }
 
 
@@ -317,7 +353,9 @@ public class InlineResponse2011TokenizedCard {
     if (eci != null) sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
     if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
     if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (applicationTransactionCounter != null) sb.append("    applicationTransactionCounter: ").append(toIndentedString(applicationTransactionCounter)).append("\n");
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (verificationResults != null) sb.append("    verificationResults: ").append(toIndentedString(verificationResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -36,6 +36,12 @@ public class Ptsv2paymentsidcapturesProcessorInformation {
   @SerializedName("responseSourceCode")
   private String responseSourceCode = null;
 
+  @SerializedName("supplementaryTransactionData")
+  private String supplementaryTransactionData = null;
+
+  @SerializedName("cedpVerifiedIndicator")
+  private String cedpVerifiedIndicator = null;
+
   public Ptsv2paymentsidcapturesProcessorInformation network(Ptsv2paymentsProcessorInformationReversalNetwork network) {
     this.network = network;
     return this;
@@ -72,6 +78,42 @@ public class Ptsv2paymentsidcapturesProcessorInformation {
     this.responseSourceCode = responseSourceCode;
   }
 
+  public Ptsv2paymentsidcapturesProcessorInformation supplementaryTransactionData(String supplementaryTransactionData) {
+    this.supplementaryTransactionData = supplementaryTransactionData;
+    return this;
+  }
+
+   /**
+   * Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. 
+   * @return supplementaryTransactionData
+  **/
+  @ApiModelProperty(value = "Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. ")
+  public String getSupplementaryTransactionData() {
+    return supplementaryTransactionData;
+  }
+
+  public void setSupplementaryTransactionData(String supplementaryTransactionData) {
+    this.supplementaryTransactionData = supplementaryTransactionData;
+  }
+
+  public Ptsv2paymentsidcapturesProcessorInformation cedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
+    return this;
+  }
+
+   /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - &#x60;Y&#x60;: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. 
+   * @return cedpVerifiedIndicator
+  **/
+  @ApiModelProperty(value = "Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. ")
+  public String getCedpVerifiedIndicator() {
+    return cedpVerifiedIndicator;
+  }
+
+  public void setCedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +125,14 @@ public class Ptsv2paymentsidcapturesProcessorInformation {
     }
     Ptsv2paymentsidcapturesProcessorInformation ptsv2paymentsidcapturesProcessorInformation = (Ptsv2paymentsidcapturesProcessorInformation) o;
     return Objects.equals(this.network, ptsv2paymentsidcapturesProcessorInformation.network) &&
-        Objects.equals(this.responseSourceCode, ptsv2paymentsidcapturesProcessorInformation.responseSourceCode);
+        Objects.equals(this.responseSourceCode, ptsv2paymentsidcapturesProcessorInformation.responseSourceCode) &&
+        Objects.equals(this.supplementaryTransactionData, ptsv2paymentsidcapturesProcessorInformation.supplementaryTransactionData) &&
+        Objects.equals(this.cedpVerifiedIndicator, ptsv2paymentsidcapturesProcessorInformation.cedpVerifiedIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(network, responseSourceCode);
+    return Objects.hash(network, responseSourceCode, supplementaryTransactionData, cedpVerifiedIndicator);
   }
 
 
@@ -99,6 +143,8 @@ public class Ptsv2paymentsidcapturesProcessorInformation {
     
     if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     if (responseSourceCode != null) sb.append("    responseSourceCode: ").append(toIndentedString(responseSourceCode)).append("\n");
+    if (supplementaryTransactionData != null) sb.append("    supplementaryTransactionData: ").append(toIndentedString(supplementaryTransactionData)).append("\n");
+    if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(toIndentedString(cedpVerifiedIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

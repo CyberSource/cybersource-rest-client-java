@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard;
+import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,6 +33,9 @@ import java.io.IOException;
 public class PtsV2PaymentsPost201ResponsePaymentAccountInformation {
   @SerializedName("card")
   private PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card = null;
+
+  @SerializedName("tokenizedCard")
+  private PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard = null;
 
   public PtsV2PaymentsPost201ResponsePaymentAccountInformation card(PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card) {
     this.card = card;
@@ -51,6 +55,24 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformation {
     this.card = card;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformation tokenizedCard(PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+    return this;
+  }
+
+   /**
+   * Get tokenizedCard
+   * @return tokenizedCard
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard getTokenizedCard() {
+    return tokenizedCard;
+  }
+
+  public void setTokenizedCard(PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +83,13 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponsePaymentAccountInformation ptsV2PaymentsPost201ResponsePaymentAccountInformation = (PtsV2PaymentsPost201ResponsePaymentAccountInformation) o;
-    return Objects.equals(this.card, ptsV2PaymentsPost201ResponsePaymentAccountInformation.card);
+    return Objects.equals(this.card, ptsV2PaymentsPost201ResponsePaymentAccountInformation.card) &&
+        Objects.equals(this.tokenizedCard, ptsV2PaymentsPost201ResponsePaymentAccountInformation.tokenizedCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card);
+    return Objects.hash(card, tokenizedCard);
   }
 
 
@@ -76,6 +99,7 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformation {
     sb.append("class PtsV2PaymentsPost201ResponsePaymentAccountInformation {\n");
     
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

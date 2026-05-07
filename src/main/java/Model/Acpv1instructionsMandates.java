@@ -27,9 +27,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Mandate data.
+ * Mandate data. Defines the consumer&#39;s spending authorization for a purchase intent, including merchant preferences, amount limits, and product details.
  */
-@ApiModel(description = "Mandate data.")
+@ApiModel(description = "Mandate data. Defines the consumer's spending authorization for a purchase intent, including merchant preferences, amount limits, and product details.")
 
 public class Acpv1instructionsMandates {
   @SerializedName("mandateId")

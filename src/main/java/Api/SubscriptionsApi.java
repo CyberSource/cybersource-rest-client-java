@@ -36,11 +36,16 @@ import Model.CreateSubscriptionResponse;
 import Model.GetAllSubscriptionsResponse;
 import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
+import Model.GetSubscriptionsPaymentsResponse;
+import Model.GetSubscriptionsPaymentsResponse1;
 import Model.InlineResponse4003;
 import Model.InlineResponse4004;
+import Model.InlineResponse4006;
+import Model.InlineResponse4007;
 import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 import Model.SuspendSubscriptionResponse;
+import Model.UpdatePayments;
 import Model.UpdateSubscription;
 import Model.UpdateSubscriptionResponse;
 
@@ -400,7 +405,7 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createSubscription,createSubscriptionAsync,createSubscriptionWithHttpInfo,createSubscriptionCall")) {
             try {
@@ -542,13 +547,14 @@ public class SubscriptionsApi {
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
      * @param customerId Filter by Customer Id (optional)
+     * @param clientReferenceInformationCode Filter by Client Reference Information Code / Merchant Reference Number (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, String customerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -582,6 +588,8 @@ public class SubscriptionsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "status", status));
         if (customerId != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "customerId", customerId));
+        if (clientReferenceInformationCode != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "clientReferenceInformationCode", clientReferenceInformationCode));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -616,10 +624,10 @@ public class SubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, String customerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
-        okhttp3.Call call = getAllSubscriptionsCall(offset, limit, code, status, customerId, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsCall(offset, limit, code, status, customerId, clientReferenceInformationCode, progressListener, progressRequestListener);
         return call;
 
         
@@ -636,13 +644,14 @@ public class SubscriptionsApi {
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
      * @param customerId Filter by Customer Id (optional)
+     * @param clientReferenceInformationCode Filter by Client Reference Information Code / Merchant Reference Number (optional)
      * @return GetAllSubscriptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status, String customerId) throws ApiException, ConfigException {
+    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
-        ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status, customerId);
+        ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status, customerId, clientReferenceInformationCode);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
     }
@@ -655,13 +664,14 @@ public class SubscriptionsApi {
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
      * @param customerId Filter by Customer Id (optional)
+     * @param clientReferenceInformationCode Filter by Client Reference Information Code / Merchant Reference Number (optional)
      * @return ApiResponse&lt;GetAllSubscriptionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status, String customerId) throws ApiException, ConfigException {
+    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, null, null);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, clientReferenceInformationCode, null, null);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -674,12 +684,13 @@ public class SubscriptionsApi {
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
      * @param customerId Filter by Customer Id (optional)
+     * @param clientReferenceInformationCode Filter by Client Reference Information Code / Merchant Reference Number (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, String customerId, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -701,7 +712,7 @@ public class SubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, clientReferenceInformationCode, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -996,6 +1007,335 @@ public class SubscriptionsApi {
 
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for subscriptionsIdPaymentsGet
+     * @param id Subscription Id (required)
+     * @param offset Page offset number. (optional)
+     * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
+     * @param scheduledPaymentsCount Number of existing scheduled payments to be returned. Default - &#x60;5&#x60;, Max - &#x60;9999&#x60;  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call subscriptionsIdPaymentsGetCall(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "subscriptionsIdPaymentsGet,subscriptionsIdPaymentsGetAsync,subscriptionsIdPaymentsGetWithHttpInfo,subscriptionsIdPaymentsGetCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "subscriptionsIdPaymentsGet,subscriptionsIdPaymentsGetAsync,subscriptionsIdPaymentsGetWithHttpInfo,subscriptionsIdPaymentsGetCall");
+        
+        // create path and map variables
+        String localVarPath = "/rbs/v1/subscriptions/{id}/payments"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+        if (scheduledPaymentsCount != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "scheduledPaymentsCount", scheduledPaymentsCount));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call subscriptionsIdPaymentsGetValidateBeforeCall(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling subscriptionsIdPaymentsGet(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling subscriptionsIdPaymentsGet(Async)");
+        }
+        
+        
+        okhttp3.Call call = subscriptionsIdPaymentsGetCall(id, offset, limit, scheduledPaymentsCount, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get Payments for a Subscription
+     * Retrieve a list of payments for a specific subscription by its ID. 
+     * @param id Subscription Id (required)
+     * @param offset Page offset number. (optional)
+     * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
+     * @param scheduledPaymentsCount Number of existing scheduled payments to be returned. Default - &#x60;5&#x60;, Max - &#x60;9999&#x60;  (optional)
+     * @return GetSubscriptionsPaymentsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public GetSubscriptionsPaymentsResponse subscriptionsIdPaymentsGet(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'subscriptionsIdPaymentsGet' STARTED");
+        ApiResponse<GetSubscriptionsPaymentsResponse> resp = subscriptionsIdPaymentsGetWithHttpInfo(id, offset, limit, scheduledPaymentsCount);
+        logger.info("CALL TO METHOD 'subscriptionsIdPaymentsGet' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get Payments for a Subscription
+     * Retrieve a list of payments for a specific subscription by its ID. 
+     * @param id Subscription Id (required)
+     * @param offset Page offset number. (optional)
+     * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
+     * @param scheduledPaymentsCount Number of existing scheduled payments to be returned. Default - &#x60;5&#x60;, Max - &#x60;9999&#x60;  (optional)
+     * @return ApiResponse&lt;GetSubscriptionsPaymentsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<GetSubscriptionsPaymentsResponse> subscriptionsIdPaymentsGetWithHttpInfo(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = subscriptionsIdPaymentsGetValidateBeforeCall(id, offset, limit, scheduledPaymentsCount, null, null);
+        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Payments for a Subscription (asynchronously)
+     * Retrieve a list of payments for a specific subscription by its ID. 
+     * @param id Subscription Id (required)
+     * @param offset Page offset number. (optional)
+     * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
+     * @param scheduledPaymentsCount Number of existing scheduled payments to be returned. Default - &#x60;5&#x60;, Max - &#x60;9999&#x60;  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call subscriptionsIdPaymentsGetAsync(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount, final ApiCallback<GetSubscriptionsPaymentsResponse> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = subscriptionsIdPaymentsGetValidateBeforeCall(id, offset, limit, scheduledPaymentsCount, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for subscriptionsIdPaymentsPut
+     * @param id Subscription Id (required)
+     * @param updatePayments Modify payments of a subscription (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call subscriptionsIdPaymentsPutCall(String id, UpdatePayments updatePayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePayments, UpdatePayments.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "subscriptionsIdPaymentsPut,subscriptionsIdPaymentsPutAsync,subscriptionsIdPaymentsPutWithHttpInfo,subscriptionsIdPaymentsPutCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "subscriptionsIdPaymentsPut,subscriptionsIdPaymentsPutAsync,subscriptionsIdPaymentsPutWithHttpInfo,subscriptionsIdPaymentsPutCall");
+        
+        // create path and map variables
+        String localVarPath = "/rbs/v1/subscriptions/{id}/payments"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call subscriptionsIdPaymentsPutValidateBeforeCall(String id, UpdatePayments updatePayments, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling subscriptionsIdPaymentsPut(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling subscriptionsIdPaymentsPut(Async)");
+        }
+        
+        // verify the required parameter 'updatePayments' is set
+        if (updatePayments == null) {
+            logger.error("Missing the required parameter 'updatePayments' when calling subscriptionsIdPaymentsPut(Async)");
+            throw new ApiException("Missing the required parameter 'updatePayments' when calling subscriptionsIdPaymentsPut(Async)");
+        }
+        
+        
+        okhttp3.Call call = subscriptionsIdPaymentsPutCall(id, updatePayments, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update Payments for a subscription
+     * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
+     * @param id Subscription Id (required)
+     * @param updatePayments Modify payments of a subscription (required)
+     * @return GetSubscriptionsPaymentsResponse1
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'subscriptionsIdPaymentsPut' STARTED");
+        ApiResponse<GetSubscriptionsPaymentsResponse1> resp = subscriptionsIdPaymentsPutWithHttpInfo(id, updatePayments);
+        logger.info("CALL TO METHOD 'subscriptionsIdPaymentsPut' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update Payments for a subscription
+     * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
+     * @param id Subscription Id (required)
+     * @param updatePayments Modify payments of a subscription (required)
+     * @return ApiResponse&lt;GetSubscriptionsPaymentsResponse1&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<GetSubscriptionsPaymentsResponse1> subscriptionsIdPaymentsPutWithHttpInfo(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = subscriptionsIdPaymentsPutValidateBeforeCall(id, updatePayments, null, null);
+        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse1>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Payments for a subscription (asynchronously)
+     * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
+     * @param id Subscription Id (required)
+     * @param updatePayments Modify payments of a subscription (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call subscriptionsIdPaymentsPutAsync(String id, UpdatePayments updatePayments, final ApiCallback<GetSubscriptionsPaymentsResponse1> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = subscriptionsIdPaymentsPutValidateBeforeCall(id, updatePayments, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse1>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

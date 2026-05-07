@@ -25,12 +25,28 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Ptsv2paymentsidcapturesOrderInformationShippingDetails
+ * Contains shipping details information for Klarna Advantage Plus Capture transactions. 
  */
+@ApiModel(description = "Contains shipping details information for Klarna Advantage Plus Capture transactions. ")
 
 public class Ptsv2paymentsidcapturesOrderInformationShippingDetails {
   @SerializedName("shipFromPostalCode")
   private String shipFromPostalCode = null;
+
+  @SerializedName("trackingNumber")
+  private String trackingNumber = null;
+
+  @SerializedName("trackingUrl")
+  private String trackingUrl = null;
+
+  @SerializedName("shippingCarrier")
+  private String shippingCarrier = null;
+
+  @SerializedName("estimatedDeliveryDate")
+  private String estimatedDeliveryDate = null;
+
+  @SerializedName("shippingMethod")
+  private String shippingMethod = null;
 
   public Ptsv2paymentsidcapturesOrderInformationShippingDetails shipFromPostalCode(String shipFromPostalCode) {
     this.shipFromPostalCode = shipFromPostalCode;
@@ -50,6 +66,96 @@ public class Ptsv2paymentsidcapturesOrderInformationShippingDetails {
     this.shipFromPostalCode = shipFromPostalCode;
   }
 
+  public Ptsv2paymentsidcapturesOrderInformationShippingDetails trackingNumber(String trackingNumber) {
+    this.trackingNumber = trackingNumber;
+    return this;
+  }
+
+   /**
+   * Shipment tracking number provided by the merchant. Used to track the shipment of goods to the customer. 
+   * @return trackingNumber
+  **/
+  @ApiModelProperty(value = "Shipment tracking number provided by the merchant. Used to track the shipment of goods to the customer. ")
+  public String getTrackingNumber() {
+    return trackingNumber;
+  }
+
+  public void setTrackingNumber(String trackingNumber) {
+    this.trackingNumber = trackingNumber;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationShippingDetails trackingUrl(String trackingUrl) {
+    this.trackingUrl = trackingUrl;
+    return this;
+  }
+
+   /**
+   * URL where the customer can track their shipment. Provides real-time tracking information for the delivery. 
+   * @return trackingUrl
+  **/
+  @ApiModelProperty(value = "URL where the customer can track their shipment. Provides real-time tracking information for the delivery. ")
+  public String getTrackingUrl() {
+    return trackingUrl;
+  }
+
+  public void setTrackingUrl(String trackingUrl) {
+    this.trackingUrl = trackingUrl;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationShippingDetails shippingCarrier(String shippingCarrier) {
+    this.shippingCarrier = shippingCarrier;
+    return this;
+  }
+
+   /**
+   * Name of the shipping carrier/company handling the delivery. 
+   * @return shippingCarrier
+  **/
+  @ApiModelProperty(value = "Name of the shipping carrier/company handling the delivery. ")
+  public String getShippingCarrier() {
+    return shippingCarrier;
+  }
+
+  public void setShippingCarrier(String shippingCarrier) {
+    this.shippingCarrier = shippingCarrier;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationShippingDetails estimatedDeliveryDate(String estimatedDeliveryDate) {
+    this.estimatedDeliveryDate = estimatedDeliveryDate;
+    return this;
+  }
+
+   /**
+   * Estimated delivery date for the shipment provided by Merchant. Format: YYYYMMDD (e.g., 20251115 for November 15, 2025) 
+   * @return estimatedDeliveryDate
+  **/
+  @ApiModelProperty(value = "Estimated delivery date for the shipment provided by Merchant. Format: YYYYMMDD (e.g., 20251115 for November 15, 2025) ")
+  public String getEstimatedDeliveryDate() {
+    return estimatedDeliveryDate;
+  }
+
+  public void setEstimatedDeliveryDate(String estimatedDeliveryDate) {
+    this.estimatedDeliveryDate = estimatedDeliveryDate;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationShippingDetails shippingMethod(String shippingMethod) {
+    this.shippingMethod = shippingMethod;
+    return this;
+  }
+
+   /**
+   * Shipping method for the product. Possible values:   - &#x60;lowcost&#x60;: Lowest-cost service  - &#x60;sameday&#x60;: Courier or same-day service  - &#x60;oneday&#x60;: Next-day or overnight service  - &#x60;twoday&#x60;: Two-day service  - &#x60;threeday&#x60;: Three-day service  - &#x60;pickup&#x60;: Store pick-up  - &#x60;other&#x60;: Other shipping method  - &#x60;none&#x60;: No shipping method because product is a service or subscription  Klarna Advantage Plus additional values:  - &#x60;TO_DOOR&#x60;: Delivery to door  - &#x60;TO_CURB&#x60;: Delivery to curb  - &#x60;TO_MAILBOX&#x60;: Delivery to mailbox  - &#x60;PICKUP_BOX&#x60;: Pickup from box  - &#x60;PICKUP_POINT&#x60;: Pickup from point  - &#x60;PICKUP_STORE&#x60;: Pickup from store  - &#x60;PICKUP_WAREHOUSE&#x60;: Pickup from warehouse  - &#x60;DIGITAL_EMAIL&#x60;: Digital delivery via email  - &#x60;DIGITAL_DOWNLOAD&#x60;: Digital download  - &#x60;DIGITAL_OTHER&#x60;: Other digital delivery  - &#x60;PHYSICAL_OTHER&#x60;: Other physical delivery 
+   * @return shippingMethod
+  **/
+  @ApiModelProperty(value = "Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription  Klarna Advantage Plus additional values:  - `TO_DOOR`: Delivery to door  - `TO_CURB`: Delivery to curb  - `TO_MAILBOX`: Delivery to mailbox  - `PICKUP_BOX`: Pickup from box  - `PICKUP_POINT`: Pickup from point  - `PICKUP_STORE`: Pickup from store  - `PICKUP_WAREHOUSE`: Pickup from warehouse  - `DIGITAL_EMAIL`: Digital delivery via email  - `DIGITAL_DOWNLOAD`: Digital download  - `DIGITAL_OTHER`: Other digital delivery  - `PHYSICAL_OTHER`: Other physical delivery ")
+  public String getShippingMethod() {
+    return shippingMethod;
+  }
+
+  public void setShippingMethod(String shippingMethod) {
+    this.shippingMethod = shippingMethod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +166,17 @@ public class Ptsv2paymentsidcapturesOrderInformationShippingDetails {
       return false;
     }
     Ptsv2paymentsidcapturesOrderInformationShippingDetails ptsv2paymentsidcapturesOrderInformationShippingDetails = (Ptsv2paymentsidcapturesOrderInformationShippingDetails) o;
-    return Objects.equals(this.shipFromPostalCode, ptsv2paymentsidcapturesOrderInformationShippingDetails.shipFromPostalCode);
+    return Objects.equals(this.shipFromPostalCode, ptsv2paymentsidcapturesOrderInformationShippingDetails.shipFromPostalCode) &&
+        Objects.equals(this.trackingNumber, ptsv2paymentsidcapturesOrderInformationShippingDetails.trackingNumber) &&
+        Objects.equals(this.trackingUrl, ptsv2paymentsidcapturesOrderInformationShippingDetails.trackingUrl) &&
+        Objects.equals(this.shippingCarrier, ptsv2paymentsidcapturesOrderInformationShippingDetails.shippingCarrier) &&
+        Objects.equals(this.estimatedDeliveryDate, ptsv2paymentsidcapturesOrderInformationShippingDetails.estimatedDeliveryDate) &&
+        Objects.equals(this.shippingMethod, ptsv2paymentsidcapturesOrderInformationShippingDetails.shippingMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shipFromPostalCode);
+    return Objects.hash(shipFromPostalCode, trackingNumber, trackingUrl, shippingCarrier, estimatedDeliveryDate, shippingMethod);
   }
 
 
@@ -75,6 +186,11 @@ public class Ptsv2paymentsidcapturesOrderInformationShippingDetails {
     sb.append("class Ptsv2paymentsidcapturesOrderInformationShippingDetails {\n");
     
     if (shipFromPostalCode != null) sb.append("    shipFromPostalCode: ").append(toIndentedString(shipFromPostalCode)).append("\n");
+    if (trackingNumber != null) sb.append("    trackingNumber: ").append(toIndentedString(trackingNumber)).append("\n");
+    if (trackingUrl != null) sb.append("    trackingUrl: ").append(toIndentedString(trackingUrl)).append("\n");
+    if (shippingCarrier != null) sb.append("    shippingCarrier: ").append(toIndentedString(shippingCarrier)).append("\n");
+    if (estimatedDeliveryDate != null) sb.append("    estimatedDeliveryDate: ").append(toIndentedString(estimatedDeliveryDate)).append("\n");
+    if (shippingMethod != null) sb.append("    shippingMethod: ").append(toIndentedString(shippingMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

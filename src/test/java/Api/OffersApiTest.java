@@ -15,7 +15,7 @@ package Api;
 
 import Model.InlineResponse20016;
 import Model.InlineResponse2019;
-import Model.InlineResponse40010;
+import Model.InlineResponse40012;
 import Model.InlineResponse5022;
 import Model.OfferRequest;
 import org.junit.Test;

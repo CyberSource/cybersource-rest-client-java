@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Tmsv2TokenizedCardCard;
 import Model.Tmsv2TokenizedCardMetadata;
+import Model.Tmsv2TokenizedCardVerificationResults;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -79,8 +80,14 @@ public class Tmsv2TokenizedCard {
   @SerializedName("paymentAccountReference")
   private String paymentAccountReference = null;
 
+  @SerializedName("applicationTransactionCounter")
+  private String applicationTransactionCounter = null;
+
   @SerializedName("card")
   private Tmsv2TokenizedCardCard card = null;
+
+  @SerializedName("verificationResults")
+  private Tmsv2TokenizedCardVerificationResults verificationResults = null;
 
   @SerializedName("metadata")
   private Tmsv2TokenizedCardMetadata metadata = null;
@@ -247,6 +254,15 @@ public class Tmsv2TokenizedCard {
     return paymentAccountReference;
   }
 
+   /**
+   * A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens. 
+   * @return applicationTransactionCounter
+  **/
+  @ApiModelProperty(value = "A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens. ")
+  public String getApplicationTransactionCounter() {
+    return applicationTransactionCounter;
+  }
+
   public Tmsv2TokenizedCard card(Tmsv2TokenizedCardCard card) {
     this.card = card;
     return this;
@@ -263,6 +279,24 @@ public class Tmsv2TokenizedCard {
 
   public void setCard(Tmsv2TokenizedCardCard card) {
     this.card = card;
+  }
+
+  public Tmsv2TokenizedCard verificationResults(Tmsv2TokenizedCardVerificationResults verificationResults) {
+    this.verificationResults = verificationResults;
+    return this;
+  }
+
+   /**
+   * Get verificationResults
+   * @return verificationResults
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardVerificationResults getVerificationResults() {
+    return verificationResults;
+  }
+
+  public void setVerificationResults(Tmsv2TokenizedCardVerificationResults verificationResults) {
+    this.verificationResults = verificationResults;
   }
 
   public Tmsv2TokenizedCard metadata(Tmsv2TokenizedCardMetadata metadata) {
@@ -309,13 +343,15 @@ public class Tmsv2TokenizedCard {
         Objects.equals(this.eci, tmsv2TokenizedCard.eci) &&
         Objects.equals(this.requestorId, tmsv2TokenizedCard.requestorId) &&
         Objects.equals(this.paymentAccountReference, tmsv2TokenizedCard.paymentAccountReference) &&
+        Objects.equals(this.applicationTransactionCounter, tmsv2TokenizedCard.applicationTransactionCounter) &&
         Objects.equals(this.card, tmsv2TokenizedCard.card) &&
+        Objects.equals(this.verificationResults, tmsv2TokenizedCard.verificationResults) &&
         Objects.equals(this.metadata, tmsv2TokenizedCard.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, object, source, state, enrollmentId, tokenReferenceId, number, expirationMonth, expirationYear, type, reason, cryptogram, securityCode, eci, requestorId, paymentAccountReference, card, metadata);
+    return Objects.hash(id, object, source, state, enrollmentId, tokenReferenceId, number, expirationMonth, expirationYear, type, reason, cryptogram, securityCode, eci, requestorId, paymentAccountReference, applicationTransactionCounter, card, verificationResults, metadata);
   }
 
 
@@ -340,7 +376,9 @@ public class Tmsv2TokenizedCard {
     if (eci != null) sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
     if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
     if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (applicationTransactionCounter != null) sb.append("    applicationTransactionCounter: ").append(toIndentedString(applicationTransactionCounter)).append("\n");
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (verificationResults != null) sb.append("    verificationResults: ").append(toIndentedString(verificationResults)).append("\n");
     if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

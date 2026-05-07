@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentInstrumentList1EmbeddedPaymentInstruments;
+import Model.PatchPaymentInstrumentRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,14 +34,14 @@ import java.util.List;
 
 public class PaymentInstrumentList1Embedded {
   @SerializedName("paymentInstruments")
-  private List<PaymentInstrumentList1EmbeddedPaymentInstruments> paymentInstruments = null;
+  private List<PatchPaymentInstrumentRequest> paymentInstruments = null;
 
    /**
    * Get paymentInstruments
    * @return paymentInstruments
   **/
   @ApiModelProperty(value = "")
-  public List<PaymentInstrumentList1EmbeddedPaymentInstruments> getPaymentInstruments() {
+  public List<PatchPaymentInstrumentRequest> getPaymentInstruments() {
     return paymentInstruments;
   }
 

@@ -38,6 +38,21 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
   @SerializedName("dateCreated")
   private String dateCreated = null;
 
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("frequency")
+  private String frequency = null;
+
+  @SerializedName("occurrencesPerPeriod")
+  private Integer occurrencesPerPeriod = null;
+
+  @SerializedName("startDate")
+  private String startDate = null;
+
+  @SerializedName("endDate")
+  private String endDate = null;
+
   @SerializedName("encodedHtml")
   private String encodedHtml = null;
 
@@ -99,6 +114,96 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
 
   public void setDateCreated(String dateCreated) {
     this.dateCreated = dateCreated;
+  }
+
+  public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @return type
+  **/
+  @ApiModelProperty(value = "Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation frequency(String frequency) {
+    this.frequency = frequency;
+    return this;
+  }
+
+   /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @return frequency
+  **/
+  @ApiModelProperty(value = "Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly")
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
+  }
+
+  public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation occurrencesPerPeriod(Integer occurrencesPerPeriod) {
+    this.occurrencesPerPeriod = occurrencesPerPeriod;
+    return this;
+  }
+
+   /**
+   * Number of occurrences during the specified period.
+   * @return occurrencesPerPeriod
+  **/
+  @ApiModelProperty(value = "Number of occurrences during the specified period.")
+  public Integer getOccurrencesPerPeriod() {
+    return occurrencesPerPeriod;
+  }
+
+  public void setOccurrencesPerPeriod(Integer occurrencesPerPeriod) {
+    this.occurrencesPerPeriod = occurrencesPerPeriod;
+  }
+
+  public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation startDate(String startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Start date of the schedule.  Format YYYYMMdd
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "Start date of the schedule.  Format YYYYMMdd")
+  public String getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
+
+  public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation endDate(String endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * End date of the schedule.  Format YYYYMMdd
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "End date of the schedule.  Format YYYYMMdd")
+  public String getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(String endDate) {
+    this.endDate = endDate;
   }
 
   public PtsV2CreateBillingAgreementPost201ResponseAgreementInformation encodedHtml(String encodedHtml) {
@@ -168,6 +273,11 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
     return Objects.equals(this.id, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.id) &&
         Objects.equals(this.dateSigned, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.dateSigned) &&
         Objects.equals(this.dateCreated, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.dateCreated) &&
+        Objects.equals(this.type, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.type) &&
+        Objects.equals(this.frequency, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.frequency) &&
+        Objects.equals(this.occurrencesPerPeriod, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.occurrencesPerPeriod) &&
+        Objects.equals(this.startDate, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.startDate) &&
+        Objects.equals(this.endDate, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.endDate) &&
         Objects.equals(this.encodedHtml, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.encodedHtml) &&
         Objects.equals(this.encodedHtmlPopup, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.encodedHtmlPopup) &&
         Objects.equals(this.url, ptsV2CreateBillingAgreementPost201ResponseAgreementInformation.url);
@@ -175,7 +285,7 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateSigned, dateCreated, encodedHtml, encodedHtmlPopup, url);
+    return Objects.hash(id, dateSigned, dateCreated, type, frequency, occurrencesPerPeriod, startDate, endDate, encodedHtml, encodedHtmlPopup, url);
   }
 
 
@@ -187,6 +297,11 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (dateSigned != null) sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
     if (dateCreated != null) sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (occurrencesPerPeriod != null) sb.append("    occurrencesPerPeriod: ").append(toIndentedString(occurrencesPerPeriod)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (endDate != null) sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     if (encodedHtml != null) sb.append("    encodedHtml: ").append(toIndentedString(encodedHtml)).append("\n");
     if (encodedHtmlPopup != null) sb.append("    encodedHtmlPopup: ").append(toIndentedString(encodedHtmlPopup)).append("\n");
     if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");

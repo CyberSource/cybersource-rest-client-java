@@ -29,11 +29,32 @@ import java.io.IOException;
  */
 
 public class PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors {
+  @SerializedName("provider")
+  private String provider = null;
+
   @SerializedName("merchantId")
   private String merchantId = null;
 
   @SerializedName("acquirerId")
   private String acquirerId = null;
+
+  public PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors provider(String provider) {
+    this.provider = provider;
+    return this;
+  }
+
+   /**
+   * The name of the provider.
+   * @return provider
+  **/
+  @ApiModelProperty(value = "The name of the provider.")
+  public String getProvider() {
+    return provider;
+  }
+
+  public void setProvider(String provider) {
+    this.provider = provider;
+  }
 
   public PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors merchantId(String merchantId) {
     this.merchantId = merchantId;
@@ -41,10 +62,10 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
   }
 
    /**
-   * The merchant identifier for the Currency Conversion service. Check with your Currency Conversion Provider for details.
+   * A unique identifier value assigned to each merchant. Assigned by the provider.
    * @return merchantId
   **/
-  @ApiModelProperty(value = "The merchant identifier for the Currency Conversion service. Check with your Currency Conversion Provider for details.")
+  @ApiModelProperty(value = "A unique identifier value assigned to each merchant. Assigned by the provider.")
   public String getMerchantId() {
     return merchantId;
   }
@@ -59,10 +80,10 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
   }
 
    /**
-   * Get acquirerId
+   * This code identifies the financial institution acting as the acquirer.
    * @return acquirerId
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "This code identifies the financial institution acting as the acquirer.")
   public String getAcquirerId() {
     return acquirerId;
   }
@@ -81,13 +102,14 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
       return false;
     }
     PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors paymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors = (PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors) o;
-    return Objects.equals(this.merchantId, paymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors.merchantId) &&
+    return Objects.equals(this.provider, paymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors.provider) &&
+        Objects.equals(this.merchantId, paymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors.merchantId) &&
         Objects.equals(this.acquirerId, paymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors.acquirerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, acquirerId);
+    return Objects.hash(provider, merchantId, acquirerId);
   }
 
 
@@ -96,6 +118,7 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors {\n");
     
+    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     if (acquirerId != null) sb.append("    acquirerId: ").append(toIndentedString(acquirerId)).append("\n");
     sb.append("}");

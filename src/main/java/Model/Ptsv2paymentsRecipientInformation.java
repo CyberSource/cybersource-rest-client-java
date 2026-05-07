@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsRecipientInformation
@@ -85,6 +86,9 @@ public class Ptsv2paymentsRecipientInformation {
 
   @SerializedName("locality")
   private String locality = null;
+
+  @SerializedName("taxIdNumber")
+  private BigDecimal taxIdNumber = null;
 
   public Ptsv2paymentsRecipientInformation accountId(String accountId) {
     this.accountId = accountId;
@@ -428,6 +432,24 @@ public class Ptsv2paymentsRecipientInformation {
     this.locality = locality;
   }
 
+  public Ptsv2paymentsRecipientInformation taxIdNumber(BigDecimal taxIdNumber) {
+    this.taxIdNumber = taxIdNumber;
+    return this;
+  }
+
+   /**
+   * CPF or CNPJ of the cash-in recipient. \&quot;Cadastro de Pessoas Físicas\&quot;, which translates to the \&quot;Natural Persons Register.\&quot; It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK. 
+   * @return taxIdNumber
+  **/
+  @ApiModelProperty(value = "CPF or CNPJ of the cash-in recipient. \"Cadastro de Pessoas Físicas\", which translates to the \"Natural Persons Register.\" It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK. ")
+  public BigDecimal getTaxIdNumber() {
+    return taxIdNumber;
+  }
+
+  public void setTaxIdNumber(BigDecimal taxIdNumber) {
+    this.taxIdNumber = taxIdNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -456,12 +478,13 @@ public class Ptsv2paymentsRecipientInformation {
         Objects.equals(this.countryOfBirth, ptsv2paymentsRecipientInformation.countryOfBirth) &&
         Objects.equals(this.occupation, ptsv2paymentsRecipientInformation.occupation) &&
         Objects.equals(this.email, ptsv2paymentsRecipientInformation.email) &&
-        Objects.equals(this.locality, ptsv2paymentsRecipientInformation.locality);
+        Objects.equals(this.locality, ptsv2paymentsRecipientInformation.locality) &&
+        Objects.equals(this.taxIdNumber, ptsv2paymentsRecipientInformation.taxIdNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, accountType, firstName, middleName, lastName, address1, administrativeArea, postalCode, country, dateOfBirth, beneficiaryId, beneficiaryName, beneficiaryAddress, aliasName, nationality, countryOfBirth, occupation, email, locality);
+    return Objects.hash(accountId, accountType, firstName, middleName, lastName, address1, administrativeArea, postalCode, country, dateOfBirth, beneficiaryId, beneficiaryName, beneficiaryAddress, aliasName, nationality, countryOfBirth, occupation, email, locality, taxIdNumber);
   }
 
 
@@ -489,6 +512,7 @@ public class Ptsv2paymentsRecipientInformation {
     if (occupation != null) sb.append("    occupation: ").append(toIndentedString(occupation)).append("\n");
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (taxIdNumber != null) sb.append("    taxIdNumber: ").append(toIndentedString(taxIdNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

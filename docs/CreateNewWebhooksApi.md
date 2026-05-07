@@ -97,11 +97,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2015 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey)
+> InlineResponse2015 saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -115,12 +115,12 @@ Create security keys that CyberSource will use internally to connect to your ser
 
 
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
+String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 String vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Sender organization id
 String vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
-String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 SaveSymEgressKey saveSymEgressKey = new SaveSymEgressKey(); // SaveSymEgressKey | Provide egress Symmetric key information to save (create or store or refresh)
 try {
-    InlineResponse2015 result = apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+    InlineResponse2015 result = apiInstance.saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#saveSymEgressKey");
@@ -132,9 +132,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vCSenderOrganizationId** | **String**| Sender organization id |
- **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding |
  **vCCorrelationId** | **String**| A globally unique id associated with your request | [optional]
+ **vCSenderOrganizationId** | **String**| Sender organization id | [optional]
+ **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding | [optional]
  **saveSymEgressKey** | [**SaveSymEgressKey**](SaveSymEgressKey.md)| Provide egress Symmetric key information to save (create or store or refresh) | [optional]
 
 ### Return type
