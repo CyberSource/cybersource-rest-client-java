@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationBankAccount;
+import Model.Ptsv2paymentsPaymentInformationBankAccountAlias;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,6 +45,9 @@ public class Ptsv2paymentsPaymentInformationBank {
 
   @SerializedName("code")
   private String code = null;
+
+  @SerializedName("accountAlias")
+  private Ptsv2paymentsPaymentInformationBankAccountAlias accountAlias = null;
 
   public Ptsv2paymentsPaymentInformationBank account(Ptsv2paymentsPaymentInformationBankAccount account) {
     this.account = account;
@@ -135,6 +139,24 @@ public class Ptsv2paymentsPaymentInformationBank {
     this.code = code;
   }
 
+  public Ptsv2paymentsPaymentInformationBank accountAlias(Ptsv2paymentsPaymentInformationBankAccountAlias accountAlias) {
+    this.accountAlias = accountAlias;
+    return this;
+  }
+
+   /**
+   * Get accountAlias
+   * @return accountAlias
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationBankAccountAlias getAccountAlias() {
+    return accountAlias;
+  }
+
+  public void setAccountAlias(Ptsv2paymentsPaymentInformationBankAccountAlias accountAlias) {
+    this.accountAlias = accountAlias;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +171,13 @@ public class Ptsv2paymentsPaymentInformationBank {
         Objects.equals(this.routingNumber, ptsv2paymentsPaymentInformationBank.routingNumber) &&
         Objects.equals(this.iban, ptsv2paymentsPaymentInformationBank.iban) &&
         Objects.equals(this.swiftCode, ptsv2paymentsPaymentInformationBank.swiftCode) &&
-        Objects.equals(this.code, ptsv2paymentsPaymentInformationBank.code);
+        Objects.equals(this.code, ptsv2paymentsPaymentInformationBank.code) &&
+        Objects.equals(this.accountAlias, ptsv2paymentsPaymentInformationBank.accountAlias);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, routingNumber, iban, swiftCode, code);
+    return Objects.hash(account, routingNumber, iban, swiftCode, code, accountAlias);
   }
 
 
@@ -168,6 +191,7 @@ public class Ptsv2paymentsPaymentInformationBank {
     if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     if (swiftCode != null) sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
     if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (accountAlias != null) sb.append("    accountAlias: ").append(toIndentedString(accountAlias)).append("\n");
     sb.append("}");
     return sb.toString();
   }

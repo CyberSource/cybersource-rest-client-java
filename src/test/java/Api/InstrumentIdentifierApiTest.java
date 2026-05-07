@@ -22,7 +22,7 @@ import Model.InlineResponse412;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PatchInstrumentIdentifierRequest;
-import Model.PaymentInstrumentList1;
+import Model.PaymentInstrumentList;
 import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
 import org.junit.Test;
@@ -93,7 +93,7 @@ public class InstrumentIdentifierApiTest {
         Boolean retrieveBinDetails = null;
         Long offset = null;
         Long limit = null;
-        PaymentInstrumentList1 response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit);
+        PaymentInstrumentList response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit);
 
         // TODO: test validations
     }

@@ -19,6 +19,7 @@ import Model.Ptsv2creditsInstallmentInformation;
 import Model.Ptsv2creditsProcessingInformation;
 import Model.Ptsv2creditsRecipientInformation;
 import Model.Ptsv2creditsSenderInformation;
+import Model.Ptsv2creditsTokenInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
@@ -98,6 +99,9 @@ public class CreateCreditRequest {
 
   @SerializedName("processorInformation")
   private Ptsv2reversalsProcessorInformation processorInformation = null;
+
+  @SerializedName("tokenInformation")
+  private Ptsv2creditsTokenInformation tokenInformation = null;
 
   public CreateCreditRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -413,6 +417,24 @@ public class CreateCreditRequest {
     this.processorInformation = processorInformation;
   }
 
+  public CreateCreditRequest tokenInformation(Ptsv2creditsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2creditsTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(Ptsv2creditsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -439,12 +461,13 @@ public class CreateCreditRequest {
         Objects.equals(this.recipientInformation, createCreditRequest.recipientInformation) &&
         Objects.equals(this.senderInformation, createCreditRequest.senderInformation) &&
         Objects.equals(this.promotionInformation, createCreditRequest.promotionInformation) &&
-        Objects.equals(this.processorInformation, createCreditRequest.processorInformation);
+        Objects.equals(this.processorInformation, createCreditRequest.processorInformation) &&
+        Objects.equals(this.tokenInformation, createCreditRequest.tokenInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, recipientInformation, senderInformation, promotionInformation, processorInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, recipientInformation, senderInformation, promotionInformation, processorInformation, tokenInformation);
   }
 
 
@@ -470,6 +493,7 @@ public class CreateCreditRequest {
     if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     if (promotionInformation != null) sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

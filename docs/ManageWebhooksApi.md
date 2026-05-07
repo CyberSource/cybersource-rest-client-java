@@ -55,7 +55,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
@@ -100,7 +100,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
@@ -149,7 +149,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
@@ -194,7 +194,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
@@ -241,7 +241,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdStatusPut"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdStatusPut**
@@ -287,11 +287,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2018 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
+> InlineResponse2018 saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions)
 
 Message Level Encryption
 
@@ -305,12 +305,12 @@ Store and manage certificates that will be used to preform Message Level Encrypt
 
 
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
-String vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Sender organization id
-String vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
 SaveAsymEgressKey saveAsymEgressKey = new SaveAsymEgressKey(); // SaveAsymEgressKey | Provide egress Asymmetric key information to save (create or store)
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
+String vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Sender organization id
+String vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
 try {
-    InlineResponse2018 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+    InlineResponse2018 result = apiInstance.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -322,10 +322,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vCSenderOrganizationId** | **String**| Sender organization id |
- **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding |
  **saveAsymEgressKey** | [**SaveAsymEgressKey**](SaveAsymEgressKey.md)| Provide egress Asymmetric key information to save (create or store) |
  **vCCorrelationId** | **String**| A globally unique id associated with your request | [optional]
+ **vCSenderOrganizationId** | **String**| Sender organization id | [optional]
+ **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding | [optional]
 
 ### Return type
 
@@ -338,5 +338,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

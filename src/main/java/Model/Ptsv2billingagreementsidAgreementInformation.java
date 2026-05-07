@@ -35,6 +35,15 @@ public class Ptsv2billingagreementsidAgreementInformation {
   @SerializedName("eSignIndicator")
   private String eSignIndicator = null;
 
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("frequency")
+  private String frequency = null;
+
+  @SerializedName("dateRevoked")
+  private String dateRevoked = null;
+
   public Ptsv2billingagreementsidAgreementInformation id(String id) {
     this.id = id;
     return this;
@@ -71,6 +80,60 @@ public class Ptsv2billingagreementsidAgreementInformation {
     this.eSignIndicator = eSignIndicator;
   }
 
+  public Ptsv2billingagreementsidAgreementInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @return type
+  **/
+  @ApiModelProperty(value = "Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Ptsv2billingagreementsidAgreementInformation frequency(String frequency) {
+    this.frequency = frequency;
+    return this;
+  }
+
+   /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @return frequency
+  **/
+  @ApiModelProperty(value = "Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly")
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
+  }
+
+  public Ptsv2billingagreementsidAgreementInformation dateRevoked(String dateRevoked) {
+    this.dateRevoked = dateRevoked;
+    return this;
+  }
+
+   /**
+   * Date the agreement was revoked (YYYYMMDD) 
+   * @return dateRevoked
+  **/
+  @ApiModelProperty(value = "Date the agreement was revoked (YYYYMMDD) ")
+  public String getDateRevoked() {
+    return dateRevoked;
+  }
+
+  public void setDateRevoked(String dateRevoked) {
+    this.dateRevoked = dateRevoked;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +145,15 @@ public class Ptsv2billingagreementsidAgreementInformation {
     }
     Ptsv2billingagreementsidAgreementInformation ptsv2billingagreementsidAgreementInformation = (Ptsv2billingagreementsidAgreementInformation) o;
     return Objects.equals(this.id, ptsv2billingagreementsidAgreementInformation.id) &&
-        Objects.equals(this.eSignIndicator, ptsv2billingagreementsidAgreementInformation.eSignIndicator);
+        Objects.equals(this.eSignIndicator, ptsv2billingagreementsidAgreementInformation.eSignIndicator) &&
+        Objects.equals(this.type, ptsv2billingagreementsidAgreementInformation.type) &&
+        Objects.equals(this.frequency, ptsv2billingagreementsidAgreementInformation.frequency) &&
+        Objects.equals(this.dateRevoked, ptsv2billingagreementsidAgreementInformation.dateRevoked);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, eSignIndicator);
+    return Objects.hash(id, eSignIndicator, type, frequency, dateRevoked);
   }
 
 
@@ -98,6 +164,9 @@ public class Ptsv2billingagreementsidAgreementInformation {
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (eSignIndicator != null) sb.append("    eSignIndicator: ").append(toIndentedString(eSignIndicator)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (dateRevoked != null) sb.append("    dateRevoked: ").append(toIndentedString(dateRevoked)).append("\n");
     sb.append("}");
     return sb.toString();
   }

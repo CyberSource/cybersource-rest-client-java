@@ -51,10 +51,10 @@ public class Ptsv1pullfundstransferOrderInformationAmountDetails {
   }
 
    /**
-   * The total amount of the funds transfer including all fees.  This value cannot be negative.   Field must also be greater than zero: minimum value is the smallest amount in any given currency.   You can include a decimal point (.), but no other special characters. 
+   * The total amount of the funds transfer including all fees.  This value cannot be negative.   You can include a decimal point (.), but no other special characters. 
    * @return totalAmount
   **/
-  @ApiModelProperty(required = true, value = "The total amount of the funds transfer including all fees.  This value cannot be negative.   Field must also be greater than zero: minimum value is the smallest amount in any given currency.   You can include a decimal point (.), but no other special characters. ")
+  @ApiModelProperty(required = true, value = "The total amount of the funds transfer including all fees.  This value cannot be negative.   You can include a decimal point (.), but no other special characters. ")
   public String getTotalAmount() {
     return totalAmount;
   }

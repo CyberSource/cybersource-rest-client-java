@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Decline Threshold data.
+ * Decline Threshold data. Defines the maximum transaction amount the consumer is willing to authorize under this mandate.
  */
-@ApiModel(description = "Decline Threshold data.")
+@ApiModel(description = "Decline Threshold data. Defines the maximum transaction amount the consumer is willing to authorize under this mandate.")
 
 public class Acpv1instructionsDeclineThreshold {
   @SerializedName("amount")

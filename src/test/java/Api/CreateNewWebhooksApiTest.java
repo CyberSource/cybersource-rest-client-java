@@ -78,11 +78,11 @@ public class CreateNewWebhooksApiTest {
      */
     @Test
     public void saveSymEgressKeyTest() throws Exception {
+        String vCCorrelationId = null;
         String vCSenderOrganizationId = null;
         String vCPermissions = null;
-        String vCCorrelationId = null;
         SaveSymEgressKey saveSymEgressKey = null;
-        InlineResponse2015 response = api.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+        InlineResponse2015 response = api.saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
 
         // TODO: test validations
     }

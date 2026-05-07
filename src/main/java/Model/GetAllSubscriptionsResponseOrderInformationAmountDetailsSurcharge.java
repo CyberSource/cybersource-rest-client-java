@@ -32,6 +32,9 @@ public class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge {
   @SerializedName("amount")
   private String amount = null;
 
+  @SerializedName("description")
+  private String description = null;
+
   public GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge amount(String amount) {
     this.amount = amount;
     return this;
@@ -50,6 +53,24 @@ public class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge {
     this.amount = amount;
   }
 
+  public GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Description of the surcharge. 
+   * @return description
+  **/
+  @ApiModelProperty(value = "Description of the surcharge. ")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge {
       return false;
     }
     GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge getAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge = (GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge) o;
-    return Objects.equals(this.amount, getAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge.amount);
+    return Objects.equals(this.amount, getAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge.amount) &&
+        Objects.equals(this.description, getAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount);
+    return Objects.hash(amount, description);
   }
 
 
@@ -75,6 +97,7 @@ public class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge {
     sb.append("class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge {\n");
     
     if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

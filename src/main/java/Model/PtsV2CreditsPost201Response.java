@@ -16,9 +16,13 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2CreditsPost201ResponseCreditAmountDetails;
+import Model.PtsV2CreditsPost201ResponseMerchantInformation;
+import Model.PtsV2CreditsPost201ResponsePaymentAccountInformation;
 import Model.PtsV2CreditsPost201ResponsePaymentInformation;
 import Model.PtsV2CreditsPost201ResponseProcessingInformation;
+import Model.PtsV2CreditsPost201ResponseTokenInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
+import Model.PtsV2PaymentsPost201ResponseClearingInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
@@ -71,8 +75,20 @@ public class PtsV2CreditsPost201Response {
   @SerializedName("orderInformation")
   private PtsV2PaymentsRefundPost201ResponseOrderInformation orderInformation = null;
 
+  @SerializedName("merchantInformation")
+  private PtsV2CreditsPost201ResponseMerchantInformation merchantInformation = null;
+
+  @SerializedName("clearingInformation")
+  private PtsV2PaymentsPost201ResponseClearingInformation clearingInformation = null;
+
   @SerializedName("pointOfSaleInformation")
   private PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("tokenInformation")
+  private PtsV2CreditsPost201ResponseTokenInformation tokenInformation = null;
+
+  @SerializedName("paymentAccountInformation")
+  private PtsV2CreditsPost201ResponsePaymentAccountInformation paymentAccountInformation = null;
 
   @SerializedName("errorInformation")
   private PtsV2PaymentsRefundPost201ResponseErrorInformation errorInformation = null;
@@ -275,6 +291,42 @@ public class PtsV2CreditsPost201Response {
     this.orderInformation = orderInformation;
   }
 
+  public PtsV2CreditsPost201Response merchantInformation(PtsV2CreditsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponseMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(PtsV2CreditsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+  }
+
+  public PtsV2CreditsPost201Response clearingInformation(PtsV2PaymentsPost201ResponseClearingInformation clearingInformation) {
+    this.clearingInformation = clearingInformation;
+    return this;
+  }
+
+   /**
+   * Get clearingInformation
+   * @return clearingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseClearingInformation getClearingInformation() {
+    return clearingInformation;
+  }
+
+  public void setClearingInformation(PtsV2PaymentsPost201ResponseClearingInformation clearingInformation) {
+    this.clearingInformation = clearingInformation;
+  }
+
   public PtsV2CreditsPost201Response pointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
@@ -291,6 +343,42 @@ public class PtsV2CreditsPost201Response {
 
   public void setPointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
+  }
+
+  public PtsV2CreditsPost201Response tokenInformation(PtsV2CreditsPost201ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponseTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(PtsV2CreditsPost201ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
+  public PtsV2CreditsPost201Response paymentAccountInformation(PtsV2CreditsPost201ResponsePaymentAccountInformation paymentAccountInformation) {
+    this.paymentAccountInformation = paymentAccountInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentAccountInformation
+   * @return paymentAccountInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponsePaymentAccountInformation getPaymentAccountInformation() {
+    return paymentAccountInformation;
+  }
+
+  public void setPaymentAccountInformation(PtsV2CreditsPost201ResponsePaymentAccountInformation paymentAccountInformation) {
+    this.paymentAccountInformation = paymentAccountInformation;
   }
 
   public PtsV2CreditsPost201Response errorInformation(PtsV2PaymentsRefundPost201ResponseErrorInformation errorInformation) {
@@ -332,13 +420,17 @@ public class PtsV2CreditsPost201Response {
         Objects.equals(this.processorInformation, ptsV2CreditsPost201Response.processorInformation) &&
         Objects.equals(this.paymentInformation, ptsV2CreditsPost201Response.paymentInformation) &&
         Objects.equals(this.orderInformation, ptsV2CreditsPost201Response.orderInformation) &&
+        Objects.equals(this.merchantInformation, ptsV2CreditsPost201Response.merchantInformation) &&
+        Objects.equals(this.clearingInformation, ptsV2CreditsPost201Response.clearingInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2CreditsPost201Response.pointOfSaleInformation) &&
+        Objects.equals(this.tokenInformation, ptsV2CreditsPost201Response.tokenInformation) &&
+        Objects.equals(this.paymentAccountInformation, ptsV2CreditsPost201Response.paymentAccountInformation) &&
         Objects.equals(this.errorInformation, ptsV2CreditsPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, creditAmountDetails, processingInformation, processorInformation, paymentInformation, orderInformation, pointOfSaleInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, creditAmountDetails, processingInformation, processorInformation, paymentInformation, orderInformation, merchantInformation, clearingInformation, pointOfSaleInformation, tokenInformation, paymentAccountInformation, errorInformation);
   }
 
 
@@ -358,7 +450,11 @@ public class PtsV2CreditsPost201Response {
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (clearingInformation != null) sb.append("    clearingInformation: ").append(toIndentedString(clearingInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    if (paymentAccountInformation != null) sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
     if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -32,6 +32,9 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
 
+  @SerializedName("encryptedKeyId")
+  private String encryptedKeyId = null;
+
   public PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
     return this;
@@ -50,6 +53,24 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
     this.terminalId = terminalId;
   }
 
+  public PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation encryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+    return this;
+  }
+
+   /**
+   * Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. 
+   * @return encryptedKeyId
+  **/
+  @ApiModelProperty(value = "Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. ")
+  public String getEncryptedKeyId() {
+    return encryptedKeyId;
+  }
+
+  public void setEncryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
       return false;
     }
     PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation ptsV2PaymentsCapturesPost201ResponsePointOfSaleInformation = (PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation) o;
-    return Objects.equals(this.terminalId, ptsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.terminalId);
+    return Objects.equals(this.terminalId, ptsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.terminalId) &&
+        Objects.equals(this.encryptedKeyId, ptsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.encryptedKeyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId);
+    return Objects.hash(terminalId, encryptedKeyId);
   }
 
 
@@ -75,6 +97,7 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
     sb.append("class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {\n");
     
     if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (encryptedKeyId != null) sb.append("    encryptedKeyId: ").append(toIndentedString(encryptedKeyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

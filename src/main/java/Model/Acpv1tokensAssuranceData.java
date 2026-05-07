@@ -29,9 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Assurance data.
+ * Assurance data. Contains identity verification details that prove the consumer or device has been authenticated before the payment operation.
  */
-@ApiModel(description = "Assurance data.")
+@ApiModel(description = "Assurance data. Contains identity verification details that prove the consumer or device has been authenticated before the payment operation.")
 
 public class Acpv1tokensAssuranceData {
   @SerializedName("verificationType")
@@ -67,10 +67,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Type of the verification data.   Possible values:   - &#x60;CARDHOLDER&#x60; (Default)   - &#x60;DEVICE&#x60; 
+   * Optional. Type of the verification data.   Possible values:   - &#x60;CARDHOLDER&#x60; (Default)   - &#x60;DEVICE&#x60; 
    * @return verificationType
   **/
-  @ApiModelProperty(value = "Type of the verification data.   Possible values:   - `CARDHOLDER` (Default)   - `DEVICE` ")
+  @ApiModelProperty(value = "Optional. Type of the verification data.   Possible values:   - `CARDHOLDER` (Default)   - `DEVICE` ")
   public String getVerificationType() {
     return verificationType;
   }
@@ -85,10 +85,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Entity performing the verification.   Possible value:     - &#x60;10&#x60; - VISA (Default) 
+   * Optional. Entity performing the verification.   Possible value:     - &#x60;10&#x60; - VISA (Default) 
    * @return verificationEntity
   **/
-  @ApiModelProperty(value = "Entity performing the verification.   Possible value:     - `10` - VISA (Default) ")
+  @ApiModelProperty(value = "Optional. Entity performing the verification.   Possible value:     - `10` - VISA (Default) ")
   public String getVerificationEntity() {
     return verificationEntity;
   }
@@ -111,10 +111,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Event where the verification occurred.   Possible values:     - &#x60;01&#x60; - Payment transaction   - &#x60;02&#x60; - Add card/Card enrollment   - &#x60;03&#x60; - Profile access   - &#x60;04&#x60; - Account verification 
+   * Optional. Event where the verification occurred.   Possible values:     - &#x60;01&#x60; - Payment transaction   - &#x60;02&#x60; - Add card/Card enrollment   - &#x60;03&#x60; - Profile access   - &#x60;04&#x60; - Account verification 
    * @return verificationEvents
   **/
-  @ApiModelProperty(value = "Event where the verification occurred.   Possible values:     - `01` - Payment transaction   - `02` - Add card/Card enrollment   - `03` - Profile access   - `04` - Account verification ")
+  @ApiModelProperty(value = "Optional. Event where the verification occurred.   Possible values:     - `01` - Payment transaction   - `02` - Add card/Card enrollment   - `03` - Profile access   - `04` - Account verification ")
   public List<String> getVerificationEvents() {
     return verificationEvents;
   }
@@ -129,10 +129,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Method of the verification.   Possible values:     - &#x60;02&#x60; - App-based authentication   - &#x60;04&#x60; - One-time passcode   - &#x60;21&#x60; - Visa Token Service step-up: Device binding   - &#x60;22&#x60; - Visa Token Service step-up: Cardholder verification   - &#x60;23&#x60; - FIDO2 
+   * Required. Method of the verification.   Possible values:     - &#x60;02&#x60; - App-based authentication   - &#x60;04&#x60; - One-time passcode   - &#x60;21&#x60; - Visa Token Service step-up: Device binding   - &#x60;22&#x60; - Visa Token Service step-up: Cardholder verification   - &#x60;23&#x60; - FIDO2 
    * @return verificationMethod
   **/
-  @ApiModelProperty(required = true, value = "Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 ")
+  @ApiModelProperty(required = true, value = "Required. Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 ")
   public String getVerificationMethod() {
     return verificationMethod;
   }
@@ -147,10 +147,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Result of the verification.   Possible values:     - &#x60;01&#x60; - Verified   - &#x60;02&#x60; - Not Verified   - &#x60;03&#x60; - Not performed   - &#x60;04&#x60; - Not required   - &#x60;21&#x60; - Not allowed 
+   * Required. Result of the verification.   Possible values:     - &#x60;01&#x60; - Verified   - &#x60;02&#x60; - Not Verified   - &#x60;03&#x60; - Not performed   - &#x60;04&#x60; - Not required   - &#x60;21&#x60; - Not allowed 
    * @return verificationResults
   **/
-  @ApiModelProperty(required = true, value = "Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed ")
+  @ApiModelProperty(required = true, value = "Required. Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed ")
   public String getVerificationResults() {
     return verificationResults;
   }
@@ -165,10 +165,10 @@ public class Acpv1tokensAssuranceData {
   }
 
    /**
-   * Date and time the verification occurred. UTC time in Unix epoch format.
+   * Required. Date and time the verification occurred. UTC time in Unix epoch format.
    * @return verificationTimestamp
   **/
-  @ApiModelProperty(required = true, value = "Date and time the verification occurred. UTC time in Unix epoch format.")
+  @ApiModelProperty(required = true, value = "Required. Date and time the verification occurred. UTC time in Unix epoch format.")
   public String getVerificationTimestamp() {
     return verificationTimestamp;
   }

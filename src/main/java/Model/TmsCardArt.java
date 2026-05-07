@@ -37,6 +37,12 @@ public class TmsCardArt {
   @SerializedName("foregroundColor")
   private String foregroundColor = null;
 
+  @SerializedName("backgroundColor")
+  private String backgroundColor = null;
+
+  @SerializedName("labelColor")
+  private String labelColor = null;
+
   @SerializedName("combinedAsset")
   private TmsCardArtCombinedAsset combinedAsset = null;
 
@@ -56,6 +62,24 @@ public class TmsCardArt {
   @ApiModelProperty(value = "Card foreground color. ")
   public String getForegroundColor() {
     return foregroundColor;
+  }
+
+   /**
+   * Card background color. 
+   * @return backgroundColor
+  **/
+  @ApiModelProperty(value = "Card background color. ")
+  public String getBackgroundColor() {
+    return backgroundColor;
+  }
+
+   /**
+   * Card label color. 
+   * @return labelColor
+  **/
+  @ApiModelProperty(value = "Card label color. ")
+  public String getLabelColor() {
+    return labelColor;
   }
 
   public TmsCardArt combinedAsset(TmsCardArtCombinedAsset combinedAsset) {
@@ -141,6 +165,8 @@ public class TmsCardArt {
     }
     TmsCardArt tmsCardArt = (TmsCardArt) o;
     return Objects.equals(this.foregroundColor, tmsCardArt.foregroundColor) &&
+        Objects.equals(this.backgroundColor, tmsCardArt.backgroundColor) &&
+        Objects.equals(this.labelColor, tmsCardArt.labelColor) &&
         Objects.equals(this.combinedAsset, tmsCardArt.combinedAsset) &&
         Objects.equals(this.brandLogoAsset, tmsCardArt.brandLogoAsset) &&
         Objects.equals(this.issuerLogoAsset, tmsCardArt.issuerLogoAsset) &&
@@ -149,7 +175,7 @@ public class TmsCardArt {
 
   @Override
   public int hashCode() {
-    return Objects.hash(foregroundColor, combinedAsset, brandLogoAsset, issuerLogoAsset, iconAsset);
+    return Objects.hash(foregroundColor, backgroundColor, labelColor, combinedAsset, brandLogoAsset, issuerLogoAsset, iconAsset);
   }
 
 
@@ -159,6 +185,8 @@ public class TmsCardArt {
     sb.append("class TmsCardArt {\n");
     
     if (foregroundColor != null) sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
+    if (backgroundColor != null) sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
+    if (labelColor != null) sb.append("    labelColor: ").append(toIndentedString(labelColor)).append("\n");
     if (combinedAsset != null) sb.append("    combinedAsset: ").append(toIndentedString(combinedAsset)).append("\n");
     if (brandLogoAsset != null) sb.append("    brandLogoAsset: ").append(toIndentedString(brandLogoAsset)).append("\n");
     if (issuerLogoAsset != null) sb.append("    issuerLogoAsset: ").append(toIndentedString(issuerLogoAsset)).append("\n");

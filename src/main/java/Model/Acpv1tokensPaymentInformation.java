@@ -28,9 +28,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Payment Information data.
+ * Payment Information data. References the tokenized payment card to use for this transaction. At least one of customer, paymentInstrument, or instrumentIdentifier must be provided. The instrumentIdentifier is the most commonly used reference. If you have a TMS instrument identifier, provide it in instrumentIdentifier.id.
  */
-@ApiModel(description = "Payment Information data.")
+@ApiModel(description = "Payment Information data. References the tokenized payment card to use for this transaction. At least one of customer, paymentInstrument, or instrumentIdentifier must be provided. The instrumentIdentifier is the most commonly used reference. If you have a TMS instrument identifier, provide it in instrumentIdentifier.id.")
 
 public class Acpv1tokensPaymentInformation {
   @SerializedName("customer")

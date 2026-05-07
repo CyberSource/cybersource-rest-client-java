@@ -31,7 +31,7 @@ import java.io.InputStream;
 
 import Model.InlineResponse20016;
 import Model.InlineResponse2019;
-import Model.InlineResponse40010;
+import Model.InlineResponse40012;
 import Model.InlineResponse5022;
 import Model.OfferRequest;
 

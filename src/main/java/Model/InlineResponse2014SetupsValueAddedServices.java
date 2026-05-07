@@ -39,6 +39,12 @@ public class InlineResponse2014SetupsValueAddedServices {
   @SerializedName("bankAccountValidation")
   private InlineResponse2014SetupsPaymentsDigitalPayments bankAccountValidation = null;
 
+  @SerializedName("flexapi")
+  private InlineResponse2014SetupsPaymentsDigitalPayments flexapi = null;
+
+  @SerializedName("webhooks")
+  private InlineResponse2014SetupsPaymentsDigitalPayments webhooks = null;
+
   public InlineResponse2014SetupsValueAddedServices reporting(InlineResponse2014SetupsPaymentsDigitalPayments reporting) {
     this.reporting = reporting;
     return this;
@@ -93,6 +99,42 @@ public class InlineResponse2014SetupsValueAddedServices {
     this.bankAccountValidation = bankAccountValidation;
   }
 
+  public InlineResponse2014SetupsValueAddedServices flexapi(InlineResponse2014SetupsPaymentsDigitalPayments flexapi) {
+    this.flexapi = flexapi;
+    return this;
+  }
+
+   /**
+   * Get flexapi
+   * @return flexapi
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsDigitalPayments getFlexapi() {
+    return flexapi;
+  }
+
+  public void setFlexapi(InlineResponse2014SetupsPaymentsDigitalPayments flexapi) {
+    this.flexapi = flexapi;
+  }
+
+  public InlineResponse2014SetupsValueAddedServices webhooks(InlineResponse2014SetupsPaymentsDigitalPayments webhooks) {
+    this.webhooks = webhooks;
+    return this;
+  }
+
+   /**
+   * Get webhooks
+   * @return webhooks
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsDigitalPayments getWebhooks() {
+    return webhooks;
+  }
+
+  public void setWebhooks(InlineResponse2014SetupsPaymentsDigitalPayments webhooks) {
+    this.webhooks = webhooks;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +147,14 @@ public class InlineResponse2014SetupsValueAddedServices {
     InlineResponse2014SetupsValueAddedServices inlineResponse2014SetupsValueAddedServices = (InlineResponse2014SetupsValueAddedServices) o;
     return Objects.equals(this.reporting, inlineResponse2014SetupsValueAddedServices.reporting) &&
         Objects.equals(this.transactionSearch, inlineResponse2014SetupsValueAddedServices.transactionSearch) &&
-        Objects.equals(this.bankAccountValidation, inlineResponse2014SetupsValueAddedServices.bankAccountValidation);
+        Objects.equals(this.bankAccountValidation, inlineResponse2014SetupsValueAddedServices.bankAccountValidation) &&
+        Objects.equals(this.flexapi, inlineResponse2014SetupsValueAddedServices.flexapi) &&
+        Objects.equals(this.webhooks, inlineResponse2014SetupsValueAddedServices.webhooks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reporting, transactionSearch, bankAccountValidation);
+    return Objects.hash(reporting, transactionSearch, bankAccountValidation, flexapi, webhooks);
   }
 
 
@@ -122,6 +166,8 @@ public class InlineResponse2014SetupsValueAddedServices {
     if (reporting != null) sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
     if (transactionSearch != null) sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
     if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
+    if (flexapi != null) sb.append("    flexapi: ").append(toIndentedString(flexapi)).append("\n");
+    if (webhooks != null) sb.append("    webhooks: ").append(toIndentedString(webhooks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

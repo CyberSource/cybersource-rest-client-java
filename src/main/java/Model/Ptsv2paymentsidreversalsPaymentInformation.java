@@ -33,6 +33,9 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
   @SerializedName("paymentType")
   private Ptsv2paymentsidreversalsPaymentInformationPaymentType paymentType = null;
 
+  @SerializedName("merchantLimitedAcceptanceIndicator")
+  private String merchantLimitedAcceptanceIndicator = null;
+
   public Ptsv2paymentsidreversalsPaymentInformation paymentType(Ptsv2paymentsidreversalsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
@@ -51,6 +54,24 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
     this.paymentType = paymentType;
   }
 
+  public Ptsv2paymentsidreversalsPaymentInformation merchantLimitedAcceptanceIndicator(String merchantLimitedAcceptanceIndicator) {
+    this.merchantLimitedAcceptanceIndicator = merchantLimitedAcceptanceIndicator;
+    return this;
+  }
+
+   /**
+   * Mastercard One Credential merchant limited acceptance indicator. Mastercard One Credential connects multiple Mastercard payment methods and allows cardhollers to access various options and set payment preferences.  This field indicates which Mastercard One Credential funding PAN acceptance brands should NOT be assigned for this transaction.  This field flows in ISO field 34, DSID 02 tag DB, mapped to Mastercard Data Element (DE) 48, Sub element 02, Subfield 01.  Possible values: - &#x60;C&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Mastercard Credit Acceptance Brand for this transaction - &#x60;D&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Debit Mastercard Acceptance Brand for this transaction - &#x60;M&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Maestro Acceptance Brand for this transaction  This field is supported for Authorization reversal request.  #### Used by **Authorization Reversal Request** Optional field. 
+   * @return merchantLimitedAcceptanceIndicator
+  **/
+  @ApiModelProperty(value = "Mastercard One Credential merchant limited acceptance indicator. Mastercard One Credential connects multiple Mastercard payment methods and allows cardhollers to access various options and set payment preferences.  This field indicates which Mastercard One Credential funding PAN acceptance brands should NOT be assigned for this transaction.  This field flows in ISO field 34, DSID 02 tag DB, mapped to Mastercard Data Element (DE) 48, Sub element 02, Subfield 01.  Possible values: - `C`: Do not assign a Mastercard One Credential funding PAN containing the Mastercard Credit Acceptance Brand for this transaction - `D`: Do not assign a Mastercard One Credential funding PAN containing the Debit Mastercard Acceptance Brand for this transaction - `M`: Do not assign a Mastercard One Credential funding PAN containing the Maestro Acceptance Brand for this transaction  This field is supported for Authorization reversal request.  #### Used by **Authorization Reversal Request** Optional field. ")
+  public String getMerchantLimitedAcceptanceIndicator() {
+    return merchantLimitedAcceptanceIndicator;
+  }
+
+  public void setMerchantLimitedAcceptanceIndicator(String merchantLimitedAcceptanceIndicator) {
+    this.merchantLimitedAcceptanceIndicator = merchantLimitedAcceptanceIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
       return false;
     }
     Ptsv2paymentsidreversalsPaymentInformation ptsv2paymentsidreversalsPaymentInformation = (Ptsv2paymentsidreversalsPaymentInformation) o;
-    return Objects.equals(this.paymentType, ptsv2paymentsidreversalsPaymentInformation.paymentType);
+    return Objects.equals(this.paymentType, ptsv2paymentsidreversalsPaymentInformation.paymentType) &&
+        Objects.equals(this.merchantLimitedAcceptanceIndicator, ptsv2paymentsidreversalsPaymentInformation.merchantLimitedAcceptanceIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType);
+    return Objects.hash(paymentType, merchantLimitedAcceptanceIndicator);
   }
 
 
@@ -76,6 +98,7 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
     sb.append("class Ptsv2paymentsidreversalsPaymentInformation {\n");
     
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (merchantLimitedAcceptanceIndicator != null) sb.append("    merchantLimitedAcceptanceIndicator: ").append(toIndentedString(merchantLimitedAcceptanceIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

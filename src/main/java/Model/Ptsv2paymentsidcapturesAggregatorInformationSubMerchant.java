@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsidcapturesAggregatorInformationSubMerchant
@@ -55,6 +56,9 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
 
   @SerializedName("id")
   private String id = null;
+
+  @SerializedName("merchantCategoryCode")
+  private BigDecimal merchantCategoryCode = null;
 
   public Ptsv2paymentsidcapturesAggregatorInformationSubMerchant name(String name) {
     this.name = name;
@@ -218,6 +222,24 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
     this.id = id;
   }
 
+  public Ptsv2paymentsidcapturesAggregatorInformationSubMerchant merchantCategoryCode(BigDecimal merchantCategoryCode) {
+    this.merchantCategoryCode = merchantCategoryCode;
+    return this;
+  }
+
+   /**
+   * Get merchantCategoryCode
+   * @return merchantCategoryCode
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getMerchantCategoryCode() {
+    return merchantCategoryCode;
+  }
+
+  public void setMerchantCategoryCode(BigDecimal merchantCategoryCode) {
+    this.merchantCategoryCode = merchantCategoryCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,12 +258,13 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
         Objects.equals(this.country, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.country) &&
         Objects.equals(this.email, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.email) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.phoneNumber) &&
-        Objects.equals(this.id, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.id);
+        Objects.equals(this.id, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.id) &&
+        Objects.equals(this.merchantCategoryCode, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.merchantCategoryCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address1, locality, administrativeArea, postalCode, country, email, phoneNumber, id);
+    return Objects.hash(name, address1, locality, administrativeArea, postalCode, country, email, phoneNumber, id, merchantCategoryCode);
   }
 
 
@@ -259,6 +282,7 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (merchantCategoryCode != null) sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

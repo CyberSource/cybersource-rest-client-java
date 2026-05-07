@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
@@ -48,6 +49,9 @@ public class PtsV2CreditsPost201ResponsePaymentInformation {
 
   @SerializedName("shippingAddress")
   private Ptsv2paymentsPaymentInformationShippingAddress shippingAddress = null;
+
+  @SerializedName("accountFeatures")
+  private PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures accountFeatures = null;
 
   public PtsV2CreditsPost201ResponsePaymentInformation bank(PtsV2PaymentsPost201ResponsePaymentInformationBank bank) {
     this.bank = bank;
@@ -139,6 +143,24 @@ public class PtsV2CreditsPost201ResponsePaymentInformation {
     this.shippingAddress = shippingAddress;
   }
 
+  public PtsV2CreditsPost201ResponsePaymentInformation accountFeatures(PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures accountFeatures) {
+    this.accountFeatures = accountFeatures;
+    return this;
+  }
+
+   /**
+   * Get accountFeatures
+   * @return accountFeatures
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures getAccountFeatures() {
+    return accountFeatures;
+  }
+
+  public void setAccountFeatures(PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures accountFeatures) {
+    this.accountFeatures = accountFeatures;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +175,13 @@ public class PtsV2CreditsPost201ResponsePaymentInformation {
         Objects.equals(this.customer, ptsV2CreditsPost201ResponsePaymentInformation.customer) &&
         Objects.equals(this.paymentInstrument, ptsV2CreditsPost201ResponsePaymentInformation.paymentInstrument) &&
         Objects.equals(this.instrumentIdentifier, ptsV2CreditsPost201ResponsePaymentInformation.instrumentIdentifier) &&
-        Objects.equals(this.shippingAddress, ptsV2CreditsPost201ResponsePaymentInformation.shippingAddress);
+        Objects.equals(this.shippingAddress, ptsV2CreditsPost201ResponsePaymentInformation.shippingAddress) &&
+        Objects.equals(this.accountFeatures, ptsV2CreditsPost201ResponsePaymentInformation.accountFeatures);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress);
+    return Objects.hash(bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, accountFeatures);
   }
 
 
@@ -172,6 +195,7 @@ public class PtsV2CreditsPost201ResponsePaymentInformation {
     if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (accountFeatures != null) sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
     sb.append("}");
     return sb.toString();
   }

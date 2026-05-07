@@ -23,6 +23,7 @@ import Model.PaymentsProductsCybsReadyTerminal;
 import Model.PaymentsProductsDifferentialFee;
 import Model.PaymentsProductsDigitalPayments;
 import Model.PaymentsProductsECheck;
+import Model.PaymentsProductsMicroform;
 import Model.PaymentsProductsPayerAuthentication;
 import Model.PaymentsProductsPayouts;
 import Model.PaymentsProductsSecureAcceptance;
@@ -106,6 +107,12 @@ public class PaymentsProducts {
 
   @SerializedName("batchUpload")
   private PaymentsProductsTax batchUpload = null;
+
+  @SerializedName("transactGuard")
+  private PaymentsProductsTax transactGuard = null;
+
+  @SerializedName("microform")
+  private PaymentsProductsMicroform microform = null;
 
   public PaymentsProducts cardProcessing(PaymentsProductsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
@@ -485,6 +492,42 @@ public class PaymentsProducts {
     this.batchUpload = batchUpload;
   }
 
+  public PaymentsProducts transactGuard(PaymentsProductsTax transactGuard) {
+    this.transactGuard = transactGuard;
+    return this;
+  }
+
+   /**
+   * Get transactGuard
+   * @return transactGuard
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getTransactGuard() {
+    return transactGuard;
+  }
+
+  public void setTransactGuard(PaymentsProductsTax transactGuard) {
+    this.transactGuard = transactGuard;
+  }
+
+  public PaymentsProducts microform(PaymentsProductsMicroform microform) {
+    this.microform = microform;
+    return this;
+  }
+
+   /**
+   * Get microform
+   * @return microform
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsMicroform getMicroform() {
+    return microform;
+  }
+
+  public void setMicroform(PaymentsProductsMicroform microform) {
+    this.microform = microform;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -515,12 +558,14 @@ public class PaymentsProducts {
         Objects.equals(this.unifiedCheckout, paymentsProducts.unifiedCheckout) &&
         Objects.equals(this.receivablesManager, paymentsProducts.receivablesManager) &&
         Objects.equals(this.serviceFee, paymentsProducts.serviceFee) &&
-        Objects.equals(this.batchUpload, paymentsProducts.batchUpload);
+        Objects.equals(this.batchUpload, paymentsProducts.batchUpload) &&
+        Objects.equals(this.transactGuard, paymentsProducts.transactGuard) &&
+        Objects.equals(this.microform, paymentsProducts.microform);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload, transactGuard, microform);
   }
 
 
@@ -550,6 +595,8 @@ public class PaymentsProducts {
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     if (batchUpload != null) sb.append("    batchUpload: ").append(toIndentedString(batchUpload)).append("\n");
+    if (transactGuard != null) sb.append("    transactGuard: ").append(toIndentedString(transactGuard)).append("\n");
+    if (microform != null) sb.append("    microform: ").append(toIndentedString(microform)).append("\n");
     sb.append("}");
     return sb.toString();
   }

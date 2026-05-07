@@ -41,6 +41,9 @@ public class Ptsv2creditsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
 
+  @SerializedName("actionTokenTypes")
+  private List<String> actionTokenTypes = null;
+
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
 
@@ -101,6 +104,9 @@ public class Ptsv2creditsProcessingInformation {
   @SerializedName("merchantVerificationValue")
   private String merchantVerificationValue = null;
 
+  @SerializedName("transactionTypeIndicator")
+  private String transactionTypeIndicator = null;
+
   public Ptsv2creditsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -125,6 +131,32 @@ public class Ptsv2creditsProcessingInformation {
 
   public void setActionList(List<String> actionList) {
     this.actionList = actionList;
+  }
+
+  public Ptsv2creditsProcessingInformation actionTokenTypes(List<String> actionTokenTypes) {
+    this.actionTokenTypes = actionTokenTypes;
+    return this;
+  }
+
+  public Ptsv2creditsProcessingInformation addActionTokenTypesItem(String actionTokenTypesItem) {
+    if (this.actionTokenTypes == null) {
+      this.actionTokenTypes = new ArrayList<String>();
+    }
+    this.actionTokenTypes.add(actionTokenTypesItem);
+    return this;
+  }
+
+   /**
+   * CyberSource tokens types you are performing a create on. If not supplied the default token type for the merchants token vault will be used.  Valid values: - customer - paymentInstrument - instrumentIdentifier - shippingAddress 
+   * @return actionTokenTypes
+  **/
+  @ApiModelProperty(value = "CyberSource tokens types you are performing a create on. If not supplied the default token type for the merchants token vault will be used.  Valid values: - customer - paymentInstrument - instrumentIdentifier - shippingAddress ")
+  public List<String> getActionTokenTypes() {
+    return actionTokenTypes;
+  }
+
+  public void setActionTokenTypes(List<String> actionTokenTypes) {
+    this.actionTokenTypes = actionTokenTypes;
   }
 
   public Ptsv2creditsProcessingInformation commerceIndicator(String commerceIndicator) {
@@ -487,6 +519,24 @@ public class Ptsv2creditsProcessingInformation {
     this.merchantVerificationValue = merchantVerificationValue;
   }
 
+  public Ptsv2creditsProcessingInformation transactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+    return this;
+  }
+
+   /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @return transactionTypeIndicator
+  **/
+  @ApiModelProperty(value = "This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities ")
+  public String getTransactionTypeIndicator() {
+    return transactionTypeIndicator;
+  }
+
+  public void setTransactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -498,6 +548,7 @@ public class Ptsv2creditsProcessingInformation {
     }
     Ptsv2creditsProcessingInformation ptsv2creditsProcessingInformation = (Ptsv2creditsProcessingInformation) o;
     return Objects.equals(this.actionList, ptsv2creditsProcessingInformation.actionList) &&
+        Objects.equals(this.actionTokenTypes, ptsv2creditsProcessingInformation.actionTokenTypes) &&
         Objects.equals(this.commerceIndicator, ptsv2creditsProcessingInformation.commerceIndicator) &&
         Objects.equals(this.processorId, ptsv2creditsProcessingInformation.processorId) &&
         Objects.equals(this.paymentSolution, ptsv2creditsProcessingInformation.paymentSolution) &&
@@ -517,12 +568,13 @@ public class Ptsv2creditsProcessingInformation {
         Objects.equals(this.loanOptions, ptsv2creditsProcessingInformation.loanOptions) &&
         Objects.equals(this.japanPaymentOptions, ptsv2creditsProcessingInformation.japanPaymentOptions) &&
         Objects.equals(this.refundOptions, ptsv2creditsProcessingInformation.refundOptions) &&
-        Objects.equals(this.merchantVerificationValue, ptsv2creditsProcessingInformation.merchantVerificationValue);
+        Objects.equals(this.merchantVerificationValue, ptsv2creditsProcessingInformation.merchantVerificationValue) &&
+        Objects.equals(this.transactionTypeIndicator, ptsv2creditsProcessingInformation.transactionTypeIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions, merchantVerificationValue);
+    return Objects.hash(actionList, actionTokenTypes, commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, walletType, nationalNetDomesticData, networkRoutingOrder, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, japanPaymentOptions, refundOptions, merchantVerificationValue, transactionTypeIndicator);
   }
 
 
@@ -532,6 +584,7 @@ public class Ptsv2creditsProcessingInformation {
     sb.append("class Ptsv2creditsProcessingInformation {\n");
     
     if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (actionTokenTypes != null) sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
     if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     if (processorId != null) sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
@@ -552,6 +605,7 @@ public class Ptsv2creditsProcessingInformation {
     if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
     if (refundOptions != null) sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
     if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

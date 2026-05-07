@@ -1,0 +1,15 @@
+
+# GetSubscriptionsPaymentsResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**links** | [**GetSubscriptionsPaymentsResponseLinks**](GetSubscriptionsPaymentsResponseLinks.md) |  |  [optional]
+**submitTimeUtc** | **String** | Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services.  |  [optional]
+**totalCount** | **Integer** | Total number of payments returned for the subscription, including both past payments and those specified in scheduledPaymentsCount. |  [optional]
+**cyclesCompletedCount** | [**GetSubscriptionsPaymentsResponseCyclesCompletedCount**](GetSubscriptionsPaymentsResponseCyclesCompletedCount.md) |  |  [optional]
+**billingCyclesToSkip** | **List&lt;Integer&gt;** | A list of billing cycles that are marked to be skipped. |  [optional]
+**subscriptionPayment** | [**List&lt;GetSubscriptionsPaymentsResponseSubscriptionPayment&gt;**](GetSubscriptionsPaymentsResponseSubscriptionPayment.md) | The list of subscription payment details. |  [optional]
+
+
+

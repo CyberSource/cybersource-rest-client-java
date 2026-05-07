@@ -256,7 +256,7 @@ public class CreateNewWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -364,9 +364,9 @@ public class CreateNewWebhooksApi {
     }
     /**
      * Build call for saveSymEgressKey
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -374,7 +374,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveSymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call saveSymEgressKeyCall(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveSymEgressKey, SaveSymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
@@ -435,22 +435,10 @@ public class CreateNewWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call saveSymEgressKeyValidateBeforeCall(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        
-        // verify the required parameter 'vCSenderOrganizationId' is set
-        if (vCSenderOrganizationId == null) {
-            logger.error("Missing the required parameter 'vCSenderOrganizationId' when calling saveSymEgressKey(Async)");
-            throw new ApiException("Missing the required parameter 'vCSenderOrganizationId' when calling saveSymEgressKey(Async)");
-        }
-        
-        // verify the required parameter 'vCPermissions' is set
-        if (vCPermissions == null) {
-            logger.error("Missing the required parameter 'vCPermissions' when calling saveSymEgressKey(Async)");
-            throw new ApiException("Missing the required parameter 'vCPermissions' when calling saveSymEgressKey(Async)");
-        }
+    private okhttp3.Call saveSymEgressKeyValidateBeforeCall(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         
-        okhttp3.Call call = saveSymEgressKeyCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, progressListener, progressRequestListener);
+        okhttp3.Call call = saveSymEgressKeyCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, progressListener, progressRequestListener);
         return call;
 
         
@@ -462,17 +450,17 @@ public class CreateNewWebhooksApi {
     /**
      * Create Webhook Security Keys
      * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2015 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
+    public InlineResponse2015 saveSymEgressKey(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
-        ApiResponse<InlineResponse2015> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+        ApiResponse<InlineResponse2015> resp = saveSymEgressKeyWithHttpInfo(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
     }
@@ -480,17 +468,17 @@ public class CreateNewWebhooksApi {
     /**
      * Create Webhook Security Keys
      * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2015> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2015> saveSymEgressKeyWithHttpInfo(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, null, null);
+        okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -498,16 +486,16 @@ public class CreateNewWebhooksApi {
     /**
      * Create Webhook Security Keys (asynchronously)
      * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
-     * @param vCSenderOrganizationId Sender organization id (required)
-     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
+     * @param vCSenderOrganizationId Sender organization id (optional)
+     * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
+    public okhttp3.Call saveSymEgressKeyAsync(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -529,7 +517,7 @@ public class CreateNewWebhooksApi {
             };
         }
 
-        okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, progressListener, progressRequestListener);
+        okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

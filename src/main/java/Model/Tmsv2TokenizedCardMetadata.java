@@ -37,6 +37,9 @@ public class Tmsv2TokenizedCardMetadata {
   @SerializedName("issuer")
   private Tmsv2TokenizedCardMetadataIssuer issuer = null;
 
+  @SerializedName("creator")
+  private String creator = null;
+
   public Tmsv2TokenizedCardMetadata cardArt(TmsCardArt cardArt) {
     this.cardArt = cardArt;
     return this;
@@ -73,6 +76,15 @@ public class Tmsv2TokenizedCardMetadata {
     this.issuer = issuer;
   }
 
+   /**
+   * The creator of the Tokenized Card.
+   * @return creator
+  **/
+  @ApiModelProperty(value = "The creator of the Tokenized Card.")
+  public String getCreator() {
+    return creator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +96,13 @@ public class Tmsv2TokenizedCardMetadata {
     }
     Tmsv2TokenizedCardMetadata tmsv2TokenizedCardMetadata = (Tmsv2TokenizedCardMetadata) o;
     return Objects.equals(this.cardArt, tmsv2TokenizedCardMetadata.cardArt) &&
-        Objects.equals(this.issuer, tmsv2TokenizedCardMetadata.issuer);
+        Objects.equals(this.issuer, tmsv2TokenizedCardMetadata.issuer) &&
+        Objects.equals(this.creator, tmsv2TokenizedCardMetadata.creator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardArt, issuer);
+    return Objects.hash(cardArt, issuer, creator);
   }
 
 
@@ -100,6 +113,7 @@ public class Tmsv2TokenizedCardMetadata {
     
     if (cardArt != null) sb.append("    cardArt: ").append(toIndentedString(cardArt)).append("\n");
     if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (creator != null) sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

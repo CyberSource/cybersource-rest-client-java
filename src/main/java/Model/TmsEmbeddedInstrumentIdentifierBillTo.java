@@ -48,6 +48,9 @@ public class TmsEmbeddedInstrumentIdentifierBillTo {
   @SerializedName("country")
   private String country = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   public TmsEmbeddedInstrumentIdentifierBillTo address1(String address1) {
     this.address1 = address1;
     return this;
@@ -156,6 +159,24 @@ public class TmsEmbeddedInstrumentIdentifierBillTo {
     this.country = country;
   }
 
+  public TmsEmbeddedInstrumentIdentifierBillTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Customer's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -171,12 +192,13 @@ public class TmsEmbeddedInstrumentIdentifierBillTo {
         Objects.equals(this.locality, tmsEmbeddedInstrumentIdentifierBillTo.locality) &&
         Objects.equals(this.administrativeArea, tmsEmbeddedInstrumentIdentifierBillTo.administrativeArea) &&
         Objects.equals(this.postalCode, tmsEmbeddedInstrumentIdentifierBillTo.postalCode) &&
-        Objects.equals(this.country, tmsEmbeddedInstrumentIdentifierBillTo.country);
+        Objects.equals(this.country, tmsEmbeddedInstrumentIdentifierBillTo.country) &&
+        Objects.equals(this.email, tmsEmbeddedInstrumentIdentifierBillTo.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, locality, administrativeArea, postalCode, country);
+    return Objects.hash(address1, address2, locality, administrativeArea, postalCode, country, email);
   }
 
 
@@ -191,6 +213,7 @@ public class TmsEmbeddedInstrumentIdentifierBillTo {
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

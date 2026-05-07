@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2billingagreementsOrderInformationInvoiceDetails;
 import Model.Ptsv2intentsOrderInformationAmountDetails;
 import Model.Ptsv2intentsOrderInformationBillTo;
-import Model.Ptsv2intentsOrderInformationInvoiceDetails;
 import Model.Ptsv2intentsOrderInformationLineItems;
 import Model.Ptsv2intentsOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
@@ -49,7 +49,7 @@ public class Ptsv2intentsOrderInformation {
   private List<Ptsv2intentsOrderInformationLineItems> lineItems = null;
 
   @SerializedName("invoiceDetails")
-  private Ptsv2intentsOrderInformationInvoiceDetails invoiceDetails = null;
+  private Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails = null;
 
   public Ptsv2intentsOrderInformation amountDetails(Ptsv2intentsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -131,7 +131,7 @@ public class Ptsv2intentsOrderInformation {
     this.lineItems = lineItems;
   }
 
-  public Ptsv2intentsOrderInformation invoiceDetails(Ptsv2intentsOrderInformationInvoiceDetails invoiceDetails) {
+  public Ptsv2intentsOrderInformation invoiceDetails(Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
     return this;
   }
@@ -141,11 +141,11 @@ public class Ptsv2intentsOrderInformation {
    * @return invoiceDetails
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2intentsOrderInformationInvoiceDetails getInvoiceDetails() {
+  public Ptsv2billingagreementsOrderInformationInvoiceDetails getInvoiceDetails() {
     return invoiceDetails;
   }
 
-  public void setInvoiceDetails(Ptsv2intentsOrderInformationInvoiceDetails invoiceDetails) {
+  public void setInvoiceDetails(Ptsv2billingagreementsOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
   }
 

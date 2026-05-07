@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse4009
@@ -33,36 +34,27 @@ import java.util.List;
 
 public class InlineResponse4009 {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("message")
-  private String message = null;
-
   @SerializedName("reason")
   private String reason = null;
+
+  @SerializedName("message")
+  private String message = null;
 
   @SerializedName("details")
   private List<InlineResponse4009Details> details = null;
 
-  public InlineResponse4009 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
    /**
-   * Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
   }
 
   public InlineResponse4009 status(String status) {
@@ -71,10 +63,10 @@ public class InlineResponse4009 {
   }
 
    /**
-   * Possible values:   - &#x60;INVALID_REQUEST&#x60; 
+   * The http status description of the submitted request.
    * @return status
   **/
-  @ApiModelProperty(value = "Possible values:   - `INVALID_REQUEST` ")
+  @ApiModelProperty(example = "BAD_REQUEST", value = "The http status description of the submitted request.")
   public String getStatus() {
     return status;
   }
@@ -83,40 +75,40 @@ public class InlineResponse4009 {
     this.status = status;
   }
 
-  public InlineResponse4009 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detail message related to the status and reason
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detail message related to the status and reason")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
   public InlineResponse4009 reason(String reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * The reason of the status.  Possible values:   - &#x60;INVALID_REQUEST&#x60; 
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:   - `INVALID_REQUEST` ")
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
   public String getReason() {
     return reason;
   }
 
   public void setReason(String reason) {
     this.reason = reason;
+  }
+
+  public InlineResponse4009 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Descriptive message for the error.
+   * @return message
+  **/
+  @ApiModelProperty(value = "Descriptive message for the error.")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   public InlineResponse4009 details(List<InlineResponse4009Details> details) {
@@ -157,14 +149,14 @@ public class InlineResponse4009 {
     InlineResponse4009 inlineResponse4009 = (InlineResponse4009) o;
     return Objects.equals(this.submitTimeUtc, inlineResponse4009.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse4009.status) &&
-        Objects.equals(this.message, inlineResponse4009.message) &&
         Objects.equals(this.reason, inlineResponse4009.reason) &&
+        Objects.equals(this.message, inlineResponse4009.message) &&
         Objects.equals(this.details, inlineResponse4009.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, message, reason, details);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -175,8 +167,8 @@ public class InlineResponse4009 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();

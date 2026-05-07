@@ -26,6 +26,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2payoutsProcessingInformation
@@ -61,6 +63,9 @@ public class Ptsv2payoutsProcessingInformation {
 
   @SerializedName("purchaseOptions")
   private Ptsv2payoutsProcessingInformationPurchaseOptions purchaseOptions = null;
+
+  @SerializedName("accountVerificationCode")
+  private List<String> accountVerificationCode = null;
 
   public Ptsv2payoutsProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
@@ -242,6 +247,32 @@ public class Ptsv2payoutsProcessingInformation {
     this.purchaseOptions = purchaseOptions;
   }
 
+  public Ptsv2payoutsProcessingInformation accountVerificationCode(List<String> accountVerificationCode) {
+    this.accountVerificationCode = accountVerificationCode;
+    return this;
+  }
+
+  public Ptsv2payoutsProcessingInformation addAccountVerificationCodeItem(String accountVerificationCodeItem) {
+    if (this.accountVerificationCode == null) {
+      this.accountVerificationCode = new ArrayList<String>();
+    }
+    this.accountVerificationCode.add(accountVerificationCodeItem);
+    return this;
+  }
+
+   /**
+   * Account verification code will inform what Payment Account Verification should be performed. With this array of codes, a merchant can choose à la carte what verifications to run. This field is optional, and the default is 1 if it is not passed in. This means that a full validation of the fields will be performed. Valid verification codes: - &#x60;1&#x60; &#x3D; Full Account Verification (Card Account, CVN, CAVV, TAVV, Address, Name, eMail, Phone, Identity) - &#x60;2&#x60; &#x3D; Card Account Verification - &#x60;3&#x60; &#x3D; Address Verification - &#x60;4&#x60; &#x3D; Card Authentication Method (CAM) (Cryptogram) - &#x60;5&#x60; &#x3D; Cardholder Authentication Verification (CAVV) - &#x60;6&#x60; &#x3D; Cardholder Identity Verification - &#x60;7&#x60; &#x3D; CVV2 Verification - &#x60;8&#x60; &#x3D; eMail Verification - &#x60;9&#x60; &#x3D; Name Verification - &#x60;10&#x60; &#x3D; Phone Verification 
+   * @return accountVerificationCode
+  **/
+  @ApiModelProperty(value = "Account verification code will inform what Payment Account Verification should be performed. With this array of codes, a merchant can choose à la carte what verifications to run. This field is optional, and the default is 1 if it is not passed in. This means that a full validation of the fields will be performed. Valid verification codes: - `1` = Full Account Verification (Card Account, CVN, CAVV, TAVV, Address, Name, eMail, Phone, Identity) - `2` = Card Account Verification - `3` = Address Verification - `4` = Card Authentication Method (CAM) (Cryptogram) - `5` = Cardholder Authentication Verification (CAVV) - `6` = Cardholder Identity Verification - `7` = CVV2 Verification - `8` = eMail Verification - `9` = Name Verification - `10` = Phone Verification ")
+  public List<String> getAccountVerificationCode() {
+    return accountVerificationCode;
+  }
+
+  public void setAccountVerificationCode(List<String> accountVerificationCode) {
+    this.accountVerificationCode = accountVerificationCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -261,12 +292,13 @@ public class Ptsv2payoutsProcessingInformation {
         Objects.equals(this.purposeOfPayment, ptsv2payoutsProcessingInformation.purposeOfPayment) &&
         Objects.equals(this.fundingOptions, ptsv2payoutsProcessingInformation.fundingOptions) &&
         Objects.equals(this.languageCode, ptsv2payoutsProcessingInformation.languageCode) &&
-        Objects.equals(this.purchaseOptions, ptsv2payoutsProcessingInformation.purchaseOptions);
+        Objects.equals(this.purchaseOptions, ptsv2payoutsProcessingInformation.purchaseOptions) &&
+        Objects.equals(this.accountVerificationCode, ptsv2payoutsProcessingInformation.accountVerificationCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment, fundingOptions, languageCode, purchaseOptions);
+    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment, fundingOptions, languageCode, purchaseOptions, accountVerificationCode);
   }
 
 
@@ -285,6 +317,7 @@ public class Ptsv2payoutsProcessingInformation {
     if (fundingOptions != null) sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
     if (languageCode != null) sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
     if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
+    if (accountVerificationCode != null) sb.append("    accountVerificationCode: ").append(toIndentedString(accountVerificationCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

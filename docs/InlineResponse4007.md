@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | [**DateTime**](DateTime.md) | Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  |  [optional]
-**status** | **String** | The http status description of the submitted request. |  [optional]
-**reason** | **String** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39;  |  [optional]
-**message** | **String** | Descriptive message for the error. |  [optional]
-**details** | [**List&lt;InlineResponse4007Details&gt;**](InlineResponse4007Details.md) |  |  [optional]
+**submitTimeUtc** | **String** | Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services.  |  [optional]
+**status** | **String** | The status of the submitted transaction.  Possible values:  - INVALID_REQUEST  |  [optional]
+**reason** | **String** | The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION  |  [optional]
+**message** | **String** | The detail message related to the status and reason listed above. |  [optional]
+**details** | [**List&lt;PtsV2PaymentsPost201ResponseErrorInformationDetails&gt;**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  |  [optional]
 
 
 

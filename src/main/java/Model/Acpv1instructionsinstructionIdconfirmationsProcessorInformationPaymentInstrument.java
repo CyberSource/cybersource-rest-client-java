@@ -26,9 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Details of the PAN associated with the enrolled card
+ * Details of the PAN associated with the enrolled card. Contains processor verification results.
  */
-@ApiModel(description = "Details of the PAN associated with the enrolled card")
+@ApiModel(description = "Details of the PAN associated with the enrolled card. Contains processor verification results.")
 
 public class Acpv1instructionsinstructionIdconfirmationsProcessorInformationPaymentInstrument {
   @SerializedName("verificationResults")

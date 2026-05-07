@@ -45,6 +45,18 @@ public class Iplv2paymentlinksOrderInformationLineItems {
   @SerializedName("productDescription")
   private String productDescription = null;
 
+  @SerializedName("discountAmount")
+  private String discountAmount = null;
+
+  @SerializedName("discountPercent")
+  private String discountPercent = null;
+
+  @SerializedName("taxAmount")
+  private String taxAmount = null;
+
+  @SerializedName("taxRate")
+  private String taxRate = null;
+
   public Iplv2paymentlinksOrderInformationLineItems productSku(String productSku) {
     this.productSku = productSku;
     return this;
@@ -137,6 +149,78 @@ public class Iplv2paymentlinksOrderInformationLineItems {
     this.productDescription = productDescription;
   }
 
+  public Iplv2paymentlinksOrderInformationLineItems discountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+    return this;
+  }
+
+   /**
+   * Discount amount applied to the item. Maximum of 2 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent. Otherwise, a validation error will be returned. 
+   * @return discountAmount
+  **/
+  @ApiModelProperty(example = "10.00", value = "Discount amount applied to the item. Maximum of 2 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent. Otherwise, a validation error will be returned. ")
+  public String getDiscountAmount() {
+    return discountAmount;
+  }
+
+  public void setDiscountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+  }
+
+  public Iplv2paymentlinksOrderInformationLineItems discountPercent(String discountPercent) {
+    this.discountPercent = discountPercent;
+    return this;
+  }
+
+   /**
+   * Discount rate applied to the item. Maximum of 3 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent; otherwise, a validation error will be returned. Example: 5.25 (&#x3D;5.25%) 
+   * @return discountPercent
+  **/
+  @ApiModelProperty(example = "5.25", value = "Discount rate applied to the item. Maximum of 3 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent; otherwise, a validation error will be returned. Example: 5.25 (=5.25%) ")
+  public String getDiscountPercent() {
+    return discountPercent;
+  }
+
+  public void setDiscountPercent(String discountPercent) {
+    this.discountPercent = discountPercent;
+  }
+
+  public Iplv2paymentlinksOrderInformationLineItems taxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+   /**
+   * Tax amount applied to the item. This value cannot be negative. Maximum of 2 decimal places. The tax amount and the offer amount must be in the same currency. The tax amount field is additive. If taxAmount is provided but taxRate is not, the taxRate will be calculated. 
+   * @return taxAmount
+  **/
+  @ApiModelProperty(example = "10.50", value = "Tax amount applied to the item. This value cannot be negative. Maximum of 2 decimal places. The tax amount and the offer amount must be in the same currency. The tax amount field is additive. If taxAmount is provided but taxRate is not, the taxRate will be calculated. ")
+  public String getTaxAmount() {
+    return taxAmount;
+  }
+
+  public void setTaxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+  }
+
+  public Iplv2paymentlinksOrderInformationLineItems taxRate(String taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * Tax rate applied to the item. Valid range: 1.001% to 99.999%. Maximum of 3 decimal places. If a taxRate is provided but taxAmount is missing or incorrect, the taxAmount based on the given taxRate will be overwritten. Example: 21.00 (&#x3D;21.00%) 
+   * @return taxRate
+  **/
+  @ApiModelProperty(example = "21.00", value = "Tax rate applied to the item. Valid range: 1.001% to 99.999%. Maximum of 3 decimal places. If a taxRate is provided but taxAmount is missing or incorrect, the taxAmount based on the given taxRate will be overwritten. Example: 21.00 (=21.00%) ")
+  public String getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(String taxRate) {
+    this.taxRate = taxRate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,12 +235,16 @@ public class Iplv2paymentlinksOrderInformationLineItems {
         Objects.equals(this.productName, iplv2paymentlinksOrderInformationLineItems.productName) &&
         Objects.equals(this.quantity, iplv2paymentlinksOrderInformationLineItems.quantity) &&
         Objects.equals(this.unitPrice, iplv2paymentlinksOrderInformationLineItems.unitPrice) &&
-        Objects.equals(this.productDescription, iplv2paymentlinksOrderInformationLineItems.productDescription);
+        Objects.equals(this.productDescription, iplv2paymentlinksOrderInformationLineItems.productDescription) &&
+        Objects.equals(this.discountAmount, iplv2paymentlinksOrderInformationLineItems.discountAmount) &&
+        Objects.equals(this.discountPercent, iplv2paymentlinksOrderInformationLineItems.discountPercent) &&
+        Objects.equals(this.taxAmount, iplv2paymentlinksOrderInformationLineItems.taxAmount) &&
+        Objects.equals(this.taxRate, iplv2paymentlinksOrderInformationLineItems.taxRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productSku, productName, quantity, unitPrice, productDescription);
+    return Objects.hash(productSku, productName, quantity, unitPrice, productDescription, discountAmount, discountPercent, taxAmount, taxRate);
   }
 
 
@@ -170,6 +258,10 @@ public class Iplv2paymentlinksOrderInformationLineItems {
     if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountPercent != null) sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

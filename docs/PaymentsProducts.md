@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **receivablesManager** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
 **serviceFee** | [**PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  |  [optional]
 **batchUpload** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
+**transactGuard** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
+**microform** | [**PaymentsProductsMicroform**](PaymentsProductsMicroform.md) |  |  [optional]
 
 
 

@@ -22,7 +22,7 @@ import Model.InlineResponse412;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
 import Model.PatchCustomerPaymentInstrumentRequest;
-import Model.PaymentInstrumentList;
+import Model.PaymentInstrumentList1;
 import Model.PostCustomerPaymentInstrumentRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -92,7 +92,7 @@ public class CustomerPaymentInstrumentApiTest {
         String profileId = null;
         Long offset = null;
         Long limit = null;
-        PaymentInstrumentList response = api.getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit);
+        PaymentInstrumentList1 response = api.getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit);
 
         // TODO: test validations
     }

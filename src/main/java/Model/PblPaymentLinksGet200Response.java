@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.GetSubscriptionsPaymentsResponse1Links;
 import Model.Iplv2paymentlinksProcessingInformation;
-import Model.PblPaymentLinksPost201ResponseLinks;
 import Model.PblPaymentLinksPost201ResponseOrderInformation;
 import Model.PblPaymentLinksPost201ResponsePurchaseInformation;
 import com.google.gson.TypeAdapter;
@@ -34,7 +34,7 @@ import java.io.IOException;
 
 public class PblPaymentLinksGet200Response {
   @SerializedName("_links")
-  private PblPaymentLinksPost201ResponseLinks links = null;
+  private GetSubscriptionsPaymentsResponse1Links links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -54,7 +54,7 @@ public class PblPaymentLinksGet200Response {
   @SerializedName("orderInformation")
   private PblPaymentLinksPost201ResponseOrderInformation orderInformation = null;
 
-  public PblPaymentLinksGet200Response links(PblPaymentLinksPost201ResponseLinks links) {
+  public PblPaymentLinksGet200Response links(GetSubscriptionsPaymentsResponse1Links links) {
     this.links = links;
     return this;
   }
@@ -64,11 +64,11 @@ public class PblPaymentLinksGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PblPaymentLinksPost201ResponseLinks getLinks() {
+  public GetSubscriptionsPaymentsResponse1Links getLinks() {
     return links;
   }
 
-  public void setLinks(PblPaymentLinksPost201ResponseLinks links) {
+  public void setLinks(GetSubscriptionsPaymentsResponse1Links links) {
     this.links = links;
   }
 

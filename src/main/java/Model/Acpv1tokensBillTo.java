@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Consumer billing information.
+ * Consumer billing information.  Required during card enrollment to identify the cardholder.
  */
-@ApiModel(description = "Consumer billing information.")
+@ApiModel(description = "Consumer billing information.  Required during card enrollment to identify the cardholder.")
 
 public class Acpv1tokensBillTo {
   @SerializedName("firstName")

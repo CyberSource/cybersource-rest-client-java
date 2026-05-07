@@ -29,6 +29,12 @@ import java.io.IOException;
  */
 
 public class Ucv1sessionsDataRecipientInformation {
+  @SerializedName("accountId")
+  private String accountId = null;
+
+  @SerializedName("accountType")
+  private String accountType = null;
+
   @SerializedName("firstName")
   private String firstName = null;
 
@@ -38,23 +44,62 @@ public class Ucv1sessionsDataRecipientInformation {
   @SerializedName("lastName")
   private String lastName = null;
 
-  @SerializedName("country")
-  private String country = null;
-
-  @SerializedName("accountId")
-  private String accountId = null;
+  @SerializedName("address1")
+  private String address1 = null;
 
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
 
-  @SerializedName("accountType")
-  private String accountType = null;
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
+  @SerializedName("country")
+  private String country = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
 
   @SerializedName("dateOfBirth")
   private String dateOfBirth = null;
 
-  @SerializedName("postalCode")
-  private String postalCode = null;
+  @SerializedName("locality")
+  private String locality = null;
+
+  public Ucv1sessionsDataRecipientInformation accountId(String accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+   /**
+   * Identifier for the recipient&#39;s account. This field is applicable for AFT transactions. 
+   * @return accountId
+  **/
+  @ApiModelProperty(value = "Identifier for the recipient's account. This field is applicable for AFT transactions. ")
+  public String getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(String accountId) {
+    this.accountId = accountId;
+  }
+
+  public Ucv1sessionsDataRecipientInformation accountType(String accountType) {
+    this.accountType = accountType;
+    return this;
+  }
+
+   /**
+   * Identifies the recipient&#39;s account type. This field is applicable for AFT transactions.  Valid values are:   - &#x60;00&#x60; for Other   - &#x60;01&#x60; for Routing Transit Number (RTN) + Bank Account Number (BAN)   - &#x60;02&#x60; for International Bank Account Number (IBAN)   - &#x60;03&#x60; for Card Account   - &#x60;06&#x60; for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code 
+   * @return accountType
+  **/
+  @ApiModelProperty(value = "Identifies the recipient's account type. This field is applicable for AFT transactions.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code ")
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public void setAccountType(String accountType) {
+    this.accountType = accountType;
+  }
 
   public Ucv1sessionsDataRecipientInformation firstName(String firstName) {
     this.firstName = firstName;
@@ -62,10 +107,10 @@ public class Ucv1sessionsDataRecipientInformation {
   }
 
    /**
-   * Get firstName
+   * First name of the recipient. This field is applicable for AFT transactions.    Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return firstName
   **/
-  @ApiModelProperty(example = "John", value = "")
+  @ApiModelProperty(value = "First name of the recipient. This field is applicable for AFT transactions.    Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getFirstName() {
     return firstName;
   }
@@ -80,10 +125,10 @@ public class Ucv1sessionsDataRecipientInformation {
   }
 
    /**
-   * Get middleName
+   * Middle name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(example = "John", value = "")
+  @ApiModelProperty(value = "Middle name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -98,10 +143,10 @@ public class Ucv1sessionsDataRecipientInformation {
   }
 
    /**
-   * Get lastName
+   * Last name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return lastName
   **/
-  @ApiModelProperty(example = "John", value = "")
+  @ApiModelProperty(value = "Last name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLastName() {
     return lastName;
   }
@@ -110,40 +155,22 @@ public class Ucv1sessionsDataRecipientInformation {
     this.lastName = lastName;
   }
 
-  public Ucv1sessionsDataRecipientInformation country(String country) {
-    this.country = country;
+  public Ucv1sessionsDataRecipientInformation address1(String address1) {
+    this.address1 = address1;
     return this;
   }
 
    /**
-   * The country code of the recipient&#39;s country&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @return country
+   * The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
+   * @return address1
   **/
-  @ApiModelProperty(example = "GB", value = "The country code of the recipient's country<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
-  public String getCountry() {
-    return country;
+  @ApiModelProperty(value = "The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
+  public String getAddress1() {
+    return address1;
   }
 
-  public void setCountry(String country) {
-    this.country = country;
-  }
-
-  public Ucv1sessionsDataRecipientInformation accountId(String accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * The account ID of the recipient&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @return accountId
-  **/
-  @ApiModelProperty(example = "2342312", value = "The account ID of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
-  public String getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(String accountId) {
-    this.accountId = accountId;
+  public void setAddress1(String address1) {
+    this.address1 = address1;
   }
 
   public Ucv1sessionsDataRecipientInformation administrativeArea(String administrativeArea) {
@@ -152,10 +179,10 @@ public class Ucv1sessionsDataRecipientInformation {
   }
 
    /**
-   * The administrative area of the recipient&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
+   * The state or province of the recipient. This field is applicable for AFT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value 
    * @return administrativeArea
   **/
-  @ApiModelProperty(example = "GB", value = "The administrative area of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
+  @ApiModelProperty(value = "The state or province of the recipient. This field is applicable for AFT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -164,22 +191,58 @@ public class Ucv1sessionsDataRecipientInformation {
     this.administrativeArea = administrativeArea;
   }
 
-  public Ucv1sessionsDataRecipientInformation accountType(String accountType) {
-    this.accountType = accountType;
+  public Ucv1sessionsDataRecipientInformation postalCode(String postalCode) {
+    this.postalCode = postalCode;
     return this;
   }
 
    /**
-   * The account type of the recipient&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @return accountType
+   * Partial postal code for the recipient&#39;s address. For example, if the postal code is **NN5 7SG**, the value for this field should be the first part of the postal code: **NN5**. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * @return postalCode
   **/
-  @ApiModelProperty(example = "01", value = "The account type of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
-  public String getAccountType() {
-    return accountType;
+  @ApiModelProperty(value = "Partial postal code for the recipient's address. For example, if the postal code is **NN5 7SG**, the value for this field should be the first part of the postal code: **NN5**. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  public String getPostalCode() {
+    return postalCode;
   }
 
-  public void setAccountType(String accountType) {
-    this.accountType = accountType;
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public Ucv1sessionsDataRecipientInformation country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
+   * @return country
+  **/
+  @ApiModelProperty(value = "The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public Ucv1sessionsDataRecipientInformation phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Account Owner phone number
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(value = "Account Owner phone number")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   public Ucv1sessionsDataRecipientInformation dateOfBirth(String dateOfBirth) {
@@ -188,10 +251,10 @@ public class Ucv1sessionsDataRecipientInformation {
   }
 
    /**
-   * The date of birth of the recipient&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
+   * Recipient&#39;s date of birth. **Format**: &#x60;YYYYMMDD&#x60;.  This field is a &#x60;pass-through&#x60;, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @return dateOfBirth
   **/
-  @ApiModelProperty(example = "05111999", value = "The date of birth of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
+  @ApiModelProperty(value = "Recipient's date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
   public String getDateOfBirth() {
     return dateOfBirth;
   }
@@ -200,22 +263,22 @@ public class Ucv1sessionsDataRecipientInformation {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public Ucv1sessionsDataRecipientInformation postalCode(String postalCode) {
-    this.postalCode = postalCode;
+  public Ucv1sessionsDataRecipientInformation locality(String locality) {
+    this.locality = locality;
     return this;
   }
 
    /**
-   * The postal code of the recipient&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @return postalCode
+   * The city of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
+   * @return locality
   **/
-  @ApiModelProperty(example = "170056", value = "The postal code of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
-  public String getPostalCode() {
-    return postalCode;
+  @ApiModelProperty(value = "The city of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
+  public String getLocality() {
+    return locality;
   }
 
-  public void setPostalCode(String postalCode) {
-    this.postalCode = postalCode;
+  public void setLocality(String locality) {
+    this.locality = locality;
   }
 
 
@@ -228,20 +291,23 @@ public class Ucv1sessionsDataRecipientInformation {
       return false;
     }
     Ucv1sessionsDataRecipientInformation ucv1sessionsDataRecipientInformation = (Ucv1sessionsDataRecipientInformation) o;
-    return Objects.equals(this.firstName, ucv1sessionsDataRecipientInformation.firstName) &&
+    return Objects.equals(this.accountId, ucv1sessionsDataRecipientInformation.accountId) &&
+        Objects.equals(this.accountType, ucv1sessionsDataRecipientInformation.accountType) &&
+        Objects.equals(this.firstName, ucv1sessionsDataRecipientInformation.firstName) &&
         Objects.equals(this.middleName, ucv1sessionsDataRecipientInformation.middleName) &&
         Objects.equals(this.lastName, ucv1sessionsDataRecipientInformation.lastName) &&
-        Objects.equals(this.country, ucv1sessionsDataRecipientInformation.country) &&
-        Objects.equals(this.accountId, ucv1sessionsDataRecipientInformation.accountId) &&
+        Objects.equals(this.address1, ucv1sessionsDataRecipientInformation.address1) &&
         Objects.equals(this.administrativeArea, ucv1sessionsDataRecipientInformation.administrativeArea) &&
-        Objects.equals(this.accountType, ucv1sessionsDataRecipientInformation.accountType) &&
+        Objects.equals(this.postalCode, ucv1sessionsDataRecipientInformation.postalCode) &&
+        Objects.equals(this.country, ucv1sessionsDataRecipientInformation.country) &&
+        Objects.equals(this.phoneNumber, ucv1sessionsDataRecipientInformation.phoneNumber) &&
         Objects.equals(this.dateOfBirth, ucv1sessionsDataRecipientInformation.dateOfBirth) &&
-        Objects.equals(this.postalCode, ucv1sessionsDataRecipientInformation.postalCode);
+        Objects.equals(this.locality, ucv1sessionsDataRecipientInformation.locality);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleName, lastName, country, accountId, administrativeArea, accountType, dateOfBirth, postalCode);
+    return Objects.hash(accountId, accountType, firstName, middleName, lastName, address1, administrativeArea, postalCode, country, phoneNumber, dateOfBirth, locality);
   }
 
 
@@ -250,15 +316,18 @@ public class Ucv1sessionsDataRecipientInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsDataRecipientInformation {\n");
     
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
     if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("}");
     return sb.toString();
   }

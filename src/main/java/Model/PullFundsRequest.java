@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv1pullfundstransferAggregatorInformation;
+import Model.Ptsv1pullfundstransferBuyerInformation;
 import Model.Ptsv1pullfundstransferClientReferenceInformation;
 import Model.Ptsv1pullfundstransferMerchantInformation;
 import Model.Ptsv1pullfundstransferOrderInformation;
@@ -50,6 +51,9 @@ public class PullFundsRequest {
 
   @SerializedName("senderInformation")
   private Ptsv1pullfundstransferSenderInformation senderInformation = null;
+
+  @SerializedName("buyerInformation")
+  private Ptsv1pullfundstransferBuyerInformation buyerInformation = null;
 
   @SerializedName("aggregatorInformation")
   private Ptsv1pullfundstransferAggregatorInformation aggregatorInformation = null;
@@ -147,6 +151,24 @@ public class PullFundsRequest {
     this.senderInformation = senderInformation;
   }
 
+  public PullFundsRequest buyerInformation(Ptsv1pullfundstransferBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+    return this;
+  }
+
+   /**
+   * Get buyerInformation
+   * @return buyerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv1pullfundstransferBuyerInformation getBuyerInformation() {
+    return buyerInformation;
+  }
+
+  public void setBuyerInformation(Ptsv1pullfundstransferBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+  }
+
   public PullFundsRequest aggregatorInformation(Ptsv1pullfundstransferAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
     return this;
@@ -198,13 +220,14 @@ public class PullFundsRequest {
         Objects.equals(this.processingInformation, pullFundsRequest.processingInformation) &&
         Objects.equals(this.recipientInformation, pullFundsRequest.recipientInformation) &&
         Objects.equals(this.senderInformation, pullFundsRequest.senderInformation) &&
+        Objects.equals(this.buyerInformation, pullFundsRequest.buyerInformation) &&
         Objects.equals(this.aggregatorInformation, pullFundsRequest.aggregatorInformation) &&
         Objects.equals(this.merchantInformation, pullFundsRequest.merchantInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, processingInformation, recipientInformation, senderInformation, aggregatorInformation, merchantInformation);
+    return Objects.hash(clientReferenceInformation, orderInformation, processingInformation, recipientInformation, senderInformation, buyerInformation, aggregatorInformation, merchantInformation);
   }
 
 
@@ -218,6 +241,7 @@ public class PullFundsRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("}");

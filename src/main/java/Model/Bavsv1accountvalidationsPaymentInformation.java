@@ -16,6 +16,9 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Bavsv1accountvalidationsPaymentInformationBank;
+import Model.Bavsv1accountvalidationsPaymentInformationCustomer;
+import Model.Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier;
+import Model.Bavsv1accountvalidationsPaymentInformationPaymentInstrument;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,12 +29,76 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Bavsv1accountvalidationsPaymentInformation
+ * Payment information for account validation. Either tokenized payment data or bank account details must be provided, but not both. When token information is provided, the bank object becomes optional. Only one token type may be included per request. 
  */
+@ApiModel(description = "Payment information for account validation. Either tokenized payment data or bank account details must be provided, but not both. When token information is provided, the bank object becomes optional. Only one token type may be included per request. ")
 
 public class Bavsv1accountvalidationsPaymentInformation {
+  @SerializedName("customer")
+  private Bavsv1accountvalidationsPaymentInformationCustomer customer = null;
+
+  @SerializedName("paymentInstrument")
+  private Bavsv1accountvalidationsPaymentInformationPaymentInstrument paymentInstrument = null;
+
+  @SerializedName("instrumentIdentifier")
+  private Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier instrumentIdentifier = null;
+
   @SerializedName("bank")
   private Bavsv1accountvalidationsPaymentInformationBank bank = null;
+
+  public Bavsv1accountvalidationsPaymentInformation customer(Bavsv1accountvalidationsPaymentInformationCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Get customer
+   * @return customer
+  **/
+  @ApiModelProperty(value = "")
+  public Bavsv1accountvalidationsPaymentInformationCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Bavsv1accountvalidationsPaymentInformationCustomer customer) {
+    this.customer = customer;
+  }
+
+  public Bavsv1accountvalidationsPaymentInformation paymentInstrument(Bavsv1accountvalidationsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+    return this;
+  }
+
+   /**
+   * Get paymentInstrument
+   * @return paymentInstrument
+  **/
+  @ApiModelProperty(value = "")
+  public Bavsv1accountvalidationsPaymentInformationPaymentInstrument getPaymentInstrument() {
+    return paymentInstrument;
+  }
+
+  public void setPaymentInstrument(Bavsv1accountvalidationsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+  }
+
+  public Bavsv1accountvalidationsPaymentInformation instrumentIdentifier(Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+    return this;
+  }
+
+   /**
+   * Get instrumentIdentifier
+   * @return instrumentIdentifier
+  **/
+  @ApiModelProperty(value = "")
+  public Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier getInstrumentIdentifier() {
+    return instrumentIdentifier;
+  }
+
+  public void setInstrumentIdentifier(Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+  }
 
   public Bavsv1accountvalidationsPaymentInformation bank(Bavsv1accountvalidationsPaymentInformationBank bank) {
     this.bank = bank;
@@ -42,7 +109,7 @@ public class Bavsv1accountvalidationsPaymentInformation {
    * Get bank
    * @return bank
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Bavsv1accountvalidationsPaymentInformationBank getBank() {
     return bank;
   }
@@ -61,12 +128,15 @@ public class Bavsv1accountvalidationsPaymentInformation {
       return false;
     }
     Bavsv1accountvalidationsPaymentInformation bavsv1accountvalidationsPaymentInformation = (Bavsv1accountvalidationsPaymentInformation) o;
-    return Objects.equals(this.bank, bavsv1accountvalidationsPaymentInformation.bank);
+    return Objects.equals(this.customer, bavsv1accountvalidationsPaymentInformation.customer) &&
+        Objects.equals(this.paymentInstrument, bavsv1accountvalidationsPaymentInformation.paymentInstrument) &&
+        Objects.equals(this.instrumentIdentifier, bavsv1accountvalidationsPaymentInformation.instrumentIdentifier) &&
+        Objects.equals(this.bank, bavsv1accountvalidationsPaymentInformation.bank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bank);
+    return Objects.hash(customer, paymentInstrument, instrumentIdentifier, bank);
   }
 
 
@@ -75,6 +145,9 @@ public class Bavsv1accountvalidationsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Bavsv1accountvalidationsPaymentInformation {\n");
     
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -45,8 +45,17 @@ public class Ptsv2paymentsProcessorInformation {
   @SerializedName("network")
   private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
+  @SerializedName("authApprovalToken")
+  private String authApprovalToken = null;
+
+  @SerializedName("supplementaryTransactionData")
+  private String supplementaryTransactionData = null;
+
   @SerializedName("responseSourceCode")
   private String responseSourceCode = null;
+
+  @SerializedName("cedpVerifiedIndicator")
+  private String cedpVerifiedIndicator = null;
 
   public Ptsv2paymentsProcessorInformation preApprovalToken(String preApprovalToken) {
     this.preApprovalToken = preApprovalToken;
@@ -120,6 +129,42 @@ public class Ptsv2paymentsProcessorInformation {
     this.network = network;
   }
 
+  public Ptsv2paymentsProcessorInformation authApprovalToken(String authApprovalToken) {
+    this.authApprovalToken = authApprovalToken;
+    return this;
+  }
+
+   /**
+   * Interoperability Token received by merchant for Authorization API. Field for merchant to send Klarna Advantage Plus authorization approval token for Auth API call. 
+   * @return authApprovalToken
+  **/
+  @ApiModelProperty(value = "Interoperability Token received by merchant for Authorization API. Field for merchant to send Klarna Advantage Plus authorization approval token for Auth API call. ")
+  public String getAuthApprovalToken() {
+    return authApprovalToken;
+  }
+
+  public void setAuthApprovalToken(String authApprovalToken) {
+    this.authApprovalToken = authApprovalToken;
+  }
+
+  public Ptsv2paymentsProcessorInformation supplementaryTransactionData(String supplementaryTransactionData) {
+    this.supplementaryTransactionData = supplementaryTransactionData;
+    return this;
+  }
+
+   /**
+   * Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. 
+   * @return supplementaryTransactionData
+  **/
+  @ApiModelProperty(value = "Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. ")
+  public String getSupplementaryTransactionData() {
+    return supplementaryTransactionData;
+  }
+
+  public void setSupplementaryTransactionData(String supplementaryTransactionData) {
+    this.supplementaryTransactionData = supplementaryTransactionData;
+  }
+
   public Ptsv2paymentsProcessorInformation responseSourceCode(String responseSourceCode) {
     this.responseSourceCode = responseSourceCode;
     return this;
@@ -138,6 +183,24 @@ public class Ptsv2paymentsProcessorInformation {
     this.responseSourceCode = responseSourceCode;
   }
 
+  public Ptsv2paymentsProcessorInformation cedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
+    return this;
+  }
+
+   /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - &#x60;Y&#x60;: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. 
+   * @return cedpVerifiedIndicator
+  **/
+  @ApiModelProperty(value = "Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. ")
+  public String getCedpVerifiedIndicator() {
+    return cedpVerifiedIndicator;
+  }
+
+  public void setCedpVerifiedIndicator(String cedpVerifiedIndicator) {
+    this.cedpVerifiedIndicator = cedpVerifiedIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +215,15 @@ public class Ptsv2paymentsProcessorInformation {
         Objects.equals(this.authorizationOptions, ptsv2paymentsProcessorInformation.authorizationOptions) &&
         Objects.equals(this.reversal, ptsv2paymentsProcessorInformation.reversal) &&
         Objects.equals(this.network, ptsv2paymentsProcessorInformation.network) &&
-        Objects.equals(this.responseSourceCode, ptsv2paymentsProcessorInformation.responseSourceCode);
+        Objects.equals(this.authApprovalToken, ptsv2paymentsProcessorInformation.authApprovalToken) &&
+        Objects.equals(this.supplementaryTransactionData, ptsv2paymentsProcessorInformation.supplementaryTransactionData) &&
+        Objects.equals(this.responseSourceCode, ptsv2paymentsProcessorInformation.responseSourceCode) &&
+        Objects.equals(this.cedpVerifiedIndicator, ptsv2paymentsProcessorInformation.cedpVerifiedIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(preApprovalToken, authorizationOptions, reversal, network, responseSourceCode);
+    return Objects.hash(preApprovalToken, authorizationOptions, reversal, network, authApprovalToken, supplementaryTransactionData, responseSourceCode, cedpVerifiedIndicator);
   }
 
 
@@ -170,7 +236,10 @@ public class Ptsv2paymentsProcessorInformation {
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     if (reversal != null) sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
     if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (authApprovalToken != null) sb.append("    authApprovalToken: ").append(toIndentedString(authApprovalToken)).append("\n");
+    if (supplementaryTransactionData != null) sb.append("    supplementaryTransactionData: ").append(toIndentedString(supplementaryTransactionData)).append("\n");
     if (responseSourceCode != null) sb.append("    responseSourceCode: ").append(toIndentedString(responseSourceCode)).append("\n");
+    if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(toIndentedString(cedpVerifiedIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

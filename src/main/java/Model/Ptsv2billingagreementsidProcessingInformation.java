@@ -34,6 +34,9 @@ public class Ptsv2billingagreementsidProcessingInformation {
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
 
+  @SerializedName("paymentCompletionTimeout")
+  private String paymentCompletionTimeout = null;
+
   @SerializedName("actionList")
   private List<String> actionList = null;
 
@@ -53,6 +56,24 @@ public class Ptsv2billingagreementsidProcessingInformation {
 
   public void setCommerceIndicator(String commerceIndicator) {
     this.commerceIndicator = commerceIndicator;
+  }
+
+  public Ptsv2billingagreementsidProcessingInformation paymentCompletionTimeout(String paymentCompletionTimeout) {
+    this.paymentCompletionTimeout = paymentCompletionTimeout;
+    return this;
+  }
+
+   /**
+   * Period after which an authorization request to the consumer expires due to inactivity. Value in seconds (e.g., 86400 for one day). 
+   * @return paymentCompletionTimeout
+  **/
+  @ApiModelProperty(value = "Period after which an authorization request to the consumer expires due to inactivity. Value in seconds (e.g., 86400 for one day). ")
+  public String getPaymentCompletionTimeout() {
+    return paymentCompletionTimeout;
+  }
+
+  public void setPaymentCompletionTimeout(String paymentCompletionTimeout) {
+    this.paymentCompletionTimeout = paymentCompletionTimeout;
   }
 
   public Ptsv2billingagreementsidProcessingInformation actionList(List<String> actionList) {
@@ -92,12 +113,13 @@ public class Ptsv2billingagreementsidProcessingInformation {
     }
     Ptsv2billingagreementsidProcessingInformation ptsv2billingagreementsidProcessingInformation = (Ptsv2billingagreementsidProcessingInformation) o;
     return Objects.equals(this.commerceIndicator, ptsv2billingagreementsidProcessingInformation.commerceIndicator) &&
+        Objects.equals(this.paymentCompletionTimeout, ptsv2billingagreementsidProcessingInformation.paymentCompletionTimeout) &&
         Objects.equals(this.actionList, ptsv2billingagreementsidProcessingInformation.actionList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(commerceIndicator, actionList);
+    return Objects.hash(commerceIndicator, paymentCompletionTimeout, actionList);
   }
 
 
@@ -107,6 +129,7 @@ public class Ptsv2billingagreementsidProcessingInformation {
     sb.append("class Ptsv2billingagreementsidProcessingInformation {\n");
     
     if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (paymentCompletionTimeout != null) sb.append("    paymentCompletionTimeout: ").append(toIndentedString(paymentCompletionTimeout)).append("\n");
     if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();

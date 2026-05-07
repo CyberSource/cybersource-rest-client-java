@@ -110,7 +110,7 @@ No authorization required
 
 <a name="getCustomerPaymentInstrumentsList"></a>
 # **getCustomerPaymentInstrumentsList**
-> PaymentInstrumentList getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit)
+> PaymentInstrumentList1 getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit)
 
 List Payment Instruments for a Customer
 
@@ -129,7 +129,7 @@ String profileId = "profileId_example"; // String | The Id of a profile containi
 Long offset = 0L; // Long | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
 Long limit = 20L; // Long | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 try {
-    PaymentInstrumentList result = apiInstance.getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit);
+    PaymentInstrumentList1 result = apiInstance.getCustomerPaymentInstrumentsList(customerId, profileId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerPaymentInstrumentApi#getCustomerPaymentInstrumentsList");
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentInstrumentList**](PaymentInstrumentList.md)
+[**PaymentInstrumentList1**](PaymentInstrumentList1.md)
 
 ### Authorization
 

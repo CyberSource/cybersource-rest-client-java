@@ -92,6 +92,12 @@ public class InlineResponse2014SetupsPayments {
   @SerializedName("batchUpload")
   private InlineResponse2014SetupsPaymentsDigitalPayments batchUpload = null;
 
+  @SerializedName("transactGuard")
+  private InlineResponse2014SetupsPaymentsDigitalPayments transactGuard = null;
+
+  @SerializedName("microform")
+  private InlineResponse2014SetupsPaymentsCardProcessing microform = null;
+
   public InlineResponse2014SetupsPayments cardProcessing(InlineResponse2014SetupsPaymentsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
     return this;
@@ -452,6 +458,42 @@ public class InlineResponse2014SetupsPayments {
     this.batchUpload = batchUpload;
   }
 
+  public InlineResponse2014SetupsPayments transactGuard(InlineResponse2014SetupsPaymentsDigitalPayments transactGuard) {
+    this.transactGuard = transactGuard;
+    return this;
+  }
+
+   /**
+   * Get transactGuard
+   * @return transactGuard
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsDigitalPayments getTransactGuard() {
+    return transactGuard;
+  }
+
+  public void setTransactGuard(InlineResponse2014SetupsPaymentsDigitalPayments transactGuard) {
+    this.transactGuard = transactGuard;
+  }
+
+  public InlineResponse2014SetupsPayments microform(InlineResponse2014SetupsPaymentsCardProcessing microform) {
+    this.microform = microform;
+    return this;
+  }
+
+   /**
+   * Get microform
+   * @return microform
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014SetupsPaymentsCardProcessing getMicroform() {
+    return microform;
+  }
+
+  public void setMicroform(InlineResponse2014SetupsPaymentsCardProcessing microform) {
+    this.microform = microform;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -481,12 +523,14 @@ public class InlineResponse2014SetupsPayments {
         Objects.equals(this.unifiedCheckout, inlineResponse2014SetupsPayments.unifiedCheckout) &&
         Objects.equals(this.receivablesManager, inlineResponse2014SetupsPayments.receivablesManager) &&
         Objects.equals(this.serviceFee, inlineResponse2014SetupsPayments.serviceFee) &&
-        Objects.equals(this.batchUpload, inlineResponse2014SetupsPayments.batchUpload);
+        Objects.equals(this.batchUpload, inlineResponse2014SetupsPayments.batchUpload) &&
+        Objects.equals(this.transactGuard, inlineResponse2014SetupsPayments.transactGuard) &&
+        Objects.equals(this.microform, inlineResponse2014SetupsPayments.microform);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload, transactGuard, microform);
   }
 
 
@@ -515,6 +559,8 @@ public class InlineResponse2014SetupsPayments {
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     if (batchUpload != null) sb.append("    batchUpload: ").append(toIndentedString(batchUpload)).append("\n");
+    if (transactGuard != null) sb.append("    transactGuard: ").append(toIndentedString(transactGuard)).append("\n");
+    if (microform != null) sb.append("    microform: ").append(toIndentedString(microform)).append("\n");
     sb.append("}");
     return sb.toString();
   }

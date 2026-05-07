@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**getAllSubscriptions**](SubscriptionsApi.md#getAllSubscriptions) | **GET** /rbs/v1/subscriptions | Get a List of Subscriptions
 [**getSubscription**](SubscriptionsApi.md#getSubscription) | **GET** /rbs/v1/subscriptions/{id} | Get a Subscription
 [**getSubscriptionCode**](SubscriptionsApi.md#getSubscriptionCode) | **GET** /rbs/v1/subscriptions/code | Get a Subscription Code
+[**subscriptionsIdPaymentsGet**](SubscriptionsApi.md#subscriptionsIdPaymentsGet) | **GET** /rbs/v1/subscriptions/{id}/payments | Get Payments for a Subscription
+[**subscriptionsIdPaymentsPut**](SubscriptionsApi.md#subscriptionsIdPaymentsPut) | **PUT** /rbs/v1/subscriptions/{id}/payments | Update Payments for a subscription
 [**suspendSubscription**](SubscriptionsApi.md#suspendSubscription) | **POST** /rbs/v1/subscriptions/{id}/suspend | Suspend a Subscription
 [**updateSubscription**](SubscriptionsApi.md#updateSubscription) | **PATCH** /rbs/v1/subscriptions/{id} | Update a Subscription
 
@@ -153,7 +155,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> GetAllSubscriptionsResponse getAllSubscriptions(offset, limit, code, status, customerId)
+> GetAllSubscriptionsResponse getAllSubscriptions(offset, limit, code, status, customerId, clientReferenceInformationCode)
 
 Get a List of Subscriptions
 
@@ -172,8 +174,9 @@ Integer limit = 56; // Integer | Number of items to be returned. Default - `20`,
 String code = "code_example"; // String | Filter by Subscription Code
 String status = "status_example"; // String | Filter by Subscription Status
 String customerId = "customerId_example"; // String | Filter by Customer Id
+String clientReferenceInformationCode = "clientReferenceInformationCode_example"; // String | Filter by Client Reference Information Code / Merchant Reference Number
 try {
-    GetAllSubscriptionsResponse result = apiInstance.getAllSubscriptions(offset, limit, code, status, customerId);
+    GetAllSubscriptionsResponse result = apiInstance.getAllSubscriptions(offset, limit, code, status, customerId, clientReferenceInformationCode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#getAllSubscriptions");
@@ -190,6 +193,7 @@ Name | Type | Description  | Notes
  **code** | **String**| Filter by Subscription Code | [optional]
  **status** | **String**| Filter by Subscription Status | [optional]
  **customerId** | **String**| Filter by Customer Id | [optional]
+ **clientReferenceInformationCode** | **String**| Filter by Client Reference Information Code / Merchant Reference Number | [optional]
 
 ### Return type
 
@@ -289,6 +293,104 @@ No authorization required
 
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
+
+<a name="subscriptionsIdPaymentsGet"></a>
+# **subscriptionsIdPaymentsGet**
+> GetSubscriptionsPaymentsResponse subscriptionsIdPaymentsGet(id, offset, limit, scheduledPaymentsCount)
+
+Get Payments for a Subscription
+
+Retrieve a list of payments for a specific subscription by its ID. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.SubscriptionsApi;
+
+
+SubscriptionsApi apiInstance = new SubscriptionsApi();
+String id = "id_example"; // String | Subscription Id
+Integer offset = 56; // Integer | Page offset number.
+Integer limit = 56; // Integer | Number of items to be returned. Default - `20`, Max - `100` 
+Integer scheduledPaymentsCount = 56; // Integer | Number of existing scheduled payments to be returned. Default - `5`, Max - `9999` 
+try {
+    GetSubscriptionsPaymentsResponse result = apiInstance.subscriptionsIdPaymentsGet(id, offset, limit, scheduledPaymentsCount);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SubscriptionsApi#subscriptionsIdPaymentsGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Subscription Id |
+ **offset** | **Integer**| Page offset number. | [optional]
+ **limit** | **Integer**| Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  | [optional]
+ **scheduledPaymentsCount** | **Integer**| Number of existing scheduled payments to be returned. Default - &#x60;5&#x60;, Max - &#x60;9999&#x60;  | [optional]
+
+### Return type
+
+[**GetSubscriptionsPaymentsResponse**](GetSubscriptionsPaymentsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="subscriptionsIdPaymentsPut"></a>
+# **subscriptionsIdPaymentsPut**
+> GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(id, updatePayments)
+
+Update Payments for a subscription
+
+Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.SubscriptionsApi;
+
+
+SubscriptionsApi apiInstance = new SubscriptionsApi();
+String id = "id_example"; // String | Subscription Id
+UpdatePayments updatePayments = new UpdatePayments(); // UpdatePayments | Modify payments of a subscription
+try {
+    GetSubscriptionsPaymentsResponse1 result = apiInstance.subscriptionsIdPaymentsPut(id, updatePayments);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SubscriptionsApi#subscriptionsIdPaymentsPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Subscription Id |
+ **updatePayments** | [**UpdatePayments**](UpdatePayments.md)| Modify payments of a subscription |
+
+### Return type
+
+[**GetSubscriptionsPaymentsResponse1**](GetSubscriptionsPaymentsResponse1.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**

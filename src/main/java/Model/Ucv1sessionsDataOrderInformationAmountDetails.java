@@ -36,14 +36,26 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
 
+  @SerializedName("freightAmount")
+  private String freightAmount = null;
+
+  @SerializedName("dutyAmount")
+  private String dutyAmount = null;
+
+  @SerializedName("discountAmount")
+  private String discountAmount = null;
+
+  @SerializedName("taxAppliedAfterDiscount")
+  private String taxAppliedAfterDiscount = null;
+
+  @SerializedName("taxAppliedLevel")
+  private String taxAppliedLevel = null;
+
   @SerializedName("currency")
   private String currency = null;
 
   @SerializedName("surcharge")
   private Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge surcharge = null;
-
-  @SerializedName("discountAmount")
-  private String discountAmount = null;
 
   @SerializedName("subTotalAmount")
   private String subTotalAmount = null;
@@ -73,6 +85,96 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
 
   public void setTotalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
+  }
+
+  public Ucv1sessionsDataOrderInformationAmountDetails freightAmount(String freightAmount) {
+    this.freightAmount = freightAmount;
+    return this;
+  }
+
+   /**
+   * Total freight or shipping and handling charges for the order.  When you include this field in your request, you must also include the **totalAmount** field. 
+   * @return freightAmount
+  **/
+  @ApiModelProperty(value = "Total freight or shipping and handling charges for the order.  When you include this field in your request, you must also include the **totalAmount** field. ")
+  public String getFreightAmount() {
+    return freightAmount;
+  }
+
+  public void setFreightAmount(String freightAmount) {
+    this.freightAmount = freightAmount;
+  }
+
+  public Ucv1sessionsDataOrderInformationAmountDetails dutyAmount(String dutyAmount) {
+    this.dutyAmount = dutyAmount;
+    return this;
+  }
+
+   /**
+   * Total charges for any import or export duties included in the order. 
+   * @return dutyAmount
+  **/
+  @ApiModelProperty(value = "Total charges for any import or export duties included in the order. ")
+  public String getDutyAmount() {
+    return dutyAmount;
+  }
+
+  public void setDutyAmount(String dutyAmount) {
+    this.dutyAmount = dutyAmount;
+  }
+
+  public Ucv1sessionsDataOrderInformationAmountDetails discountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+    return this;
+  }
+
+   /**
+   * Total discount amount applied to the order. 
+   * @return discountAmount
+  **/
+  @ApiModelProperty(value = "Total discount amount applied to the order. ")
+  public String getDiscountAmount() {
+    return discountAmount;
+  }
+
+  public void setDiscountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+  }
+
+  public Ucv1sessionsDataOrderInformationAmountDetails taxAppliedAfterDiscount(String taxAppliedAfterDiscount) {
+    this.taxAppliedAfterDiscount = taxAppliedAfterDiscount;
+    return this;
+  }
+
+   /**
+   * Flag that indicates how the merchant manages discounts.  Possible values:   - **0**: no invoice level discount included  - **1**: tax calculated on the postdiscount invoice total  - **2**: tax calculated on the prediscount invoice total 
+   * @return taxAppliedAfterDiscount
+  **/
+  @ApiModelProperty(value = "Flag that indicates how the merchant manages discounts.  Possible values:   - **0**: no invoice level discount included  - **1**: tax calculated on the postdiscount invoice total  - **2**: tax calculated on the prediscount invoice total ")
+  public String getTaxAppliedAfterDiscount() {
+    return taxAppliedAfterDiscount;
+  }
+
+  public void setTaxAppliedAfterDiscount(String taxAppliedAfterDiscount) {
+    this.taxAppliedAfterDiscount = taxAppliedAfterDiscount;
+  }
+
+  public Ucv1sessionsDataOrderInformationAmountDetails taxAppliedLevel(String taxAppliedLevel) {
+    this.taxAppliedLevel = taxAppliedLevel;
+    return this;
+  }
+
+   /**
+   * Flag that indicates how you calculate tax.  Possible values:   - **0**: net prices with tax calculated at line item level  - **1**: net prices with tax calculated at invoice level  - **2**: gross prices with tax provided at line item level  - **3**: gross prices with tax provided at invoice level  - **4**: no tax applies on the invoice for the transaction 
+   * @return taxAppliedLevel
+  **/
+  @ApiModelProperty(value = "Flag that indicates how you calculate tax.  Possible values:   - **0**: net prices with tax calculated at line item level  - **1**: net prices with tax calculated at invoice level  - **2**: gross prices with tax provided at line item level  - **3**: gross prices with tax provided at invoice level  - **4**: no tax applies on the invoice for the transaction ")
+  public String getTaxAppliedLevel() {
+    return taxAppliedLevel;
+  }
+
+  public void setTaxAppliedLevel(String taxAppliedLevel) {
+    this.taxAppliedLevel = taxAppliedLevel;
   }
 
   public Ucv1sessionsDataOrderInformationAmountDetails currency(String currency) {
@@ -109,24 +211,6 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
 
   public void setSurcharge(Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge surcharge) {
     this.surcharge = surcharge;
-  }
-
-  public Ucv1sessionsDataOrderInformationAmountDetails discountAmount(String discountAmount) {
-    this.discountAmount = discountAmount;
-    return this;
-  }
-
-   /**
-   * This field defines the discount amount applicable to the order. 
-   * @return discountAmount
-  **/
-  @ApiModelProperty(example = "2", value = "This field defines the discount amount applicable to the order. ")
-  public String getDiscountAmount() {
-    return discountAmount;
-  }
-
-  public void setDiscountAmount(String discountAmount) {
-    this.discountAmount = discountAmount;
   }
 
   public Ucv1sessionsDataOrderInformationAmountDetails subTotalAmount(String subTotalAmount) {
@@ -220,9 +304,13 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
     }
     Ucv1sessionsDataOrderInformationAmountDetails ucv1sessionsDataOrderInformationAmountDetails = (Ucv1sessionsDataOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ucv1sessionsDataOrderInformationAmountDetails.totalAmount) &&
+        Objects.equals(this.freightAmount, ucv1sessionsDataOrderInformationAmountDetails.freightAmount) &&
+        Objects.equals(this.dutyAmount, ucv1sessionsDataOrderInformationAmountDetails.dutyAmount) &&
+        Objects.equals(this.discountAmount, ucv1sessionsDataOrderInformationAmountDetails.discountAmount) &&
+        Objects.equals(this.taxAppliedAfterDiscount, ucv1sessionsDataOrderInformationAmountDetails.taxAppliedAfterDiscount) &&
+        Objects.equals(this.taxAppliedLevel, ucv1sessionsDataOrderInformationAmountDetails.taxAppliedLevel) &&
         Objects.equals(this.currency, ucv1sessionsDataOrderInformationAmountDetails.currency) &&
         Objects.equals(this.surcharge, ucv1sessionsDataOrderInformationAmountDetails.surcharge) &&
-        Objects.equals(this.discountAmount, ucv1sessionsDataOrderInformationAmountDetails.discountAmount) &&
         Objects.equals(this.subTotalAmount, ucv1sessionsDataOrderInformationAmountDetails.subTotalAmount) &&
         Objects.equals(this.serviceFeeAmount, ucv1sessionsDataOrderInformationAmountDetails.serviceFeeAmount) &&
         Objects.equals(this.taxAmount, ucv1sessionsDataOrderInformationAmountDetails.taxAmount) &&
@@ -231,7 +319,7 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, surcharge, discountAmount, subTotalAmount, serviceFeeAmount, taxAmount, taxDetails);
+    return Objects.hash(totalAmount, freightAmount, dutyAmount, discountAmount, taxAppliedAfterDiscount, taxAppliedLevel, currency, surcharge, subTotalAmount, serviceFeeAmount, taxAmount, taxDetails);
   }
 
 
@@ -241,9 +329,13 @@ public class Ucv1sessionsDataOrderInformationAmountDetails {
     sb.append("class Ucv1sessionsDataOrderInformationAmountDetails {\n");
     
     if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (freightAmount != null) sb.append("    freightAmount: ").append(toIndentedString(freightAmount)).append("\n");
+    if (dutyAmount != null) sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (taxAppliedAfterDiscount != null) sb.append("    taxAppliedAfterDiscount: ").append(toIndentedString(taxAppliedAfterDiscount)).append("\n");
+    if (taxAppliedLevel != null) sb.append("    taxAppliedLevel: ").append(toIndentedString(taxAppliedLevel)).append("\n");
     if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
-    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     if (subTotalAmount != null) sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
     if (serviceFeeAmount != null) sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");

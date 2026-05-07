@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Frequency of the transaction.   Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. 
+ * Frequency of the transaction. Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. 
  */
-@ApiModel(description = "Frequency of the transaction.   Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. ")
+@ApiModel(description = "Frequency of the transaction. Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. ")
 
 public class Acpv1instructionsRecurringPaymentInformation {
   @SerializedName("occurrence")

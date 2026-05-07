@@ -210,6 +210,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("dsReferenceNumber")
   private String dsReferenceNumber = null;
 
+  @SerializedName("scoreRequest")
+  private Integer scoreRequest = null;
+
   public Ptsv2paymentsConsumerAuthenticationInformation cavv(String cavv) {
     this.cavv = cavv;
     return this;
@@ -1290,6 +1293,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.dsReferenceNumber = dsReferenceNumber;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation scoreRequest(Integer scoreRequest) {
+    this.scoreRequest = scoreRequest;
+    return this;
+  }
+
+   /**
+   * Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score
+   * @return scoreRequest
+  **/
+  @ApiModelProperty(value = "Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score")
+  public Integer getScoreRequest() {
+    return scoreRequest;
+  }
+
+  public void setScoreRequest(Integer scoreRequest) {
+    this.scoreRequest = scoreRequest;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1359,12 +1380,13 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.signedParesStatusReason, ptsv2paymentsConsumerAuthenticationInformation.signedParesStatusReason) &&
         Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares) &&
         Objects.equals(this.acsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.acsReferenceNumber) &&
-        Objects.equals(this.dsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.dsReferenceNumber);
+        Objects.equals(this.dsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.dsReferenceNumber) &&
+        Objects.equals(this.scoreRequest, ptsv2paymentsConsumerAuthenticationInformation.scoreRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, authenticationBrand, effectiveAuthenticationType, signedParesStatusReason, signedPares, acsReferenceNumber, dsReferenceNumber);
+    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, authenticationBrand, effectiveAuthenticationType, signedParesStatusReason, signedPares, acsReferenceNumber, dsReferenceNumber, scoreRequest);
   }
 
 
@@ -1433,6 +1455,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     if (signedPares != null) sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
     if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
     if (dsReferenceNumber != null) sb.append("    dsReferenceNumber: ").append(toIndentedString(dsReferenceNumber)).append("\n");
+    if (scoreRequest != null) sb.append("    scoreRequest: ").append(toIndentedString(scoreRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

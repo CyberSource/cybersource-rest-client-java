@@ -19,6 +19,7 @@ import Model.PtsV2PaymentsPost201ResponseTokenInformationCustomer;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
+import Model.PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,9 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
 
   @SerializedName("instrumentIdentifier")
   private PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier instrumentIdentifier = null;
+
+  @SerializedName("thirdPartyToken")
+  private PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken thirdPartyToken = null;
 
   public PtsV2PaymentsPost201ResponseTokenInformation instrumentidentifierNew(Boolean instrumentidentifierNew) {
     this.instrumentidentifierNew = instrumentidentifierNew;
@@ -138,6 +142,24 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 
+  public PtsV2PaymentsPost201ResponseTokenInformation thirdPartyToken(PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+    return this;
+  }
+
+   /**
+   * Get thirdPartyToken
+   * @return thirdPartyToken
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken getThirdPartyToken() {
+    return thirdPartyToken;
+  }
+
+  public void setThirdPartyToken(PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +174,13 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
         Objects.equals(this.customer, ptsV2PaymentsPost201ResponseTokenInformation.customer) &&
         Objects.equals(this.paymentInstrument, ptsV2PaymentsPost201ResponseTokenInformation.paymentInstrument) &&
         Objects.equals(this.shippingAddress, ptsV2PaymentsPost201ResponseTokenInformation.shippingAddress) &&
-        Objects.equals(this.instrumentIdentifier, ptsV2PaymentsPost201ResponseTokenInformation.instrumentIdentifier);
+        Objects.equals(this.instrumentIdentifier, ptsV2PaymentsPost201ResponseTokenInformation.instrumentIdentifier) &&
+        Objects.equals(this.thirdPartyToken, ptsV2PaymentsPost201ResponseTokenInformation.thirdPartyToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(instrumentidentifierNew, customer, paymentInstrument, shippingAddress, instrumentIdentifier);
+    return Objects.hash(instrumentidentifierNew, customer, paymentInstrument, shippingAddress, instrumentIdentifier, thirdPartyToken);
   }
 
 
@@ -171,6 +194,7 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
     if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (thirdPartyToken != null) sb.append("    thirdPartyToken: ").append(toIndentedString(thirdPartyToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Consumer Identity data.
+ * Consumer Identity data. Identifies the consumer using an email address or phone number.
  */
-@ApiModel(description = "Consumer Identity data.")
+@ApiModel(description = "Consumer Identity data. Identifies the consumer using an email address or phone number.")
 
 public class Acpv1tokensConsumerIdentity {
   @SerializedName("identityType")

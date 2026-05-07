@@ -42,10 +42,10 @@ public class Bavsv1accountvalidationsPaymentInformationBank {
   }
 
    /**
-   * Bank routing number. This is also called the transit number.  Non-Negative Integer 
+   * Bank routing number. This is also called the transit number.  Non-Negative String, containing only digits. 
    * @return routingNumber
   **/
-  @ApiModelProperty(example = "123456789", required = true, value = "Bank routing number. This is also called the transit number.  Non-Negative Integer ")
+  @ApiModelProperty(example = "123456789", required = true, value = "Bank routing number. This is also called the transit number.  Non-Negative String, containing only digits. ")
   public String getRoutingNumber() {
     return routingNumber;
   }

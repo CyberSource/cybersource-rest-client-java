@@ -28,9 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Buyer Information data.
+ * Buyer Information data. Contains consumer identification and preference details.
  */
-@ApiModel(description = "Buyer Information data.")
+@ApiModel(description = "Buyer Information data. Contains consumer identification and preference details.")
 
 public class Acpv1tokensBuyerInformation {
   @SerializedName("merchantCustomerId")

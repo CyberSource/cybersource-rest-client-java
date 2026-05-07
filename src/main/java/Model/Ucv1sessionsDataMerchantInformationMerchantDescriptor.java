@@ -35,6 +35,9 @@ public class Ucv1sessionsDataMerchantInformationMerchantDescriptor {
   @SerializedName("alternateName")
   private String alternateName = null;
 
+  @SerializedName("contact")
+  private String contact = null;
+
   @SerializedName("locality")
   private String locality = null;
 
@@ -87,6 +90,24 @@ public class Ucv1sessionsDataMerchantInformationMerchantDescriptor {
 
   public void setAlternateName(String alternateName) {
     this.alternateName = alternateName;
+  }
+
+  public Ucv1sessionsDataMerchantInformationMerchantDescriptor contact(String contact) {
+    this.contact = contact;
+    return this;
+  }
+
+   /**
+   * Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) 
+   * @return contact
+  **/
+  @ApiModelProperty(value = "Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) ")
+  public String getContact() {
+    return contact;
+  }
+
+  public void setContact(String contact) {
+    this.contact = contact;
   }
 
   public Ucv1sessionsDataMerchantInformationMerchantDescriptor locality(String locality) {
@@ -209,6 +230,7 @@ public class Ucv1sessionsDataMerchantInformationMerchantDescriptor {
     Ucv1sessionsDataMerchantInformationMerchantDescriptor ucv1sessionsDataMerchantInformationMerchantDescriptor = (Ucv1sessionsDataMerchantInformationMerchantDescriptor) o;
     return Objects.equals(this.name, ucv1sessionsDataMerchantInformationMerchantDescriptor.name) &&
         Objects.equals(this.alternateName, ucv1sessionsDataMerchantInformationMerchantDescriptor.alternateName) &&
+        Objects.equals(this.contact, ucv1sessionsDataMerchantInformationMerchantDescriptor.contact) &&
         Objects.equals(this.locality, ucv1sessionsDataMerchantInformationMerchantDescriptor.locality) &&
         Objects.equals(this.phone, ucv1sessionsDataMerchantInformationMerchantDescriptor.phone) &&
         Objects.equals(this.country, ucv1sessionsDataMerchantInformationMerchantDescriptor.country) &&
@@ -219,7 +241,7 @@ public class Ucv1sessionsDataMerchantInformationMerchantDescriptor {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, alternateName, locality, phone, country, postalCode, administrativeArea, address1);
+    return Objects.hash(name, alternateName, contact, locality, phone, country, postalCode, administrativeArea, address1);
   }
 
 
@@ -230,6 +252,7 @@ public class Ucv1sessionsDataMerchantInformationMerchantDescriptor {
     
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     if (alternateName != null) sb.append("    alternateName: ").append(toIndentedString(alternateName)).append("\n");
+    if (contact != null) sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     if (phone != null) sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");

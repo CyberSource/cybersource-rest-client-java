@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetails;
 import Model.Ptsv2paymentsOrderInformationBillTo;
+import Model.Ptsv2paymentsOrderInformationDigitalCurrency;
 import Model.Ptsv2paymentsOrderInformationInvoiceDetails;
 import Model.Ptsv2paymentsOrderInformationLineItems;
 import Model.Ptsv2paymentsOrderInformationShipTo;
@@ -37,6 +38,9 @@ import java.util.List;
  */
 
 public class Ptsv2paymentsOrderInformation {
+  @SerializedName("extensionDays")
+  private String extensionDays = null;
+
   @SerializedName("amountDetails")
   private Ptsv2paymentsOrderInformationAmountDetails amountDetails = null;
 
@@ -54,6 +58,9 @@ public class Ptsv2paymentsOrderInformation {
 
   @SerializedName("shippingDetails")
   private Ptsv2paymentsOrderInformationShippingDetails shippingDetails = null;
+
+  @SerializedName("digitalCurrency")
+  private Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency = null;
 
   @SerializedName("returnsAccepted")
   private Boolean returnsAccepted = null;
@@ -75,6 +82,24 @@ public class Ptsv2paymentsOrderInformation {
 
   @SerializedName("totalOffersCount")
   private String totalOffersCount = null;
+
+  public Ptsv2paymentsOrderInformation extensionDays(String extensionDays) {
+    this.extensionDays = extensionDays;
+    return this;
+  }
+
+   /**
+   * Request field for merchant to increase the AUTH expiry days for Klarna Advantage Plus. Applicable for Re-Authorization (AP_REAUTH) service. 
+   * @return extensionDays
+  **/
+  @ApiModelProperty(value = "Request field for merchant to increase the AUTH expiry days for Klarna Advantage Plus. Applicable for Re-Authorization (AP_REAUTH) service. ")
+  public String getExtensionDays() {
+    return extensionDays;
+  }
+
+  public void setExtensionDays(String extensionDays) {
+    this.extensionDays = extensionDays;
+  }
 
   public Ptsv2paymentsOrderInformation amountDetails(Ptsv2paymentsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -190,6 +215,24 @@ public class Ptsv2paymentsOrderInformation {
 
   public void setShippingDetails(Ptsv2paymentsOrderInformationShippingDetails shippingDetails) {
     this.shippingDetails = shippingDetails;
+  }
+
+  public Ptsv2paymentsOrderInformation digitalCurrency(Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency) {
+    this.digitalCurrency = digitalCurrency;
+    return this;
+  }
+
+   /**
+   * Get digitalCurrency
+   * @return digitalCurrency
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationDigitalCurrency getDigitalCurrency() {
+    return digitalCurrency;
+  }
+
+  public void setDigitalCurrency(Ptsv2paymentsOrderInformationDigitalCurrency digitalCurrency) {
+    this.digitalCurrency = digitalCurrency;
   }
 
   public Ptsv2paymentsOrderInformation returnsAccepted(Boolean returnsAccepted) {
@@ -328,12 +371,14 @@ public class Ptsv2paymentsOrderInformation {
       return false;
     }
     Ptsv2paymentsOrderInformation ptsv2paymentsOrderInformation = (Ptsv2paymentsOrderInformation) o;
-    return Objects.equals(this.amountDetails, ptsv2paymentsOrderInformation.amountDetails) &&
+    return Objects.equals(this.extensionDays, ptsv2paymentsOrderInformation.extensionDays) &&
+        Objects.equals(this.amountDetails, ptsv2paymentsOrderInformation.amountDetails) &&
         Objects.equals(this.billTo, ptsv2paymentsOrderInformation.billTo) &&
         Objects.equals(this.shipTo, ptsv2paymentsOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, ptsv2paymentsOrderInformation.lineItems) &&
         Objects.equals(this.invoiceDetails, ptsv2paymentsOrderInformation.invoiceDetails) &&
         Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails) &&
+        Objects.equals(this.digitalCurrency, ptsv2paymentsOrderInformation.digitalCurrency) &&
         Objects.equals(this.returnsAccepted, ptsv2paymentsOrderInformation.returnsAccepted) &&
         Objects.equals(this.isCryptocurrencyPurchase, ptsv2paymentsOrderInformation.isCryptocurrencyPurchase) &&
         Objects.equals(this.cutoffDateTime, ptsv2paymentsOrderInformation.cutoffDateTime) &&
@@ -345,7 +390,7 @@ public class Ptsv2paymentsOrderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, isCryptocurrencyPurchase, cutoffDateTime, preOrder, preOrderDate, reordered, totalOffersCount);
+    return Objects.hash(extensionDays, amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, digitalCurrency, returnsAccepted, isCryptocurrencyPurchase, cutoffDateTime, preOrder, preOrderDate, reordered, totalOffersCount);
   }
 
 
@@ -354,12 +399,14 @@ public class Ptsv2paymentsOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformation {\n");
     
+    if (extensionDays != null) sb.append("    extensionDays: ").append(toIndentedString(extensionDays)).append("\n");
     if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    if (digitalCurrency != null) sb.append("    digitalCurrency: ").append(toIndentedString(digitalCurrency)).append("\n");
     if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
     if (isCryptocurrencyPurchase != null) sb.append("    isCryptocurrencyPurchase: ").append(toIndentedString(isCryptocurrencyPurchase)).append("\n");
     if (cutoffDateTime != null) sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");

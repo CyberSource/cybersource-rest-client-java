@@ -21,6 +21,7 @@ import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
 import Model.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer;
 import Model.Ptsv2paymentsProcessingInformationJapanPaymentOptions;
 import Model.Ptsv2paymentsProcessingInformationLoanOptions;
+import Model.Ptsv2paymentsProcessingInformationProgramIndicators;
 import Model.Ptsv2paymentsProcessingInformationPurchaseOptions;
 import Model.Ptsv2paymentsProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
@@ -31,6 +32,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -167,6 +169,21 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("originalPaymentId")
   private String originalPaymentId = null;
+
+  @SerializedName("amexIndirectModelType")
+  private String amexIndirectModelType = null;
+
+  @SerializedName("walletTransactionIntent")
+  private BigDecimal walletTransactionIntent = null;
+
+  @SerializedName("destinationType")
+  private BigDecimal destinationType = null;
+
+  @SerializedName("programIndicators")
+  private Ptsv2paymentsProcessingInformationProgramIndicators programIndicators = null;
+
+  @SerializedName("inquiryType")
+  private String inquiryType = null;
 
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
@@ -821,10 +838,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. 
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
    * @return networkPartnerId
   **/
-  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. ")
+  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. This field is supported for Visa Platform Connect, Chase Paymentech Salem. ")
   public String getNetworkPartnerId() {
     return networkPartnerId;
   }
@@ -959,6 +976,96 @@ public class Ptsv2paymentsProcessingInformation {
     this.originalPaymentId = originalPaymentId;
   }
 
+  public Ptsv2paymentsProcessingInformation amexIndirectModelType(String amexIndirectModelType) {
+    this.amexIndirectModelType = amexIndirectModelType;
+    return this;
+  }
+
+   /**
+   * Effective with the April 2025 release, American Express is introducing the following new Indirect Acceptor models : - Digital Wallet Operator   - Staged back to back transaction   - Peer to peer (P2P) transaction   - Stored value transaction - Marketplace  Each model must have a separate American Express Merchant Account number and will be assigned a unique Indirect Model Type value.  Valid/Sample Values : - &#x60;1&#x60;: Bill payment provider - &#x60;2&#x60;: Installment payment transaction - &#x60;3&#x60;: Marketplace - &#x60;4&#x60;: Peer to peer transaction - &#x60;5&#x60;: Staged back to back transaction - &#x60;6&#x60;: Stored value transaction 
+   * @return amexIndirectModelType
+  **/
+  @ApiModelProperty(value = "Effective with the April 2025 release, American Express is introducing the following new Indirect Acceptor models : - Digital Wallet Operator   - Staged back to back transaction   - Peer to peer (P2P) transaction   - Stored value transaction - Marketplace  Each model must have a separate American Express Merchant Account number and will be assigned a unique Indirect Model Type value.  Valid/Sample Values : - `1`: Bill payment provider - `2`: Installment payment transaction - `3`: Marketplace - `4`: Peer to peer transaction - `5`: Staged back to back transaction - `6`: Stored value transaction ")
+  public String getAmexIndirectModelType() {
+    return amexIndirectModelType;
+  }
+
+  public void setAmexIndirectModelType(String amexIndirectModelType) {
+    this.amexIndirectModelType = amexIndirectModelType;
+  }
+
+  public Ptsv2paymentsProcessingInformation walletTransactionIntent(BigDecimal walletTransactionIntent) {
+    this.walletTransactionIntent = walletTransactionIntent;
+    return this;
+  }
+
+   /**
+   * Identifies the type of operation being performed by the staged digital wallet operator. The value distinguishes between a Cash-in transaction (coded as \&quot;02\&quot;), where funds are loaded into the digital wallet from a registered payment card, and a Purchase transaction (coded as \&quot;01\&quot;), where the wallet is used to make a payment to a merchant or transfer funds between wallets. This distinction is essential for transaction processing, reporting, and ensuring compliance with the specific rules and requirements associated with each card brand and transaction type. 
+   * @return walletTransactionIntent
+  **/
+  @ApiModelProperty(value = "Identifies the type of operation being performed by the staged digital wallet operator. The value distinguishes between a Cash-in transaction (coded as \"02\"), where funds are loaded into the digital wallet from a registered payment card, and a Purchase transaction (coded as \"01\"), where the wallet is used to make a payment to a merchant or transfer funds between wallets. This distinction is essential for transaction processing, reporting, and ensuring compliance with the specific rules and requirements associated with each card brand and transaction type. ")
+  public BigDecimal getWalletTransactionIntent() {
+    return walletTransactionIntent;
+  }
+
+  public void setWalletTransactionIntent(BigDecimal walletTransactionIntent) {
+    this.walletTransactionIntent = walletTransactionIntent;
+  }
+
+  public Ptsv2paymentsProcessingInformation destinationType(BigDecimal destinationType) {
+    this.destinationType = destinationType;
+    return this;
+  }
+
+   /**
+   * Identifies the destination/purpose of the cash-in:  • 04: M2M (Same ownership, same portfolio/arrangement) • 05: P2P (For another holder, same wallet/arrangement) • 06: Transfer to another arrangement (same ownership) • 07: Transfer to another arrangement (other ownership) • 08: Transfer to stored value digital wallet. 
+   * @return destinationType
+  **/
+  @ApiModelProperty(value = "Identifies the destination/purpose of the cash-in:  • 04: M2M (Same ownership, same portfolio/arrangement) • 05: P2P (For another holder, same wallet/arrangement) • 06: Transfer to another arrangement (same ownership) • 07: Transfer to another arrangement (other ownership) • 08: Transfer to stored value digital wallet. ")
+  public BigDecimal getDestinationType() {
+    return destinationType;
+  }
+
+  public void setDestinationType(BigDecimal destinationType) {
+    this.destinationType = destinationType;
+  }
+
+  public Ptsv2paymentsProcessingInformation programIndicators(Ptsv2paymentsProcessingInformationProgramIndicators programIndicators) {
+    this.programIndicators = programIndicators;
+    return this;
+  }
+
+   /**
+   * Get programIndicators
+   * @return programIndicators
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationProgramIndicators getProgramIndicators() {
+    return programIndicators;
+  }
+
+  public void setProgramIndicators(Ptsv2paymentsProcessingInformationProgramIndicators programIndicators) {
+    this.programIndicators = programIndicators;
+  }
+
+  public Ptsv2paymentsProcessingInformation inquiryType(String inquiryType) {
+    this.inquiryType = inquiryType;
+    return this;
+  }
+
+   /**
+   * Type of inquiry for Zero dollar transactions. Mastercard is introducing Mastercard One Credential, a single, digitally connected credential that offers cardholders the ability to access multiple payment methods.   This field is used for Product Status Inquiry (PSI), Account Status Inquiry with Product Status Inquiry (ASI with PSI), and Account Status Inquiry with Product Status Inquiry and Probability Indicator.  This field is supported for Zero dollar transactions only.  Possible values: - &#x60;01&#x60;: Product status inquiry - &#x60;02&#x60;: Account status inquiry with product status inquiry - &#x60;03&#x60;: Account status Inquiry with Product Status Inquiry and Probability Indicator  #### Used by **Authorization (Zero dollar transactions)** Optional field. 
+   * @return inquiryType
+  **/
+  @ApiModelProperty(value = "Type of inquiry for Zero dollar transactions. Mastercard is introducing Mastercard One Credential, a single, digitally connected credential that offers cardholders the ability to access multiple payment methods.   This field is used for Product Status Inquiry (PSI), Account Status Inquiry with Product Status Inquiry (ASI with PSI), and Account Status Inquiry with Product Status Inquiry and Probability Indicator.  This field is supported for Zero dollar transactions only.  Possible values: - `01`: Product status inquiry - `02`: Account status inquiry with product status inquiry - `03`: Account status Inquiry with Product Status Inquiry and Probability Indicator  #### Used by **Authorization (Zero dollar transactions)** Optional field. ")
+  public String getInquiryType() {
+    return inquiryType;
+  }
+
+  public void setInquiryType(String inquiryType) {
+    this.inquiryType = inquiryType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1011,12 +1118,17 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.transactionTypeIndicator, ptsv2paymentsProcessingInformation.transactionTypeIndicator) &&
         Objects.equals(this.purposeOfPayment, ptsv2paymentsProcessingInformation.purposeOfPayment) &&
         Objects.equals(this.languageCode, ptsv2paymentsProcessingInformation.languageCode) &&
-        Objects.equals(this.originalPaymentId, ptsv2paymentsProcessingInformation.originalPaymentId);
+        Objects.equals(this.originalPaymentId, ptsv2paymentsProcessingInformation.originalPaymentId) &&
+        Objects.equals(this.amexIndirectModelType, ptsv2paymentsProcessingInformation.amexIndirectModelType) &&
+        Objects.equals(this.walletTransactionIntent, ptsv2paymentsProcessingInformation.walletTransactionIntent) &&
+        Objects.equals(this.destinationType, ptsv2paymentsProcessingInformation.destinationType) &&
+        Objects.equals(this.programIndicators, ptsv2paymentsProcessingInformation.programIndicators) &&
+        Objects.equals(this.inquiryType, ptsv2paymentsProcessingInformation.inquiryType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId, amexIndirectModelType, walletTransactionIntent, destinationType, programIndicators, inquiryType);
   }
 
 
@@ -1068,6 +1180,11 @@ public class Ptsv2paymentsProcessingInformation {
     if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
     if (languageCode != null) sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
     if (originalPaymentId != null) sb.append("    originalPaymentId: ").append(toIndentedString(originalPaymentId)).append("\n");
+    if (amexIndirectModelType != null) sb.append("    amexIndirectModelType: ").append(toIndentedString(amexIndirectModelType)).append("\n");
+    if (walletTransactionIntent != null) sb.append("    walletTransactionIntent: ").append(toIndentedString(walletTransactionIntent)).append("\n");
+    if (destinationType != null) sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
+    if (programIndicators != null) sb.append("    programIndicators: ").append(toIndentedString(programIndicators)).append("\n");
+    if (inquiryType != null) sb.append("    inquiryType: ").append(toIndentedString(inquiryType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

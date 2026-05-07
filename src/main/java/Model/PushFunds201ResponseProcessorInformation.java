@@ -15,6 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification;
+import Model.PtsV2PayoutsPost201ResponseProcessorInformationAvs;
+import Model.PtsV2PayoutsPost201ResponseProcessorInformationCustomer;
+import Model.PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults;
 import Model.PushFunds201ResponseProcessorInformationMerchantAdvice;
 import Model.PushFunds201ResponseProcessorInformationRouting;
 import Model.PushFunds201ResponseProcessorInformationSettlement;
@@ -64,6 +68,18 @@ public class PushFunds201ResponseProcessorInformation {
 
   @SerializedName("merchantAdvice")
   private PushFunds201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
+
+  @SerializedName("avs")
+  private PtsV2PayoutsPost201ResponseProcessorInformationAvs avs = null;
+
+  @SerializedName("customer")
+  private PtsV2PayoutsPost201ResponseProcessorInformationCustomer customer = null;
+
+  @SerializedName("electronicVerificationResults")
+  private PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
+
+  @SerializedName("cardVerification")
+  private PtsV2PaymentsPost201ResponseProcessorInformationCardVerification cardVerification = null;
 
   public PushFunds201ResponseProcessorInformation transactionId(Integer transactionId) {
     this.transactionId = transactionId;
@@ -263,6 +279,78 @@ public class PushFunds201ResponseProcessorInformation {
     this.merchantAdvice = merchantAdvice;
   }
 
+  public PushFunds201ResponseProcessorInformation avs(PtsV2PayoutsPost201ResponseProcessorInformationAvs avs) {
+    this.avs = avs;
+    return this;
+  }
+
+   /**
+   * Get avs
+   * @return avs
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PayoutsPost201ResponseProcessorInformationAvs getAvs() {
+    return avs;
+  }
+
+  public void setAvs(PtsV2PayoutsPost201ResponseProcessorInformationAvs avs) {
+    this.avs = avs;
+  }
+
+  public PushFunds201ResponseProcessorInformation customer(PtsV2PayoutsPost201ResponseProcessorInformationCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Get customer
+   * @return customer
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PayoutsPost201ResponseProcessorInformationCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(PtsV2PayoutsPost201ResponseProcessorInformationCustomer customer) {
+    this.customer = customer;
+  }
+
+  public PushFunds201ResponseProcessorInformation electronicVerificationResults(PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults) {
+    this.electronicVerificationResults = electronicVerificationResults;
+    return this;
+  }
+
+   /**
+   * Get electronicVerificationResults
+   * @return electronicVerificationResults
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults getElectronicVerificationResults() {
+    return electronicVerificationResults;
+  }
+
+  public void setElectronicVerificationResults(PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults) {
+    this.electronicVerificationResults = electronicVerificationResults;
+  }
+
+  public PushFunds201ResponseProcessorInformation cardVerification(PtsV2PaymentsPost201ResponseProcessorInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
+    return this;
+  }
+
+   /**
+   * Get cardVerification
+   * @return cardVerification
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationCardVerification getCardVerification() {
+    return cardVerification;
+  }
+
+  public void setCardVerification(PtsV2PaymentsPost201ResponseProcessorInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -283,12 +371,16 @@ public class PushFunds201ResponseProcessorInformation {
         Objects.equals(this.name, pushFunds201ResponseProcessorInformation.name) &&
         Objects.equals(this.routing, pushFunds201ResponseProcessorInformation.routing) &&
         Objects.equals(this.settlement, pushFunds201ResponseProcessorInformation.settlement) &&
-        Objects.equals(this.merchantAdvice, pushFunds201ResponseProcessorInformation.merchantAdvice);
+        Objects.equals(this.merchantAdvice, pushFunds201ResponseProcessorInformation.merchantAdvice) &&
+        Objects.equals(this.avs, pushFunds201ResponseProcessorInformation.avs) &&
+        Objects.equals(this.customer, pushFunds201ResponseProcessorInformation.customer) &&
+        Objects.equals(this.electronicVerificationResults, pushFunds201ResponseProcessorInformation.electronicVerificationResults) &&
+        Objects.equals(this.cardVerification, pushFunds201ResponseProcessorInformation.cardVerification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, systemTraceAuditNumber, retrievalReferenceNumber, actionCode, approvalCode, feeProgramIndicator, name, routing, settlement, merchantAdvice);
+    return Objects.hash(transactionId, responseCode, systemTraceAuditNumber, retrievalReferenceNumber, actionCode, approvalCode, feeProgramIndicator, name, routing, settlement, merchantAdvice, avs, customer, electronicVerificationResults, cardVerification);
   }
 
 
@@ -308,6 +400,10 @@ public class PushFunds201ResponseProcessorInformation {
     if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     if (settlement != null) sb.append("    settlement: ").append(toIndentedString(settlement)).append("\n");
     if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("}");
     return sb.toString();
   }

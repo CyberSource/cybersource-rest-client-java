@@ -171,6 +171,18 @@ public class CardProcessingConfigCommonProcessors {
   @SerializedName("enableMultiCurrencyProcessing")
   private String enableMultiCurrencyProcessing = null;
 
+  @SerializedName("transactionTypeIdentifier")
+  private String transactionTypeIdentifier = null;
+
+  @SerializedName("subMerchantId")
+  private String subMerchantId = null;
+
+  @SerializedName("subMerchantEmail")
+  private String subMerchantEmail = null;
+
+  @SerializedName("subMerchantPhoneNumber")
+  private String subMerchantPhoneNumber = null;
+
   @SerializedName("enablePosNetworkSwitching")
   private Boolean enablePosNetworkSwitching = null;
 
@@ -1014,6 +1026,78 @@ public class CardProcessingConfigCommonProcessors {
     this.enableMultiCurrencyProcessing = enableMultiCurrencyProcessing;
   }
 
+  public CardProcessingConfigCommonProcessors transactionTypeIdentifier(String transactionTypeIdentifier) {
+    this.transactionTypeIdentifier = transactionTypeIdentifier;
+    return this;
+  }
+
+   /**
+   * Transaction Type Identifier (TTI) field for Mastercard AFT transactions. Maps to ISO field F104.65.32. Used to ensure compliance with Mastercard&#39;s requirements for money send transactions when wallet classifications differ between Visa and Mastercard schemes. Takes priority over BAI values for Mastercard AFT transactions when present.
+   * @return transactionTypeIdentifier
+  **/
+  @ApiModelProperty(value = "Transaction Type Identifier (TTI) field for Mastercard AFT transactions. Maps to ISO field F104.65.32. Used to ensure compliance with Mastercard's requirements for money send transactions when wallet classifications differ between Visa and Mastercard schemes. Takes priority over BAI values for Mastercard AFT transactions when present.")
+  public String getTransactionTypeIdentifier() {
+    return transactionTypeIdentifier;
+  }
+
+  public void setTransactionTypeIdentifier(String transactionTypeIdentifier) {
+    this.transactionTypeIdentifier = transactionTypeIdentifier;
+  }
+
+  public CardProcessingConfigCommonProcessors subMerchantId(String subMerchantId) {
+    this.subMerchantId = subMerchantId;
+    return this;
+  }
+
+   /**
+   * The Sub merchant ID, sometimes referred to as the &#39;Seller ID&#39; is generally used and *required for Aggregators and OptBlue participants. The &#39;Sub Merchant&#39; is the Merchant whose transactions are submitted by a payment aggregator.
+   * @return subMerchantId
+  **/
+  @ApiModelProperty(value = "The Sub merchant ID, sometimes referred to as the 'Seller ID' is generally used and *required for Aggregators and OptBlue participants. The 'Sub Merchant' is the Merchant whose transactions are submitted by a payment aggregator.")
+  public String getSubMerchantId() {
+    return subMerchantId;
+  }
+
+  public void setSubMerchantId(String subMerchantId) {
+    this.subMerchantId = subMerchantId;
+  }
+
+  public CardProcessingConfigCommonProcessors subMerchantEmail(String subMerchantEmail) {
+    this.subMerchantEmail = subMerchantEmail;
+    return this;
+  }
+
+   /**
+   * Sub Merchant Email of the Payment Facilitator&#39;s, OptBlue Participant
+   * @return subMerchantEmail
+  **/
+  @ApiModelProperty(value = "Sub Merchant Email of the Payment Facilitator's, OptBlue Participant")
+  public String getSubMerchantEmail() {
+    return subMerchantEmail;
+  }
+
+  public void setSubMerchantEmail(String subMerchantEmail) {
+    this.subMerchantEmail = subMerchantEmail;
+  }
+
+  public CardProcessingConfigCommonProcessors subMerchantPhoneNumber(String subMerchantPhoneNumber) {
+    this.subMerchantPhoneNumber = subMerchantPhoneNumber;
+    return this;
+  }
+
+   /**
+   * Sub Merchant Phone Number of the Payment Facilitator&#39;s, OptBlue Participant&#39;s
+   * @return subMerchantPhoneNumber
+  **/
+  @ApiModelProperty(value = "Sub Merchant Phone Number of the Payment Facilitator's, OptBlue Participant's")
+  public String getSubMerchantPhoneNumber() {
+    return subMerchantPhoneNumber;
+  }
+
+  public void setSubMerchantPhoneNumber(String subMerchantPhoneNumber) {
+    this.subMerchantPhoneNumber = subMerchantPhoneNumber;
+  }
+
   public CardProcessingConfigCommonProcessors enablePosNetworkSwitching(Boolean enablePosNetworkSwitching) {
     this.enablePosNetworkSwitching = enablePosNetworkSwitching;
     return this;
@@ -1123,6 +1207,10 @@ public class CardProcessingConfigCommonProcessors {
         Objects.equals(this.enableLeastCostRouting, cardProcessingConfigCommonProcessors.enableLeastCostRouting) &&
         Objects.equals(this.enableCVVResponseIndicator, cardProcessingConfigCommonProcessors.enableCVVResponseIndicator) &&
         Objects.equals(this.enableMultiCurrencyProcessing, cardProcessingConfigCommonProcessors.enableMultiCurrencyProcessing) &&
+        Objects.equals(this.transactionTypeIdentifier, cardProcessingConfigCommonProcessors.transactionTypeIdentifier) &&
+        Objects.equals(this.subMerchantId, cardProcessingConfigCommonProcessors.subMerchantId) &&
+        Objects.equals(this.subMerchantEmail, cardProcessingConfigCommonProcessors.subMerchantEmail) &&
+        Objects.equals(this.subMerchantPhoneNumber, cardProcessingConfigCommonProcessors.subMerchantPhoneNumber) &&
         Objects.equals(this.enablePosNetworkSwitching, cardProcessingConfigCommonProcessors.enablePosNetworkSwitching) &&
         Objects.equals(this.enableDynamicCurrencyConversion, cardProcessingConfigCommonProcessors.enableDynamicCurrencyConversion) &&
         Objects.equals(this.merchantTier, cardProcessingConfigCommonProcessors.merchantTier);
@@ -1130,7 +1218,7 @@ public class CardProcessingConfigCommonProcessors {
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, acquirers, merchantId, terminalId, paymentTypes, currencies, visaAggregatorId, amexAggregatorId, masterCardAggregatorId, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
+    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, acquirers, merchantId, terminalId, paymentTypes, currencies, visaAggregatorId, amexAggregatorId, masterCardAggregatorId, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, transactionTypeIdentifier, subMerchantId, subMerchantEmail, subMerchantPhoneNumber, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
   }
 
 
@@ -1184,6 +1272,10 @@ public class CardProcessingConfigCommonProcessors {
     if (enableLeastCostRouting != null) sb.append("    enableLeastCostRouting: ").append(toIndentedString(enableLeastCostRouting)).append("\n");
     if (enableCVVResponseIndicator != null) sb.append("    enableCVVResponseIndicator: ").append(toIndentedString(enableCVVResponseIndicator)).append("\n");
     if (enableMultiCurrencyProcessing != null) sb.append("    enableMultiCurrencyProcessing: ").append(toIndentedString(enableMultiCurrencyProcessing)).append("\n");
+    if (transactionTypeIdentifier != null) sb.append("    transactionTypeIdentifier: ").append(toIndentedString(transactionTypeIdentifier)).append("\n");
+    if (subMerchantId != null) sb.append("    subMerchantId: ").append(toIndentedString(subMerchantId)).append("\n");
+    if (subMerchantEmail != null) sb.append("    subMerchantEmail: ").append(toIndentedString(subMerchantEmail)).append("\n");
+    if (subMerchantPhoneNumber != null) sb.append("    subMerchantPhoneNumber: ").append(toIndentedString(subMerchantPhoneNumber)).append("\n");
     if (enablePosNetworkSwitching != null) sb.append("    enablePosNetworkSwitching: ").append(toIndentedString(enablePosNetworkSwitching)).append("\n");
     if (enableDynamicCurrencyConversion != null) sb.append("    enableDynamicCurrencyConversion: ").append(toIndentedString(enableDynamicCurrencyConversion)).append("\n");
     if (merchantTier != null) sb.append("    merchantTier: ").append(toIndentedString(merchantTier)).append("\n");

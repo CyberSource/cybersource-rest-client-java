@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2tokenizedcardsBillTo;
 import Model.Tmsv2tokenizedcardsCard;
 import Model.Tmsv2tokenizedcardsPasscode;
 import com.google.gson.TypeAdapter;
@@ -48,6 +49,9 @@ public class PostTokenizedCardRequest {
 
   @SerializedName("passcode")
   private Tmsv2tokenizedcardsPasscode passcode = null;
+
+  @SerializedName("billTo")
+  private Tmsv2tokenizedcardsBillTo billTo = null;
 
   public PostTokenizedCardRequest accountReferenceId(String accountReferenceId) {
     this.accountReferenceId = accountReferenceId;
@@ -157,6 +161,24 @@ public class PostTokenizedCardRequest {
     this.passcode = passcode;
   }
 
+  public PostTokenizedCardRequest billTo(Tmsv2tokenizedcardsBillTo billTo) {
+    this.billTo = billTo;
+    return this;
+  }
+
+   /**
+   * Get billTo
+   * @return billTo
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2tokenizedcardsBillTo getBillTo() {
+    return billTo;
+  }
+
+  public void setBillTo(Tmsv2tokenizedcardsBillTo billTo) {
+    this.billTo = billTo;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,12 +194,13 @@ public class PostTokenizedCardRequest {
         Objects.equals(this.createPanInstrumentIdentifier, postTokenizedCardRequest.createPanInstrumentIdentifier) &&
         Objects.equals(this.source, postTokenizedCardRequest.source) &&
         Objects.equals(this.card, postTokenizedCardRequest.card) &&
-        Objects.equals(this.passcode, postTokenizedCardRequest.passcode);
+        Objects.equals(this.passcode, postTokenizedCardRequest.passcode) &&
+        Objects.equals(this.billTo, postTokenizedCardRequest.billTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountReferenceId, consumerId, createPanInstrumentIdentifier, source, card, passcode);
+    return Objects.hash(accountReferenceId, consumerId, createPanInstrumentIdentifier, source, card, passcode, billTo);
   }
 
 
@@ -192,6 +215,7 @@ public class PostTokenizedCardRequest {
     if (source != null) sb.append("    source: ").append(toIndentedString(source)).append("\n");
     if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
     if (passcode != null) sb.append("    passcode: ").append(toIndentedString(passcode)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

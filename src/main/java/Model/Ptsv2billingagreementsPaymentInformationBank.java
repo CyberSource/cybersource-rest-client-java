@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2billingagreementsPaymentInformationBankAccount;
+import Model.Ptsv2billingagreementsPaymentInformationBankAccountAlias;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,6 +42,9 @@ public class Ptsv2billingagreementsPaymentInformationBank {
 
   @SerializedName("scheme")
   private String scheme = null;
+
+  @SerializedName("accountAlias")
+  private Ptsv2billingagreementsPaymentInformationBankAccountAlias accountAlias = null;
 
   public Ptsv2billingagreementsPaymentInformationBank account(Ptsv2billingagreementsPaymentInformationBankAccount account) {
     this.account = account;
@@ -114,6 +118,24 @@ public class Ptsv2billingagreementsPaymentInformationBank {
     this.scheme = scheme;
   }
 
+  public Ptsv2billingagreementsPaymentInformationBank accountAlias(Ptsv2billingagreementsPaymentInformationBankAccountAlias accountAlias) {
+    this.accountAlias = accountAlias;
+    return this;
+  }
+
+   /**
+   * Get accountAlias
+   * @return accountAlias
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsPaymentInformationBankAccountAlias getAccountAlias() {
+    return accountAlias;
+  }
+
+  public void setAccountAlias(Ptsv2billingagreementsPaymentInformationBankAccountAlias accountAlias) {
+    this.accountAlias = accountAlias;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,12 +149,13 @@ public class Ptsv2billingagreementsPaymentInformationBank {
     return Objects.equals(this.account, ptsv2billingagreementsPaymentInformationBank.account) &&
         Objects.equals(this.iban, ptsv2billingagreementsPaymentInformationBank.iban) &&
         Objects.equals(this.swiftCode, ptsv2billingagreementsPaymentInformationBank.swiftCode) &&
-        Objects.equals(this.scheme, ptsv2billingagreementsPaymentInformationBank.scheme);
+        Objects.equals(this.scheme, ptsv2billingagreementsPaymentInformationBank.scheme) &&
+        Objects.equals(this.accountAlias, ptsv2billingagreementsPaymentInformationBank.accountAlias);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, iban, swiftCode, scheme);
+    return Objects.hash(account, iban, swiftCode, scheme, accountAlias);
   }
 
 
@@ -145,6 +168,7 @@ public class Ptsv2billingagreementsPaymentInformationBank {
     if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     if (swiftCode != null) sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
     if (scheme != null) sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+    if (accountAlias != null) sb.append("    accountAlias: ").append(toIndentedString(accountAlias)).append("\n");
     sb.append("}");
     return sb.toString();
   }

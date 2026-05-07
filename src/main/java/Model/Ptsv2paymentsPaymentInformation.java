@@ -29,6 +29,7 @@ import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationSepa;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
+import Model.Ptsv2paymentsPaymentInformationThirdPartyToken;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsPaymentInformationTokenizedPaymentMethod;
 import com.google.gson.TypeAdapter;
@@ -95,6 +96,12 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("paymentAccountReference")
   private Ptsv2paymentsPaymentInformationPaymentAccountReference paymentAccountReference = null;
+
+  @SerializedName("thirdPartyToken")
+  private Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken = null;
+
+  @SerializedName("merchantLimitedAcceptanceIndicator")
+  private String merchantLimitedAcceptanceIndicator = null;
 
   public Ptsv2paymentsPaymentInformation card(Ptsv2paymentsPaymentInformationCard card) {
     this.card = card;
@@ -402,6 +409,42 @@ public class Ptsv2paymentsPaymentInformation {
     this.paymentAccountReference = paymentAccountReference;
   }
 
+  public Ptsv2paymentsPaymentInformation thirdPartyToken(Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+    return this;
+  }
+
+   /**
+   * Get thirdPartyToken
+   * @return thirdPartyToken
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationThirdPartyToken getThirdPartyToken() {
+    return thirdPartyToken;
+  }
+
+  public void setThirdPartyToken(Ptsv2paymentsPaymentInformationThirdPartyToken thirdPartyToken) {
+    this.thirdPartyToken = thirdPartyToken;
+  }
+
+  public Ptsv2paymentsPaymentInformation merchantLimitedAcceptanceIndicator(String merchantLimitedAcceptanceIndicator) {
+    this.merchantLimitedAcceptanceIndicator = merchantLimitedAcceptanceIndicator;
+    return this;
+  }
+
+   /**
+   * Mastercard One Credential merchant limited acceptance indicator. Mastercard One Credential connects multiple Mastercard payment methods and allows cardhollers to access various options and set payment preferences.  This field indicates which Mastercard One Credential funding PAN acceptance brands should NOT be assigned for this transaction.  This field flows in ISO field 34, DSID 02 tag DB, mapped to Mastercard Data Element (DE) 48, Sub element 02, Subfield 01.  Possible values: - &#x60;C&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Mastercard Credit Acceptance Brand for this transaction - &#x60;D&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Debit Mastercard Acceptance Brand for this transaction - &#x60;M&#x60;: Do not assign a Mastercard One Credential funding PAN containing the Maestro Acceptance Brand for this transaction  This field is supported for all flavors of Authorization request only. Will not be received in response.  #### Used by **Authorization Request** Optional field. 
+   * @return merchantLimitedAcceptanceIndicator
+  **/
+  @ApiModelProperty(value = "Mastercard One Credential merchant limited acceptance indicator. Mastercard One Credential connects multiple Mastercard payment methods and allows cardhollers to access various options and set payment preferences.  This field indicates which Mastercard One Credential funding PAN acceptance brands should NOT be assigned for this transaction.  This field flows in ISO field 34, DSID 02 tag DB, mapped to Mastercard Data Element (DE) 48, Sub element 02, Subfield 01.  Possible values: - `C`: Do not assign a Mastercard One Credential funding PAN containing the Mastercard Credit Acceptance Brand for this transaction - `D`: Do not assign a Mastercard One Credential funding PAN containing the Debit Mastercard Acceptance Brand for this transaction - `M`: Do not assign a Mastercard One Credential funding PAN containing the Maestro Acceptance Brand for this transaction  This field is supported for all flavors of Authorization request only. Will not be received in response.  #### Used by **Authorization Request** Optional field. ")
+  public String getMerchantLimitedAcceptanceIndicator() {
+    return merchantLimitedAcceptanceIndicator;
+  }
+
+  public void setMerchantLimitedAcceptanceIndicator(String merchantLimitedAcceptanceIndicator) {
+    this.merchantLimitedAcceptanceIndicator = merchantLimitedAcceptanceIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -428,12 +471,14 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel) &&
         Objects.equals(this.sepa, ptsv2paymentsPaymentInformation.sepa) &&
         Objects.equals(this.eWallet, ptsv2paymentsPaymentInformation.eWallet) &&
-        Objects.equals(this.paymentAccountReference, ptsv2paymentsPaymentInformation.paymentAccountReference);
+        Objects.equals(this.paymentAccountReference, ptsv2paymentsPaymentInformation.paymentAccountReference) &&
+        Objects.equals(this.thirdPartyToken, ptsv2paymentsPaymentInformation.thirdPartyToken) &&
+        Objects.equals(this.merchantLimitedAcceptanceIndicator, ptsv2paymentsPaymentInformation.merchantLimitedAcceptanceIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, tokenizedPaymentMethod, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, sepa, eWallet, paymentAccountReference);
+    return Objects.hash(card, tokenizedCard, tokenizedPaymentMethod, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, sepa, eWallet, paymentAccountReference, thirdPartyToken, merchantLimitedAcceptanceIndicator);
   }
 
 
@@ -459,6 +504,8 @@ public class Ptsv2paymentsPaymentInformation {
     if (sepa != null) sb.append("    sepa: ").append(toIndentedString(sepa)).append("\n");
     if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (thirdPartyToken != null) sb.append("    thirdPartyToken: ").append(toIndentedString(thirdPartyToken)).append("\n");
+    if (merchantLimitedAcceptanceIndicator != null) sb.append("    merchantLimitedAcceptanceIndicator: ").append(toIndentedString(merchantLimitedAcceptanceIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

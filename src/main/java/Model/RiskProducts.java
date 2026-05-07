@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PaymentsProductsPayerAuthentication;
 import Model.RiskProductsDecisionManager;
 import Model.RiskProductsFraudManagementEssentials;
 import Model.RiskProductsPortfolioRiskControls;
@@ -40,6 +41,9 @@ public class RiskProducts {
 
   @SerializedName("portfolioRiskControls")
   private RiskProductsPortfolioRiskControls portfolioRiskControls = null;
+
+  @SerializedName("enhancedAuthentication")
+  private PaymentsProductsPayerAuthentication enhancedAuthentication = null;
 
   public RiskProducts fraudManagementEssentials(RiskProductsFraudManagementEssentials fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
@@ -95,6 +99,24 @@ public class RiskProducts {
     this.portfolioRiskControls = portfolioRiskControls;
   }
 
+  public RiskProducts enhancedAuthentication(PaymentsProductsPayerAuthentication enhancedAuthentication) {
+    this.enhancedAuthentication = enhancedAuthentication;
+    return this;
+  }
+
+   /**
+   * Get enhancedAuthentication
+   * @return enhancedAuthentication
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsPayerAuthentication getEnhancedAuthentication() {
+    return enhancedAuthentication;
+  }
+
+  public void setEnhancedAuthentication(PaymentsProductsPayerAuthentication enhancedAuthentication) {
+    this.enhancedAuthentication = enhancedAuthentication;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +129,13 @@ public class RiskProducts {
     RiskProducts riskProducts = (RiskProducts) o;
     return Objects.equals(this.fraudManagementEssentials, riskProducts.fraudManagementEssentials) &&
         Objects.equals(this.decisionManager, riskProducts.decisionManager) &&
-        Objects.equals(this.portfolioRiskControls, riskProducts.portfolioRiskControls);
+        Objects.equals(this.portfolioRiskControls, riskProducts.portfolioRiskControls) &&
+        Objects.equals(this.enhancedAuthentication, riskProducts.enhancedAuthentication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fraudManagementEssentials, decisionManager, portfolioRiskControls);
+    return Objects.hash(fraudManagementEssentials, decisionManager, portfolioRiskControls, enhancedAuthentication);
   }
 
 
@@ -124,6 +147,7 @@ public class RiskProducts {
     if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     if (portfolioRiskControls != null) sb.append("    portfolioRiskControls: ").append(toIndentedString(portfolioRiskControls)).append("\n");
+    if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(toIndentedString(enhancedAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

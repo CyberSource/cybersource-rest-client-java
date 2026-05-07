@@ -150,11 +150,11 @@ public class ManageWebhooksApiTest {
      */
     @Test
     public void saveAsymEgressKeyTest() throws Exception {
-        String vCSenderOrganizationId = null;
-        String vCPermissions = null;
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
-        InlineResponse2018 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        String vCSenderOrganizationId = null;
+        String vCPermissions = null;
+        InlineResponse2018 response = api.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
 
         // TODO: test validations
     }

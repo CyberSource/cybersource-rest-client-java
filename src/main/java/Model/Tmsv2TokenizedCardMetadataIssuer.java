@@ -15,6 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Tmsv2TokenizedCardMetadataIssuerBankApplications;
+import Model.Tmsv2TokenizedCardMetadataIssuerCapabilities;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +25,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Issuer associated with the tokenized card. 
@@ -47,6 +51,15 @@ public class Tmsv2TokenizedCardMetadataIssuer {
 
   @SerializedName("url")
   private String url = null;
+
+  @SerializedName("privacyPolicyUrl")
+  private String privacyPolicyUrl = null;
+
+  @SerializedName("capabilities")
+  private Tmsv2TokenizedCardMetadataIssuerCapabilities capabilities = null;
+
+  @SerializedName("bankApplications")
+  private List<Tmsv2TokenizedCardMetadataIssuerBankApplications> bankApplications = null;
 
    /**
    * Issuer name. 
@@ -76,30 +89,66 @@ public class Tmsv2TokenizedCardMetadataIssuer {
   }
 
    /**
-   * Issuer customer service email address.
+   * Issuer customer service email address. 
    * @return email
   **/
-  @ApiModelProperty(value = "Issuer customer service email address.")
+  @ApiModelProperty(value = "Issuer customer service email address. ")
   public String getEmail() {
     return email;
   }
 
    /**
-   * Issuer customer service phone number.
+   * Issuer customer service phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Issuer customer service phone number.")
+  @ApiModelProperty(value = "Issuer customer service phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
    /**
-   * Issuer customer service url.
+   * Issuer customer service url. 
    * @return url
   **/
-  @ApiModelProperty(value = "Issuer customer service url.")
+  @ApiModelProperty(value = "Issuer customer service url. ")
   public String getUrl() {
     return url;
+  }
+
+   /**
+   * Issuer privacy policy url. 
+   * @return privacyPolicyUrl
+  **/
+  @ApiModelProperty(value = "Issuer privacy policy url. ")
+  public String getPrivacyPolicyUrl() {
+    return privacyPolicyUrl;
+  }
+
+  public Tmsv2TokenizedCardMetadataIssuer capabilities(Tmsv2TokenizedCardMetadataIssuerCapabilities capabilities) {
+    this.capabilities = capabilities;
+    return this;
+  }
+
+   /**
+   * Get capabilities
+   * @return capabilities
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardMetadataIssuerCapabilities getCapabilities() {
+    return capabilities;
+  }
+
+  public void setCapabilities(Tmsv2TokenizedCardMetadataIssuerCapabilities capabilities) {
+    this.capabilities = capabilities;
+  }
+
+   /**
+   * Get bankApplications
+   * @return bankApplications
+  **/
+  @ApiModelProperty(value = "")
+  public List<Tmsv2TokenizedCardMetadataIssuerBankApplications> getBankApplications() {
+    return bankApplications;
   }
 
 
@@ -117,12 +166,15 @@ public class Tmsv2TokenizedCardMetadataIssuer {
         Objects.equals(this.longDescription, tmsv2TokenizedCardMetadataIssuer.longDescription) &&
         Objects.equals(this.email, tmsv2TokenizedCardMetadataIssuer.email) &&
         Objects.equals(this.phoneNumber, tmsv2TokenizedCardMetadataIssuer.phoneNumber) &&
-        Objects.equals(this.url, tmsv2TokenizedCardMetadataIssuer.url);
+        Objects.equals(this.url, tmsv2TokenizedCardMetadataIssuer.url) &&
+        Objects.equals(this.privacyPolicyUrl, tmsv2TokenizedCardMetadataIssuer.privacyPolicyUrl) &&
+        Objects.equals(this.capabilities, tmsv2TokenizedCardMetadataIssuer.capabilities) &&
+        Objects.equals(this.bankApplications, tmsv2TokenizedCardMetadataIssuer.bankApplications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, shortDescription, longDescription, email, phoneNumber, url);
+    return Objects.hash(name, shortDescription, longDescription, email, phoneNumber, url, privacyPolicyUrl, capabilities, bankApplications);
   }
 
 
@@ -137,6 +189,9 @@ public class Tmsv2TokenizedCardMetadataIssuer {
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    if (privacyPolicyUrl != null) sb.append("    privacyPolicyUrl: ").append(toIndentedString(privacyPolicyUrl)).append("\n");
+    if (capabilities != null) sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
+    if (bankApplications != null) sb.append("    bankApplications: ").append(toIndentedString(bankApplications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

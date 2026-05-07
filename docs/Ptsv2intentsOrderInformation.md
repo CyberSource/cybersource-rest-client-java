@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **billTo** | [**Ptsv2intentsOrderInformationBillTo**](Ptsv2intentsOrderInformationBillTo.md) |  |  [optional]
 **shipTo** | [**Ptsv2intentsOrderInformationShipTo**](Ptsv2intentsOrderInformationShipTo.md) |  |  [optional]
 **lineItems** | [**List&lt;Ptsv2intentsOrderInformationLineItems&gt;**](Ptsv2intentsOrderInformationLineItems.md) |  |  [optional]
-**invoiceDetails** | [**Ptsv2intentsOrderInformationInvoiceDetails**](Ptsv2intentsOrderInformationInvoiceDetails.md) |  |  [optional]
+**invoiceDetails** | [**Ptsv2billingagreementsOrderInformationInvoiceDetails**](Ptsv2billingagreementsOrderInformationInvoiceDetails.md) |  |  [optional]
 
 
 

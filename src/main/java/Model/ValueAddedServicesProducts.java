@@ -39,6 +39,12 @@ public class ValueAddedServicesProducts {
   @SerializedName("bankAccountValidation")
   private PaymentsProductsTax bankAccountValidation = null;
 
+  @SerializedName("flexapi")
+  private PaymentsProductsTax flexapi = null;
+
+  @SerializedName("webhooks")
+  private PaymentsProductsTax webhooks = null;
+
   public ValueAddedServicesProducts reporting(PaymentsProductsTax reporting) {
     this.reporting = reporting;
     return this;
@@ -93,6 +99,42 @@ public class ValueAddedServicesProducts {
     this.bankAccountValidation = bankAccountValidation;
   }
 
+  public ValueAddedServicesProducts flexapi(PaymentsProductsTax flexapi) {
+    this.flexapi = flexapi;
+    return this;
+  }
+
+   /**
+   * Get flexapi
+   * @return flexapi
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getFlexapi() {
+    return flexapi;
+  }
+
+  public void setFlexapi(PaymentsProductsTax flexapi) {
+    this.flexapi = flexapi;
+  }
+
+  public ValueAddedServicesProducts webhooks(PaymentsProductsTax webhooks) {
+    this.webhooks = webhooks;
+    return this;
+  }
+
+   /**
+   * Get webhooks
+   * @return webhooks
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getWebhooks() {
+    return webhooks;
+  }
+
+  public void setWebhooks(PaymentsProductsTax webhooks) {
+    this.webhooks = webhooks;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +147,14 @@ public class ValueAddedServicesProducts {
     ValueAddedServicesProducts valueAddedServicesProducts = (ValueAddedServicesProducts) o;
     return Objects.equals(this.reporting, valueAddedServicesProducts.reporting) &&
         Objects.equals(this.transactionSearch, valueAddedServicesProducts.transactionSearch) &&
-        Objects.equals(this.bankAccountValidation, valueAddedServicesProducts.bankAccountValidation);
+        Objects.equals(this.bankAccountValidation, valueAddedServicesProducts.bankAccountValidation) &&
+        Objects.equals(this.flexapi, valueAddedServicesProducts.flexapi) &&
+        Objects.equals(this.webhooks, valueAddedServicesProducts.webhooks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reporting, transactionSearch, bankAccountValidation);
+    return Objects.hash(reporting, transactionSearch, bankAccountValidation, flexapi, webhooks);
   }
 
 
@@ -122,6 +166,8 @@ public class ValueAddedServicesProducts {
     if (reporting != null) sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
     if (transactionSearch != null) sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
     if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
+    if (flexapi != null) sb.append("    flexapi: ").append(toIndentedString(flexapi)).append("\n");
+    if (webhooks != null) sb.append("    webhooks: ").append(toIndentedString(webhooks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.CommerceSolutionsProductsAccountUpdater;
 import Model.CommerceSolutionsProductsBinLookup;
 import Model.CommerceSolutionsProductsTokenManagement;
+import Model.PaymentsProductsTax;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +41,9 @@ public class CommerceSolutionsProducts {
 
   @SerializedName("binLookup")
   private CommerceSolutionsProductsBinLookup binLookup = null;
+
+  @SerializedName("agenticCommerce")
+  private PaymentsProductsTax agenticCommerce = null;
 
   public CommerceSolutionsProducts tokenManagement(CommerceSolutionsProductsTokenManagement tokenManagement) {
     this.tokenManagement = tokenManagement;
@@ -95,6 +99,24 @@ public class CommerceSolutionsProducts {
     this.binLookup = binLookup;
   }
 
+  public CommerceSolutionsProducts agenticCommerce(PaymentsProductsTax agenticCommerce) {
+    this.agenticCommerce = agenticCommerce;
+    return this;
+  }
+
+   /**
+   * Get agenticCommerce
+   * @return agenticCommerce
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getAgenticCommerce() {
+    return agenticCommerce;
+  }
+
+  public void setAgenticCommerce(PaymentsProductsTax agenticCommerce) {
+    this.agenticCommerce = agenticCommerce;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +129,13 @@ public class CommerceSolutionsProducts {
     CommerceSolutionsProducts commerceSolutionsProducts = (CommerceSolutionsProducts) o;
     return Objects.equals(this.tokenManagement, commerceSolutionsProducts.tokenManagement) &&
         Objects.equals(this.accountUpdater, commerceSolutionsProducts.accountUpdater) &&
-        Objects.equals(this.binLookup, commerceSolutionsProducts.binLookup);
+        Objects.equals(this.binLookup, commerceSolutionsProducts.binLookup) &&
+        Objects.equals(this.agenticCommerce, commerceSolutionsProducts.agenticCommerce);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokenManagement, accountUpdater, binLookup);
+    return Objects.hash(tokenManagement, accountUpdater, binLookup, agenticCommerce);
   }
 
 
@@ -124,6 +147,7 @@ public class CommerceSolutionsProducts {
     if (tokenManagement != null) sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
     if (accountUpdater != null) sb.append("    accountUpdater: ").append(toIndentedString(accountUpdater)).append("\n");
     if (binLookup != null) sb.append("    binLookup: ").append(toIndentedString(binLookup)).append("\n");
+    if (agenticCommerce != null) sb.append("    agenticCommerce: ").append(toIndentedString(agenticCommerce)).append("\n");
     sb.append("}");
     return sb.toString();
   }

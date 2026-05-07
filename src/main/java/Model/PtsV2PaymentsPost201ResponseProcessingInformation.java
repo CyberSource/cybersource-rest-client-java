@@ -42,6 +42,9 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
   @SerializedName("enhancedDataEnabled")
   private Boolean enhancedDataEnabled = null;
 
+  @SerializedName("digitalServiceIndicator")
+  private String digitalServiceIndicator = null;
+
   @SerializedName("captureOptions")
   private PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions = null;
 
@@ -103,6 +106,24 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
 
   public void setEnhancedDataEnabled(Boolean enhancedDataEnabled) {
     this.enhancedDataEnabled = enhancedDataEnabled;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessingInformation digitalServiceIndicator(String digitalServiceIndicator) {
+    this.digitalServiceIndicator = digitalServiceIndicator;
+    return this;
+  }
+
+   /**
+   * Mastercard Digital Enablement Service (MDES) digital service indicators received in the authorization response message for MDES transactions.   This data is provided in the 0110 response in the Field 34—Acceptance Environment Data (TLV Format), Dataset ID 04—Additional Service Result Data, Tag DF1F—Mastercard Digital Enablement Service Indicator for Acquirer to acquirers.  This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  This field is supported for all flavors of Authorization response only.  #### Used by **Authorization Response** Response field only. 
+   * @return digitalServiceIndicator
+  **/
+  @ApiModelProperty(value = "Mastercard Digital Enablement Service (MDES) digital service indicators received in the authorization response message for MDES transactions.   This data is provided in the 0110 response in the Field 34—Acceptance Environment Data (TLV Format), Dataset ID 04—Additional Service Result Data, Tag DF1F—Mastercard Digital Enablement Service Indicator for Acquirer to acquirers.  This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  This field is supported for all flavors of Authorization response only.  #### Used by **Authorization Response** Response field only. ")
+  public String getDigitalServiceIndicator() {
+    return digitalServiceIndicator;
+  }
+
+  public void setDigitalServiceIndicator(String digitalServiceIndicator) {
+    this.digitalServiceIndicator = digitalServiceIndicator;
   }
 
   public PtsV2PaymentsPost201ResponseProcessingInformation captureOptions(PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions) {
@@ -172,6 +193,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.paymentSolution, ptsV2PaymentsPost201ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled) &&
+        Objects.equals(this.digitalServiceIndicator, ptsV2PaymentsPost201ResponseProcessingInformation.digitalServiceIndicator) &&
         Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions) &&
         Objects.equals(this.authorizationOptions, ptsV2PaymentsPost201ResponseProcessingInformation.authorizationOptions) &&
         Objects.equals(this.purchaseOptions, ptsV2PaymentsPost201ResponseProcessingInformation.purchaseOptions);
@@ -179,7 +201,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions, authorizationOptions, purchaseOptions);
+    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, digitalServiceIndicator, captureOptions, authorizationOptions, purchaseOptions);
   }
 
 
@@ -191,6 +213,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     if (enhancedDataEnabled != null) sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
+    if (digitalServiceIndicator != null) sb.append("    digitalServiceIndicator: ").append(toIndentedString(digitalServiceIndicator)).append("\n");
     if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");

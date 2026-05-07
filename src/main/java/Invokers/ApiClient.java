@@ -1362,6 +1362,10 @@ public class ApiClient {
 			} else {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
 			}
+			requestHeaderMap.put("v-c-sdk-telemetry-merchant-id", merchantConfig.getMerchantID());
+            if(merchantConfig.isSDK()) {
+            	requestHeaderMap.put("v-c-sdk-telemetry-mcp", "true");
+            }
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());

@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Authenticated Identities data.
+ * Authenticated Identities data. Contains the identity assertion from the authentication provider.
  */
-@ApiModel(description = "Authenticated Identities data.")
+@ApiModel(description = "Authenticated Identities data. Contains the identity assertion from the authentication provider.")
 
 public class Acpv1tokensAuthenticatedIdentities {
   @SerializedName("data")

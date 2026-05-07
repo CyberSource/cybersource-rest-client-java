@@ -101,6 +101,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("encryptedKeySerialNumber")
   private String encryptedKeySerialNumber = null;
 
+  @SerializedName("encryptedKeyId")
+  private String encryptedKeyId = null;
+
   @SerializedName("partnerSdkVersion")
   private String partnerSdkVersion = null;
 
@@ -557,6 +560,24 @@ public class Ptsv2paymentsPointOfSaleInformation {
     this.encryptedKeySerialNumber = encryptedKeySerialNumber;
   }
 
+  public Ptsv2paymentsPointOfSaleInformation encryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+    return this;
+  }
+
+   /**
+   * Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. 
+   * @return encryptedKeyId
+  **/
+  @ApiModelProperty(value = "Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. ")
+  public String getEncryptedKeyId() {
+    return encryptedKeyId;
+  }
+
+  public void setEncryptedKeyId(String encryptedKeyId) {
+    this.encryptedKeyId = encryptedKeyId;
+  }
+
   public Ptsv2paymentsPointOfSaleInformation partnerSdkVersion(String partnerSdkVersion) {
     this.partnerSdkVersion = partnerSdkVersion;
     return this;
@@ -716,6 +737,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.pinBlockEncodingFormat, ptsv2paymentsPointOfSaleInformation.pinBlockEncodingFormat) &&
         Objects.equals(this.encryptedPin, ptsv2paymentsPointOfSaleInformation.encryptedPin) &&
         Objects.equals(this.encryptedKeySerialNumber, ptsv2paymentsPointOfSaleInformation.encryptedKeySerialNumber) &&
+        Objects.equals(this.encryptedKeyId, ptsv2paymentsPointOfSaleInformation.encryptedKeyId) &&
         Objects.equals(this.partnerSdkVersion, ptsv2paymentsPointOfSaleInformation.partnerSdkVersion) &&
         Objects.equals(this.emvApplicationIdentifierAndDedicatedFileName, ptsv2paymentsPointOfSaleInformation.emvApplicationIdentifierAndDedicatedFileName) &&
         Objects.equals(this.terminalCompliance, ptsv2paymentsPointOfSaleInformation.terminalCompliance) &&
@@ -727,7 +749,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalCategory, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
+    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalCategory, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, encryptedKeyId, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -759,6 +781,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     if (pinBlockEncodingFormat != null) sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
     if (encryptedPin != null) sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
     if (encryptedKeySerialNumber != null) sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
+    if (encryptedKeyId != null) sb.append("    encryptedKeyId: ").append(toIndentedString(encryptedKeyId)).append("\n");
     if (partnerSdkVersion != null) sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
     if (emvApplicationIdentifierAndDedicatedFileName != null) sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
     if (terminalCompliance != null) sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
