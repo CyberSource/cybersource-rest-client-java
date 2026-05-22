@@ -41,6 +41,9 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
   @SerializedName("relyingPartyId")
   private String relyingPartyId = null;
 
+  @SerializedName("userAuthenticationMethod")
+  private String userAuthenticationMethod = null;
+
   public Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities id(String id) {
     this.id = id;
     return this;
@@ -65,10 +68,10 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
   }
 
    /**
-   * The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY 
+   * The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY   - CLIENT_DEVICE_CERT_JWS 
    * @return provider
   **/
-  @ApiModelProperty(example = "VISA_PAYMENT_PASSKEY", value = "The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY ")
+  @ApiModelProperty(example = "VISA_PAYMENT_PASSKEY", value = "The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY   - CLIENT_DEVICE_CERT_JWS ")
   public String getProvider() {
     return provider;
   }
@@ -83,10 +86,10 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
   }
 
    /**
-   * The data from the authenticated identity, for FIDO this could be the Attestation. Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses &#39;-&#39; characters instead of &#39;+&#39; and &#39;_&#39; characters instead of &#39;/&#39;. 
+   * The data from the authenticated identity. For Passkey this could be the FIDO Attestation. For Classic Cloud Token Framework (CTF) this could be a JWS containing device authentication information signed by a devices private key. Base64URL encoded string (RFC4648). The encoding is the same as Base64, but uses &#39;-&#39; characters instead of &#39;+&#39; and &#39;_&#39; characters instead of &#39;/&#39;. 
    * @return data
   **/
-  @ApiModelProperty(example = "dj0xJmM9ezAwMX06QUFSTk", value = "The data from the authenticated identity, for FIDO this could be the Attestation. Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. ")
+  @ApiModelProperty(example = "dj0xJmM9ezAwMX06QUFSTk", value = "The data from the authenticated identity. For Passkey this could be the FIDO Attestation. For Classic Cloud Token Framework (CTF) this could be a JWS containing device authentication information signed by a devices private key. Base64URL encoded string (RFC4648). The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. ")
   public String getData() {
     return data;
   }
@@ -101,16 +104,34 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
   }
 
    /**
-   * The id of the Relying Party.  Base64URL encoded string (RFC4648).   The encoding is the same as Base64, but uses &#39;-&#39; characters instead of &#39;+&#39; and &#39;_&#39; characters instead of &#39;/&#39;. 
+   * The id of the Relying Party.  Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses &#39;-&#39; characters instead of &#39;+&#39; and &#39;_&#39; characters instead of &#39;/&#39;. 
    * @return relyingPartyId
   **/
-  @ApiModelProperty(example = "dnRzLmF1dGgudmlzYS5jb20=", value = "The id of the Relying Party.  Base64URL encoded string (RFC4648).   The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. ")
+  @ApiModelProperty(example = "dnRzLmF1dGgudmlzYS5jb20=", value = "The id of the Relying Party.  Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. ")
   public String getRelyingPartyId() {
     return relyingPartyId;
   }
 
   public void setRelyingPartyId(String relyingPartyId) {
     this.relyingPartyId = relyingPartyId;
+  }
+
+  public Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities userAuthenticationMethod(String userAuthenticationMethod) {
+    this.userAuthenticationMethod = userAuthenticationMethod;
+    return this;
+  }
+
+   /**
+   * The method used to authenticate the user.  Possible Values:   - USERNAME_PASSWORD   - PASSCODE_PASSWORD   - PASSCODE   - PASSWORD   - PATTERN   - BIOMETRIC_FINGERPRINT   - BIOMETRIC_FACIAL   - BIOMETRIC_IRIS   - BIOMETRIC_VOICE   - BIOMETRIC_BEHAVIORAL   - DEVICE_UNLOCKED_METHOD_UNKNOWN   - OTP_SMS   - OTP_EMAIL   - OTP_SMS_KNOWLEDGE   - KNOWLEDGE_BASED_AUTHENTICATION   - USER_UNVERIFIED   - BIOMETRIC 
+   * @return userAuthenticationMethod
+  **/
+  @ApiModelProperty(example = "BIOMETRIC_FINGERPRINT", value = "The method used to authenticate the user.  Possible Values:   - USERNAME_PASSWORD   - PASSCODE_PASSWORD   - PASSCODE   - PASSWORD   - PATTERN   - BIOMETRIC_FINGERPRINT   - BIOMETRIC_FACIAL   - BIOMETRIC_IRIS   - BIOMETRIC_VOICE   - BIOMETRIC_BEHAVIORAL   - DEVICE_UNLOCKED_METHOD_UNKNOWN   - OTP_SMS   - OTP_EMAIL   - OTP_SMS_KNOWLEDGE   - KNOWLEDGE_BASED_AUTHENTICATION   - USER_UNVERIFIED   - BIOMETRIC ")
+  public String getUserAuthenticationMethod() {
+    return userAuthenticationMethod;
+  }
+
+  public void setUserAuthenticationMethod(String userAuthenticationMethod) {
+    this.userAuthenticationMethod = userAuthenticationMethod;
   }
 
 
@@ -126,12 +147,13 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
     return Objects.equals(this.id, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.id) &&
         Objects.equals(this.provider, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.provider) &&
         Objects.equals(this.data, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.data) &&
-        Objects.equals(this.relyingPartyId, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.relyingPartyId);
+        Objects.equals(this.relyingPartyId, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.relyingPartyId) &&
+        Objects.equals(this.userAuthenticationMethod, tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities.userAuthenticationMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, provider, data, relyingPartyId);
+    return Objects.hash(id, provider, data, relyingPartyId, userAuthenticationMethod);
   }
 
 
@@ -144,6 +166,7 @@ public class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities {
     if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     if (data != null) sb.append("    data: ").append(toIndentedString(data)).append("\n");
     if (relyingPartyId != null) sb.append("    relyingPartyId: ").append(toIndentedString(relyingPartyId)).append("\n");
+    if (userAuthenticationMethod != null) sb.append("    userAuthenticationMethod: ").append(toIndentedString(userAuthenticationMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,9 +13,10 @@
 
 package Api;
 
+import Model.BinLookup403Response;
+import Model.BinLookupv400Response;
 import Model.CreateBinLookupRequest;
 import Model.InlineResponse2013;
-import Model.PtsV2CreateOrderPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;

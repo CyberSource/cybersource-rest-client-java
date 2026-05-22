@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Upv1capturecontextsDataOrderInformationLineItemsPassenger;
-import Model.Upv1capturecontextsDataOrderInformationLineItemsTaxDetails;
+import Model.Upv1capturecontextsDataOrderInformationPassenger;
+import Model.Upv1capturecontextsDataOrderInformationTaxDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -92,7 +92,7 @@ public class Ucv1sessionsDataOrderInformationLineItems {
   private String invoiceNumber = null;
 
   @SerializedName("taxDetails")
-  private Upv1capturecontextsDataOrderInformationLineItemsTaxDetails taxDetails = null;
+  private Upv1capturecontextsDataOrderInformationTaxDetails taxDetails = null;
 
   @SerializedName("fulfillmentType")
   private String fulfillmentType = null;
@@ -128,7 +128,7 @@ public class Ucv1sessionsDataOrderInformationLineItems {
   private Boolean gift = null;
 
   @SerializedName("passenger")
-  private Upv1capturecontextsDataOrderInformationLineItemsPassenger passenger = null;
+  private Upv1capturecontextsDataOrderInformationPassenger passenger = null;
 
   public Ucv1sessionsDataOrderInformationLineItems productCode(String productCode) {
     this.productCode = productCode;
@@ -492,7 +492,7 @@ public class Ucv1sessionsDataOrderInformationLineItems {
     this.invoiceNumber = invoiceNumber;
   }
 
-  public Ucv1sessionsDataOrderInformationLineItems taxDetails(Upv1capturecontextsDataOrderInformationLineItemsTaxDetails taxDetails) {
+  public Ucv1sessionsDataOrderInformationLineItems taxDetails(Upv1capturecontextsDataOrderInformationTaxDetails taxDetails) {
     this.taxDetails = taxDetails;
     return this;
   }
@@ -502,11 +502,11 @@ public class Ucv1sessionsDataOrderInformationLineItems {
    * @return taxDetails
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails getTaxDetails() {
+  public Upv1capturecontextsDataOrderInformationTaxDetails getTaxDetails() {
     return taxDetails;
   }
 
-  public void setTaxDetails(Upv1capturecontextsDataOrderInformationLineItemsTaxDetails taxDetails) {
+  public void setTaxDetails(Upv1capturecontextsDataOrderInformationTaxDetails taxDetails) {
     this.taxDetails = taxDetails;
   }
 
@@ -708,7 +708,7 @@ public class Ucv1sessionsDataOrderInformationLineItems {
     this.gift = gift;
   }
 
-  public Ucv1sessionsDataOrderInformationLineItems passenger(Upv1capturecontextsDataOrderInformationLineItemsPassenger passenger) {
+  public Ucv1sessionsDataOrderInformationLineItems passenger(Upv1capturecontextsDataOrderInformationPassenger passenger) {
     this.passenger = passenger;
     return this;
   }
@@ -718,11 +718,11 @@ public class Ucv1sessionsDataOrderInformationLineItems {
    * @return passenger
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger getPassenger() {
+  public Upv1capturecontextsDataOrderInformationPassenger getPassenger() {
     return passenger;
   }
 
-  public void setPassenger(Upv1capturecontextsDataOrderInformationLineItemsPassenger passenger) {
+  public void setPassenger(Upv1capturecontextsDataOrderInformationPassenger passenger) {
     this.passenger = passenger;
   }
 

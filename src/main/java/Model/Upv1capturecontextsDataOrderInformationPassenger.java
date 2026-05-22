@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Upv1capturecontextsDataOrderInformationLineItemsPassenger
+ * Upv1capturecontextsDataOrderInformationPassenger
  */
 
-public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
+public class Upv1capturecontextsDataOrderInformationPassenger {
   @SerializedName("type")
   private String type = null;
 
@@ -53,7 +53,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   @SerializedName("nationality")
   private String nationality = null;
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger type(String type) {
+  public Upv1capturecontextsDataOrderInformationPassenger type(String type) {
     this.type = type;
     return this;
   }
@@ -71,7 +71,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.type = type;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger status(String status) {
+  public Upv1capturecontextsDataOrderInformationPassenger status(String status) {
     this.status = status;
     return this;
   }
@@ -89,7 +89,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.status = status;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger phone(String phone) {
+  public Upv1capturecontextsDataOrderInformationPassenger phone(String phone) {
     this.phone = phone;
     return this;
   }
@@ -107,7 +107,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.phone = phone;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger firstName(String firstName) {
+  public Upv1capturecontextsDataOrderInformationPassenger firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -125,7 +125,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.firstName = firstName;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger lastName(String lastName) {
+  public Upv1capturecontextsDataOrderInformationPassenger lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -143,7 +143,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.lastName = lastName;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger id(String id) {
+  public Upv1capturecontextsDataOrderInformationPassenger id(String id) {
     this.id = id;
     return this;
   }
@@ -161,7 +161,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.id = id;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger email(String email) {
+  public Upv1capturecontextsDataOrderInformationPassenger email(String email) {
     this.email = email;
     return this;
   }
@@ -179,7 +179,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     this.email = email;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsPassenger nationality(String nationality) {
+  public Upv1capturecontextsDataOrderInformationPassenger nationality(String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -206,15 +206,15 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Upv1capturecontextsDataOrderInformationLineItemsPassenger upv1capturecontextsDataOrderInformationLineItemsPassenger = (Upv1capturecontextsDataOrderInformationLineItemsPassenger) o;
-    return Objects.equals(this.type, upv1capturecontextsDataOrderInformationLineItemsPassenger.type) &&
-        Objects.equals(this.status, upv1capturecontextsDataOrderInformationLineItemsPassenger.status) &&
-        Objects.equals(this.phone, upv1capturecontextsDataOrderInformationLineItemsPassenger.phone) &&
-        Objects.equals(this.firstName, upv1capturecontextsDataOrderInformationLineItemsPassenger.firstName) &&
-        Objects.equals(this.lastName, upv1capturecontextsDataOrderInformationLineItemsPassenger.lastName) &&
-        Objects.equals(this.id, upv1capturecontextsDataOrderInformationLineItemsPassenger.id) &&
-        Objects.equals(this.email, upv1capturecontextsDataOrderInformationLineItemsPassenger.email) &&
-        Objects.equals(this.nationality, upv1capturecontextsDataOrderInformationLineItemsPassenger.nationality);
+    Upv1capturecontextsDataOrderInformationPassenger upv1capturecontextsDataOrderInformationPassenger = (Upv1capturecontextsDataOrderInformationPassenger) o;
+    return Objects.equals(this.type, upv1capturecontextsDataOrderInformationPassenger.type) &&
+        Objects.equals(this.status, upv1capturecontextsDataOrderInformationPassenger.status) &&
+        Objects.equals(this.phone, upv1capturecontextsDataOrderInformationPassenger.phone) &&
+        Objects.equals(this.firstName, upv1capturecontextsDataOrderInformationPassenger.firstName) &&
+        Objects.equals(this.lastName, upv1capturecontextsDataOrderInformationPassenger.lastName) &&
+        Objects.equals(this.id, upv1capturecontextsDataOrderInformationPassenger.id) &&
+        Objects.equals(this.email, upv1capturecontextsDataOrderInformationPassenger.email) &&
+        Objects.equals(this.nationality, upv1capturecontextsDataOrderInformationPassenger.nationality);
   }
 
   @Override
@@ -226,7 +226,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsPassenger {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Upv1capturecontextsDataOrderInformationLineItemsPassenger {\n");
+    sb.append("class Upv1capturecontextsDataOrderInformationPassenger {\n");
     
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");

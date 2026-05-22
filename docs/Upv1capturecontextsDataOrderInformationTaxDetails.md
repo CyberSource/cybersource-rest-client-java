@@ -1,5 +1,5 @@
 
-# Upv1capturecontextsDataOrderInformationLineItemsTaxDetails
+# Upv1capturecontextsDataOrderInformationTaxDetails
 
 ## Properties
 Name | Type | Description | Notes

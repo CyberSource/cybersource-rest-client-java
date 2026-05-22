@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ucv1sessionsPaymentConfigurationsCLICKTOPAY;
 import Model.Ucv1sessionsPaymentConfigurationsGOOGLEPAY;
+import Model.Ucv1sessionsPaymentConfigurationsPAYPAL;
 import Model.Ucv1sessionsPaymentConfigurationsTMSTOKEN;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -38,6 +39,9 @@ public class Ucv1sessionsPaymentConfigurations {
 
   @SerializedName("CLICKTOPAY")
   private Ucv1sessionsPaymentConfigurationsCLICKTOPAY CLICKTOPAY = null;
+
+  @SerializedName("PAYPAL")
+  private Ucv1sessionsPaymentConfigurationsPAYPAL PAYPAL = null;
 
   @SerializedName("TMS_TOKEN")
   private Ucv1sessionsPaymentConfigurationsTMSTOKEN TMS_TOKEN = null;
@@ -78,6 +82,24 @@ public class Ucv1sessionsPaymentConfigurations {
     this.CLICKTOPAY = CLICKTOPAY;
   }
 
+  public Ucv1sessionsPaymentConfigurations PAYPAL(Ucv1sessionsPaymentConfigurationsPAYPAL PAYPAL) {
+    this.PAYPAL = PAYPAL;
+    return this;
+  }
+
+   /**
+   * Get PAYPAL
+   * @return PAYPAL
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsPaymentConfigurationsPAYPAL getPAYPAL() {
+    return PAYPAL;
+  }
+
+  public void setPAYPAL(Ucv1sessionsPaymentConfigurationsPAYPAL PAYPAL) {
+    this.PAYPAL = PAYPAL;
+  }
+
   public Ucv1sessionsPaymentConfigurations TMS_TOKEN(Ucv1sessionsPaymentConfigurationsTMSTOKEN TMS_TOKEN) {
     this.TMS_TOKEN = TMS_TOKEN;
     return this;
@@ -108,12 +130,13 @@ public class Ucv1sessionsPaymentConfigurations {
     Ucv1sessionsPaymentConfigurations ucv1sessionsPaymentConfigurations = (Ucv1sessionsPaymentConfigurations) o;
     return Objects.equals(this.GOOGLEPAY, ucv1sessionsPaymentConfigurations.GOOGLEPAY) &&
         Objects.equals(this.CLICKTOPAY, ucv1sessionsPaymentConfigurations.CLICKTOPAY) &&
+        Objects.equals(this.PAYPAL, ucv1sessionsPaymentConfigurations.PAYPAL) &&
         Objects.equals(this.TMS_TOKEN, ucv1sessionsPaymentConfigurations.TMS_TOKEN);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(GOOGLEPAY, CLICKTOPAY, TMS_TOKEN);
+    return Objects.hash(GOOGLEPAY, CLICKTOPAY, PAYPAL, TMS_TOKEN);
   }
 
 
@@ -124,6 +147,7 @@ public class Ucv1sessionsPaymentConfigurations {
     
     if (GOOGLEPAY != null) sb.append("    GOOGLEPAY: ").append(toIndentedString(GOOGLEPAY)).append("\n");
     if (CLICKTOPAY != null) sb.append("    CLICKTOPAY: ").append(toIndentedString(CLICKTOPAY)).append("\n");
+    if (PAYPAL != null) sb.append("    PAYPAL: ").append(toIndentedString(PAYPAL)).append("\n");
     if (TMS_TOKEN != null) sb.append("    TMS_TOKEN: ").append(toIndentedString(TMS_TOKEN)).append("\n");
     sb.append("}");
     return sb.toString();

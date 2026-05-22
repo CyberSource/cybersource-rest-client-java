@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.PushFunds201ResponseClientReferenceInformation;
 import Model.PushFunds201ResponseErrorInformation;
+import Model.PushFunds201ResponseIssuerInformation;
 import Model.PushFunds201ResponseLinks;
 import Model.PushFunds201ResponseMerchantInformation;
 import Model.PushFunds201ResponseOrderInformation;
@@ -73,6 +74,9 @@ public class PushFunds201Response {
 
   @SerializedName("processingInformation")
   private PushFunds201ResponseProcessingInformation processingInformation = null;
+
+  @SerializedName("issuerInformation")
+  private PushFunds201ResponseIssuerInformation issuerInformation = null;
 
   @SerializedName("_links")
   private PushFunds201ResponseLinks links = null;
@@ -293,6 +297,24 @@ public class PushFunds201Response {
     this.processingInformation = processingInformation;
   }
 
+  public PushFunds201Response issuerInformation(PushFunds201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PushFunds201ResponseIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(PushFunds201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+  }
+
   public PushFunds201Response links(PushFunds201ResponseLinks links) {
     this.links = links;
     return this;
@@ -333,12 +355,13 @@ public class PushFunds201Response {
         Objects.equals(this.orderInformation, pushFunds201Response.orderInformation) &&
         Objects.equals(this.paymentInformation, pushFunds201Response.paymentInformation) &&
         Objects.equals(this.processingInformation, pushFunds201Response.processingInformation) &&
+        Objects.equals(this.issuerInformation, pushFunds201Response.issuerInformation) &&
         Objects.equals(this.links, pushFunds201Response.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, recipientInformation, merchantInformation, errorInformation, processorInformation, orderInformation, paymentInformation, processingInformation, links);
+    return Objects.hash(id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, recipientInformation, merchantInformation, errorInformation, processorInformation, orderInformation, paymentInformation, processingInformation, issuerInformation, links);
   }
 
 
@@ -359,6 +382,7 @@ public class PushFunds201Response {
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

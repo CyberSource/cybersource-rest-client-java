@@ -25,17 +25,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse40011Details
+ * InlineResponse40012Details
  */
 
-public class InlineResponse40011Details {
+public class InlineResponse40012Details {
   @SerializedName("field")
   private String field = null;
 
   @SerializedName("reason")
   private String reason = null;
 
-  public InlineResponse40011Details field(String field) {
+  public InlineResponse40012Details field(String field) {
     this.field = field;
     return this;
   }
@@ -53,7 +53,7 @@ public class InlineResponse40011Details {
     this.field = field;
   }
 
-  public InlineResponse40011Details reason(String reason) {
+  public InlineResponse40012Details reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -80,9 +80,9 @@ public class InlineResponse40011Details {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse40011Details inlineResponse40011Details = (InlineResponse40011Details) o;
-    return Objects.equals(this.field, inlineResponse40011Details.field) &&
-        Objects.equals(this.reason, inlineResponse40011Details.reason);
+    InlineResponse40012Details inlineResponse40012Details = (InlineResponse40012Details) o;
+    return Objects.equals(this.field, inlineResponse40012Details.field) &&
+        Objects.equals(this.reason, inlineResponse40012Details.reason);
   }
 
   @Override
@@ -94,7 +94,7 @@ public class InlineResponse40011Details {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse40011Details {\n");
+    sb.append("class InlineResponse40012Details {\n");
     
     if (field != null) sb.append("    field: ").append(toIndentedString(field)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");

@@ -1,5 +1,5 @@
 
-# InlineResponse40011Details
+# InlineResponse40012Details
 
 ## Properties
 Name | Type | Description | Notes

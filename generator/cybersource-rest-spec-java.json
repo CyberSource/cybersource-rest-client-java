@@ -74,6 +74,10 @@
             "description": "A Network Token represents a tokenized version of a card number (PAN) that can be used for payment transactions and, it's represented by a Tokenized Card in TMS.\n"
         },
         {
+            "name": "Device",
+            "description": "A Device represents a registered device with its certificates for client device authentication.\n"
+        },
+        {
             "name": "Instrument Identifier",
             "description": "An Instrument Identifier represents a unique card number(PAN) or bank account (echeck).\nIt can also be associated with a Network Token that can be used for payment transactions.\n"
         },
@@ -287,13 +291,13 @@
             "name": "Unified Checkout V1 Capture Context",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-intro.html"
+                "url": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-about-guide.html"
             }
         },
         {
             "name": "Transient Token Data v2",
             "externalDocs": {
-                "url": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-intro.html",
+                "url": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-about-guide.html",
                 "description": "Find out more"
             }
         },
@@ -349,7 +353,7 @@
             },
             {
                 "name": "Token_Management",
-                "description": "For more information about Token Management see the [Token Management Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/tms/developer/all/rest/tms/tms-token-mgmt-intro/tms-token-mgmt-intro.html)"
+                "description": "For more information about the Token Management Service (TMS) see the [Token Management Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/tms/developer/all/rest/tms/tms-overview.html)"
             },
             {
                 "name": "Flex_Microform",
@@ -426,7 +430,7 @@
             },
             {
                 "name": "Unified_Checkoutv1",
-                "description": "For more information about Unified Checkout, see the [Unified Checkout Developer Guides Page](https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-intro.html)."
+                "description": "For more information about Unified Checkout, see the [Unified Checkout Developer Guides Page](https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-about-guide.html)."
             },
             {
                 "name": "Account_Updater",
@@ -14877,6 +14881,9 @@
                                 "commerceIndicator": "vbv",
                                 "capture": true
                             },
+                            "consumerAuthenticationInformation": {
+                                "cavv": "ABCDEabcde12345678900987654321abcdeABCDE"
+                            },
                             "pointOfSaleInformation": {
                                 "cardPresent": "N"
                             }
@@ -20851,6 +20858,7 @@
                                 "cardPresent": "Y",
                                 "emv": {
                                     "fallback": "Y",
+                                    "fallbackCondition": "1",
                                     "cardSequenceNumber": "123"
                                 }
                             },
@@ -57488,22 +57496,27 @@
                                             },
                                             "provider": {
                                                 "type": "string",
-                                                "description": "The provider of the authenticated identity.\n\nPossible Values:\n  - VISA_PAYMENT_PASSKEY\n",
+                                                "description": "The provider of the authenticated identity.\n\nPossible Values:\n  - VISA_PAYMENT_PASSKEY\n  - CLIENT_DEVICE_CERT_JWS\n",
                                                 "example": "VISA_PAYMENT_PASSKEY"
                                             },
                                             "data": {
                                                 "type": "string",
                                                 "pattern": "[A-Za-z0-9=-_]+",
                                                 "maxLength": 17000,
-                                                "description": "The data from the authenticated identity, for FIDO this could be the Attestation.\nBase64URL encoded string (RFC4648). \nThe encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
+                                                "description": "The data from the authenticated identity.\nFor Passkey this could be the FIDO Attestation.\nFor Classic Cloud Token Framework (CTF) this could be a JWS containing device authentication information signed by a devices private key.\nBase64URL encoded string (RFC4648).\nThe encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
                                                 "example": "dj0xJmM9ezAwMX06QUFSTk"
                                             },
                                             "relyingPartyId": {
                                                 "type": "string",
                                                 "pattern": "[A-Za-z0-9=-_]+",
                                                 "maxLength": 2000,
-                                                "description": "The id of the Relying Party.\n Base64URL encoded string (RFC4648). \n The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
+                                                "description": "The id of the Relying Party.\n Base64URL encoded string (RFC4648).\n The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
                                                 "example": "dnRzLmF1dGgudmlzYS5jb20="
+                                            },
+                                            "userAuthenticationMethod": {
+                                                "type": "string",
+                                                "description": "The method used to authenticate the user.\n\nPossible Values:\n  - USERNAME_PASSWORD\n  - PASSCODE_PASSWORD\n  - PASSCODE\n  - PASSWORD\n  - PATTERN\n  - BIOMETRIC_FINGERPRINT\n  - BIOMETRIC_FACIAL\n  - BIOMETRIC_IRIS\n  - BIOMETRIC_VOICE\n  - BIOMETRIC_BEHAVIORAL\n  - DEVICE_UNLOCKED_METHOD_UNKNOWN\n  - OTP_SMS\n  - OTP_EMAIL\n  - OTP_SMS_KNOWLEDGE\n  - KNOWLEDGE_BASED_AUTHENTICATION\n  - USER_UNVERIFIED\n  - BIOMETRIC\n",
+                                                "example": "BIOMETRIC_FINGERPRINT"
                                             }
                                         }
                                     }
@@ -58235,10 +58248,48 @@
                             },
                             "authenticatedIdentities": [
                                 {
-                                    "id": "<ID>",
+                                    "id": "<IDENTIFIER>",
                                     "provider": "VISA_PAYMENT_PASSKEY",
-                                    "data": "<DATA>",
+                                    "data": "<FIDO_DATA>",
                                     "relyingPartyId": "dnRzLmF1dGgudmlzYS5jb20="
+                                }
+                            ]
+                        }
+                    },
+                    "example4": {
+                        "summary": "Generate Network Token Credentials using Device Authentication",
+                        "value": {
+                            "transactionType": "ECOM",
+                            "orderInformation": {
+                                "amountDetails": {
+                                    "totalAmount": "1765.95",
+                                    "currency": "978"
+                                },
+                                "billTo": {
+                                    "firstName": "John",
+                                    "lastName": "Doe",
+                                    "email": "test@cybs.com",
+                                    "address1": "1 Market St",
+                                    "locality": "San Francisco",
+                                    "administrativeArea": "CA",
+                                    "postalCode": "94105",
+                                    "country": "US"
+                                }
+                            },
+                            "merchantInformation": {
+                                "merchantDescriptor": {
+                                    "name": "TWVyY2hhbnQgVlphRjVYQmo",
+                                    "url": "aHR0cHM6Ly93d3cuTWVyY2hhbnQtVlphRjVYQmouY29t"
+                                }
+                            },
+                            "deviceInformation": {
+                                "ipAddress": "127.0.0.1"
+                            },
+                            "authenticatedIdentities": [
+                                {
+                                    "provider": "CLIENT_DEVICE_CERT_JWS",
+                                    "data": "<DEVICE_SIGNED_JWS>",
+                                    "userAuthenticationMethod": "BIOMETRIC_FINGERPRINT"
                                 }
                             ]
                         }
@@ -58477,22 +58528,27 @@
                                             },
                                             "provider": {
                                                 "type": "string",
-                                                "description": "The provider of the authenticated identity.\n\nPossible Values:\n  - VISA_PAYMENT_PASSKEY\n",
+                                                "description": "The provider of the authenticated identity.\n\nPossible Values:\n  - VISA_PAYMENT_PASSKEY\n  - CLIENT_DEVICE_CERT_JWS\n",
                                                 "example": "VISA_PAYMENT_PASSKEY"
                                             },
                                             "data": {
                                                 "type": "string",
                                                 "pattern": "[A-Za-z0-9=-_]+",
                                                 "maxLength": 17000,
-                                                "description": "The data from the authenticated identity, for FIDO this could be the Attestation.\nBase64URL encoded string (RFC4648). \nThe encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
+                                                "description": "The data from the authenticated identity.\nFor Passkey this could be the FIDO Attestation.\nFor Classic Cloud Token Framework (CTF) this could be a JWS containing device authentication information signed by a devices private key.\nBase64URL encoded string (RFC4648).\nThe encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
                                                 "example": "dj0xJmM9ezAwMX06QUFSTk"
                                             },
                                             "relyingPartyId": {
                                                 "type": "string",
                                                 "pattern": "[A-Za-z0-9=-_]+",
                                                 "maxLength": 2000,
-                                                "description": "The id of the Relying Party.\n Base64URL encoded string (RFC4648). \n The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
+                                                "description": "The id of the Relying Party.\n Base64URL encoded string (RFC4648).\n The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'.\n",
                                                 "example": "dnRzLmF1dGgudmlzYS5jb20="
+                                            },
+                                            "userAuthenticationMethod": {
+                                                "type": "string",
+                                                "description": "The method used to authenticate the user.\n\nPossible Values:\n  - USERNAME_PASSWORD\n  - PASSCODE_PASSWORD\n  - PASSCODE\n  - PASSWORD\n  - PATTERN\n  - BIOMETRIC_FINGERPRINT\n  - BIOMETRIC_FACIAL\n  - BIOMETRIC_IRIS\n  - BIOMETRIC_VOICE\n  - BIOMETRIC_BEHAVIORAL\n  - DEVICE_UNLOCKED_METHOD_UNKNOWN\n  - OTP_SMS\n  - OTP_EMAIL\n  - OTP_SMS_KNOWLEDGE\n  - KNOWLEDGE_BASED_AUTHENTICATION\n  - USER_UNVERIFIED\n  - BIOMETRIC\n",
+                                                "example": "BIOMETRIC_FINGERPRINT"
                                             }
                                         }
                                     }
@@ -58913,10 +58969,48 @@
                             },
                             "authenticatedIdentities": [
                                 {
-                                    "id": "<ID>",
+                                    "id": "<IDENTIFIER>",
                                     "provider": "VISA_PAYMENT_PASSKEY",
-                                    "data": "<DATA>",
+                                    "data": "<FIDO_DATA>",
                                     "relyingPartyId": "dnRzLmF1dGgudmlzYS5jb20="
+                                }
+                            ]
+                        }
+                    },
+                    "example4": {
+                        "summary": "Generate Network Token Credentials using Device Authentication",
+                        "value": {
+                            "transactionType": "ECOM",
+                            "orderInformation": {
+                                "amountDetails": {
+                                    "totalAmount": "1765.95",
+                                    "currency": "978"
+                                },
+                                "billTo": {
+                                    "firstName": "John",
+                                    "lastName": "Doe",
+                                    "email": "test@cybs.com",
+                                    "address1": "1 Market St",
+                                    "locality": "San Francisco",
+                                    "administrativeArea": "CA",
+                                    "postalCode": "94105",
+                                    "country": "US"
+                                }
+                            },
+                            "merchantInformation": {
+                                "merchantDescriptor": {
+                                    "name": "TWVyY2hhbnQgVlphRjVYQmo",
+                                    "url": "aHR0cHM6Ly93d3cuTWVyY2hhbnQtVlphRjVYQmouY29t"
+                                }
+                            },
+                            "deviceInformation": {
+                                "ipAddress": "127.0.0.1"
+                            },
+                            "authenticatedIdentities": [
+                                {
+                                    "provider": "CLIENT_DEVICE_CERT_JWS",
+                                    "data": "<DEVICE_SIGNED_JWS>",
+                                    "userAuthenticationMethod": "BIOMETRIC_FINGERPRINT"
                                 }
                             ]
                         }
@@ -110671,7 +110765,7 @@
                                 },
                                 "paymentInformation": {
                                     "card": {
-                                        "expirationYear": "2025",
+                                        "expirationYear": "2035",
                                         "number": "4111111111111111",
                                         "expirationMonth": "12",
                                         "type": "001",
@@ -110733,6 +110827,24 @@
                                     "transactionId": "016153570198200",
                                     "responseCode": "00",
                                     "responseCodeSource": "5"
+                                },
+                                "issuerInformation": {
+                                    "serviceProcessingType": "00",
+                                    "octDomesticParticipantIndicator": true,
+                                    "octCrossBorderParticipantIndicator": true,
+                                    "octMoneyTransferDomesticIndicator": true,
+                                    "octMoneyTransferCrossBorderIndicator": true,
+                                    "octMoneyTransferFastFundsDomesticIndicator": true,
+                                    "octMoneyTransferFastFundsCrossBorderIndicator": false,
+                                    "octNonMoneyTransferDomesticIndicator": true,
+                                    "octNonMoneyTransferCrossBorderIndicator": false,
+                                    "octNonMoneyTransferFastFundsDomesticIndicator": true,
+                                    "octNonMoneyTransferFastFundsCrossBorderIndicator": false,
+                                    "octOnlineGamblingDomesticIndicator": false,
+                                    "octOnlineGamblingCrossBorderIndicator": false,
+                                    "octOnlineGamblingFastFundsDomesticIndicator": false,
+                                    "octOnlineGamblingFastFundsCrossBorderIndicator": false,
+                                    "octMoneyTransferMerchantCountryRestricted": false
                                 },
                                 "reconciliationId": "1087488702VIAQNSPQ",
                                 "status": "ACCEPTED",
@@ -111015,6 +111127,66 @@
                                 "issuerInformation": {
                                     "type": "object",
                                     "properties": {
+                                        "octDomesticParticipantIndicator": {
+                                            "type": "boolean",
+                                            "description": "Domestic indicator for Push funds (OCT). If no Funds Transfer Attributes Inquiry data is available\nfor this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octCrossBorderParticipantIndicator": {
+                                            "type": "boolean",
+                                            "description": "Cross-border indicator for push funds (OCT). If no Funds Transfer Attributes Inquiry data is available\nfor this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted.\n      \nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferMerchantCountryRestricted": {
+                                            "type": "boolean",
+                                            "description": "This field indicates if the recipient issuer can accept push funds (OCT) transactions from the merchant country. \nIf no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer\nAttributes Inquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
                                         "serviceProcessingType": {
                                             "type": "string",
                                             "maxLength": 2,
@@ -111229,7 +111401,7 @@
                             },
                             "paymentInformation": {
                                 "card": {
-                                    "expirationYear": "2025",
+                                    "expirationYear": "2035",
                                     "number": "4111111111111111",
                                     "expirationMonth": "12",
                                     "type": "001"
@@ -112118,7 +112290,7 @@
                                         "securityCode": "123",
                                         "number": "4111111111111111",
                                         "expirationMonth": "12",
-                                        "expirationYear": "2025"
+                                        "expirationYear": "2035"
                                     }
                                 },
                                 "recipientInformation": {
@@ -112128,7 +112300,7 @@
                                             "securityCode": "123",
                                             "number": "4111111111111111",
                                             "expirationMonth": "12",
-                                            "expirationYear": "2025"
+                                            "expirationYear": "2035"
                                         }
                                     },
                                     "locality": "Atlanta",
@@ -112559,6 +112731,71 @@
                                         }
                                     }
                                 },
+                                "issuerInformation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "octDomesticParticipantIndicator": {
+                                            "type": "boolean",
+                                            "description": "Domestic indicator for Push funds (OCT). If no Funds Transfer Attributes Inquiry data is available\nfor this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octCrossBorderParticipantIndicator": {
+                                            "type": "boolean",
+                                            "description": "Cross-border indicator for push funds (OCT). If no Funds Transfer Attributes Inquiry data is available\nfor this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted.\n      \nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octMoneyTransferMerchantCountryRestricted": {
+                                            "type": "boolean",
+                                            "description": "This field indicates if the recipient issuer can accept push funds (OCT) transactions from the merchant country. \nIf no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octNonMoneyTransferFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer\nAttributes Inquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingFastFundsDomesticIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether domestic gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry\ndata is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        },
+                                        "octOnlineGamblingFastFundsCrossBorderIndicator": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether cross-border gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes\nInquiry data is available for this card account, the field is omitted. \n\nSupported for Visa Direct.\n"
+                                        }
+                                    }
+                                },
                                 "_links": {
                                     "type": "object",
                                     "properties": {
@@ -112653,6 +112890,23 @@
                                     "tokenizedCard": {
                                         "assuranceMethod": "a1"
                                     }
+                                },
+                                "issuerInformation": {
+                                    "octDomesticParticipantIndicator": true,
+                                    "octCrossBorderParticipantIndicator": true,
+                                    "octMoneyTransferDomesticIndicator": true,
+                                    "octMoneyTransferCrossBorderIndicator": true,
+                                    "octMoneyTransferFastFundsDomesticIndicator": true,
+                                    "octMoneyTransferFastFundsCrossBorderIndicator": false,
+                                    "octNonMoneyTransferDomesticIndicator": true,
+                                    "octNonMoneyTransferCrossBorderIndicator": false,
+                                    "octNonMoneyTransferFastFundsDomesticIndicator": true,
+                                    "octNonMoneyTransferFastFundsCrossBorderIndicator": false,
+                                    "octOnlineGamblingDomesticIndicator": false,
+                                    "octOnlineGamblingCrossBorderIndicator": false,
+                                    "octOnlineGamblingFastFundsDomesticIndicator": false,
+                                    "octOnlineGamblingFastFundsCrossBorderIndicator": false,
+                                    "octMoneyTransferMerchantCountryRestricted": false
                                 },
                                 "status": "AUTHORIZED",
                                 "submitTimeUtc": "2023-09-15T19:31:08Z"
@@ -112824,7 +113078,7 @@
                                         "securityCode": "123",
                                         "number": "4111111111111111",
                                         "expirationMonth": "12",
-                                        "expirationYear": "2025"
+                                        "expirationYear": "2035"
                                     }
                                 },
                                 "address1": "8310 Capital of Texas Highwas North",
@@ -112859,7 +113113,7 @@
                                         "securityCode": "932",
                                         "number": "4111111111111111",
                                         "expirationMonth": "12",
-                                        "expirationYear": "2025"
+                                        "expirationYear": "2035"
                                     }
                                 },
                                 "personalIdentification": {
@@ -113792,7 +114046,7 @@
                                             "securityCode": "123",
                                             "number": "4111111111111111",
                                             "expirationMonth": "12",
-                                            "expirationYear": "2025"
+                                            "expirationYear": "2035"
                                         },
                                         "accountType": "30"
                                     },
@@ -114339,7 +114593,7 @@
                                         "securityCode": "123",
                                         "number": "4111111111111111",
                                         "expirationMonth": "12",
-                                        "expirationYear": "2025"
+                                        "expirationYear": "2035"
                                     },
                                     "accountType": "30"
                                 },
@@ -117193,7 +117447,7 @@
                                 },
                                 "status": {
                                     "type": "string",
-                                    "description": "The status of the submitted transaction.\n\nPossible values:\n - COMPLETED\n - PENDING_REVIEW\n - DECLINED\n - INVALID_REQUEST\n"
+                                    "description": "The status of the submitted transaction.\n\nPossible values:\n - COMPLETED\n - DECLINED\n"
                                 },
                                 "subscriptionInformation": {
                                     "type": "object",
@@ -119869,7 +120123,7 @@
                                 },
                                 "status": {
                                     "type": "string",
-                                    "description": "The status of the submitted transaction.\n\nPossible values:\n - COMPLETED\n - PENDING_REVIEW\n - DECLINED\n - INVALID_REQUEST\n"
+                                    "description": "The status of the submitted transaction.\n\nPossible values:\n - COMPLETED\n - DECLINED\n"
                                 },
                                 "subscriptionInformation": {
                                     "type": "object",
@@ -121016,6 +121270,10 @@
                                     "type": "string",
                                     "description": "The status of the submitted transaction.\n\nPossible values:\n - INVALID_REQUEST\n"
                                 },
+                                "reason": {
+                                    "type": "string",
+                                    "description": "The reason of the status.\n\nPossible values:\n - MISSING_FIELD\n - INVALID_DATA\n - INVALID_CARD\n - INVALID_MERCHANT_CONFIGURATION\n - INVALID_REQUEST\n"
+                                },
                                 "message": {
                                     "type": "string",
                                     "description": "The detail message related to the status and reason listed above."
@@ -121035,6 +121293,31 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden access. The request was rejected due to access restrictions on the account or resource.",
+                        "schema": {
+                            "type": "object",
+                            "title": "binLookup403Response",
+                            "properties": {
+                                "submitTimeUtc": {
+                                    "type": "string",
+                                    "description": "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ`\n**Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.).\nThe `T` separates the date and the time. The `Z` indicates UTC.\n\nReturned by Cybersource for all services.\n"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "The status of the submitted transaction.\n\nPossible values:\n - FORBIDDEN_ACCESS\n"
+                                },
+                                "reason": {
+                                    "type": "string",
+                                    "description": "The reason of the status.\n\nPossible values:\n - FORBIDDEN_ACCESS\n"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "The detail message related to the status and reason listed above."
                                 }
                             }
                         }
@@ -169037,281 +169320,284 @@
                                                     }
                                                 },
                                                 "lineItems": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "productCode": {
-                                                            "type": "string",
-                                                            "maxLength": 255,
-                                                            "example": "electronics",
-                                                            "description": "Code identifying the product."
-                                                        },
-                                                        "productName": {
-                                                            "type": "string",
-                                                            "maxLength": 255,
-                                                            "example": "smartphone",
-                                                            "description": "Name of the product."
-                                                        },
-                                                        "productSku": {
-                                                            "type": "string",
-                                                            "maxLength": 255,
-                                                            "example": "SKU12345",
-                                                            "description": "Stock Keeping Unit identifier"
-                                                        },
-                                                        "quantity": {
-                                                            "type": "integer",
-                                                            "minimum": 1,
-                                                            "maximum": 999999999,
-                                                            "default": 1,
-                                                            "example": 2,
-                                                            "description": "Quantity of the product"
-                                                        },
-                                                        "unitPrice": {
-                                                            "type": "string",
-                                                            "maxLength": 15,
-                                                            "example": "399.99",
-                                                            "description": "Price per unit"
-                                                        },
-                                                        "unitOfMeasure": {
-                                                            "type": "string",
-                                                            "maxLength": 12,
-                                                            "example": "EA",
-                                                            "description": "Unit of measure (e.g. EA, KG, LB)"
-                                                        },
-                                                        "totalAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 13,
-                                                            "example": "799.98",
-                                                            "description": "Total amount for the line item"
-                                                        },
-                                                        "taxAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 15,
-                                                            "example": "64.00",
-                                                            "description": "Tax amount applied"
-                                                        },
-                                                        "taxRate": {
-                                                            "type": "string",
-                                                            "maxLength": 7,
-                                                            "example": "0.88",
-                                                            "description": "Tax rate applied"
-                                                        },
-                                                        "taxAppliedAfterDiscount": {
-                                                            "type": "string",
-                                                            "maxLength": 1,
-                                                            "example": "Y",
-                                                            "description": "Indicates if tax applied after discount"
-                                                        },
-                                                        "taxStatusIndicator": {
-                                                            "type": "string",
-                                                            "maxLength": 1,
-                                                            "example": "N",
-                                                            "description": "Tax status indicator"
-                                                        },
-                                                        "taxTypeCode": {
-                                                            "type": "string",
-                                                            "maxLength": 4,
-                                                            "example": "VAT",
-                                                            "description": "Tax type code"
-                                                        },
-                                                        "amountIncludesTax": {
-                                                            "type": "boolean",
-                                                            "example": false,
-                                                            "description": "Indicates if amount includes tax"
-                                                        },
-                                                        "typeOfSupply": {
-                                                            "type": "string",
-                                                            "maxLength": 2,
-                                                            "example": "GS",
-                                                            "description": "Type of supply"
-                                                        },
-                                                        "commodityCode": {
-                                                            "type": "string",
-                                                            "maxLength": 15,
-                                                            "example": "123456",
-                                                            "description": "Commodity code"
-                                                        },
-                                                        "discountAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 13,
-                                                            "example": "10.00",
-                                                            "description": "Discount amount applied"
-                                                        },
-                                                        "discountApplied": {
-                                                            "type": "boolean",
-                                                            "example": true,
-                                                            "description": "Indicates if discount applied"
-                                                        },
-                                                        "discountRate": {
-                                                            "type": "string",
-                                                            "maxLength": 6,
-                                                            "example": "0.05",
-                                                            "description": "Discount rate applied"
-                                                        },
-                                                        "invoiceNumber": {
-                                                            "type": "string",
-                                                            "maxLength": 23,
-                                                            "example": "INV-001",
-                                                            "description": "Invoice number for the line item"
-                                                        },
-                                                        "taxDetails": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "type": {
-                                                                    "type": "string",
-                                                                    "example": "VAT",
-                                                                    "description": "Type of tax"
-                                                                },
-                                                                "amount": {
-                                                                    "type": "string",
-                                                                    "maxLength": 13,
-                                                                    "example": 5.99,
-                                                                    "description": "Tax amount"
-                                                                },
-                                                                "rate": {
-                                                                    "type": "string",
-                                                                    "maxLength": 6,
-                                                                    "example": 20,
-                                                                    "description": "Tax rate"
-                                                                },
-                                                                "code": {
-                                                                    "type": "string",
-                                                                    "maxLength": 4,
-                                                                    "example": "VAT",
-                                                                    "description": "Tax code"
-                                                                },
-                                                                "taxId": {
-                                                                    "type": "string",
-                                                                    "maxLength": 15,
-                                                                    "example": "TAXID12345",
-                                                                    "description": "Tax Identifier"
-                                                                },
-                                                                "applied": {
-                                                                    "type": "boolean",
-                                                                    "example": true,
-                                                                    "description": "Indicates if tax applied"
-                                                                },
-                                                                "exemptionCode": {
-                                                                    "type": "string",
-                                                                    "maxLength": 1,
-                                                                    "example": "E",
-                                                                    "description": "Tax exemption code"
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "productCode": {
+                                                                "type": "string",
+                                                                "maxLength": 255,
+                                                                "example": "electronics",
+                                                                "description": "Code identifying the product."
+                                                            },
+                                                            "productName": {
+                                                                "type": "string",
+                                                                "maxLength": 255,
+                                                                "example": "smartphone",
+                                                                "description": "Name of the product."
+                                                            },
+                                                            "productSku": {
+                                                                "type": "string",
+                                                                "maxLength": 255,
+                                                                "example": "SKU12345",
+                                                                "description": "Stock Keeping Unit identifier"
+                                                            },
+                                                            "quantity": {
+                                                                "type": "integer",
+                                                                "minimum": 1,
+                                                                "maximum": 999999999,
+                                                                "default": 1,
+                                                                "example": 2,
+                                                                "description": "Quantity of the product"
+                                                            },
+                                                            "unitPrice": {
+                                                                "type": "string",
+                                                                "maxLength": 15,
+                                                                "example": "399.99",
+                                                                "description": "Price per unit"
+                                                            },
+                                                            "unitOfMeasure": {
+                                                                "type": "string",
+                                                                "maxLength": 12,
+                                                                "example": "EA",
+                                                                "description": "Unit of measure (e.g. EA, KG, LB)"
+                                                            },
+                                                            "totalAmount": {
+                                                                "type": "string",
+                                                                "maxLength": 13,
+                                                                "example": "799.98",
+                                                                "description": "Total amount for the line item"
+                                                            },
+                                                            "taxAmount": {
+                                                                "type": "string",
+                                                                "maxLength": 15,
+                                                                "example": "64.00",
+                                                                "description": "Tax amount applied"
+                                                            },
+                                                            "taxRate": {
+                                                                "type": "string",
+                                                                "maxLength": 7,
+                                                                "example": "0.88",
+                                                                "description": "Tax rate applied"
+                                                            },
+                                                            "taxAppliedAfterDiscount": {
+                                                                "type": "string",
+                                                                "maxLength": 1,
+                                                                "example": "Y",
+                                                                "description": "Indicates if tax applied after discount"
+                                                            },
+                                                            "taxStatusIndicator": {
+                                                                "type": "string",
+                                                                "maxLength": 1,
+                                                                "example": "N",
+                                                                "description": "Tax status indicator"
+                                                            },
+                                                            "taxTypeCode": {
+                                                                "type": "string",
+                                                                "maxLength": 4,
+                                                                "example": "VAT",
+                                                                "description": "Tax type code"
+                                                            },
+                                                            "amountIncludesTax": {
+                                                                "type": "boolean",
+                                                                "example": false,
+                                                                "description": "Indicates if amount includes tax"
+                                                            },
+                                                            "typeOfSupply": {
+                                                                "type": "string",
+                                                                "maxLength": 2,
+                                                                "example": "GS",
+                                                                "description": "Type of supply"
+                                                            },
+                                                            "commodityCode": {
+                                                                "type": "string",
+                                                                "maxLength": 15,
+                                                                "example": "123456",
+                                                                "description": "Commodity code"
+                                                            },
+                                                            "discountAmount": {
+                                                                "type": "string",
+                                                                "maxLength": 13,
+                                                                "example": "10.00",
+                                                                "description": "Discount amount applied"
+                                                            },
+                                                            "discountApplied": {
+                                                                "type": "boolean",
+                                                                "example": true,
+                                                                "description": "Indicates if discount applied"
+                                                            },
+                                                            "discountRate": {
+                                                                "type": "string",
+                                                                "maxLength": 6,
+                                                                "example": "0.05",
+                                                                "description": "Discount rate applied"
+                                                            },
+                                                            "invoiceNumber": {
+                                                                "type": "string",
+                                                                "maxLength": 23,
+                                                                "example": "INV-001",
+                                                                "description": "Invoice number for the line item"
+                                                            },
+                                                            "taxDetails": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "type": {
+                                                                        "type": "string",
+                                                                        "example": "VAT",
+                                                                        "description": "Type of tax"
+                                                                    },
+                                                                    "amount": {
+                                                                        "type": "string",
+                                                                        "maxLength": 13,
+                                                                        "example": 5.99,
+                                                                        "description": "Tax amount"
+                                                                    },
+                                                                    "rate": {
+                                                                        "type": "string",
+                                                                        "maxLength": 6,
+                                                                        "example": 20,
+                                                                        "description": "Tax rate"
+                                                                    },
+                                                                    "code": {
+                                                                        "type": "string",
+                                                                        "maxLength": 4,
+                                                                        "example": "VAT",
+                                                                        "description": "Tax code"
+                                                                    },
+                                                                    "taxId": {
+                                                                        "type": "string",
+                                                                        "maxLength": 15,
+                                                                        "example": "TAXID12345",
+                                                                        "description": "Tax Identifier"
+                                                                    },
+                                                                    "applied": {
+                                                                        "type": "boolean",
+                                                                        "example": true,
+                                                                        "description": "Indicates if tax applied"
+                                                                    },
+                                                                    "exemptionCode": {
+                                                                        "type": "string",
+                                                                        "maxLength": 1,
+                                                                        "example": "E",
+                                                                        "description": "Tax exemption code"
+                                                                    }
                                                                 }
-                                                            }
-                                                        },
-                                                        "fulfillmentType": {
-                                                            "type": "string",
-                                                            "example": "Delivery",
-                                                            "description": "Fulfillment type"
-                                                        },
-                                                        "weight": {
-                                                            "type": "string",
-                                                            "maxLength": 9,
-                                                            "example": "1.5",
-                                                            "description": "Weight of the product"
-                                                        },
-                                                        "weightIdentifier": {
-                                                            "type": "string",
-                                                            "maxLength": 1,
-                                                            "example": "N",
-                                                            "description": "Weight identifier"
-                                                        },
-                                                        "weightUnit": {
-                                                            "type": "string",
-                                                            "maxLength": 2,
-                                                            "example": "KG",
-                                                            "description": "Unit of weight of the product"
-                                                        },
-                                                        "referenceDataCode": {
-                                                            "type": "string",
-                                                            "maxLength": 150,
-                                                            "example": "REFCODE",
-                                                            "description": "Reference data code"
-                                                        },
-                                                        "referenceDataNumber": {
-                                                            "type": "string",
-                                                            "maxLength": 30,
-                                                            "example": "REF123",
-                                                            "description": "Reference data number"
-                                                        },
-                                                        "unitTaxAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 15,
-                                                            "example": "3.20",
-                                                            "description": "Unit tax amount"
-                                                        },
-                                                        "productDescription": {
-                                                            "type": "string",
-                                                            "maxLength": 30,
-                                                            "example": "Latest model smartphone",
-                                                            "description": "Description of the product"
-                                                        },
-                                                        "giftCardCurrency": {
-                                                            "type": "string",
-                                                            "maxLength": 3,
-                                                            "example": "USD",
-                                                            "description": "Gift card currency"
-                                                        },
-                                                        "shippingDestinationTypes": {
-                                                            "type": "string",
-                                                            "maxLength": 50,
-                                                            "example": "Residential",
-                                                            "description": "Shipping destination types"
-                                                        },
-                                                        "gift": {
-                                                            "type": "boolean",
-                                                            "example": false,
-                                                            "description": "Indicates if item is a gift"
-                                                        },
-                                                        "passenger": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "type": {
-                                                                    "type": "string",
-                                                                    "maxLength": 50,
-                                                                    "example": "Residential",
-                                                                    "description": "Passenger type"
-                                                                },
-                                                                "status": {
-                                                                    "type": "string",
-                                                                    "maxLength": 32,
-                                                                    "example": "Gold",
-                                                                    "description": "Passenger status"
-                                                                },
-                                                                "phone": {
-                                                                    "type": "string",
-                                                                    "maxLength": 15,
-                                                                    "example": "123456789",
-                                                                    "description": "Passenger phone number"
-                                                                },
-                                                                "firstName": {
-                                                                    "type": "string",
-                                                                    "maxLength": 60,
-                                                                    "example": "John",
-                                                                    "description": "Passenger first name"
-                                                                },
-                                                                "lastName": {
-                                                                    "type": "string",
-                                                                    "maxLength": 60,
-                                                                    "example": "Doe",
-                                                                    "description": "Passenger last name"
-                                                                },
-                                                                "id": {
-                                                                    "type": "string",
-                                                                    "maxLength": 40,
-                                                                    "example": "AIR1234567",
-                                                                    "description": "Passenger ID"
-                                                                },
-                                                                "email": {
-                                                                    "type": "string",
-                                                                    "maxLength": 50,
-                                                                    "example": "john.doe@example.com",
-                                                                    "description": "Passenger email"
-                                                                },
-                                                                "nationality": {
-                                                                    "type": "string",
-                                                                    "maxLength": 2,
-                                                                    "example": "US",
-                                                                    "description": "Passenger nationality"
+                                                            },
+                                                            "fulfillmentType": {
+                                                                "type": "string",
+                                                                "example": "Delivery",
+                                                                "description": "Fulfillment type"
+                                                            },
+                                                            "weight": {
+                                                                "type": "string",
+                                                                "maxLength": 9,
+                                                                "example": "1.5",
+                                                                "description": "Weight of the product"
+                                                            },
+                                                            "weightIdentifier": {
+                                                                "type": "string",
+                                                                "maxLength": 1,
+                                                                "example": "N",
+                                                                "description": "Weight identifier"
+                                                            },
+                                                            "weightUnit": {
+                                                                "type": "string",
+                                                                "maxLength": 2,
+                                                                "example": "KG",
+                                                                "description": "Unit of weight of the product"
+                                                            },
+                                                            "referenceDataCode": {
+                                                                "type": "string",
+                                                                "maxLength": 150,
+                                                                "example": "REFCODE",
+                                                                "description": "Reference data code"
+                                                            },
+                                                            "referenceDataNumber": {
+                                                                "type": "string",
+                                                                "maxLength": 30,
+                                                                "example": "REF123",
+                                                                "description": "Reference data number"
+                                                            },
+                                                            "unitTaxAmount": {
+                                                                "type": "string",
+                                                                "maxLength": 15,
+                                                                "example": "3.20",
+                                                                "description": "Unit tax amount"
+                                                            },
+                                                            "productDescription": {
+                                                                "type": "string",
+                                                                "maxLength": 30,
+                                                                "example": "Latest model smartphone",
+                                                                "description": "Description of the product"
+                                                            },
+                                                            "giftCardCurrency": {
+                                                                "type": "string",
+                                                                "maxLength": 3,
+                                                                "example": "USD",
+                                                                "description": "Gift card currency"
+                                                            },
+                                                            "shippingDestinationTypes": {
+                                                                "type": "string",
+                                                                "maxLength": 50,
+                                                                "example": "Residential",
+                                                                "description": "Shipping destination types"
+                                                            },
+                                                            "gift": {
+                                                                "type": "boolean",
+                                                                "example": false,
+                                                                "description": "Indicates if item is a gift"
+                                                            },
+                                                            "passenger": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "type": {
+                                                                        "type": "string",
+                                                                        "maxLength": 50,
+                                                                        "example": "Residential",
+                                                                        "description": "Passenger type"
+                                                                    },
+                                                                    "status": {
+                                                                        "type": "string",
+                                                                        "maxLength": 32,
+                                                                        "example": "Gold",
+                                                                        "description": "Passenger status"
+                                                                    },
+                                                                    "phone": {
+                                                                        "type": "string",
+                                                                        "maxLength": 15,
+                                                                        "example": "123456789",
+                                                                        "description": "Passenger phone number"
+                                                                    },
+                                                                    "firstName": {
+                                                                        "type": "string",
+                                                                        "maxLength": 60,
+                                                                        "example": "John",
+                                                                        "description": "Passenger first name"
+                                                                    },
+                                                                    "lastName": {
+                                                                        "type": "string",
+                                                                        "maxLength": 60,
+                                                                        "example": "Doe",
+                                                                        "description": "Passenger last name"
+                                                                    },
+                                                                    "id": {
+                                                                        "type": "string",
+                                                                        "maxLength": 40,
+                                                                        "example": "AIR1234567",
+                                                                        "description": "Passenger ID"
+                                                                    },
+                                                                    "email": {
+                                                                        "type": "string",
+                                                                        "maxLength": 50,
+                                                                        "example": "john.doe@example.com",
+                                                                        "description": "Passenger email"
+                                                                    },
+                                                                    "nationality": {
+                                                                        "type": "string",
+                                                                        "maxLength": 2,
+                                                                        "example": "US",
+                                                                        "description": "Passenger nationality"
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -171349,7 +171635,7 @@
                 "operationId": "generateUnifiedCheckoutV1CaptureContext",
                 "x-devcenter-metaData": {
                     "categoryTag": "Unified_Checkout",
-                    "developerGuides": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-intro.html",
+                    "developerGuides": "https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-about-guide.html",
                     "disableProcessorDropDown": true
                 },
                 "produces": [
@@ -171375,7 +171661,7 @@
                                         "type": "string",
                                         "example": "https://yourCheckoutPage.com"
                                     },
-                                    "description": "The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Unified Checkout is defined by the scheme (protocol), hostname (domain) and port number (if used).  \n\nYou must use https://hostname (unless you use http://localhost)\nWildcards are NOT supported.  Ensure that subdomains are included.\nAny valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)\n\nExamples:\n  - https://example.com\n  - https://subdomain.example.com\n  - https://example.com:8080<br><br>\n\nIf you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:\n\n  targetOrigins: [\n    \"https://example.com\",\n    \"https://basket.example.com\",\n    \"https://ecom.example.com\"\n  ]<br><br>\n\nYou can supply up to seven origins within the targetOrigins field for nested iframes.\nIf the list of origins exceeds five ensure that you:\n  - Compare the list of origins in the v1/sessions targetOrigins field against the location.ancestorOrigins of the browser. \n  - Ensure that the count of origins and their content matches in both.  If any origins are absent or mismatched, the system will prevent Unified Checkout from loading and display a client-side error message.<br><br>\n\nRequired field:\nThis field cannot be configured through the Merchant Experience Screens in the Business Center and must be provided on a per transaction basis via the uc/v1/sessions API request.\n"
+                                    "description": "The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Unified Checkout is defined by the scheme (protocol), hostname (domain) and port number (if used).  \n\nYou must use https://hostname.  The following is NOT supported: http://localhost\nWildcards are NOT supported.  Ensure that subdomains are included.\nAny valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)\n\nExamples:\n  - https://example.com\n  - https://subdomain.example.com\n  - https://example.com:8080<br><br>\n\nIf you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:\n\n  targetOrigins: [\n    \"https://example.com\",\n    \"https://basket.example.com\",\n    \"https://ecom.example.com\"\n  ]<br><br>\n\nYou can supply up to seven origins within the targetOrigins field for nested iframes.\nIf the list of origins exceeds five ensure that you:\n  - Compare the list of origins in the v1/sessions targetOrigins field against the location.ancestorOrigins of the browser. \n  - Ensure that the count of origins and their content matches in both.  If any origins are absent or mismatched, the system will prevent Unified Checkout from loading and display a client-side error message.<br><br>\n\nRequired field:\nThis field cannot be configured through the Merchant Experience Screens in the Business Center and must be provided on a per transaction basis via the uc/v1/sessions API request.\n"
                                 },
                                 "allowedCardNetworks": {
                                     "type": "array",
@@ -171394,7 +171680,7 @@
                                     "items": {
                                         "type": "string"
                                     },
-                                    "description": "The payment types that are allowed for the merchant.  \n\nPossible values when launching Unified Checkout:\n  - APPLEPAY\n  - CHECK\n  - CLICKTOPAY\n  - GOOGLEPAY\n  - PANENTRY              \n  - PAZE \n  - TMS_TOKEN<br><br>\n\nUnified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:\n  - Cash App Afterpay (US): AFTERPAY\n  - Clearpay (GB): AFTERPAY\n  - Afterpay (CA, AU, NZ): AFTERPAY<br><br>\n\nUnified Checkout supports the following Online Bank Transfer payment methods:\n  - Bancontact (BE): BANCONTACT\n  - DragonPay (PH): DRAGONPAY\n  - iDEAL (NL): IDEAL\n  - Multibanco (PT): MULTIBANCO\n  - MyBank (IT, BE, PT, ES): MYBANK \n  - Przelewy24|P24 (PL): PRZELEWY24\n  - Tink Pay By Bank (GB): TINKPAYBYBANK<br><br>\n\nUnified Checkout supports the following Post-Pay Reference payment methods:\n  - Konbini (JP): KONBINI<br><br>\n\nUnified Checkout supports the following wallet based payment methods:\n  - PayPal v2: PAYPAL\n  - Venmo: VENMO <br><br>\n\nPossible values when launching Click To Pay Drop-In UI:\n- CLICKTOPAY \n- PANENTRY <br><br>\n\n**Important:** \n  - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.\n  - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.\n  - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>\n\nOptional field:  \nThis field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.\n"
+                                    "description": "The payment types that are allowed for the merchant.  \n\nPossible values when launching Unified Checkout:\n  - APPLEPAY\n  - CHECK\n  - CLICKTOPAY\n  - GOOGLEPAY\n  - PANENTRY              \n  - PAZE \n  - TMS_TOKEN<br><br>\n\nUnified Checkout supports the following wallet based payment methods:\n  - PayPal v2: PAYPAL\n  - Venmo: VENMO <br><br>\n\nUnified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:\n  - Cash App Afterpay (US): AFTERPAY\n  - Clearpay (GB): AFTERPAY\n  - Afterpay (CA, AU, NZ): AFTERPAY<br><br>\n\nUnified Checkout supports the following Online Bank Transfer payment methods:\n  - Bancontact (BE): BANCONTACT\n  - DragonPay (PH): DRAGONPAY\n  - iDEAL (NL): IDEAL\n  - Multibanco (PT): MULTIBANCO\n  - MyBank (IT, BE, PT, ES): MYBANK \n  - Przelewy24|P24 (PL): PRZELEWY24\n  - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>\n\nUnified Checkout supports the following Post-Pay Reference payment methods:\n  - Konbini (JP): KONBINI<br><br>\n\nPossible values when launching Click To Pay Drop-In UI:\n- CLICKTOPAY \n- PANENTRY <br><br>\n\n**Important:** \n  - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.\n  - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.\n  - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>\n\nOptional field:  \nThis field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.\n"
                                 },
                                 "paymentConfigurations": {
                                     "type": "object",
@@ -171419,6 +171705,37 @@
                                                 "autoCheckEnrollment": {
                                                     "type": "boolean",
                                                     "description": "Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\". <br><br>\n\nThis is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".\n  - UAE\n  - Argentina\n  - Brazil\n  - Chile\n  - Colombia\n  - Kuwait\n  - Mexico\n  - Peru\n  - Qatar\n  - Saudi Arabia\n  - Ukraine\n  - South Africa<br><br>\n\nIf false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.<br><br>\nOptional field:\nThis field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.\n"
+                                                }
+                                            }
+                                        },
+                                        "PAYPAL": {
+                                            "type": "object",
+                                            "properties": {
+                                                "vaultingEnabled": {
+                                                    "type": "boolean",
+                                                    "description": "Enables PayPal's Vaulted Payments flow within Unified Checkout.  This provides a seamless checkout experience by storing payment methods for high-frequency and low average-order-value services such as rides, meal pickups, and other quick purchases.\nThis field is optional.\n"
+                                                },
+                                                "tokenizedPaymentMethod": {
+                                                    "type": "object",
+                                                    "description": "Description of the vaulted payment method shown to the buyer during checkout and in their PayPal account.\n",
+                                                    "properties": {
+                                                        "usageType": {
+                                                            "type": "string",
+                                                            "description": "Indicates the type of vaulting relationship. Valid values:\n- \"MERCHANT\": Single merchant relationship.\n- \"PLATFORM\": Platform hosting multiple merchants.\n"
+                                                        },
+                                                        "usagePattern": {
+                                                            "type": "string",
+                                                            "description": "Indicates how the merchant will primarily use the vaulted payment method. Valid values:\n- \"IMMEDIATE\": For on-demand, instant payments. These payments are variable in both amount and frequency and will be used to pay for goods or services before they are rendered to the buyer\n- \"DEFERRED\": For post-pay payments; that is, payments for goods or services that have already been rendered to the buyer\n- \"RECURRING_PREPAID\": For recurring payments before services are rendered.\n- \"RECURRING_POSTPAID\": For recurring payments after services are rendered.\n- \"THRESHOLD_PREPAID\": For payments when a pre-defined threshold is reached before services are rendered.\n- \"THRESHOLD_POSTPAID\": For payments when a pre-defined threshold is reached after services are rendered.\n"
+                                                        },
+                                                        "allowMultipleTokens": {
+                                                            "type": "boolean",
+                                                            "description": "Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account.\n"
+                                                        }
+                                                    }
+                                                },
+                                                "industryType": {
+                                                    "type": "string",
+                                                    "description": "Indicates the industry type. <br><br>\nPossible Values:\n- \"Events\"\n- \"Ticketing\"\n- \"Fuel\"\n- \"GAMING\"\n- \"DIGITAL GOODS\"\n- \"TELCO\"\n- \"Token Service Providers\"\n- \"Gambling\"\n- \"CFDs\"\n- \"car rental\"\n- \"hotel\"\n- \"transportation\"\n- \"travel package\"\n- \"Cruise Line\"\n- \"P2P\"\n- \"Retail\"\n- \"Food\"\n- \"Groceries\"\n- \"Ride Sharing\"\n- \"Taxi\"\n- \"Remittance\"\n- \"Crypto\"\n- \"Marketplaces\"\n"
                                                 }
                                             }
                                         },
@@ -171975,7 +172292,7 @@
                                         },
                                         "consumerAuthentication": {
                                             "type": "string",
-                                            "description": "Configure Unified Checkout to determine whether Consumer Authentication is invoked during service orchestration.\n\nPossible values:\n - NONE\n - 3DS<br><br>\n\nSetting this value to 3DS will attempt to perform authentication using the Payer Authentication Service.\nSetting this value to NONE indicates that you do not wish to perform authentication using the Payer Authentication Service.<br><br>\n\nOptional field:\nThis field can be configured through the Merchant Experience screens in the Business Center. The configured value may be overridden on a per\u2011transaction basis in the uc/v1/sessions API request.\n"
+                                            "description": "Configure Unified Checkout to determine whether Consumer Authentication is invoked during service orchestration.\n\nPossible values:\n\n - PASSKEY\n - 3DS\n - NONE<br><br>\n\nSetting this value to PASSKEY performs Payer Authentication with an existing Visa Payment Passkey or create a new Passkey (Post a traditional 3DS Authentication) attempt to perform authentication using the Payer Authentication Service.<br>\nSetting this value to 3DS will attempt to perform authentication using the Payer Authentication Service.<br>\nSetting this value to NONE indicates that you do not wish to perform authentication using the Payer Authentication Service.<br><br>\n\nOptional field:\nThis field can be configured through the Merchant Experience screens in the Business Center. The configured value may be overridden on a per\u2011transaction basis in the uc/v1/sessions API request.\n"
                                         }
                                     }
                                 },
@@ -172821,6 +173138,14 @@
                                                     "maxLength": 50,
                                                     "example": "TC50171_3"
                                                 },
+                                                "applicationName": {
+                                                    "type": "string",
+                                                    "description": "The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource.\n"
+                                                },
+                                                "applicationVersion": {
+                                                    "type": "string",
+                                                    "description": "Version of the CyberSource application or integration used for a transaction.\n"
+                                                },
                                                 "partner": {
                                                     "type": "object",
                                                     "properties": {
@@ -173368,7 +173693,8 @@
                                     }
                                 }
                             }
-                        }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context With Payment Configurations"
                     },
                     "example3": {
                         "summary": "Generate Unified Checkout V1 Capture Context With Autocheck Enrollment",
@@ -173417,7 +173743,8 @@
                                     }
                                 }
                             }
-                        }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context With Payment Configurations"
                     },
                     "example4": {
                         "summary": "Generate Unified Checkout V1 Capture Context With PAN Entry Enablement",
@@ -173463,9 +173790,58 @@
                                     }
                                 }
                             }
-                        }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context With Payment Configurations"
                     },
                     "example5": {
+                        "summary": "Generate Unified Checkout V1 Capture Context With TMS_TOKEN",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "TMS_TOKEN"
+                            ],
+                            "paymentConfigurations": {
+                                "TMS_TOKEN": {
+                                    "customer": {
+                                        "id": "404352E77F6A66E7E0634136CF0ABCD7"
+                                    }
+                                }
+                            },
+                            "country": "US",
+                            "locale": "en_US",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "US",
+                                    "GB"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "USD"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context With Payment Configurations"
+                    },
+                    "example6": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Opt-out of receiving card number prefix)",
                         "value": {
                             "targetOrigins": [
@@ -173515,7 +173891,7 @@
                             }
                         }
                     },
-                    "example6": {
+                    "example7": {
                         "summary": "Generate Unified Checkout V1 Capture Context passing Billing & Shipping",
                         "value": {
                             "targetOrigins": [
@@ -173605,7 +173981,91 @@
                             }
                         }
                     },
-                    "example7": {
+                    "example8": {
+                        "summary": "Generate Unified Checkout V1 Capture Context With AFT Fields",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY"
+                            ],
+                            "country": "US",
+                            "locale": "en_US",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "US",
+                                    "GB"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "USD"
+                                    }
+                                },
+                                "processingInformation": {
+                                    "authorizationOptions": {
+                                        "aftIndicator": true,
+                                        "authIndicator": "Y"
+                                    },
+                                    "businessApplicationId": "AA",
+                                    "purposeOfPayment": "ISACCT",
+                                    "commerceIndicator": "Retail",
+                                    "senderInformation": {
+                                        "firstName": "John",
+                                        "middleName": "Michael",
+                                        "lastName": "Smith",
+                                        "address1": "123 Sender Street",
+                                        "locality": "San Francisco",
+                                        "administrativeArea": "CA",
+                                        "postalCode": "94105",
+                                        "countryCode": "US",
+                                        "phoneNumber": "4155551234",
+                                        "dateOfBirth": "19850315",
+                                        "accountType": "01",
+                                        "account": {
+                                            "fundsSource": "01",
+                                            "number": "1234567890123456"
+                                        }
+                                    },
+                                    "recipientInformation": {
+                                        "firstName": "John",
+                                        "middleName": "A",
+                                        "lastName": "Buyer",
+                                        "address1": "10 Second Street",
+                                        "locality": "Belfast",
+                                        "administrativeArea": "GB",
+                                        "postalCode": "170056",
+                                        "country": "GB",
+                                        "phoneNumber": "5551234567",
+                                        "accountId": "acc0123567",
+                                        "accountType": "01",
+                                        "dateOfBirth": "05111999"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "example9": {
                         "summary": "Generate Unified Checkout V1 Capture Context For Click To Pay Drop-In UI",
                         "value": {
                             "targetOrigins": [
@@ -173640,9 +174100,269 @@
                                     }
                                 }
                             }
-                        }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context For Click To Pay Drop-In UI"
                     },
-                    "example8": {
+                    "example10": {
+                        "summary": "Generate Unified Checkout V1 Capture Context For Click To Pay Drop-In UI with Customization Variables",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "CLICKTOPAY"
+                            ],
+                            "country": "US",
+                            "locale": "en_US",
+                            "appearance": {
+                                "variables": {
+                                    "backgroundColor": "#FFFFFF",
+                                    "textColor": "#1A1A1A",
+                                    "headerBackground": "#0A3450",
+                                    "headerForeground": "#FFFFFF",
+                                    "headerAvatarBackgroundColor": "#E6EEF8",
+                                    "headerAvatarForegroundColor": "#0A2540",
+                                    "inputBackground": "#FFFFFF",
+                                    "inputColor": "#1A1A1A",
+                                    "inputPlaceholderColor": "#6B7280",
+                                    "inputBorderColor": "#D1D5DB",
+                                    "inputBorderStyle": "solid",
+                                    "inputBorderRadius": "6px",
+                                    "inputHoverBackground": "#FFFFFF",
+                                    "inputHoverColor": "#111827",
+                                    "inputHoverPlaceholderColor": "#6B7280",
+                                    "inputHoverBorderColor": "#9CA3AF",
+                                    "inputHoverBorderStyle": "solid",
+                                    "inputFocusedBackground": "#FFFFFF",
+                                    "inputFocusedColor": "#111827",
+                                    "inputFocusedPlaceholderColor": "#6B7280",
+                                    "inputFocusedBorderColor": "#2563EB",
+                                    "inputFocusedBorderStyle": "solid",
+                                    "inputActiveBackground": "#FFFFFF",
+                                    "inputActiveColor": "#111827",
+                                    "inputActivePlaceholderColor": "#6B7280",
+                                    "inputActiveBorderColor": "#2563EB",
+                                    "inputActiveBorderStyle": "solid",
+                                    "inputPressedBackground": "#F9FAFB",
+                                    "inputPressedColor": "#111827",
+                                    "inputPressedPlaceholderColor": "#9CA3AF",
+                                    "inputPressedBorderColor": "#2563EB",
+                                    "inputPressedBorderStyle": "solid",
+                                    "inputErrorBackground": "#FEF2F2",
+                                    "inputErrorColor": "#991B1B",
+                                    "inputErrorPlaceholderColor": "#B91C1C",
+                                    "inputErrorBorderColor": "#DC2626",
+                                    "inputErrorBorderStyle": "solid",
+                                    "inputValidBackground": "#F0FDF4",
+                                    "inputValidColor": "#065F46",
+                                    "inputValidPlaceholderColor": "#047857",
+                                    "inputValidBorderColor": "#16A34A",
+                                    "inputValidBorderStyle": "solid",
+                                    "buttonBackground": "#2563EB",
+                                    "buttonForeground": "#FFFFFF",
+                                    "buttonShape": "rect",
+                                    "buttonBorderColor": "#2563EB",
+                                    "buttonBorderStyle": "solid",
+                                    "buttonBorderRadius": "8px",
+                                    "buttonHoverBackground": "#1D4ED8",
+                                    "buttonHoverForeground": "#FFFFFF",
+                                    "buttonHoverBorderColor": "#1D4ED8",
+                                    "buttonHoverBorderStyle": "solid",
+                                    "buttonFocusBackground": "#1E40AF",
+                                    "buttonFocusForeground": "#FFFFFF",
+                                    "buttonFocusBorderColor": "#1E40AF",
+                                    "buttonActiveBackground": "#1E3A8A",
+                                    "buttonActiveForeground": "#FFFFFF",
+                                    "buttonActiveBorderColor": "#1E3A8A",
+                                    "buttonActiveBorderStyle": "solid",
+                                    "buttonDisabledBackground": "#E5E7EB",
+                                    "buttonDisabledForeground": "#9CA3AF",
+                                    "buttonDisabledBorderColor": "#E5E7EB",
+                                    "fontFamily": "Inter, Arial, sans-serif",
+                                    "borderRadius": "8px",
+                                    "paymentSelectionBackground": "#F9FAFB"
+                                }
+                            },
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "US",
+                                    "GB"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "USD"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout V1 Capture Context For Click To Pay Drop-In UI"
+                    },
+                    "example11": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (PayPal (US))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "CHECK",
+                                "PAYPAL"
+                            ],
+                            "country": "US",
+                            "locale": "en_US",
+                            "completeMandate": {
+                                "type": "PREFER_AUTH"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.60",
+                                        "currency": "USD",
+                                        "taxAmount": "1.60"
+                                    },
+                                    "lineItems": [
+                                        {
+                                            "productName": "Summer Occasion Top - Embroidered Tulle",
+                                            "quantity": 1,
+                                            "productDescription": "The perfect elevated summer staple",
+                                            "unitPrice": "20.00",
+                                            "taxAmount": "1.60",
+                                            "totalAmount": "20.00",
+                                            "typeOfSupply": "01",
+                                            "productSku": "SKU_123_SummerOT"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Wallets)"
+                    },
+                    "example12": {
+                        "summary": "Generate Unified Checkout V1 Capture Context PayPal Vaulted Payment",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAYPAL"
+                            ],
+                            "paymentConfigurations": {
+                                "PAYPAL": {
+                                    "vaultingEnabled": true,
+                                    "tokenizedPaymentMethod": {
+                                        "usageType": "MERCHANT",
+                                        "usagePattern": "IMMEDIATE",
+                                        "allowMultipleTokens": true,
+                                        "description": "Token for recurring payment"
+                                    },
+                                    "industryType": "P2P"
+                                }
+                            },
+                            "country": "US",
+                            "locale": "en_US",
+                            "completeMandate": {
+                                "type": "PREFER_AUTH"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.60",
+                                        "currency": "USD",
+                                        "taxAmount": "1.60"
+                                    },
+                                    "lineItems": [
+                                        {
+                                            "productName": "Summer Occasion Top - Embroidered Tulle",
+                                            "quantity": 1,
+                                            "productDescription": "The perfect elevated summer staple",
+                                            "unitPrice": "20.00",
+                                            "taxAmount": "1.60",
+                                            "totalAmount": "20.00",
+                                            "typeOfSupply": "01",
+                                            "productSku": "SKU_123_SummerOT"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Wallets)"
+                    },
+                    "example13": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Venmo (US Only))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "CHECK",
+                                "VENMO"
+                            ],
+                            "country": "US",
+                            "locale": "en_US",
+                            "completeMandate": {
+                                "type": "PREFER_AUTH"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.60",
+                                        "currency": "USD",
+                                        "taxAmount": "1.60"
+                                    },
+                                    "lineItems": [
+                                        {
+                                            "productName": "Summer Occasion Top - Embroidered Tulle",
+                                            "quantity": 1,
+                                            "productDescription": "The perfect elevated summer staple",
+                                            "unitPrice": "20.00",
+                                            "taxAmount": "1.60",
+                                            "totalAmount": "20.00",
+                                            "typeOfSupply": "01",
+                                            "productSku": "SKU_123_SummerOT"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Wallets)"
+                    },
+                    "example14": {
                         "summary": "Generate Unified Checkout V1 Capture Context ($ Afterpay (US))",
                         "value": {
                             "targetOrigins": [
@@ -173712,7 +174432,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Buy Now, Pay Later)"
                     },
-                    "example9": {
+                    "example15": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Afterpay (CAN))",
                         "value": {
                             "targetOrigins": [
@@ -173782,7 +174502,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Buy Now, Pay Later)"
                     },
-                    "example10": {
+                    "example16": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Clearpay (GB))",
                         "value": {
                             "targetOrigins": [
@@ -173854,7 +174574,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Buy Now, Pay Later)"
                     },
-                    "example11": {
+                    "example17": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Afterpay (AU))",
                         "value": {
                             "targetOrigins": [
@@ -173924,7 +174644,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Buy Now, Pay Later)"
                     },
-                    "example12": {
+                    "example18": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Afterpay (NZ))",
                         "value": {
                             "targetOrigins": [
@@ -173994,7 +174714,424 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Buy Now, Pay Later)"
                     },
-                    "example13": {
+                    "example19": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (DE))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "DE",
+                            "locale": "de_DE",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "DE"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "EUR"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "Unter den Linden 1",
+                                        "administrativeArea": "Berlin",
+                                        "buildingNumber": "1",
+                                        "country": "DE",
+                                        "locality": "Berlin",
+                                        "postalCode": "10117"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "Maximilianstra\u00dfe 5",
+                                        "administrativeArea": "Bayern",
+                                        "buildingNumber": "5",
+                                        "country": "DE",
+                                        "locality": "M\u00fcnchen",
+                                        "postalCode": "80539"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example20": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (ES))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "ES",
+                            "locale": "es_ES",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "ES",
+                                    "FR"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "EUR"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "Calle de Gran V\u00eda 1",
+                                        "administrativeArea": "Comunidad de Madrid",
+                                        "buildingNumber": "1",
+                                        "country": "ES",
+                                        "locality": "Madrid",
+                                        "postalCode": "28013"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "La Rambla 10",
+                                        "administrativeArea": "Catalu\u00f1a",
+                                        "buildingNumber": "10",
+                                        "country": "ES",
+                                        "locality": "Barcelona",
+                                        "postalCode": "08002"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example21": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (FR))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "FR",
+                            "locale": "fr_FR",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "ES",
+                                    "FR"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "EUR"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "Rue de la R\u00e9publique",
+                                        "administrativeArea": "\u00cele-de-France",
+                                        "buildingNumber": "42",
+                                        "country": "FR",
+                                        "locality": "Paris",
+                                        "postalCode": "75003"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "Avenue Jean M\u00e9decin",
+                                        "administrativeArea": "Provence-Alpes-C\u00f4te d'Azur",
+                                        "buildingNumber": "7",
+                                        "country": "FR",
+                                        "locality": "Nice",
+                                        "postalCode": "06000"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example22": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (GB))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "GB",
+                            "locale": "en_GB",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "GB"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "GBP"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "277 Square Street",
+                                        "administrativeArea": "Devon",
+                                        "buildingNumber": "2",
+                                        "country": "GB",
+                                        "locality": "Plymouth",
+                                        "postalCode": "PL1 1AS"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "15-17 Gloucester Street",
+                                        "administrativeArea": "NIR",
+                                        "buildingNumber": "2",
+                                        "country": "GB",
+                                        "locality": "Belfast",
+                                        "postalCode": "BT6 8JW"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example23": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (IE))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "IE",
+                            "locale": "en_IE",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "IE",
+                                    "GB"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "EUR"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "1 Grafton Street",
+                                        "administrativeArea": "Leinster",
+                                        "buildingNumber": "1",
+                                        "country": "IE",
+                                        "locality": "Dublin",
+                                        "postalCode": "D02 VX79"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "20 St Patrick's Street",
+                                        "administrativeArea": "Munster",
+                                        "buildingNumber": "20",
+                                        "country": "IE",
+                                        "locality": "Cork",
+                                        "postalCode": "T12 HY24"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example24": {
+                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (NL))",
+                        "value": {
+                            "targetOrigins": [
+                                "https://yourCheckoutPage.com"
+                            ],
+                            "allowedCardNetworks": [
+                                "VISA",
+                                "MASTERCARD",
+                                "AMEX"
+                            ],
+                            "allowedPaymentTypes": [
+                                "APPLEPAY",
+                                "CHECK",
+                                "CLICKTOPAY",
+                                "GOOGLEPAY",
+                                "PANENTRY",
+                                "PAZE",
+                                "TINKPAYBYBANK"
+                            ],
+                            "country": "NL",
+                            "locale": "es_NL",
+                            "captureMandate": {
+                                "billingType": "FULL",
+                                "requestEmail": true,
+                                "requestPhone": true,
+                                "requestShipping": true,
+                                "shipToCountries": [
+                                    "NL"
+                                ],
+                                "showAcceptedNetworkIcons": true
+                            },
+                            "completeMandate": {
+                                "type": "PREFER_AUTH",
+                                "decisionManager": true,
+                                "consumerAuthentication": "3DS"
+                            },
+                            "data": {
+                                "orderInformation": {
+                                    "amountDetails": {
+                                        "totalAmount": "21.00",
+                                        "currency": "EUR"
+                                    },
+                                    "billTo": {
+                                        "email": "john.doe@visa.com",
+                                        "firstName": "John",
+                                        "lastName": "Doe",
+                                        "address1": "Damrak 1",
+                                        "administrativeArea": "Noord-Holland",
+                                        "buildingNumber": "1",
+                                        "country": "NL",
+                                        "locality": "Amsterdam",
+                                        "postalCode": "1012 LG"
+                                    },
+                                    "shipTo": {
+                                        "firstName": "Joe",
+                                        "lastName": "Sims",
+                                        "address1": "Coolsingel 40",
+                                        "administrativeArea": "Zuid-Holland",
+                                        "buildingNumber": "40",
+                                        "country": "NL",
+                                        "locality": "Rotterdam",
+                                        "postalCode": "3011 AD"
+                                    }
+                                }
+                            }
+                        },
+                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
+                    },
+                    "example25": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Bancontact (BE))",
                         "value": {
                             "targetOrigins": [
@@ -174065,7 +175202,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example14": {
+                    "example26": {
                         "summary": "Generate Unified Checkout V1 Capture Context (DragonPay (PH))",
                         "value": {
                             "targetOrigins": [
@@ -174136,7 +175273,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example15": {
+                    "example27": {
                         "summary": "Generate Unified Checkout V1 Capture Context (iDEAL (NL))",
                         "value": {
                             "targetOrigins": [
@@ -174206,7 +175343,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example16": {
+                    "example28": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Multibanco (PT))",
                         "value": {
                             "targetOrigins": [
@@ -174277,7 +175414,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example17": {
+                    "example29": {
                         "summary": "Generate Unified Checkout V1 Capture Context (MyBank (IT))",
                         "value": {
                             "targetOrigins": [
@@ -174349,7 +175486,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example18": {
+                    "example30": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Przelewy24|P24 (PL))",
                         "value": {
                             "targetOrigins": [
@@ -174420,76 +175557,7 @@
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
                     },
-                    "example19": {
-                        "summary": "Generate Unified Checkout V1 Capture Context (Tink Pay By Bank (GB))",
-                        "value": {
-                            "targetOrigins": [
-                                "https://yourCheckoutPage.com"
-                            ],
-                            "allowedCardNetworks": [
-                                "VISA",
-                                "MASTERCARD",
-                                "AMEX"
-                            ],
-                            "allowedPaymentTypes": [
-                                "APPLEPAY",
-                                "CHECK",
-                                "CLICKTOPAY",
-                                "GOOGLEPAY",
-                                "PANENTRY",
-                                "PAZE",
-                                "TINKPAYBYBANK"
-                            ],
-                            "country": "GB",
-                            "locale": "en_GB",
-                            "captureMandate": {
-                                "billingType": "FULL",
-                                "requestEmail": true,
-                                "requestPhone": true,
-                                "requestShipping": true,
-                                "shipToCountries": [
-                                    "GB"
-                                ],
-                                "showAcceptedNetworkIcons": true
-                            },
-                            "completeMandate": {
-                                "type": "PREFER_AUTH",
-                                "decisionManager": true,
-                                "consumerAuthentication": "3DS"
-                            },
-                            "data": {
-                                "orderInformation": {
-                                    "amountDetails": {
-                                        "totalAmount": "21.00",
-                                        "currency": "GBP"
-                                    },
-                                    "billTo": {
-                                        "email": "john.doe@visa.com",
-                                        "firstName": "John",
-                                        "lastName": "Doe",
-                                        "address1": "277 Square Street",
-                                        "administrativeArea": "Devon",
-                                        "buildingNumber": "2",
-                                        "country": "GB",
-                                        "locality": "Plymouth",
-                                        "postalCode": "PL1 1AS"
-                                    },
-                                    "shipTo": {
-                                        "firstName": "Joe",
-                                        "lastName": "Sims",
-                                        "address1": "15-17 Gloucester Street",
-                                        "administrativeArea": "NIR",
-                                        "buildingNumber": "2",
-                                        "country": "GB",
-                                        "locality": "Belfast",
-                                        "postalCode": "BT6 8JW"
-                                    }
-                                }
-                            }
-                        },
-                        "parentTag": "Unified Checkout with Alternate Payments (Online Bank Transfer)"
-                    },
-                    "example20": {
+                    "example31": {
                         "summary": "Generate Unified Checkout V1 Capture Context (Konbini (JP))",
                         "value": {
                             "targetOrigins": [
@@ -174559,100 +175627,6 @@
                             }
                         },
                         "parentTag": "Unified Checkout with Alternate Payments (Post-Pay Reference)"
-                    },
-                    "example21": {
-                        "summary": "Generate Unified Checkout V1 Capture Context (PayPal (US))",
-                        "value": {
-                            "targetOrigins": [
-                                "https://yourCheckoutPage.com"
-                            ],
-                            "allowedCardNetworks": [
-                                "VISA",
-                                "MASTERCARD",
-                                "AMEX"
-                            ],
-                            "allowedPaymentTypes": [
-                                "APPLEPAY",
-                                "GOOGLEPAY",
-                                "PANENTRY",
-                                "CHECK",
-                                "PAYPAL"
-                            ],
-                            "country": "US",
-                            "locale": "en_US",
-                            "completeMandate": {
-                                "type": "PREFER_AUTH"
-                            },
-                            "data": {
-                                "orderInformation": {
-                                    "amountDetails": {
-                                        "totalAmount": "21.60",
-                                        "currency": "USD",
-                                        "taxAmount": "1.60"
-                                    },
-                                    "lineItems": [
-                                        {
-                                            "productName": "Summer Occasion Top - Embroidered Tulle",
-                                            "quantity": 1,
-                                            "productDescription": "The perfect elevated summer staple",
-                                            "unitPrice": "20.00",
-                                            "taxAmount": "1.60",
-                                            "totalAmount": "20.00",
-                                            "typeOfSupply": "01",
-                                            "productSku": "SKU_123_SummerOT"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "parentTag": "Unified Checkout with Alternate Payments (Wallets)"
-                    },
-                    "example22": {
-                        "summary": "Generate Unified Checkout V1 Capture Context (Venmo (US))",
-                        "value": {
-                            "targetOrigins": [
-                                "https://yourCheckoutPage.com"
-                            ],
-                            "allowedCardNetworks": [
-                                "VISA",
-                                "MASTERCARD",
-                                "AMEX"
-                            ],
-                            "allowedPaymentTypes": [
-                                "APPLEPAY",
-                                "GOOGLEPAY",
-                                "PANENTRY",
-                                "CHECK",
-                                "VENMO"
-                            ],
-                            "country": "US",
-                            "locale": "en_US",
-                            "completeMandate": {
-                                "type": "PREFER_AUTH"
-                            },
-                            "data": {
-                                "orderInformation": {
-                                    "amountDetails": {
-                                        "totalAmount": "21.60",
-                                        "currency": "USD",
-                                        "taxAmount": "1.60"
-                                    },
-                                    "lineItems": [
-                                        {
-                                            "productName": "Summer Occasion Top - Embroidered Tulle",
-                                            "quantity": 1,
-                                            "productDescription": "The perfect elevated summer staple",
-                                            "unitPrice": "20.00",
-                                            "taxAmount": "1.60",
-                                            "totalAmount": "20.00",
-                                            "typeOfSupply": "01",
-                                            "productSku": "SKU_123_SummerOT"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "parentTag": "Unified Checkout with Alternate Payments (Wallets)"
                     }
                 },
                 "responses": {
@@ -174709,7 +175683,8 @@
                             "required": [
                                 "message",
                                 "reason"
-                            ]
+                            ],
+                            "x-components": {}
                         }
                     }
                 }

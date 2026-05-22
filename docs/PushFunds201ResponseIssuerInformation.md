@@ -1,5 +1,5 @@
 
-# PtsV2PayoutsPost201ResponseIssuerInformation
+# PushFunds201ResponseIssuerInformation
 
 ## Properties
 Name | Type | Description | Notes
@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **octOnlineGamblingCrossBorderIndicator** | **Boolean** | Indicates whether cross-border gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  |  [optional]
 **octOnlineGamblingFastFundsDomesticIndicator** | **Boolean** | Indicates whether domestic gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  |  [optional]
 **octOnlineGamblingFastFundsCrossBorderIndicator** | **Boolean** | Indicates whether cross-border gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  |  [optional]
-**serviceProcessingType** | **String** | This field contains values that identify the service type under which the transaction should be processed. The valid value for the Visa Alias Directory Service is A0 (Alias) and 00 (normal transaction).  |  [optional]
 
 
 

@@ -274,7 +274,8 @@ public class ApiClient {
 	 *
 	 * @return An instance of OkHttpClient
 	 */
-	public OkHttpClient getHttpClient() {
+	public OkHttpClient getHttpClient() throws ConfigException {
+	    httpClient = createInternalHttpClient();
 		return httpClient;
 	}
 
@@ -1270,12 +1271,16 @@ public class ApiClient {
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		try {
-			httpClient = HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+			this.getHttpClient();
 		} catch (ConfigException e) {
 			throw e;
 		}
 		return httpClient.newCall(request);
 	}
+
+	private OkHttpClient createInternalHttpClient() throws ConfigException {
+        return HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+    }
 	
 	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
 		if(requestBody!=null) {
