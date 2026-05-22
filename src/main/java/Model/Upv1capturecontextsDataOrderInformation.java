@@ -28,6 +28,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Upv1capturecontextsDataOrderInformation
@@ -44,7 +46,7 @@ public class Upv1capturecontextsDataOrderInformation {
   private Upv1capturecontextsDataOrderInformationShipTo shipTo = null;
 
   @SerializedName("lineItems")
-  private Upv1capturecontextsDataOrderInformationLineItems lineItems = null;
+  private List<Upv1capturecontextsDataOrderInformationLineItems> lineItems = null;
 
   @SerializedName("invoiceDetails")
   private Upv1capturecontextsDataOrderInformationInvoiceDetails invoiceDetails = null;
@@ -103,8 +105,16 @@ public class Upv1capturecontextsDataOrderInformation {
     this.shipTo = shipTo;
   }
 
-  public Upv1capturecontextsDataOrderInformation lineItems(Upv1capturecontextsDataOrderInformationLineItems lineItems) {
+  public Upv1capturecontextsDataOrderInformation lineItems(List<Upv1capturecontextsDataOrderInformationLineItems> lineItems) {
     this.lineItems = lineItems;
+    return this;
+  }
+
+  public Upv1capturecontextsDataOrderInformation addLineItemsItem(Upv1capturecontextsDataOrderInformationLineItems lineItemsItem) {
+    if (this.lineItems == null) {
+      this.lineItems = new ArrayList<Upv1capturecontextsDataOrderInformationLineItems>();
+    }
+    this.lineItems.add(lineItemsItem);
     return this;
   }
 
@@ -113,11 +123,11 @@ public class Upv1capturecontextsDataOrderInformation {
    * @return lineItems
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationLineItems getLineItems() {
+  public List<Upv1capturecontextsDataOrderInformationLineItems> getLineItems() {
     return lineItems;
   }
 
-  public void setLineItems(Upv1capturecontextsDataOrderInformationLineItems lineItems) {
+  public void setLineItems(List<Upv1capturecontextsDataOrderInformationLineItems> lineItems) {
     this.lineItems = lineItems;
   }
 

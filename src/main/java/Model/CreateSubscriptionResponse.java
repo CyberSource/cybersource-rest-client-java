@@ -110,10 +110,10 @@ public class CreateSubscriptionResponse {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - COMPLETED  - PENDING_REVIEW  - DECLINED  - INVALID_REQUEST 
+   * The status of the submitted transaction.  Possible values:  - COMPLETED  - DECLINED 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - COMPLETED  - PENDING_REVIEW  - DECLINED  - INVALID_REQUEST ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - COMPLETED  - DECLINED ")
   public String getStatus() {
     return status;
   }

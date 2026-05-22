@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse40011Details;
+import Model.InlineResponse4001Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,11 +32,14 @@ import java.util.List;
  */
 
 public class InlineResponse40011 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("correlationId")
+  private String correlationId = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("details")
+  private List<InlineResponse4001Details> details = null;
+
+  @SerializedName("informationLink")
+  private String informationLink = null;
 
   @SerializedName("message")
   private String message = null;
@@ -44,43 +47,66 @@ public class InlineResponse40011 {
   @SerializedName("reason")
   private String reason = null;
 
-  @SerializedName("details")
-  private List<InlineResponse40011Details> details = null;
-
-  public InlineResponse40011 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse40011 correlationId(String correlationId) {
+    this.correlationId = correlationId;
     return this;
   }
 
    /**
-   * Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @return submitTimeUtc
+   * Get correlationId
+   * @return correlationId
   **/
-  @ApiModelProperty(value = "Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "")
+  public String getCorrelationId() {
+    return correlationId;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setCorrelationId(String correlationId) {
+    this.correlationId = correlationId;
   }
 
-  public InlineResponse40011 status(String status) {
-    this.status = status;
+  public InlineResponse40011 details(List<InlineResponse4001Details> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse40011 addDetailsItem(InlineResponse4001Details detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<InlineResponse4001Details>();
+    }
+    this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * Possible values:   - &#x60;INVALID_REQUEST&#x60; 
-   * @return status
+   * Get details
+   * @return details
   **/
-  @ApiModelProperty(value = "Possible values:   - `INVALID_REQUEST` ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(value = "")
+  public List<InlineResponse4001Details> getDetails() {
+    return details;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setDetails(List<InlineResponse4001Details> details) {
+    this.details = details;
+  }
+
+  public InlineResponse40011 informationLink(String informationLink) {
+    this.informationLink = informationLink;
+    return this;
+  }
+
+   /**
+   * Get informationLink
+   * @return informationLink
+  **/
+  @ApiModelProperty(value = "")
+  public String getInformationLink() {
+    return informationLink;
+  }
+
+  public void setInformationLink(String informationLink) {
+    this.informationLink = informationLink;
   }
 
   public InlineResponse40011 message(String message) {
@@ -89,10 +115,10 @@ public class InlineResponse40011 {
   }
 
    /**
-   * The detail message related to the status and reason
+   * Get message
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason")
+  @ApiModelProperty(required = true, value = "")
   public String getMessage() {
     return message;
   }
@@ -107,42 +133,16 @@ public class InlineResponse40011 {
   }
 
    /**
-   * The reason of the status.  Possible values:   - &#x60;INVALID_REQUEST&#x60; 
+   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:   - `INVALID_REQUEST` ")
+  @ApiModelProperty(required = true, value = "Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT")
   public String getReason() {
     return reason;
   }
 
   public void setReason(String reason) {
     this.reason = reason;
-  }
-
-  public InlineResponse40011 details(List<InlineResponse40011Details> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse40011 addDetailsItem(InlineResponse40011Details detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<InlineResponse40011Details>();
-    }
-    this.details.add(detailsItem);
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse40011Details> getDetails() {
-    return details;
-  }
-
-  public void setDetails(List<InlineResponse40011Details> details) {
-    this.details = details;
   }
 
 
@@ -155,16 +155,16 @@ public class InlineResponse40011 {
       return false;
     }
     InlineResponse40011 inlineResponse40011 = (InlineResponse40011) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse40011.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse40011.status) &&
+    return Objects.equals(this.correlationId, inlineResponse40011.correlationId) &&
+        Objects.equals(this.details, inlineResponse40011.details) &&
+        Objects.equals(this.informationLink, inlineResponse40011.informationLink) &&
         Objects.equals(this.message, inlineResponse40011.message) &&
-        Objects.equals(this.reason, inlineResponse40011.reason) &&
-        Objects.equals(this.details, inlineResponse40011.details);
+        Objects.equals(this.reason, inlineResponse40011.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, message, reason, details);
+    return Objects.hash(correlationId, details, informationLink, message, reason);
   }
 
 
@@ -173,11 +173,11 @@ public class InlineResponse40011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse40011 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (informationLink != null) sb.append("    informationLink: ").append(toIndentedString(informationLink)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

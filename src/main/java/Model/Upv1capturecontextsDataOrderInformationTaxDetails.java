@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Upv1capturecontextsDataOrderInformationLineItemsTaxDetails
+ * Upv1capturecontextsDataOrderInformationTaxDetails
  */
 
-public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
+public class Upv1capturecontextsDataOrderInformationTaxDetails {
   @SerializedName("type")
   private String type = null;
 
@@ -50,7 +50,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   @SerializedName("exemptionCode")
   private String exemptionCode = null;
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails type(String type) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails type(String type) {
     this.type = type;
     return this;
   }
@@ -68,7 +68,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.type = type;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails amount(String amount) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails amount(String amount) {
     this.amount = amount;
     return this;
   }
@@ -86,7 +86,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.amount = amount;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails rate(String rate) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails rate(String rate) {
     this.rate = rate;
     return this;
   }
@@ -104,7 +104,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.rate = rate;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails code(String code) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails code(String code) {
     this.code = code;
     return this;
   }
@@ -122,7 +122,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.code = code;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails taxId(String taxId) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails taxId(String taxId) {
     this.taxId = taxId;
     return this;
   }
@@ -140,7 +140,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.taxId = taxId;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails applied(Boolean applied) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails applied(Boolean applied) {
     this.applied = applied;
     return this;
   }
@@ -158,7 +158,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     this.applied = applied;
   }
 
-  public Upv1capturecontextsDataOrderInformationLineItemsTaxDetails exemptionCode(String exemptionCode) {
+  public Upv1capturecontextsDataOrderInformationTaxDetails exemptionCode(String exemptionCode) {
     this.exemptionCode = exemptionCode;
     return this;
   }
@@ -185,14 +185,14 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Upv1capturecontextsDataOrderInformationLineItemsTaxDetails upv1capturecontextsDataOrderInformationLineItemsTaxDetails = (Upv1capturecontextsDataOrderInformationLineItemsTaxDetails) o;
-    return Objects.equals(this.type, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.type) &&
-        Objects.equals(this.amount, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.amount) &&
-        Objects.equals(this.rate, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.rate) &&
-        Objects.equals(this.code, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.code) &&
-        Objects.equals(this.taxId, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.taxId) &&
-        Objects.equals(this.applied, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.applied) &&
-        Objects.equals(this.exemptionCode, upv1capturecontextsDataOrderInformationLineItemsTaxDetails.exemptionCode);
+    Upv1capturecontextsDataOrderInformationTaxDetails upv1capturecontextsDataOrderInformationTaxDetails = (Upv1capturecontextsDataOrderInformationTaxDetails) o;
+    return Objects.equals(this.type, upv1capturecontextsDataOrderInformationTaxDetails.type) &&
+        Objects.equals(this.amount, upv1capturecontextsDataOrderInformationTaxDetails.amount) &&
+        Objects.equals(this.rate, upv1capturecontextsDataOrderInformationTaxDetails.rate) &&
+        Objects.equals(this.code, upv1capturecontextsDataOrderInformationTaxDetails.code) &&
+        Objects.equals(this.taxId, upv1capturecontextsDataOrderInformationTaxDetails.taxId) &&
+        Objects.equals(this.applied, upv1capturecontextsDataOrderInformationTaxDetails.applied) &&
+        Objects.equals(this.exemptionCode, upv1capturecontextsDataOrderInformationTaxDetails.exemptionCode);
   }
 
   @Override
@@ -204,7 +204,7 @@ public class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails {\n");
+    sb.append("class Upv1capturecontextsDataOrderInformationTaxDetails {\n");
     
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

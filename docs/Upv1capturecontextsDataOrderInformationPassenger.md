@@ -1,5 +1,5 @@
 
-# Upv1capturecontextsDataOrderInformationLineItemsPassenger
+# Upv1capturecontextsDataOrderInformationPassenger
 
 ## Properties
 Name | Type | Description | Notes

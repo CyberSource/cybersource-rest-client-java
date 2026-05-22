@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PtsV2PayoutsPost201ResponseIssuerInformation
+ * PushFunds201ResponseIssuerInformation
  */
 
-public class PtsV2PayoutsPost201ResponseIssuerInformation {
+public class PushFunds201ResponseIssuerInformation {
   @SerializedName("octDomesticParticipantIndicator")
   private Boolean octDomesticParticipantIndicator = null;
 
@@ -74,10 +74,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
   @SerializedName("octOnlineGamblingFastFundsCrossBorderIndicator")
   private Boolean octOnlineGamblingFastFundsCrossBorderIndicator = null;
 
-  @SerializedName("serviceProcessingType")
-  private String serviceProcessingType = null;
-
-  public PtsV2PayoutsPost201ResponseIssuerInformation octDomesticParticipantIndicator(Boolean octDomesticParticipantIndicator) {
+  public PushFunds201ResponseIssuerInformation octDomesticParticipantIndicator(Boolean octDomesticParticipantIndicator) {
     this.octDomesticParticipantIndicator = octDomesticParticipantIndicator;
     return this;
   }
@@ -95,7 +92,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octDomesticParticipantIndicator = octDomesticParticipantIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octCrossBorderParticipantIndicator(Boolean octCrossBorderParticipantIndicator) {
+  public PushFunds201ResponseIssuerInformation octCrossBorderParticipantIndicator(Boolean octCrossBorderParticipantIndicator) {
     this.octCrossBorderParticipantIndicator = octCrossBorderParticipantIndicator;
     return this;
   }
@@ -113,7 +110,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octCrossBorderParticipantIndicator = octCrossBorderParticipantIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octMoneyTransferDomesticIndicator(Boolean octMoneyTransferDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octMoneyTransferDomesticIndicator(Boolean octMoneyTransferDomesticIndicator) {
     this.octMoneyTransferDomesticIndicator = octMoneyTransferDomesticIndicator;
     return this;
   }
@@ -131,7 +128,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octMoneyTransferDomesticIndicator = octMoneyTransferDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octMoneyTransferCrossBorderIndicator(Boolean octMoneyTransferCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octMoneyTransferCrossBorderIndicator(Boolean octMoneyTransferCrossBorderIndicator) {
     this.octMoneyTransferCrossBorderIndicator = octMoneyTransferCrossBorderIndicator;
     return this;
   }
@@ -149,7 +146,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octMoneyTransferCrossBorderIndicator = octMoneyTransferCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octMoneyTransferFastFundsDomesticIndicator(Boolean octMoneyTransferFastFundsDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octMoneyTransferFastFundsDomesticIndicator(Boolean octMoneyTransferFastFundsDomesticIndicator) {
     this.octMoneyTransferFastFundsDomesticIndicator = octMoneyTransferFastFundsDomesticIndicator;
     return this;
   }
@@ -167,7 +164,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octMoneyTransferFastFundsDomesticIndicator = octMoneyTransferFastFundsDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octMoneyTransferFastFundsCrossBorderIndicator(Boolean octMoneyTransferFastFundsCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octMoneyTransferFastFundsCrossBorderIndicator(Boolean octMoneyTransferFastFundsCrossBorderIndicator) {
     this.octMoneyTransferFastFundsCrossBorderIndicator = octMoneyTransferFastFundsCrossBorderIndicator;
     return this;
   }
@@ -185,7 +182,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octMoneyTransferFastFundsCrossBorderIndicator = octMoneyTransferFastFundsCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octMoneyTransferMerchantCountryRestricted(Boolean octMoneyTransferMerchantCountryRestricted) {
+  public PushFunds201ResponseIssuerInformation octMoneyTransferMerchantCountryRestricted(Boolean octMoneyTransferMerchantCountryRestricted) {
     this.octMoneyTransferMerchantCountryRestricted = octMoneyTransferMerchantCountryRestricted;
     return this;
   }
@@ -203,7 +200,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octMoneyTransferMerchantCountryRestricted = octMoneyTransferMerchantCountryRestricted;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octNonMoneyTransferDomesticIndicator(Boolean octNonMoneyTransferDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octNonMoneyTransferDomesticIndicator(Boolean octNonMoneyTransferDomesticIndicator) {
     this.octNonMoneyTransferDomesticIndicator = octNonMoneyTransferDomesticIndicator;
     return this;
   }
@@ -221,7 +218,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octNonMoneyTransferDomesticIndicator = octNonMoneyTransferDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octNonMoneyTransferCrossBorderIndicator(Boolean octNonMoneyTransferCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octNonMoneyTransferCrossBorderIndicator(Boolean octNonMoneyTransferCrossBorderIndicator) {
     this.octNonMoneyTransferCrossBorderIndicator = octNonMoneyTransferCrossBorderIndicator;
     return this;
   }
@@ -239,7 +236,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octNonMoneyTransferCrossBorderIndicator = octNonMoneyTransferCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octNonMoneyTransferFastFundsDomesticIndicator(Boolean octNonMoneyTransferFastFundsDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octNonMoneyTransferFastFundsDomesticIndicator(Boolean octNonMoneyTransferFastFundsDomesticIndicator) {
     this.octNonMoneyTransferFastFundsDomesticIndicator = octNonMoneyTransferFastFundsDomesticIndicator;
     return this;
   }
@@ -257,7 +254,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octNonMoneyTransferFastFundsDomesticIndicator = octNonMoneyTransferFastFundsDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octNonMoneyTransferFastFundsCrossBorderIndicator(Boolean octNonMoneyTransferFastFundsCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octNonMoneyTransferFastFundsCrossBorderIndicator(Boolean octNonMoneyTransferFastFundsCrossBorderIndicator) {
     this.octNonMoneyTransferFastFundsCrossBorderIndicator = octNonMoneyTransferFastFundsCrossBorderIndicator;
     return this;
   }
@@ -275,7 +272,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octNonMoneyTransferFastFundsCrossBorderIndicator = octNonMoneyTransferFastFundsCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octOnlineGamblingDomesticIndicator(Boolean octOnlineGamblingDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octOnlineGamblingDomesticIndicator(Boolean octOnlineGamblingDomesticIndicator) {
     this.octOnlineGamblingDomesticIndicator = octOnlineGamblingDomesticIndicator;
     return this;
   }
@@ -293,7 +290,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octOnlineGamblingDomesticIndicator = octOnlineGamblingDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octOnlineGamblingCrossBorderIndicator(Boolean octOnlineGamblingCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octOnlineGamblingCrossBorderIndicator(Boolean octOnlineGamblingCrossBorderIndicator) {
     this.octOnlineGamblingCrossBorderIndicator = octOnlineGamblingCrossBorderIndicator;
     return this;
   }
@@ -311,7 +308,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octOnlineGamblingCrossBorderIndicator = octOnlineGamblingCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octOnlineGamblingFastFundsDomesticIndicator(Boolean octOnlineGamblingFastFundsDomesticIndicator) {
+  public PushFunds201ResponseIssuerInformation octOnlineGamblingFastFundsDomesticIndicator(Boolean octOnlineGamblingFastFundsDomesticIndicator) {
     this.octOnlineGamblingFastFundsDomesticIndicator = octOnlineGamblingFastFundsDomesticIndicator;
     return this;
   }
@@ -329,7 +326,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octOnlineGamblingFastFundsDomesticIndicator = octOnlineGamblingFastFundsDomesticIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation octOnlineGamblingFastFundsCrossBorderIndicator(Boolean octOnlineGamblingFastFundsCrossBorderIndicator) {
+  public PushFunds201ResponseIssuerInformation octOnlineGamblingFastFundsCrossBorderIndicator(Boolean octOnlineGamblingFastFundsCrossBorderIndicator) {
     this.octOnlineGamblingFastFundsCrossBorderIndicator = octOnlineGamblingFastFundsCrossBorderIndicator;
     return this;
   }
@@ -347,24 +344,6 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     this.octOnlineGamblingFastFundsCrossBorderIndicator = octOnlineGamblingFastFundsCrossBorderIndicator;
   }
 
-  public PtsV2PayoutsPost201ResponseIssuerInformation serviceProcessingType(String serviceProcessingType) {
-    this.serviceProcessingType = serviceProcessingType;
-    return this;
-  }
-
-   /**
-   * This field contains values that identify the service type under which the transaction should be processed. The valid value for the Visa Alias Directory Service is A0 (Alias) and 00 (normal transaction). 
-   * @return serviceProcessingType
-  **/
-  @ApiModelProperty(value = "This field contains values that identify the service type under which the transaction should be processed. The valid value for the Visa Alias Directory Service is A0 (Alias) and 00 (normal transaction). ")
-  public String getServiceProcessingType() {
-    return serviceProcessingType;
-  }
-
-  public void setServiceProcessingType(String serviceProcessingType) {
-    this.serviceProcessingType = serviceProcessingType;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -374,35 +353,34 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PtsV2PayoutsPost201ResponseIssuerInformation ptsV2PayoutsPost201ResponseIssuerInformation = (PtsV2PayoutsPost201ResponseIssuerInformation) o;
-    return Objects.equals(this.octDomesticParticipantIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octDomesticParticipantIndicator) &&
-        Objects.equals(this.octCrossBorderParticipantIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octCrossBorderParticipantIndicator) &&
-        Objects.equals(this.octMoneyTransferDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octMoneyTransferDomesticIndicator) &&
-        Objects.equals(this.octMoneyTransferCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octMoneyTransferCrossBorderIndicator) &&
-        Objects.equals(this.octMoneyTransferFastFundsDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octMoneyTransferFastFundsDomesticIndicator) &&
-        Objects.equals(this.octMoneyTransferFastFundsCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octMoneyTransferFastFundsCrossBorderIndicator) &&
-        Objects.equals(this.octMoneyTransferMerchantCountryRestricted, ptsV2PayoutsPost201ResponseIssuerInformation.octMoneyTransferMerchantCountryRestricted) &&
-        Objects.equals(this.octNonMoneyTransferDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octNonMoneyTransferDomesticIndicator) &&
-        Objects.equals(this.octNonMoneyTransferCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octNonMoneyTransferCrossBorderIndicator) &&
-        Objects.equals(this.octNonMoneyTransferFastFundsDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octNonMoneyTransferFastFundsDomesticIndicator) &&
-        Objects.equals(this.octNonMoneyTransferFastFundsCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octNonMoneyTransferFastFundsCrossBorderIndicator) &&
-        Objects.equals(this.octOnlineGamblingDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octOnlineGamblingDomesticIndicator) &&
-        Objects.equals(this.octOnlineGamblingCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octOnlineGamblingCrossBorderIndicator) &&
-        Objects.equals(this.octOnlineGamblingFastFundsDomesticIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octOnlineGamblingFastFundsDomesticIndicator) &&
-        Objects.equals(this.octOnlineGamblingFastFundsCrossBorderIndicator, ptsV2PayoutsPost201ResponseIssuerInformation.octOnlineGamblingFastFundsCrossBorderIndicator) &&
-        Objects.equals(this.serviceProcessingType, ptsV2PayoutsPost201ResponseIssuerInformation.serviceProcessingType);
+    PushFunds201ResponseIssuerInformation pushFunds201ResponseIssuerInformation = (PushFunds201ResponseIssuerInformation) o;
+    return Objects.equals(this.octDomesticParticipantIndicator, pushFunds201ResponseIssuerInformation.octDomesticParticipantIndicator) &&
+        Objects.equals(this.octCrossBorderParticipantIndicator, pushFunds201ResponseIssuerInformation.octCrossBorderParticipantIndicator) &&
+        Objects.equals(this.octMoneyTransferDomesticIndicator, pushFunds201ResponseIssuerInformation.octMoneyTransferDomesticIndicator) &&
+        Objects.equals(this.octMoneyTransferCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octMoneyTransferCrossBorderIndicator) &&
+        Objects.equals(this.octMoneyTransferFastFundsDomesticIndicator, pushFunds201ResponseIssuerInformation.octMoneyTransferFastFundsDomesticIndicator) &&
+        Objects.equals(this.octMoneyTransferFastFundsCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octMoneyTransferFastFundsCrossBorderIndicator) &&
+        Objects.equals(this.octMoneyTransferMerchantCountryRestricted, pushFunds201ResponseIssuerInformation.octMoneyTransferMerchantCountryRestricted) &&
+        Objects.equals(this.octNonMoneyTransferDomesticIndicator, pushFunds201ResponseIssuerInformation.octNonMoneyTransferDomesticIndicator) &&
+        Objects.equals(this.octNonMoneyTransferCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octNonMoneyTransferCrossBorderIndicator) &&
+        Objects.equals(this.octNonMoneyTransferFastFundsDomesticIndicator, pushFunds201ResponseIssuerInformation.octNonMoneyTransferFastFundsDomesticIndicator) &&
+        Objects.equals(this.octNonMoneyTransferFastFundsCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octNonMoneyTransferFastFundsCrossBorderIndicator) &&
+        Objects.equals(this.octOnlineGamblingDomesticIndicator, pushFunds201ResponseIssuerInformation.octOnlineGamblingDomesticIndicator) &&
+        Objects.equals(this.octOnlineGamblingCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octOnlineGamblingCrossBorderIndicator) &&
+        Objects.equals(this.octOnlineGamblingFastFundsDomesticIndicator, pushFunds201ResponseIssuerInformation.octOnlineGamblingFastFundsDomesticIndicator) &&
+        Objects.equals(this.octOnlineGamblingFastFundsCrossBorderIndicator, pushFunds201ResponseIssuerInformation.octOnlineGamblingFastFundsCrossBorderIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(octDomesticParticipantIndicator, octCrossBorderParticipantIndicator, octMoneyTransferDomesticIndicator, octMoneyTransferCrossBorderIndicator, octMoneyTransferFastFundsDomesticIndicator, octMoneyTransferFastFundsCrossBorderIndicator, octMoneyTransferMerchantCountryRestricted, octNonMoneyTransferDomesticIndicator, octNonMoneyTransferCrossBorderIndicator, octNonMoneyTransferFastFundsDomesticIndicator, octNonMoneyTransferFastFundsCrossBorderIndicator, octOnlineGamblingDomesticIndicator, octOnlineGamblingCrossBorderIndicator, octOnlineGamblingFastFundsDomesticIndicator, octOnlineGamblingFastFundsCrossBorderIndicator, serviceProcessingType);
+    return Objects.hash(octDomesticParticipantIndicator, octCrossBorderParticipantIndicator, octMoneyTransferDomesticIndicator, octMoneyTransferCrossBorderIndicator, octMoneyTransferFastFundsDomesticIndicator, octMoneyTransferFastFundsCrossBorderIndicator, octMoneyTransferMerchantCountryRestricted, octNonMoneyTransferDomesticIndicator, octNonMoneyTransferCrossBorderIndicator, octNonMoneyTransferFastFundsDomesticIndicator, octNonMoneyTransferFastFundsCrossBorderIndicator, octOnlineGamblingDomesticIndicator, octOnlineGamblingCrossBorderIndicator, octOnlineGamblingFastFundsDomesticIndicator, octOnlineGamblingFastFundsCrossBorderIndicator);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PtsV2PayoutsPost201ResponseIssuerInformation {\n");
+    sb.append("class PushFunds201ResponseIssuerInformation {\n");
     
     if (octDomesticParticipantIndicator != null) sb.append("    octDomesticParticipantIndicator: ").append(toIndentedString(octDomesticParticipantIndicator)).append("\n");
     if (octCrossBorderParticipantIndicator != null) sb.append("    octCrossBorderParticipantIndicator: ").append(toIndentedString(octCrossBorderParticipantIndicator)).append("\n");
@@ -419,7 +397,6 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     if (octOnlineGamblingCrossBorderIndicator != null) sb.append("    octOnlineGamblingCrossBorderIndicator: ").append(toIndentedString(octOnlineGamblingCrossBorderIndicator)).append("\n");
     if (octOnlineGamblingFastFundsDomesticIndicator != null) sb.append("    octOnlineGamblingFastFundsDomesticIndicator: ").append(toIndentedString(octOnlineGamblingFastFundsDomesticIndicator)).append("\n");
     if (octOnlineGamblingFastFundsCrossBorderIndicator != null) sb.append("    octOnlineGamblingFastFundsCrossBorderIndicator: ").append(toIndentedString(octOnlineGamblingFastFundsCrossBorderIndicator)).append("\n");
-    if (serviceProcessingType != null) sb.append("    serviceProcessingType: ").append(toIndentedString(serviceProcessingType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

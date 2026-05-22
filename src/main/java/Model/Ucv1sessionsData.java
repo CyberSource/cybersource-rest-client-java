@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ucv1sessionsDataAggregatorInformation;
 import Model.Ucv1sessionsDataBuyerInformation;
+import Model.Ucv1sessionsDataClientReferenceInformation;
 import Model.Ucv1sessionsDataConsumerAuthenticationInformation;
 import Model.Ucv1sessionsDataDeviceInformation;
 import Model.Ucv1sessionsDataInstallmentInformation;
@@ -27,7 +28,6 @@ import Model.Ucv1sessionsDataPaymentInformation;
 import Model.Ucv1sessionsDataProcessingInformation;
 import Model.Ucv1sessionsDataRecipientInformation;
 import Model.Ucv1sessionsDataSenderInformation;
-import Model.Upv1capturecontextsDataClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,7 +54,7 @@ public class Ucv1sessionsData {
   private Ucv1sessionsDataBuyerInformation buyerInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Upv1capturecontextsDataClientReferenceInformation clientReferenceInformation = null;
+  private Ucv1sessionsDataClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
   private Ucv1sessionsDataConsumerAuthenticationInformation consumerAuthenticationInformation = null;
@@ -137,7 +137,7 @@ public class Ucv1sessionsData {
     this.buyerInformation = buyerInformation;
   }
 
-  public Ucv1sessionsData clientReferenceInformation(Upv1capturecontextsDataClientReferenceInformation clientReferenceInformation) {
+  public Ucv1sessionsData clientReferenceInformation(Ucv1sessionsDataClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -147,11 +147,11 @@ public class Ucv1sessionsData {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataClientReferenceInformation getClientReferenceInformation() {
+  public Ucv1sessionsDataClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Upv1capturecontextsDataClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ucv1sessionsDataClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
