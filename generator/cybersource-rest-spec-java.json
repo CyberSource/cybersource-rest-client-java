@@ -49202,6 +49202,10 @@
                             "title": "ptsV2CreateOrderPost201Response",
                             "type": "object",
                             "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "A unique identification number assigned by CyberSource to identify the order request. Use this id to call subsequent services such as the authorization API."
+                                },
                                 "submitTimeUtc": {
                                     "type": "string",
                                     "description": "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ`\n**Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.).\nThe `T` separates the date and the time. The `Z` indicates UTC.\n\nReturned by Cybersource for all services.\n"
