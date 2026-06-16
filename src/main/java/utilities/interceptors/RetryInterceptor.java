@@ -1,6 +1,7 @@
 package utilities.interceptors;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -51,4 +52,9 @@ public class RetryInterceptor implements Interceptor {
 		
 		return response;
 	}
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(requestMetrics);
+    }
 }

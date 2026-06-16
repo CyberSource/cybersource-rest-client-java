@@ -94,7 +94,6 @@ public class HttpClientFactory {
                 additionalSettings.getCustomX509TrustManager(),
                 additionalSettings.getCustomHostnameVerifier(),
                 additionalSettings.getCustomRetryOnConnectionFailure(),
-                additionalSettings.getCustomNetworkEventListener(),
                 additionalSettings.getCustomProxy(),
                 additionalSettings.getCustomProxyAuthenticator()
         );

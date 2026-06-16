@@ -2,6 +2,8 @@ package utilities.telemetry;
 
 import com.google.gson.Gson;
 
+import java.util.Objects;
+
 public class RequestTransactionMetrics {
 	private String responseCorrelationId;
 	private long roundaboutTime;
@@ -75,4 +77,9 @@ public class RequestTransactionMetrics {
 		this.setRetryCount(noOfRetries);
 		return this;
 	}
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(responseCorrelationId, roundaboutTime, computeTime, retryCount);
+    }
 }
