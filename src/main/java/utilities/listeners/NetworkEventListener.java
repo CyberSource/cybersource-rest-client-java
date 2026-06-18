@@ -6,18 +6,18 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+//import java.util.concurrent.atomic.AtomicLong;
 
 public class NetworkEventListener  extends EventListener {
-    public static final Factory FACTORY = new Factory() {
-        final AtomicLong nextCallId = new AtomicLong(1L);
+    // public static final Factory FACTORY = new Factory() {
+    //     final AtomicLong nextCallId = new AtomicLong(1L);
 
-        @Override public EventListener create(Call call) {
-            long callId = nextCallId.getAndIncrement();
-            System.out.printf("%04d %s%n", callId, call.request().url());
-            return new NetworkEventListener(callId, System.nanoTime());
-        }
-    };
+    //     @Override public EventListener create(Call call) {
+    //         long callId = nextCallId.getAndIncrement();
+    //         System.out.printf("%04d %s%n", callId, call.request().url());
+    //         return new NetworkEventListener(callId, System.nanoTime());
+    //     }
+    // };
 
     final long callId;
     final long callStartNanos;

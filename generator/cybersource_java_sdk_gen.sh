@@ -31,6 +31,8 @@ git checkout ../src/main/java/Model/AccessTokenResponse.java
 git checkout ../src/main/java/Model/CreateAccessTokenRequest.java
 git checkout ../src/main/java/Invokers/HttpClientFactory.java
 git checkout ../src/main/java/Invokers/HttpClientFactoryAdditionalSettings.java
+git checkout ../src/test/java/Invokers/HttpClientFactoryMemoryLeakTest.java
+git checkout ../src/main/java/Invokers/TimedCache.java
 
 git checkout ../pom.xml
 git checkout ../README.md

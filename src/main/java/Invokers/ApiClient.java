@@ -192,12 +192,13 @@ public class ApiClient {
 	private String getClientID() {
 		String propertyVersionInfo = null;
 		final Properties properties = new Properties();
-		try {
-			properties.load(
-					this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));
-			propertyVersionInfo = properties.getProperty("sdk.version");
+		try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties")) {
+			if (is != null) {
+				properties.load(is);
+				propertyVersionInfo = properties.getProperty("sdk.version");
+			}
 		} catch (IOException e) {
-
+			logger.debug("Unable to load SDK version from properties file: " + e.getMessage());
 		}
 
 		return propertyVersionInfo;
@@ -1091,9 +1092,10 @@ public class ApiClient {
 	 * @throws ApiException If fail to execute the call
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
+		Response response = null;
 		try {
 			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime()) / 1000000);
-			Response response = call.execute();
+			response = call.execute();
 			String responseCode = String.valueOf(response.code());
 			this.status = response.message();
 			this.responseCode = responseCode;
@@ -1106,10 +1108,6 @@ public class ApiClient {
 
 			T data = handleResponse(response, returnType);
 			
-			if (returnType != null || call.request().method().equalsIgnoreCase("DELETE") || responseCode.equalsIgnoreCase("202")) {
-				response.body().close();
-			}
-			
 			logger.info("HTTP Response Body :\n{}", data);
 
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), response.message(), data);
@@ -1120,6 +1118,10 @@ public class ApiClient {
 		catch (NullPointerException e) {
 			logger.error("ApiException : " + e.getMessage());
 			throw new ApiException(e);
+		} finally {
+			if (response != null && response.body() != null) {
+				response.body().close();
+			}
 		}
 	}
 
@@ -1635,9 +1637,10 @@ public class ApiClient {
 			};
 
 			KeyStore merchantKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
-			FileInputStream file = new FileInputStream(
-					new File(merchantConfig.getClientCertDirectory(), merchantConfig.getClientCertFile()));
-			merchantKeyStore.load(file, merchantConfig.getClientCertPassword().toCharArray());
+			try (FileInputStream file = new FileInputStream(
+					new File(merchantConfig.getClientCertDirectory(), merchantConfig.getClientCertFile()))) {
+				merchantKeyStore.load(file, merchantConfig.getClientCertPassword().toCharArray());
+			}
 
 			KeyManagerFactory keyManagerFactory = KeyManagerFactory
 					.getInstance(KeyManagerFactory.getDefaultAlgorithm());
@@ -1649,7 +1652,7 @@ public class ApiClient {
 			additionalSettings.setCustomX509TrustManager((X509TrustManager) trustAllCerts[0]);
 		} catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException
 				| KeyManagementException | UnrecoverableKeyException ex) {
-
+			logger.error("Failed to load client certificate for mTLS authentication: " + ex.getMessage(), ex);
 		}
 	}
 
