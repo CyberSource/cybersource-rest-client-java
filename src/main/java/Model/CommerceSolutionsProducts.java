@@ -139,8 +139,48 @@ public class CommerceSolutionsProducts {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CommerceSolutionsProducts {\n");
+    
+    if (tokenManagement != null) sb.append("    tokenManagement: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenManagement").matches() ? "[REDACTED]" : toIndentedString(tokenManagement)).append("\n");
+    if (accountUpdater != null) sb.append("    accountUpdater: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountUpdater").matches() ? "[REDACTED]" : toIndentedString(accountUpdater)).append("\n");
+    if (binLookup != null) sb.append("    binLookup: ").append(SENSITIVE_FIELD_PATTERN.matcher("binLookup").matches() ? "[REDACTED]" : toIndentedString(binLookup)).append("\n");
+    if (agenticCommerce != null) sb.append("    agenticCommerce: ").append(SENSITIVE_FIELD_PATTERN.matcher("agenticCommerce").matches() ? "[REDACTED]" : toIndentedString(agenticCommerce)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProducts {\n");
     

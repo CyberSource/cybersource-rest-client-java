@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.ProcessorInformationSellerProtection;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification;
@@ -23,7 +24,6 @@ import Model.PtsV2PaymentsPost201ResponseProcessorInformationCustomer;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
-import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -145,7 +145,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   private String publicKey = null;
 
   @SerializedName("sellerProtection")
-  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
+  private ProcessorInformationSellerProtection sellerProtection = null;
 
   @SerializedName("transactionExpiryDate")
   private String transactionExpiryDate = null;
@@ -813,7 +813,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.publicKey = publicKey;
   }
 
-  public PtsV2PaymentsPost201ResponseProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public PtsV2PaymentsPost201ResponseProcessorInformation sellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
     return this;
   }
@@ -823,11 +823,11 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
    * @return sellerProtection
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
+  public ProcessorInformationSellerProtection getSellerProtection() {
     return sellerProtection;
   }
 
-  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public void setSellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
   }
 
@@ -1113,8 +1113,92 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseProcessorInformation {\n");
+    
+    if (authIndicator != null) sb.append("    authIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("authIndicator").matches() ? "[REDACTED]" : toIndentedString(authIndicator)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("approvalCode").matches() ? "[REDACTED]" : toIndentedString(approvalCode)).append("\n");
+    if (cardReferenceData != null) sb.append("    cardReferenceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardReferenceData").matches() ? "[REDACTED]" : toIndentedString(cardReferenceData)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkTransactionId").matches() ? "[REDACTED]" : toIndentedString(networkTransactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
+    if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCodeSource").matches() ? "[REDACTED]" : toIndentedString(responseCodeSource)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
+    if (responseCategoryCode != null) sb.append("    responseCategoryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCategoryCode").matches() ? "[REDACTED]" : toIndentedString(responseCategoryCode)).append("\n");
+    if (responseSourceCode != null) sb.append("    responseSourceCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseSourceCode").matches() ? "[REDACTED]" : toIndentedString(responseSourceCode)).append("\n");
+    if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("forwardedAcquirerCode").matches() ? "[REDACTED]" : toIndentedString(forwardedAcquirerCode)).append("\n");
+    if (settlementDate != null) sb.append("    settlementDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementDate").matches() ? "[REDACTED]" : toIndentedString(settlementDate)).append("\n");
+    if (sequenceNumber != null) sb.append("    sequenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("sequenceNumber").matches() ? "[REDACTED]" : toIndentedString(sequenceNumber)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(SENSITIVE_FIELD_PATTERN.matcher("avs").matches() ? "[REDACTED]" : toIndentedString(avs)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardVerification").matches() ? "[REDACTED]" : toIndentedString(cardVerification)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantAdvice").matches() ? "[REDACTED]" : toIndentedString(merchantAdvice)).append("\n");
+    if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(SENSITIVE_FIELD_PATTERN.matcher("electronicVerificationResults").matches() ? "[REDACTED]" : toIndentedString(electronicVerificationResults)).append("\n");
+    if (achVerification != null) sb.append("    achVerification: ").append(SENSITIVE_FIELD_PATTERN.matcher("achVerification").matches() ? "[REDACTED]" : toIndentedString(achVerification)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
+    if (consumerAuthenticationResponse != null) sb.append("    consumerAuthenticationResponse: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerAuthenticationResponse").matches() ? "[REDACTED]" : toIndentedString(consumerAuthenticationResponse)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("systemTraceAuditNumber").matches() ? "[REDACTED]" : toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (transactionIntegrityCode != null) sb.append("    transactionIntegrityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionIntegrityCode").matches() ? "[REDACTED]" : toIndentedString(transactionIntegrityCode)).append("\n");
+    if (amexVerbalAuthReferenceNumber != null) sb.append("    amexVerbalAuthReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexVerbalAuthReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(amexVerbalAuthReferenceNumber)).append("\n");
+    if (masterCardServiceCode != null) sb.append("    masterCardServiceCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardServiceCode").matches() ? "[REDACTED]" : toIndentedString(masterCardServiceCode)).append("\n");
+    if (masterCardServiceReplyCode != null) sb.append("    masterCardServiceReplyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardServiceReplyCode").matches() ? "[REDACTED]" : toIndentedString(masterCardServiceReplyCode)).append("\n");
+    if (masterCardAuthenticationType != null) sb.append("    masterCardAuthenticationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardAuthenticationType").matches() ? "[REDACTED]" : toIndentedString(masterCardAuthenticationType)).append("\n");
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (routing != null) sb.append("    routing: ").append(SENSITIVE_FIELD_PATTERN.matcher("routing").matches() ? "[REDACTED]" : toIndentedString(routing)).append("\n");
+    if (merchantNumber != null) sb.append("    merchantNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantNumber").matches() ? "[REDACTED]" : toIndentedString(merchantNumber)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("retrievalReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentUrl").matches() ? "[REDACTED]" : toIndentedString(paymentUrl)).append("\n");
+    if (completeUrl != null) sb.append("    completeUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("completeUrl").matches() ? "[REDACTED]" : toIndentedString(completeUrl)).append("\n");
+    if (signature != null) sb.append("    signature: ").append(SENSITIVE_FIELD_PATTERN.matcher("signature").matches() ? "[REDACTED]" : toIndentedString(signature)).append("\n");
+    if (publicKey != null) sb.append("    publicKey: ").append(SENSITIVE_FIELD_PATTERN.matcher("publicKey").matches() ? "[REDACTED]" : toIndentedString(publicKey)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerProtection").matches() ? "[REDACTED]" : toIndentedString(sellerProtection)).append("\n");
+    if (transactionExpiryDate != null) sb.append("    transactionExpiryDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionExpiryDate").matches() ? "[REDACTED]" : toIndentedString(transactionExpiryDate)).append("\n");
+    if (customUrl != null) sb.append("    customUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("customUrl").matches() ? "[REDACTED]" : toIndentedString(customUrl)).append("\n");
+    if (schemeAssignedId != null) sb.append("    schemeAssignedId: ").append(SENSITIVE_FIELD_PATTERN.matcher("schemeAssignedId").matches() ? "[REDACTED]" : toIndentedString(schemeAssignedId)).append("\n");
+    if (deviceUrl != null) sb.append("    deviceUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceUrl").matches() ? "[REDACTED]" : toIndentedString(deviceUrl)).append("\n");
+    if (disbursementMode != null) sb.append("    disbursementMode: ").append(SENSITIVE_FIELD_PATTERN.matcher("disbursementMode").matches() ? "[REDACTED]" : toIndentedString(disbursementMode)).append("\n");
+    if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("updateTimeUtc").matches() ? "[REDACTED]" : toIndentedString(updateTimeUtc)).append("\n");
+    if (expirationTimeUtc != null) sb.append("    expirationTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationTimeUtc").matches() ? "[REDACTED]" : toIndentedString(expirationTimeUtc)).append("\n");
+    if (orderId != null) sb.append("    orderId: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderId").matches() ? "[REDACTED]" : toIndentedString(orderId)).append("\n");
+    if (orderStatus != null) sb.append("    orderStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderStatus").matches() ? "[REDACTED]" : toIndentedString(orderStatus)).append("\n");
+    if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantRiskPrediction").matches() ? "[REDACTED]" : toIndentedString(merchantRiskPrediction)).append("\n");
+    if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("cedpVerifiedIndicator").matches() ? "[REDACTED]" : toIndentedString(cedpVerifiedIndicator)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformation {\n");
     

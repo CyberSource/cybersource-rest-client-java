@@ -208,8 +208,51 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseEmbeddedActions {\n");
+    
+    if (CAPTURE != null) sb.append("    CAPTURE: ").append(SENSITIVE_FIELD_PATTERN.matcher("CAPTURE").matches() ? "[REDACTED]" : toIndentedString(CAPTURE)).append("\n");
+    if (DECISION != null) sb.append("    DECISION: ").append(SENSITIVE_FIELD_PATTERN.matcher("DECISION").matches() ? "[REDACTED]" : toIndentedString(DECISION)).append("\n");
+    if (CONSUMER_AUTHENTICATION != null) sb.append("    CONSUMER_AUTHENTICATION: ").append(SENSITIVE_FIELD_PATTERN.matcher("CONSUMER_AUTHENTICATION").matches() ? "[REDACTED]" : toIndentedString(CONSUMER_AUTHENTICATION)).append("\n");
+    if (VALIDATE_CONSUMER_AUTHENTICATION != null) sb.append("    VALIDATE_CONSUMER_AUTHENTICATION: ").append(SENSITIVE_FIELD_PATTERN.matcher("VALIDATE_CONSUMER_AUTHENTICATION").matches() ? "[REDACTED]" : toIndentedString(VALIDATE_CONSUMER_AUTHENTICATION)).append("\n");
+    if (WATCHLIST_SCREENING != null) sb.append("    WATCHLIST_SCREENING: ").append(SENSITIVE_FIELD_PATTERN.matcher("WATCHLIST_SCREENING").matches() ? "[REDACTED]" : toIndentedString(WATCHLIST_SCREENING)).append("\n");
+    if (TOKEN_CREATE != null) sb.append("    TOKEN_CREATE: ").append(SENSITIVE_FIELD_PATTERN.matcher("TOKEN_CREATE").matches() ? "[REDACTED]" : toIndentedString(TOKEN_CREATE)).append("\n");
+    if (TOKEN_UPDATE != null) sb.append("    TOKEN_UPDATE: ").append(SENSITIVE_FIELD_PATTERN.matcher("TOKEN_UPDATE").matches() ? "[REDACTED]" : toIndentedString(TOKEN_UPDATE)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseEmbeddedActions {\n");
     

@@ -211,8 +211,51 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardProcessingConfigFeaturesCardPresentProcessors {\n");
+    
+    if (defaultPointOfSaleTerminalId != null) sb.append("    defaultPointOfSaleTerminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultPointOfSaleTerminalId").matches() ? "[REDACTED]" : toIndentedString(defaultPointOfSaleTerminalId)).append("\n");
+    if (pointOfSaleTerminalIds != null) sb.append("    pointOfSaleTerminalIds: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleTerminalIds").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleTerminalIds)).append("\n");
+    if (disablePointOfSaleTerminalIdValidation != null) sb.append("    disablePointOfSaleTerminalIdValidation: ").append(SENSITIVE_FIELD_PATTERN.matcher("disablePointOfSaleTerminalIdValidation").matches() ? "[REDACTED]" : toIndentedString(disablePointOfSaleTerminalIdValidation)).append("\n");
+    if (pinDebitNetworkOrder != null) sb.append("    pinDebitNetworkOrder: ").append(SENSITIVE_FIELD_PATTERN.matcher("pinDebitNetworkOrder").matches() ? "[REDACTED]" : toIndentedString(pinDebitNetworkOrder)).append("\n");
+    if (pinDebitReimbursementCode != null) sb.append("    pinDebitReimbursementCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("pinDebitReimbursementCode").matches() ? "[REDACTED]" : toIndentedString(pinDebitReimbursementCode)).append("\n");
+    if (financialInstitutionId != null) sb.append("    financialInstitutionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("financialInstitutionId").matches() ? "[REDACTED]" : toIndentedString(financialInstitutionId)).append("\n");
+    if (enablePinTranslation != null) sb.append("    enablePinTranslation: ").append(SENSITIVE_FIELD_PATTERN.matcher("enablePinTranslation").matches() ? "[REDACTED]" : toIndentedString(enablePinTranslation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardPresentProcessors {\n");
     

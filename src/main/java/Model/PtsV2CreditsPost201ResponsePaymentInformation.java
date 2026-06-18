@@ -185,8 +185,50 @@ public class PtsV2CreditsPost201ResponsePaymentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2CreditsPost201ResponsePaymentInformation {\n");
+    
+    if (bank != null) sb.append("    bank: ").append(SENSITIVE_FIELD_PATTERN.matcher("bank").matches() ? "[REDACTED]" : toIndentedString(bank)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInstrument").matches() ? "[REDACTED]" : toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifier").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifier)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingAddress").matches() ? "[REDACTED]" : toIndentedString(shippingAddress)).append("\n");
+    if (accountFeatures != null) sb.append("    accountFeatures: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountFeatures").matches() ? "[REDACTED]" : toIndentedString(accountFeatures)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreditsPost201ResponsePaymentInformation {\n");
     

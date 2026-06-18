@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction;
+import Model.UnifiedCheckoutMerchantInitiatedTransaction;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator 
   private Boolean credentialStoredOnFile = null;
 
   @SerializedName("merchantInitiatedTransaction")
-  private Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction = null;
+  private UnifiedCheckoutMerchantInitiatedTransaction merchantInitiatedTransaction = null;
 
   public Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator credentialStoredOnFile(Boolean credentialStoredOnFile) {
     this.credentialStoredOnFile = credentialStoredOnFile;
@@ -54,7 +54,7 @@ public class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator 
     this.credentialStoredOnFile = credentialStoredOnFile;
   }
 
-  public Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator merchantInitiatedTransaction(Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction) {
+  public Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator merchantInitiatedTransaction(UnifiedCheckoutMerchantInitiatedTransaction merchantInitiatedTransaction) {
     this.merchantInitiatedTransaction = merchantInitiatedTransaction;
     return this;
   }
@@ -64,11 +64,11 @@ public class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator 
    * @return merchantInitiatedTransaction
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction getMerchantInitiatedTransaction() {
+  public UnifiedCheckoutMerchantInitiatedTransaction getMerchantInitiatedTransaction() {
     return merchantInitiatedTransaction;
   }
 
-  public void setMerchantInitiatedTransaction(Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction) {
+  public void setMerchantInitiatedTransaction(UnifiedCheckoutMerchantInitiatedTransaction merchantInitiatedTransaction) {
     this.merchantInitiatedTransaction = merchantInitiatedTransaction;
   }
 
@@ -92,8 +92,46 @@ public class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator 
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator {\n");
+    
+    if (credentialStoredOnFile != null) sb.append("    credentialStoredOnFile: ").append(SENSITIVE_FIELD_PATTERN.matcher("credentialStoredOnFile").matches() ? "[REDACTED]" : toIndentedString(credentialStoredOnFile)).append("\n");
+    if (merchantInitiatedTransaction != null) sb.append("    merchantInitiatedTransaction: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInitiatedTransaction").matches() ? "[REDACTED]" : toIndentedString(merchantInitiatedTransaction)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator {\n");
     

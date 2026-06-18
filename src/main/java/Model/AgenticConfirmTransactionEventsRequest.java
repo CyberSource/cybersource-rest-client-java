@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1instructionsinstructionIdconfirmationsConfirmationData;
-import Model.Acpv1tokensPaymentInformation;
+import Model.Iccv1instructionsinstructionIdconfirmationsConfirmationData;
+import Model.Iccv1tokensPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,10 +37,10 @@ public class AgenticConfirmTransactionEventsRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("paymentInformation")
-  private Acpv1tokensPaymentInformation paymentInformation = null;
+  private Iccv1tokensPaymentInformation paymentInformation = null;
 
   @SerializedName("confirmationData")
-  private List<Acpv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData = new ArrayList<Acpv1instructionsinstructionIdconfirmationsConfirmationData>();
+  private List<Iccv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData = new ArrayList<Iccv1instructionsinstructionIdconfirmationsConfirmationData>();
 
   public AgenticConfirmTransactionEventsRequest clientCorrelationId(String clientCorrelationId) {
     this.clientCorrelationId = clientCorrelationId;
@@ -60,7 +60,7 @@ public class AgenticConfirmTransactionEventsRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public AgenticConfirmTransactionEventsRequest paymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public AgenticConfirmTransactionEventsRequest paymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -70,20 +70,20 @@ public class AgenticConfirmTransactionEventsRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensPaymentInformation getPaymentInformation() {
+  public Iccv1tokensPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public AgenticConfirmTransactionEventsRequest confirmationData(List<Acpv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData) {
+  public AgenticConfirmTransactionEventsRequest confirmationData(List<Iccv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData) {
     this.confirmationData = confirmationData;
     return this;
   }
 
-  public AgenticConfirmTransactionEventsRequest addConfirmationDataItem(Acpv1instructionsinstructionIdconfirmationsConfirmationData confirmationDataItem) {
+  public AgenticConfirmTransactionEventsRequest addConfirmationDataItem(Iccv1instructionsinstructionIdconfirmationsConfirmationData confirmationDataItem) {
     this.confirmationData.add(confirmationDataItem);
     return this;
   }
@@ -93,11 +93,11 @@ public class AgenticConfirmTransactionEventsRequest {
    * @return confirmationData
   **/
   @ApiModelProperty(required = true, value = "(Required) Contains Transaction, Order and Payment Confirmation Events.")
-  public List<Acpv1instructionsinstructionIdconfirmationsConfirmationData> getConfirmationData() {
+  public List<Iccv1instructionsinstructionIdconfirmationsConfirmationData> getConfirmationData() {
     return confirmationData;
   }
 
-  public void setConfirmationData(List<Acpv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData) {
+  public void setConfirmationData(List<Iccv1instructionsinstructionIdconfirmationsConfirmationData> confirmationData) {
     this.confirmationData = confirmationData;
   }
 
@@ -122,8 +122,47 @@ public class AgenticConfirmTransactionEventsRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class AgenticConfirmTransactionEventsRequest {\n");
+    
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (confirmationData != null) sb.append("    confirmationData: ").append(SENSITIVE_FIELD_PATTERN.matcher("confirmationData").matches() ? "[REDACTED]" : toIndentedString(confirmationData)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgenticConfirmTransactionEventsRequest {\n");
     

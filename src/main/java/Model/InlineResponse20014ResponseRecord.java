@@ -278,8 +278,54 @@ public class InlineResponse20014ResponseRecord {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse20014ResponseRecord {\n");
+    
+    if (response != null) sb.append("    response: ").append(SENSITIVE_FIELD_PATTERN.matcher("response").matches() ? "[REDACTED]" : toIndentedString(response)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (token != null) sb.append("    token: ").append(SENSITIVE_FIELD_PATTERN.matcher("token").matches() ? "[REDACTED]" : toIndentedString(token)).append("\n");
+    if (instrumentIdentifierId != null) sb.append("    instrumentIdentifierId: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifierId").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifierId)).append("\n");
+    if (instrumentIdentifierCreated != null) sb.append("    instrumentIdentifierCreated: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifierCreated").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifierCreated)).append("\n");
+    if (cardNumber != null) sb.append("    cardNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardNumber").matches() ? "[REDACTED]" : toIndentedString(cardNumber)).append("\n");
+    if (cardExpiryMonth != null) sb.append("    cardExpiryMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardExpiryMonth").matches() ? "[REDACTED]" : toIndentedString(cardExpiryMonth)).append("\n");
+    if (cardExpiryYear != null) sb.append("    cardExpiryYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardExpiryYear").matches() ? "[REDACTED]" : toIndentedString(cardExpiryYear)).append("\n");
+    if (cardType != null) sb.append("    cardType: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardType").matches() ? "[REDACTED]" : toIndentedString(cardType)).append("\n");
+    if (additionalUpdates != null) sb.append("    additionalUpdates: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalUpdates").matches() ? "[REDACTED]" : toIndentedString(additionalUpdates)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20014ResponseRecord {\n");
     

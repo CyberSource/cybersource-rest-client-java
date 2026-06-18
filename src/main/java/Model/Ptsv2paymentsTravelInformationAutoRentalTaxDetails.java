@@ -179,8 +179,50 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {\n");
+    
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (rate != null) sb.append("    rate: ").append(SENSITIVE_FIELD_PATTERN.matcher("rate").matches() ? "[REDACTED]" : toIndentedString(rate)).append("\n");
+    if (applied != null) sb.append("    applied: ").append(SENSITIVE_FIELD_PATTERN.matcher("applied").matches() ? "[REDACTED]" : toIndentedString(applied)).append("\n");
+    if (exemptionCode != null) sb.append("    exemptionCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("exemptionCode").matches() ? "[REDACTED]" : toIndentedString(exemptionCode)).append("\n");
+    if (taxType != null) sb.append("    taxType: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxType").matches() ? "[REDACTED]" : toIndentedString(taxType)).append("\n");
+    if (taxSummary != null) sb.append("    taxSummary: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxSummary").matches() ? "[REDACTED]" : toIndentedString(taxSummary)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {\n");
     

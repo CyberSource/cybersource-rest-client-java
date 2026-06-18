@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.DefaultPaymentInstrument;
+import Model.DefaultShippingAddress;
 import Model.TmsEmbeddedInstrumentIdentifier;
 import Model.Tmsv2tokenizeTokenInformationCustomer;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,10 +43,10 @@ public class Tmsv2tokenizeTokenInformation {
   private Tmsv2tokenizeTokenInformationCustomer customer = null;
 
   @SerializedName("shippingAddress")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress shippingAddress = null;
+  private DefaultShippingAddress shippingAddress = null;
 
   @SerializedName("paymentInstrument")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument paymentInstrument = null;
+  private DefaultPaymentInstrument paymentInstrument = null;
 
   @SerializedName("instrumentIdentifier")
   private TmsEmbeddedInstrumentIdentifier instrumentIdentifier = null;
@@ -105,7 +105,7 @@ public class Tmsv2tokenizeTokenInformation {
     this.customer = customer;
   }
 
-  public Tmsv2tokenizeTokenInformation shippingAddress(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress shippingAddress) {
+  public Tmsv2tokenizeTokenInformation shippingAddress(DefaultShippingAddress shippingAddress) {
     this.shippingAddress = shippingAddress;
     return this;
   }
@@ -115,15 +115,15 @@ public class Tmsv2tokenizeTokenInformation {
    * @return shippingAddress
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress getShippingAddress() {
+  public DefaultShippingAddress getShippingAddress() {
     return shippingAddress;
   }
 
-  public void setShippingAddress(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress shippingAddress) {
+  public void setShippingAddress(DefaultShippingAddress shippingAddress) {
     this.shippingAddress = shippingAddress;
   }
 
-  public Tmsv2tokenizeTokenInformation paymentInstrument(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument paymentInstrument) {
+  public Tmsv2tokenizeTokenInformation paymentInstrument(DefaultPaymentInstrument paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
     return this;
   }
@@ -133,11 +133,11 @@ public class Tmsv2tokenizeTokenInformation {
    * @return paymentInstrument
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument getPaymentInstrument() {
+  public DefaultPaymentInstrument getPaymentInstrument() {
     return paymentInstrument;
   }
 
-  public void setPaymentInstrument(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument paymentInstrument) {
+  public void setPaymentInstrument(DefaultPaymentInstrument paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
   }
 
@@ -183,8 +183,50 @@ public class Tmsv2tokenizeTokenInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Tmsv2tokenizeTokenInformation {\n");
+    
+    if (jti != null) sb.append("    jti: ").append(SENSITIVE_FIELD_PATTERN.matcher("jti").matches() ? "[REDACTED]" : toIndentedString(jti)).append("\n");
+    if (transientTokenJwt != null) sb.append("    transientTokenJwt: ").append(SENSITIVE_FIELD_PATTERN.matcher("transientTokenJwt").matches() ? "[REDACTED]" : toIndentedString(transientTokenJwt)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingAddress").matches() ? "[REDACTED]" : toIndentedString(shippingAddress)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInstrument").matches() ? "[REDACTED]" : toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifier").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2tokenizeTokenInformation {\n");
     

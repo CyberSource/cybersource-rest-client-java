@@ -1018,8 +1018,88 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationAutoRental {\n");
+    
+    if (noShowIndicator != null) sb.append("    noShowIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("noShowIndicator").matches() ? "[REDACTED]" : toIndentedString(noShowIndicator)).append("\n");
+    if (customerName != null) sb.append("    customerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerName").matches() ? "[REDACTED]" : toIndentedString(customerName)).append("\n");
+    if (vehicleClass != null) sb.append("    vehicleClass: ").append(SENSITIVE_FIELD_PATTERN.matcher("vehicleClass").matches() ? "[REDACTED]" : toIndentedString(vehicleClass)).append("\n");
+    if (distanceTravelled != null) sb.append("    distanceTravelled: ").append(SENSITIVE_FIELD_PATTERN.matcher("distanceTravelled").matches() ? "[REDACTED]" : toIndentedString(distanceTravelled)).append("\n");
+    if (distanceUnit != null) sb.append("    distanceUnit: ").append(SENSITIVE_FIELD_PATTERN.matcher("distanceUnit").matches() ? "[REDACTED]" : toIndentedString(distanceUnit)).append("\n");
+    if (returnDateTime != null) sb.append("    returnDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnDateTime").matches() ? "[REDACTED]" : toIndentedString(returnDateTime)).append("\n");
+    if (rentalDateTime != null) sb.append("    rentalDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("rentalDateTime").matches() ? "[REDACTED]" : toIndentedString(rentalDateTime)).append("\n");
+    if (maxFreeDistance != null) sb.append("    maxFreeDistance: ").append(SENSITIVE_FIELD_PATTERN.matcher("maxFreeDistance").matches() ? "[REDACTED]" : toIndentedString(maxFreeDistance)).append("\n");
+    if (insuranceIndicator != null) sb.append("    insuranceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("insuranceIndicator").matches() ? "[REDACTED]" : toIndentedString(insuranceIndicator)).append("\n");
+    if (programCode != null) sb.append("    programCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("programCode").matches() ? "[REDACTED]" : toIndentedString(programCode)).append("\n");
+    if (returnAddress != null) sb.append("    returnAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnAddress").matches() ? "[REDACTED]" : toIndentedString(returnAddress)).append("\n");
+    if (rentalAddress != null) sb.append("    rentalAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("rentalAddress").matches() ? "[REDACTED]" : toIndentedString(rentalAddress)).append("\n");
+    if (agreementNumber != null) sb.append("    agreementNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("agreementNumber").matches() ? "[REDACTED]" : toIndentedString(agreementNumber)).append("\n");
+    if (odometerReading != null) sb.append("    odometerReading: ").append(SENSITIVE_FIELD_PATTERN.matcher("odometerReading").matches() ? "[REDACTED]" : toIndentedString(odometerReading)).append("\n");
+    if (vehicleIdentificationNumber != null) sb.append("    vehicleIdentificationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vehicleIdentificationNumber").matches() ? "[REDACTED]" : toIndentedString(vehicleIdentificationNumber)).append("\n");
+    if (companyId != null) sb.append("    companyId: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyId").matches() ? "[REDACTED]" : toIndentedString(companyId)).append("\n");
+    if (numberOfAdditionalDrivers != null) sb.append("    numberOfAdditionalDrivers: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfAdditionalDrivers").matches() ? "[REDACTED]" : toIndentedString(numberOfAdditionalDrivers)).append("\n");
+    if (driverAge != null) sb.append("    driverAge: ").append(SENSITIVE_FIELD_PATTERN.matcher("driverAge").matches() ? "[REDACTED]" : toIndentedString(driverAge)).append("\n");
+    if (specialProgramCode != null) sb.append("    specialProgramCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("specialProgramCode").matches() ? "[REDACTED]" : toIndentedString(specialProgramCode)).append("\n");
+    if (vehicleMake != null) sb.append("    vehicleMake: ").append(SENSITIVE_FIELD_PATTERN.matcher("vehicleMake").matches() ? "[REDACTED]" : toIndentedString(vehicleMake)).append("\n");
+    if (vehicleModel != null) sb.append("    vehicleModel: ").append(SENSITIVE_FIELD_PATTERN.matcher("vehicleModel").matches() ? "[REDACTED]" : toIndentedString(vehicleModel)).append("\n");
+    if (timePeriod != null) sb.append("    timePeriod: ").append(SENSITIVE_FIELD_PATTERN.matcher("timePeriod").matches() ? "[REDACTED]" : toIndentedString(timePeriod)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("commodityCode").matches() ? "[REDACTED]" : toIndentedString(commodityCode)).append("\n");
+    if (customerServicePhoneNumber != null) sb.append("    customerServicePhoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerServicePhoneNumber").matches() ? "[REDACTED]" : toIndentedString(customerServicePhoneNumber)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxDetails").matches() ? "[REDACTED]" : toIndentedString(taxDetails)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("insuranceAmount").matches() ? "[REDACTED]" : toIndentedString(insuranceAmount)).append("\n");
+    if (oneWayDropOffAmount != null) sb.append("    oneWayDropOffAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("oneWayDropOffAmount").matches() ? "[REDACTED]" : toIndentedString(oneWayDropOffAmount)).append("\n");
+    if (adjustedAmountIndicator != null) sb.append("    adjustedAmountIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("adjustedAmountIndicator").matches() ? "[REDACTED]" : toIndentedString(adjustedAmountIndicator)).append("\n");
+    if (adjustedAmount != null) sb.append("    adjustedAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("adjustedAmount").matches() ? "[REDACTED]" : toIndentedString(adjustedAmount)).append("\n");
+    if (fuelCharges != null) sb.append("    fuelCharges: ").append(SENSITIVE_FIELD_PATTERN.matcher("fuelCharges").matches() ? "[REDACTED]" : toIndentedString(fuelCharges)).append("\n");
+    if (weeklyRentalRate != null) sb.append("    weeklyRentalRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("weeklyRentalRate").matches() ? "[REDACTED]" : toIndentedString(weeklyRentalRate)).append("\n");
+    if (dailyRentalRate != null) sb.append("    dailyRentalRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("dailyRentalRate").matches() ? "[REDACTED]" : toIndentedString(dailyRentalRate)).append("\n");
+    if (ratePerMile != null) sb.append("    ratePerMile: ").append(SENSITIVE_FIELD_PATTERN.matcher("ratePerMile").matches() ? "[REDACTED]" : toIndentedString(ratePerMile)).append("\n");
+    if (mileageCharge != null) sb.append("    mileageCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("mileageCharge").matches() ? "[REDACTED]" : toIndentedString(mileageCharge)).append("\n");
+    if (extraMileageCharge != null) sb.append("    extraMileageCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("extraMileageCharge").matches() ? "[REDACTED]" : toIndentedString(extraMileageCharge)).append("\n");
+    if (lateFeeAmount != null) sb.append("    lateFeeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("lateFeeAmount").matches() ? "[REDACTED]" : toIndentedString(lateFeeAmount)).append("\n");
+    if (towingCharge != null) sb.append("    towingCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("towingCharge").matches() ? "[REDACTED]" : toIndentedString(towingCharge)).append("\n");
+    if (extraCharge != null) sb.append("    extraCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("extraCharge").matches() ? "[REDACTED]" : toIndentedString(extraCharge)).append("\n");
+    if (gpsCharge != null) sb.append("    gpsCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("gpsCharge").matches() ? "[REDACTED]" : toIndentedString(gpsCharge)).append("\n");
+    if (phoneCharge != null) sb.append("    phoneCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneCharge").matches() ? "[REDACTED]" : toIndentedString(phoneCharge)).append("\n");
+    if (parkingViolationCharge != null) sb.append("    parkingViolationCharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("parkingViolationCharge").matches() ? "[REDACTED]" : toIndentedString(parkingViolationCharge)).append("\n");
+    if (otherCharges != null) sb.append("    otherCharges: ").append(SENSITIVE_FIELD_PATTERN.matcher("otherCharges").matches() ? "[REDACTED]" : toIndentedString(otherCharges)).append("\n");
+    if (companyName != null) sb.append("    companyName: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyName").matches() ? "[REDACTED]" : toIndentedString(companyName)).append("\n");
+    if (affiliateName != null) sb.append("    affiliateName: ").append(SENSITIVE_FIELD_PATTERN.matcher("affiliateName").matches() ? "[REDACTED]" : toIndentedString(affiliateName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationAutoRental {\n");
     

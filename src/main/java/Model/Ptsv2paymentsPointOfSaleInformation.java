@@ -753,8 +753,75 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsPointOfSaleInformation {\n");
+    
+    if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (terminalSerialNumber != null) sb.append("    terminalSerialNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalSerialNumber").matches() ? "[REDACTED]" : toIndentedString(terminalSerialNumber)).append("\n");
+    if (cardholderVerificationMethodUsed != null) sb.append("    cardholderVerificationMethodUsed: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardholderVerificationMethodUsed").matches() ? "[REDACTED]" : toIndentedString(cardholderVerificationMethodUsed)).append("\n");
+    if (laneNumber != null) sb.append("    laneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("laneNumber").matches() ? "[REDACTED]" : toIndentedString(laneNumber)).append("\n");
+    if (catLevel != null) sb.append("    catLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("catLevel").matches() ? "[REDACTED]" : toIndentedString(catLevel)).append("\n");
+    if (entryMode != null) sb.append("    entryMode: ").append(SENSITIVE_FIELD_PATTERN.matcher("entryMode").matches() ? "[REDACTED]" : toIndentedString(entryMode)).append("\n");
+    if (terminalCapability != null) sb.append("    terminalCapability: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalCapability").matches() ? "[REDACTED]" : toIndentedString(terminalCapability)).append("\n");
+    if (operatingEnvironment != null) sb.append("    operatingEnvironment: ").append(SENSITIVE_FIELD_PATTERN.matcher("operatingEnvironment").matches() ? "[REDACTED]" : toIndentedString(operatingEnvironment)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(SENSITIVE_FIELD_PATTERN.matcher("emv").matches() ? "[REDACTED]" : toIndentedString(emv)).append("\n");
+    if (amexCapnData != null) sb.append("    amexCapnData: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexCapnData").matches() ? "[REDACTED]" : toIndentedString(amexCapnData)).append("\n");
+    if (trackData != null) sb.append("    trackData: ").append(SENSITIVE_FIELD_PATTERN.matcher("trackData").matches() ? "[REDACTED]" : toIndentedString(trackData)).append("\n");
+    if (storeAndForwardIndicator != null) sb.append("    storeAndForwardIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeAndForwardIndicator").matches() ? "[REDACTED]" : toIndentedString(storeAndForwardIndicator)).append("\n");
+    if (cardholderVerificationMethod != null) sb.append("    cardholderVerificationMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardholderVerificationMethod").matches() ? "[REDACTED]" : toIndentedString(cardholderVerificationMethod)).append("\n");
+    if (terminalCategory != null) sb.append("    terminalCategory: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalCategory").matches() ? "[REDACTED]" : toIndentedString(terminalCategory)).append("\n");
+    if (terminalInputCapability != null) sb.append("    terminalInputCapability: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalInputCapability").matches() ? "[REDACTED]" : toIndentedString(terminalInputCapability)).append("\n");
+    if (terminalCardCaptureCapability != null) sb.append("    terminalCardCaptureCapability: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalCardCaptureCapability").matches() ? "[REDACTED]" : toIndentedString(terminalCardCaptureCapability)).append("\n");
+    if (terminalOutputCapability != null) sb.append("    terminalOutputCapability: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalOutputCapability").matches() ? "[REDACTED]" : toIndentedString(terminalOutputCapability)).append("\n");
+    if (terminalPinCapability != null) sb.append("    terminalPinCapability: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalPinCapability").matches() ? "[REDACTED]" : toIndentedString(terminalPinCapability)).append("\n");
+    if (pinEntrySolution != null) sb.append("    pinEntrySolution: ").append(SENSITIVE_FIELD_PATTERN.matcher("pinEntrySolution").matches() ? "[REDACTED]" : toIndentedString(pinEntrySolution)).append("\n");
+    if (deviceId != null) sb.append("    deviceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceId").matches() ? "[REDACTED]" : toIndentedString(deviceId)).append("\n");
+    if (pinBlockEncodingFormat != null) sb.append("    pinBlockEncodingFormat: ").append(SENSITIVE_FIELD_PATTERN.matcher("pinBlockEncodingFormat").matches() ? "[REDACTED]" : toIndentedString(pinBlockEncodingFormat)).append("\n");
+    if (encryptedPin != null) sb.append("    encryptedPin: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptedPin").matches() ? "[REDACTED]" : toIndentedString(encryptedPin)).append("\n");
+    if (encryptedKeySerialNumber != null) sb.append("    encryptedKeySerialNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptedKeySerialNumber").matches() ? "[REDACTED]" : toIndentedString(encryptedKeySerialNumber)).append("\n");
+    if (encryptedKeyId != null) sb.append("    encryptedKeyId: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptedKeyId").matches() ? "[REDACTED]" : toIndentedString(encryptedKeyId)).append("\n");
+    if (partnerSdkVersion != null) sb.append("    partnerSdkVersion: ").append(SENSITIVE_FIELD_PATTERN.matcher("partnerSdkVersion").matches() ? "[REDACTED]" : toIndentedString(partnerSdkVersion)).append("\n");
+    if (emvApplicationIdentifierAndDedicatedFileName != null) sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(SENSITIVE_FIELD_PATTERN.matcher("emvApplicationIdentifierAndDedicatedFileName").matches() ? "[REDACTED]" : toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
+    if (terminalCompliance != null) sb.append("    terminalCompliance: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalCompliance").matches() ? "[REDACTED]" : toIndentedString(terminalCompliance)).append("\n");
+    if (isDedicatedHardwareTerminal != null) sb.append("    isDedicatedHardwareTerminal: ").append(SENSITIVE_FIELD_PATTERN.matcher("isDedicatedHardwareTerminal").matches() ? "[REDACTED]" : toIndentedString(isDedicatedHardwareTerminal)).append("\n");
+    if (terminalModel != null) sb.append("    terminalModel: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalModel").matches() ? "[REDACTED]" : toIndentedString(terminalModel)).append("\n");
+    if (terminalMake != null) sb.append("    terminalMake: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalMake").matches() ? "[REDACTED]" : toIndentedString(terminalMake)).append("\n");
+    if (serviceCode != null) sb.append("    serviceCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("serviceCode").matches() ? "[REDACTED]" : toIndentedString(serviceCode)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPointOfSaleInformation {\n");
     

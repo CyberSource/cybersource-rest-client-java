@@ -137,10 +137,10 @@ public class PaymentsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateSessionReqTest() throws Exception {
+    public void updateSessionRequestTest() throws Exception {
         CreateSessionRequest createSessionRequest = null;
         String id = null;
-        PtsV2PaymentsPost201Response2 response = api.updateSessionReq(createSessionRequest, id);
+        PtsV2PaymentsPost201Response2 response = api.updateSessionRequest(createSessionRequest, id);
 
         // TODO: test validations
     }

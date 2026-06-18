@@ -19,7 +19,7 @@ import Model.InlineResponse40012;
 import Model.InlineResponse4033;
 import Model.InlineResponse4046;
 import Model.InlineResponse4222;
-import Model.InlineResponse5021;
+import Model.InlineResponse5022;
 import org.junit.Test;
 import org.junit.Ignore;
 

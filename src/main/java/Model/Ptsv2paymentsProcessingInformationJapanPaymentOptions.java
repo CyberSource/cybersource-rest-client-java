@@ -278,8 +278,54 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsProcessingInformationJapanPaymentOptions {\n");
+    
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentMethod").matches() ? "[REDACTED]" : toIndentedString(paymentMethod)).append("\n");
+    if (bonuses != null) sb.append("    bonuses: ").append(SENSITIVE_FIELD_PATTERN.matcher("bonuses").matches() ? "[REDACTED]" : toIndentedString(bonuses)).append("\n");
+    if (preapprovalType != null) sb.append("    preapprovalType: ").append(SENSITIVE_FIELD_PATTERN.matcher("preapprovalType").matches() ? "[REDACTED]" : toIndentedString(preapprovalType)).append("\n");
+    if (installments != null) sb.append("    installments: ").append(SENSITIVE_FIELD_PATTERN.matcher("installments").matches() ? "[REDACTED]" : toIndentedString(installments)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (firstBillingMonth != null) sb.append("    firstBillingMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstBillingMonth").matches() ? "[REDACTED]" : toIndentedString(firstBillingMonth)).append("\n");
+    if (businessName != null) sb.append("    businessName: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessName").matches() ? "[REDACTED]" : toIndentedString(businessName)).append("\n");
+    if (businessNameKatakana != null) sb.append("    businessNameKatakana: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessNameKatakana").matches() ? "[REDACTED]" : toIndentedString(businessNameKatakana)).append("\n");
+    if (jis2TrackData != null) sb.append("    jis2TrackData: ").append(SENSITIVE_FIELD_PATTERN.matcher("jis2TrackData").matches() ? "[REDACTED]" : toIndentedString(jis2TrackData)).append("\n");
+    if (businessNameAlphaNumeric != null) sb.append("    businessNameAlphaNumeric: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessNameAlphaNumeric").matches() ? "[REDACTED]" : toIndentedString(businessNameAlphaNumeric)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationJapanPaymentOptions {\n");
     

@@ -1222,8 +1222,96 @@ public class CardProcessingConfigCommonProcessors {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardProcessingConfigCommonProcessors {\n");
+    
+    if (batchGroup != null) sb.append("    batchGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchGroup").matches() ? "[REDACTED]" : toIndentedString(batchGroup)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantVerificationValue").matches() ? "[REDACTED]" : toIndentedString(merchantVerificationValue)).append("\n");
+    if (abaNumber != null) sb.append("    abaNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("abaNumber").matches() ? "[REDACTED]" : toIndentedString(abaNumber)).append("\n");
+    if (acquirer != null) sb.append("    acquirer: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirer").matches() ? "[REDACTED]" : toIndentedString(acquirer)).append("\n");
+    if (acquirers != null) sb.append("    acquirers: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirers").matches() ? "[REDACTED]" : toIndentedString(acquirers)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantId").matches() ? "[REDACTED]" : toIndentedString(merchantId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (paymentTypes != null) sb.append("    paymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentTypes").matches() ? "[REDACTED]" : toIndentedString(paymentTypes)).append("\n");
+    if (currencies != null) sb.append("    currencies: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencies").matches() ? "[REDACTED]" : toIndentedString(currencies)).append("\n");
+    if (visaAggregatorId != null) sb.append("    visaAggregatorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("visaAggregatorId").matches() ? "[REDACTED]" : toIndentedString(visaAggregatorId)).append("\n");
+    if (amexAggregatorId != null) sb.append("    amexAggregatorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexAggregatorId").matches() ? "[REDACTED]" : toIndentedString(amexAggregatorId)).append("\n");
+    if (masterCardAggregatorId != null) sb.append("    masterCardAggregatorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardAggregatorId").matches() ? "[REDACTED]" : toIndentedString(masterCardAggregatorId)).append("\n");
+    if (sicCode != null) sb.append("    sicCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("sicCode").matches() ? "[REDACTED]" : toIndentedString(sicCode)).append("\n");
+    if (allowMultipleBills != null) sb.append("    allowMultipleBills: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowMultipleBills").matches() ? "[REDACTED]" : toIndentedString(allowMultipleBills)).append("\n");
+    if (allowMerchantDescriptorOverride != null) sb.append("    allowMerchantDescriptorOverride: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowMerchantDescriptorOverride").matches() ? "[REDACTED]" : toIndentedString(allowMerchantDescriptorOverride)).append("\n");
+    if (enhancedData != null) sb.append("    enhancedData: ").append(SENSITIVE_FIELD_PATTERN.matcher("enhancedData").matches() ? "[REDACTED]" : toIndentedString(enhancedData)).append("\n");
+    if (fireSafetyIndicator != null) sb.append("    fireSafetyIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("fireSafetyIndicator").matches() ? "[REDACTED]" : toIndentedString(fireSafetyIndicator)).append("\n");
+    if (quasiCash != null) sb.append("    quasiCash: ").append(SENSITIVE_FIELD_PATTERN.matcher("quasiCash").matches() ? "[REDACTED]" : toIndentedString(quasiCash)).append("\n");
+    if (acquirerMerchantId != null) sb.append("    acquirerMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirerMerchantId").matches() ? "[REDACTED]" : toIndentedString(acquirerMerchantId)).append("\n");
+    if (avsFormat != null) sb.append("    avsFormat: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsFormat").matches() ? "[REDACTED]" : toIndentedString(avsFormat)).append("\n");
+    if (enableLongTransRefNo != null) sb.append("    enableLongTransRefNo: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableLongTransRefNo").matches() ? "[REDACTED]" : toIndentedString(enableLongTransRefNo)).append("\n");
+    if (enableLevel2 != null) sb.append("    enableLevel2: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableLevel2").matches() ? "[REDACTED]" : toIndentedString(enableLevel2)).append("\n");
+    if (enableMultipleTransactionAdviceAddendum != null) sb.append("    enableMultipleTransactionAdviceAddendum: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableMultipleTransactionAdviceAddendum").matches() ? "[REDACTED]" : toIndentedString(enableMultipleTransactionAdviceAddendum)).append("\n");
+    if (amexTransactionAdviceAddendum1 != null) sb.append("    amexTransactionAdviceAddendum1: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexTransactionAdviceAddendum1").matches() ? "[REDACTED]" : toIndentedString(amexTransactionAdviceAddendum1)).append("\n");
+    if (enableMultiLineItems != null) sb.append("    enableMultiLineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableMultiLineItems").matches() ? "[REDACTED]" : toIndentedString(enableMultiLineItems)).append("\n");
+    if (enableTransactionReferenceNumber != null) sb.append("    enableTransactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableTransactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(enableTransactionReferenceNumber)).append("\n");
+    if (enableAutoAuthReversalAfterVoid != null) sb.append("    enableAutoAuthReversalAfterVoid: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableAutoAuthReversalAfterVoid").matches() ? "[REDACTED]" : toIndentedString(enableAutoAuthReversalAfterVoid)).append("\n");
+    if (enableExpresspayPanTranslation != null) sb.append("    enableExpresspayPanTranslation: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableExpresspayPanTranslation").matches() ? "[REDACTED]" : toIndentedString(enableExpresspayPanTranslation)).append("\n");
+    if (enableCreditAuth != null) sb.append("    enableCreditAuth: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableCreditAuth").matches() ? "[REDACTED]" : toIndentedString(enableCreditAuth)).append("\n");
+    if (industryCode != null) sb.append("    industryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("industryCode").matches() ? "[REDACTED]" : toIndentedString(industryCode)).append("\n");
+    if (sendAmexLevel2Data != null) sb.append("    sendAmexLevel2Data: ").append(SENSITIVE_FIELD_PATTERN.matcher("sendAmexLevel2Data").matches() ? "[REDACTED]" : toIndentedString(sendAmexLevel2Data)).append("\n");
+    if (softDescriptorType != null) sb.append("    softDescriptorType: ").append(SENSITIVE_FIELD_PATTERN.matcher("softDescriptorType").matches() ? "[REDACTED]" : toIndentedString(softDescriptorType)).append("\n");
+    if (vitalNumber != null) sb.append("    vitalNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vitalNumber").matches() ? "[REDACTED]" : toIndentedString(vitalNumber)).append("\n");
+    if (bankNumber != null) sb.append("    bankNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankNumber").matches() ? "[REDACTED]" : toIndentedString(bankNumber)).append("\n");
+    if (chainNumber != null) sb.append("    chainNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("chainNumber").matches() ? "[REDACTED]" : toIndentedString(chainNumber)).append("\n");
+    if (merchantBinNumber != null) sb.append("    merchantBinNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantBinNumber").matches() ? "[REDACTED]" : toIndentedString(merchantBinNumber)).append("\n");
+    if (merchantLocationNumber != null) sb.append("    merchantLocationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantLocationNumber").matches() ? "[REDACTED]" : toIndentedString(merchantLocationNumber)).append("\n");
+    if (storeID != null) sb.append("    storeID: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeID").matches() ? "[REDACTED]" : toIndentedString(storeID)).append("\n");
+    if (travelAgencyCode != null) sb.append("    travelAgencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelAgencyCode").matches() ? "[REDACTED]" : toIndentedString(travelAgencyCode)).append("\n");
+    if (travelAgencyName != null) sb.append("    travelAgencyName: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelAgencyName").matches() ? "[REDACTED]" : toIndentedString(travelAgencyName)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementCurrency").matches() ? "[REDACTED]" : toIndentedString(settlementCurrency)).append("\n");
+    if (enableLeastCostRouting != null) sb.append("    enableLeastCostRouting: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableLeastCostRouting").matches() ? "[REDACTED]" : toIndentedString(enableLeastCostRouting)).append("\n");
+    if (enableCVVResponseIndicator != null) sb.append("    enableCVVResponseIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableCVVResponseIndicator").matches() ? "[REDACTED]" : toIndentedString(enableCVVResponseIndicator)).append("\n");
+    if (enableMultiCurrencyProcessing != null) sb.append("    enableMultiCurrencyProcessing: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableMultiCurrencyProcessing").matches() ? "[REDACTED]" : toIndentedString(enableMultiCurrencyProcessing)).append("\n");
+    if (transactionTypeIdentifier != null) sb.append("    transactionTypeIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTypeIdentifier").matches() ? "[REDACTED]" : toIndentedString(transactionTypeIdentifier)).append("\n");
+    if (subMerchantId != null) sb.append("    subMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("subMerchantId").matches() ? "[REDACTED]" : toIndentedString(subMerchantId)).append("\n");
+    if (subMerchantEmail != null) sb.append("    subMerchantEmail: ").append(SENSITIVE_FIELD_PATTERN.matcher("subMerchantEmail").matches() ? "[REDACTED]" : toIndentedString(subMerchantEmail)).append("\n");
+    if (subMerchantPhoneNumber != null) sb.append("    subMerchantPhoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("subMerchantPhoneNumber").matches() ? "[REDACTED]" : toIndentedString(subMerchantPhoneNumber)).append("\n");
+    if (enablePosNetworkSwitching != null) sb.append("    enablePosNetworkSwitching: ").append(SENSITIVE_FIELD_PATTERN.matcher("enablePosNetworkSwitching").matches() ? "[REDACTED]" : toIndentedString(enablePosNetworkSwitching)).append("\n");
+    if (enableDynamicCurrencyConversion != null) sb.append("    enableDynamicCurrencyConversion: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableDynamicCurrencyConversion").matches() ? "[REDACTED]" : toIndentedString(enableDynamicCurrencyConversion)).append("\n");
+    if (merchantTier != null) sb.append("    merchantTier: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantTier").matches() ? "[REDACTED]" : toIndentedString(merchantTier)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonProcessors {\n");
     

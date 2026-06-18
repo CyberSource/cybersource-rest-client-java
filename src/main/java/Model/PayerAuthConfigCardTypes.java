@@ -226,8 +226,52 @@ public class PayerAuthConfigCardTypes {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PayerAuthConfigCardTypes {\n");
+    
+    if (verifiedByVisa != null) sb.append("    verifiedByVisa: ").append(SENSITIVE_FIELD_PATTERN.matcher("verifiedByVisa").matches() ? "[REDACTED]" : toIndentedString(verifiedByVisa)).append("\n");
+    if (masterCardSecureCode != null) sb.append("    masterCardSecureCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardSecureCode").matches() ? "[REDACTED]" : toIndentedString(masterCardSecureCode)).append("\n");
+    if (amexSafeKey != null) sb.append("    amexSafeKey: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexSafeKey").matches() ? "[REDACTED]" : toIndentedString(amexSafeKey)).append("\n");
+    if (jCBJSecure != null) sb.append("    jCBJSecure: ").append(SENSITIVE_FIELD_PATTERN.matcher("jCBJSecure").matches() ? "[REDACTED]" : toIndentedString(jCBJSecure)).append("\n");
+    if (dinersClubInternationalProtectBuy != null) sb.append("    dinersClubInternationalProtectBuy: ").append(SENSITIVE_FIELD_PATTERN.matcher("dinersClubInternationalProtectBuy").matches() ? "[REDACTED]" : toIndentedString(dinersClubInternationalProtectBuy)).append("\n");
+    if (ELO != null) sb.append("    ELO: ").append(SENSITIVE_FIELD_PATTERN.matcher("ELO").matches() ? "[REDACTED]" : toIndentedString(ELO)).append("\n");
+    if (UPI != null) sb.append("    UPI: ").append(SENSITIVE_FIELD_PATTERN.matcher("UPI").matches() ? "[REDACTED]" : toIndentedString(UPI)).append("\n");
+    if (CB != null) sb.append("    CB: ").append(SENSITIVE_FIELD_PATTERN.matcher("CB").matches() ? "[REDACTED]" : toIndentedString(CB)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayerAuthConfigCardTypes {\n");
     

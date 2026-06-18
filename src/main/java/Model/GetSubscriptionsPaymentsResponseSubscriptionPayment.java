@@ -378,8 +378,59 @@ public class GetSubscriptionsPaymentsResponseSubscriptionPayment {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GetSubscriptionsPaymentsResponseSubscriptionPayment {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (transactionID != null) sb.append("    transactionID: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionID").matches() ? "[REDACTED]" : toIndentedString(transactionID)).append("\n");
+    if (date != null) sb.append("    date: ").append(SENSITIVE_FIELD_PATTERN.matcher("date").matches() ? "[REDACTED]" : toIndentedString(date)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (billingStartDate != null) sb.append("    billingStartDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("billingStartDate").matches() ? "[REDACTED]" : toIndentedString(billingStartDate)).append("\n");
+    if (billingEndDate != null) sb.append("    billingEndDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("billingEndDate").matches() ? "[REDACTED]" : toIndentedString(billingEndDate)).append("\n");
+    if (billingCycle != null) sb.append("    billingCycle: ").append(SENSITIVE_FIELD_PATTERN.matcher("billingCycle").matches() ? "[REDACTED]" : toIndentedString(billingCycle)).append("\n");
+    if (paymentNumber != null) sb.append("    paymentNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentNumber").matches() ? "[REDACTED]" : toIndentedString(paymentNumber)).append("\n");
+    if (billingAmount != null) sb.append("    billingAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("billingAmount").matches() ? "[REDACTED]" : toIndentedString(billingAmount)).append("\n");
+    if (setupFee != null) sb.append("    setupFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("setupFee").matches() ? "[REDACTED]" : toIndentedString(setupFee)).append("\n");
+    if (surchargeAmount != null) sb.append("    surchargeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("surchargeAmount").matches() ? "[REDACTED]" : toIndentedString(surchargeAmount)).append("\n");
+    if (surchargeDescription != null) sb.append("    surchargeDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("surchargeDescription").matches() ? "[REDACTED]" : toIndentedString(surchargeDescription)).append("\n");
+    if (modifiable != null) sb.append("    modifiable: ").append(SENSITIVE_FIELD_PATTERN.matcher("modifiable").matches() ? "[REDACTED]" : toIndentedString(modifiable)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubscriptionsPaymentsResponseSubscriptionPayment {\n");
     

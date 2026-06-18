@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.DefaultPaymentInstrumentBillTo;
+import Model.FollowOnTransactionBuyerInformation;
 import Model.GetSubscriptionResponse1PaymentInstrumentBankAccount;
-import Model.GetSubscriptionResponse1PaymentInstrumentBuyerInformation;
 import Model.GetSubscriptionResponse1PaymentInstrumentCard;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,10 +44,10 @@ public class GetSubscriptionResponse1PaymentInstrument {
   private GetSubscriptionResponse1PaymentInstrumentCard card = null;
 
   @SerializedName("billTo")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
+  private DefaultPaymentInstrumentBillTo billTo = null;
 
   @SerializedName("buyerInformation")
-  private GetSubscriptionResponse1PaymentInstrumentBuyerInformation buyerInformation = null;
+  private FollowOnTransactionBuyerInformation buyerInformation = null;
 
   public GetSubscriptionResponse1PaymentInstrument id(String id) {
     this.id = id;
@@ -103,7 +103,7 @@ public class GetSubscriptionResponse1PaymentInstrument {
     this.card = card;
   }
 
-  public GetSubscriptionResponse1PaymentInstrument billTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public GetSubscriptionResponse1PaymentInstrument billTo(DefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -113,15 +113,15 @@ public class GetSubscriptionResponse1PaymentInstrument {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
+  public DefaultPaymentInstrumentBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public void setBillTo(DefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
   }
 
-  public GetSubscriptionResponse1PaymentInstrument buyerInformation(GetSubscriptionResponse1PaymentInstrumentBuyerInformation buyerInformation) {
+  public GetSubscriptionResponse1PaymentInstrument buyerInformation(FollowOnTransactionBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -131,11 +131,11 @@ public class GetSubscriptionResponse1PaymentInstrument {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public GetSubscriptionResponse1PaymentInstrumentBuyerInformation getBuyerInformation() {
+  public FollowOnTransactionBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(GetSubscriptionResponse1PaymentInstrumentBuyerInformation buyerInformation) {
+  public void setBuyerInformation(FollowOnTransactionBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
@@ -162,8 +162,49 @@ public class GetSubscriptionResponse1PaymentInstrument {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GetSubscriptionResponse1PaymentInstrument {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (bankAccount != null) sb.append("    bankAccount: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankAccount").matches() ? "[REDACTED]" : toIndentedString(bankAccount)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubscriptionResponse1PaymentInstrument {\n");
     

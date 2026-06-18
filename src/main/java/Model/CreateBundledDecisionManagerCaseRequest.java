@@ -425,8 +425,60 @@ public class CreateBundledDecisionManagerCaseRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CreateBundledDecisionManagerCaseRequest {\n");
+    
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskInformation").matches() ? "[REDACTED]" : toIndentedString(riskInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelInformation").matches() ? "[REDACTED]" : toIndentedString(travelInformation)).append("\n");
+    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedInformation").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
+    if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirerInformation").matches() ? "[REDACTED]" : toIndentedString(acquirerInformation)).append("\n");
+    if (recurringPaymentInformation != null) sb.append("    recurringPaymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringPaymentInformation").matches() ? "[REDACTED]" : toIndentedString(recurringPaymentInformation)).append("\n");
+    if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerAuthenticationInformation").matches() ? "[REDACTED]" : toIndentedString(consumerAuthenticationInformation)).append("\n");
+    if (watchlistScreeningInformation != null) sb.append("    watchlistScreeningInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("watchlistScreeningInformation").matches() ? "[REDACTED]" : toIndentedString(watchlistScreeningInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenInformation").matches() ? "[REDACTED]" : toIndentedString(tokenInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateBundledDecisionManagerCaseRequest {\n");
     

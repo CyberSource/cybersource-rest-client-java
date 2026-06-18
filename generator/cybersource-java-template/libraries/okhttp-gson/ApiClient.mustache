@@ -1203,7 +1203,7 @@ public class ApiClient {
 									response.code(), response.headers().toMultimap(), respBody);
 						}
 					}
-					logger.info(respBody);
+					logger.debug(respBody);
 				} catch (IOException e) {
 					logger.error("ApiException : " + e + " " + response.code() + " " + response.message());
 					throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
@@ -1269,7 +1269,7 @@ public class ApiClient {
 		headerParams.putAll(requestHeaderMap);
 
 		
-		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
+		logger.debug("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		try {
@@ -1612,30 +1612,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * Adding Client Cert (.p12) to KeyStore, Trust all site
+	 * Adding Client Cert (.p12) to KeyStore for mTLS client authentication.
+	 * Server certificate validation is performed by the JVM default trust store.
 	 */
 	private void addClientCertToKeyStore() {
 		try {
-
-			// Create a trust manager that does not validate certificate chains
-			final TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
-				@Override
-				public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType)
-						throws CertificateException {
-				}
-
-				@Override
-				public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType)
-						throws CertificateException {
-				}
-
-				@Override
-				public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-					return new java.security.cert.X509Certificate[] {};
-				}
-					}
-			};
-
 			KeyStore merchantKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
 			try (FileInputStream file = new FileInputStream(
 					new File(merchantConfig.getClientCertDirectory(), merchantConfig.getClientCertFile()))) {
@@ -1644,15 +1625,49 @@ public class ApiClient {
 
 			KeyManagerFactory keyManagerFactory = KeyManagerFactory
 					.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-			keyManagerFactory.init(merchantKeyStore, new char[] {});
+			keyManagerFactory.init(merchantKeyStore, merchantConfig.getClientCertPassword().toCharArray());
 
-			SSLContext sslContext = SSLContext.getInstance("TLS");
-			sslContext.init(keyManagerFactory.getKeyManagers(), trustAllCerts, new SecureRandom());
-			additionalSettings.setCustomSSLSocketFactory(sslContext.getSocketFactory());
-			additionalSettings.setCustomX509TrustManager((X509TrustManager) trustAllCerts[0]);
-		} catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException
-				| KeyManagementException | UnrecoverableKeyException ex) {
-			logger.error("Failed to load client certificate for mTLS authentication: " + ex.getMessage(), ex);
+			this.keyManagers = keyManagerFactory.getKeyManagers();
+			applySslSettings();
+
+			if (verifyingSsl) {
+				TrustManagerFactory tmf = TrustManagerFactory
+						.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+				tmf.init((KeyStore) null);
+				X509TrustManager x509tm = null;
+				for (TrustManager tm : tmf.getTrustManagers()) {
+					if (tm instanceof X509TrustManager) {
+						x509tm = (X509TrustManager) tm;
+						break;
+					}
+				}
+				if (x509tm == null) {
+					logger.error("No X509TrustManager found in JVM default trust store. Client certificate will not be sent.");
+				} else {
+					additionalSettings.setCustomX509TrustManager(x509tm);
+				}
+			} else {
+				additionalSettings.setCustomX509TrustManager(new X509TrustManager() {
+					@Override
+					public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+					@Override
+					public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+					@Override
+					public X509Certificate[] getAcceptedIssuers() {
+						return new X509Certificate[]{};
+					}
+				});
+			}
+		} catch (FileNotFoundException ex) {
+			logger.error("Client certificate file not found. Please verify clientCertDirectory and clientCertFile in merchant configuration.");
+		} catch (IOException ex) {
+			logger.error("Failed to read client certificate file. Please ensure the file is accessible and not corrupted.");
+		} catch (UnrecoverableKeyException ex) {
+			logger.error("Unable to load client certificate. Please verify that clientCertPassword is correct.");
+		} catch (CertificateException ex) {
+			logger.error("Invalid certificate in the client keystore. Please ensure the .p12 file contains a valid certificate.");
+		} catch (KeyStoreException | NoSuchAlgorithmException ex) {
+			logger.error("Failed to initialize client certificate keystore. Please check the JVM security configuration.");
 		}
 	}
 
@@ -1679,7 +1694,7 @@ public class ApiClient {
 
 					@Override
 					public X509Certificate[] getAcceptedIssuers() {
-						return null;
+						return new X509Certificate[]{};
 					}
 				};
 				trustManagers = new TrustManager[] { trustAll };

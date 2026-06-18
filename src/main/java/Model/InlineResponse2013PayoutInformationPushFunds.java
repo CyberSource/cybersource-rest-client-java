@@ -355,8 +355,58 @@ public class InlineResponse2013PayoutInformationPushFunds {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2013PayoutInformationPushFunds {\n");
+    
+    if (moneyTransferFastFundsCrossBorder != null) sb.append("    moneyTransferFastFundsCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("moneyTransferFastFundsCrossBorder").matches() ? "[REDACTED]" : toIndentedString(moneyTransferFastFundsCrossBorder)).append("\n");
+    if (moneyTransferFastFundsDomestic != null) sb.append("    moneyTransferFastFundsDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("moneyTransferFastFundsDomestic").matches() ? "[REDACTED]" : toIndentedString(moneyTransferFastFundsDomestic)).append("\n");
+    if (moneyTransferCrossBorder != null) sb.append("    moneyTransferCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("moneyTransferCrossBorder").matches() ? "[REDACTED]" : toIndentedString(moneyTransferCrossBorder)).append("\n");
+    if (moneyTransferDomestic != null) sb.append("    moneyTransferDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("moneyTransferDomestic").matches() ? "[REDACTED]" : toIndentedString(moneyTransferDomestic)).append("\n");
+    if (nonMoneyTransferFastFundsCrossBorder != null) sb.append("    nonMoneyTransferFastFundsCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonMoneyTransferFastFundsCrossBorder").matches() ? "[REDACTED]" : toIndentedString(nonMoneyTransferFastFundsCrossBorder)).append("\n");
+    if (nonMoneyTransferFastFundsDomestic != null) sb.append("    nonMoneyTransferFastFundsDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonMoneyTransferFastFundsDomestic").matches() ? "[REDACTED]" : toIndentedString(nonMoneyTransferFastFundsDomestic)).append("\n");
+    if (nonMoneyTransferCrossBorder != null) sb.append("    nonMoneyTransferCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonMoneyTransferCrossBorder").matches() ? "[REDACTED]" : toIndentedString(nonMoneyTransferCrossBorder)).append("\n");
+    if (nonMoneyTransferDomestic != null) sb.append("    nonMoneyTransferDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonMoneyTransferDomestic").matches() ? "[REDACTED]" : toIndentedString(nonMoneyTransferDomestic)).append("\n");
+    if (onlineGamblingFastFundsCrossBorder != null) sb.append("    onlineGamblingFastFundsCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("onlineGamblingFastFundsCrossBorder").matches() ? "[REDACTED]" : toIndentedString(onlineGamblingFastFundsCrossBorder)).append("\n");
+    if (onlineGamblingFastFundsDomestic != null) sb.append("    onlineGamblingFastFundsDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("onlineGamblingFastFundsDomestic").matches() ? "[REDACTED]" : toIndentedString(onlineGamblingFastFundsDomestic)).append("\n");
+    if (onlineGamblingCrossBorder != null) sb.append("    onlineGamblingCrossBorder: ").append(SENSITIVE_FIELD_PATTERN.matcher("onlineGamblingCrossBorder").matches() ? "[REDACTED]" : toIndentedString(onlineGamblingCrossBorder)).append("\n");
+    if (onlineGamblingDomestic != null) sb.append("    onlineGamblingDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("onlineGamblingDomestic").matches() ? "[REDACTED]" : toIndentedString(onlineGamblingDomestic)).append("\n");
+    if (domesticParticipant != null) sb.append("    domesticParticipant: ").append(SENSITIVE_FIELD_PATTERN.matcher("domesticParticipant").matches() ? "[REDACTED]" : toIndentedString(domesticParticipant)).append("\n");
+    if (crossBorderParticipant != null) sb.append("    crossBorderParticipant: ").append(SENSITIVE_FIELD_PATTERN.matcher("crossBorderParticipant").matches() ? "[REDACTED]" : toIndentedString(crossBorderParticipant)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013PayoutInformationPushFunds {\n");
     

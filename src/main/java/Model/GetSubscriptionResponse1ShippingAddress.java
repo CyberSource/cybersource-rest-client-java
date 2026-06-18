@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo;
+import Model.DefaultShippingAddressShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class GetSubscriptionResponse1ShippingAddress {
   private String id = null;
 
   @SerializedName("shipTo")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo = null;
+  private DefaultShippingAddressShipTo shipTo = null;
 
   public GetSubscriptionResponse1ShippingAddress id(String id) {
     this.id = id;
@@ -55,7 +55,7 @@ public class GetSubscriptionResponse1ShippingAddress {
     this.id = id;
   }
 
-  public GetSubscriptionResponse1ShippingAddress shipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public GetSubscriptionResponse1ShippingAddress shipTo(DefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -65,11 +65,11 @@ public class GetSubscriptionResponse1ShippingAddress {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo getShipTo() {
+  public DefaultShippingAddressShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public void setShipTo(DefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
   }
 
@@ -93,8 +93,46 @@ public class GetSubscriptionResponse1ShippingAddress {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GetSubscriptionResponse1ShippingAddress {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubscriptionResponse1ShippingAddress {\n");
     

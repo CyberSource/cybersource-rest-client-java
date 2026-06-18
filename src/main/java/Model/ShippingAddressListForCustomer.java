@@ -146,8 +146,50 @@ public class ShippingAddressListForCustomer {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ShippingAddressListForCustomer {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(SENSITIVE_FIELD_PATTERN.matcher("offset").matches() ? "[REDACTED]" : toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(SENSITIVE_FIELD_PATTERN.matcher("limit").matches() ? "[REDACTED]" : toIndentedString(limit)).append("\n");
+    if (count != null) sb.append("    count: ").append(SENSITIVE_FIELD_PATTERN.matcher("count").matches() ? "[REDACTED]" : toIndentedString(count)).append("\n");
+    if (total != null) sb.append("    total: ").append(SENSITIVE_FIELD_PATTERN.matcher("total").matches() ? "[REDACTED]" : toIndentedString(total)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(SENSITIVE_FIELD_PATTERN.matcher("embedded").matches() ? "[REDACTED]" : toIndentedString(embedded)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ShippingAddressListForCustomer {\n");
     

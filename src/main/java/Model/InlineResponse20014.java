@@ -280,8 +280,54 @@ public class InlineResponse20014 {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse20014 {\n");
+    
+    if (version != null) sb.append("    version: ").append(SENSITIVE_FIELD_PATTERN.matcher("version").matches() ? "[REDACTED]" : toIndentedString(version)).append("\n");
+    if (reportCreatedDate != null) sb.append("    reportCreatedDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportCreatedDate").matches() ? "[REDACTED]" : toIndentedString(reportCreatedDate)).append("\n");
+    if (batchId != null) sb.append("    batchId: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchId").matches() ? "[REDACTED]" : toIndentedString(batchId)).append("\n");
+    if (batchSource != null) sb.append("    batchSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchSource").matches() ? "[REDACTED]" : toIndentedString(batchSource)).append("\n");
+    if (batchCaEndpoints != null) sb.append("    batchCaEndpoints: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchCaEndpoints").matches() ? "[REDACTED]" : toIndentedString(batchCaEndpoints)).append("\n");
+    if (batchCreatedDate != null) sb.append("    batchCreatedDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchCreatedDate").matches() ? "[REDACTED]" : toIndentedString(batchCreatedDate)).append("\n");
+    if (merchantReference != null) sb.append("    merchantReference: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReference").matches() ? "[REDACTED]" : toIndentedString(merchantReference)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(SENSITIVE_FIELD_PATTERN.matcher("totals").matches() ? "[REDACTED]" : toIndentedString(totals)).append("\n");
+    if (billing != null) sb.append("    billing: ").append(SENSITIVE_FIELD_PATTERN.matcher("billing").matches() ? "[REDACTED]" : toIndentedString(billing)).append("\n");
+    if (records != null) sb.append("    records: ").append(SENSITIVE_FIELD_PATTERN.matcher("records").matches() ? "[REDACTED]" : toIndentedString(records)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20014 {\n");
     

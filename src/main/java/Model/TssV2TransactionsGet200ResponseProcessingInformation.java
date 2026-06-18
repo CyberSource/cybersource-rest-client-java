@@ -315,8 +315,56 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TssV2TransactionsGet200ResponseProcessingInformation {\n");
+    
+    if (binSource != null) sb.append("    binSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("binSource").matches() ? "[REDACTED]" : toIndentedString(binSource)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(SENSITIVE_FIELD_PATTERN.matcher("industryDataType").matches() ? "[REDACTED]" : toIndentedString(industryDataType)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSolution").matches() ? "[REDACTED]" : toIndentedString(paymentSolution)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (commerceIndicatorLabel != null) sb.append("    commerceIndicatorLabel: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicatorLabel").matches() ? "[REDACTED]" : toIndentedString(commerceIndicatorLabel)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankTransferOptions").matches() ? "[REDACTED]" : toIndentedString(bankTransferOptions)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("captureOptions").matches() ? "[REDACTED]" : toIndentedString(captureOptions)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("japanPaymentOptions").matches() ? "[REDACTED]" : toIndentedString(japanPaymentOptions)).append("\n");
+    if (validationLevel != null) sb.append("    validationLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("validationLevel").matches() ? "[REDACTED]" : toIndentedString(validationLevel)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformation {\n");
     

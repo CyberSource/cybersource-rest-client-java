@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **templateId** | **String** |  |  [optional]
-**configurations** | [**CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations**](CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations.md) |  |  [optional]
+**configurations** | [**AccountUpdaterConfigurations**](AccountUpdaterConfigurations.md) |  |  [optional]
 
 
 

@@ -15,16 +15,16 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.DefaultPaymentInstrumentBankAccount;
+import Model.DefaultPaymentInstrumentBillTo;
+import Model.DefaultPaymentInstrumentBuyerInformation;
+import Model.DefaultPaymentInstrumentCard;
+import Model.DefaultPaymentInstrumentInstrumentIdentifier;
+import Model.DefaultPaymentInstrumentLinks;
+import Model.DefaultPaymentInstrumentMetadata;
 import Model.TmsMerchantInformation;
 import Model.TmsPaymentInstrumentProcessingInfo;
 import Model.Tmsv1paymentinstrumentsEmbedded;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +40,7 @@ import java.io.IOException;
 
 public class PatchPaymentInstrumentRequest {
   @SerializedName("_links")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links = null;
+  private DefaultPaymentInstrumentLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -58,16 +58,16 @@ public class PatchPaymentInstrumentRequest {
   private String type = null;
 
   @SerializedName("bankAccount")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount = null;
+  private DefaultPaymentInstrumentBankAccount bankAccount = null;
 
   @SerializedName("card")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card = null;
+  private DefaultPaymentInstrumentCard card = null;
 
   @SerializedName("buyerInformation")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation = null;
+  private DefaultPaymentInstrumentBuyerInformation buyerInformation = null;
 
   @SerializedName("billTo")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
+  private DefaultPaymentInstrumentBillTo billTo = null;
 
   @SerializedName("processingInformation")
   private TmsPaymentInstrumentProcessingInfo processingInformation = null;
@@ -76,15 +76,15 @@ public class PatchPaymentInstrumentRequest {
   private TmsMerchantInformation merchantInformation = null;
 
   @SerializedName("instrumentIdentifier")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier = null;
+  private DefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier = null;
 
   @SerializedName("metadata")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata = null;
+  private DefaultPaymentInstrumentMetadata metadata = null;
 
   @SerializedName("_embedded")
   private Tmsv1paymentinstrumentsEmbedded embedded = null;
 
-  public PatchPaymentInstrumentRequest links(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links) {
+  public PatchPaymentInstrumentRequest links(DefaultPaymentInstrumentLinks links) {
     this.links = links;
     return this;
   }
@@ -94,11 +94,11 @@ public class PatchPaymentInstrumentRequest {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks getLinks() {
+  public DefaultPaymentInstrumentLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks links) {
+  public void setLinks(DefaultPaymentInstrumentLinks links) {
     this.links = links;
   }
 
@@ -165,7 +165,7 @@ public class PatchPaymentInstrumentRequest {
     return type;
   }
 
-  public PatchPaymentInstrumentRequest bankAccount(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
+  public PatchPaymentInstrumentRequest bankAccount(DefaultPaymentInstrumentBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
@@ -175,15 +175,15 @@ public class PatchPaymentInstrumentRequest {
    * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount getBankAccount() {
+  public DefaultPaymentInstrumentBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
+  public void setBankAccount(DefaultPaymentInstrumentBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public PatchPaymentInstrumentRequest card(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card) {
+  public PatchPaymentInstrumentRequest card(DefaultPaymentInstrumentCard card) {
     this.card = card;
     return this;
   }
@@ -193,15 +193,15 @@ public class PatchPaymentInstrumentRequest {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard getCard() {
+  public DefaultPaymentInstrumentCard getCard() {
     return card;
   }
 
-  public void setCard(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard card) {
+  public void setCard(DefaultPaymentInstrumentCard card) {
     this.card = card;
   }
 
-  public PatchPaymentInstrumentRequest buyerInformation(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
+  public PatchPaymentInstrumentRequest buyerInformation(DefaultPaymentInstrumentBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -211,15 +211,15 @@ public class PatchPaymentInstrumentRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation getBuyerInformation() {
+  public DefaultPaymentInstrumentBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation buyerInformation) {
+  public void setBuyerInformation(DefaultPaymentInstrumentBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public PatchPaymentInstrumentRequest billTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public PatchPaymentInstrumentRequest billTo(DefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -229,11 +229,11 @@ public class PatchPaymentInstrumentRequest {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo getBillTo() {
+  public DefaultPaymentInstrumentBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo billTo) {
+  public void setBillTo(DefaultPaymentInstrumentBillTo billTo) {
     this.billTo = billTo;
   }
 
@@ -273,7 +273,7 @@ public class PatchPaymentInstrumentRequest {
     this.merchantInformation = merchantInformation;
   }
 
-  public PatchPaymentInstrumentRequest instrumentIdentifier(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
+  public PatchPaymentInstrumentRequest instrumentIdentifier(DefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -283,15 +283,15 @@ public class PatchPaymentInstrumentRequest {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier getInstrumentIdentifier() {
+  public DefaultPaymentInstrumentInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(DefaultPaymentInstrumentInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 
-  public PatchPaymentInstrumentRequest metadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata) {
+  public PatchPaymentInstrumentRequest metadata(DefaultPaymentInstrumentMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -301,11 +301,11 @@ public class PatchPaymentInstrumentRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata getMetadata() {
+  public DefaultPaymentInstrumentMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata metadata) {
+  public void setMetadata(DefaultPaymentInstrumentMetadata metadata) {
     this.metadata = metadata;
   }
 
@@ -360,8 +360,59 @@ public class PatchPaymentInstrumentRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PatchPaymentInstrumentRequest {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (object != null) sb.append("    object: ").append(SENSITIVE_FIELD_PATTERN.matcher("object").matches() ? "[REDACTED]" : toIndentedString(object)).append("\n");
+    if (_default != null) sb.append("    _default: ").append(SENSITIVE_FIELD_PATTERN.matcher("_default").matches() ? "[REDACTED]" : toIndentedString(_default)).append("\n");
+    if (state != null) sb.append("    state: ").append(SENSITIVE_FIELD_PATTERN.matcher("state").matches() ? "[REDACTED]" : toIndentedString(state)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (bankAccount != null) sb.append("    bankAccount: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankAccount").matches() ? "[REDACTED]" : toIndentedString(bankAccount)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifier").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifier)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(SENSITIVE_FIELD_PATTERN.matcher("embedded").matches() ? "[REDACTED]" : toIndentedString(embedded)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatchPaymentInstrumentRequest {\n");
     

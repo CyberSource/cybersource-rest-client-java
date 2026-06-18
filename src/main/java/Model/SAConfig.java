@@ -207,8 +207,51 @@ public class SAConfig {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SAConfig {\n");
+    
+    if (parentProfileId != null) sb.append("    parentProfileId: ").append(SENSITIVE_FIELD_PATTERN.matcher("parentProfileId").matches() ? "[REDACTED]" : toIndentedString(parentProfileId)).append("\n");
+    if (contactInformation != null) sb.append("    contactInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("contactInformation").matches() ? "[REDACTED]" : toIndentedString(contactInformation)).append("\n");
+    if (notifications != null) sb.append("    notifications: ").append(SENSITIVE_FIELD_PATTERN.matcher("notifications").matches() ? "[REDACTED]" : toIndentedString(notifications)).append("\n");
+    if (service != null) sb.append("    service: ").append(SENSITIVE_FIELD_PATTERN.matcher("service").matches() ? "[REDACTED]" : toIndentedString(service)).append("\n");
+    if (paymentMethods != null) sb.append("    paymentMethods: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentMethods").matches() ? "[REDACTED]" : toIndentedString(paymentMethods)).append("\n");
+    if (checkout != null) sb.append("    checkout: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkout").matches() ? "[REDACTED]" : toIndentedString(checkout)).append("\n");
+    if (paymentTypes != null) sb.append("    paymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentTypes").matches() ? "[REDACTED]" : toIndentedString(paymentTypes)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfig {\n");
     

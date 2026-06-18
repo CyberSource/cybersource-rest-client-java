@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**features** | [**PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures**](PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures.md) |  |  [optional]
+**features** | [**MicroformConfigFeatures**](MicroformConfigFeatures.md) |  |  [optional]
 
 
 

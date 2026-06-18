@@ -245,8 +245,53 @@ public class InlineResponse2009Devices {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2009Devices {\n");
+    
+    if (readerId != null) sb.append("    readerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("readerId").matches() ? "[REDACTED]" : toIndentedString(readerId)).append("\n");
+    if (terminalSerialNumber != null) sb.append("    terminalSerialNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalSerialNumber").matches() ? "[REDACTED]" : toIndentedString(terminalSerialNumber)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (model != null) sb.append("    model: ").append(SENSITIVE_FIELD_PATTERN.matcher("model").matches() ? "[REDACTED]" : toIndentedString(model)).append("\n");
+    if (make != null) sb.append("    make: ").append(SENSITIVE_FIELD_PATTERN.matcher("make").matches() ? "[REDACTED]" : toIndentedString(make)).append("\n");
+    if (hardwareRevision != null) sb.append("    hardwareRevision: ").append(SENSITIVE_FIELD_PATTERN.matcher("hardwareRevision").matches() ? "[REDACTED]" : toIndentedString(hardwareRevision)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (creationDate != null) sb.append("    creationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("creationDate").matches() ? "[REDACTED]" : toIndentedString(creationDate)).append("\n");
+    if (pin != null) sb.append("    pin: ").append(SENSITIVE_FIELD_PATTERN.matcher("pin").matches() ? "[REDACTED]" : toIndentedString(pin)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2009Devices {\n");
     

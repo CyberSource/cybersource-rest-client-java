@@ -353,8 +353,57 @@ public class CreateReportSubscriptionRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CreateReportSubscriptionRequest {\n");
+    
+    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
+    if (reportDefinitionName != null) sb.append("    reportDefinitionName: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportDefinitionName").matches() ? "[REDACTED]" : toIndentedString(reportDefinitionName)).append("\n");
+    if (reportFields != null) sb.append("    reportFields: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportFields").matches() ? "[REDACTED]" : toIndentedString(reportFields)).append("\n");
+    if (reportMimeType != null) sb.append("    reportMimeType: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportMimeType").matches() ? "[REDACTED]" : toIndentedString(reportMimeType)).append("\n");
+    if (reportFrequency != null) sb.append("    reportFrequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportFrequency").matches() ? "[REDACTED]" : toIndentedString(reportFrequency)).append("\n");
+    if (reportInterval != null) sb.append("    reportInterval: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportInterval").matches() ? "[REDACTED]" : toIndentedString(reportInterval)).append("\n");
+    if (reportName != null) sb.append("    reportName: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportName").matches() ? "[REDACTED]" : toIndentedString(reportName)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(SENSITIVE_FIELD_PATTERN.matcher("timezone").matches() ? "[REDACTED]" : toIndentedString(timezone)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("startTime").matches() ? "[REDACTED]" : toIndentedString(startTime)).append("\n");
+    if (startDay != null) sb.append("    startDay: ").append(SENSITIVE_FIELD_PATTERN.matcher("startDay").matches() ? "[REDACTED]" : toIndentedString(startDay)).append("\n");
+    if (reportFilters != null) sb.append("    reportFilters: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportFilters").matches() ? "[REDACTED]" : toIndentedString(reportFilters)).append("\n");
+    if (reportPreferences != null) sb.append("    reportPreferences: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportPreferences").matches() ? "[REDACTED]" : toIndentedString(reportPreferences)).append("\n");
+    if (groupName != null) sb.append("    groupName: ").append(SENSITIVE_FIELD_PATTERN.matcher("groupName").matches() ? "[REDACTED]" : toIndentedString(groupName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateReportSubscriptionRequest {\n");
     

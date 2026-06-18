@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
-import Model.RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation;
+import Model.RiskAddressVerificationInformation;
 import Model.RiskV1AddressVerificationsPost201ResponseErrorInformation;
 import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
@@ -55,7 +55,7 @@ public class RiskV1AddressVerificationsPost201Response {
   private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("addressVerificationInformation")
-  private RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation addressVerificationInformation = null;
+  private RiskAddressVerificationInformation addressVerificationInformation = null;
 
   @SerializedName("errorInformation")
   private RiskV1AddressVerificationsPost201ResponseErrorInformation errorInformation = null;
@@ -186,7 +186,7 @@ public class RiskV1AddressVerificationsPost201Response {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public RiskV1AddressVerificationsPost201Response addressVerificationInformation(RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation addressVerificationInformation) {
+  public RiskV1AddressVerificationsPost201Response addressVerificationInformation(RiskAddressVerificationInformation addressVerificationInformation) {
     this.addressVerificationInformation = addressVerificationInformation;
     return this;
   }
@@ -196,11 +196,11 @@ public class RiskV1AddressVerificationsPost201Response {
    * @return addressVerificationInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation getAddressVerificationInformation() {
+  public RiskAddressVerificationInformation getAddressVerificationInformation() {
     return addressVerificationInformation;
   }
 
-  public void setAddressVerificationInformation(RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation addressVerificationInformation) {
+  public void setAddressVerificationInformation(RiskAddressVerificationInformation addressVerificationInformation) {
     this.addressVerificationInformation = addressVerificationInformation;
   }
 
@@ -249,8 +249,53 @@ public class RiskV1AddressVerificationsPost201Response {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class RiskV1AddressVerificationsPost201Response {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (submitTimeLocal != null) sb.append("    submitTimeLocal: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeLocal").matches() ? "[REDACTED]" : toIndentedString(submitTimeLocal)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
+    if (addressVerificationInformation != null) sb.append("    addressVerificationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("addressVerificationInformation").matches() ? "[REDACTED]" : toIndentedString(addressVerificationInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201Response {\n");
     

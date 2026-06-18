@@ -23,6 +23,7 @@ import Model.InlineResponse409;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
+import Model.InlineResponse502;
 import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.PostPaymentCredentialsRequest;
 import Model.PostPaymentCredentialsRequest1;

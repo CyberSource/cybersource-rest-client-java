@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Boardingv1registrationsOrganizationInformationBusinessInformationAddress;
+import Model.BoardingBusinessInformationAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -72,7 +72,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
   private String email = null;
 
   @SerializedName("address")
-  private Boardingv1registrationsOrganizationInformationBusinessInformationAddress address = null;
+  private BoardingBusinessInformationAddress address = null;
 
   public Boardingv1registrationsOrganizationInformationOwners firstName(String firstName) {
     this.firstName = firstName;
@@ -308,7 +308,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
     this.email = email;
   }
 
-  public Boardingv1registrationsOrganizationInformationOwners address(Boardingv1registrationsOrganizationInformationBusinessInformationAddress address) {
+  public Boardingv1registrationsOrganizationInformationOwners address(BoardingBusinessInformationAddress address) {
     this.address = address;
     return this;
   }
@@ -318,11 +318,11 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * @return address
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boardingv1registrationsOrganizationInformationBusinessInformationAddress getAddress() {
+  public BoardingBusinessInformationAddress getAddress() {
     return address;
   }
 
-  public void setAddress(Boardingv1registrationsOrganizationInformationBusinessInformationAddress address) {
+  public void setAddress(BoardingBusinessInformationAddress address) {
     this.address = address;
   }
 
@@ -358,8 +358,58 @@ public class Boardingv1registrationsOrganizationInformationOwners {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Boardingv1registrationsOrganizationInformationOwners {\n");
+    
+    if (firstName != null) sb.append("    firstName: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstName").matches() ? "[REDACTED]" : toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleName").matches() ? "[REDACTED]" : toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastName").matches() ? "[REDACTED]" : toIndentedString(lastName)).append("\n");
+    if (birthDate != null) sb.append("    birthDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("birthDate").matches() ? "[REDACTED]" : toIndentedString(birthDate)).append("\n");
+    if (isPrimary != null) sb.append("    isPrimary: ").append(SENSITIVE_FIELD_PATTERN.matcher("isPrimary").matches() ? "[REDACTED]" : toIndentedString(isPrimary)).append("\n");
+    if (ssn != null) sb.append("    ssn: ").append(SENSITIVE_FIELD_PATTERN.matcher("ssn").matches() ? "[REDACTED]" : toIndentedString(ssn)).append("\n");
+    if (passportNumber != null) sb.append("    passportNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("passportNumber").matches() ? "[REDACTED]" : toIndentedString(passportNumber)).append("\n");
+    if (passportCountry != null) sb.append("    passportCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("passportCountry").matches() ? "[REDACTED]" : toIndentedString(passportCountry)).append("\n");
+    if (jobTitle != null) sb.append("    jobTitle: ").append(SENSITIVE_FIELD_PATTERN.matcher("jobTitle").matches() ? "[REDACTED]" : toIndentedString(jobTitle)).append("\n");
+    if (hasSignificantResponsability != null) sb.append("    hasSignificantResponsability: ").append(SENSITIVE_FIELD_PATTERN.matcher("hasSignificantResponsability").matches() ? "[REDACTED]" : toIndentedString(hasSignificantResponsability)).append("\n");
+    if (ownershipPercentage != null) sb.append("    ownershipPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("ownershipPercentage").matches() ? "[REDACTED]" : toIndentedString(ownershipPercentage)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (address != null) sb.append("    address: ").append(SENSITIVE_FIELD_PATTERN.matcher("address").matches() ? "[REDACTED]" : toIndentedString(address)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationOwners {\n");
     

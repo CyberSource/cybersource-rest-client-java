@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations;
+import Model.AccountUpdaterConfigurations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {
   private String templateId = null;
 
   @SerializedName("configurations")
-  private CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations configurations = null;
+  private AccountUpdaterConfigurations configurations = null;
 
   public CommerceSolutionsProductsAccountUpdaterConfigurationInformation templateId(String templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public CommerceSolutionsProductsAccountUpdaterConfigurationInformation configurations(CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations configurations) {
+  public CommerceSolutionsProductsAccountUpdaterConfigurationInformation configurations(AccountUpdaterConfigurations configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations getConfigurations() {
+  public AccountUpdaterConfigurations getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(AccountUpdaterConfigurations configurations) {
     this.configurations = configurations;
   }
 
@@ -92,8 +92,46 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {\n");
+    
+    if (templateId != null) sb.append("    templateId: ").append(SENSITIVE_FIELD_PATTERN.matcher("templateId").matches() ? "[REDACTED]" : toIndentedString(templateId)).append("\n");
+    if (configurations != null) sb.append("    configurations: ").append(SENSITIVE_FIELD_PATTERN.matcher("configurations").matches() ? "[REDACTED]" : toIndentedString(configurations)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsAccountUpdaterConfigurationInformation {\n");
     

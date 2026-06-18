@@ -202,8 +202,51 @@ public class SAConfigNotificationsCustomerNotifications {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SAConfigNotificationsCustomerNotifications {\n");
+    
+    if (customReceiptPageEnabled != null) sb.append("    customReceiptPageEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("customReceiptPageEnabled").matches() ? "[REDACTED]" : toIndentedString(customReceiptPageEnabled)).append("\n");
+    if (receiptEmailAddress != null) sb.append("    receiptEmailAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("receiptEmailAddress").matches() ? "[REDACTED]" : toIndentedString(receiptEmailAddress)).append("\n");
+    if (customerReceiptEmailEnabled != null) sb.append("    customerReceiptEmailEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerReceiptEmailEnabled").matches() ? "[REDACTED]" : toIndentedString(customerReceiptEmailEnabled)).append("\n");
+    if (customCancelPage != null) sb.append("    customCancelPage: ").append(SENSITIVE_FIELD_PATTERN.matcher("customCancelPage").matches() ? "[REDACTED]" : toIndentedString(customCancelPage)).append("\n");
+    if (customReceiptPage != null) sb.append("    customReceiptPage: ").append(SENSITIVE_FIELD_PATTERN.matcher("customReceiptPage").matches() ? "[REDACTED]" : toIndentedString(customReceiptPage)).append("\n");
+    if (customCancelPageEnabled != null) sb.append("    customCancelPageEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("customCancelPageEnabled").matches() ? "[REDACTED]" : toIndentedString(customCancelPageEnabled)).append("\n");
+    if (notificationReceiptEmailEnabled != null) sb.append("    notificationReceiptEmailEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("notificationReceiptEmailEnabled").matches() ? "[REDACTED]" : toIndentedString(notificationReceiptEmailEnabled)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigNotificationsCustomerNotifications {\n");
     

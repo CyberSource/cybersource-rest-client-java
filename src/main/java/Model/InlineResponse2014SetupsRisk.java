@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014SetupsPaymentsCardProcessing;
+import Model.PaymentsConfigurationSetupCardProcessing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,15 +31,15 @@ import java.io.IOException;
 
 public class InlineResponse2014SetupsRisk {
   @SerializedName("fraudManagementEssentials")
-  private InlineResponse2014SetupsPaymentsCardProcessing fraudManagementEssentials = null;
+  private PaymentsConfigurationSetupCardProcessing fraudManagementEssentials = null;
 
   @SerializedName("decisionManager")
-  private InlineResponse2014SetupsPaymentsCardProcessing decisionManager = null;
+  private PaymentsConfigurationSetupCardProcessing decisionManager = null;
 
   @SerializedName("enhancedAuthentication")
-  private InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication = null;
+  private PaymentsConfigurationSetupCardProcessing enhancedAuthentication = null;
 
-  public InlineResponse2014SetupsRisk fraudManagementEssentials(InlineResponse2014SetupsPaymentsCardProcessing fraudManagementEssentials) {
+  public InlineResponse2014SetupsRisk fraudManagementEssentials(PaymentsConfigurationSetupCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
     return this;
   }
@@ -49,15 +49,15 @@ public class InlineResponse2014SetupsRisk {
    * @return fraudManagementEssentials
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getFraudManagementEssentials() {
+  public PaymentsConfigurationSetupCardProcessing getFraudManagementEssentials() {
     return fraudManagementEssentials;
   }
 
-  public void setFraudManagementEssentials(InlineResponse2014SetupsPaymentsCardProcessing fraudManagementEssentials) {
+  public void setFraudManagementEssentials(PaymentsConfigurationSetupCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
   }
 
-  public InlineResponse2014SetupsRisk decisionManager(InlineResponse2014SetupsPaymentsCardProcessing decisionManager) {
+  public InlineResponse2014SetupsRisk decisionManager(PaymentsConfigurationSetupCardProcessing decisionManager) {
     this.decisionManager = decisionManager;
     return this;
   }
@@ -67,15 +67,15 @@ public class InlineResponse2014SetupsRisk {
    * @return decisionManager
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getDecisionManager() {
+  public PaymentsConfigurationSetupCardProcessing getDecisionManager() {
     return decisionManager;
   }
 
-  public void setDecisionManager(InlineResponse2014SetupsPaymentsCardProcessing decisionManager) {
+  public void setDecisionManager(PaymentsConfigurationSetupCardProcessing decisionManager) {
     this.decisionManager = decisionManager;
   }
 
-  public InlineResponse2014SetupsRisk enhancedAuthentication(InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication) {
+  public InlineResponse2014SetupsRisk enhancedAuthentication(PaymentsConfigurationSetupCardProcessing enhancedAuthentication) {
     this.enhancedAuthentication = enhancedAuthentication;
     return this;
   }
@@ -85,11 +85,11 @@ public class InlineResponse2014SetupsRisk {
    * @return enhancedAuthentication
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getEnhancedAuthentication() {
+  public PaymentsConfigurationSetupCardProcessing getEnhancedAuthentication() {
     return enhancedAuthentication;
   }
 
-  public void setEnhancedAuthentication(InlineResponse2014SetupsPaymentsCardProcessing enhancedAuthentication) {
+  public void setEnhancedAuthentication(PaymentsConfigurationSetupCardProcessing enhancedAuthentication) {
     this.enhancedAuthentication = enhancedAuthentication;
   }
 
@@ -114,8 +114,47 @@ public class InlineResponse2014SetupsRisk {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2014SetupsRisk {\n");
+    
+    if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(SENSITIVE_FIELD_PATTERN.matcher("fraudManagementEssentials").matches() ? "[REDACTED]" : toIndentedString(fraudManagementEssentials)).append("\n");
+    if (decisionManager != null) sb.append("    decisionManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManager").matches() ? "[REDACTED]" : toIndentedString(decisionManager)).append("\n");
+    if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("enhancedAuthentication").matches() ? "[REDACTED]" : toIndentedString(enhancedAuthentication)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014SetupsRisk {\n");
     

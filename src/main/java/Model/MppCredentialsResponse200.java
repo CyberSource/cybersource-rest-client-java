@@ -224,8 +224,52 @@ public class MppCredentialsResponse200 {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class MppCredentialsResponse200 {\n");
+    
+    if (token != null) sb.append("    token: ").append(SENSITIVE_FIELD_PATTERN.matcher("token").matches() ? "[REDACTED]" : toIndentedString(token)).append("\n");
+    if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    if (lastFour != null) sb.append("    lastFour: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastFour").matches() ? "[REDACTED]" : toIndentedString(lastFour)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationMonth").matches() ? "[REDACTED]" : toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationYear").matches() ? "[REDACTED]" : toIndentedString(expirationYear)).append("\n");
+    if (dynamicData != null) sb.append("    dynamicData: ").append(SENSITIVE_FIELD_PATTERN.matcher("dynamicData").matches() ? "[REDACTED]" : toIndentedString(dynamicData)).append("\n");
+    if (eci != null) sb.append("    eci: ").append(SENSITIVE_FIELD_PATTERN.matcher("eci").matches() ? "[REDACTED]" : toIndentedString(eci)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountReference").matches() ? "[REDACTED]" : toIndentedString(paymentAccountReference)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MppCredentialsResponse200 {\n");
     

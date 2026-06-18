@@ -83,7 +83,7 @@ public class InvoiceSettingsApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getInvoiceSettings,getInvoiceSettingsAsync,getInvoiceSettingsWithHttpInfo,getInvoiceSettingsCall")) {
             try {
@@ -228,7 +228,7 @@ public class InvoiceSettingsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(invoiceSettingsRequest, InvoiceSettingsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateInvoiceSettings,updateInvoiceSettingsAsync,updateInvoiceSettingsWithHttpInfo,updateInvoiceSettingsCall")) {
             try {

@@ -45,10 +45,10 @@ public class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {
   }
 
    /**
-   * Indicates the type of vaulting relationship. Valid values: - \&quot;MERCHANT\&quot;: Single merchant relationship. - \&quot;PLATFORM\&quot;: Platform hosting multiple merchants. 
+   * Indicates the type of vaulting relationship. Valid values: - \&quot;MERCHANT\&quot;: Single merchant relationship. - \&quot;PLATFORM\&quot;: Platform hosting multiple merchants.&lt;br&gt;&lt;br&gt;  Optional field:&lt;br&gt; This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. 
    * @return usageType
   **/
-  @ApiModelProperty(value = "Indicates the type of vaulting relationship. Valid values: - \"MERCHANT\": Single merchant relationship. - \"PLATFORM\": Platform hosting multiple merchants. ")
+  @ApiModelProperty(value = "Indicates the type of vaulting relationship. Valid values: - \"MERCHANT\": Single merchant relationship. - \"PLATFORM\": Platform hosting multiple merchants.<br><br>  Optional field:<br> This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. ")
   public String getUsageType() {
     return usageType;
   }
@@ -63,10 +63,10 @@ public class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {
   }
 
    /**
-   * Indicates how the merchant will primarily use the vaulted payment method. Valid values: - \&quot;IMMEDIATE\&quot;: For on-demand, instant payments. These payments are variable in both amount and frequency and will be used to pay for goods or services before they are rendered to the buyer - \&quot;DEFERRED\&quot;: For post-pay payments; that is, payments for goods or services that have already been rendered to the buyer - \&quot;RECURRING_PREPAID\&quot;: For recurring payments before services are rendered. - \&quot;RECURRING_POSTPAID\&quot;: For recurring payments after services are rendered. - \&quot;THRESHOLD_PREPAID\&quot;: For payments when a pre-defined threshold is reached before services are rendered. - \&quot;THRESHOLD_POSTPAID\&quot;: For payments when a pre-defined threshold is reached after services are rendered. 
+   * Indicates how the merchant will primarily use the vaulted payment method. Valid values: - \&quot;IMMEDIATE\&quot;: For on-demand, instant payments. These payments are variable in both amount and frequency and will be used to pay for goods or services before they are rendered to the buyer - \&quot;DEFERRED\&quot;: For post-pay payments; that is, payments for goods or services that have already been rendered to the buyer - \&quot;RECURRING_PREPAID\&quot;: For recurring payments before services are rendered. - \&quot;RECURRING_POSTPAID\&quot;: For recurring payments after services are rendered. - \&quot;THRESHOLD_PREPAID\&quot;: For payments when a pre-defined threshold is reached before services are rendered. - \&quot;THRESHOLD_POSTPAID\&quot;: For payments when a pre-defined threshold is reached after services are rendered.&lt;br&gt;&lt;br&gt;  Required field:&lt;br&gt; This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. 
    * @return usagePattern
   **/
-  @ApiModelProperty(value = "Indicates how the merchant will primarily use the vaulted payment method. Valid values: - \"IMMEDIATE\": For on-demand, instant payments. These payments are variable in both amount and frequency and will be used to pay for goods or services before they are rendered to the buyer - \"DEFERRED\": For post-pay payments; that is, payments for goods or services that have already been rendered to the buyer - \"RECURRING_PREPAID\": For recurring payments before services are rendered. - \"RECURRING_POSTPAID\": For recurring payments after services are rendered. - \"THRESHOLD_PREPAID\": For payments when a pre-defined threshold is reached before services are rendered. - \"THRESHOLD_POSTPAID\": For payments when a pre-defined threshold is reached after services are rendered. ")
+  @ApiModelProperty(value = "Indicates how the merchant will primarily use the vaulted payment method. Valid values: - \"IMMEDIATE\": For on-demand, instant payments. These payments are variable in both amount and frequency and will be used to pay for goods or services before they are rendered to the buyer - \"DEFERRED\": For post-pay payments; that is, payments for goods or services that have already been rendered to the buyer - \"RECURRING_PREPAID\": For recurring payments before services are rendered. - \"RECURRING_POSTPAID\": For recurring payments after services are rendered. - \"THRESHOLD_PREPAID\": For payments when a pre-defined threshold is reached before services are rendered. - \"THRESHOLD_POSTPAID\": For payments when a pre-defined threshold is reached after services are rendered.<br><br>  Required field:<br> This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. ")
   public String getUsagePattern() {
     return usagePattern;
   }
@@ -81,10 +81,10 @@ public class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {
   }
 
    /**
-   * Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account. 
+   * Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account.&lt;br&gt;&lt;br&gt;  Optional field:&lt;br&gt; This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request. 
    * @return allowMultipleTokens
   **/
-  @ApiModelProperty(value = "Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account. ")
+  @ApiModelProperty(value = "Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account.<br><br>  Optional field:<br> This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
   public Boolean AllowMultipleTokens() {
     return allowMultipleTokens;
   }
@@ -114,8 +114,47 @@ public class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {\n");
+    
+    if (usageType != null) sb.append("    usageType: ").append(SENSITIVE_FIELD_PATTERN.matcher("usageType").matches() ? "[REDACTED]" : toIndentedString(usageType)).append("\n");
+    if (usagePattern != null) sb.append("    usagePattern: ").append(SENSITIVE_FIELD_PATTERN.matcher("usagePattern").matches() ? "[REDACTED]" : toIndentedString(usagePattern)).append("\n");
+    if (allowMultipleTokens != null) sb.append("    allowMultipleTokens: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowMultipleTokens").matches() ? "[REDACTED]" : toIndentedString(allowMultipleTokens)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod {\n");
     

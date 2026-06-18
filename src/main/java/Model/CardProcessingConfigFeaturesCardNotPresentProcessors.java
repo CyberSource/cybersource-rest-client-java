@@ -180,8 +180,50 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardProcessingConfigFeaturesCardNotPresentProcessors {\n");
+    
+    if (relaxAddressVerificationSystem != null) sb.append("    relaxAddressVerificationSystem: ").append(SENSITIVE_FIELD_PATTERN.matcher("relaxAddressVerificationSystem").matches() ? "[REDACTED]" : toIndentedString(relaxAddressVerificationSystem)).append("\n");
+    if (relaxAddressVerificationSystemAllowZipWithoutCountry != null) sb.append("    relaxAddressVerificationSystemAllowZipWithoutCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("relaxAddressVerificationSystemAllowZipWithoutCountry").matches() ? "[REDACTED]" : toIndentedString(relaxAddressVerificationSystemAllowZipWithoutCountry)).append("\n");
+    if (relaxAddressVerificationSystemAllowExpiredCard != null) sb.append("    relaxAddressVerificationSystemAllowExpiredCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("relaxAddressVerificationSystemAllowExpiredCard").matches() ? "[REDACTED]" : toIndentedString(relaxAddressVerificationSystemAllowExpiredCard)).append("\n");
+    if (enableEmsTransactionRiskScore != null) sb.append("    enableEmsTransactionRiskScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableEmsTransactionRiskScore").matches() ? "[REDACTED]" : toIndentedString(enableEmsTransactionRiskScore)).append("\n");
+    if (prestigiousPropertyIndicator != null) sb.append("    prestigiousPropertyIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("prestigiousPropertyIndicator").matches() ? "[REDACTED]" : toIndentedString(prestigiousPropertyIndicator)).append("\n");
+    if (payouts != null) sb.append("    payouts: ").append(SENSITIVE_FIELD_PATTERN.matcher("payouts").matches() ? "[REDACTED]" : toIndentedString(payouts)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardNotPresentProcessors {\n");
     

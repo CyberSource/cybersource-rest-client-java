@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList;
+import Model.ExportComplianceWatchList;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,7 +39,7 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
   private List<String> infoCodes = null;
 
   @SerializedName("watchList")
-  private PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList watchList = null;
+  private ExportComplianceWatchList watchList = null;
 
   public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation ipCountryConfidence(Integer ipCountryConfidence) {
     this.ipCountryConfidence = ipCountryConfidence;
@@ -87,7 +87,7 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
     this.infoCodes = infoCodes;
   }
 
-  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchList(PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList watchList) {
+  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchList(ExportComplianceWatchList watchList) {
     this.watchList = watchList;
     return this;
   }
@@ -97,11 +97,11 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
    * @return watchList
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList getWatchList() {
+  public ExportComplianceWatchList getWatchList() {
     return watchList;
   }
 
-  public void setWatchList(PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList watchList) {
+  public void setWatchList(ExportComplianceWatchList watchList) {
     this.watchList = watchList;
   }
 
@@ -126,8 +126,47 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {\n");
+    
+    if (ipCountryConfidence != null) sb.append("    ipCountryConfidence: ").append(SENSITIVE_FIELD_PATTERN.matcher("ipCountryConfidence").matches() ? "[REDACTED]" : toIndentedString(ipCountryConfidence)).append("\n");
+    if (infoCodes != null) sb.append("    infoCodes: ").append(SENSITIVE_FIELD_PATTERN.matcher("infoCodes").matches() ? "[REDACTED]" : toIndentedString(infoCodes)).append("\n");
+    if (watchList != null) sb.append("    watchList: ").append(SENSITIVE_FIELD_PATTERN.matcher("watchList").matches() ? "[REDACTED]" : toIndentedString(watchList)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {\n");
     

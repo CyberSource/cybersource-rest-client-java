@@ -113,8 +113,47 @@ public class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {\n");
+    
+    if (voidAmount != null) sb.append("    voidAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("voidAmount").matches() ? "[REDACTED]" : toIndentedString(voidAmount)).append("\n");
+    if (originalTransactionAmount != null) sb.append("    originalTransactionAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalTransactionAmount").matches() ? "[REDACTED]" : toIndentedString(originalTransactionAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {\n");
     

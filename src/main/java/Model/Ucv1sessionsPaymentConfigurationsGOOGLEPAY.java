@@ -48,10 +48,10 @@ public class Ucv1sessionsPaymentConfigurationsGOOGLEPAY {
   }
 
    /**
-   * When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt; By default, Google sends both authentication types.  When the complete mandate is used and Google Pay does not authenticate the transaction, then Unified Checkout completes the authentication request as part of the complete mandate.&lt;br&gt;&lt;br&gt; Possible values: - PAN_ONLY: Google returns primary account number (PAN) values - CRYPTOGRAM_3DS: Google returns fully authenticated network token values.&lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
+   * When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt; By default, Google sends both authentication types.  When the complete mandate is used and Google Pay does not authenticate the transaction, then Unified Checkout completes the authentication request as part of the complete mandate.&lt;br&gt;&lt;br&gt; Possible values: - PAN_ONLY: Google returns primary account number (PAN) values - CRYPTOGRAM_3DS: Google returns fully authenticated network token values.&lt;br&gt;&lt;br&gt;  The allowedPaymentTypes field must also include GOOGLEPAY as shown below for the Google Pay button to show in Unified Checkout:    \&quot;allowedPaymentTypes\&quot;: [\&quot;GOOGLEPAY\&quot;] &lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
    * @return allowedAuthMethods
   **/
-  @ApiModelProperty(value = "When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br> By default, Google sends both authentication types.  When the complete mandate is used and Google Pay does not authenticate the transaction, then Unified Checkout completes the authentication request as part of the complete mandate.<br><br> Possible values: - PAN_ONLY: Google returns primary account number (PAN) values - CRYPTOGRAM_3DS: Google returns fully authenticated network token values.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
+  @ApiModelProperty(value = "When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br> By default, Google sends both authentication types.  When the complete mandate is used and Google Pay does not authenticate the transaction, then Unified Checkout completes the authentication request as part of the complete mandate.<br><br> Possible values: - PAN_ONLY: Google returns primary account number (PAN) values - CRYPTOGRAM_3DS: Google returns fully authenticated network token values.<br><br>  The allowedPaymentTypes field must also include GOOGLEPAY as shown below for the Google Pay button to show in Unified Checkout:    \"allowedPaymentTypes\": [\"GOOGLEPAY\"] <br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
   public List<String> getAllowedAuthMethods() {
     return allowedAuthMethods;
   }
@@ -79,8 +79,45 @@ public class Ucv1sessionsPaymentConfigurationsGOOGLEPAY {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsPaymentConfigurationsGOOGLEPAY {\n");
+    
+    if (allowedAuthMethods != null) sb.append("    allowedAuthMethods: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedAuthMethods").matches() ? "[REDACTED]" : toIndentedString(allowedAuthMethods)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsPaymentConfigurationsGOOGLEPAY {\n");
     

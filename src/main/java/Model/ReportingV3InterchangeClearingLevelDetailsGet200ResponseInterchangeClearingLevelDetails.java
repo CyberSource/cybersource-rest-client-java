@@ -1170,8 +1170,95 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchange
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearingLevelDetails {\n");
+    
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountId").matches() ? "[REDACTED]" : toIndentedString(accountId)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorMerchantId").matches() ? "[REDACTED]" : toIndentedString(processorMerchantId)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(merchantReferenceNumber)).append("\n");
+    if (accountSuffix != null) sb.append("    accountSuffix: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountSuffix").matches() ? "[REDACTED]" : toIndentedString(accountSuffix)).append("\n");
+    if (paymentSubType != null) sb.append("    paymentSubType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSubType").matches() ? "[REDACTED]" : toIndentedString(paymentSubType)).append("\n");
+    if (paymentSubTypeDescription != null) sb.append("    paymentSubTypeDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSubTypeDescription").matches() ? "[REDACTED]" : toIndentedString(paymentSubTypeDescription)).append("\n");
+    if (transactionTime != null) sb.append("    transactionTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTime").matches() ? "[REDACTED]" : toIndentedString(transactionTime)).append("\n");
+    if (processedTime != null) sb.append("    processedTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("processedTime").matches() ? "[REDACTED]" : toIndentedString(processedTime)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionType").matches() ? "[REDACTED]" : toIndentedString(transactionType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencyCode").matches() ? "[REDACTED]" : toIndentedString(currencyCode)).append("\n");
+    if (priceType != null) sb.append("    priceType: ").append(SENSITIVE_FIELD_PATTERN.matcher("priceType").matches() ? "[REDACTED]" : toIndentedString(priceType)).append("\n");
+    if (priceAmountOne != null) sb.append("    priceAmountOne: ").append(SENSITIVE_FIELD_PATTERN.matcher("priceAmountOne").matches() ? "[REDACTED]" : toIndentedString(priceAmountOne)).append("\n");
+    if (priceAmountTwo != null) sb.append("    priceAmountTwo: ").append(SENSITIVE_FIELD_PATTERN.matcher("priceAmountTwo").matches() ? "[REDACTED]" : toIndentedString(priceAmountTwo)).append("\n");
+    if (reClass != null) sb.append("    reClass: ").append(SENSITIVE_FIELD_PATTERN.matcher("reClass").matches() ? "[REDACTED]" : toIndentedString(reClass)).append("\n");
+    if (settlementTime != null) sb.append("    settlementTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementTime").matches() ? "[REDACTED]" : toIndentedString(settlementTime)).append("\n");
+    if (settlementProcessor != null) sb.append("    settlementProcessor: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementProcessor").matches() ? "[REDACTED]" : toIndentedString(settlementProcessor)).append("\n");
+    if (merchantBatchNumber != null) sb.append("    merchantBatchNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantBatchNumber").matches() ? "[REDACTED]" : toIndentedString(merchantBatchNumber)).append("\n");
+    if (clearedLevel != null) sb.append("    clearedLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearedLevel").matches() ? "[REDACTED]" : toIndentedString(clearedLevel)).append("\n");
+    if (billbackReasonCode != null) sb.append("    billbackReasonCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("billbackReasonCode").matches() ? "[REDACTED]" : toIndentedString(billbackReasonCode)).append("\n");
+    if (billbackReasonDescription != null) sb.append("    billbackReasonDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("billbackReasonDescription").matches() ? "[REDACTED]" : toIndentedString(billbackReasonDescription)).append("\n");
+    if (merchantPricedLevel != null) sb.append("    merchantPricedLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantPricedLevel").matches() ? "[REDACTED]" : toIndentedString(merchantPricedLevel)).append("\n");
+    if (discountRate != null) sb.append("    discountRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountRate").matches() ? "[REDACTED]" : toIndentedString(discountRate)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
+    if (clearingRateAmountOne != null) sb.append("    clearingRateAmountOne: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingRateAmountOne").matches() ? "[REDACTED]" : toIndentedString(clearingRateAmountOne)).append("\n");
+    if (clearingRateAmountTwo != null) sb.append("    clearingRateAmountTwo: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingRateAmountTwo").matches() ? "[REDACTED]" : toIndentedString(clearingRateAmountTwo)).append("\n");
+    if (clearingRateAmountThree != null) sb.append("    clearingRateAmountThree: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingRateAmountThree").matches() ? "[REDACTED]" : toIndentedString(clearingRateAmountThree)).append("\n");
+    if (clearingRateCurrencyCode != null) sb.append("    clearingRateCurrencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingRateCurrencyCode").matches() ? "[REDACTED]" : toIndentedString(clearingRateCurrencyCode)).append("\n");
+    if (interchangeAmount != null) sb.append("    interchangeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangeAmount").matches() ? "[REDACTED]" : toIndentedString(interchangeAmount)).append("\n");
+    if (billbackAmount != null) sb.append("    billbackAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("billbackAmount").matches() ? "[REDACTED]" : toIndentedString(billbackAmount)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementAmount").matches() ? "[REDACTED]" : toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrencyCode != null) sb.append("    settlementCurrencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementCurrencyCode").matches() ? "[REDACTED]" : toIndentedString(settlementCurrencyCode)).append("\n");
+    if (conversionRate != null) sb.append("    conversionRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("conversionRate").matches() ? "[REDACTED]" : toIndentedString(conversionRate)).append("\n");
+    if (deltaCost != null) sb.append("    deltaCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("deltaCost").matches() ? "[REDACTED]" : toIndentedString(deltaCost)).append("\n");
+    if (surchargeAmount != null) sb.append("    surchargeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("surchargeAmount").matches() ? "[REDACTED]" : toIndentedString(surchargeAmount)).append("\n");
+    if (percentRateCharged != null) sb.append("    percentRateCharged: ").append(SENSITIVE_FIELD_PATTERN.matcher("percentRateCharged").matches() ? "[REDACTED]" : toIndentedString(percentRateCharged)).append("\n");
+    if (perTransactionCharged != null) sb.append("    perTransactionCharged: ").append(SENSITIVE_FIELD_PATTERN.matcher("perTransactionCharged").matches() ? "[REDACTED]" : toIndentedString(perTransactionCharged)).append("\n");
+    if (downgradeReasonCode != null) sb.append("    downgradeReasonCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("downgradeReasonCode").matches() ? "[REDACTED]" : toIndentedString(downgradeReasonCode)).append("\n");
+    if (processTime != null) sb.append("    processTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("processTime").matches() ? "[REDACTED]" : toIndentedString(processTime)).append("\n");
+    if (authCode != null) sb.append("    authCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("authCode").matches() ? "[REDACTED]" : toIndentedString(authCode)).append("\n");
+    if (batchTime != null) sb.append("    batchTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchTime").matches() ? "[REDACTED]" : toIndentedString(batchTime)).append("\n");
+    if (processorBatchNumber != null) sb.append("    processorBatchNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorBatchNumber").matches() ? "[REDACTED]" : toIndentedString(processorBatchNumber)).append("\n");
+    if (cardIndicator != null) sb.append("    cardIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardIndicator").matches() ? "[REDACTED]" : toIndentedString(cardIndicator)).append("\n");
+    if (minimumUnit != null) sb.append("    minimumUnit: ").append(SENSITIVE_FIELD_PATTERN.matcher("minimumUnit").matches() ? "[REDACTED]" : toIndentedString(minimumUnit)).append("\n");
+    if (minimumUnitCurrencyCode != null) sb.append("    minimumUnitCurrencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("minimumUnitCurrencyCode").matches() ? "[REDACTED]" : toIndentedString(minimumUnitCurrencyCode)).append("\n");
+    if (creditDeltaIndicator != null) sb.append("    creditDeltaIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("creditDeltaIndicator").matches() ? "[REDACTED]" : toIndentedString(creditDeltaIndicator)).append("\n");
+    if (feeCategory != null) sb.append("    feeCategory: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeCategory").matches() ? "[REDACTED]" : toIndentedString(feeCategory)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(SENSITIVE_FIELD_PATTERN.matcher("applicationName").matches() ? "[REDACTED]" : toIndentedString(applicationName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearingLevelDetails {\n");
     

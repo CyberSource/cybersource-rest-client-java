@@ -269,8 +269,54 @@ public class PredefinedSubscriptionRequestBean {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PredefinedSubscriptionRequestBean {\n");
+    
+    if (reportDefinitionName != null) sb.append("    reportDefinitionName: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportDefinitionName").matches() ? "[REDACTED]" : toIndentedString(reportDefinitionName)).append("\n");
+    if (subscriptionType != null) sb.append("    subscriptionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("subscriptionType").matches() ? "[REDACTED]" : toIndentedString(subscriptionType)).append("\n");
+    if (reportName != null) sb.append("    reportName: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportName").matches() ? "[REDACTED]" : toIndentedString(reportName)).append("\n");
+    if (reportMimeType != null) sb.append("    reportMimeType: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportMimeType").matches() ? "[REDACTED]" : toIndentedString(reportMimeType)).append("\n");
+    if (reportFrequency != null) sb.append("    reportFrequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportFrequency").matches() ? "[REDACTED]" : toIndentedString(reportFrequency)).append("\n");
+    if (reportInterval != null) sb.append("    reportInterval: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportInterval").matches() ? "[REDACTED]" : toIndentedString(reportInterval)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(SENSITIVE_FIELD_PATTERN.matcher("timezone").matches() ? "[REDACTED]" : toIndentedString(timezone)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("startTime").matches() ? "[REDACTED]" : toIndentedString(startTime)).append("\n");
+    if (startDay != null) sb.append("    startDay: ").append(SENSITIVE_FIELD_PATTERN.matcher("startDay").matches() ? "[REDACTED]" : toIndentedString(startDay)).append("\n");
+    if (subscriptionStatus != null) sb.append("    subscriptionStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("subscriptionStatus").matches() ? "[REDACTED]" : toIndentedString(subscriptionStatus)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PredefinedSubscriptionRequestBean {\n");
     

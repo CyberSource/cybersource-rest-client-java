@@ -300,8 +300,55 @@ public class Ptsv2paymentsBuyerInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsBuyerInformation {\n");
+    
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantCustomerId").matches() ? "[REDACTED]" : toIndentedString(merchantCustomerId)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(SENSITIVE_FIELD_PATTERN.matcher("dateOfBirth").matches() ? "[REDACTED]" : toIndentedString(dateOfBirth)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vatRegistrationNumber").matches() ? "[REDACTED]" : toIndentedString(vatRegistrationNumber)).append("\n");
+    if (companyTaxId != null) sb.append("    companyTaxId: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyTaxId").matches() ? "[REDACTED]" : toIndentedString(companyTaxId)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(SENSITIVE_FIELD_PATTERN.matcher("personalIdentification").matches() ? "[REDACTED]" : toIndentedString(personalIdentification)).append("\n");
+    if (hashedPassword != null) sb.append("    hashedPassword: ").append(SENSITIVE_FIELD_PATTERN.matcher("hashedPassword").matches() ? "[REDACTED]" : toIndentedString(hashedPassword)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(SENSITIVE_FIELD_PATTERN.matcher("gender").matches() ? "[REDACTED]" : toIndentedString(gender)).append("\n");
+    if (language != null) sb.append("    language: ").append(SENSITIVE_FIELD_PATTERN.matcher("language").matches() ? "[REDACTED]" : toIndentedString(language)).append("\n");
+    if (noteToSeller != null) sb.append("    noteToSeller: ").append(SENSITIVE_FIELD_PATTERN.matcher("noteToSeller").matches() ? "[REDACTED]" : toIndentedString(noteToSeller)).append("\n");
+    if (mobilePhone != null) sb.append("    mobilePhone: ").append(SENSITIVE_FIELD_PATTERN.matcher("mobilePhone").matches() ? "[REDACTED]" : toIndentedString(mobilePhone)).append("\n");
+    if (walletId != null) sb.append("    walletId: ").append(SENSITIVE_FIELD_PATTERN.matcher("walletId").matches() ? "[REDACTED]" : toIndentedString(walletId)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsBuyerInformation {\n");
     

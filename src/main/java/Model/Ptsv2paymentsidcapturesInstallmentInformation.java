@@ -599,8 +599,69 @@ public class Ptsv2paymentsidcapturesInstallmentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsidcapturesInstallmentInformation {\n");
+    
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("frequency").matches() ? "[REDACTED]" : toIndentedString(frequency)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(SENSITIVE_FIELD_PATTERN.matcher("planType").matches() ? "[REDACTED]" : toIndentedString(planType)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(SENSITIVE_FIELD_PATTERN.matcher("sequence").matches() ? "[REDACTED]" : toIndentedString(sequence)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalCount").matches() ? "[REDACTED]" : toIndentedString(totalCount)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentDate").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentDate)).append("\n");
+    if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentAmount").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentAmount)).append("\n");
+    if (invoiceData != null) sb.append("    invoiceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceData").matches() ? "[REDACTED]" : toIndentedString(invoiceData)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (additionalCosts != null) sb.append("    additionalCosts: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalCosts").matches() ? "[REDACTED]" : toIndentedString(additionalCosts)).append("\n");
+    if (additionalCostsPercentage != null) sb.append("    additionalCostsPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalCostsPercentage").matches() ? "[REDACTED]" : toIndentedString(additionalCostsPercentage)).append("\n");
+    if (amountFunded != null) sb.append("    amountFunded: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountFunded").matches() ? "[REDACTED]" : toIndentedString(amountFunded)).append("\n");
+    if (amountRequestedPercentage != null) sb.append("    amountRequestedPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountRequestedPercentage").matches() ? "[REDACTED]" : toIndentedString(amountRequestedPercentage)).append("\n");
+    if (annualFinancingCost != null) sb.append("    annualFinancingCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("annualFinancingCost").matches() ? "[REDACTED]" : toIndentedString(annualFinancingCost)).append("\n");
+    if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("annualInterestRate").matches() ? "[REDACTED]" : toIndentedString(annualInterestRate)).append("\n");
+    if (expenses != null) sb.append("    expenses: ").append(SENSITIVE_FIELD_PATTERN.matcher("expenses").matches() ? "[REDACTED]" : toIndentedString(expenses)).append("\n");
+    if (expensesPercentage != null) sb.append("    expensesPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("expensesPercentage").matches() ? "[REDACTED]" : toIndentedString(expensesPercentage)).append("\n");
+    if (fees != null) sb.append("    fees: ").append(SENSITIVE_FIELD_PATTERN.matcher("fees").matches() ? "[REDACTED]" : toIndentedString(fees)).append("\n");
+    if (feesPercentage != null) sb.append("    feesPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("feesPercentage").matches() ? "[REDACTED]" : toIndentedString(feesPercentage)).append("\n");
+    if (insurance != null) sb.append("    insurance: ").append(SENSITIVE_FIELD_PATTERN.matcher("insurance").matches() ? "[REDACTED]" : toIndentedString(insurance)).append("\n");
+    if (insurancePercentage != null) sb.append("    insurancePercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("insurancePercentage").matches() ? "[REDACTED]" : toIndentedString(insurancePercentage)).append("\n");
+    if (monthlyInterestRate != null) sb.append("    monthlyInterestRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("monthlyInterestRate").matches() ? "[REDACTED]" : toIndentedString(monthlyInterestRate)).append("\n");
+    if (taxes != null) sb.append("    taxes: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxes").matches() ? "[REDACTED]" : toIndentedString(taxes)).append("\n");
+    if (taxesPercentage != null) sb.append("    taxesPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxesPercentage").matches() ? "[REDACTED]" : toIndentedString(taxesPercentage)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesInstallmentInformation {\n");
     

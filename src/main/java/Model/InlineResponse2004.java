@@ -311,8 +311,56 @@ public class InlineResponse2004 {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2004 {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (fieldType != null) sb.append("    fieldType: ").append(SENSITIVE_FIELD_PATTERN.matcher("fieldType").matches() ? "[REDACTED]" : toIndentedString(fieldType)).append("\n");
+    if (label != null) sb.append("    label: ").append(SENSITIVE_FIELD_PATTERN.matcher("label").matches() ? "[REDACTED]" : toIndentedString(label)).append("\n");
+    if (customerVisible != null) sb.append("    customerVisible: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerVisible").matches() ? "[REDACTED]" : toIndentedString(customerVisible)).append("\n");
+    if (textMinLength != null) sb.append("    textMinLength: ").append(SENSITIVE_FIELD_PATTERN.matcher("textMinLength").matches() ? "[REDACTED]" : toIndentedString(textMinLength)).append("\n");
+    if (textMaxLength != null) sb.append("    textMaxLength: ").append(SENSITIVE_FIELD_PATTERN.matcher("textMaxLength").matches() ? "[REDACTED]" : toIndentedString(textMaxLength)).append("\n");
+    if (possibleValues != null) sb.append("    possibleValues: ").append(SENSITIVE_FIELD_PATTERN.matcher("possibleValues").matches() ? "[REDACTED]" : toIndentedString(possibleValues)).append("\n");
+    if (textDefaultValue != null) sb.append("    textDefaultValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("textDefaultValue").matches() ? "[REDACTED]" : toIndentedString(textDefaultValue)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantId").matches() ? "[REDACTED]" : toIndentedString(merchantId)).append("\n");
+    if (referenceType != null) sb.append("    referenceType: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceType").matches() ? "[REDACTED]" : toIndentedString(referenceType)).append("\n");
+    if (readOnly != null) sb.append("    readOnly: ").append(SENSITIVE_FIELD_PATTERN.matcher("readOnly").matches() ? "[REDACTED]" : toIndentedString(readOnly)).append("\n");
+    if (merchantDefinedDataIndex != null) sb.append("    merchantDefinedDataIndex: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedDataIndex").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedDataIndex)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2004 {\n");
     

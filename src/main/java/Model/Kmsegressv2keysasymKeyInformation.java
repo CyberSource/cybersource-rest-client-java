@@ -246,8 +246,53 @@ public class Kmsegressv2keysasymKeyInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Kmsegressv2keysasymKeyInformation {\n");
+    
+    if (provider != null) sb.append("    provider: ").append(SENSITIVE_FIELD_PATTERN.matcher("provider").matches() ? "[REDACTED]" : toIndentedString(provider)).append("\n");
+    if (tenant != null) sb.append("    tenant: ").append(SENSITIVE_FIELD_PATTERN.matcher("tenant").matches() ? "[REDACTED]" : toIndentedString(tenant)).append("\n");
+    if (keyType != null) sb.append("    keyType: ").append(SENSITIVE_FIELD_PATTERN.matcher("keyType").matches() ? "[REDACTED]" : toIndentedString(keyType)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
+    if (pub != null) sb.append("    pub: ").append(SENSITIVE_FIELD_PATTERN.matcher("pub").matches() ? "[REDACTED]" : toIndentedString(pub)).append("\n");
+    if (keyId != null) sb.append("    keyId: ").append(SENSITIVE_FIELD_PATTERN.matcher("keyId").matches() ? "[REDACTED]" : toIndentedString(keyId)).append("\n");
+    if (pvt != null) sb.append("    pvt: ").append(SENSITIVE_FIELD_PATTERN.matcher("pvt").matches() ? "[REDACTED]" : toIndentedString(pvt)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (expiryDuration != null) sb.append("    expiryDuration: ").append(SENSITIVE_FIELD_PATTERN.matcher("expiryDuration").matches() ? "[REDACTED]" : toIndentedString(expiryDuration)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Kmsegressv2keysasymKeyInformation {\n");
     

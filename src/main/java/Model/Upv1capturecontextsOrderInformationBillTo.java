@@ -466,8 +466,63 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Upv1capturecontextsOrderInformationBillTo {\n");
+    
+    if (address1 != null) sb.append("    address1: ").append(SENSITIVE_FIELD_PATTERN.matcher("address1").matches() ? "[REDACTED]" : toIndentedString(address1)).append("\n");
+    if (address2 != null) sb.append("    address2: ").append(SENSITIVE_FIELD_PATTERN.matcher("address2").matches() ? "[REDACTED]" : toIndentedString(address2)).append("\n");
+    if (address3 != null) sb.append("    address3: ").append(SENSITIVE_FIELD_PATTERN.matcher("address3").matches() ? "[REDACTED]" : toIndentedString(address3)).append("\n");
+    if (address4 != null) sb.append("    address4: ").append(SENSITIVE_FIELD_PATTERN.matcher("address4").matches() ? "[REDACTED]" : toIndentedString(address4)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(SENSITIVE_FIELD_PATTERN.matcher("administrativeArea").matches() ? "[REDACTED]" : toIndentedString(administrativeArea)).append("\n");
+    if (buildingNumber != null) sb.append("    buildingNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("buildingNumber").matches() ? "[REDACTED]" : toIndentedString(buildingNumber)).append("\n");
+    if (country != null) sb.append("    country: ").append(SENSITIVE_FIELD_PATTERN.matcher("country").matches() ? "[REDACTED]" : toIndentedString(country)).append("\n");
+    if (district != null) sb.append("    district: ").append(SENSITIVE_FIELD_PATTERN.matcher("district").matches() ? "[REDACTED]" : toIndentedString(district)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(SENSITIVE_FIELD_PATTERN.matcher("locality").matches() ? "[REDACTED]" : toIndentedString(locality)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
+    if (company != null) sb.append("    company: ").append(SENSITIVE_FIELD_PATTERN.matcher("company").matches() ? "[REDACTED]" : toIndentedString(company)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstName").matches() ? "[REDACTED]" : toIndentedString(firstName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastName").matches() ? "[REDACTED]" : toIndentedString(lastName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleName").matches() ? "[REDACTED]" : toIndentedString(middleName)).append("\n");
+    if (nameSuffix != null) sb.append("    nameSuffix: ").append(SENSITIVE_FIELD_PATTERN.matcher("nameSuffix").matches() ? "[REDACTED]" : toIndentedString(nameSuffix)).append("\n");
+    if (title != null) sb.append("    title: ").append(SENSITIVE_FIELD_PATTERN.matcher("title").matches() ? "[REDACTED]" : toIndentedString(title)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (phoneType != null) sb.append("    phoneType: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneType").matches() ? "[REDACTED]" : toIndentedString(phoneType)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Upv1capturecontextsOrderInformationBillTo {\n");
     

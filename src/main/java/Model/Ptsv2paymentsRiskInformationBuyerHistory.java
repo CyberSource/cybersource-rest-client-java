@@ -247,8 +247,53 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsRiskInformationBuyerHistory {\n");
+    
+    if (customerAccount != null) sb.append("    customerAccount: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerAccount").matches() ? "[REDACTED]" : toIndentedString(customerAccount)).append("\n");
+    if (accountHistory != null) sb.append("    accountHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountHistory").matches() ? "[REDACTED]" : toIndentedString(accountHistory)).append("\n");
+    if (accountPurchases != null) sb.append("    accountPurchases: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountPurchases").matches() ? "[REDACTED]" : toIndentedString(accountPurchases)).append("\n");
+    if (addCardAttempts != null) sb.append("    addCardAttempts: ").append(SENSITIVE_FIELD_PATTERN.matcher("addCardAttempts").matches() ? "[REDACTED]" : toIndentedString(addCardAttempts)).append("\n");
+    if (priorSuspiciousActivity != null) sb.append("    priorSuspiciousActivity: ").append(SENSITIVE_FIELD_PATTERN.matcher("priorSuspiciousActivity").matches() ? "[REDACTED]" : toIndentedString(priorSuspiciousActivity)).append("\n");
+    if (paymentAccountHistory != null) sb.append("    paymentAccountHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountHistory").matches() ? "[REDACTED]" : toIndentedString(paymentAccountHistory)).append("\n");
+    if (paymentAccountDate != null) sb.append("    paymentAccountDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountDate").matches() ? "[REDACTED]" : toIndentedString(paymentAccountDate)).append("\n");
+    if (transactionCountDay != null) sb.append("    transactionCountDay: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionCountDay").matches() ? "[REDACTED]" : toIndentedString(transactionCountDay)).append("\n");
+    if (transactionCountYear != null) sb.append("    transactionCountYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionCountYear").matches() ? "[REDACTED]" : toIndentedString(transactionCountYear)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRiskInformationBuyerHistory {\n");
     

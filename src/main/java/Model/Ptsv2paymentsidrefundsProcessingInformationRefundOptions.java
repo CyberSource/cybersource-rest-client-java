@@ -32,6 +32,9 @@ public class Ptsv2paymentsidrefundsProcessingInformationRefundOptions {
   @SerializedName("reason")
   private String reason = null;
 
+  @SerializedName("reconciliationIdAlternate")
+  private String reconciliationIdAlternate = null;
+
   public Ptsv2paymentsidrefundsProcessingInformationRefundOptions reason(String reason) {
     this.reason = reason;
     return this;
@@ -50,6 +53,24 @@ public class Ptsv2paymentsidrefundsProcessingInformationRefundOptions {
     this.reason = reason;
   }
 
+  public Ptsv2paymentsidrefundsProcessingInformationRefundOptions reconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+    return this;
+  }
+
+   /**
+   * Alternative reference number that can be up to 12 characters in length. If this field is used, it overrides any data added to the ccCaptureService_reconciliationID field. You can use this value to reconcile Cybersource reports with processor reports.
+   * @return reconciliationIdAlternate
+  **/
+  @ApiModelProperty(value = "Alternative reference number that can be up to 12 characters in length. If this field is used, it overrides any data added to the ccCaptureService_reconciliationID field. You can use this value to reconcile Cybersource reports with processor reports.")
+  public String getReconciliationIdAlternate() {
+    return reconciliationIdAlternate;
+  }
+
+  public void setReconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,21 +81,61 @@ public class Ptsv2paymentsidrefundsProcessingInformationRefundOptions {
       return false;
     }
     Ptsv2paymentsidrefundsProcessingInformationRefundOptions ptsv2paymentsidrefundsProcessingInformationRefundOptions = (Ptsv2paymentsidrefundsProcessingInformationRefundOptions) o;
-    return Objects.equals(this.reason, ptsv2paymentsidrefundsProcessingInformationRefundOptions.reason);
+    return Objects.equals(this.reason, ptsv2paymentsidrefundsProcessingInformationRefundOptions.reason) &&
+        Objects.equals(this.reconciliationIdAlternate, ptsv2paymentsidrefundsProcessingInformationRefundOptions.reconciliationIdAlternate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason);
+    return Objects.hash(reason, reconciliationIdAlternate);
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsProcessingInformationRefundOptions {\n");
     
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (reconciliationIdAlternate != null) sb.append("    reconciliationIdAlternate: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationIdAlternate").matches() ? "[REDACTED]" : toIndentedString(reconciliationIdAlternate)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsidrefundsProcessingInformationRefundOptions {\n");
+    
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (reconciliationIdAlternate != null) sb.append("    reconciliationIdAlternate: ").append(toIndentedString(reconciliationIdAlternate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

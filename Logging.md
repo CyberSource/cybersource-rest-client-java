@@ -20,7 +20,8 @@ For more detailed information on how to change this configuration file, refer to
 <!-- 	For information on how to change this configuration file,  -->
 <!-- 	refer to https://logging.apache.org/log4j/2.x/manual/configuration.html -->
 	
-<!-- 	To enable masking of sensitive data, replace `%m` with `%maskedMessage` in the patterns below -->
+	<!-- 	Sensitive data masking is ENABLED by default via `%maskedMessage` in the patterns below. -->
+	<!-- 	To disable masking, replace `%maskedMessage` with `%m` in the patterns below. -->
 <!-- ################################################################################################################  -->
 
 <Configuration status="warn">
@@ -30,13 +31,13 @@ For more detailed information on how to change this configuration file, refer to
 	</Properties>
 	<Appenders>
 		<Console name="LogToConsole" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
+			<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
 		</Console>
 		<RollingFile name="RollingFile"
 			fileName="${log-path}/${logFileName}.log"
 			filePattern="${log-path}/${logFileName}-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout>
-				<pattern>%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n</pattern>
+				<pattern>%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n</pattern>
 			</PatternLayout>
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
@@ -77,14 +78,14 @@ For more detailed information on how to change this configuration file, refer to
 ```
 
 ### Important Notes
-* To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then replace `%m` with `%maskedMessage` in the pattern below:
+* Sensitive data masking is **enabled by default** via `%maskedMessage` in the PatternLayout. To **disable** masking, replace `%maskedMessage` with `%m`:
 
   ```xml
-  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
+  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
   ```
   must be replaced with
   ```xml
-  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
+  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
   ```
 
 

@@ -98,10 +98,10 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
   }
 
    /**
-   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments 
+   * Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants 
    * @return linkId
   **/
-  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments ")
+  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants ")
   public String getLinkId() {
     return linkId;
   }
@@ -234,8 +234,52 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsidreversalsProcessingInformation {\n");
+    
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSolution").matches() ? "[REDACTED]" : toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(SENSITIVE_FIELD_PATTERN.matcher("linkId").matches() ? "[REDACTED]" : toIndentedString(linkId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportGroup").matches() ? "[REDACTED]" : toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(SENSITIVE_FIELD_PATTERN.matcher("visaCheckoutId").matches() ? "[REDACTED]" : toIndentedString(visaCheckoutId)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuer").matches() ? "[REDACTED]" : toIndentedString(issuer)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(SENSITIVE_FIELD_PATTERN.matcher("actionList").matches() ? "[REDACTED]" : toIndentedString(actionList)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTypeIndicator").matches() ? "[REDACTED]" : toIndentedString(transactionTypeIndicator)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsProcessingInformation {\n");
     

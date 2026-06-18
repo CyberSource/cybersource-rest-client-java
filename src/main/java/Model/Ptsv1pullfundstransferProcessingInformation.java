@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv1pullfundstransferProcessingInformationFundingOptions;
+import Model.AftFundingOptions;
 import Model.Ptsv1pullfundstransferProcessingInformationPayoutsOptions;
 import Model.Ptsv1pullfundstransferProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
@@ -38,7 +38,7 @@ public class Ptsv1pullfundstransferProcessingInformation {
   private String commerceIndicator = null;
 
   @SerializedName("fundingOptions")
-  private Ptsv1pullfundstransferProcessingInformationFundingOptions fundingOptions = null;
+  private AftFundingOptions fundingOptions = null;
 
   @SerializedName("recurringOptions")
   private Ptsv1pullfundstransferProcessingInformationRecurringOptions recurringOptions = null;
@@ -76,7 +76,7 @@ public class Ptsv1pullfundstransferProcessingInformation {
     this.commerceIndicator = commerceIndicator;
   }
 
-  public Ptsv1pullfundstransferProcessingInformation fundingOptions(Ptsv1pullfundstransferProcessingInformationFundingOptions fundingOptions) {
+  public Ptsv1pullfundstransferProcessingInformation fundingOptions(AftFundingOptions fundingOptions) {
     this.fundingOptions = fundingOptions;
     return this;
   }
@@ -86,11 +86,11 @@ public class Ptsv1pullfundstransferProcessingInformation {
    * @return fundingOptions
   **/
   @ApiModelProperty(value = "")
-  public Ptsv1pullfundstransferProcessingInformationFundingOptions getFundingOptions() {
+  public AftFundingOptions getFundingOptions() {
     return fundingOptions;
   }
 
-  public void setFundingOptions(Ptsv1pullfundstransferProcessingInformationFundingOptions fundingOptions) {
+  public void setFundingOptions(AftFundingOptions fundingOptions) {
     this.fundingOptions = fundingOptions;
   }
 
@@ -236,8 +236,52 @@ public class Ptsv1pullfundstransferProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv1pullfundstransferProcessingInformation {\n");
+    
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (fundingOptions != null) sb.append("    fundingOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("fundingOptions").matches() ? "[REDACTED]" : toIndentedString(fundingOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringOptions").matches() ? "[REDACTED]" : toIndentedString(recurringOptions)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("purposeOfPayment").matches() ? "[REDACTED]" : toIndentedString(purposeOfPayment)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("payoutsOptions").matches() ? "[REDACTED]" : toIndentedString(payoutsOptions)).append("\n");
+    if (languageCode != null) sb.append("    languageCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("languageCode").matches() ? "[REDACTED]" : toIndentedString(languageCode)).append("\n");
+    if (accountVerificationCode != null) sb.append("    accountVerificationCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountVerificationCode").matches() ? "[REDACTED]" : toIndentedString(accountVerificationCode)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pullfundstransferProcessingInformation {\n");
     

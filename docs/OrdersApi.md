@@ -50,8 +50,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
 <a name="updateOrder"></a>
 # **updateOrder**
@@ -97,6 +97,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 

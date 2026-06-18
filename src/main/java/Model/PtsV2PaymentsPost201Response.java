@@ -617,8 +617,69 @@ public class PtsV2PaymentsPost201Response {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201Response {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerInformation").matches() ? "[REDACTED]" : toIndentedString(issuerInformation)).append("\n");
+    if (paymentAccountInformation != null) sb.append("    paymentAccountInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountInformation").matches() ? "[REDACTED]" : toIndentedString(paymentAccountInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (paymentInsightsInformation != null) sb.append("    paymentInsightsInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInsightsInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInsightsInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleInformation").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleInformation)).append("\n");
+    if (installmentInformation != null) sb.append("    installmentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("installmentInformation").matches() ? "[REDACTED]" : toIndentedString(installmentInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenInformation").matches() ? "[REDACTED]" : toIndentedString(tokenInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskInformation").matches() ? "[REDACTED]" : toIndentedString(riskInformation)).append("\n");
+    if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerAuthenticationInformation").matches() ? "[REDACTED]" : toIndentedString(consumerAuthenticationInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
+    if (clearingInformation != null) sb.append("    clearingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingInformation").matches() ? "[REDACTED]" : toIndentedString(clearingInformation)).append("\n");
+    if (embeddedActions != null) sb.append("    embeddedActions: ").append(SENSITIVE_FIELD_PATTERN.matcher("embeddedActions").matches() ? "[REDACTED]" : toIndentedString(embeddedActions)).append("\n");
+    if (watchlistScreeningInformation != null) sb.append("    watchlistScreeningInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("watchlistScreeningInformation").matches() ? "[REDACTED]" : toIndentedString(watchlistScreeningInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response {\n");
     

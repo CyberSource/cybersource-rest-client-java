@@ -312,8 +312,56 @@ public class Ucv1sessionsDataSenderInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsDataSenderInformation {\n");
+    
+    if (firstName != null) sb.append("    firstName: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstName").matches() ? "[REDACTED]" : toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleName").matches() ? "[REDACTED]" : toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastName").matches() ? "[REDACTED]" : toIndentedString(lastName)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(SENSITIVE_FIELD_PATTERN.matcher("address1").matches() ? "[REDACTED]" : toIndentedString(address1)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(SENSITIVE_FIELD_PATTERN.matcher("locality").matches() ? "[REDACTED]" : toIndentedString(locality)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(SENSITIVE_FIELD_PATTERN.matcher("administrativeArea").matches() ? "[REDACTED]" : toIndentedString(administrativeArea)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("countryCode").matches() ? "[REDACTED]" : toIndentedString(countryCode)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(SENSITIVE_FIELD_PATTERN.matcher("dateOfBirth").matches() ? "[REDACTED]" : toIndentedString(dateOfBirth)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountType").matches() ? "[REDACTED]" : toIndentedString(accountType)).append("\n");
+    if (account != null) sb.append("    account: ").append(SENSITIVE_FIELD_PATTERN.matcher("account").matches() ? "[REDACTED]" : toIndentedString(account)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsDataSenderInformation {\n");
     

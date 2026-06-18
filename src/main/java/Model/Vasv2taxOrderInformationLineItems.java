@@ -359,8 +359,58 @@ public class Vasv2taxOrderInformationLineItems {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Vasv2taxOrderInformationLineItems {\n");
+    
+    if (productSKU != null) sb.append("    productSKU: ").append(SENSITIVE_FIELD_PATTERN.matcher("productSKU").matches() ? "[REDACTED]" : toIndentedString(productSKU)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("quantity").matches() ? "[REDACTED]" : toIndentedString(quantity)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(SENSITIVE_FIELD_PATTERN.matcher("productName").matches() ? "[REDACTED]" : toIndentedString(productName)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitPrice").matches() ? "[REDACTED]" : toIndentedString(unitPrice)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    if (orderAcceptance != null) sb.append("    orderAcceptance: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderAcceptance").matches() ? "[REDACTED]" : toIndentedString(orderAcceptance)).append("\n");
+    if (orderOrigin != null) sb.append("    orderOrigin: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderOrigin").matches() ? "[REDACTED]" : toIndentedString(orderOrigin)).append("\n");
+    if (shipFromCountry != null) sb.append("    shipFromCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipFromCountry").matches() ? "[REDACTED]" : toIndentedString(shipFromCountry)).append("\n");
+    if (shipFromAdministrativeArea != null) sb.append("    shipFromAdministrativeArea: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipFromAdministrativeArea").matches() ? "[REDACTED]" : toIndentedString(shipFromAdministrativeArea)).append("\n");
+    if (shipFromLocality != null) sb.append("    shipFromLocality: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipFromLocality").matches() ? "[REDACTED]" : toIndentedString(shipFromLocality)).append("\n");
+    if (shipFromPostalCode != null) sb.append("    shipFromPostalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipFromPostalCode").matches() ? "[REDACTED]" : toIndentedString(shipFromPostalCode)).append("\n");
+    if (buyerVatRegistrationNumber != null) sb.append("    buyerVatRegistrationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerVatRegistrationNumber").matches() ? "[REDACTED]" : toIndentedString(buyerVatRegistrationNumber)).append("\n");
+    if (sellerVatRegistrationNumber != null) sb.append("    sellerVatRegistrationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerVatRegistrationNumber").matches() ? "[REDACTED]" : toIndentedString(sellerVatRegistrationNumber)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Vasv2taxOrderInformationLineItems {\n");
     

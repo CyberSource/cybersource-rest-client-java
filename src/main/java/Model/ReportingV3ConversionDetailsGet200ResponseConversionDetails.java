@@ -279,8 +279,54 @@ public class ReportingV3ConversionDetailsGet200ResponseConversionDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3ConversionDetailsGet200ResponseConversionDetails {\n");
+    
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(merchantReferenceNumber)).append("\n");
+    if (conversionTime != null) sb.append("    conversionTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("conversionTime").matches() ? "[REDACTED]" : toIndentedString(conversionTime)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (originalDecision != null) sb.append("    originalDecision: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalDecision").matches() ? "[REDACTED]" : toIndentedString(originalDecision)).append("\n");
+    if (newDecision != null) sb.append("    newDecision: ").append(SENSITIVE_FIELD_PATTERN.matcher("newDecision").matches() ? "[REDACTED]" : toIndentedString(newDecision)).append("\n");
+    if (reviewer != null) sb.append("    reviewer: ").append(SENSITIVE_FIELD_PATTERN.matcher("reviewer").matches() ? "[REDACTED]" : toIndentedString(reviewer)).append("\n");
+    if (reviewerComments != null) sb.append("    reviewerComments: ").append(SENSITIVE_FIELD_PATTERN.matcher("reviewerComments").matches() ? "[REDACTED]" : toIndentedString(reviewerComments)).append("\n");
+    if (queue != null) sb.append("    queue: ").append(SENSITIVE_FIELD_PATTERN.matcher("queue").matches() ? "[REDACTED]" : toIndentedString(queue)).append("\n");
+    if (profile != null) sb.append("    profile: ").append(SENSITIVE_FIELD_PATTERN.matcher("profile").matches() ? "[REDACTED]" : toIndentedString(profile)).append("\n");
+    if (notes != null) sb.append("    notes: ").append(SENSITIVE_FIELD_PATTERN.matcher("notes").matches() ? "[REDACTED]" : toIndentedString(notes)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ConversionDetailsGet200ResponseConversionDetails {\n");
     

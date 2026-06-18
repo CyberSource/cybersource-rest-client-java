@@ -30,9 +30,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Allows a single Token Management Service (TMS) token to be presented within the Unified Checkout user interface. This enables customers to complete a payment using an existing stored credential.  Supported token types: - customer - instrumentIdentifiers - paymentInstruments  **Important note:** If a customer token ID is provided and token creation (tokenCreate) is enabled for a paymentInstrument or instrumentIdentifier within the Complete Mandate, Unified Checkout will create a new payment instrument or instrument identifier and associate it with the specified customer token. 
+ * Allows a single Token Management Service (TMS) token to be presented within the Unified Checkout user interface. This enables customers to complete a payment using an existing stored credential.  Supported token types: - customer - instrumentIdentifiers - paymentInstruments&lt;br&gt;&lt;br&gt;  The allowedPaymentTypes field must also include TMS_TOKEN as shown below for the token to show in Unified Checkout:    \&quot;allowedPaymentTypes\&quot;: [\&quot;TMS-TOKEN\&quot;] &lt;br&gt;&lt;br&gt;  **Important note:** If a customer token ID is provided and token creation (tokenCreate) is enabled for a paymentInstrument or instrumentIdentifier within the Complete Mandate, Unified Checkout will create a new payment instrument or instrument identifier and associate it with the specified customer token. 
  */
-@ApiModel(description = "Allows a single Token Management Service (TMS) token to be presented within the Unified Checkout user interface. This enables customers to complete a payment using an existing stored credential.  Supported token types: - customer - instrumentIdentifiers - paymentInstruments  **Important note:** If a customer token ID is provided and token creation (tokenCreate) is enabled for a paymentInstrument or instrumentIdentifier within the Complete Mandate, Unified Checkout will create a new payment instrument or instrument identifier and associate it with the specified customer token. ")
+@ApiModel(description = "Allows a single Token Management Service (TMS) token to be presented within the Unified Checkout user interface. This enables customers to complete a payment using an existing stored credential.  Supported token types: - customer - instrumentIdentifiers - paymentInstruments<br><br>  The allowedPaymentTypes field must also include TMS_TOKEN as shown below for the token to show in Unified Checkout:    \"allowedPaymentTypes\": [\"TMS-TOKEN\"] <br><br>  **Important note:** If a customer token ID is provided and token creation (tokenCreate) is enabled for a paymentInstrument or instrumentIdentifier within the Complete Mandate, Unified Checkout will create a new payment instrument or instrument identifier and associate it with the specified customer token. ")
 
 public class Ucv1sessionsPaymentConfigurationsTMSTOKEN {
   @SerializedName("customer")
@@ -135,8 +135,47 @@ public class Ucv1sessionsPaymentConfigurationsTMSTOKEN {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsPaymentConfigurationsTMSTOKEN {\n");
+    
+    if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
+    if (paymentInstruments != null) sb.append("    paymentInstruments: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInstruments").matches() ? "[REDACTED]" : toIndentedString(paymentInstruments)).append("\n");
+    if (instrumentIdentifiers != null) sb.append("    instrumentIdentifiers: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifiers").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifiers)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsPaymentConfigurationsTMSTOKEN {\n");
     

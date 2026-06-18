@@ -332,8 +332,56 @@ public class CardProcessingConfigCommonAcquirers {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardProcessingConfigCommonAcquirers {\n");
+    
+    if (institutionId != null) sb.append("    institutionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("institutionId").matches() ? "[REDACTED]" : toIndentedString(institutionId)).append("\n");
+    if (interbankCardAssociationId != null) sb.append("    interbankCardAssociationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("interbankCardAssociationId").matches() ? "[REDACTED]" : toIndentedString(interbankCardAssociationId)).append("\n");
+    if (discoverInstitutionId != null) sb.append("    discoverInstitutionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("discoverInstitutionId").matches() ? "[REDACTED]" : toIndentedString(discoverInstitutionId)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("countryCode").matches() ? "[REDACTED]" : toIndentedString(countryCode)).append("\n");
+    if (fileDestinationBin != null) sb.append("    fileDestinationBin: ").append(SENSITIVE_FIELD_PATTERN.matcher("fileDestinationBin").matches() ? "[REDACTED]" : toIndentedString(fileDestinationBin)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantVerificationValue").matches() ? "[REDACTED]" : toIndentedString(merchantVerificationValue)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantId").matches() ? "[REDACTED]" : toIndentedString(merchantId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (allowMultipleBills != null) sb.append("    allowMultipleBills: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowMultipleBills").matches() ? "[REDACTED]" : toIndentedString(allowMultipleBills)).append("\n");
+    if (enableTransactionReferenceNumber != null) sb.append("    enableTransactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableTransactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(enableTransactionReferenceNumber)).append("\n");
+    if (paymentTypes != null) sb.append("    paymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentTypes").matches() ? "[REDACTED]" : toIndentedString(paymentTypes)).append("\n");
+    if (currencies != null) sb.append("    currencies: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencies").matches() ? "[REDACTED]" : toIndentedString(currencies)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonAcquirers {\n");
     

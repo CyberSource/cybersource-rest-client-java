@@ -532,8 +532,66 @@ public class ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails {\n");
+    
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorMerchantId").matches() ? "[REDACTED]" : toIndentedString(processorMerchantId)).append("\n");
+    if (merchantName != null) sb.append("    merchantName: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantName").matches() ? "[REDACTED]" : toIndentedString(merchantName)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(merchantReferenceNumber)).append("\n");
+    if (natureOfDispute != null) sb.append("    natureOfDispute: ").append(SENSITIVE_FIELD_PATTERN.matcher("natureOfDispute").matches() ? "[REDACTED]" : toIndentedString(natureOfDispute)).append("\n");
+    if (alertType != null) sb.append("    alertType: ").append(SENSITIVE_FIELD_PATTERN.matcher("alertType").matches() ? "[REDACTED]" : toIndentedString(alertType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (sign != null) sb.append("    sign: ").append(SENSITIVE_FIELD_PATTERN.matcher("sign").matches() ? "[REDACTED]" : toIndentedString(sign)).append("\n");
+    if (action != null) sb.append("    action: ").append(SENSITIVE_FIELD_PATTERN.matcher("action").matches() ? "[REDACTED]" : toIndentedString(action)).append("\n");
+    if (cardType != null) sb.append("    cardType: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardType").matches() ? "[REDACTED]" : toIndentedString(cardType)).append("\n");
+    if (originalSettlementTime != null) sb.append("    originalSettlementTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalSettlementTime").matches() ? "[REDACTED]" : toIndentedString(originalSettlementTime)).append("\n");
+    if (trackingNumber != null) sb.append("    trackingNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("trackingNumber").matches() ? "[REDACTED]" : toIndentedString(trackingNumber)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencyCode").matches() ? "[REDACTED]" : toIndentedString(currencyCode)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (responseDueTime != null) sb.append("    responseDueTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDueTime").matches() ? "[REDACTED]" : toIndentedString(responseDueTime)).append("\n");
+    if (time != null) sb.append("    time: ").append(SENSITIVE_FIELD_PATTERN.matcher("time").matches() ? "[REDACTED]" : toIndentedString(time)).append("\n");
+    if (actionDescription != null) sb.append("    actionDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("actionDescription").matches() ? "[REDACTED]" : toIndentedString(actionDescription)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerId").matches() ? "[REDACTED]" : toIndentedString(customerId)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("reasonCode").matches() ? "[REDACTED]" : toIndentedString(reasonCode)).append("\n");
+    if (representmentCPTime != null) sb.append("    representmentCPTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("representmentCPTime").matches() ? "[REDACTED]" : toIndentedString(representmentCPTime)).append("\n");
+    if (applications != null) sb.append("    applications: ").append(SENSITIVE_FIELD_PATTERN.matcher("applications").matches() ? "[REDACTED]" : toIndentedString(applications)).append("\n");
+    if (eventRequestedTime != null) sb.append("    eventRequestedTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventRequestedTime").matches() ? "[REDACTED]" : toIndentedString(eventRequestedTime)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails {\n");
     

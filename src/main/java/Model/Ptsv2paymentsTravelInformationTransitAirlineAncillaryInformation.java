@@ -190,8 +190,50 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {\n");
+    
+    if (ticketNumber != null) sb.append("    ticketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("ticketNumber").matches() ? "[REDACTED]" : toIndentedString(ticketNumber)).append("\n");
+    if (passengerName != null) sb.append("    passengerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("passengerName").matches() ? "[REDACTED]" : toIndentedString(passengerName)).append("\n");
+    if (connectedTicketNumber != null) sb.append("    connectedTicketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("connectedTicketNumber").matches() ? "[REDACTED]" : toIndentedString(connectedTicketNumber)).append("\n");
+    if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("creditReasonIndicator").matches() ? "[REDACTED]" : toIndentedString(creditReasonIndicator)).append("\n");
+    if (service != null) sb.append("    service: ").append(SENSITIVE_FIELD_PATTERN.matcher("service").matches() ? "[REDACTED]" : toIndentedString(service)).append("\n");
+    if (feeDescription != null) sb.append("    feeDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeDescription").matches() ? "[REDACTED]" : toIndentedString(feeDescription)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {\n");
     

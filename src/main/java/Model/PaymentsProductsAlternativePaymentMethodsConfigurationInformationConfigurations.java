@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors;
+import Model.AlternativePaymentsProcessorConfiguration;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,7 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
   private String merchantCategoryCode = null;
 
   @SerializedName("processors")
-  private Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors> processors = null;
+  private Map<String, AlternativePaymentsProcessorConfiguration> processors = null;
 
   public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations merchantCategoryCode(String merchantCategoryCode) {
     this.merchantCategoryCode = merchantCategoryCode;
@@ -57,14 +57,14 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
     this.merchantCategoryCode = merchantCategoryCode;
   }
 
-  public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations processors(Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors> processors) {
+  public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations processors(Map<String, AlternativePaymentsProcessorConfiguration> processors) {
     this.processors = processors;
     return this;
   }
 
-  public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations putProcessorsItem(String key, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors processorsItem) {
+  public PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations putProcessorsItem(String key, AlternativePaymentsProcessorConfiguration processorsItem) {
     if (this.processors == null) {
-      this.processors = new HashMap<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors>();
+      this.processors = new HashMap<String, AlternativePaymentsProcessorConfiguration>();
     }
     this.processors.put(key, processorsItem);
     return this;
@@ -75,11 +75,11 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
    * @return processors
   **/
   @ApiModelProperty(value = "This is a map. The allowed keys are below. Value should be an object containing a sole boolean property - enabled. <table>   <tr>     <td>klarna</td>   </tr>   <tr>     <td>payPal</td>   </tr>   <tr>     <td>alipay</td>   </tr>   <tr>     <td>bancontact</td>   </tr>   <tr>     <td>giropay</td>   </tr>   <tr>     <td>ideal</td>   </tr> </table> ")
-  public Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors> getProcessors() {
+  public Map<String, AlternativePaymentsProcessorConfiguration> getProcessors() {
     return processors;
   }
 
-  public void setProcessors(Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors> processors) {
+  public void setProcessors(Map<String, AlternativePaymentsProcessorConfiguration> processors) {
     this.processors = processors;
   }
 
@@ -103,8 +103,46 @@ public class PaymentsProductsAlternativePaymentMethodsConfigurationInformationCo
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations {\n");
+    
+    if (merchantCategoryCode != null) sb.append("    merchantCategoryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantCategoryCode").matches() ? "[REDACTED]" : toIndentedString(merchantCategoryCode)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(SENSITIVE_FIELD_PATTERN.matcher("processors").matches() ? "[REDACTED]" : toIndentedString(processors)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations {\n");
     

@@ -202,8 +202,51 @@ public class SAConfigService {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SAConfigService {\n");
+    
+    if (decisionManagerVerboseEnabled != null) sb.append("    decisionManagerVerboseEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManagerVerboseEnabled").matches() ? "[REDACTED]" : toIndentedString(decisionManagerVerboseEnabled)).append("\n");
+    if (declinedRetryLimit != null) sb.append("    declinedRetryLimit: ").append(SENSITIVE_FIELD_PATTERN.matcher("declinedRetryLimit").matches() ? "[REDACTED]" : toIndentedString(declinedRetryLimit)).append("\n");
+    if (decisionManagerEnabled != null) sb.append("    decisionManagerEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManagerEnabled").matches() ? "[REDACTED]" : toIndentedString(decisionManagerEnabled)).append("\n");
+    if (tokenizationEnabled != null) sb.append("    tokenizationEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenizationEnabled").matches() ? "[REDACTED]" : toIndentedString(tokenizationEnabled)).append("\n");
+    if (reverseAuthOnAddressVerificationSystemFailure != null) sb.append("    reverseAuthOnAddressVerificationSystemFailure: ").append(SENSITIVE_FIELD_PATTERN.matcher("reverseAuthOnAddressVerificationSystemFailure").matches() ? "[REDACTED]" : toIndentedString(reverseAuthOnAddressVerificationSystemFailure)).append("\n");
+    if (deviceFingerprintEnabled != null) sb.append("    deviceFingerprintEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceFingerprintEnabled").matches() ? "[REDACTED]" : toIndentedString(deviceFingerprintEnabled)).append("\n");
+    if (reverseAuthOnCardVerificationNumberFailure != null) sb.append("    reverseAuthOnCardVerificationNumberFailure: ").append(SENSITIVE_FIELD_PATTERN.matcher("reverseAuthOnCardVerificationNumberFailure").matches() ? "[REDACTED]" : toIndentedString(reverseAuthOnCardVerificationNumberFailure)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigService {\n");
     

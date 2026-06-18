@@ -355,8 +355,58 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsMerchantInformationMerchantDescriptor {\n");
+    
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (alternateName != null) sb.append("    alternateName: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternateName").matches() ? "[REDACTED]" : toIndentedString(alternateName)).append("\n");
+    if (contact != null) sb.append("    contact: ").append(SENSITIVE_FIELD_PATTERN.matcher("contact").matches() ? "[REDACTED]" : toIndentedString(contact)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(SENSITIVE_FIELD_PATTERN.matcher("address1").matches() ? "[REDACTED]" : toIndentedString(address1)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(SENSITIVE_FIELD_PATTERN.matcher("locality").matches() ? "[REDACTED]" : toIndentedString(locality)).append("\n");
+    if (country != null) sb.append("    country: ").append(SENSITIVE_FIELD_PATTERN.matcher("country").matches() ? "[REDACTED]" : toIndentedString(country)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(SENSITIVE_FIELD_PATTERN.matcher("administrativeArea").matches() ? "[REDACTED]" : toIndentedString(administrativeArea)).append("\n");
+    if (phone != null) sb.append("    phone: ").append(SENSITIVE_FIELD_PATTERN.matcher("phone").matches() ? "[REDACTED]" : toIndentedString(phone)).append("\n");
+    if (url != null) sb.append("    url: ").append(SENSITIVE_FIELD_PATTERN.matcher("url").matches() ? "[REDACTED]" : toIndentedString(url)).append("\n");
+    if (countryOfOrigin != null) sb.append("    countryOfOrigin: ").append(SENSITIVE_FIELD_PATTERN.matcher("countryOfOrigin").matches() ? "[REDACTED]" : toIndentedString(countryOfOrigin)).append("\n");
+    if (storeId != null) sb.append("    storeId: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeId").matches() ? "[REDACTED]" : toIndentedString(storeId)).append("\n");
+    if (storeName != null) sb.append("    storeName: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeName").matches() ? "[REDACTED]" : toIndentedString(storeName)).append("\n");
+    if (customerServicePhoneNumber != null) sb.append("    customerServicePhoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerServicePhoneNumber").matches() ? "[REDACTED]" : toIndentedString(customerServicePhoneNumber)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsMerchantInformationMerchantDescriptor {\n");
     

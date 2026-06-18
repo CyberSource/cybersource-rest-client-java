@@ -235,8 +235,52 @@ public class Notificationsubscriptionsv2webhooksRetryPolicy {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Notificationsubscriptionsv2webhooksRetryPolicy {\n");
+    
+    if (algorithm != null) sb.append("    algorithm: ").append(SENSITIVE_FIELD_PATTERN.matcher("algorithm").matches() ? "[REDACTED]" : toIndentedString(algorithm)).append("\n");
+    if (firstRetry != null) sb.append("    firstRetry: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstRetry").matches() ? "[REDACTED]" : toIndentedString(firstRetry)).append("\n");
+    if (interval != null) sb.append("    interval: ").append(SENSITIVE_FIELD_PATTERN.matcher("interval").matches() ? "[REDACTED]" : toIndentedString(interval)).append("\n");
+    if (numberOfRetries != null) sb.append("    numberOfRetries: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfRetries").matches() ? "[REDACTED]" : toIndentedString(numberOfRetries)).append("\n");
+    if (deactivateFlag != null) sb.append("    deactivateFlag: ").append(SENSITIVE_FIELD_PATTERN.matcher("deactivateFlag").matches() ? "[REDACTED]" : toIndentedString(deactivateFlag)).append("\n");
+    if (repeatSequenceCount != null) sb.append("    repeatSequenceCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("repeatSequenceCount").matches() ? "[REDACTED]" : toIndentedString(repeatSequenceCount)).append("\n");
+    if (repeatSequenceWaitTime != null) sb.append("    repeatSequenceWaitTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("repeatSequenceWaitTime").matches() ? "[REDACTED]" : toIndentedString(repeatSequenceWaitTime)).append("\n");
+    if (additionalAttributes != null) sb.append("    additionalAttributes: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalAttributes").matches() ? "[REDACTED]" : toIndentedString(additionalAttributes)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv2webhooksRetryPolicy {\n");
     

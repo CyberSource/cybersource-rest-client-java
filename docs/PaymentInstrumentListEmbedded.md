@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentInstruments** | [**List&lt;PaymentInstrumentListEmbeddedPaymentInstruments&gt;**](PaymentInstrumentListEmbeddedPaymentInstruments.md) |  |  [optional]
+**paymentInstruments** | [**List&lt;PaymentInstrument&gt;**](PaymentInstrument.md) |  |  [optional]
 
 
 

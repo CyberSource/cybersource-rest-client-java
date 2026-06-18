@@ -190,8 +190,50 @@ public class InlineResponse2009 {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2009 {\n");
+    
+    if (totalCount != null) sb.append("    totalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalCount").matches() ? "[REDACTED]" : toIndentedString(totalCount)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(SENSITIVE_FIELD_PATTERN.matcher("offset").matches() ? "[REDACTED]" : toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(SENSITIVE_FIELD_PATTERN.matcher("limit").matches() ? "[REDACTED]" : toIndentedString(limit)).append("\n");
+    if (sort != null) sb.append("    sort: ").append(SENSITIVE_FIELD_PATTERN.matcher("sort").matches() ? "[REDACTED]" : toIndentedString(sort)).append("\n");
+    if (count != null) sb.append("    count: ").append(SENSITIVE_FIELD_PATTERN.matcher("count").matches() ? "[REDACTED]" : toIndentedString(count)).append("\n");
+    if (devices != null) sb.append("    devices: ").append(SENSITIVE_FIELD_PATTERN.matcher("devices").matches() ? "[REDACTED]" : toIndentedString(devices)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2009 {\n");
     

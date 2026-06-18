@@ -305,8 +305,55 @@ public class Riskv1decisionsOrderInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Riskv1decisionsOrderInformation {\n");
+    
+    if (amountDetails != null) sb.append("    amountDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountDetails").matches() ? "[REDACTED]" : toIndentedString(amountDetails)).append("\n");
+    if (preOrder != null) sb.append("    preOrder: ").append(SENSITIVE_FIELD_PATTERN.matcher("preOrder").matches() ? "[REDACTED]" : toIndentedString(preOrder)).append("\n");
+    if (preOrderDate != null) sb.append("    preOrderDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("preOrderDate").matches() ? "[REDACTED]" : toIndentedString(preOrderDate)).append("\n");
+    if (cutoffDateTime != null) sb.append("    cutoffDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("cutoffDateTime").matches() ? "[REDACTED]" : toIndentedString(cutoffDateTime)).append("\n");
+    if (reordered != null) sb.append("    reordered: ").append(SENSITIVE_FIELD_PATTERN.matcher("reordered").matches() ? "[REDACTED]" : toIndentedString(reordered)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingDetails").matches() ? "[REDACTED]" : toIndentedString(shippingDetails)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
+    if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnsAccepted").matches() ? "[REDACTED]" : toIndentedString(returnsAccepted)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (totalOffersCount != null) sb.append("    totalOffersCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalOffersCount").matches() ? "[REDACTED]" : toIndentedString(totalOffersCount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformation {\n");
     

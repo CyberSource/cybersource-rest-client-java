@@ -377,8 +377,59 @@ public class PushFunds201ResponseIssuerInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PushFunds201ResponseIssuerInformation {\n");
+    
+    if (octDomesticParticipantIndicator != null) sb.append("    octDomesticParticipantIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octDomesticParticipantIndicator").matches() ? "[REDACTED]" : toIndentedString(octDomesticParticipantIndicator)).append("\n");
+    if (octCrossBorderParticipantIndicator != null) sb.append("    octCrossBorderParticipantIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octCrossBorderParticipantIndicator").matches() ? "[REDACTED]" : toIndentedString(octCrossBorderParticipantIndicator)).append("\n");
+    if (octMoneyTransferDomesticIndicator != null) sb.append("    octMoneyTransferDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octMoneyTransferDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octMoneyTransferDomesticIndicator)).append("\n");
+    if (octMoneyTransferCrossBorderIndicator != null) sb.append("    octMoneyTransferCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octMoneyTransferCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octMoneyTransferCrossBorderIndicator)).append("\n");
+    if (octMoneyTransferFastFundsDomesticIndicator != null) sb.append("    octMoneyTransferFastFundsDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octMoneyTransferFastFundsDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octMoneyTransferFastFundsDomesticIndicator)).append("\n");
+    if (octMoneyTransferFastFundsCrossBorderIndicator != null) sb.append("    octMoneyTransferFastFundsCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octMoneyTransferFastFundsCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octMoneyTransferFastFundsCrossBorderIndicator)).append("\n");
+    if (octMoneyTransferMerchantCountryRestricted != null) sb.append("    octMoneyTransferMerchantCountryRestricted: ").append(SENSITIVE_FIELD_PATTERN.matcher("octMoneyTransferMerchantCountryRestricted").matches() ? "[REDACTED]" : toIndentedString(octMoneyTransferMerchantCountryRestricted)).append("\n");
+    if (octNonMoneyTransferDomesticIndicator != null) sb.append("    octNonMoneyTransferDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octNonMoneyTransferDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octNonMoneyTransferDomesticIndicator)).append("\n");
+    if (octNonMoneyTransferCrossBorderIndicator != null) sb.append("    octNonMoneyTransferCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octNonMoneyTransferCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octNonMoneyTransferCrossBorderIndicator)).append("\n");
+    if (octNonMoneyTransferFastFundsDomesticIndicator != null) sb.append("    octNonMoneyTransferFastFundsDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octNonMoneyTransferFastFundsDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octNonMoneyTransferFastFundsDomesticIndicator)).append("\n");
+    if (octNonMoneyTransferFastFundsCrossBorderIndicator != null) sb.append("    octNonMoneyTransferFastFundsCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octNonMoneyTransferFastFundsCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octNonMoneyTransferFastFundsCrossBorderIndicator)).append("\n");
+    if (octOnlineGamblingDomesticIndicator != null) sb.append("    octOnlineGamblingDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octOnlineGamblingDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octOnlineGamblingDomesticIndicator)).append("\n");
+    if (octOnlineGamblingCrossBorderIndicator != null) sb.append("    octOnlineGamblingCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octOnlineGamblingCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octOnlineGamblingCrossBorderIndicator)).append("\n");
+    if (octOnlineGamblingFastFundsDomesticIndicator != null) sb.append("    octOnlineGamblingFastFundsDomesticIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octOnlineGamblingFastFundsDomesticIndicator").matches() ? "[REDACTED]" : toIndentedString(octOnlineGamblingFastFundsDomesticIndicator)).append("\n");
+    if (octOnlineGamblingFastFundsCrossBorderIndicator != null) sb.append("    octOnlineGamblingFastFundsCrossBorderIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("octOnlineGamblingFastFundsCrossBorderIndicator").matches() ? "[REDACTED]" : toIndentedString(octOnlineGamblingFastFundsCrossBorderIndicator)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseIssuerInformation {\n");
     

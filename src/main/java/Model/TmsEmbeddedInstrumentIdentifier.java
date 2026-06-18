@@ -23,8 +23,8 @@ import Model.TmsEmbeddedInstrumentIdentifierEmbedded;
 import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
-import Model.TmsEmbeddedInstrumentIdentifierPointOfSaleInformation;
 import Model.TmsEmbeddedInstrumentIdentifierProcessingInformation;
+import Model.TmsPointOfSaleInformation;
 import Model.Tmsv2TokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -65,7 +65,7 @@ public class TmsEmbeddedInstrumentIdentifier {
   private TmsEmbeddedInstrumentIdentifierCard card = null;
 
   @SerializedName("pointOfSaleInformation")
-  private TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation = null;
+  private TmsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("bankAccount")
   private TmsEmbeddedInstrumentIdentifierBankAccount bankAccount = null;
@@ -214,7 +214,7 @@ public class TmsEmbeddedInstrumentIdentifier {
     this.card = card;
   }
 
-  public TmsEmbeddedInstrumentIdentifier pointOfSaleInformation(TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation) {
+  public TmsEmbeddedInstrumentIdentifier pointOfSaleInformation(TmsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -224,11 +224,11 @@ public class TmsEmbeddedInstrumentIdentifier {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public TmsEmbeddedInstrumentIdentifierPointOfSaleInformation getPointOfSaleInformation() {
+  public TmsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(TmsEmbeddedInstrumentIdentifierPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(TmsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
@@ -392,8 +392,60 @@ public class TmsEmbeddedInstrumentIdentifier {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TmsEmbeddedInstrumentIdentifier {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (object != null) sb.append("    object: ").append(SENSITIVE_FIELD_PATTERN.matcher("object").matches() ? "[REDACTED]" : toIndentedString(object)).append("\n");
+    if (state != null) sb.append("    state: ").append(SENSITIVE_FIELD_PATTERN.matcher("state").matches() ? "[REDACTED]" : toIndentedString(state)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (source != null) sb.append("    source: ").append(SENSITIVE_FIELD_PATTERN.matcher("source").matches() ? "[REDACTED]" : toIndentedString(source)).append("\n");
+    if (tokenProvisioningInformation != null) sb.append("    tokenProvisioningInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenProvisioningInformation").matches() ? "[REDACTED]" : toIndentedString(tokenProvisioningInformation)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleInformation").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleInformation)).append("\n");
+    if (bankAccount != null) sb.append("    bankAccount: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankAccount").matches() ? "[REDACTED]" : toIndentedString(bankAccount)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenizedCard").matches() ? "[REDACTED]" : toIndentedString(tokenizedCard)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuer").matches() ? "[REDACTED]" : toIndentedString(issuer)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(SENSITIVE_FIELD_PATTERN.matcher("embedded").matches() ? "[REDACTED]" : toIndentedString(embedded)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifier {\n");
     

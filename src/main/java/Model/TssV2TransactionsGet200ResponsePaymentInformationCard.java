@@ -311,8 +311,56 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TssV2TransactionsGet200ResponsePaymentInformationCard {\n");
+    
+    if (suffix != null) sb.append("    suffix: ").append(SENSITIVE_FIELD_PATTERN.matcher("suffix").matches() ? "[REDACTED]" : toIndentedString(suffix)).append("\n");
+    if (prefix != null) sb.append("    prefix: ").append(SENSITIVE_FIELD_PATTERN.matcher("prefix").matches() ? "[REDACTED]" : toIndentedString(prefix)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationMonth").matches() ? "[REDACTED]" : toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationYear").matches() ? "[REDACTED]" : toIndentedString(expirationYear)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("startMonth").matches() ? "[REDACTED]" : toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("startYear").matches() ? "[REDACTED]" : toIndentedString(startYear)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("issueNumber").matches() ? "[REDACTED]" : toIndentedString(issueNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (brandName != null) sb.append("    brandName: ").append(SENSITIVE_FIELD_PATTERN.matcher("brandName").matches() ? "[REDACTED]" : toIndentedString(brandName)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (accountEncoderId != null) sb.append("    accountEncoderId: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountEncoderId").matches() ? "[REDACTED]" : toIndentedString(accountEncoderId)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(SENSITIVE_FIELD_PATTERN.matcher("useAs").matches() ? "[REDACTED]" : toIndentedString(useAs)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationCard {\n");
     

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014SetupsPaymentsCardProcessing;
+import Model.PaymentsConfigurationSetupCardProcessing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,18 +31,18 @@ import java.io.IOException;
 
 public class InlineResponse2014SetupsCommerceSolutions {
   @SerializedName("tokenManagement")
-  private InlineResponse2014SetupsPaymentsCardProcessing tokenManagement = null;
+  private PaymentsConfigurationSetupCardProcessing tokenManagement = null;
 
   @SerializedName("accountUpdater")
-  private InlineResponse2014SetupsPaymentsCardProcessing accountUpdater = null;
+  private PaymentsConfigurationSetupCardProcessing accountUpdater = null;
 
   @SerializedName("binLookup")
-  private InlineResponse2014SetupsPaymentsCardProcessing binLookup = null;
+  private PaymentsConfigurationSetupCardProcessing binLookup = null;
 
   @SerializedName("agenticCommerce")
-  private InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce = null;
+  private PaymentsConfigurationSetupCardProcessing agenticCommerce = null;
 
-  public InlineResponse2014SetupsCommerceSolutions tokenManagement(InlineResponse2014SetupsPaymentsCardProcessing tokenManagement) {
+  public InlineResponse2014SetupsCommerceSolutions tokenManagement(PaymentsConfigurationSetupCardProcessing tokenManagement) {
     this.tokenManagement = tokenManagement;
     return this;
   }
@@ -52,15 +52,15 @@ public class InlineResponse2014SetupsCommerceSolutions {
    * @return tokenManagement
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getTokenManagement() {
+  public PaymentsConfigurationSetupCardProcessing getTokenManagement() {
     return tokenManagement;
   }
 
-  public void setTokenManagement(InlineResponse2014SetupsPaymentsCardProcessing tokenManagement) {
+  public void setTokenManagement(PaymentsConfigurationSetupCardProcessing tokenManagement) {
     this.tokenManagement = tokenManagement;
   }
 
-  public InlineResponse2014SetupsCommerceSolutions accountUpdater(InlineResponse2014SetupsPaymentsCardProcessing accountUpdater) {
+  public InlineResponse2014SetupsCommerceSolutions accountUpdater(PaymentsConfigurationSetupCardProcessing accountUpdater) {
     this.accountUpdater = accountUpdater;
     return this;
   }
@@ -70,15 +70,15 @@ public class InlineResponse2014SetupsCommerceSolutions {
    * @return accountUpdater
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getAccountUpdater() {
+  public PaymentsConfigurationSetupCardProcessing getAccountUpdater() {
     return accountUpdater;
   }
 
-  public void setAccountUpdater(InlineResponse2014SetupsPaymentsCardProcessing accountUpdater) {
+  public void setAccountUpdater(PaymentsConfigurationSetupCardProcessing accountUpdater) {
     this.accountUpdater = accountUpdater;
   }
 
-  public InlineResponse2014SetupsCommerceSolutions binLookup(InlineResponse2014SetupsPaymentsCardProcessing binLookup) {
+  public InlineResponse2014SetupsCommerceSolutions binLookup(PaymentsConfigurationSetupCardProcessing binLookup) {
     this.binLookup = binLookup;
     return this;
   }
@@ -88,15 +88,15 @@ public class InlineResponse2014SetupsCommerceSolutions {
    * @return binLookup
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getBinLookup() {
+  public PaymentsConfigurationSetupCardProcessing getBinLookup() {
     return binLookup;
   }
 
-  public void setBinLookup(InlineResponse2014SetupsPaymentsCardProcessing binLookup) {
+  public void setBinLookup(PaymentsConfigurationSetupCardProcessing binLookup) {
     this.binLookup = binLookup;
   }
 
-  public InlineResponse2014SetupsCommerceSolutions agenticCommerce(InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce) {
+  public InlineResponse2014SetupsCommerceSolutions agenticCommerce(PaymentsConfigurationSetupCardProcessing agenticCommerce) {
     this.agenticCommerce = agenticCommerce;
     return this;
   }
@@ -106,11 +106,11 @@ public class InlineResponse2014SetupsCommerceSolutions {
    * @return agenticCommerce
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsCardProcessing getAgenticCommerce() {
+  public PaymentsConfigurationSetupCardProcessing getAgenticCommerce() {
     return agenticCommerce;
   }
 
-  public void setAgenticCommerce(InlineResponse2014SetupsPaymentsCardProcessing agenticCommerce) {
+  public void setAgenticCommerce(PaymentsConfigurationSetupCardProcessing agenticCommerce) {
     this.agenticCommerce = agenticCommerce;
   }
 
@@ -136,8 +136,48 @@ public class InlineResponse2014SetupsCommerceSolutions {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2014SetupsCommerceSolutions {\n");
+    
+    if (tokenManagement != null) sb.append("    tokenManagement: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenManagement").matches() ? "[REDACTED]" : toIndentedString(tokenManagement)).append("\n");
+    if (accountUpdater != null) sb.append("    accountUpdater: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountUpdater").matches() ? "[REDACTED]" : toIndentedString(accountUpdater)).append("\n");
+    if (binLookup != null) sb.append("    binLookup: ").append(SENSITIVE_FIELD_PATTERN.matcher("binLookup").matches() ? "[REDACTED]" : toIndentedString(binLookup)).append("\n");
+    if (agenticCommerce != null) sb.append("    agenticCommerce: ").append(SENSITIVE_FIELD_PATTERN.matcher("agenticCommerce").matches() ? "[REDACTED]" : toIndentedString(agenticCommerce)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014SetupsCommerceSolutions {\n");
     

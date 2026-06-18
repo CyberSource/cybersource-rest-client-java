@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1instructionsMandates;
-import Model.Acpv1tokensAssuranceData;
-import Model.Acpv1tokensBuyerInformation;
-import Model.Acpv1tokensDeviceInformation;
-import Model.Acpv1tokensPaymentInformation;
+import Model.Iccv1instructionsMandates;
+import Model.Iccv1tokensAssuranceData;
+import Model.Iccv1tokensBuyerInformation;
+import Model.Iccv1tokensDeviceInformation;
+import Model.Iccv1tokensPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,19 +40,19 @@ public class AgenticUpdatePurchaseIntentRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("paymentInformation")
-  private Acpv1tokensPaymentInformation paymentInformation = null;
+  private Iccv1tokensPaymentInformation paymentInformation = null;
 
   @SerializedName("deviceInformation")
-  private Acpv1tokensDeviceInformation deviceInformation = null;
+  private Iccv1tokensDeviceInformation deviceInformation = null;
 
   @SerializedName("assuranceData")
-  private List<Acpv1tokensAssuranceData> assuranceData = new ArrayList<Acpv1tokensAssuranceData>();
+  private List<Iccv1tokensAssuranceData> assuranceData = new ArrayList<Iccv1tokensAssuranceData>();
 
   @SerializedName("mandates")
-  private List<Acpv1instructionsMandates> mandates = new ArrayList<Acpv1instructionsMandates>();
+  private List<Iccv1instructionsMandates> mandates = new ArrayList<Iccv1instructionsMandates>();
 
   @SerializedName("buyerInformation")
-  private Acpv1tokensBuyerInformation buyerInformation = null;
+  private Iccv1tokensBuyerInformation buyerInformation = null;
 
   @SerializedName("consumerPrompt")
   private String consumerPrompt = null;
@@ -75,7 +75,7 @@ public class AgenticUpdatePurchaseIntentRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public AgenticUpdatePurchaseIntentRequest paymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public AgenticUpdatePurchaseIntentRequest paymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -85,15 +85,15 @@ public class AgenticUpdatePurchaseIntentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensPaymentInformation getPaymentInformation() {
+  public Iccv1tokensPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public AgenticUpdatePurchaseIntentRequest deviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public AgenticUpdatePurchaseIntentRequest deviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -103,20 +103,20 @@ public class AgenticUpdatePurchaseIntentRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensDeviceInformation getDeviceInformation() {
+  public Iccv1tokensDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public AgenticUpdatePurchaseIntentRequest assuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public AgenticUpdatePurchaseIntentRequest assuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
     return this;
   }
 
-  public AgenticUpdatePurchaseIntentRequest addAssuranceDataItem(Acpv1tokensAssuranceData assuranceDataItem) {
+  public AgenticUpdatePurchaseIntentRequest addAssuranceDataItem(Iccv1tokensAssuranceData assuranceDataItem) {
     this.assuranceData.add(assuranceDataItem);
     return this;
   }
@@ -126,20 +126,20 @@ public class AgenticUpdatePurchaseIntentRequest {
    * @return assuranceData
   **/
   @ApiModelProperty(required = true, value = "Assurance data.")
-  public List<Acpv1tokensAssuranceData> getAssuranceData() {
+  public List<Iccv1tokensAssuranceData> getAssuranceData() {
     return assuranceData;
   }
 
-  public void setAssuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public void setAssuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
   }
 
-  public AgenticUpdatePurchaseIntentRequest mandates(List<Acpv1instructionsMandates> mandates) {
+  public AgenticUpdatePurchaseIntentRequest mandates(List<Iccv1instructionsMandates> mandates) {
     this.mandates = mandates;
     return this;
   }
 
-  public AgenticUpdatePurchaseIntentRequest addMandatesItem(Acpv1instructionsMandates mandatesItem) {
+  public AgenticUpdatePurchaseIntentRequest addMandatesItem(Iccv1instructionsMandates mandatesItem) {
     this.mandates.add(mandatesItem);
     return this;
   }
@@ -149,15 +149,15 @@ public class AgenticUpdatePurchaseIntentRequest {
    * @return mandates
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Acpv1instructionsMandates> getMandates() {
+  public List<Iccv1instructionsMandates> getMandates() {
     return mandates;
   }
 
-  public void setMandates(List<Acpv1instructionsMandates> mandates) {
+  public void setMandates(List<Iccv1instructionsMandates> mandates) {
     this.mandates = mandates;
   }
 
-  public AgenticUpdatePurchaseIntentRequest buyerInformation(Acpv1tokensBuyerInformation buyerInformation) {
+  public AgenticUpdatePurchaseIntentRequest buyerInformation(Iccv1tokensBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -167,11 +167,11 @@ public class AgenticUpdatePurchaseIntentRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public Acpv1tokensBuyerInformation getBuyerInformation() {
+  public Iccv1tokensBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(Acpv1tokensBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Iccv1tokensBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
@@ -218,8 +218,51 @@ public class AgenticUpdatePurchaseIntentRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class AgenticUpdatePurchaseIntentRequest {\n");
+    
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (assuranceData != null) sb.append("    assuranceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("assuranceData").matches() ? "[REDACTED]" : toIndentedString(assuranceData)).append("\n");
+    if (mandates != null) sb.append("    mandates: ").append(SENSITIVE_FIELD_PATTERN.matcher("mandates").matches() ? "[REDACTED]" : toIndentedString(mandates)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    if (consumerPrompt != null) sb.append("    consumerPrompt: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerPrompt").matches() ? "[REDACTED]" : toIndentedString(consumerPrompt)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgenticUpdatePurchaseIntentRequest {\n");
     

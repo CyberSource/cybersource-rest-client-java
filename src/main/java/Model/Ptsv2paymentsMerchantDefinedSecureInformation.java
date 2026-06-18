@@ -136,8 +136,48 @@ public class Ptsv2paymentsMerchantDefinedSecureInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsMerchantDefinedSecureInformation {\n");
+    
+    if (secure1 != null) sb.append("    secure1: ").append(SENSITIVE_FIELD_PATTERN.matcher("secure1").matches() ? "[REDACTED]" : toIndentedString(secure1)).append("\n");
+    if (secure2 != null) sb.append("    secure2: ").append(SENSITIVE_FIELD_PATTERN.matcher("secure2").matches() ? "[REDACTED]" : toIndentedString(secure2)).append("\n");
+    if (secure3 != null) sb.append("    secure3: ").append(SENSITIVE_FIELD_PATTERN.matcher("secure3").matches() ? "[REDACTED]" : toIndentedString(secure3)).append("\n");
+    if (secure4 != null) sb.append("    secure4: ").append(SENSITIVE_FIELD_PATTERN.matcher("secure4").matches() ? "[REDACTED]" : toIndentedString(secure4)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsMerchantDefinedSecureInformation {\n");
     

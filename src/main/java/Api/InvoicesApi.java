@@ -89,7 +89,7 @@ public class InvoicesApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createInvoiceRequest, CreateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createInvoice,createInvoiceAsync,createInvoiceWithHttpInfo,createInvoiceCall")) {
             try {
@@ -242,7 +242,7 @@ public class InvoicesApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAllInvoices,getAllInvoicesAsync,getAllInvoicesWithHttpInfo,getAllInvoicesCall")) {
             try {
@@ -411,7 +411,7 @@ public class InvoicesApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getInvoice,getInvoiceAsync,getInvoiceWithHttpInfo,getInvoiceCall")) {
             try {
@@ -563,7 +563,7 @@ public class InvoicesApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "performCancelAction,performCancelActionAsync,performCancelActionWithHttpInfo,performCancelActionCall")) {
             try {
@@ -867,7 +867,7 @@ public class InvoicesApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "performSendAction,performSendActionAsync,performSendActionWithHttpInfo,performSendActionCall")) {
             try {
@@ -1017,7 +1017,7 @@ public class InvoicesApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateInvoiceRequest, UpdateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateInvoice,updateInvoiceAsync,updateInvoiceWithHttpInfo,updateInvoiceCall")) {
             try {

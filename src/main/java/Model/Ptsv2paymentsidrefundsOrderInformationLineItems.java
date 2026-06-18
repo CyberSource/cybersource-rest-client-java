@@ -500,8 +500,64 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsidrefundsOrderInformationLineItems {\n");
+    
+    if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(SENSITIVE_FIELD_PATTERN.matcher("productName").matches() ? "[REDACTED]" : toIndentedString(productName)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(SENSITIVE_FIELD_PATTERN.matcher("productSku").matches() ? "[REDACTED]" : toIndentedString(productSku)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("quantity").matches() ? "[REDACTED]" : toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitPrice").matches() ? "[REDACTED]" : toIndentedString(unitPrice)).append("\n");
+    if (unitOfMeasure != null) sb.append("    unitOfMeasure: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitOfMeasure").matches() ? "[REDACTED]" : toIndentedString(unitOfMeasure)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxRate").matches() ? "[REDACTED]" : toIndentedString(taxRate)).append("\n");
+    if (taxAppliedAfterDiscount != null) sb.append("    taxAppliedAfterDiscount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAppliedAfterDiscount").matches() ? "[REDACTED]" : toIndentedString(taxAppliedAfterDiscount)).append("\n");
+    if (taxStatusIndicator != null) sb.append("    taxStatusIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxStatusIndicator").matches() ? "[REDACTED]" : toIndentedString(taxStatusIndicator)).append("\n");
+    if (taxTypeCode != null) sb.append("    taxTypeCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxTypeCode").matches() ? "[REDACTED]" : toIndentedString(taxTypeCode)).append("\n");
+    if (amountIncludesTax != null) sb.append("    amountIncludesTax: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountIncludesTax").matches() ? "[REDACTED]" : toIndentedString(amountIncludesTax)).append("\n");
+    if (typeOfSupply != null) sb.append("    typeOfSupply: ").append(SENSITIVE_FIELD_PATTERN.matcher("typeOfSupply").matches() ? "[REDACTED]" : toIndentedString(typeOfSupply)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("commodityCode").matches() ? "[REDACTED]" : toIndentedString(commodityCode)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
+    if (discountApplied != null) sb.append("    discountApplied: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountApplied").matches() ? "[REDACTED]" : toIndentedString(discountApplied)).append("\n");
+    if (discountRate != null) sb.append("    discountRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountRate").matches() ? "[REDACTED]" : toIndentedString(discountRate)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceNumber").matches() ? "[REDACTED]" : toIndentedString(invoiceNumber)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxDetails").matches() ? "[REDACTED]" : toIndentedString(taxDetails)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsOrderInformationLineItems {\n");
     

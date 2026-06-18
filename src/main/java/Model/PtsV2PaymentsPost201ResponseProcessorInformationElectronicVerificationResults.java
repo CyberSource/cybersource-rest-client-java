@@ -443,8 +443,62 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults {\n");
+    
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
+    if (codeRaw != null) sb.append("    codeRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("codeRaw").matches() ? "[REDACTED]" : toIndentedString(codeRaw)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (emailRaw != null) sb.append("    emailRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("emailRaw").matches() ? "[REDACTED]" : toIndentedString(emailRaw)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (phoneNumberRaw != null) sb.append("    phoneNumberRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumberRaw").matches() ? "[REDACTED]" : toIndentedString(phoneNumberRaw)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
+    if (postalCodeRaw != null) sb.append("    postalCodeRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCodeRaw").matches() ? "[REDACTED]" : toIndentedString(postalCodeRaw)).append("\n");
+    if (street != null) sb.append("    street: ").append(SENSITIVE_FIELD_PATTERN.matcher("street").matches() ? "[REDACTED]" : toIndentedString(street)).append("\n");
+    if (streetRaw != null) sb.append("    streetRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("streetRaw").matches() ? "[REDACTED]" : toIndentedString(streetRaw)).append("\n");
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (nameRaw != null) sb.append("    nameRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("nameRaw").matches() ? "[REDACTED]" : toIndentedString(nameRaw)).append("\n");
+    if (firstNameRaw != null) sb.append("    firstNameRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstNameRaw").matches() ? "[REDACTED]" : toIndentedString(firstNameRaw)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstName").matches() ? "[REDACTED]" : toIndentedString(firstName)).append("\n");
+    if (middleNameRaw != null) sb.append("    middleNameRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleNameRaw").matches() ? "[REDACTED]" : toIndentedString(middleNameRaw)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleName").matches() ? "[REDACTED]" : toIndentedString(middleName)).append("\n");
+    if (lastNameRaw != null) sb.append("    lastNameRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastNameRaw").matches() ? "[REDACTED]" : toIndentedString(lastNameRaw)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastName").matches() ? "[REDACTED]" : toIndentedString(lastName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults {\n");
     
