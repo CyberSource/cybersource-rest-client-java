@@ -193,19 +193,58 @@ public class AccessTokenResponse {
         return Objects.hash(clientStatus, accessToken, refreshToken, expiresIn, refreshTokenExpiresIn, scope, tokenType);
     }
 
+    private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+        java.util.regex.Pattern.compile(
+            "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+            + "|passphrase|privateKey|authToken|bearerToken|idToken"
+            + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+            + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+            + "|number|expirationMonth|expirationYear|ssn|taxId)$");
 
+    /**
+     * Returns a masked string representation of this object.
+     * Sensitive fields (passwords, API keys, tokens, etc.) are replaced
+     * with {@code [REDACTED]} to prevent accidental exposure in logs.
+     *
+     * @return masked string representation
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessTokenResponse {\n");
 
-        sb.append("    clientStatus: ").append(toIndentedString(clientStatus)).append("\n");
-        sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-        sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
-        sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
-        sb.append("    refreshTokenExpiresIn: ").append(toIndentedString(refreshTokenExpiresIn)).append("\n");
-        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-        sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
+        if (clientStatus != null) sb.append("    clientStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientStatus").matches() ? "[REDACTED]" : toIndentedString(clientStatus)).append("\n");
+        if (accessToken != null) sb.append("    accessToken: ").append(SENSITIVE_FIELD_PATTERN.matcher("accessToken").matches() ? "[REDACTED]" : toIndentedString(accessToken)).append("\n");
+        if (expiresIn != null) sb.append("    expiresIn: ").append(SENSITIVE_FIELD_PATTERN.matcher("expiresIn").matches() ? "[REDACTED]" : toIndentedString(expiresIn)).append("\n");
+        if (refreshToken != null) sb.append("    refreshToken: ").append(SENSITIVE_FIELD_PATTERN.matcher("refreshToken").matches() ? "[REDACTED]" : toIndentedString(refreshToken)).append("\n");
+        if (refreshTokenExpiresIn != null) sb.append("    refreshTokenExpiresIn: ").append(SENSITIVE_FIELD_PATTERN.matcher("refreshTokenExpiresIn").matches() ? "[REDACTED]" : toIndentedString(refreshTokenExpiresIn)).append("\n");
+        if (scope != null) sb.append("    scope: ").append(SENSITIVE_FIELD_PATTERN.matcher("scope").matches() ? "[REDACTED]" : toIndentedString(scope)).append("\n");
+        if (tokenType != null) sb.append("    tokenType: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenType").matches() ? "[REDACTED]" : toIndentedString(tokenType)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Returns an unmasked string representation of this object, including all
+     * sensitive field values in plaintext.
+     *
+     * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+     * logger or include it in error messages in production environments, as it
+     * will expose credentials, tokens, and other sensitive data.
+     *
+     * @return unmasked string representation
+     */
+    public String toDebugString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AccessTokenResponse {\n");
+
+        if (clientStatus != null) sb.append("    clientStatus: ").append(toIndentedString(clientStatus)).append("\n");
+        if (accessToken != null) sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+        if (expiresIn != null) sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
+        if (refreshToken != null) sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
+        if (refreshTokenExpiresIn != null) sb.append("    refreshTokenExpiresIn: ").append(toIndentedString(refreshTokenExpiresIn)).append("\n");
+        if (scope != null) sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        if (tokenType != null) sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -222,4 +261,5 @@ public class AccessTokenResponse {
     }
 
 }
+
 

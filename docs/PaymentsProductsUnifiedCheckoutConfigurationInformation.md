@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**configurations** | [**PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations**](PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations.md) |  |  [optional]
+**configurations** | [**UcConfigurations**](UcConfigurations.md) |  |  [optional]
 
 
 

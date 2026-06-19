@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo;
+import Model.DefaultShippingAddressLinks;
+import Model.DefaultShippingAddressMetadata;
+import Model.DefaultShippingAddressShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class PostCustomerShippingAddressRequest {
   @SerializedName("_links")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links = null;
+  private DefaultShippingAddressLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -42,12 +42,12 @@ public class PostCustomerShippingAddressRequest {
   private Boolean _default = null;
 
   @SerializedName("shipTo")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo = null;
+  private DefaultShippingAddressShipTo shipTo = null;
 
   @SerializedName("metadata")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata = null;
+  private DefaultShippingAddressMetadata metadata = null;
 
-  public PostCustomerShippingAddressRequest links(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links) {
+  public PostCustomerShippingAddressRequest links(DefaultShippingAddressLinks links) {
     this.links = links;
     return this;
   }
@@ -57,11 +57,11 @@ public class PostCustomerShippingAddressRequest {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks getLinks() {
+  public DefaultShippingAddressLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks links) {
+  public void setLinks(DefaultShippingAddressLinks links) {
     this.links = links;
   }
 
@@ -101,7 +101,7 @@ public class PostCustomerShippingAddressRequest {
     this._default = _default;
   }
 
-  public PostCustomerShippingAddressRequest shipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public PostCustomerShippingAddressRequest shipTo(DefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -111,15 +111,15 @@ public class PostCustomerShippingAddressRequest {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo getShipTo() {
+  public DefaultShippingAddressShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo shipTo) {
+  public void setShipTo(DefaultShippingAddressShipTo shipTo) {
     this.shipTo = shipTo;
   }
 
-  public PostCustomerShippingAddressRequest metadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata) {
+  public PostCustomerShippingAddressRequest metadata(DefaultShippingAddressMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -129,11 +129,11 @@ public class PostCustomerShippingAddressRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata getMetadata() {
+  public DefaultShippingAddressMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata metadata) {
+  public void setMetadata(DefaultShippingAddressMetadata metadata) {
     this.metadata = metadata;
   }
 
@@ -160,8 +160,49 @@ public class PostCustomerShippingAddressRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PostCustomerShippingAddressRequest {\n");
+    
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (_default != null) sb.append("    _default: ").append(SENSITIVE_FIELD_PATTERN.matcher("_default").matches() ? "[REDACTED]" : toIndentedString(_default)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostCustomerShippingAddressRequest {\n");
     

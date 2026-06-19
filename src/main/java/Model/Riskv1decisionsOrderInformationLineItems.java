@@ -420,8 +420,60 @@ public class Riskv1decisionsOrderInformationLineItems {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Riskv1decisionsOrderInformationLineItems {\n");
+    
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitPrice").matches() ? "[REDACTED]" : toIndentedString(unitPrice)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("quantity").matches() ? "[REDACTED]" : toIndentedString(quantity)).append("\n");
+    if (giftCardCurrency != null) sb.append("    giftCardCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("giftCardCurrency").matches() ? "[REDACTED]" : toIndentedString(giftCardCurrency)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(SENSITIVE_FIELD_PATTERN.matcher("productSKU").matches() ? "[REDACTED]" : toIndentedString(productSKU)).append("\n");
+    if (productRisk != null) sb.append("    productRisk: ").append(SENSITIVE_FIELD_PATTERN.matcher("productRisk").matches() ? "[REDACTED]" : toIndentedString(productRisk)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("productDescription").matches() ? "[REDACTED]" : toIndentedString(productDescription)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(SENSITIVE_FIELD_PATTERN.matcher("productName").matches() ? "[REDACTED]" : toIndentedString(productName)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
+    if (gift != null) sb.append("    gift: ").append(SENSITIVE_FIELD_PATTERN.matcher("gift").matches() ? "[REDACTED]" : toIndentedString(gift)).append("\n");
+    if (distributorProductSku != null) sb.append("    distributorProductSku: ").append(SENSITIVE_FIELD_PATTERN.matcher("distributorProductSku").matches() ? "[REDACTED]" : toIndentedString(distributorProductSku)).append("\n");
+    if (passenger != null) sb.append("    passenger: ").append(SENSITIVE_FIELD_PATTERN.matcher("passenger").matches() ? "[REDACTED]" : toIndentedString(passenger)).append("\n");
+    if (shippingDestinationTypes != null) sb.append("    shippingDestinationTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingDestinationTypes").matches() ? "[REDACTED]" : toIndentedString(shippingDestinationTypes)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    if (allowedExportCountries != null) sb.append("    allowedExportCountries: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedExportCountries").matches() ? "[REDACTED]" : toIndentedString(allowedExportCountries)).append("\n");
+    if (restrictedExportCountries != null) sb.append("    restrictedExportCountries: ").append(SENSITIVE_FIELD_PATTERN.matcher("restrictedExportCountries").matches() ? "[REDACTED]" : toIndentedString(restrictedExportCountries)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformationLineItems {\n");
     

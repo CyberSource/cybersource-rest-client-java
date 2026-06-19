@@ -179,8 +179,50 @@ public class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {\n");
+    
+    if (pointsBeforeRedemption != null) sb.append("    pointsBeforeRedemption: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsBeforeRedemption").matches() ? "[REDACTED]" : toIndentedString(pointsBeforeRedemption)).append("\n");
+    if (pointsValueBeforeRedemption != null) sb.append("    pointsValueBeforeRedemption: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsValueBeforeRedemption").matches() ? "[REDACTED]" : toIndentedString(pointsValueBeforeRedemption)).append("\n");
+    if (pointsRedeemed != null) sb.append("    pointsRedeemed: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsRedeemed").matches() ? "[REDACTED]" : toIndentedString(pointsRedeemed)).append("\n");
+    if (pointsValueRedeemed != null) sb.append("    pointsValueRedeemed: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsValueRedeemed").matches() ? "[REDACTED]" : toIndentedString(pointsValueRedeemed)).append("\n");
+    if (pointsAfterRedemption != null) sb.append("    pointsAfterRedemption: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsAfterRedemption").matches() ? "[REDACTED]" : toIndentedString(pointsAfterRedemption)).append("\n");
+    if (pointsValueAfterRedemption != null) sb.append("    pointsValueAfterRedemption: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointsValueAfterRedemption").matches() ? "[REDACTED]" : toIndentedString(pointsValueAfterRedemption)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails {\n");
     

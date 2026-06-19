@@ -203,8 +203,51 @@ public class Ptsv2paymentreferencesTravelInformationAutoRental {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentreferencesTravelInformationAutoRental {\n");
+    
+    if (companyName != null) sb.append("    companyName: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyName").matches() ? "[REDACTED]" : toIndentedString(companyName)).append("\n");
+    if (affiliateName != null) sb.append("    affiliateName: ").append(SENSITIVE_FIELD_PATTERN.matcher("affiliateName").matches() ? "[REDACTED]" : toIndentedString(affiliateName)).append("\n");
+    if (rentalAddress != null) sb.append("    rentalAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("rentalAddress").matches() ? "[REDACTED]" : toIndentedString(rentalAddress)).append("\n");
+    if (returnAddress != null) sb.append("    returnAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnAddress").matches() ? "[REDACTED]" : toIndentedString(returnAddress)).append("\n");
+    if (returnDateTime != null) sb.append("    returnDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnDateTime").matches() ? "[REDACTED]" : toIndentedString(returnDateTime)).append("\n");
+    if (rentalDateTime != null) sb.append("    rentalDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("rentalDateTime").matches() ? "[REDACTED]" : toIndentedString(rentalDateTime)).append("\n");
+    if (customerName != null) sb.append("    customerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerName").matches() ? "[REDACTED]" : toIndentedString(customerName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesTravelInformationAutoRental {\n");
     

@@ -226,8 +226,52 @@ public class Ucv1sessionsDataProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsDataProcessingInformation {\n");
+    
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("purposeOfPayment").matches() ? "[REDACTED]" : toIndentedString(purposeOfPayment)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringOptions").matches() ? "[REDACTED]" : toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankTransferOptions").matches() ? "[REDACTED]" : toIndentedString(bankTransferOptions)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (processingInstruction != null) sb.append("    processingInstruction: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInstruction").matches() ? "[REDACTED]" : toIndentedString(processingInstruction)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsDataProcessingInformation {\n");
     

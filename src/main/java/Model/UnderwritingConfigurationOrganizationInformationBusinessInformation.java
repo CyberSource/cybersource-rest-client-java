@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.UnderwritingConfigurationBusinessDetails;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationAddress;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact;
-import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessDetails;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress;
@@ -102,7 +102,7 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
   private UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact businessContact = null;
 
   @SerializedName("businessDetails")
-  private UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessDetails businessDetails = null;
+  private UnderwritingConfigurationBusinessDetails businessDetails = null;
 
   @SerializedName("ownerInformation")
   private List<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation> ownerInformation = null;
@@ -496,7 +496,7 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
     this.businessContact = businessContact;
   }
 
-  public UnderwritingConfigurationOrganizationInformationBusinessInformation businessDetails(UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessDetails businessDetails) {
+  public UnderwritingConfigurationOrganizationInformationBusinessInformation businessDetails(UnderwritingConfigurationBusinessDetails businessDetails) {
     this.businessDetails = businessDetails;
     return this;
   }
@@ -506,11 +506,11 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
    * @return businessDetails
   **/
   @ApiModelProperty(value = "")
-  public UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessDetails getBusinessDetails() {
+  public UnderwritingConfigurationBusinessDetails getBusinessDetails() {
     return businessDetails;
   }
 
-  public void setBusinessDetails(UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessDetails businessDetails) {
+  public void setBusinessDetails(UnderwritingConfigurationBusinessDetails businessDetails) {
     this.businessDetails = businessDetails;
   }
 
@@ -608,8 +608,68 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class UnderwritingConfigurationOrganizationInformationBusinessInformation {\n");
+    
+    if (businessIdentifier != null) sb.append("    businessIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessIdentifier").matches() ? "[REDACTED]" : toIndentedString(businessIdentifier)).append("\n");
+    if (countryRegistration != null) sb.append("    countryRegistration: ").append(SENSITIVE_FIELD_PATTERN.matcher("countryRegistration").matches() ? "[REDACTED]" : toIndentedString(countryRegistration)).append("\n");
+    if (legalName != null) sb.append("    legalName: ").append(SENSITIVE_FIELD_PATTERN.matcher("legalName").matches() ? "[REDACTED]" : toIndentedString(legalName)).append("\n");
+    if (doingBusinessAs != null) sb.append("    doingBusinessAs: ").append(SENSITIVE_FIELD_PATTERN.matcher("doingBusinessAs").matches() ? "[REDACTED]" : toIndentedString(doingBusinessAs)).append("\n");
+    if (businessDescription != null) sb.append("    businessDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessDescription").matches() ? "[REDACTED]" : toIndentedString(businessDescription)).append("\n");
+    if (registrationNumber != null) sb.append("    registrationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("registrationNumber").matches() ? "[REDACTED]" : toIndentedString(registrationNumber)).append("\n");
+    if (stockExchange != null) sb.append("    stockExchange: ").append(SENSITIVE_FIELD_PATTERN.matcher("stockExchange").matches() ? "[REDACTED]" : toIndentedString(stockExchange)).append("\n");
+    if (tickerSymbol != null) sb.append("    tickerSymbol: ").append(SENSITIVE_FIELD_PATTERN.matcher("tickerSymbol").matches() ? "[REDACTED]" : toIndentedString(tickerSymbol)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("startDate").matches() ? "[REDACTED]" : toIndentedString(startDate)).append("\n");
+    if (merchantCategoryCode != null) sb.append("    merchantCategoryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantCategoryCode").matches() ? "[REDACTED]" : toIndentedString(merchantCategoryCode)).append("\n");
+    if (mccDescription != null) sb.append("    mccDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("mccDescription").matches() ? "[REDACTED]" : toIndentedString(mccDescription)).append("\n");
+    if (websiteURL != null) sb.append("    websiteURL: ").append(SENSITIVE_FIELD_PATTERN.matcher("websiteURL").matches() ? "[REDACTED]" : toIndentedString(websiteURL)).append("\n");
+    if (businessType != null) sb.append("    businessType: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessType").matches() ? "[REDACTED]" : toIndentedString(businessType)).append("\n");
+    if (localMCC != null) sb.append("    localMCC: ").append(SENSITIVE_FIELD_PATTERN.matcher("localMCC").matches() ? "[REDACTED]" : toIndentedString(localMCC)).append("\n");
+    if (countryPhoneNumber != null) sb.append("    countryPhoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("countryPhoneNumber").matches() ? "[REDACTED]" : toIndentedString(countryPhoneNumber)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (whatYourCompanyDoes != null) sb.append("    whatYourCompanyDoes: ").append(SENSITIVE_FIELD_PATTERN.matcher("whatYourCompanyDoes").matches() ? "[REDACTED]" : toIndentedString(whatYourCompanyDoes)).append("\n");
+    if (address != null) sb.append("    address: ").append(SENSITIVE_FIELD_PATTERN.matcher("address").matches() ? "[REDACTED]" : toIndentedString(address)).append("\n");
+    if (tradingAddress != null) sb.append("    tradingAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("tradingAddress").matches() ? "[REDACTED]" : toIndentedString(tradingAddress)).append("\n");
+    if (businessContact != null) sb.append("    businessContact: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessContact").matches() ? "[REDACTED]" : toIndentedString(businessContact)).append("\n");
+    if (businessDetails != null) sb.append("    businessDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessDetails").matches() ? "[REDACTED]" : toIndentedString(businessDetails)).append("\n");
+    if (ownerInformation != null) sb.append("    ownerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("ownerInformation").matches() ? "[REDACTED]" : toIndentedString(ownerInformation)).append("\n");
+    if (directorInformation != null) sb.append("    directorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("directorInformation").matches() ? "[REDACTED]" : toIndentedString(directorInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnderwritingConfigurationOrganizationInformationBusinessInformation {\n");
     

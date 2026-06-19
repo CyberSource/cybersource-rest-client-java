@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures;
+import Model.UcFeatureSubscription;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +40,7 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformation {
   private String selfServiceability = "NOT_SELF_SERVICEABLE";
 
   @SerializedName("features")
-  private PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures features = null;
+  private UcFeatureSubscription features = null;
 
   public PaymentsProductsUnifiedCheckoutSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -96,7 +96,7 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformation {
     this.selfServiceability = selfServiceability;
   }
 
-  public PaymentsProductsUnifiedCheckoutSubscriptionInformation features(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures features) {
+  public PaymentsProductsUnifiedCheckoutSubscriptionInformation features(UcFeatureSubscription features) {
     this.features = features;
     return this;
   }
@@ -106,11 +106,11 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformation {
    * @return features
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures getFeatures() {
+  public UcFeatureSubscription getFeatures() {
     return features;
   }
 
-  public void setFeatures(PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures features) {
+  public void setFeatures(UcFeatureSubscription features) {
     this.features = features;
   }
 
@@ -136,8 +136,48 @@ public class PaymentsProductsUnifiedCheckoutSubscriptionInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PaymentsProductsUnifiedCheckoutSubscriptionInformation {\n");
+    
+    if (enabled != null) sb.append("    enabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("enabled").matches() ? "[REDACTED]" : toIndentedString(enabled)).append("\n");
+    if (enablementStatus != null) sb.append("    enablementStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("enablementStatus").matches() ? "[REDACTED]" : toIndentedString(enablementStatus)).append("\n");
+    if (selfServiceability != null) sb.append("    selfServiceability: ").append(SENSITIVE_FIELD_PATTERN.matcher("selfServiceability").matches() ? "[REDACTED]" : toIndentedString(selfServiceability)).append("\n");
+    if (features != null) sb.append("    features: ").append(SENSITIVE_FIELD_PATTERN.matcher("features").matches() ? "[REDACTED]" : toIndentedString(features)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsUnifiedCheckoutSubscriptionInformation {\n");
     

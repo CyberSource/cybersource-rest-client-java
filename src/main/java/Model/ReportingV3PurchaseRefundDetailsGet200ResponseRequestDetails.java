@@ -180,8 +180,50 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {\n");
+    
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (cybersourceMerchantId != null) sb.append("    cybersourceMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("cybersourceMerchantId").matches() ? "[REDACTED]" : toIndentedString(cybersourceMerchantId)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorMerchantId").matches() ? "[REDACTED]" : toIndentedString(processorMerchantId)).append("\n");
+    if (groupName != null) sb.append("    groupName: ").append(SENSITIVE_FIELD_PATTERN.matcher("groupName").matches() ? "[REDACTED]" : toIndentedString(groupName)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(merchantReferenceNumber)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {\n");
     

@@ -19,8 +19,8 @@ import Model.Ucv1sessionsDataOrderInformationAmountDetails;
 import Model.Ucv1sessionsDataOrderInformationBillTo;
 import Model.Ucv1sessionsDataOrderInformationInvoiceDetails;
 import Model.Ucv1sessionsDataOrderInformationLineItems;
+import Model.Ucv1sessionsDataOrderInformationShipTo;
 import Model.Ucv1sessionsDataOrderInformationShippingDetails;
-import Model.Upv1capturecontextsDataOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +44,7 @@ public class Ucv1sessionsDataOrderInformation {
   private Ucv1sessionsDataOrderInformationBillTo billTo = null;
 
   @SerializedName("shipTo")
-  private Upv1capturecontextsDataOrderInformationShipTo shipTo = null;
+  private Ucv1sessionsDataOrderInformationShipTo shipTo = null;
 
   @SerializedName("lineItems")
   private List<Ucv1sessionsDataOrderInformationLineItems> lineItems = null;
@@ -91,7 +91,7 @@ public class Ucv1sessionsDataOrderInformation {
     this.billTo = billTo;
   }
 
-  public Ucv1sessionsDataOrderInformation shipTo(Upv1capturecontextsDataOrderInformationShipTo shipTo) {
+  public Ucv1sessionsDataOrderInformation shipTo(Ucv1sessionsDataOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -101,11 +101,11 @@ public class Ucv1sessionsDataOrderInformation {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Upv1capturecontextsDataOrderInformationShipTo getShipTo() {
+  public Ucv1sessionsDataOrderInformationShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Upv1capturecontextsDataOrderInformationShipTo shipTo) {
+  public void setShipTo(Ucv1sessionsDataOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
   }
 
@@ -195,8 +195,50 @@ public class Ucv1sessionsDataOrderInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsDataOrderInformation {\n");
+    
+    if (amountDetails != null) sb.append("    amountDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountDetails").matches() ? "[REDACTED]" : toIndentedString(amountDetails)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
+    if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceDetails").matches() ? "[REDACTED]" : toIndentedString(invoiceDetails)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingDetails").matches() ? "[REDACTED]" : toIndentedString(shippingDetails)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsDataOrderInformation {\n");
     

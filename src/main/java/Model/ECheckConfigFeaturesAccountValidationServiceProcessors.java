@@ -246,8 +246,53 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ECheckConfigFeaturesAccountValidationServiceProcessors {\n");
+    
+    if (avsAccountOwnershipService != null) sb.append("    avsAccountOwnershipService: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsAccountOwnershipService").matches() ? "[REDACTED]" : toIndentedString(avsAccountOwnershipService)).append("\n");
+    if (avsAccountStatusService != null) sb.append("    avsAccountStatusService: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsAccountStatusService").matches() ? "[REDACTED]" : toIndentedString(avsAccountStatusService)).append("\n");
+    if (avsSignedAgreement != null) sb.append("    avsSignedAgreement: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsSignedAgreement").matches() ? "[REDACTED]" : toIndentedString(avsSignedAgreement)).append("\n");
+    if (avsCalculatedResponseBehavior != null) sb.append("    avsCalculatedResponseBehavior: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsCalculatedResponseBehavior").matches() ? "[REDACTED]" : toIndentedString(avsCalculatedResponseBehavior)).append("\n");
+    if (avsAdditionalId != null) sb.append("    avsAdditionalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsAdditionalId").matches() ? "[REDACTED]" : toIndentedString(avsAdditionalId)).append("\n");
+    if (enableAvs != null) sb.append("    enableAvs: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableAvs").matches() ? "[REDACTED]" : toIndentedString(enableAvs)).append("\n");
+    if (avsEntityId != null) sb.append("    avsEntityId: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsEntityId").matches() ? "[REDACTED]" : toIndentedString(avsEntityId)).append("\n");
+    if (avsResultMode != null) sb.append("    avsResultMode: ").append(SENSITIVE_FIELD_PATTERN.matcher("avsResultMode").matches() ? "[REDACTED]" : toIndentedString(avsResultMode)).append("\n");
+    if (enableAvsTokenCreation != null) sb.append("    enableAvsTokenCreation: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableAvsTokenCreation").matches() ? "[REDACTED]" : toIndentedString(enableAvsTokenCreation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigFeaturesAccountValidationServiceProcessors {\n");
     

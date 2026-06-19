@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.VTConfigCardNotPresentGlobalPaymentInformation;
 import Model.VTConfigCardNotPresentReceiptInformation;
+import Model.VirtualTerminalGlobalPaymentSettings;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class VTConfigCardNotPresent {
   @SerializedName("globalPaymentInformation")
-  private VTConfigCardNotPresentGlobalPaymentInformation globalPaymentInformation = null;
+  private VirtualTerminalGlobalPaymentSettings globalPaymentInformation = null;
 
   @SerializedName("receiptInformation")
   private VTConfigCardNotPresentReceiptInformation receiptInformation = null;
 
-  public VTConfigCardNotPresent globalPaymentInformation(VTConfigCardNotPresentGlobalPaymentInformation globalPaymentInformation) {
+  public VTConfigCardNotPresent globalPaymentInformation(VirtualTerminalGlobalPaymentSettings globalPaymentInformation) {
     this.globalPaymentInformation = globalPaymentInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class VTConfigCardNotPresent {
    * @return globalPaymentInformation
   **/
   @ApiModelProperty(value = "")
-  public VTConfigCardNotPresentGlobalPaymentInformation getGlobalPaymentInformation() {
+  public VirtualTerminalGlobalPaymentSettings getGlobalPaymentInformation() {
     return globalPaymentInformation;
   }
 
-  public void setGlobalPaymentInformation(VTConfigCardNotPresentGlobalPaymentInformation globalPaymentInformation) {
+  public void setGlobalPaymentInformation(VirtualTerminalGlobalPaymentSettings globalPaymentInformation) {
     this.globalPaymentInformation = globalPaymentInformation;
   }
 
@@ -93,8 +93,46 @@ public class VTConfigCardNotPresent {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class VTConfigCardNotPresent {\n");
+    
+    if (globalPaymentInformation != null) sb.append("    globalPaymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("globalPaymentInformation").matches() ? "[REDACTED]" : toIndentedString(globalPaymentInformation)).append("\n");
+    if (receiptInformation != null) sb.append("    receiptInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("receiptInformation").matches() ? "[REDACTED]" : toIndentedString(receiptInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresent {\n");
     

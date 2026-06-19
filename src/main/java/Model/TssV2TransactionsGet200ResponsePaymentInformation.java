@@ -402,8 +402,59 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TssV2TransactionsGet200ResponsePaymentInformation {\n");
+    
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(SENSITIVE_FIELD_PATTERN.matcher("eWallet").matches() ? "[REDACTED]" : toIndentedString(eWallet)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (brands != null) sb.append("    brands: ").append(SENSITIVE_FIELD_PATTERN.matcher("brands").matches() ? "[REDACTED]" : toIndentedString(brands)).append("\n");
+    if (features != null) sb.append("    features: ").append(SENSITIVE_FIELD_PATTERN.matcher("features").matches() ? "[REDACTED]" : toIndentedString(features)).append("\n");
+    if (invoice != null) sb.append("    invoice: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoice").matches() ? "[REDACTED]" : toIndentedString(invoice)).append("\n");
+    if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerInformation").matches() ? "[REDACTED]" : toIndentedString(issuerInformation)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(SENSITIVE_FIELD_PATTERN.matcher("bank").matches() ? "[REDACTED]" : toIndentedString(bank)).append("\n");
+    if (accountFeatures != null) sb.append("    accountFeatures: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountFeatures").matches() ? "[REDACTED]" : toIndentedString(accountFeatures)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInstrument").matches() ? "[REDACTED]" : toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentIdentifier").matches() ? "[REDACTED]" : toIndentedString(instrumentIdentifier)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingAddress").matches() ? "[REDACTED]" : toIndentedString(shippingAddress)).append("\n");
+    if (fluidData != null) sb.append("    fluidData: ").append(SENSITIVE_FIELD_PATTERN.matcher("fluidData").matches() ? "[REDACTED]" : toIndentedString(fluidData)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformation {\n");
     

@@ -334,8 +334,57 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails {\n");
+    
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (interchangePerItemFee != null) sb.append("    interchangePerItemFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangePerItemFee").matches() ? "[REDACTED]" : toIndentedString(interchangePerItemFee)).append("\n");
+    if (interchangeDescription != null) sb.append("    interchangeDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangeDescription").matches() ? "[REDACTED]" : toIndentedString(interchangeDescription)).append("\n");
+    if (interchangePercentage != null) sb.append("    interchangePercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangePercentage").matches() ? "[REDACTED]" : toIndentedString(interchangePercentage)).append("\n");
+    if (interchangePercentageAmount != null) sb.append("    interchangePercentageAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangePercentageAmount").matches() ? "[REDACTED]" : toIndentedString(interchangePercentageAmount)).append("\n");
+    if (discountPercentage != null) sb.append("    discountPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountPercentage").matches() ? "[REDACTED]" : toIndentedString(discountPercentage)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
+    if (discountPerItemFee != null) sb.append("    discountPerItemFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountPerItemFee").matches() ? "[REDACTED]" : toIndentedString(discountPerItemFee)).append("\n");
+    if (totalFee != null) sb.append("    totalFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalFee").matches() ? "[REDACTED]" : toIndentedString(totalFee)).append("\n");
+    if (feeCurrency != null) sb.append("    feeCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeCurrency").matches() ? "[REDACTED]" : toIndentedString(feeCurrency)).append("\n");
+    if (duesAssessments != null) sb.append("    duesAssessments: ").append(SENSITIVE_FIELD_PATTERN.matcher("duesAssessments").matches() ? "[REDACTED]" : toIndentedString(duesAssessments)).append("\n");
+    if (fundingAmount != null) sb.append("    fundingAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("fundingAmount").matches() ? "[REDACTED]" : toIndentedString(fundingAmount)).append("\n");
+    if (fundingCurrency != null) sb.append("    fundingCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("fundingCurrency").matches() ? "[REDACTED]" : toIndentedString(fundingCurrency)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails {\n");
     

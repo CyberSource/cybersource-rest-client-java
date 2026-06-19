@@ -290,8 +290,55 @@ public class Ptsv2paymentsRecurringPaymentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsRecurringPaymentInformation {\n");
+    
+    if (endDate != null) sb.append("    endDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("endDate").matches() ? "[REDACTED]" : toIndentedString(endDate)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("frequency").matches() ? "[REDACTED]" : toIndentedString(frequency)).append("\n");
+    if (numberOfPayments != null) sb.append("    numberOfPayments: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfPayments").matches() ? "[REDACTED]" : toIndentedString(numberOfPayments)).append("\n");
+    if (originalPurchaseDate != null) sb.append("    originalPurchaseDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalPurchaseDate").matches() ? "[REDACTED]" : toIndentedString(originalPurchaseDate)).append("\n");
+    if (sequenceNumber != null) sb.append("    sequenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("sequenceNumber").matches() ? "[REDACTED]" : toIndentedString(sequenceNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (occurrence != null) sb.append("    occurrence: ").append(SENSITIVE_FIELD_PATTERN.matcher("occurrence").matches() ? "[REDACTED]" : toIndentedString(occurrence)).append("\n");
+    if (validationIndicator != null) sb.append("    validationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("validationIndicator").matches() ? "[REDACTED]" : toIndentedString(validationIndicator)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountType").matches() ? "[REDACTED]" : toIndentedString(amountType)).append("\n");
+    if (maximumAmount != null) sb.append("    maximumAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("maximumAmount").matches() ? "[REDACTED]" : toIndentedString(maximumAmount)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceNumber").matches() ? "[REDACTED]" : toIndentedString(referenceNumber)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRecurringPaymentInformation {\n");
     

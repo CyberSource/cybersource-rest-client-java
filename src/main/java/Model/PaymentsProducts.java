@@ -569,8 +569,67 @@ public class PaymentsProducts {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PaymentsProducts {\n");
+    
+    if (cardProcessing != null) sb.append("    cardProcessing: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardProcessing").matches() ? "[REDACTED]" : toIndentedString(cardProcessing)).append("\n");
+    if (alternativePaymentMethods != null) sb.append("    alternativePaymentMethods: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternativePaymentMethods").matches() ? "[REDACTED]" : toIndentedString(alternativePaymentMethods)).append("\n");
+    if (cardPresentConnect != null) sb.append("    cardPresentConnect: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardPresentConnect").matches() ? "[REDACTED]" : toIndentedString(cardPresentConnect)).append("\n");
+    if (cybsReadyTerminal != null) sb.append("    cybsReadyTerminal: ").append(SENSITIVE_FIELD_PATTERN.matcher("cybsReadyTerminal").matches() ? "[REDACTED]" : toIndentedString(cybsReadyTerminal)).append("\n");
+    if (eCheck != null) sb.append("    eCheck: ").append(SENSITIVE_FIELD_PATTERN.matcher("eCheck").matches() ? "[REDACTED]" : toIndentedString(eCheck)).append("\n");
+    if (payerAuthentication != null) sb.append("    payerAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("payerAuthentication").matches() ? "[REDACTED]" : toIndentedString(payerAuthentication)).append("\n");
+    if (digitalPayments != null) sb.append("    digitalPayments: ").append(SENSITIVE_FIELD_PATTERN.matcher("digitalPayments").matches() ? "[REDACTED]" : toIndentedString(digitalPayments)).append("\n");
+    if (secureAcceptance != null) sb.append("    secureAcceptance: ").append(SENSITIVE_FIELD_PATTERN.matcher("secureAcceptance").matches() ? "[REDACTED]" : toIndentedString(secureAcceptance)).append("\n");
+    if (virtualTerminal != null) sb.append("    virtualTerminal: ").append(SENSITIVE_FIELD_PATTERN.matcher("virtualTerminal").matches() ? "[REDACTED]" : toIndentedString(virtualTerminal)).append("\n");
+    if (currencyConversion != null) sb.append("    currencyConversion: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencyConversion").matches() ? "[REDACTED]" : toIndentedString(currencyConversion)).append("\n");
+    if (tax != null) sb.append("    tax: ").append(SENSITIVE_FIELD_PATTERN.matcher("tax").matches() ? "[REDACTED]" : toIndentedString(tax)).append("\n");
+    if (customerInvoicing != null) sb.append("    customerInvoicing: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerInvoicing").matches() ? "[REDACTED]" : toIndentedString(customerInvoicing)).append("\n");
+    if (recurringBilling != null) sb.append("    recurringBilling: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringBilling").matches() ? "[REDACTED]" : toIndentedString(recurringBilling)).append("\n");
+    if (paymentOrchestration != null) sb.append("    paymentOrchestration: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentOrchestration").matches() ? "[REDACTED]" : toIndentedString(paymentOrchestration)).append("\n");
+    if (payouts != null) sb.append("    payouts: ").append(SENSITIVE_FIELD_PATTERN.matcher("payouts").matches() ? "[REDACTED]" : toIndentedString(payouts)).append("\n");
+    if (differentialFee != null) sb.append("    differentialFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("differentialFee").matches() ? "[REDACTED]" : toIndentedString(differentialFee)).append("\n");
+    if (payByLink != null) sb.append("    payByLink: ").append(SENSITIVE_FIELD_PATTERN.matcher("payByLink").matches() ? "[REDACTED]" : toIndentedString(payByLink)).append("\n");
+    if (unifiedCheckout != null) sb.append("    unifiedCheckout: ").append(SENSITIVE_FIELD_PATTERN.matcher("unifiedCheckout").matches() ? "[REDACTED]" : toIndentedString(unifiedCheckout)).append("\n");
+    if (receivablesManager != null) sb.append("    receivablesManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("receivablesManager").matches() ? "[REDACTED]" : toIndentedString(receivablesManager)).append("\n");
+    if (serviceFee != null) sb.append("    serviceFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("serviceFee").matches() ? "[REDACTED]" : toIndentedString(serviceFee)).append("\n");
+    if (batchUpload != null) sb.append("    batchUpload: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchUpload").matches() ? "[REDACTED]" : toIndentedString(batchUpload)).append("\n");
+    if (transactGuard != null) sb.append("    transactGuard: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactGuard").matches() ? "[REDACTED]" : toIndentedString(transactGuard)).append("\n");
+    if (microform != null) sb.append("    microform: ").append(SENSITIVE_FIELD_PATTERN.matcher("microform").matches() ? "[REDACTED]" : toIndentedString(microform)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProducts {\n");
     

@@ -470,8 +470,63 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation {\n");
+    
+    if (firstName != null) sb.append("    firstName: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstName").matches() ? "[REDACTED]" : toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(SENSITIVE_FIELD_PATTERN.matcher("middleName").matches() ? "[REDACTED]" : toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastName").matches() ? "[REDACTED]" : toIndentedString(lastName)).append("\n");
+    if (birthDate != null) sb.append("    birthDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("birthDate").matches() ? "[REDACTED]" : toIndentedString(birthDate)).append("\n");
+    if (isPrimary != null) sb.append("    isPrimary: ").append(SENSITIVE_FIELD_PATTERN.matcher("isPrimary").matches() ? "[REDACTED]" : toIndentedString(isPrimary)).append("\n");
+    if (hasSignificantResponsibility != null) sb.append("    hasSignificantResponsibility: ").append(SENSITIVE_FIELD_PATTERN.matcher("hasSignificantResponsibility").matches() ? "[REDACTED]" : toIndentedString(hasSignificantResponsibility)).append("\n");
+    if (ownerDirector != null) sb.append("    ownerDirector: ").append(SENSITIVE_FIELD_PATTERN.matcher("ownerDirector").matches() ? "[REDACTED]" : toIndentedString(ownerDirector)).append("\n");
+    if (nationalId != null) sb.append("    nationalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("nationalId").matches() ? "[REDACTED]" : toIndentedString(nationalId)).append("\n");
+    if (idCountry != null) sb.append("    idCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("idCountry").matches() ? "[REDACTED]" : toIndentedString(idCountry)).append("\n");
+    if (passportNumber != null) sb.append("    passportNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("passportNumber").matches() ? "[REDACTED]" : toIndentedString(passportNumber)).append("\n");
+    if (passportCountry != null) sb.append("    passportCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("passportCountry").matches() ? "[REDACTED]" : toIndentedString(passportCountry)).append("\n");
+    if (jobTitle != null) sb.append("    jobTitle: ").append(SENSITIVE_FIELD_PATTERN.matcher("jobTitle").matches() ? "[REDACTED]" : toIndentedString(jobTitle)).append("\n");
+    if (ownershipPercentage != null) sb.append("    ownershipPercentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("ownershipPercentage").matches() ? "[REDACTED]" : toIndentedString(ownershipPercentage)).append("\n");
+    if (nationality != null) sb.append("    nationality: ").append(SENSITIVE_FIELD_PATTERN.matcher("nationality").matches() ? "[REDACTED]" : toIndentedString(nationality)).append("\n");
+    if (dueDiligenceRequired != null) sb.append("    dueDiligenceRequired: ").append(SENSITIVE_FIELD_PATTERN.matcher("dueDiligenceRequired").matches() ? "[REDACTED]" : toIndentedString(dueDiligenceRequired)).append("\n");
+    if (phoneNumberCountryCode != null) sb.append("    phoneNumberCountryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumberCountryCode").matches() ? "[REDACTED]" : toIndentedString(phoneNumberCountryCode)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (address != null) sb.append("    address: ").append(SENSITIVE_FIELD_PATTERN.matcher("address").matches() ? "[REDACTED]" : toIndentedString(address)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation {\n");
     

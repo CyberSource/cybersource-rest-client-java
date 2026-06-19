@@ -322,8 +322,56 @@ public class Riskv1authenticationsDeviceInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Riskv1authenticationsDeviceInformation {\n");
+    
+    if (ipAddress != null) sb.append("    ipAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("ipAddress").matches() ? "[REDACTED]" : toIndentedString(ipAddress)).append("\n");
+    if (rawData != null) sb.append("    rawData: ").append(SENSITIVE_FIELD_PATTERN.matcher("rawData").matches() ? "[REDACTED]" : toIndentedString(rawData)).append("\n");
+    if (httpAcceptBrowserValue != null) sb.append("    httpAcceptBrowserValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpAcceptBrowserValue").matches() ? "[REDACTED]" : toIndentedString(httpAcceptBrowserValue)).append("\n");
+    if (httpAcceptContent != null) sb.append("    httpAcceptContent: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpAcceptContent").matches() ? "[REDACTED]" : toIndentedString(httpAcceptContent)).append("\n");
+    if (httpBrowserLanguage != null) sb.append("    httpBrowserLanguage: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserLanguage").matches() ? "[REDACTED]" : toIndentedString(httpBrowserLanguage)).append("\n");
+    if (httpBrowserJavaEnabled != null) sb.append("    httpBrowserJavaEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserJavaEnabled").matches() ? "[REDACTED]" : toIndentedString(httpBrowserJavaEnabled)).append("\n");
+    if (httpBrowserJavaScriptEnabled != null) sb.append("    httpBrowserJavaScriptEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserJavaScriptEnabled").matches() ? "[REDACTED]" : toIndentedString(httpBrowserJavaScriptEnabled)).append("\n");
+    if (httpBrowserColorDepth != null) sb.append("    httpBrowserColorDepth: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserColorDepth").matches() ? "[REDACTED]" : toIndentedString(httpBrowserColorDepth)).append("\n");
+    if (httpBrowserScreenHeight != null) sb.append("    httpBrowserScreenHeight: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserScreenHeight").matches() ? "[REDACTED]" : toIndentedString(httpBrowserScreenHeight)).append("\n");
+    if (httpBrowserScreenWidth != null) sb.append("    httpBrowserScreenWidth: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserScreenWidth").matches() ? "[REDACTED]" : toIndentedString(httpBrowserScreenWidth)).append("\n");
+    if (httpBrowserTimeDifference != null) sb.append("    httpBrowserTimeDifference: ").append(SENSITIVE_FIELD_PATTERN.matcher("httpBrowserTimeDifference").matches() ? "[REDACTED]" : toIndentedString(httpBrowserTimeDifference)).append("\n");
+    if (userAgentBrowserValue != null) sb.append("    userAgentBrowserValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("userAgentBrowserValue").matches() ? "[REDACTED]" : toIndentedString(userAgentBrowserValue)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsDeviceInformation {\n");
     

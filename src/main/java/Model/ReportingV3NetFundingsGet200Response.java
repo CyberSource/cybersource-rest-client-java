@@ -276,8 +276,52 @@ public class ReportingV3NetFundingsGet200Response {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3NetFundingsGet200Response {\n");
+    
+    if (startTime != null) sb.append("    startTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("startTime").matches() ? "[REDACTED]" : toIndentedString(startTime)).append("\n");
+    if (endTime != null) sb.append("    endTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("endTime").matches() ? "[REDACTED]" : toIndentedString(endTime)).append("\n");
+    if (netFundingSummaries != null) sb.append("    netFundingSummaries: ").append(SENSITIVE_FIELD_PATTERN.matcher("netFundingSummaries").matches() ? "[REDACTED]" : toIndentedString(netFundingSummaries)).append("\n");
+    if (totalPurchases != null) sb.append("    totalPurchases: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalPurchases").matches() ? "[REDACTED]" : toIndentedString(totalPurchases)).append("\n");
+    if (totalRefunds != null) sb.append("    totalRefunds: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalRefunds").matches() ? "[REDACTED]" : toIndentedString(totalRefunds)).append("\n");
+    if (totalFees != null) sb.append("    totalFees: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalFees").matches() ? "[REDACTED]" : toIndentedString(totalFees)).append("\n");
+    if (totalChargebacks != null) sb.append("    totalChargebacks: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalChargebacks").matches() ? "[REDACTED]" : toIndentedString(totalChargebacks)).append("\n");
+    if (netTotal != null) sb.append("    netTotal: ").append(SENSITIVE_FIELD_PATTERN.matcher("netTotal").matches() ? "[REDACTED]" : toIndentedString(netTotal)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NetFundingsGet200Response {\n");
     

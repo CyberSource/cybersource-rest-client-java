@@ -201,8 +201,51 @@ public class Ptsv2billingagreementsAgreementInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2billingagreementsAgreementInformation {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (dateSigned != null) sb.append("    dateSigned: ").append(SENSITIVE_FIELD_PATTERN.matcher("dateSigned").matches() ? "[REDACTED]" : toIndentedString(dateSigned)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("frequency").matches() ? "[REDACTED]" : toIndentedString(frequency)).append("\n");
+    if (occurrencesPerPeriod != null) sb.append("    occurrencesPerPeriod: ").append(SENSITIVE_FIELD_PATTERN.matcher("occurrencesPerPeriod").matches() ? "[REDACTED]" : toIndentedString(occurrencesPerPeriod)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("startDate").matches() ? "[REDACTED]" : toIndentedString(startDate)).append("\n");
+    if (endDate != null) sb.append("    endDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("endDate").matches() ? "[REDACTED]" : toIndentedString(endDate)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsAgreementInformation {\n");
     

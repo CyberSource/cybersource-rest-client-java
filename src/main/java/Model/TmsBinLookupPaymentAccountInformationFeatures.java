@@ -663,8 +663,72 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TmsBinLookupPaymentAccountInformationFeatures {\n");
+    
+    if (accountFundingSource != null) sb.append("    accountFundingSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountFundingSource").matches() ? "[REDACTED]" : toIndentedString(accountFundingSource)).append("\n");
+    if (accountFundingSourceSubType != null) sb.append("    accountFundingSourceSubType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountFundingSourceSubType").matches() ? "[REDACTED]" : toIndentedString(accountFundingSourceSubType)).append("\n");
+    if (cardProduct != null) sb.append("    cardProduct: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardProduct").matches() ? "[REDACTED]" : toIndentedString(cardProduct)).append("\n");
+    if (messageType != null) sb.append("    messageType: ").append(SENSITIVE_FIELD_PATTERN.matcher("messageType").matches() ? "[REDACTED]" : toIndentedString(messageType)).append("\n");
+    if (acceptanceLevel != null) sb.append("    acceptanceLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("acceptanceLevel").matches() ? "[REDACTED]" : toIndentedString(acceptanceLevel)).append("\n");
+    if (cardPlatform != null) sb.append("    cardPlatform: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardPlatform").matches() ? "[REDACTED]" : toIndentedString(cardPlatform)).append("\n");
+    if (comboCard != null) sb.append("    comboCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("comboCard").matches() ? "[REDACTED]" : toIndentedString(comboCard)).append("\n");
+    if (corporatePurchase != null) sb.append("    corporatePurchase: ").append(SENSITIVE_FIELD_PATTERN.matcher("corporatePurchase").matches() ? "[REDACTED]" : toIndentedString(corporatePurchase)).append("\n");
+    if (healthCard != null) sb.append("    healthCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("healthCard").matches() ? "[REDACTED]" : toIndentedString(healthCard)).append("\n");
+    if (sharedBIN != null) sb.append("    sharedBIN: ").append(SENSITIVE_FIELD_PATTERN.matcher("sharedBIN").matches() ? "[REDACTED]" : toIndentedString(sharedBIN)).append("\n");
+    if (posDomesticOnly != null) sb.append("    posDomesticOnly: ").append(SENSITIVE_FIELD_PATTERN.matcher("posDomesticOnly").matches() ? "[REDACTED]" : toIndentedString(posDomesticOnly)).append("\n");
+    if (gamblingAllowed != null) sb.append("    gamblingAllowed: ").append(SENSITIVE_FIELD_PATTERN.matcher("gamblingAllowed").matches() ? "[REDACTED]" : toIndentedString(gamblingAllowed)).append("\n");
+    if (commercialCardLevel2 != null) sb.append("    commercialCardLevel2: ").append(SENSITIVE_FIELD_PATTERN.matcher("commercialCardLevel2").matches() ? "[REDACTED]" : toIndentedString(commercialCardLevel2)).append("\n");
+    if (commercialCardLevel3 != null) sb.append("    commercialCardLevel3: ").append(SENSITIVE_FIELD_PATTERN.matcher("commercialCardLevel3").matches() ? "[REDACTED]" : toIndentedString(commercialCardLevel3)).append("\n");
+    if (exemptBIN != null) sb.append("    exemptBIN: ").append(SENSITIVE_FIELD_PATTERN.matcher("exemptBIN").matches() ? "[REDACTED]" : toIndentedString(exemptBIN)).append("\n");
+    if (accountLevelManagement != null) sb.append("    accountLevelManagement: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountLevelManagement").matches() ? "[REDACTED]" : toIndentedString(accountLevelManagement)).append("\n");
+    if (onlineGamblingBlock != null) sb.append("    onlineGamblingBlock: ").append(SENSITIVE_FIELD_PATTERN.matcher("onlineGamblingBlock").matches() ? "[REDACTED]" : toIndentedString(onlineGamblingBlock)).append("\n");
+    if (autoSubstantiation != null) sb.append("    autoSubstantiation: ").append(SENSITIVE_FIELD_PATTERN.matcher("autoSubstantiation").matches() ? "[REDACTED]" : toIndentedString(autoSubstantiation)).append("\n");
+    if (flexCredential != null) sb.append("    flexCredential: ").append(SENSITIVE_FIELD_PATTERN.matcher("flexCredential").matches() ? "[REDACTED]" : toIndentedString(flexCredential)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(SENSITIVE_FIELD_PATTERN.matcher("productId").matches() ? "[REDACTED]" : toIndentedString(productId)).append("\n");
+    if (productIdSubtype != null) sb.append("    productIdSubtype: ").append(SENSITIVE_FIELD_PATTERN.matcher("productIdSubtype").matches() ? "[REDACTED]" : toIndentedString(productIdSubtype)).append("\n");
+    if (threeDSSupport != null) sb.append("    threeDSSupport: ").append(SENSITIVE_FIELD_PATTERN.matcher("threeDSSupport").matches() ? "[REDACTED]" : toIndentedString(threeDSSupport)).append("\n");
+    if (siEligible != null) sb.append("    siEligible: ").append(SENSITIVE_FIELD_PATTERN.matcher("siEligible").matches() ? "[REDACTED]" : toIndentedString(siEligible)).append("\n");
+    if (emiEligible != null) sb.append("    emiEligible: ").append(SENSITIVE_FIELD_PATTERN.matcher("emiEligible").matches() ? "[REDACTED]" : toIndentedString(emiEligible)).append("\n");
+    if (fleetCard != null) sb.append("    fleetCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("fleetCard").matches() ? "[REDACTED]" : toIndentedString(fleetCard)).append("\n");
+    if (atmEnabled != null) sb.append("    atmEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("atmEnabled").matches() ? "[REDACTED]" : toIndentedString(atmEnabled)).append("\n");
+    if (posEnabled != null) sb.append("    posEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("posEnabled").matches() ? "[REDACTED]" : toIndentedString(posEnabled)).append("\n");
+    if (ecomEnabled != null) sb.append("    ecomEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("ecomEnabled").matches() ? "[REDACTED]" : toIndentedString(ecomEnabled)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsBinLookupPaymentAccountInformationFeatures {\n");
     

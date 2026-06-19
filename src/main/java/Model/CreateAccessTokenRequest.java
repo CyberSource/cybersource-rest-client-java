@@ -156,17 +156,54 @@ public class CreateAccessTokenRequest {
         return Objects.hash(clientId, code, refreshToken, grantType, clientSecret);
     }
 
+    private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+        java.util.regex.Pattern.compile(
+            "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+            + "|passphrase|privateKey|authToken|bearerToken|idToken"
+            + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+            + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+            + "|number|expirationMonth|expirationYear|ssn|taxId)$");
 
+    /**
+     * Returns a masked string representation of this object.
+     * Sensitive fields (passwords, API keys, tokens, etc.) are replaced
+     * with {@code [REDACTED]} to prevent accidental exposure in logs.
+     *
+     * @return masked string representation
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAccessTokenRequest {\n");
 
-        sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");
-        sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
-        sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
+        if (clientId != null) sb.append("    clientId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientId").matches() ? "[REDACTED]" : toIndentedString(clientId)).append("\n");
+        if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
+        if (grantType != null) sb.append("    grantType: ").append(SENSITIVE_FIELD_PATTERN.matcher("grantType").matches() ? "[REDACTED]" : toIndentedString(grantType)).append("\n");
+        if (refreshToken != null) sb.append("    refreshToken: ").append(SENSITIVE_FIELD_PATTERN.matcher("refreshToken").matches() ? "[REDACTED]" : toIndentedString(refreshToken)).append("\n");
+        if (clientSecret != null) sb.append("    clientSecret: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientSecret").matches() ? "[REDACTED]" : toIndentedString(clientSecret)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Returns an unmasked string representation of this object, including all
+     * sensitive field values in plaintext.
+     *
+     * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+     * logger or include it in error messages in production environments, as it
+     * will expose credentials, tokens, and other sensitive data.
+     *
+     * @return unmasked string representation
+     */
+    public String toDebugString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CreateAccessTokenRequest {\n");
+
+        if (clientId != null) sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+        if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        if (grantType != null) sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");
+        if (refreshToken != null) sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
+        if (clientSecret != null) sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -183,4 +220,5 @@ public class CreateAccessTokenRequest {
     }
 
 }
+
 

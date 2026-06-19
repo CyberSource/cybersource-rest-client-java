@@ -455,8 +455,62 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsOrderInformationInvoiceDetails {\n");
+    
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceNumber").matches() ? "[REDACTED]" : toIndentedString(invoiceNumber)).append("\n");
+    if (barcodeNumber != null) sb.append("    barcodeNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("barcodeNumber").matches() ? "[REDACTED]" : toIndentedString(barcodeNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationDate").matches() ? "[REDACTED]" : toIndentedString(expirationDate)).append("\n");
+    if (purchaseOrderNumber != null) sb.append("    purchaseOrderNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseOrderNumber").matches() ? "[REDACTED]" : toIndentedString(purchaseOrderNumber)).append("\n");
+    if (purchaseOrderDate != null) sb.append("    purchaseOrderDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseOrderDate").matches() ? "[REDACTED]" : toIndentedString(purchaseOrderDate)).append("\n");
+    if (purchaseContactName != null) sb.append("    purchaseContactName: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseContactName").matches() ? "[REDACTED]" : toIndentedString(purchaseContactName)).append("\n");
+    if (taxable != null) sb.append("    taxable: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxable").matches() ? "[REDACTED]" : toIndentedString(taxable)).append("\n");
+    if (vatInvoiceReferenceNumber != null) sb.append("    vatInvoiceReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vatInvoiceReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(vatInvoiceReferenceNumber)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("commodityCode").matches() ? "[REDACTED]" : toIndentedString(commodityCode)).append("\n");
+    if (merchandiseCode != null) sb.append("    merchandiseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchandiseCode").matches() ? "[REDACTED]" : toIndentedString(merchandiseCode)).append("\n");
+    if (transactionAdviceAddendum != null) sb.append("    transactionAdviceAddendum: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionAdviceAddendum").matches() ? "[REDACTED]" : toIndentedString(transactionAdviceAddendum)).append("\n");
+    if (referenceDataCode != null) sb.append("    referenceDataCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceDataCode").matches() ? "[REDACTED]" : toIndentedString(referenceDataCode)).append("\n");
+    if (referenceDataNumber != null) sb.append("    referenceDataNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceDataNumber").matches() ? "[REDACTED]" : toIndentedString(referenceDataNumber)).append("\n");
+    if (salesSlipNumber != null) sb.append("    salesSlipNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("salesSlipNumber").matches() ? "[REDACTED]" : toIndentedString(salesSlipNumber)).append("\n");
+    if (invoiceDate != null) sb.append("    invoiceDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceDate").matches() ? "[REDACTED]" : toIndentedString(invoiceDate)).append("\n");
+    if (costCenter != null) sb.append("    costCenter: ").append(SENSITIVE_FIELD_PATTERN.matcher("costCenter").matches() ? "[REDACTED]" : toIndentedString(costCenter)).append("\n");
+    if (issuerMessage != null) sb.append("    issuerMessage: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerMessage").matches() ? "[REDACTED]" : toIndentedString(issuerMessage)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("productDescription").matches() ? "[REDACTED]" : toIndentedString(productDescription)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationInvoiceDetails {\n");
     

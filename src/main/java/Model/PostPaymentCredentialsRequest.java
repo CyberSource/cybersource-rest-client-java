@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.TmsMerchantInformation;
 import Model.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities;
 import Model.Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation;
-import Model.Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation;
 import Model.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,7 +48,7 @@ public class PostPaymentCredentialsRequest {
   private Tmsv3tokenstokenIdpaymentcredentialsOrderInformation orderInformation = null;
 
   @SerializedName("merchantInformation")
-  private Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation = null;
+  private TmsMerchantInformation merchantInformation = null;
 
   @SerializedName("deviceInformation")
   private Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation deviceInformation = null;
@@ -128,7 +128,7 @@ public class PostPaymentCredentialsRequest {
     this.orderInformation = orderInformation;
   }
 
-  public PostPaymentCredentialsRequest merchantInformation(Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+  public PostPaymentCredentialsRequest merchantInformation(TmsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -138,11 +138,11 @@ public class PostPaymentCredentialsRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation getMerchantInformation() {
+  public TmsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(TmsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
@@ -215,8 +215,51 @@ public class PostPaymentCredentialsRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PostPaymentCredentialsRequest {\n");
+    
+    if (paymentCredentialType != null) sb.append("    paymentCredentialType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentCredentialType").matches() ? "[REDACTED]" : toIndentedString(paymentCredentialType)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionType").matches() ? "[REDACTED]" : toIndentedString(transactionType)).append("\n");
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (authenticatedIdentities != null) sb.append("    authenticatedIdentities: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticatedIdentities").matches() ? "[REDACTED]" : toIndentedString(authenticatedIdentities)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostPaymentCredentialsRequest {\n");
     

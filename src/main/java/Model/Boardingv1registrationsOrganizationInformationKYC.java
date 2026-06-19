@@ -313,8 +313,56 @@ public class Boardingv1registrationsOrganizationInformationKYC {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Boardingv1registrationsOrganizationInformationKYC {\n");
+    
+    if (whenIsCustomerCharged != null) sb.append("    whenIsCustomerCharged: ").append(SENSITIVE_FIELD_PATTERN.matcher("whenIsCustomerCharged").matches() ? "[REDACTED]" : toIndentedString(whenIsCustomerCharged)).append("\n");
+    if (whenIsCustomerChargedDescription != null) sb.append("    whenIsCustomerChargedDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("whenIsCustomerChargedDescription").matches() ? "[REDACTED]" : toIndentedString(whenIsCustomerChargedDescription)).append("\n");
+    if (offerSubscriptions != null) sb.append("    offerSubscriptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("offerSubscriptions").matches() ? "[REDACTED]" : toIndentedString(offerSubscriptions)).append("\n");
+    if (monthlySubscriptionPercent != null) sb.append("    monthlySubscriptionPercent: ").append(SENSITIVE_FIELD_PATTERN.matcher("monthlySubscriptionPercent").matches() ? "[REDACTED]" : toIndentedString(monthlySubscriptionPercent)).append("\n");
+    if (quarterlySubscriptionPercent != null) sb.append("    quarterlySubscriptionPercent: ").append(SENSITIVE_FIELD_PATTERN.matcher("quarterlySubscriptionPercent").matches() ? "[REDACTED]" : toIndentedString(quarterlySubscriptionPercent)).append("\n");
+    if (semiAnnualSubscriptionPercent != null) sb.append("    semiAnnualSubscriptionPercent: ").append(SENSITIVE_FIELD_PATTERN.matcher("semiAnnualSubscriptionPercent").matches() ? "[REDACTED]" : toIndentedString(semiAnnualSubscriptionPercent)).append("\n");
+    if (annualSubscriptionPercent != null) sb.append("    annualSubscriptionPercent: ").append(SENSITIVE_FIELD_PATTERN.matcher("annualSubscriptionPercent").matches() ? "[REDACTED]" : toIndentedString(annualSubscriptionPercent)).append("\n");
+    if (timeToProductDelivery != null) sb.append("    timeToProductDelivery: ").append(SENSITIVE_FIELD_PATTERN.matcher("timeToProductDelivery").matches() ? "[REDACTED]" : toIndentedString(timeToProductDelivery)).append("\n");
+    if (estimatedMonthlySales != null) sb.append("    estimatedMonthlySales: ").append(SENSITIVE_FIELD_PATTERN.matcher("estimatedMonthlySales").matches() ? "[REDACTED]" : toIndentedString(estimatedMonthlySales)).append("\n");
+    if (averageOrderAmount != null) sb.append("    averageOrderAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("averageOrderAmount").matches() ? "[REDACTED]" : toIndentedString(averageOrderAmount)).append("\n");
+    if (largestExpectedOrderAmount != null) sb.append("    largestExpectedOrderAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("largestExpectedOrderAmount").matches() ? "[REDACTED]" : toIndentedString(largestExpectedOrderAmount)).append("\n");
+    if (depositBankAccount != null) sb.append("    depositBankAccount: ").append(SENSITIVE_FIELD_PATTERN.matcher("depositBankAccount").matches() ? "[REDACTED]" : toIndentedString(depositBankAccount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationKYC {\n");
     

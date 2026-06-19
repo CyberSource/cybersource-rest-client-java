@@ -246,8 +246,53 @@ public class Ptsv2billingagreementsInstallmentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2billingagreementsInstallmentInformation {\n");
+    
+    if (alertPreference != null) sb.append("    alertPreference: ").append(SENSITIVE_FIELD_PATTERN.matcher("alertPreference").matches() ? "[REDACTED]" : toIndentedString(alertPreference)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentDate").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentDate)).append("\n");
+    if (identifier != null) sb.append("    identifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("identifier").matches() ? "[REDACTED]" : toIndentedString(identifier)).append("\n");
+    if (lastInstallmentDate != null) sb.append("    lastInstallmentDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastInstallmentDate").matches() ? "[REDACTED]" : toIndentedString(lastInstallmentDate)).append("\n");
+    if (maxAmount != null) sb.append("    maxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("maxAmount").matches() ? "[REDACTED]" : toIndentedString(maxAmount)).append("\n");
+    if (minAmount != null) sb.append("    minAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("minAmount").matches() ? "[REDACTED]" : toIndentedString(minAmount)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (preferredDay != null) sb.append("    preferredDay: ").append(SENSITIVE_FIELD_PATTERN.matcher("preferredDay").matches() ? "[REDACTED]" : toIndentedString(preferredDay)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(SENSITIVE_FIELD_PATTERN.matcher("sequence").matches() ? "[REDACTED]" : toIndentedString(sequence)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsInstallmentInformation {\n");
     

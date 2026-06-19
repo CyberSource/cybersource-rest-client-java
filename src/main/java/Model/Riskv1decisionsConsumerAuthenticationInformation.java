@@ -928,8 +928,84 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Riskv1decisionsConsumerAuthenticationInformation {\n");
+    
+    if (strongAuthentication != null) sb.append("    strongAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("strongAuthentication").matches() ? "[REDACTED]" : toIndentedString(strongAuthentication)).append("\n");
+    if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsWindowSize").matches() ? "[REDACTED]" : toIndentedString(acsWindowSize)).append("\n");
+    if (alternateAuthenticationData != null) sb.append("    alternateAuthenticationData: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternateAuthenticationData").matches() ? "[REDACTED]" : toIndentedString(alternateAuthenticationData)).append("\n");
+    if (alternateAuthenticationDate != null) sb.append("    alternateAuthenticationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternateAuthenticationDate").matches() ? "[REDACTED]" : toIndentedString(alternateAuthenticationDate)).append("\n");
+    if (alternateAuthenticationMethod != null) sb.append("    alternateAuthenticationMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternateAuthenticationMethod").matches() ? "[REDACTED]" : toIndentedString(alternateAuthenticationMethod)).append("\n");
+    if (authenticationDate != null) sb.append("    authenticationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationDate").matches() ? "[REDACTED]" : toIndentedString(authenticationDate)).append("\n");
+    if (authenticationTransactionId != null) sb.append("    authenticationTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationTransactionId").matches() ? "[REDACTED]" : toIndentedString(authenticationTransactionId)).append("\n");
+    if (transactionFlowIndicator != null) sb.append("    transactionFlowIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionFlowIndicator").matches() ? "[REDACTED]" : toIndentedString(transactionFlowIndicator)).append("\n");
+    if (challengeCode != null) sb.append("    challengeCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("challengeCode").matches() ? "[REDACTED]" : toIndentedString(challengeCode)).append("\n");
+    if (challengeStatus != null) sb.append("    challengeStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("challengeStatus").matches() ? "[REDACTED]" : toIndentedString(challengeStatus)).append("\n");
+    if (customerCardAlias != null) sb.append("    customerCardAlias: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerCardAlias").matches() ? "[REDACTED]" : toIndentedString(customerCardAlias)).append("\n");
+    if (decoupledAuthenticationIndicator != null) sb.append("    decoupledAuthenticationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("decoupledAuthenticationIndicator").matches() ? "[REDACTED]" : toIndentedString(decoupledAuthenticationIndicator)).append("\n");
+    if (decoupledAuthenticationMaxTime != null) sb.append("    decoupledAuthenticationMaxTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("decoupledAuthenticationMaxTime").matches() ? "[REDACTED]" : toIndentedString(decoupledAuthenticationMaxTime)).append("\n");
+    if (defaultCard != null) sb.append("    defaultCard: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultCard").matches() ? "[REDACTED]" : toIndentedString(defaultCard)).append("\n");
+    if (deviceChannel != null) sb.append("    deviceChannel: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceChannel").matches() ? "[REDACTED]" : toIndentedString(deviceChannel)).append("\n");
+    if (installmentTotalCount != null) sb.append("    installmentTotalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("installmentTotalCount").matches() ? "[REDACTED]" : toIndentedString(installmentTotalCount)).append("\n");
+    if (merchantFraudRate != null) sb.append("    merchantFraudRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantFraudRate").matches() ? "[REDACTED]" : toIndentedString(merchantFraudRate)).append("\n");
+    if (marketingOptIn != null) sb.append("    marketingOptIn: ").append(SENSITIVE_FIELD_PATTERN.matcher("marketingOptIn").matches() ? "[REDACTED]" : toIndentedString(marketingOptIn)).append("\n");
+    if (marketingSource != null) sb.append("    marketingSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("marketingSource").matches() ? "[REDACTED]" : toIndentedString(marketingSource)).append("\n");
+    if (mcc != null) sb.append("    mcc: ").append(SENSITIVE_FIELD_PATTERN.matcher("mcc").matches() ? "[REDACTED]" : toIndentedString(mcc)).append("\n");
+    if (merchantScore != null) sb.append("    merchantScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantScore").matches() ? "[REDACTED]" : toIndentedString(merchantScore)).append("\n");
+    if (messageCategory != null) sb.append("    messageCategory: ").append(SENSITIVE_FIELD_PATTERN.matcher("messageCategory").matches() ? "[REDACTED]" : toIndentedString(messageCategory)).append("\n");
+    if (npaCode != null) sb.append("    npaCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("npaCode").matches() ? "[REDACTED]" : toIndentedString(npaCode)).append("\n");
+    if (overridePaymentMethod != null) sb.append("    overridePaymentMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("overridePaymentMethod").matches() ? "[REDACTED]" : toIndentedString(overridePaymentMethod)).append("\n");
+    if (overrideCountryCode != null) sb.append("    overrideCountryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("overrideCountryCode").matches() ? "[REDACTED]" : toIndentedString(overrideCountryCode)).append("\n");
+    if (priorAuthenticationData != null) sb.append("    priorAuthenticationData: ").append(SENSITIVE_FIELD_PATTERN.matcher("priorAuthenticationData").matches() ? "[REDACTED]" : toIndentedString(priorAuthenticationData)).append("\n");
+    if (priorAuthenticationMethod != null) sb.append("    priorAuthenticationMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("priorAuthenticationMethod").matches() ? "[REDACTED]" : toIndentedString(priorAuthenticationMethod)).append("\n");
+    if (priorAuthenticationReferenceId != null) sb.append("    priorAuthenticationReferenceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("priorAuthenticationReferenceId").matches() ? "[REDACTED]" : toIndentedString(priorAuthenticationReferenceId)).append("\n");
+    if (priorAuthenticationTime != null) sb.append("    priorAuthenticationTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("priorAuthenticationTime").matches() ? "[REDACTED]" : toIndentedString(priorAuthenticationTime)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
+    if (returnUrl != null) sb.append("    returnUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnUrl").matches() ? "[REDACTED]" : toIndentedString(returnUrl)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestorId").matches() ? "[REDACTED]" : toIndentedString(requestorId)).append("\n");
+    if (requestorInitiatedAuthenticationIndicator != null) sb.append("    requestorInitiatedAuthenticationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestorInitiatedAuthenticationIndicator").matches() ? "[REDACTED]" : toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
+    if (requestorName != null) sb.append("    requestorName: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestorName").matches() ? "[REDACTED]" : toIndentedString(requestorName)).append("\n");
+    if (referenceId != null) sb.append("    referenceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceId").matches() ? "[REDACTED]" : toIndentedString(referenceId)).append("\n");
+    if (sdkMaxTimeout != null) sb.append("    sdkMaxTimeout: ").append(SENSITIVE_FIELD_PATTERN.matcher("sdkMaxTimeout").matches() ? "[REDACTED]" : toIndentedString(sdkMaxTimeout)).append("\n");
+    if (secureCorporatePaymentIndicator != null) sb.append("    secureCorporatePaymentIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("secureCorporatePaymentIndicator").matches() ? "[REDACTED]" : toIndentedString(secureCorporatePaymentIndicator)).append("\n");
+    if (transactionMode != null) sb.append("    transactionMode: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionMode").matches() ? "[REDACTED]" : toIndentedString(transactionMode)).append("\n");
+    if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("whiteListStatus").matches() ? "[REDACTED]" : toIndentedString(whiteListStatus)).append("\n");
+    if (scoreRequest != null) sb.append("    scoreRequest: ").append(SENSITIVE_FIELD_PATTERN.matcher("scoreRequest").matches() ? "[REDACTED]" : toIndentedString(scoreRequest)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsConsumerAuthenticationInformation {\n");
     

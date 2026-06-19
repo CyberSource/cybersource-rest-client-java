@@ -399,8 +399,60 @@ public class Ptsv2paymentsPaymentInformationCard {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsPaymentInformationCard {\n");
+    
+    if (number != null) sb.append("    number: ").append(SENSITIVE_FIELD_PATTERN.matcher("number").matches() ? "[REDACTED]" : toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationMonth").matches() ? "[REDACTED]" : toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationYear").matches() ? "[REDACTED]" : toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(SENSITIVE_FIELD_PATTERN.matcher("useAs").matches() ? "[REDACTED]" : toIndentedString(useAs)).append("\n");
+    if (sourceAccountType != null) sb.append("    sourceAccountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("sourceAccountType").matches() ? "[REDACTED]" : toIndentedString(sourceAccountType)).append("\n");
+    if (sourceAccountTypeDetails != null) sb.append("    sourceAccountTypeDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("sourceAccountTypeDetails").matches() ? "[REDACTED]" : toIndentedString(sourceAccountTypeDetails)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("securityCode").matches() ? "[REDACTED]" : toIndentedString(securityCode)).append("\n");
+    if (securityCodeIndicator != null) sb.append("    securityCodeIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("securityCodeIndicator").matches() ? "[REDACTED]" : toIndentedString(securityCodeIndicator)).append("\n");
+    if (accountEncoderId != null) sb.append("    accountEncoderId: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountEncoderId").matches() ? "[REDACTED]" : toIndentedString(accountEncoderId)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("issueNumber").matches() ? "[REDACTED]" : toIndentedString(issueNumber)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("startMonth").matches() ? "[REDACTED]" : toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("startYear").matches() ? "[REDACTED]" : toIndentedString(startYear)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(SENSITIVE_FIELD_PATTERN.matcher("productName").matches() ? "[REDACTED]" : toIndentedString(productName)).append("\n");
+    if (productSubtype != null) sb.append("    productSubtype: ").append(SENSITIVE_FIELD_PATTERN.matcher("productSubtype").matches() ? "[REDACTED]" : toIndentedString(productSubtype)).append("\n");
+    if (typeSelectionIndicator != null) sb.append("    typeSelectionIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("typeSelectionIndicator").matches() ? "[REDACTED]" : toIndentedString(typeSelectionIndicator)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationCard {\n");
     

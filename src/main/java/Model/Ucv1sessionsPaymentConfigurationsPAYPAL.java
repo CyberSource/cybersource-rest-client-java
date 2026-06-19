@@ -45,10 +45,10 @@ public class Ucv1sessionsPaymentConfigurationsPAYPAL {
   }
 
    /**
-   * Enables PayPal&#39;s Vaulted Payments flow within Unified Checkout.  This provides a seamless checkout experience by storing payment methods for high-frequency and low average-order-value services such as rides, meal pickups, and other quick purchases. This field is optional. 
+   * Enables PayPal&#39;s Vaulted Payments flow within Unified Checkout.  This provides a seamless checkout experience by storing payment methods for high-frequency and low average-order-value services such as rides, meal pickups, and other quick purchases.&lt;br&gt;&lt;br&gt;  The allowedPaymentTypes field must also include PAYPAL as shown below for the PayPal button to show in Unified Checkout:    \&quot;allowedPaymentTypes\&quot;: [\&quot;PAYPAL\&quot;] &lt;br&gt;&lt;br&gt;  Optional field:&lt;br&gt; This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request. 
    * @return vaultingEnabled
   **/
-  @ApiModelProperty(value = "Enables PayPal's Vaulted Payments flow within Unified Checkout.  This provides a seamless checkout experience by storing payment methods for high-frequency and low average-order-value services such as rides, meal pickups, and other quick purchases. This field is optional. ")
+  @ApiModelProperty(value = "Enables PayPal's Vaulted Payments flow within Unified Checkout.  This provides a seamless checkout experience by storing payment methods for high-frequency and low average-order-value services such as rides, meal pickups, and other quick purchases.<br><br>  The allowedPaymentTypes field must also include PAYPAL as shown below for the PayPal button to show in Unified Checkout:    \"allowedPaymentTypes\": [\"PAYPAL\"] <br><br>  Optional field:<br> This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request. ")
   public Boolean VaultingEnabled() {
     return vaultingEnabled;
   }
@@ -81,10 +81,10 @@ public class Ucv1sessionsPaymentConfigurationsPAYPAL {
   }
 
    /**
-   * Indicates the industry type. &lt;br&gt;&lt;br&gt; Possible Values: - \&quot;Events\&quot; - \&quot;Ticketing\&quot; - \&quot;Fuel\&quot; - \&quot;GAMING\&quot; - \&quot;DIGITAL GOODS\&quot; - \&quot;TELCO\&quot; - \&quot;Token Service Providers\&quot; - \&quot;Gambling\&quot; - \&quot;CFDs\&quot; - \&quot;car rental\&quot; - \&quot;hotel\&quot; - \&quot;transportation\&quot; - \&quot;travel package\&quot; - \&quot;Cruise Line\&quot; - \&quot;P2P\&quot; - \&quot;Retail\&quot; - \&quot;Food\&quot; - \&quot;Groceries\&quot; - \&quot;Ride Sharing\&quot; - \&quot;Taxi\&quot; - \&quot;Remittance\&quot; - \&quot;Crypto\&quot; - \&quot;Marketplaces\&quot; 
+   * Indicates the industry type. &lt;br&gt;&lt;br&gt; Possible Values: - \&quot;Events\&quot; - \&quot;Ticketing\&quot; - \&quot;Fuel\&quot; - \&quot;GAMING\&quot; - \&quot;DIGITAL GOODS\&quot; - \&quot;TELCO\&quot; - \&quot;Token Service Providers\&quot; - \&quot;Gambling\&quot; - \&quot;CFDs\&quot; - \&quot;car rental\&quot; - \&quot;hotel\&quot; - \&quot;transportation\&quot; - \&quot;travel package\&quot; - \&quot;Cruise Line\&quot; - \&quot;P2P\&quot; - \&quot;Retail\&quot; - \&quot;Food\&quot; - \&quot;Groceries\&quot; - \&quot;Ride Sharing\&quot; - \&quot;Taxi\&quot; - \&quot;Remittance\&quot; - \&quot;Crypto\&quot; - \&quot;Marketplaces\&quot;&lt;br&gt;&lt;br&gt;  Required field:&lt;br&gt; This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. 
    * @return industryType
   **/
-  @ApiModelProperty(value = "Indicates the industry type. <br><br> Possible Values: - \"Events\" - \"Ticketing\" - \"Fuel\" - \"GAMING\" - \"DIGITAL GOODS\" - \"TELCO\" - \"Token Service Providers\" - \"Gambling\" - \"CFDs\" - \"car rental\" - \"hotel\" - \"transportation\" - \"travel package\" - \"Cruise Line\" - \"P2P\" - \"Retail\" - \"Food\" - \"Groceries\" - \"Ride Sharing\" - \"Taxi\" - \"Remittance\" - \"Crypto\" - \"Marketplaces\" ")
+  @ApiModelProperty(value = "Indicates the industry type. <br><br> Possible Values: - \"Events\" - \"Ticketing\" - \"Fuel\" - \"GAMING\" - \"DIGITAL GOODS\" - \"TELCO\" - \"Token Service Providers\" - \"Gambling\" - \"CFDs\" - \"car rental\" - \"hotel\" - \"transportation\" - \"travel package\" - \"Cruise Line\" - \"P2P\" - \"Retail\" - \"Food\" - \"Groceries\" - \"Ride Sharing\" - \"Taxi\" - \"Remittance\" - \"Crypto\" - \"Marketplaces\"<br><br>  Required field:<br> This field cannot be configured through the Merchant Experience screens in the Business Center and must be provided on a per‑transaction basis in the uc/v1/sessions API request when using PayPal Vaulting. ")
   public String getIndustryType() {
     return industryType;
   }
@@ -114,8 +114,47 @@ public class Ucv1sessionsPaymentConfigurationsPAYPAL {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsPaymentConfigurationsPAYPAL {\n");
+    
+    if (vaultingEnabled != null) sb.append("    vaultingEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("vaultingEnabled").matches() ? "[REDACTED]" : toIndentedString(vaultingEnabled)).append("\n");
+    if (tokenizedPaymentMethod != null) sb.append("    tokenizedPaymentMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenizedPaymentMethod").matches() ? "[REDACTED]" : toIndentedString(tokenizedPaymentMethod)).append("\n");
+    if (industryType != null) sb.append("    industryType: ").append(SENSITIVE_FIELD_PATTERN.matcher("industryType").matches() ? "[REDACTED]" : toIndentedString(industryType)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsPaymentConfigurationsPAYPAL {\n");
     

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1mppcredentialsChallenge;
+import Model.Iccv1mppcredentialsChallenge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class MppCredentialsRequest {
   private String instrumentId = null;
 
   @SerializedName("challenge")
-  private Acpv1mppcredentialsChallenge challenge = null;
+  private Iccv1mppcredentialsChallenge challenge = null;
 
   public MppCredentialsRequest instrumentId(String instrumentId) {
     this.instrumentId = instrumentId;
@@ -55,7 +55,7 @@ public class MppCredentialsRequest {
     this.instrumentId = instrumentId;
   }
 
-  public MppCredentialsRequest challenge(Acpv1mppcredentialsChallenge challenge) {
+  public MppCredentialsRequest challenge(Iccv1mppcredentialsChallenge challenge) {
     this.challenge = challenge;
     return this;
   }
@@ -65,11 +65,11 @@ public class MppCredentialsRequest {
    * @return challenge
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1mppcredentialsChallenge getChallenge() {
+  public Iccv1mppcredentialsChallenge getChallenge() {
     return challenge;
   }
 
-  public void setChallenge(Acpv1mppcredentialsChallenge challenge) {
+  public void setChallenge(Iccv1mppcredentialsChallenge challenge) {
     this.challenge = challenge;
   }
 
@@ -93,8 +93,46 @@ public class MppCredentialsRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class MppCredentialsRequest {\n");
+    
+    if (instrumentId != null) sb.append("    instrumentId: ").append(SENSITIVE_FIELD_PATTERN.matcher("instrumentId").matches() ? "[REDACTED]" : toIndentedString(instrumentId)).append("\n");
+    if (challenge != null) sb.append("    challenge: ").append(SENSITIVE_FIELD_PATTERN.matcher("challenge").matches() ? "[REDACTED]" : toIndentedString(challenge)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MppCredentialsRequest {\n");
     

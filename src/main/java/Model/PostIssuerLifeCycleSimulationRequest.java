@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.TmsIssuerLifeCycleEventSimulationMetadata;
 import Model.Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard;
-import Model.Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,7 +39,7 @@ public class PostIssuerLifeCycleSimulationRequest {
   private Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard card = null;
 
   @SerializedName("metadata")
-  private Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata metadata = null;
+  private TmsIssuerLifeCycleEventSimulationMetadata metadata = null;
 
   public PostIssuerLifeCycleSimulationRequest state(String state) {
     this.state = state;
@@ -77,7 +77,7 @@ public class PostIssuerLifeCycleSimulationRequest {
     this.card = card;
   }
 
-  public PostIssuerLifeCycleSimulationRequest metadata(Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata metadata) {
+  public PostIssuerLifeCycleSimulationRequest metadata(TmsIssuerLifeCycleEventSimulationMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -87,11 +87,11 @@ public class PostIssuerLifeCycleSimulationRequest {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata getMetadata() {
+  public TmsIssuerLifeCycleEventSimulationMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata metadata) {
+  public void setMetadata(TmsIssuerLifeCycleEventSimulationMetadata metadata) {
     this.metadata = metadata;
   }
 
@@ -116,8 +116,47 @@ public class PostIssuerLifeCycleSimulationRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PostIssuerLifeCycleSimulationRequest {\n");
+    
+    if (state != null) sb.append("    state: ").append(SENSITIVE_FIELD_PATTERN.matcher("state").matches() ? "[REDACTED]" : toIndentedString(state)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostIssuerLifeCycleSimulationRequest {\n");
     

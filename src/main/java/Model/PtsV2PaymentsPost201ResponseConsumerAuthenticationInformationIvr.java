@@ -201,8 +201,51 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {\n");
+    
+    if (enabledMessage != null) sb.append("    enabledMessage: ").append(SENSITIVE_FIELD_PATTERN.matcher("enabledMessage").matches() ? "[REDACTED]" : toIndentedString(enabledMessage)).append("\n");
+    if (encryptionKey != null) sb.append("    encryptionKey: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptionKey").matches() ? "[REDACTED]" : toIndentedString(encryptionKey)).append("\n");
+    if (encryptionMandatory != null) sb.append("    encryptionMandatory: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptionMandatory").matches() ? "[REDACTED]" : toIndentedString(encryptionMandatory)).append("\n");
+    if (encryptionType != null) sb.append("    encryptionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("encryptionType").matches() ? "[REDACTED]" : toIndentedString(encryptionType)).append("\n");
+    if (label != null) sb.append("    label: ").append(SENSITIVE_FIELD_PATTERN.matcher("label").matches() ? "[REDACTED]" : toIndentedString(label)).append("\n");
+    if (prompt != null) sb.append("    prompt: ").append(SENSITIVE_FIELD_PATTERN.matcher("prompt").matches() ? "[REDACTED]" : toIndentedString(prompt)).append("\n");
+    if (statusMessage != null) sb.append("    statusMessage: ").append(SENSITIVE_FIELD_PATTERN.matcher("statusMessage").matches() ? "[REDACTED]" : toIndentedString(statusMessage)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {\n");
     

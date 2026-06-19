@@ -333,8 +333,57 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {\n");
+    
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizedAmount").matches() ? "[REDACTED]" : toIndentedString(authorizedAmount)).append("\n");
+    if (cashbackAmount != null) sb.append("    cashbackAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("cashbackAmount").matches() ? "[REDACTED]" : toIndentedString(cashbackAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementAmount").matches() ? "[REDACTED]" : toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementCurrency").matches() ? "[REDACTED]" : toIndentedString(settlementCurrency)).append("\n");
+    if (originalAmount != null) sb.append("    originalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalAmount").matches() ? "[REDACTED]" : toIndentedString(originalAmount)).append("\n");
+    if (originalCurrency != null) sb.append("    originalCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalCurrency").matches() ? "[REDACTED]" : toIndentedString(originalCurrency)).append("\n");
+    if (processorTransactionFee != null) sb.append("    processorTransactionFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorTransactionFee").matches() ? "[REDACTED]" : toIndentedString(processorTransactionFee)).append("\n");
+    if (exchangeRate != null) sb.append("    exchangeRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeRate").matches() ? "[REDACTED]" : toIndentedString(exchangeRate)).append("\n");
+    if (foreignCurrency != null) sb.append("    foreignCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("foreignCurrency").matches() ? "[REDACTED]" : toIndentedString(foreignCurrency)).append("\n");
+    if (foreignAmount != null) sb.append("    foreignAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("foreignAmount").matches() ? "[REDACTED]" : toIndentedString(foreignAmount)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {\n");
     

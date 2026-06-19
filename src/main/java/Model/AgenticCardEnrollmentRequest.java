@@ -15,14 +15,14 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1tokensAssuranceData;
-import Model.Acpv1tokensBillTo;
-import Model.Acpv1tokensBuyerInformation;
-import Model.Acpv1tokensConsentData;
-import Model.Acpv1tokensConsumerIdentity;
-import Model.Acpv1tokensDeviceInformation;
-import Model.Acpv1tokensEnrollmentReferenceData;
-import Model.Acpv1tokensPaymentInformation;
+import Model.Iccv1tokensAssuranceData;
+import Model.Iccv1tokensBillTo;
+import Model.Iccv1tokensBuyerInformation;
+import Model.Iccv1tokensConsentData;
+import Model.Iccv1tokensConsumerIdentity;
+import Model.Iccv1tokensDeviceInformation;
+import Model.Iccv1tokensEnrollmentReferenceData;
+import Model.Iccv1tokensPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,28 +43,28 @@ public class AgenticCardEnrollmentRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("deviceInformation")
-  private Acpv1tokensDeviceInformation deviceInformation = null;
+  private Iccv1tokensDeviceInformation deviceInformation = null;
 
   @SerializedName("buyerInformation")
-  private Acpv1tokensBuyerInformation buyerInformation = null;
+  private Iccv1tokensBuyerInformation buyerInformation = null;
 
   @SerializedName("billTo")
-  private Acpv1tokensBillTo billTo = null;
+  private Iccv1tokensBillTo billTo = null;
 
   @SerializedName("consumerIdentity")
-  private Acpv1tokensConsumerIdentity consumerIdentity = null;
+  private Iccv1tokensConsumerIdentity consumerIdentity = null;
 
   @SerializedName("paymentInformation")
-  private Acpv1tokensPaymentInformation paymentInformation = null;
+  private Iccv1tokensPaymentInformation paymentInformation = null;
 
   @SerializedName("enrollmentReferenceData")
-  private Acpv1tokensEnrollmentReferenceData enrollmentReferenceData = null;
+  private Iccv1tokensEnrollmentReferenceData enrollmentReferenceData = null;
 
   @SerializedName("assuranceData")
-  private List<Acpv1tokensAssuranceData> assuranceData = null;
+  private List<Iccv1tokensAssuranceData> assuranceData = null;
 
   @SerializedName("consentData")
-  private List<Acpv1tokensConsentData> consentData = null;
+  private List<Iccv1tokensConsentData> consentData = null;
 
   public AgenticCardEnrollmentRequest clientCorrelationId(String clientCorrelationId) {
     this.clientCorrelationId = clientCorrelationId;
@@ -84,7 +84,7 @@ public class AgenticCardEnrollmentRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public AgenticCardEnrollmentRequest deviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public AgenticCardEnrollmentRequest deviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -94,15 +94,15 @@ public class AgenticCardEnrollmentRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensDeviceInformation getDeviceInformation() {
+  public Iccv1tokensDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public AgenticCardEnrollmentRequest buyerInformation(Acpv1tokensBuyerInformation buyerInformation) {
+  public AgenticCardEnrollmentRequest buyerInformation(Iccv1tokensBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -112,15 +112,15 @@ public class AgenticCardEnrollmentRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensBuyerInformation getBuyerInformation() {
+  public Iccv1tokensBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(Acpv1tokensBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Iccv1tokensBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public AgenticCardEnrollmentRequest billTo(Acpv1tokensBillTo billTo) {
+  public AgenticCardEnrollmentRequest billTo(Iccv1tokensBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -130,15 +130,15 @@ public class AgenticCardEnrollmentRequest {
    * @return billTo
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensBillTo getBillTo() {
+  public Iccv1tokensBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Acpv1tokensBillTo billTo) {
+  public void setBillTo(Iccv1tokensBillTo billTo) {
     this.billTo = billTo;
   }
 
-  public AgenticCardEnrollmentRequest consumerIdentity(Acpv1tokensConsumerIdentity consumerIdentity) {
+  public AgenticCardEnrollmentRequest consumerIdentity(Iccv1tokensConsumerIdentity consumerIdentity) {
     this.consumerIdentity = consumerIdentity;
     return this;
   }
@@ -148,15 +148,15 @@ public class AgenticCardEnrollmentRequest {
    * @return consumerIdentity
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensConsumerIdentity getConsumerIdentity() {
+  public Iccv1tokensConsumerIdentity getConsumerIdentity() {
     return consumerIdentity;
   }
 
-  public void setConsumerIdentity(Acpv1tokensConsumerIdentity consumerIdentity) {
+  public void setConsumerIdentity(Iccv1tokensConsumerIdentity consumerIdentity) {
     this.consumerIdentity = consumerIdentity;
   }
 
-  public AgenticCardEnrollmentRequest paymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public AgenticCardEnrollmentRequest paymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -166,15 +166,15 @@ public class AgenticCardEnrollmentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensPaymentInformation getPaymentInformation() {
+  public Iccv1tokensPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public AgenticCardEnrollmentRequest enrollmentReferenceData(Acpv1tokensEnrollmentReferenceData enrollmentReferenceData) {
+  public AgenticCardEnrollmentRequest enrollmentReferenceData(Iccv1tokensEnrollmentReferenceData enrollmentReferenceData) {
     this.enrollmentReferenceData = enrollmentReferenceData;
     return this;
   }
@@ -184,22 +184,22 @@ public class AgenticCardEnrollmentRequest {
    * @return enrollmentReferenceData
   **/
   @ApiModelProperty(value = "")
-  public Acpv1tokensEnrollmentReferenceData getEnrollmentReferenceData() {
+  public Iccv1tokensEnrollmentReferenceData getEnrollmentReferenceData() {
     return enrollmentReferenceData;
   }
 
-  public void setEnrollmentReferenceData(Acpv1tokensEnrollmentReferenceData enrollmentReferenceData) {
+  public void setEnrollmentReferenceData(Iccv1tokensEnrollmentReferenceData enrollmentReferenceData) {
     this.enrollmentReferenceData = enrollmentReferenceData;
   }
 
-  public AgenticCardEnrollmentRequest assuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public AgenticCardEnrollmentRequest assuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
     return this;
   }
 
-  public AgenticCardEnrollmentRequest addAssuranceDataItem(Acpv1tokensAssuranceData assuranceDataItem) {
+  public AgenticCardEnrollmentRequest addAssuranceDataItem(Iccv1tokensAssuranceData assuranceDataItem) {
     if (this.assuranceData == null) {
-      this.assuranceData = new ArrayList<Acpv1tokensAssuranceData>();
+      this.assuranceData = new ArrayList<Iccv1tokensAssuranceData>();
     }
     this.assuranceData.add(assuranceDataItem);
     return this;
@@ -210,22 +210,22 @@ public class AgenticCardEnrollmentRequest {
    * @return assuranceData
   **/
   @ApiModelProperty(value = "Assurance data.")
-  public List<Acpv1tokensAssuranceData> getAssuranceData() {
+  public List<Iccv1tokensAssuranceData> getAssuranceData() {
     return assuranceData;
   }
 
-  public void setAssuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public void setAssuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
   }
 
-  public AgenticCardEnrollmentRequest consentData(List<Acpv1tokensConsentData> consentData) {
+  public AgenticCardEnrollmentRequest consentData(List<Iccv1tokensConsentData> consentData) {
     this.consentData = consentData;
     return this;
   }
 
-  public AgenticCardEnrollmentRequest addConsentDataItem(Acpv1tokensConsentData consentDataItem) {
+  public AgenticCardEnrollmentRequest addConsentDataItem(Iccv1tokensConsentData consentDataItem) {
     if (this.consentData == null) {
-      this.consentData = new ArrayList<Acpv1tokensConsentData>();
+      this.consentData = new ArrayList<Iccv1tokensConsentData>();
     }
     this.consentData.add(consentDataItem);
     return this;
@@ -236,11 +236,11 @@ public class AgenticCardEnrollmentRequest {
    * @return consentData
   **/
   @ApiModelProperty(value = "Consent data.")
-  public List<Acpv1tokensConsentData> getConsentData() {
+  public List<Iccv1tokensConsentData> getConsentData() {
     return consentData;
   }
 
-  public void setConsentData(List<Acpv1tokensConsentData> consentData) {
+  public void setConsentData(List<Iccv1tokensConsentData> consentData) {
     this.consentData = consentData;
   }
 
@@ -271,8 +271,53 @@ public class AgenticCardEnrollmentRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class AgenticCardEnrollmentRequest {\n");
+    
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (consumerIdentity != null) sb.append("    consumerIdentity: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerIdentity").matches() ? "[REDACTED]" : toIndentedString(consumerIdentity)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (enrollmentReferenceData != null) sb.append("    enrollmentReferenceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("enrollmentReferenceData").matches() ? "[REDACTED]" : toIndentedString(enrollmentReferenceData)).append("\n");
+    if (assuranceData != null) sb.append("    assuranceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("assuranceData").matches() ? "[REDACTED]" : toIndentedString(assuranceData)).append("\n");
+    if (consentData != null) sb.append("    consentData: ").append(SENSITIVE_FIELD_PATTERN.matcher("consentData").matches() ? "[REDACTED]" : toIndentedString(consentData)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgenticCardEnrollmentRequest {\n");
     

@@ -175,8 +175,51 @@ public class Boardingv1registrationsRegistrationInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Boardingv1registrationsRegistrationInformation {\n");
+    
+    if (boardingRegistrationId != null) sb.append("    boardingRegistrationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("boardingRegistrationId").matches() ? "[REDACTED]" : toIndentedString(boardingRegistrationId)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (boardingPackageId != null) sb.append("    boardingPackageId: ").append(SENSITIVE_FIELD_PATTERN.matcher("boardingPackageId").matches() ? "[REDACTED]" : toIndentedString(boardingPackageId)).append("\n");
+    if (boardingFlow != null) sb.append("    boardingFlow: ").append(SENSITIVE_FIELD_PATTERN.matcher("boardingFlow").matches() ? "[REDACTED]" : toIndentedString(boardingFlow)).append("\n");
+    if (mode != null) sb.append("    mode: ").append(SENSITIVE_FIELD_PATTERN.matcher("mode").matches() ? "[REDACTED]" : toIndentedString(mode)).append("\n");
+    if (salesRepId != null) sb.append("    salesRepId: ").append(SENSITIVE_FIELD_PATTERN.matcher("salesRepId").matches() ? "[REDACTED]" : toIndentedString(salesRepId)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsRegistrationInformation {\n");
     

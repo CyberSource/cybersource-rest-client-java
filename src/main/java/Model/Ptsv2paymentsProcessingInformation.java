@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsProcessingInformationAuthorizationOptions;
+import Model.ProcessingInfoAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
 import Model.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer;
@@ -96,7 +96,7 @@ public class Ptsv2paymentsProcessingInformation {
   private String industryDataType = null;
 
   @SerializedName("authorizationOptions")
-  private Ptsv2paymentsProcessingInformationAuthorizationOptions authorizationOptions = null;
+  private ProcessingInfoAuthorizationOptions authorizationOptions = null;
 
   @SerializedName("captureOptions")
   private Ptsv2paymentsProcessingInformationCaptureOptions captureOptions = null;
@@ -405,10 +405,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments 
+   * Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants 
    * @return linkId
   **/
-  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments ")
+  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants ")
   public String getLinkId() {
     return linkId;
   }
@@ -526,7 +526,7 @@ public class Ptsv2paymentsProcessingInformation {
     this.industryDataType = industryDataType;
   }
 
-  public Ptsv2paymentsProcessingInformation authorizationOptions(Ptsv2paymentsProcessingInformationAuthorizationOptions authorizationOptions) {
+  public Ptsv2paymentsProcessingInformation authorizationOptions(ProcessingInfoAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
     return this;
   }
@@ -536,11 +536,11 @@ public class Ptsv2paymentsProcessingInformation {
    * @return authorizationOptions
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsProcessingInformationAuthorizationOptions getAuthorizationOptions() {
+  public ProcessingInfoAuthorizationOptions getAuthorizationOptions() {
     return authorizationOptions;
   }
 
-  public void setAuthorizationOptions(Ptsv2paymentsProcessingInformationAuthorizationOptions authorizationOptions) {
+  public void setAuthorizationOptions(ProcessingInfoAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
   }
 
@@ -1132,8 +1132,92 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsProcessingInformation {\n");
+    
+    if (actionList != null) sb.append("    actionList: ").append(SENSITIVE_FIELD_PATTERN.matcher("actionList").matches() ? "[REDACTED]" : toIndentedString(actionList)).append("\n");
+    if (enableEscrowOption != null) sb.append("    enableEscrowOption: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableEscrowOption").matches() ? "[REDACTED]" : toIndentedString(enableEscrowOption)).append("\n");
+    if (actionTokenTypes != null) sb.append("    actionTokenTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("actionTokenTypes").matches() ? "[REDACTED]" : toIndentedString(actionTokenTypes)).append("\n");
+    if (binSource != null) sb.append("    binSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("binSource").matches() ? "[REDACTED]" : toIndentedString(binSource)).append("\n");
+    if (capture != null) sb.append("    capture: ").append(SENSITIVE_FIELD_PATTERN.matcher("capture").matches() ? "[REDACTED]" : toIndentedString(capture)).append("\n");
+    if (processorId != null) sb.append("    processorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorId").matches() ? "[REDACTED]" : toIndentedString(processorId)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (commerceIndicatorLabel != null) sb.append("    commerceIndicatorLabel: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicatorLabel").matches() ? "[REDACTED]" : toIndentedString(commerceIndicatorLabel)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSolution").matches() ? "[REDACTED]" : toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(SENSITIVE_FIELD_PATTERN.matcher("linkId").matches() ? "[REDACTED]" : toIndentedString(linkId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseLevel").matches() ? "[REDACTED]" : toIndentedString(purchaseLevel)).append("\n");
+    if (transactionTimeout != null) sb.append("    transactionTimeout: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTimeout").matches() ? "[REDACTED]" : toIndentedString(transactionTimeout)).append("\n");
+    if (intentsId != null) sb.append("    intentsId: ").append(SENSITIVE_FIELD_PATTERN.matcher("intentsId").matches() ? "[REDACTED]" : toIndentedString(intentsId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportGroup").matches() ? "[REDACTED]" : toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(SENSITIVE_FIELD_PATTERN.matcher("visaCheckoutId").matches() ? "[REDACTED]" : toIndentedString(visaCheckoutId)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(SENSITIVE_FIELD_PATTERN.matcher("industryDataType").matches() ? "[REDACTED]" : toIndentedString(industryDataType)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("captureOptions").matches() ? "[REDACTED]" : toIndentedString(captureOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringOptions").matches() ? "[REDACTED]" : toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankTransferOptions").matches() ? "[REDACTED]" : toIndentedString(bankTransferOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseOptions").matches() ? "[REDACTED]" : toIndentedString(purchaseOptions)).append("\n");
+    if (electronicBenefitsTransfer != null) sb.append("    electronicBenefitsTransfer: ").append(SENSITIVE_FIELD_PATTERN.matcher("electronicBenefitsTransfer").matches() ? "[REDACTED]" : toIndentedString(electronicBenefitsTransfer)).append("\n");
+    if (loanOptions != null) sb.append("    loanOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("loanOptions").matches() ? "[REDACTED]" : toIndentedString(loanOptions)).append("\n");
+    if (walletType != null) sb.append("    walletType: ").append(SENSITIVE_FIELD_PATTERN.matcher("walletType").matches() ? "[REDACTED]" : toIndentedString(walletType)).append("\n");
+    if (nationalNetDomesticData != null) sb.append("    nationalNetDomesticData: ").append(SENSITIVE_FIELD_PATTERN.matcher("nationalNetDomesticData").matches() ? "[REDACTED]" : toIndentedString(nationalNetDomesticData)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantVerificationValue").matches() ? "[REDACTED]" : toIndentedString(merchantVerificationValue)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("japanPaymentOptions").matches() ? "[REDACTED]" : toIndentedString(japanPaymentOptions)).append("\n");
+    if (mobileRemotePaymentType != null) sb.append("    mobileRemotePaymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("mobileRemotePaymentType").matches() ? "[REDACTED]" : toIndentedString(mobileRemotePaymentType)).append("\n");
+    if (extendedCreditTotalCount != null) sb.append("    extendedCreditTotalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("extendedCreditTotalCount").matches() ? "[REDACTED]" : toIndentedString(extendedCreditTotalCount)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkRoutingOrder").matches() ? "[REDACTED]" : toIndentedString(networkRoutingOrder)).append("\n");
+    if (payByPointsIndicator != null) sb.append("    payByPointsIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("payByPointsIndicator").matches() ? "[REDACTED]" : toIndentedString(payByPointsIndicator)).append("\n");
+    if (timeout != null) sb.append("    timeout: ").append(SENSITIVE_FIELD_PATTERN.matcher("timeout").matches() ? "[REDACTED]" : toIndentedString(timeout)).append("\n");
+    if (isReturnAuthRecordEnabled != null) sb.append("    isReturnAuthRecordEnabled: ").append(SENSITIVE_FIELD_PATTERN.matcher("isReturnAuthRecordEnabled").matches() ? "[REDACTED]" : toIndentedString(isReturnAuthRecordEnabled)).append("\n");
+    if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkPartnerId").matches() ? "[REDACTED]" : toIndentedString(networkPartnerId)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (enablerId != null) sb.append("    enablerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("enablerId").matches() ? "[REDACTED]" : toIndentedString(enablerId)).append("\n");
+    if (processingInstruction != null) sb.append("    processingInstruction: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInstruction").matches() ? "[REDACTED]" : toIndentedString(processingInstruction)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTypeIndicator").matches() ? "[REDACTED]" : toIndentedString(transactionTypeIndicator)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("purposeOfPayment").matches() ? "[REDACTED]" : toIndentedString(purposeOfPayment)).append("\n");
+    if (languageCode != null) sb.append("    languageCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("languageCode").matches() ? "[REDACTED]" : toIndentedString(languageCode)).append("\n");
+    if (originalPaymentId != null) sb.append("    originalPaymentId: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalPaymentId").matches() ? "[REDACTED]" : toIndentedString(originalPaymentId)).append("\n");
+    if (amexIndirectModelType != null) sb.append("    amexIndirectModelType: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexIndirectModelType").matches() ? "[REDACTED]" : toIndentedString(amexIndirectModelType)).append("\n");
+    if (walletTransactionIntent != null) sb.append("    walletTransactionIntent: ").append(SENSITIVE_FIELD_PATTERN.matcher("walletTransactionIntent").matches() ? "[REDACTED]" : toIndentedString(walletTransactionIntent)).append("\n");
+    if (destinationType != null) sb.append("    destinationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationType").matches() ? "[REDACTED]" : toIndentedString(destinationType)).append("\n");
+    if (programIndicators != null) sb.append("    programIndicators: ").append(SENSITIVE_FIELD_PATTERN.matcher("programIndicators").matches() ? "[REDACTED]" : toIndentedString(programIndicators)).append("\n");
+    if (inquiryType != null) sb.append("    inquiryType: ").append(SENSITIVE_FIELD_PATTERN.matcher("inquiryType").matches() ? "[REDACTED]" : toIndentedString(inquiryType)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformation {\n");
     

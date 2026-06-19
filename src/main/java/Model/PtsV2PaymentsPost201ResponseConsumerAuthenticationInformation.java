@@ -1149,8 +1149,94 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {\n");
+    
+    if (accessToken != null) sb.append("    accessToken: ").append(SENSITIVE_FIELD_PATTERN.matcher("accessToken").matches() ? "[REDACTED]" : toIndentedString(accessToken)).append("\n");
+    if (acsRenderingType != null) sb.append("    acsRenderingType: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsRenderingType").matches() ? "[REDACTED]" : toIndentedString(acsRenderingType)).append("\n");
+    if (acsTransactionId != null) sb.append("    acsTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsTransactionId").matches() ? "[REDACTED]" : toIndentedString(acsTransactionId)).append("\n");
+    if (acsUrl != null) sb.append("    acsUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsUrl").matches() ? "[REDACTED]" : toIndentedString(acsUrl)).append("\n");
+    if (authenticationPath != null) sb.append("    authenticationPath: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationPath").matches() ? "[REDACTED]" : toIndentedString(authenticationPath)).append("\n");
+    if (authorizationPayload != null) sb.append("    authorizationPayload: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationPayload").matches() ? "[REDACTED]" : toIndentedString(authorizationPayload)).append("\n");
+    if (authenticationTransactionId != null) sb.append("    authenticationTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationTransactionId").matches() ? "[REDACTED]" : toIndentedString(authenticationTransactionId)).append("\n");
+    if (cardholderMessage != null) sb.append("    cardholderMessage: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardholderMessage").matches() ? "[REDACTED]" : toIndentedString(cardholderMessage)).append("\n");
+    if (cavv != null) sb.append("    cavv: ").append(SENSITIVE_FIELD_PATTERN.matcher("cavv").matches() ? "[REDACTED]" : toIndentedString(cavv)).append("\n");
+    if (cavvAlgorithm != null) sb.append("    cavvAlgorithm: ").append(SENSITIVE_FIELD_PATTERN.matcher("cavvAlgorithm").matches() ? "[REDACTED]" : toIndentedString(cavvAlgorithm)).append("\n");
+    if (challengeCancelCode != null) sb.append("    challengeCancelCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("challengeCancelCode").matches() ? "[REDACTED]" : toIndentedString(challengeCancelCode)).append("\n");
+    if (challengeRequired != null) sb.append("    challengeRequired: ").append(SENSITIVE_FIELD_PATTERN.matcher("challengeRequired").matches() ? "[REDACTED]" : toIndentedString(challengeRequired)).append("\n");
+    if (decoupledAuthenticationIndicator != null) sb.append("    decoupledAuthenticationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("decoupledAuthenticationIndicator").matches() ? "[REDACTED]" : toIndentedString(decoupledAuthenticationIndicator)).append("\n");
+    if (directoryServerErrorCode != null) sb.append("    directoryServerErrorCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("directoryServerErrorCode").matches() ? "[REDACTED]" : toIndentedString(directoryServerErrorCode)).append("\n");
+    if (directoryServerErrorDescription != null) sb.append("    directoryServerErrorDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("directoryServerErrorDescription").matches() ? "[REDACTED]" : toIndentedString(directoryServerErrorDescription)).append("\n");
+    if (ecommerceIndicator != null) sb.append("    ecommerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("ecommerceIndicator").matches() ? "[REDACTED]" : toIndentedString(ecommerceIndicator)).append("\n");
+    if (eci != null) sb.append("    eci: ").append(SENSITIVE_FIELD_PATTERN.matcher("eci").matches() ? "[REDACTED]" : toIndentedString(eci)).append("\n");
+    if (eciRaw != null) sb.append("    eciRaw: ").append(SENSITIVE_FIELD_PATTERN.matcher("eciRaw").matches() ? "[REDACTED]" : toIndentedString(eciRaw)).append("\n");
+    if (effectiveAuthenticationType != null) sb.append("    effectiveAuthenticationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("effectiveAuthenticationType").matches() ? "[REDACTED]" : toIndentedString(effectiveAuthenticationType)).append("\n");
+    if (ivr != null) sb.append("    ivr: ").append(SENSITIVE_FIELD_PATTERN.matcher("ivr").matches() ? "[REDACTED]" : toIndentedString(ivr)).append("\n");
+    if (strongAuthentication != null) sb.append("    strongAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("strongAuthentication").matches() ? "[REDACTED]" : toIndentedString(strongAuthentication)).append("\n");
+    if (networkScore != null) sb.append("    networkScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkScore").matches() ? "[REDACTED]" : toIndentedString(networkScore)).append("\n");
+    if (pareq != null) sb.append("    pareq: ").append(SENSITIVE_FIELD_PATTERN.matcher("pareq").matches() ? "[REDACTED]" : toIndentedString(pareq)).append("\n");
+    if (paresStatus != null) sb.append("    paresStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("paresStatus").matches() ? "[REDACTED]" : toIndentedString(paresStatus)).append("\n");
+    if (proofXml != null) sb.append("    proofXml: ").append(SENSITIVE_FIELD_PATTERN.matcher("proofXml").matches() ? "[REDACTED]" : toIndentedString(proofXml)).append("\n");
+    if (proxyPan != null) sb.append("    proxyPan: ").append(SENSITIVE_FIELD_PATTERN.matcher("proxyPan").matches() ? "[REDACTED]" : toIndentedString(proxyPan)).append("\n");
+    if (sdkTransactionId != null) sb.append("    sdkTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("sdkTransactionId").matches() ? "[REDACTED]" : toIndentedString(sdkTransactionId)).append("\n");
+    if (signedParesStatusReason != null) sb.append("    signedParesStatusReason: ").append(SENSITIVE_FIELD_PATTERN.matcher("signedParesStatusReason").matches() ? "[REDACTED]" : toIndentedString(signedParesStatusReason)).append("\n");
+    if (specificationVersion != null) sb.append("    specificationVersion: ").append(SENSITIVE_FIELD_PATTERN.matcher("specificationVersion").matches() ? "[REDACTED]" : toIndentedString(specificationVersion)).append("\n");
+    if (stepUpUrl != null) sb.append("    stepUpUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("stepUpUrl").matches() ? "[REDACTED]" : toIndentedString(stepUpUrl)).append("\n");
+    if (threeDSServerTransactionId != null) sb.append("    threeDSServerTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("threeDSServerTransactionId").matches() ? "[REDACTED]" : toIndentedString(threeDSServerTransactionId)).append("\n");
+    if (ucafAuthenticationData != null) sb.append("    ucafAuthenticationData: ").append(SENSITIVE_FIELD_PATTERN.matcher("ucafAuthenticationData").matches() ? "[REDACTED]" : toIndentedString(ucafAuthenticationData)).append("\n");
+    if (ucafCollectionIndicator != null) sb.append("    ucafCollectionIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("ucafCollectionIndicator").matches() ? "[REDACTED]" : toIndentedString(ucafCollectionIndicator)).append("\n");
+    if (veresEnrolled != null) sb.append("    veresEnrolled: ").append(SENSITIVE_FIELD_PATTERN.matcher("veresEnrolled").matches() ? "[REDACTED]" : toIndentedString(veresEnrolled)).append("\n");
+    if (whiteListStatusSource != null) sb.append("    whiteListStatusSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("whiteListStatusSource").matches() ? "[REDACTED]" : toIndentedString(whiteListStatusSource)).append("\n");
+    if (xid != null) sb.append("    xid: ").append(SENSITIVE_FIELD_PATTERN.matcher("xid").matches() ? "[REDACTED]" : toIndentedString(xid)).append("\n");
+    if (directoryServerTransactionId != null) sb.append("    directoryServerTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("directoryServerTransactionId").matches() ? "[REDACTED]" : toIndentedString(directoryServerTransactionId)).append("\n");
+    if (dataQualityIndicator != null) sb.append("    dataQualityIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("dataQualityIndicator").matches() ? "[REDACTED]" : toIndentedString(dataQualityIndicator)).append("\n");
+    if (authenticationResult != null) sb.append("    authenticationResult: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationResult").matches() ? "[REDACTED]" : toIndentedString(authenticationResult)).append("\n");
+    if (authenticationStatusMsg != null) sb.append("    authenticationStatusMsg: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationStatusMsg").matches() ? "[REDACTED]" : toIndentedString(authenticationStatusMsg)).append("\n");
+    if (indicator != null) sb.append("    indicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("indicator").matches() ? "[REDACTED]" : toIndentedString(indicator)).append("\n");
+    if (interactionCounter != null) sb.append("    interactionCounter: ").append(SENSITIVE_FIELD_PATTERN.matcher("interactionCounter").matches() ? "[REDACTED]" : toIndentedString(interactionCounter)).append("\n");
+    if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("whiteListStatus").matches() ? "[REDACTED]" : toIndentedString(whiteListStatus)).append("\n");
+    if (token != null) sb.append("    token: ").append(SENSITIVE_FIELD_PATTERN.matcher("token").matches() ? "[REDACTED]" : toIndentedString(token)).append("\n");
+    if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(acsReferenceNumber)).append("\n");
+    if (acsOperatorID != null) sb.append("    acsOperatorID: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsOperatorID").matches() ? "[REDACTED]" : toIndentedString(acsOperatorID)).append("\n");
+    if (idciScore != null) sb.append("    idciScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("idciScore").matches() ? "[REDACTED]" : toIndentedString(idciScore)).append("\n");
+    if (idciDecision != null) sb.append("    idciDecision: ").append(SENSITIVE_FIELD_PATTERN.matcher("idciDecision").matches() ? "[REDACTED]" : toIndentedString(idciDecision)).append("\n");
+    if (idciReasonCode1 != null) sb.append("    idciReasonCode1: ").append(SENSITIVE_FIELD_PATTERN.matcher("idciReasonCode1").matches() ? "[REDACTED]" : toIndentedString(idciReasonCode1)).append("\n");
+    if (idciReasonCode2 != null) sb.append("    idciReasonCode2: ").append(SENSITIVE_FIELD_PATTERN.matcher("idciReasonCode2").matches() ? "[REDACTED]" : toIndentedString(idciReasonCode2)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {\n");
     

@@ -1074,8 +1074,90 @@ public class Ptsv2paymentsTravelInformationLodging {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationLodging {\n");
+    
+    if (checkInDate != null) sb.append("    checkInDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkInDate").matches() ? "[REDACTED]" : toIndentedString(checkInDate)).append("\n");
+    if (checkOutDate != null) sb.append("    checkOutDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkOutDate").matches() ? "[REDACTED]" : toIndentedString(checkOutDate)).append("\n");
+    if (room != null) sb.append("    room: ").append(SENSITIVE_FIELD_PATTERN.matcher("room").matches() ? "[REDACTED]" : toIndentedString(room)).append("\n");
+    if (smokingPreference != null) sb.append("    smokingPreference: ").append(SENSITIVE_FIELD_PATTERN.matcher("smokingPreference").matches() ? "[REDACTED]" : toIndentedString(smokingPreference)).append("\n");
+    if (numberOfRooms != null) sb.append("    numberOfRooms: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfRooms").matches() ? "[REDACTED]" : toIndentedString(numberOfRooms)).append("\n");
+    if (numberOfGuests != null) sb.append("    numberOfGuests: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfGuests").matches() ? "[REDACTED]" : toIndentedString(numberOfGuests)).append("\n");
+    if (roomBedType != null) sb.append("    roomBedType: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomBedType").matches() ? "[REDACTED]" : toIndentedString(roomBedType)).append("\n");
+    if (roomTaxType != null) sb.append("    roomTaxType: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomTaxType").matches() ? "[REDACTED]" : toIndentedString(roomTaxType)).append("\n");
+    if (roomRateType != null) sb.append("    roomRateType: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomRateType").matches() ? "[REDACTED]" : toIndentedString(roomRateType)).append("\n");
+    if (guestName != null) sb.append("    guestName: ").append(SENSITIVE_FIELD_PATTERN.matcher("guestName").matches() ? "[REDACTED]" : toIndentedString(guestName)).append("\n");
+    if (customerServicePhoneNumber != null) sb.append("    customerServicePhoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerServicePhoneNumber").matches() ? "[REDACTED]" : toIndentedString(customerServicePhoneNumber)).append("\n");
+    if (corporateClientCode != null) sb.append("    corporateClientCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("corporateClientCode").matches() ? "[REDACTED]" : toIndentedString(corporateClientCode)).append("\n");
+    if (additionalDiscountAmount != null) sb.append("    additionalDiscountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalDiscountAmount").matches() ? "[REDACTED]" : toIndentedString(additionalDiscountAmount)).append("\n");
+    if (roomLocation != null) sb.append("    roomLocation: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomLocation").matches() ? "[REDACTED]" : toIndentedString(roomLocation)).append("\n");
+    if (specialProgramCode != null) sb.append("    specialProgramCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("specialProgramCode").matches() ? "[REDACTED]" : toIndentedString(specialProgramCode)).append("\n");
+    if (totalTaxAmount != null) sb.append("    totalTaxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalTaxAmount").matches() ? "[REDACTED]" : toIndentedString(totalTaxAmount)).append("\n");
+    if (prepaidCost != null) sb.append("    prepaidCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("prepaidCost").matches() ? "[REDACTED]" : toIndentedString(prepaidCost)).append("\n");
+    if (foodAndBeverageCost != null) sb.append("    foodAndBeverageCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("foodAndBeverageCost").matches() ? "[REDACTED]" : toIndentedString(foodAndBeverageCost)).append("\n");
+    if (roomTaxAmount != null) sb.append("    roomTaxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomTaxAmount").matches() ? "[REDACTED]" : toIndentedString(roomTaxAmount)).append("\n");
+    if (adjustmentAmount != null) sb.append("    adjustmentAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("adjustmentAmount").matches() ? "[REDACTED]" : toIndentedString(adjustmentAmount)).append("\n");
+    if (phoneCost != null) sb.append("    phoneCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneCost").matches() ? "[REDACTED]" : toIndentedString(phoneCost)).append("\n");
+    if (restaurantCost != null) sb.append("    restaurantCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("restaurantCost").matches() ? "[REDACTED]" : toIndentedString(restaurantCost)).append("\n");
+    if (roomServiceCost != null) sb.append("    roomServiceCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("roomServiceCost").matches() ? "[REDACTED]" : toIndentedString(roomServiceCost)).append("\n");
+    if (miniBarCost != null) sb.append("    miniBarCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("miniBarCost").matches() ? "[REDACTED]" : toIndentedString(miniBarCost)).append("\n");
+    if (laundryCost != null) sb.append("    laundryCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("laundryCost").matches() ? "[REDACTED]" : toIndentedString(laundryCost)).append("\n");
+    if (miscellaneousCost != null) sb.append("    miscellaneousCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("miscellaneousCost").matches() ? "[REDACTED]" : toIndentedString(miscellaneousCost)).append("\n");
+    if (giftShopCost != null) sb.append("    giftShopCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("giftShopCost").matches() ? "[REDACTED]" : toIndentedString(giftShopCost)).append("\n");
+    if (movieCost != null) sb.append("    movieCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("movieCost").matches() ? "[REDACTED]" : toIndentedString(movieCost)).append("\n");
+    if (healthClubCost != null) sb.append("    healthClubCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("healthClubCost").matches() ? "[REDACTED]" : toIndentedString(healthClubCost)).append("\n");
+    if (valetParkingCost != null) sb.append("    valetParkingCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("valetParkingCost").matches() ? "[REDACTED]" : toIndentedString(valetParkingCost)).append("\n");
+    if (cashDisbursementCost != null) sb.append("    cashDisbursementCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("cashDisbursementCost").matches() ? "[REDACTED]" : toIndentedString(cashDisbursementCost)).append("\n");
+    if (nonRoomCost != null) sb.append("    nonRoomCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonRoomCost").matches() ? "[REDACTED]" : toIndentedString(nonRoomCost)).append("\n");
+    if (businessCenterCost != null) sb.append("    businessCenterCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessCenterCost").matches() ? "[REDACTED]" : toIndentedString(businessCenterCost)).append("\n");
+    if (loungeBarCost != null) sb.append("    loungeBarCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("loungeBarCost").matches() ? "[REDACTED]" : toIndentedString(loungeBarCost)).append("\n");
+    if (transportationCost != null) sb.append("    transportationCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("transportationCost").matches() ? "[REDACTED]" : toIndentedString(transportationCost)).append("\n");
+    if (gratuityAmount != null) sb.append("    gratuityAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("gratuityAmount").matches() ? "[REDACTED]" : toIndentedString(gratuityAmount)).append("\n");
+    if (conferenceRoomCost != null) sb.append("    conferenceRoomCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("conferenceRoomCost").matches() ? "[REDACTED]" : toIndentedString(conferenceRoomCost)).append("\n");
+    if (audioVisualCost != null) sb.append("    audioVisualCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("audioVisualCost").matches() ? "[REDACTED]" : toIndentedString(audioVisualCost)).append("\n");
+    if (banquestCost != null) sb.append("    banquestCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("banquestCost").matches() ? "[REDACTED]" : toIndentedString(banquestCost)).append("\n");
+    if (nonRoomTaxAmount != null) sb.append("    nonRoomTaxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("nonRoomTaxAmount").matches() ? "[REDACTED]" : toIndentedString(nonRoomTaxAmount)).append("\n");
+    if (earlyCheckOutCost != null) sb.append("    earlyCheckOutCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("earlyCheckOutCost").matches() ? "[REDACTED]" : toIndentedString(earlyCheckOutCost)).append("\n");
+    if (internetAccessCost != null) sb.append("    internetAccessCost: ").append(SENSITIVE_FIELD_PATTERN.matcher("internetAccessCost").matches() ? "[REDACTED]" : toIndentedString(internetAccessCost)).append("\n");
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (hotelName != null) sb.append("    hotelName: ").append(SENSITIVE_FIELD_PATTERN.matcher("hotelName").matches() ? "[REDACTED]" : toIndentedString(hotelName)).append("\n");
+    if (checkInDateTime != null) sb.append("    checkInDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkInDateTime").matches() ? "[REDACTED]" : toIndentedString(checkInDateTime)).append("\n");
+    if (checkOutDateTime != null) sb.append("    checkOutDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkOutDateTime").matches() ? "[REDACTED]" : toIndentedString(checkOutDateTime)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationLodging {\n");
     

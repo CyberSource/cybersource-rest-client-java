@@ -158,8 +158,49 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPay
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation {\n");
+    
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (feeType != null) sb.append("    feeType: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeType").matches() ? "[REDACTED]" : toIndentedString(feeType)).append("\n");
+    if (feeAmount != null) sb.append("    feeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeAmount").matches() ? "[REDACTED]" : toIndentedString(feeAmount)).append("\n");
+    if (percentage != null) sb.append("    percentage: ").append(SENSITIVE_FIELD_PATTERN.matcher("percentage").matches() ? "[REDACTED]" : toIndentedString(percentage)).append("\n");
+    if (feeCap != null) sb.append("    feeCap: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeCap").matches() ? "[REDACTED]" : toIndentedString(feeCap)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation {\n");
     

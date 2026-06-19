@@ -221,8 +221,51 @@ public class Riskv1decisionsTravelInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Riskv1decisionsTravelInformation {\n");
+    
+    if (actualFinalDestination != null) sb.append("    actualFinalDestination: ").append(SENSITIVE_FIELD_PATTERN.matcher("actualFinalDestination").matches() ? "[REDACTED]" : toIndentedString(actualFinalDestination)).append("\n");
+    if (completeRoute != null) sb.append("    completeRoute: ").append(SENSITIVE_FIELD_PATTERN.matcher("completeRoute").matches() ? "[REDACTED]" : toIndentedString(completeRoute)).append("\n");
+    if (departureTime != null) sb.append("    departureTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("departureTime").matches() ? "[REDACTED]" : toIndentedString(departureTime)).append("\n");
+    if (journeyType != null) sb.append("    journeyType: ").append(SENSITIVE_FIELD_PATTERN.matcher("journeyType").matches() ? "[REDACTED]" : toIndentedString(journeyType)).append("\n");
+    if (legs != null) sb.append("    legs: ").append(SENSITIVE_FIELD_PATTERN.matcher("legs").matches() ? "[REDACTED]" : toIndentedString(legs)).append("\n");
+    if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfPassengers").matches() ? "[REDACTED]" : toIndentedString(numberOfPassengers)).append("\n");
+    if (passengers != null) sb.append("    passengers: ").append(SENSITIVE_FIELD_PATTERN.matcher("passengers").matches() ? "[REDACTED]" : toIndentedString(passengers)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsTravelInformation {\n");
     

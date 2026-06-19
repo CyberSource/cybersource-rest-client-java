@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.DefaultShippingAddress;
 import Model.PatchPaymentInstrumentRequest;
-import Model.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,7 +36,7 @@ public class Tmsv2customersEmbedded {
   private PatchPaymentInstrumentRequest defaultPaymentInstrument = null;
 
   @SerializedName("defaultShippingAddress")
-  private Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress defaultShippingAddress = null;
+  private DefaultShippingAddress defaultShippingAddress = null;
 
   public Tmsv2customersEmbedded defaultPaymentInstrument(PatchPaymentInstrumentRequest defaultPaymentInstrument) {
     this.defaultPaymentInstrument = defaultPaymentInstrument;
@@ -56,7 +56,7 @@ public class Tmsv2customersEmbedded {
     this.defaultPaymentInstrument = defaultPaymentInstrument;
   }
 
-  public Tmsv2customersEmbedded defaultShippingAddress(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress defaultShippingAddress) {
+  public Tmsv2customersEmbedded defaultShippingAddress(DefaultShippingAddress defaultShippingAddress) {
     this.defaultShippingAddress = defaultShippingAddress;
     return this;
   }
@@ -66,11 +66,11 @@ public class Tmsv2customersEmbedded {
    * @return defaultShippingAddress
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress getDefaultShippingAddress() {
+  public DefaultShippingAddress getDefaultShippingAddress() {
     return defaultShippingAddress;
   }
 
-  public void setDefaultShippingAddress(Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress defaultShippingAddress) {
+  public void setDefaultShippingAddress(DefaultShippingAddress defaultShippingAddress) {
     this.defaultShippingAddress = defaultShippingAddress;
   }
 
@@ -94,8 +94,46 @@ public class Tmsv2customersEmbedded {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Tmsv2customersEmbedded {\n");
+    
+    if (defaultPaymentInstrument != null) sb.append("    defaultPaymentInstrument: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultPaymentInstrument").matches() ? "[REDACTED]" : toIndentedString(defaultPaymentInstrument)).append("\n");
+    if (defaultShippingAddress != null) sb.append("    defaultShippingAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultShippingAddress").matches() ? "[REDACTED]" : toIndentedString(defaultShippingAddress)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbedded {\n");
     

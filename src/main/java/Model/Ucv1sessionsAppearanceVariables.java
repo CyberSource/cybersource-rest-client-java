@@ -1478,8 +1478,109 @@ public class Ucv1sessionsAppearanceVariables {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ucv1sessionsAppearanceVariables {\n");
+    
+    if (backgroundColor != null) sb.append("    backgroundColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("backgroundColor").matches() ? "[REDACTED]" : toIndentedString(backgroundColor)).append("\n");
+    if (textColor != null) sb.append("    textColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("textColor").matches() ? "[REDACTED]" : toIndentedString(textColor)).append("\n");
+    if (headerBackground != null) sb.append("    headerBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("headerBackground").matches() ? "[REDACTED]" : toIndentedString(headerBackground)).append("\n");
+    if (headerForeground != null) sb.append("    headerForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("headerForeground").matches() ? "[REDACTED]" : toIndentedString(headerForeground)).append("\n");
+    if (headerAvatarBackgroundColor != null) sb.append("    headerAvatarBackgroundColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("headerAvatarBackgroundColor").matches() ? "[REDACTED]" : toIndentedString(headerAvatarBackgroundColor)).append("\n");
+    if (headerAvatarForegroundColor != null) sb.append("    headerAvatarForegroundColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("headerAvatarForegroundColor").matches() ? "[REDACTED]" : toIndentedString(headerAvatarForegroundColor)).append("\n");
+    if (inputBackground != null) sb.append("    inputBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputBackground").matches() ? "[REDACTED]" : toIndentedString(inputBackground)).append("\n");
+    if (inputColor != null) sb.append("    inputColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputColor").matches() ? "[REDACTED]" : toIndentedString(inputColor)).append("\n");
+    if (inputPlaceholderColor != null) sb.append("    inputPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputPlaceholderColor)).append("\n");
+    if (inputBorderColor != null) sb.append("    inputBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputBorderColor)).append("\n");
+    if (inputBorderStyle != null) sb.append("    inputBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputBorderStyle)).append("\n");
+    if (inputBorderRadius != null) sb.append("    inputBorderRadius: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputBorderRadius").matches() ? "[REDACTED]" : toIndentedString(inputBorderRadius)).append("\n");
+    if (inputHoverBackground != null) sb.append("    inputHoverBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputHoverBackground").matches() ? "[REDACTED]" : toIndentedString(inputHoverBackground)).append("\n");
+    if (inputHoverColor != null) sb.append("    inputHoverColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputHoverColor").matches() ? "[REDACTED]" : toIndentedString(inputHoverColor)).append("\n");
+    if (inputHoverPlaceholderColor != null) sb.append("    inputHoverPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputHoverPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputHoverPlaceholderColor)).append("\n");
+    if (inputHoverBorderColor != null) sb.append("    inputHoverBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputHoverBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputHoverBorderColor)).append("\n");
+    if (inputHoverBorderStyle != null) sb.append("    inputHoverBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputHoverBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputHoverBorderStyle)).append("\n");
+    if (inputFocusedBackground != null) sb.append("    inputFocusedBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputFocusedBackground").matches() ? "[REDACTED]" : toIndentedString(inputFocusedBackground)).append("\n");
+    if (inputFocusedColor != null) sb.append("    inputFocusedColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputFocusedColor").matches() ? "[REDACTED]" : toIndentedString(inputFocusedColor)).append("\n");
+    if (inputFocusedPlaceholderColor != null) sb.append("    inputFocusedPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputFocusedPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputFocusedPlaceholderColor)).append("\n");
+    if (inputFocusedBorderColor != null) sb.append("    inputFocusedBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputFocusedBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputFocusedBorderColor)).append("\n");
+    if (inputFocusedBorderStyle != null) sb.append("    inputFocusedBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputFocusedBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputFocusedBorderStyle)).append("\n");
+    if (inputActiveBackground != null) sb.append("    inputActiveBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputActiveBackground").matches() ? "[REDACTED]" : toIndentedString(inputActiveBackground)).append("\n");
+    if (inputActiveColor != null) sb.append("    inputActiveColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputActiveColor").matches() ? "[REDACTED]" : toIndentedString(inputActiveColor)).append("\n");
+    if (inputActivePlaceholderColor != null) sb.append("    inputActivePlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputActivePlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputActivePlaceholderColor)).append("\n");
+    if (inputActiveBorderColor != null) sb.append("    inputActiveBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputActiveBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputActiveBorderColor)).append("\n");
+    if (inputActiveBorderStyle != null) sb.append("    inputActiveBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputActiveBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputActiveBorderStyle)).append("\n");
+    if (inputPressedBackground != null) sb.append("    inputPressedBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPressedBackground").matches() ? "[REDACTED]" : toIndentedString(inputPressedBackground)).append("\n");
+    if (inputPressedColor != null) sb.append("    inputPressedColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPressedColor").matches() ? "[REDACTED]" : toIndentedString(inputPressedColor)).append("\n");
+    if (inputPressedPlaceholderColor != null) sb.append("    inputPressedPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPressedPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputPressedPlaceholderColor)).append("\n");
+    if (inputPressedBorderColor != null) sb.append("    inputPressedBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPressedBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputPressedBorderColor)).append("\n");
+    if (inputPressedBorderStyle != null) sb.append("    inputPressedBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputPressedBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputPressedBorderStyle)).append("\n");
+    if (inputErrorBackground != null) sb.append("    inputErrorBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputErrorBackground").matches() ? "[REDACTED]" : toIndentedString(inputErrorBackground)).append("\n");
+    if (inputErrorColor != null) sb.append("    inputErrorColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputErrorColor").matches() ? "[REDACTED]" : toIndentedString(inputErrorColor)).append("\n");
+    if (inputErrorPlaceholderColor != null) sb.append("    inputErrorPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputErrorPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputErrorPlaceholderColor)).append("\n");
+    if (inputErrorBorderColor != null) sb.append("    inputErrorBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputErrorBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputErrorBorderColor)).append("\n");
+    if (inputErrorBorderStyle != null) sb.append("    inputErrorBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputErrorBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputErrorBorderStyle)).append("\n");
+    if (inputValidBackground != null) sb.append("    inputValidBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputValidBackground").matches() ? "[REDACTED]" : toIndentedString(inputValidBackground)).append("\n");
+    if (inputValidColor != null) sb.append("    inputValidColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputValidColor").matches() ? "[REDACTED]" : toIndentedString(inputValidColor)).append("\n");
+    if (inputValidPlaceholderColor != null) sb.append("    inputValidPlaceholderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputValidPlaceholderColor").matches() ? "[REDACTED]" : toIndentedString(inputValidPlaceholderColor)).append("\n");
+    if (inputValidBorderColor != null) sb.append("    inputValidBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputValidBorderColor").matches() ? "[REDACTED]" : toIndentedString(inputValidBorderColor)).append("\n");
+    if (inputValidBorderStyle != null) sb.append("    inputValidBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("inputValidBorderStyle").matches() ? "[REDACTED]" : toIndentedString(inputValidBorderStyle)).append("\n");
+    if (buttonBackground != null) sb.append("    buttonBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonBackground").matches() ? "[REDACTED]" : toIndentedString(buttonBackground)).append("\n");
+    if (buttonForeground != null) sb.append("    buttonForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonForeground").matches() ? "[REDACTED]" : toIndentedString(buttonForeground)).append("\n");
+    if (buttonShape != null) sb.append("    buttonShape: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonShape").matches() ? "[REDACTED]" : toIndentedString(buttonShape)).append("\n");
+    if (buttonBorderColor != null) sb.append("    buttonBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonBorderColor").matches() ? "[REDACTED]" : toIndentedString(buttonBorderColor)).append("\n");
+    if (buttonBorderStyle != null) sb.append("    buttonBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonBorderStyle").matches() ? "[REDACTED]" : toIndentedString(buttonBorderStyle)).append("\n");
+    if (buttonBorderRadius != null) sb.append("    buttonBorderRadius: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonBorderRadius").matches() ? "[REDACTED]" : toIndentedString(buttonBorderRadius)).append("\n");
+    if (buttonHoverBackground != null) sb.append("    buttonHoverBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonHoverBackground").matches() ? "[REDACTED]" : toIndentedString(buttonHoverBackground)).append("\n");
+    if (buttonHoverForeground != null) sb.append("    buttonHoverForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonHoverForeground").matches() ? "[REDACTED]" : toIndentedString(buttonHoverForeground)).append("\n");
+    if (buttonHoverBorderColor != null) sb.append("    buttonHoverBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonHoverBorderColor").matches() ? "[REDACTED]" : toIndentedString(buttonHoverBorderColor)).append("\n");
+    if (buttonHoverBorderStyle != null) sb.append("    buttonHoverBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonHoverBorderStyle").matches() ? "[REDACTED]" : toIndentedString(buttonHoverBorderStyle)).append("\n");
+    if (buttonFocusBackground != null) sb.append("    buttonFocusBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonFocusBackground").matches() ? "[REDACTED]" : toIndentedString(buttonFocusBackground)).append("\n");
+    if (buttonFocusForeground != null) sb.append("    buttonFocusForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonFocusForeground").matches() ? "[REDACTED]" : toIndentedString(buttonFocusForeground)).append("\n");
+    if (buttonFocusBorderColor != null) sb.append("    buttonFocusBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonFocusBorderColor").matches() ? "[REDACTED]" : toIndentedString(buttonFocusBorderColor)).append("\n");
+    if (buttonActiveBackground != null) sb.append("    buttonActiveBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonActiveBackground").matches() ? "[REDACTED]" : toIndentedString(buttonActiveBackground)).append("\n");
+    if (buttonActiveForeground != null) sb.append("    buttonActiveForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonActiveForeground").matches() ? "[REDACTED]" : toIndentedString(buttonActiveForeground)).append("\n");
+    if (buttonActiveBorderColor != null) sb.append("    buttonActiveBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonActiveBorderColor").matches() ? "[REDACTED]" : toIndentedString(buttonActiveBorderColor)).append("\n");
+    if (buttonActiveBorderStyle != null) sb.append("    buttonActiveBorderStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonActiveBorderStyle").matches() ? "[REDACTED]" : toIndentedString(buttonActiveBorderStyle)).append("\n");
+    if (buttonDisabledBackground != null) sb.append("    buttonDisabledBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonDisabledBackground").matches() ? "[REDACTED]" : toIndentedString(buttonDisabledBackground)).append("\n");
+    if (buttonDisabledForeground != null) sb.append("    buttonDisabledForeground: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonDisabledForeground").matches() ? "[REDACTED]" : toIndentedString(buttonDisabledForeground)).append("\n");
+    if (buttonDisabledBorderColor != null) sb.append("    buttonDisabledBorderColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonDisabledBorderColor").matches() ? "[REDACTED]" : toIndentedString(buttonDisabledBorderColor)).append("\n");
+    if (fontFamily != null) sb.append("    fontFamily: ").append(SENSITIVE_FIELD_PATTERN.matcher("fontFamily").matches() ? "[REDACTED]" : toIndentedString(fontFamily)).append("\n");
+    if (borderRadius != null) sb.append("    borderRadius: ").append(SENSITIVE_FIELD_PATTERN.matcher("borderRadius").matches() ? "[REDACTED]" : toIndentedString(borderRadius)).append("\n");
+    if (paymentSelectionBackground != null) sb.append("    paymentSelectionBackground: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentSelectionBackground").matches() ? "[REDACTED]" : toIndentedString(paymentSelectionBackground)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ucv1sessionsAppearanceVariables {\n");
     

@@ -24,7 +24,7 @@ import Model.InlineResponse4002;
 import Model.InlineResponse4031;
 import Model.InlineResponse422;
 import Model.InlineResponse5001;
-import Model.InlineResponse502;
+import Model.InlineResponse5021;
 import Model.InlineResponse503;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;

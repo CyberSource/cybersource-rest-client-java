@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acquirerCode** | [**CardProcessingConfigCommonAcquirerAgreementAcquirerCode**](CardProcessingConfigCommonAcquirerAgreementAcquirerCode.md) |  |  [optional]
+**acquirerCode** | [**BoardingAcquirerDetails**](BoardingAcquirerDetails.md) |  |  [optional]
 
 
 

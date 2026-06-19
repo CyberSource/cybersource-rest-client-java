@@ -318,8 +318,55 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponseRiskInformation {\n");
+    
+    if (profile != null) sb.append("    profile: ").append(SENSITIVE_FIELD_PATTERN.matcher("profile").matches() ? "[REDACTED]" : toIndentedString(profile)).append("\n");
+    if (rules != null) sb.append("    rules: ").append(SENSITIVE_FIELD_PATTERN.matcher("rules").matches() ? "[REDACTED]" : toIndentedString(rules)).append("\n");
+    if (infoCodes != null) sb.append("    infoCodes: ").append(SENSITIVE_FIELD_PATTERN.matcher("infoCodes").matches() ? "[REDACTED]" : toIndentedString(infoCodes)).append("\n");
+    if (velocity != null) sb.append("    velocity: ").append(SENSITIVE_FIELD_PATTERN.matcher("velocity").matches() ? "[REDACTED]" : toIndentedString(velocity)).append("\n");
+    if (casePriority != null) sb.append("    casePriority: ").append(SENSITIVE_FIELD_PATTERN.matcher("casePriority").matches() ? "[REDACTED]" : toIndentedString(casePriority)).append("\n");
+    if (localTime != null) sb.append("    localTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("localTime").matches() ? "[REDACTED]" : toIndentedString(localTime)).append("\n");
+    if (score != null) sb.append("    score: ").append(SENSITIVE_FIELD_PATTERN.matcher("score").matches() ? "[REDACTED]" : toIndentedString(score)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("ipAddress").matches() ? "[REDACTED]" : toIndentedString(ipAddress)).append("\n");
+    if (providers != null) sb.append("    providers: ").append(SENSITIVE_FIELD_PATTERN.matcher("providers").matches() ? "[REDACTED]" : toIndentedString(providers)).append("\n");
+    if (travel != null) sb.append("    travel: ").append(SENSITIVE_FIELD_PATTERN.matcher("travel").matches() ? "[REDACTED]" : toIndentedString(travel)).append("\n");
+    if (processorResults != null) sb.append("    processorResults: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorResults").matches() ? "[REDACTED]" : toIndentedString(processorResults)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformation {\n");
     

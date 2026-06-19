@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Rbsv1subscriptionsProcessingInformationAuthorizationOptions;
+import Model.RbsAuthorizationOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class Rbsv1subscriptionsProcessingInformation {
   private String commerceIndicator = null;
 
   @SerializedName("authorizationOptions")
-  private Rbsv1subscriptionsProcessingInformationAuthorizationOptions authorizationOptions = null;
+  private RbsAuthorizationOptions authorizationOptions = null;
 
   public Rbsv1subscriptionsProcessingInformation commerceIndicator(String commerceIndicator) {
     this.commerceIndicator = commerceIndicator;
@@ -54,7 +54,7 @@ public class Rbsv1subscriptionsProcessingInformation {
     this.commerceIndicator = commerceIndicator;
   }
 
-  public Rbsv1subscriptionsProcessingInformation authorizationOptions(Rbsv1subscriptionsProcessingInformationAuthorizationOptions authorizationOptions) {
+  public Rbsv1subscriptionsProcessingInformation authorizationOptions(RbsAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
     return this;
   }
@@ -64,11 +64,11 @@ public class Rbsv1subscriptionsProcessingInformation {
    * @return authorizationOptions
   **/
   @ApiModelProperty(value = "")
-  public Rbsv1subscriptionsProcessingInformationAuthorizationOptions getAuthorizationOptions() {
+  public RbsAuthorizationOptions getAuthorizationOptions() {
     return authorizationOptions;
   }
 
-  public void setAuthorizationOptions(Rbsv1subscriptionsProcessingInformationAuthorizationOptions authorizationOptions) {
+  public void setAuthorizationOptions(RbsAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
   }
 
@@ -92,8 +92,46 @@ public class Rbsv1subscriptionsProcessingInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Rbsv1subscriptionsProcessingInformation {\n");
+    
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsProcessingInformation {\n");
     

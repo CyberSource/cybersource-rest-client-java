@@ -179,8 +179,51 @@ public class TmsCardArt {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TmsCardArt {\n");
+    
+    if (foregroundColor != null) sb.append("    foregroundColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("foregroundColor").matches() ? "[REDACTED]" : toIndentedString(foregroundColor)).append("\n");
+    if (backgroundColor != null) sb.append("    backgroundColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("backgroundColor").matches() ? "[REDACTED]" : toIndentedString(backgroundColor)).append("\n");
+    if (labelColor != null) sb.append("    labelColor: ").append(SENSITIVE_FIELD_PATTERN.matcher("labelColor").matches() ? "[REDACTED]" : toIndentedString(labelColor)).append("\n");
+    if (combinedAsset != null) sb.append("    combinedAsset: ").append(SENSITIVE_FIELD_PATTERN.matcher("combinedAsset").matches() ? "[REDACTED]" : toIndentedString(combinedAsset)).append("\n");
+    if (brandLogoAsset != null) sb.append("    brandLogoAsset: ").append(SENSITIVE_FIELD_PATTERN.matcher("brandLogoAsset").matches() ? "[REDACTED]" : toIndentedString(brandLogoAsset)).append("\n");
+    if (issuerLogoAsset != null) sb.append("    issuerLogoAsset: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerLogoAsset").matches() ? "[REDACTED]" : toIndentedString(issuerLogoAsset)).append("\n");
+    if (iconAsset != null) sb.append("    iconAsset: ").append(SENSITIVE_FIELD_PATTERN.matcher("iconAsset").matches() ? "[REDACTED]" : toIndentedString(iconAsset)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsCardArt {\n");
     

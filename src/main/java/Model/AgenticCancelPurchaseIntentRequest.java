@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1tokensAssuranceData;
-import Model.Acpv1tokensDeviceInformation;
-import Model.Acpv1tokensPaymentInformation;
+import Model.Iccv1tokensAssuranceData;
+import Model.Iccv1tokensDeviceInformation;
+import Model.Iccv1tokensPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,13 +38,13 @@ public class AgenticCancelPurchaseIntentRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("paymentInformation")
-  private Acpv1tokensPaymentInformation paymentInformation = null;
+  private Iccv1tokensPaymentInformation paymentInformation = null;
 
   @SerializedName("deviceInformation")
-  private Acpv1tokensDeviceInformation deviceInformation = null;
+  private Iccv1tokensDeviceInformation deviceInformation = null;
 
   @SerializedName("assuranceData")
-  private List<Acpv1tokensAssuranceData> assuranceData = new ArrayList<Acpv1tokensAssuranceData>();
+  private List<Iccv1tokensAssuranceData> assuranceData = new ArrayList<Iccv1tokensAssuranceData>();
 
   public AgenticCancelPurchaseIntentRequest clientCorrelationId(String clientCorrelationId) {
     this.clientCorrelationId = clientCorrelationId;
@@ -64,7 +64,7 @@ public class AgenticCancelPurchaseIntentRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public AgenticCancelPurchaseIntentRequest paymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public AgenticCancelPurchaseIntentRequest paymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -74,15 +74,15 @@ public class AgenticCancelPurchaseIntentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public Acpv1tokensPaymentInformation getPaymentInformation() {
+  public Iccv1tokensPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public AgenticCancelPurchaseIntentRequest deviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public AgenticCancelPurchaseIntentRequest deviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -92,20 +92,20 @@ public class AgenticCancelPurchaseIntentRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensDeviceInformation getDeviceInformation() {
+  public Iccv1tokensDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Acpv1tokensDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Iccv1tokensDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public AgenticCancelPurchaseIntentRequest assuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public AgenticCancelPurchaseIntentRequest assuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
     return this;
   }
 
-  public AgenticCancelPurchaseIntentRequest addAssuranceDataItem(Acpv1tokensAssuranceData assuranceDataItem) {
+  public AgenticCancelPurchaseIntentRequest addAssuranceDataItem(Iccv1tokensAssuranceData assuranceDataItem) {
     this.assuranceData.add(assuranceDataItem);
     return this;
   }
@@ -115,11 +115,11 @@ public class AgenticCancelPurchaseIntentRequest {
    * @return assuranceData
   **/
   @ApiModelProperty(required = true, value = "Assurance data.")
-  public List<Acpv1tokensAssuranceData> getAssuranceData() {
+  public List<Iccv1tokensAssuranceData> getAssuranceData() {
     return assuranceData;
   }
 
-  public void setAssuranceData(List<Acpv1tokensAssuranceData> assuranceData) {
+  public void setAssuranceData(List<Iccv1tokensAssuranceData> assuranceData) {
     this.assuranceData = assuranceData;
   }
 
@@ -145,8 +145,48 @@ public class AgenticCancelPurchaseIntentRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class AgenticCancelPurchaseIntentRequest {\n");
+    
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (assuranceData != null) sb.append("    assuranceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("assuranceData").matches() ? "[REDACTED]" : toIndentedString(assuranceData)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgenticCancelPurchaseIntentRequest {\n");
     

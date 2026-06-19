@@ -313,8 +313,56 @@ public class InlineResponse20011Devices {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse20011Devices {\n");
+    
+    if (readerId != null) sb.append("    readerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("readerId").matches() ? "[REDACTED]" : toIndentedString(readerId)).append("\n");
+    if (serialNumber != null) sb.append("    serialNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("serialNumber").matches() ? "[REDACTED]" : toIndentedString(serialNumber)).append("\n");
+    if (model != null) sb.append("    model: ").append(SENSITIVE_FIELD_PATTERN.matcher("model").matches() ? "[REDACTED]" : toIndentedString(model)).append("\n");
+    if (make != null) sb.append("    make: ").append(SENSITIVE_FIELD_PATTERN.matcher("make").matches() ? "[REDACTED]" : toIndentedString(make)).append("\n");
+    if (hardwareRevision != null) sb.append("    hardwareRevision: ").append(SENSITIVE_FIELD_PATTERN.matcher("hardwareRevision").matches() ? "[REDACTED]" : toIndentedString(hardwareRevision)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (statusChangeReason != null) sb.append("    statusChangeReason: ").append(SENSITIVE_FIELD_PATTERN.matcher("statusChangeReason").matches() ? "[REDACTED]" : toIndentedString(statusChangeReason)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantId").matches() ? "[REDACTED]" : toIndentedString(merchantId)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountId").matches() ? "[REDACTED]" : toIndentedString(accountId)).append("\n");
+    if (terminalCreationDate != null) sb.append("    terminalCreationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalCreationDate").matches() ? "[REDACTED]" : toIndentedString(terminalCreationDate)).append("\n");
+    if (terminalUpdationDate != null) sb.append("    terminalUpdationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalUpdationDate").matches() ? "[REDACTED]" : toIndentedString(terminalUpdationDate)).append("\n");
+    if (paymentProcessorToTerminalMap != null) sb.append("    paymentProcessorToTerminalMap: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentProcessorToTerminalMap").matches() ? "[REDACTED]" : toIndentedString(paymentProcessorToTerminalMap)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20011Devices {\n");
     

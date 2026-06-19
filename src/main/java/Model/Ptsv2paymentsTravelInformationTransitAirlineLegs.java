@@ -487,8 +487,64 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationTransitAirlineLegs {\n");
+    
+    if (carrierCode != null) sb.append("    carrierCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("carrierCode").matches() ? "[REDACTED]" : toIndentedString(carrierCode)).append("\n");
+    if (flightNumber != null) sb.append("    flightNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("flightNumber").matches() ? "[REDACTED]" : toIndentedString(flightNumber)).append("\n");
+    if (originatingAirportCode != null) sb.append("    originatingAirportCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("originatingAirportCode").matches() ? "[REDACTED]" : toIndentedString(originatingAirportCode)).append("\n");
+    if (propertyClass != null) sb.append("    propertyClass: ").append(SENSITIVE_FIELD_PATTERN.matcher("propertyClass").matches() ? "[REDACTED]" : toIndentedString(propertyClass)).append("\n");
+    if (stopoverIndicator != null) sb.append("    stopoverIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("stopoverIndicator").matches() ? "[REDACTED]" : toIndentedString(stopoverIndicator)).append("\n");
+    if (departureDate != null) sb.append("    departureDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("departureDate").matches() ? "[REDACTED]" : toIndentedString(departureDate)).append("\n");
+    if (destinationAirportCode != null) sb.append("    destinationAirportCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationAirportCode").matches() ? "[REDACTED]" : toIndentedString(destinationAirportCode)).append("\n");
+    if (fareBasis != null) sb.append("    fareBasis: ").append(SENSITIVE_FIELD_PATTERN.matcher("fareBasis").matches() ? "[REDACTED]" : toIndentedString(fareBasis)).append("\n");
+    if (departTaxAmount != null) sb.append("    departTaxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("departTaxAmount").matches() ? "[REDACTED]" : toIndentedString(departTaxAmount)).append("\n");
+    if (conjunctionTicket != null) sb.append("    conjunctionTicket: ").append(SENSITIVE_FIELD_PATTERN.matcher("conjunctionTicket").matches() ? "[REDACTED]" : toIndentedString(conjunctionTicket)).append("\n");
+    if (exchangeTicketNumber != null) sb.append("    exchangeTicketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeTicketNumber").matches() ? "[REDACTED]" : toIndentedString(exchangeTicketNumber)).append("\n");
+    if (couponNumber != null) sb.append("    couponNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("couponNumber").matches() ? "[REDACTED]" : toIndentedString(couponNumber)).append("\n");
+    if (departureTime != null) sb.append("    departureTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("departureTime").matches() ? "[REDACTED]" : toIndentedString(departureTime)).append("\n");
+    if (departureTimeMeridian != null) sb.append("    departureTimeMeridian: ").append(SENSITIVE_FIELD_PATTERN.matcher("departureTimeMeridian").matches() ? "[REDACTED]" : toIndentedString(departureTimeMeridian)).append("\n");
+    if (arrivalTime != null) sb.append("    arrivalTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("arrivalTime").matches() ? "[REDACTED]" : toIndentedString(arrivalTime)).append("\n");
+    if (arrivalTimeMeridian != null) sb.append("    arrivalTimeMeridian: ").append(SENSITIVE_FIELD_PATTERN.matcher("arrivalTimeMeridian").matches() ? "[REDACTED]" : toIndentedString(arrivalTimeMeridian)).append("\n");
+    if (endorsementsRestrictions != null) sb.append("    endorsementsRestrictions: ").append(SENSITIVE_FIELD_PATTERN.matcher("endorsementsRestrictions").matches() ? "[REDACTED]" : toIndentedString(endorsementsRestrictions)).append("\n");
+    if (totalFareAmount != null) sb.append("    totalFareAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalFareAmount").matches() ? "[REDACTED]" : toIndentedString(totalFareAmount)).append("\n");
+    if (feeAmount != null) sb.append("    feeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeAmount").matches() ? "[REDACTED]" : toIndentedString(feeAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirlineLegs {\n");
     

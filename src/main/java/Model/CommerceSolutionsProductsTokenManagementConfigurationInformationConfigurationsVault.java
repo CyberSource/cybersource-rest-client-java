@@ -206,8 +206,51 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault {\n");
+    
+    if (defaultTokenType != null) sb.append("    defaultTokenType: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultTokenType").matches() ? "[REDACTED]" : toIndentedString(defaultTokenType)).append("\n");
+    if (location != null) sb.append("    location: ").append(SENSITIVE_FIELD_PATTERN.matcher("location").matches() ? "[REDACTED]" : toIndentedString(location)).append("\n");
+    if (tokenFormats != null) sb.append("    tokenFormats: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenFormats").matches() ? "[REDACTED]" : toIndentedString(tokenFormats)).append("\n");
+    if (tokenPermissions != null) sb.append("    tokenPermissions: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenPermissions").matches() ? "[REDACTED]" : toIndentedString(tokenPermissions)).append("\n");
+    if (sensitivePrivileges != null) sb.append("    sensitivePrivileges: ").append(SENSITIVE_FIELD_PATTERN.matcher("sensitivePrivileges").matches() ? "[REDACTED]" : toIndentedString(sensitivePrivileges)).append("\n");
+    if (nullify != null) sb.append("    nullify: ").append(SENSITIVE_FIELD_PATTERN.matcher("nullify").matches() ? "[REDACTED]" : toIndentedString(nullify)).append("\n");
+    if (networkTokenServices != null) sb.append("    networkTokenServices: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkTokenServices").matches() ? "[REDACTED]" : toIndentedString(networkTokenServices)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault {\n");
     

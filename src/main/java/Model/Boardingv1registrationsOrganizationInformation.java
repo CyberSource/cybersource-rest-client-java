@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Boardingv1registrationsOrganizationInformationBusinessInformation;
+import Model.BoardingBusinessInformation;
 import Model.Boardingv1registrationsOrganizationInformationKYC;
 import Model.Boardingv1registrationsOrganizationInformationOwners;
 import com.google.gson.TypeAdapter;
@@ -53,7 +53,7 @@ public class Boardingv1registrationsOrganizationInformation {
   private Boolean configurable = false;
 
   @SerializedName("businessInformation")
-  private Boardingv1registrationsOrganizationInformationBusinessInformation businessInformation = null;
+  private BoardingBusinessInformation businessInformation = null;
 
   @SerializedName("KYC")
   private Boardingv1registrationsOrganizationInformationKYC KYC = null;
@@ -160,7 +160,7 @@ public class Boardingv1registrationsOrganizationInformation {
     this.configurable = configurable;
   }
 
-  public Boardingv1registrationsOrganizationInformation businessInformation(Boardingv1registrationsOrganizationInformationBusinessInformation businessInformation) {
+  public Boardingv1registrationsOrganizationInformation businessInformation(BoardingBusinessInformation businessInformation) {
     this.businessInformation = businessInformation;
     return this;
   }
@@ -170,11 +170,11 @@ public class Boardingv1registrationsOrganizationInformation {
    * @return businessInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boardingv1registrationsOrganizationInformationBusinessInformation getBusinessInformation() {
+  public BoardingBusinessInformation getBusinessInformation() {
     return businessInformation;
   }
 
-  public void setBusinessInformation(Boardingv1registrationsOrganizationInformationBusinessInformation businessInformation) {
+  public void setBusinessInformation(BoardingBusinessInformation businessInformation) {
     this.businessInformation = businessInformation;
   }
 
@@ -249,8 +249,53 @@ public class Boardingv1registrationsOrganizationInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Boardingv1registrationsOrganizationInformation {\n");
+    
+    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
+    if (parentOrganizationId != null) sb.append("    parentOrganizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("parentOrganizationId").matches() ? "[REDACTED]" : toIndentedString(parentOrganizationId)).append("\n");
+    if (childOrganizations != null) sb.append("    childOrganizations: ").append(SENSITIVE_FIELD_PATTERN.matcher("childOrganizations").matches() ? "[REDACTED]" : toIndentedString(childOrganizations)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (configurable != null) sb.append("    configurable: ").append(SENSITIVE_FIELD_PATTERN.matcher("configurable").matches() ? "[REDACTED]" : toIndentedString(configurable)).append("\n");
+    if (businessInformation != null) sb.append("    businessInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessInformation").matches() ? "[REDACTED]" : toIndentedString(businessInformation)).append("\n");
+    if (KYC != null) sb.append("    KYC: ").append(SENSITIVE_FIELD_PATTERN.matcher("KYC").matches() ? "[REDACTED]" : toIndentedString(KYC)).append("\n");
+    if (owners != null) sb.append("    owners: ").append(SENSITIVE_FIELD_PATTERN.matcher("owners").matches() ? "[REDACTED]" : toIndentedString(owners)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformation {\n");
     

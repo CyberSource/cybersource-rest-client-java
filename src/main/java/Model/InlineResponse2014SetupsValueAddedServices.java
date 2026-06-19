@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014SetupsPaymentsDigitalPayments;
+import Model.PaymentsConfigurationSetupDigitalPayments;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,21 +31,21 @@ import java.io.IOException;
 
 public class InlineResponse2014SetupsValueAddedServices {
   @SerializedName("reporting")
-  private InlineResponse2014SetupsPaymentsDigitalPayments reporting = null;
+  private PaymentsConfigurationSetupDigitalPayments reporting = null;
 
   @SerializedName("transactionSearch")
-  private InlineResponse2014SetupsPaymentsDigitalPayments transactionSearch = null;
+  private PaymentsConfigurationSetupDigitalPayments transactionSearch = null;
 
   @SerializedName("bankAccountValidation")
-  private InlineResponse2014SetupsPaymentsDigitalPayments bankAccountValidation = null;
+  private PaymentsConfigurationSetupDigitalPayments bankAccountValidation = null;
 
   @SerializedName("flexapi")
-  private InlineResponse2014SetupsPaymentsDigitalPayments flexapi = null;
+  private PaymentsConfigurationSetupDigitalPayments flexapi = null;
 
   @SerializedName("webhooks")
-  private InlineResponse2014SetupsPaymentsDigitalPayments webhooks = null;
+  private PaymentsConfigurationSetupDigitalPayments webhooks = null;
 
-  public InlineResponse2014SetupsValueAddedServices reporting(InlineResponse2014SetupsPaymentsDigitalPayments reporting) {
+  public InlineResponse2014SetupsValueAddedServices reporting(PaymentsConfigurationSetupDigitalPayments reporting) {
     this.reporting = reporting;
     return this;
   }
@@ -55,15 +55,15 @@ public class InlineResponse2014SetupsValueAddedServices {
    * @return reporting
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsDigitalPayments getReporting() {
+  public PaymentsConfigurationSetupDigitalPayments getReporting() {
     return reporting;
   }
 
-  public void setReporting(InlineResponse2014SetupsPaymentsDigitalPayments reporting) {
+  public void setReporting(PaymentsConfigurationSetupDigitalPayments reporting) {
     this.reporting = reporting;
   }
 
-  public InlineResponse2014SetupsValueAddedServices transactionSearch(InlineResponse2014SetupsPaymentsDigitalPayments transactionSearch) {
+  public InlineResponse2014SetupsValueAddedServices transactionSearch(PaymentsConfigurationSetupDigitalPayments transactionSearch) {
     this.transactionSearch = transactionSearch;
     return this;
   }
@@ -73,15 +73,15 @@ public class InlineResponse2014SetupsValueAddedServices {
    * @return transactionSearch
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsDigitalPayments getTransactionSearch() {
+  public PaymentsConfigurationSetupDigitalPayments getTransactionSearch() {
     return transactionSearch;
   }
 
-  public void setTransactionSearch(InlineResponse2014SetupsPaymentsDigitalPayments transactionSearch) {
+  public void setTransactionSearch(PaymentsConfigurationSetupDigitalPayments transactionSearch) {
     this.transactionSearch = transactionSearch;
   }
 
-  public InlineResponse2014SetupsValueAddedServices bankAccountValidation(InlineResponse2014SetupsPaymentsDigitalPayments bankAccountValidation) {
+  public InlineResponse2014SetupsValueAddedServices bankAccountValidation(PaymentsConfigurationSetupDigitalPayments bankAccountValidation) {
     this.bankAccountValidation = bankAccountValidation;
     return this;
   }
@@ -91,15 +91,15 @@ public class InlineResponse2014SetupsValueAddedServices {
    * @return bankAccountValidation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsDigitalPayments getBankAccountValidation() {
+  public PaymentsConfigurationSetupDigitalPayments getBankAccountValidation() {
     return bankAccountValidation;
   }
 
-  public void setBankAccountValidation(InlineResponse2014SetupsPaymentsDigitalPayments bankAccountValidation) {
+  public void setBankAccountValidation(PaymentsConfigurationSetupDigitalPayments bankAccountValidation) {
     this.bankAccountValidation = bankAccountValidation;
   }
 
-  public InlineResponse2014SetupsValueAddedServices flexapi(InlineResponse2014SetupsPaymentsDigitalPayments flexapi) {
+  public InlineResponse2014SetupsValueAddedServices flexapi(PaymentsConfigurationSetupDigitalPayments flexapi) {
     this.flexapi = flexapi;
     return this;
   }
@@ -109,15 +109,15 @@ public class InlineResponse2014SetupsValueAddedServices {
    * @return flexapi
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsDigitalPayments getFlexapi() {
+  public PaymentsConfigurationSetupDigitalPayments getFlexapi() {
     return flexapi;
   }
 
-  public void setFlexapi(InlineResponse2014SetupsPaymentsDigitalPayments flexapi) {
+  public void setFlexapi(PaymentsConfigurationSetupDigitalPayments flexapi) {
     this.flexapi = flexapi;
   }
 
-  public InlineResponse2014SetupsValueAddedServices webhooks(InlineResponse2014SetupsPaymentsDigitalPayments webhooks) {
+  public InlineResponse2014SetupsValueAddedServices webhooks(PaymentsConfigurationSetupDigitalPayments webhooks) {
     this.webhooks = webhooks;
     return this;
   }
@@ -127,11 +127,11 @@ public class InlineResponse2014SetupsValueAddedServices {
    * @return webhooks
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014SetupsPaymentsDigitalPayments getWebhooks() {
+  public PaymentsConfigurationSetupDigitalPayments getWebhooks() {
     return webhooks;
   }
 
-  public void setWebhooks(InlineResponse2014SetupsPaymentsDigitalPayments webhooks) {
+  public void setWebhooks(PaymentsConfigurationSetupDigitalPayments webhooks) {
     this.webhooks = webhooks;
   }
 
@@ -158,8 +158,49 @@ public class InlineResponse2014SetupsValueAddedServices {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InlineResponse2014SetupsValueAddedServices {\n");
+    
+    if (reporting != null) sb.append("    reporting: ").append(SENSITIVE_FIELD_PATTERN.matcher("reporting").matches() ? "[REDACTED]" : toIndentedString(reporting)).append("\n");
+    if (transactionSearch != null) sb.append("    transactionSearch: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionSearch").matches() ? "[REDACTED]" : toIndentedString(transactionSearch)).append("\n");
+    if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankAccountValidation").matches() ? "[REDACTED]" : toIndentedString(bankAccountValidation)).append("\n");
+    if (flexapi != null) sb.append("    flexapi: ").append(SENSITIVE_FIELD_PATTERN.matcher("flexapi").matches() ? "[REDACTED]" : toIndentedString(flexapi)).append("\n");
+    if (webhooks != null) sb.append("    webhooks: ").append(SENSITIVE_FIELD_PATTERN.matcher("webhooks").matches() ? "[REDACTED]" : toIndentedString(webhooks)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014SetupsValueAddedServices {\n");
     

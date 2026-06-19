@@ -412,8 +412,60 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Invoicingv2invoiceSettingsInvoiceSettingsInformation {\n");
+    
+    if (merchantLogo != null) sb.append("    merchantLogo: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantLogo").matches() ? "[REDACTED]" : toIndentedString(merchantLogo)).append("\n");
+    if (merchantDisplayName != null) sb.append("    merchantDisplayName: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDisplayName").matches() ? "[REDACTED]" : toIndentedString(merchantDisplayName)).append("\n");
+    if (customEmailMessage != null) sb.append("    customEmailMessage: ").append(SENSITIVE_FIELD_PATTERN.matcher("customEmailMessage").matches() ? "[REDACTED]" : toIndentedString(customEmailMessage)).append("\n");
+    if (enableReminders != null) sb.append("    enableReminders: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableReminders").matches() ? "[REDACTED]" : toIndentedString(enableReminders)).append("\n");
+    if (headerStyle != null) sb.append("    headerStyle: ").append(SENSITIVE_FIELD_PATTERN.matcher("headerStyle").matches() ? "[REDACTED]" : toIndentedString(headerStyle)).append("\n");
+    if (deliveryLanguage != null) sb.append("    deliveryLanguage: ").append(SENSITIVE_FIELD_PATTERN.matcher("deliveryLanguage").matches() ? "[REDACTED]" : toIndentedString(deliveryLanguage)).append("\n");
+    if (defaultCurrencyCode != null) sb.append("    defaultCurrencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultCurrencyCode").matches() ? "[REDACTED]" : toIndentedString(defaultCurrencyCode)).append("\n");
+    if (payerAuthenticationInInvoicing != null) sb.append("    payerAuthenticationInInvoicing: ").append(SENSITIVE_FIELD_PATTERN.matcher("payerAuthenticationInInvoicing").matches() ? "[REDACTED]" : toIndentedString(payerAuthenticationInInvoicing)).append("\n");
+    if (showVatNumber != null) sb.append("    showVatNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("showVatNumber").matches() ? "[REDACTED]" : toIndentedString(showVatNumber)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vatRegistrationNumber").matches() ? "[REDACTED]" : toIndentedString(vatRegistrationNumber)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
+    if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableMerchantEmailNotifications").matches() ? "[REDACTED]" : toIndentedString(enableMerchantEmailNotifications)).append("\n");
+    if (customLabels != null) sb.append("    customLabels: ").append(SENSITIVE_FIELD_PATTERN.matcher("customLabels").matches() ? "[REDACTED]" : toIndentedString(customLabels)).append("\n");
+    if (customRedirectUrls != null) sb.append("    customRedirectUrls: ").append(SENSITIVE_FIELD_PATTERN.matcher("customRedirectUrls").matches() ? "[REDACTED]" : toIndentedString(customRedirectUrls)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoiceSettingsInvoiceSettingsInformation {\n");
     

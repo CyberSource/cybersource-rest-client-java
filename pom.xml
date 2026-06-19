@@ -5,7 +5,7 @@
 	<artifactId>cybersource-rest-client-java</artifactId>
 	<packaging>jar</packaging>
 	<name>cybersource-rest-client-java</name>
-	<version>0.0.90</version>
+	<version>0.0.91</version>
 	<url>http://developer.cybersource.com</url>
 	<description>Cybersource Rest Client SDK</description>
 	
@@ -304,7 +304,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.43</version>
+			<version>${authentication.sdk.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -327,5 +327,6 @@
 		<junit-version>4.13.2</junit-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log4j.version>2.25.4</log4j.version>
+		<authentication.sdk.version>0.0.43</authentication.sdk.version>
 	</properties>
 </project>

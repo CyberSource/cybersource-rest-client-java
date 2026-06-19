@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.ReportDefinitionDefaultSettings;
 import Model.ReportingV3ReportDefinitionsNameGet200ResponseAttributes;
-import Model.ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +52,7 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
   private String description = null;
 
   @SerializedName("defaultSettings")
-  private ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings = null;
+  private ReportDefinitionDefaultSettings defaultSettings = null;
 
   @SerializedName("subscriptionType")
   private String subscriptionType = null;
@@ -181,7 +181,7 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
     this.description = description;
   }
 
-  public ReportingV3ReportDefinitionsNameGet200Response defaultSettings(ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings) {
+  public ReportingV3ReportDefinitionsNameGet200Response defaultSettings(ReportDefinitionDefaultSettings defaultSettings) {
     this.defaultSettings = defaultSettings;
     return this;
   }
@@ -191,11 +191,11 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
    * @return defaultSettings
   **/
   @ApiModelProperty(value = "")
-  public ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings getDefaultSettings() {
+  public ReportDefinitionDefaultSettings getDefaultSettings() {
     return defaultSettings;
   }
 
-  public void setDefaultSettings(ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings) {
+  public void setDefaultSettings(ReportDefinitionDefaultSettings defaultSettings) {
     this.defaultSettings = defaultSettings;
   }
 
@@ -243,8 +243,52 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3ReportDefinitionsNameGet200Response {\n");
+    
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (reportDefinitionId != null) sb.append("    reportDefinitionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportDefinitionId").matches() ? "[REDACTED]" : toIndentedString(reportDefinitionId)).append("\n");
+    if (reportDefintionName != null) sb.append("    reportDefintionName: ").append(SENSITIVE_FIELD_PATTERN.matcher("reportDefintionName").matches() ? "[REDACTED]" : toIndentedString(reportDefintionName)).append("\n");
+    if (attributes != null) sb.append("    attributes: ").append(SENSITIVE_FIELD_PATTERN.matcher("attributes").matches() ? "[REDACTED]" : toIndentedString(attributes)).append("\n");
+    if (supportedFormats != null) sb.append("    supportedFormats: ").append(SENSITIVE_FIELD_PATTERN.matcher("supportedFormats").matches() ? "[REDACTED]" : toIndentedString(supportedFormats)).append("\n");
+    if (description != null) sb.append("    description: ").append(SENSITIVE_FIELD_PATTERN.matcher("description").matches() ? "[REDACTED]" : toIndentedString(description)).append("\n");
+    if (defaultSettings != null) sb.append("    defaultSettings: ").append(SENSITIVE_FIELD_PATTERN.matcher("defaultSettings").matches() ? "[REDACTED]" : toIndentedString(defaultSettings)).append("\n");
+    if (subscriptionType != null) sb.append("    subscriptionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("subscriptionType").matches() ? "[REDACTED]" : toIndentedString(subscriptionType)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportDefinitionsNameGet200Response {\n");
     

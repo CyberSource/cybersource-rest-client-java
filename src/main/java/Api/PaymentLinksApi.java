@@ -84,7 +84,7 @@ public class PaymentLinksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPaymentLinkRequest, CreatePaymentLinkRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPaymentLink,createPaymentLinkAsync,createPaymentLinkWithHttpInfo,createPaymentLinkCall")) {
             try {
@@ -237,7 +237,7 @@ public class PaymentLinksApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAllPaymentLinks,getAllPaymentLinksAsync,getAllPaymentLinksWithHttpInfo,getAllPaymentLinksCall")) {
             try {
@@ -406,7 +406,7 @@ public class PaymentLinksApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPaymentLink,getPaymentLinkAsync,getPaymentLinkWithHttpInfo,getPaymentLinkCall")) {
             try {
@@ -556,7 +556,7 @@ public class PaymentLinksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePaymentLinkRequest, UpdatePaymentLinkRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updatePaymentLink,updatePaymentLinkAsync,updatePaymentLinkWithHttpInfo,updatePaymentLinkCall")) {
             try {

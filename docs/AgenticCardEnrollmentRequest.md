@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientCorrelationId** | **String** | Client Correlation Id used during the tokenization or during FIDO assertion. | 
-**deviceInformation** | [**Acpv1tokensDeviceInformation**](Acpv1tokensDeviceInformation.md) |  | 
-**buyerInformation** | [**Acpv1tokensBuyerInformation**](Acpv1tokensBuyerInformation.md) |  | 
-**billTo** | [**Acpv1tokensBillTo**](Acpv1tokensBillTo.md) |  | 
-**consumerIdentity** | [**Acpv1tokensConsumerIdentity**](Acpv1tokensConsumerIdentity.md) |  | 
-**paymentInformation** | [**Acpv1tokensPaymentInformation**](Acpv1tokensPaymentInformation.md) |  | 
-**enrollmentReferenceData** | [**Acpv1tokensEnrollmentReferenceData**](Acpv1tokensEnrollmentReferenceData.md) |  |  [optional]
-**assuranceData** | [**List&lt;Acpv1tokensAssuranceData&gt;**](Acpv1tokensAssuranceData.md) | Assurance data. |  [optional]
-**consentData** | [**List&lt;Acpv1tokensConsentData&gt;**](Acpv1tokensConsentData.md) | Consent data. |  [optional]
+**deviceInformation** | [**Iccv1tokensDeviceInformation**](Iccv1tokensDeviceInformation.md) |  | 
+**buyerInformation** | [**Iccv1tokensBuyerInformation**](Iccv1tokensBuyerInformation.md) |  | 
+**billTo** | [**Iccv1tokensBillTo**](Iccv1tokensBillTo.md) |  | 
+**consumerIdentity** | [**Iccv1tokensConsumerIdentity**](Iccv1tokensConsumerIdentity.md) |  | 
+**paymentInformation** | [**Iccv1tokensPaymentInformation**](Iccv1tokensPaymentInformation.md) |  | 
+**enrollmentReferenceData** | [**Iccv1tokensEnrollmentReferenceData**](Iccv1tokensEnrollmentReferenceData.md) |  |  [optional]
+**assuranceData** | [**List&lt;Iccv1tokensAssuranceData&gt;**](Iccv1tokensAssuranceData.md) | Assurance data. |  [optional]
+**consentData** | [**List&lt;Iccv1tokensConsentData&gt;**](Iccv1tokensConsentData.md) | Consent data. |  [optional]
 
 
 

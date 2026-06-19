@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**createSessionRequest**](PaymentsApi.md#createSessionRequest) | **POST** /pts/v2/payment-references | Create Alternative Payments Sessions Request
 [**incrementAuth**](PaymentsApi.md#incrementAuth) | **PATCH** /pts/v2/payments/{id} | Increment an Authorization
 [**refreshPaymentStatus**](PaymentsApi.md#refreshPaymentStatus) | **POST** /pts/v2/refresh-payment-status/{id} | Check a Payment Status
-[**updateSessionReq**](PaymentsApi.md#updateSessionReq) | **PATCH** /pts/v2/payment-references/{id} | Update Alternative Payments Sessions Request
+[**updateSessionRequest**](PaymentsApi.md#updateSessionRequest) | **PATCH** /pts/v2/payment-references/{id} | Update Alternative Payments Sessions Request
 
 
 <a name="createOrderRequest"></a>
@@ -56,8 +56,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
 <a name="createPayment"></a>
 # **createPayment**
@@ -101,8 +101,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
 <a name="createSessionRequest"></a>
 # **createSessionRequest**
@@ -146,8 +146,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
 <a name="incrementAuth"></a>
 # **incrementAuth**
@@ -193,8 +193,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
 <a name="refreshPaymentStatus"></a>
 # **refreshPaymentStatus**
@@ -240,12 +240,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 
-<a name="updateSessionReq"></a>
-# **updateSessionReq**
-> PtsV2PaymentsPost201Response2 updateSessionReq(createSessionRequest, id)
+<a name="updateSessionRequest"></a>
+# **updateSessionRequest**
+> PtsV2PaymentsPost201Response2 updateSessionRequest(createSessionRequest, id)
 
 Update Alternative Payments Sessions Request
 
@@ -262,10 +262,10 @@ PaymentsApi apiInstance = new PaymentsApi();
 CreateSessionRequest createSessionRequest = new CreateSessionRequest(); // CreateSessionRequest | 
 String id = "id_example"; // String | The payment ID. This ID is returned from a previous payment request.
 try {
-    PtsV2PaymentsPost201Response2 result = apiInstance.updateSessionReq(createSessionRequest, id);
+    PtsV2PaymentsPost201Response2 result = apiInstance.updateSessionRequest(createSessionRequest, id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentsApi#updateSessionReq");
+    System.err.println("Exception when calling PaymentsApi#updateSessionRequest");
     e.printStackTrace();
 }
 ```
@@ -287,6 +287,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json, application/json; charset=utf-8
+ - **Accept**: application/hal+json
 

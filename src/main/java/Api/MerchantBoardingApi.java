@@ -86,7 +86,7 @@ public class MerchantBoardingApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getRegistration,getRegistrationAsync,getRegistrationWithHttpInfo,getRegistrationCall")) {
             try {
@@ -236,7 +236,7 @@ public class MerchantBoardingApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postRegistration,postRegistrationAsync,postRegistrationWithHttpInfo,postRegistrationCall")) {
             try {

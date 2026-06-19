@@ -160,10 +160,10 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -365,8 +365,57 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GenerateUnifiedCheckoutV1CaptureContextRequest {\n");
+    
+    if (clientVersion != null) sb.append("    clientVersion: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientVersion").matches() ? "[REDACTED]" : toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(SENSITIVE_FIELD_PATTERN.matcher("targetOrigins").matches() ? "[REDACTED]" : toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedCardNetworks").matches() ? "[REDACTED]" : toIndentedString(allowedCardNetworks)).append("\n");
+    if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedPaymentTypes").matches() ? "[REDACTED]" : toIndentedString(allowedPaymentTypes)).append("\n");
+    if (paymentConfigurations != null) sb.append("    paymentConfigurations: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentConfigurations").matches() ? "[REDACTED]" : toIndentedString(paymentConfigurations)).append("\n");
+    if (appearance != null) sb.append("    appearance: ").append(SENSITIVE_FIELD_PATTERN.matcher("appearance").matches() ? "[REDACTED]" : toIndentedString(appearance)).append("\n");
+    if (country != null) sb.append("    country: ").append(SENSITIVE_FIELD_PATTERN.matcher("country").matches() ? "[REDACTED]" : toIndentedString(country)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(SENSITIVE_FIELD_PATTERN.matcher("locale").matches() ? "[REDACTED]" : toIndentedString(locale)).append("\n");
+    if (buttonType != null) sb.append("    buttonType: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonType").matches() ? "[REDACTED]" : toIndentedString(buttonType)).append("\n");
+    if (captureMandate != null) sb.append("    captureMandate: ").append(SENSITIVE_FIELD_PATTERN.matcher("captureMandate").matches() ? "[REDACTED]" : toIndentedString(captureMandate)).append("\n");
+    if (completeMandate != null) sb.append("    completeMandate: ").append(SENSITIVE_FIELD_PATTERN.matcher("completeMandate").matches() ? "[REDACTED]" : toIndentedString(completeMandate)).append("\n");
+    if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("transientTokenResponseOptions").matches() ? "[REDACTED]" : toIndentedString(transientTokenResponseOptions)).append("\n");
+    if (data != null) sb.append("    data: ").append(SENSITIVE_FIELD_PATTERN.matcher("data").matches() ? "[REDACTED]" : toIndentedString(data)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutV1CaptureContextRequest {\n");
     

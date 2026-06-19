@@ -93,7 +93,7 @@ public class CredentialsApi {
         boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "provisionMppCredentials,provisionMppCredentialsAsync,provisionMppCredentialsWithHttpInfo,provisionMppCredentialsCall");
         
         // create path and map variables
-        String localVarPath = "/acp/v1/mpp/credentials";
+        String localVarPath = "/icc/v1/mpp/credentials";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

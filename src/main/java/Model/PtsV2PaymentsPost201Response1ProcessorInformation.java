@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.ProcessorInformationSellerProtection;
 import Model.PtsV2PaymentsPost201Response1ProcessorInformationAvs;
-import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,7 +50,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   private String responseCode = null;
 
   @SerializedName("sellerProtection")
-  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
+  private ProcessorInformationSellerProtection sellerProtection = null;
 
   @SerializedName("avs")
   private PtsV2PaymentsPost201Response1ProcessorInformationAvs avs = null;
@@ -163,7 +163,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     this.responseCode = responseCode;
   }
 
-  public PtsV2PaymentsPost201Response1ProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public PtsV2PaymentsPost201Response1ProcessorInformation sellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
     return this;
   }
@@ -173,11 +173,11 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
    * @return sellerProtection
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
+  public ProcessorInformationSellerProtection getSellerProtection() {
     return sellerProtection;
   }
 
-  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public void setSellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
   }
 
@@ -225,8 +225,52 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201Response1ProcessorInformation {\n");
+    
+    if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (tradeNumber != null) sb.append("    tradeNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("tradeNumber").matches() ? "[REDACTED]" : toIndentedString(tradeNumber)).append("\n");
+    if (rawResponse != null) sb.append("    rawResponse: ").append(SENSITIVE_FIELD_PATTERN.matcher("rawResponse").matches() ? "[REDACTED]" : toIndentedString(rawResponse)).append("\n");
+    if (rawResponseLocal != null) sb.append("    rawResponseLocal: ").append(SENSITIVE_FIELD_PATTERN.matcher("rawResponseLocal").matches() ? "[REDACTED]" : toIndentedString(rawResponseLocal)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerProtection").matches() ? "[REDACTED]" : toIndentedString(sellerProtection)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(SENSITIVE_FIELD_PATTERN.matcher("avs").matches() ? "[REDACTED]" : toIndentedString(avs)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1ProcessorInformation {\n");
     

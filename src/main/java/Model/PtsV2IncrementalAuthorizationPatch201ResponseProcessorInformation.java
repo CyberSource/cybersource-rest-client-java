@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.ProcessorInformationSellerProtection;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
-import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import Model.Ptsv2paymentsProcessorInformationReversalNetwork;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -57,7 +57,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
   private String merchantRiskPrediction = null;
 
   @SerializedName("sellerProtection")
-  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
+  private ProcessorInformationSellerProtection sellerProtection = null;
 
   @SerializedName("network")
   private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
@@ -206,7 +206,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     this.merchantRiskPrediction = merchantRiskPrediction;
   }
 
-  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation sellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
     return this;
   }
@@ -216,11 +216,11 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
    * @return sellerProtection
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
+  public ProcessorInformationSellerProtection getSellerProtection() {
     return sellerProtection;
   }
 
-  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+  public void setSellerProtection(ProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
   }
 
@@ -270,8 +270,54 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {\n");
+    
+    if (approvalCode != null) sb.append("    approvalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("approvalCode").matches() ? "[REDACTED]" : toIndentedString(approvalCode)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkTransactionId").matches() ? "[REDACTED]" : toIndentedString(networkTransactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("systemTraceAuditNumber").matches() ? "[REDACTED]" : toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantAdvice").matches() ? "[REDACTED]" : toIndentedString(merchantAdvice)).append("\n");
+    if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantRiskPrediction").matches() ? "[REDACTED]" : toIndentedString(merchantRiskPrediction)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerProtection").matches() ? "[REDACTED]" : toIndentedString(sellerProtection)).append("\n");
+    if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {\n");
     

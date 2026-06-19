@@ -157,8 +157,49 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels {\n");
+    
+    if (key != null) sb.append("    key: ").append(SENSITIVE_FIELD_PATTERN.matcher("key").matches() ? "[REDACTED]" : toIndentedString(key)).append("\n");
+    if (value != null) sb.append("    value: ").append(SENSITIVE_FIELD_PATTERN.matcher("value").matches() ? "[REDACTED]" : toIndentedString(value)).append("\n");
+    if (hidden != null) sb.append("    hidden: ").append(SENSITIVE_FIELD_PATTERN.matcher("hidden").matches() ? "[REDACTED]" : toIndentedString(hidden)).append("\n");
+    if (hiddenForInvoice != null) sb.append("    hiddenForInvoice: ").append(SENSITIVE_FIELD_PATTERN.matcher("hiddenForInvoice").matches() ? "[REDACTED]" : toIndentedString(hiddenForInvoice)).append("\n");
+    if (hiddenForItem != null) sb.append("    hiddenForItem: ").append(SENSITIVE_FIELD_PATTERN.matcher("hiddenForItem").matches() ? "[REDACTED]" : toIndentedString(hiddenForItem)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels {\n");
     

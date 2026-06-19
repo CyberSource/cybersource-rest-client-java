@@ -527,8 +527,65 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class TssV2TransactionsGet200ResponseProcessorInformation {\n");
+    
+    if (processor != null) sb.append("    processor: ").append(SENSITIVE_FIELD_PATTERN.matcher("processor").matches() ? "[REDACTED]" : toIndentedString(processor)).append("\n");
+    if (multiProcessorRouting != null) sb.append("    multiProcessorRouting: ").append(SENSITIVE_FIELD_PATTERN.matcher("multiProcessorRouting").matches() ? "[REDACTED]" : toIndentedString(multiProcessorRouting)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkTransactionId").matches() ? "[REDACTED]" : toIndentedString(networkTransactionId)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("retrievalReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (responseId != null) sb.append("    responseId: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseId").matches() ? "[REDACTED]" : toIndentedString(responseId)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("approvalCode").matches() ? "[REDACTED]" : toIndentedString(approvalCode)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(SENSITIVE_FIELD_PATTERN.matcher("avs").matches() ? "[REDACTED]" : toIndentedString(avs)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardVerification").matches() ? "[REDACTED]" : toIndentedString(cardVerification)).append("\n");
+    if (achVerification != null) sb.append("    achVerification: ").append(SENSITIVE_FIELD_PATTERN.matcher("achVerification").matches() ? "[REDACTED]" : toIndentedString(achVerification)).append("\n");
+    if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(SENSITIVE_FIELD_PATTERN.matcher("electronicVerificationResults").matches() ? "[REDACTED]" : toIndentedString(electronicVerificationResults)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerInformation").matches() ? "[REDACTED]" : toIndentedString(issuerInformation)).append("\n");
+    if (eventStatus != null) sb.append("    eventStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventStatus").matches() ? "[REDACTED]" : toIndentedString(eventStatus)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("systemTraceAuditNumber").matches() ? "[REDACTED]" : toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCodeSource").matches() ? "[REDACTED]" : toIndentedString(responseCodeSource)).append("\n");
+    if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
+    if (rawResponseLocal != null) sb.append("    rawResponseLocal: ").append(SENSITIVE_FIELD_PATTERN.matcher("rawResponseLocal").matches() ? "[REDACTED]" : toIndentedString(rawResponseLocal)).append("\n");
+    if (rawResponse != null) sb.append("    rawResponse: ").append(SENSITIVE_FIELD_PATTERN.matcher("rawResponse").matches() ? "[REDACTED]" : toIndentedString(rawResponse)).append("\n");
+    if (routing != null) sb.append("    routing: ").append(SENSITIVE_FIELD_PATTERN.matcher("routing").matches() ? "[REDACTED]" : toIndentedString(routing)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessorInformation {\n");
     

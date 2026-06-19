@@ -268,8 +268,54 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {\n");
+    
+    if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkTransactionId").matches() ? "[REDACTED]" : toIndentedString(networkTransactionId)).append("\n");
+    if (responseCategoryCode != null) sb.append("    responseCategoryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCategoryCode").matches() ? "[REDACTED]" : toIndentedString(responseCategoryCode)).append("\n");
+    if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("forwardedAcquirerCode").matches() ? "[REDACTED]" : toIndentedString(forwardedAcquirerCode)).append("\n");
+    if (masterCardServiceCode != null) sb.append("    masterCardServiceCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardServiceCode").matches() ? "[REDACTED]" : toIndentedString(masterCardServiceCode)).append("\n");
+    if (masterCardServiceReplyCode != null) sb.append("    masterCardServiceReplyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("masterCardServiceReplyCode").matches() ? "[REDACTED]" : toIndentedString(masterCardServiceReplyCode)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
+    if (providerResponse != null) sb.append("    providerResponse: ").append(SENSITIVE_FIELD_PATTERN.matcher("providerResponse").matches() ? "[REDACTED]" : toIndentedString(providerResponse)).append("\n");
+    if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {\n");
     

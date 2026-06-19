@@ -204,8 +204,51 @@ public class V1FileDetailsGet200ResponseFileDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class V1FileDetailsGet200ResponseFileDetails {\n");
+    
+    if (fileId != null) sb.append("    fileId: ").append(SENSITIVE_FIELD_PATTERN.matcher("fileId").matches() ? "[REDACTED]" : toIndentedString(fileId)).append("\n");
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (createdTime != null) sb.append("    createdTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("createdTime").matches() ? "[REDACTED]" : toIndentedString(createdTime)).append("\n");
+    if (lastModifiedTime != null) sb.append("    lastModifiedTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastModifiedTime").matches() ? "[REDACTED]" : toIndentedString(lastModifiedTime)).append("\n");
+    if (date != null) sb.append("    date: ").append(SENSITIVE_FIELD_PATTERN.matcher("date").matches() ? "[REDACTED]" : toIndentedString(date)).append("\n");
+    if (mimeType != null) sb.append("    mimeType: ").append(SENSITIVE_FIELD_PATTERN.matcher("mimeType").matches() ? "[REDACTED]" : toIndentedString(mimeType)).append("\n");
+    if (size != null) sb.append("    size: ").append(SENSITIVE_FIELD_PATTERN.matcher("size").matches() ? "[REDACTED]" : toIndentedString(size)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class V1FileDetailsGet200ResponseFileDetails {\n");
     

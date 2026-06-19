@@ -1050,8 +1050,89 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsTravelInformationTransitAirline {\n");
+    
+    if (isDomestic != null) sb.append("    isDomestic: ").append(SENSITIVE_FIELD_PATTERN.matcher("isDomestic").matches() ? "[REDACTED]" : toIndentedString(isDomestic)).append("\n");
+    if (bookingReferenceNumber != null) sb.append("    bookingReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("bookingReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(bookingReferenceNumber)).append("\n");
+    if (carrierName != null) sb.append("    carrierName: ").append(SENSITIVE_FIELD_PATTERN.matcher("carrierName").matches() ? "[REDACTED]" : toIndentedString(carrierName)).append("\n");
+    if (ticketIssuer != null) sb.append("    ticketIssuer: ").append(SENSITIVE_FIELD_PATTERN.matcher("ticketIssuer").matches() ? "[REDACTED]" : toIndentedString(ticketIssuer)).append("\n");
+    if (ticketNumber != null) sb.append("    ticketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("ticketNumber").matches() ? "[REDACTED]" : toIndentedString(ticketNumber)).append("\n");
+    if (checkDigit != null) sb.append("    checkDigit: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkDigit").matches() ? "[REDACTED]" : toIndentedString(checkDigit)).append("\n");
+    if (restrictedTicketIndicator != null) sb.append("    restrictedTicketIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("restrictedTicketIndicator").matches() ? "[REDACTED]" : toIndentedString(restrictedTicketIndicator)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionType").matches() ? "[REDACTED]" : toIndentedString(transactionType)).append("\n");
+    if (extendedPaymentCode != null) sb.append("    extendedPaymentCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("extendedPaymentCode").matches() ? "[REDACTED]" : toIndentedString(extendedPaymentCode)).append("\n");
+    if (passengerName != null) sb.append("    passengerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("passengerName").matches() ? "[REDACTED]" : toIndentedString(passengerName)).append("\n");
+    if (customerCode != null) sb.append("    customerCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("customerCode").matches() ? "[REDACTED]" : toIndentedString(customerCode)).append("\n");
+    if (documentType != null) sb.append("    documentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("documentType").matches() ? "[REDACTED]" : toIndentedString(documentType)).append("\n");
+    if (documentNumber != null) sb.append("    documentNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("documentNumber").matches() ? "[REDACTED]" : toIndentedString(documentNumber)).append("\n");
+    if (documentNumberOfParts != null) sb.append("    documentNumberOfParts: ").append(SENSITIVE_FIELD_PATTERN.matcher("documentNumberOfParts").matches() ? "[REDACTED]" : toIndentedString(documentNumberOfParts)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceNumber").matches() ? "[REDACTED]" : toIndentedString(invoiceNumber)).append("\n");
+    if (invoiceDate != null) sb.append("    invoiceDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceDate").matches() ? "[REDACTED]" : toIndentedString(invoiceDate)).append("\n");
+    if (additionalCharges != null) sb.append("    additionalCharges: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalCharges").matches() ? "[REDACTED]" : toIndentedString(additionalCharges)).append("\n");
+    if (totalFeeAmount != null) sb.append("    totalFeeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalFeeAmount").matches() ? "[REDACTED]" : toIndentedString(totalFeeAmount)).append("\n");
+    if (clearingSequence != null) sb.append("    clearingSequence: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingSequence").matches() ? "[REDACTED]" : toIndentedString(clearingSequence)).append("\n");
+    if (clearingCount != null) sb.append("    clearingCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("clearingCount").matches() ? "[REDACTED]" : toIndentedString(clearingCount)).append("\n");
+    if (totalClearingAmount != null) sb.append("    totalClearingAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalClearingAmount").matches() ? "[REDACTED]" : toIndentedString(totalClearingAmount)).append("\n");
+    if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfPassengers").matches() ? "[REDACTED]" : toIndentedString(numberOfPassengers)).append("\n");
+    if (reservationSystemCode != null) sb.append("    reservationSystemCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("reservationSystemCode").matches() ? "[REDACTED]" : toIndentedString(reservationSystemCode)).append("\n");
+    if (processIdentifier != null) sb.append("    processIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("processIdentifier").matches() ? "[REDACTED]" : toIndentedString(processIdentifier)).append("\n");
+    if (ticketIssueDate != null) sb.append("    ticketIssueDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("ticketIssueDate").matches() ? "[REDACTED]" : toIndentedString(ticketIssueDate)).append("\n");
+    if (electronicTicketIndicator != null) sb.append("    electronicTicketIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("electronicTicketIndicator").matches() ? "[REDACTED]" : toIndentedString(electronicTicketIndicator)).append("\n");
+    if (originalTicketNumber != null) sb.append("    originalTicketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalTicketNumber").matches() ? "[REDACTED]" : toIndentedString(originalTicketNumber)).append("\n");
+    if (purchaseType != null) sb.append("    purchaseType: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseType").matches() ? "[REDACTED]" : toIndentedString(purchaseType)).append("\n");
+    if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("creditReasonIndicator").matches() ? "[REDACTED]" : toIndentedString(creditReasonIndicator)).append("\n");
+    if (ticketChangeIndicator != null) sb.append("    ticketChangeIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("ticketChangeIndicator").matches() ? "[REDACTED]" : toIndentedString(ticketChangeIndicator)).append("\n");
+    if (planNumber != null) sb.append("    planNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("planNumber").matches() ? "[REDACTED]" : toIndentedString(planNumber)).append("\n");
+    if (arrivalDate != null) sb.append("    arrivalDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("arrivalDate").matches() ? "[REDACTED]" : toIndentedString(arrivalDate)).append("\n");
+    if (restrictedTicketDesciption != null) sb.append("    restrictedTicketDesciption: ").append(SENSITIVE_FIELD_PATTERN.matcher("restrictedTicketDesciption").matches() ? "[REDACTED]" : toIndentedString(restrictedTicketDesciption)).append("\n");
+    if (exchangeTicketAmount != null) sb.append("    exchangeTicketAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeTicketAmount").matches() ? "[REDACTED]" : toIndentedString(exchangeTicketAmount)).append("\n");
+    if (exchangeTicketFeeAmount != null) sb.append("    exchangeTicketFeeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeTicketFeeAmount").matches() ? "[REDACTED]" : toIndentedString(exchangeTicketFeeAmount)).append("\n");
+    if (reservationType != null) sb.append("    reservationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("reservationType").matches() ? "[REDACTED]" : toIndentedString(reservationType)).append("\n");
+    if (boardingFeeAmount != null) sb.append("    boardingFeeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("boardingFeeAmount").matches() ? "[REDACTED]" : toIndentedString(boardingFeeAmount)).append("\n");
+    if (legs != null) sb.append("    legs: ").append(SENSITIVE_FIELD_PATTERN.matcher("legs").matches() ? "[REDACTED]" : toIndentedString(legs)).append("\n");
+    if (ancillaryInformation != null) sb.append("    ancillaryInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("ancillaryInformation").matches() ? "[REDACTED]" : toIndentedString(ancillaryInformation)).append("\n");
+    if (flightType != null) sb.append("    flightType: ").append(SENSITIVE_FIELD_PATTERN.matcher("flightType").matches() ? "[REDACTED]" : toIndentedString(flightType)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("insuranceAmount").matches() ? "[REDACTED]" : toIndentedString(insuranceAmount)).append("\n");
+    if (frequentFlyerNumber != null) sb.append("    frequentFlyerNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("frequentFlyerNumber").matches() ? "[REDACTED]" : toIndentedString(frequentFlyerNumber)).append("\n");
+    if (thirdPartyStatus != null) sb.append("    thirdPartyStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("thirdPartyStatus").matches() ? "[REDACTED]" : toIndentedString(thirdPartyStatus)).append("\n");
+    if (passengerType != null) sb.append("    passengerType: ").append(SENSITIVE_FIELD_PATTERN.matcher("passengerType").matches() ? "[REDACTED]" : toIndentedString(passengerType)).append("\n");
+    if (totalInsuranceAmount != null) sb.append("    totalInsuranceAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalInsuranceAmount").matches() ? "[REDACTED]" : toIndentedString(totalInsuranceAmount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirline {\n");
     

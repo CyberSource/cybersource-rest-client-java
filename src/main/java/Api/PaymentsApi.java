@@ -115,13 +115,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -272,13 +272,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -420,13 +420,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -570,13 +570,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -729,13 +729,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -851,7 +851,7 @@ public class PaymentsApi {
         return call;
     }
     /**
-     * Build call for updateSessionReq
+     * Build call for updateSessionRequest
      * @param createSessionRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @param progressListener Progress listener
@@ -860,13 +860,13 @@ public class PaymentsApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateSessionReqCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call updateSessionRequestCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionRequest, CreateSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         String inboundMLEStatus = "optional";
 
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateSessionReq,updateSessionReqAsync,updateSessionReqWithHttpInfo,updateSessionReqCall")) {
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateSessionRequest,updateSessionRequestAsync,updateSessionRequestWithHttpInfo,updateSessionRequestCall")) {
             try {
                 localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
@@ -875,7 +875,7 @@ public class PaymentsApi {
             }
         }
 
-        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "updateSessionReq,updateSessionReqAsync,updateSessionReqWithHttpInfo,updateSessionReqCall");
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "updateSessionRequest,updateSessionRequestAsync,updateSessionRequestWithHttpInfo,updateSessionRequestCall");
         
         // create path and map variables
         String localVarPath = "/pts/v2/payment-references/{id}"
@@ -888,13 +888,13 @@ public class PaymentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/json", "application/json; charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -916,22 +916,22 @@ public class PaymentsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSessionReqValidateBeforeCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call updateSessionRequestValidateBeforeCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'createSessionRequest' is set
         if (createSessionRequest == null) {
-            logger.error("Missing the required parameter 'createSessionRequest' when calling updateSessionReq(Async)");
-            throw new ApiException("Missing the required parameter 'createSessionRequest' when calling updateSessionReq(Async)");
+            logger.error("Missing the required parameter 'createSessionRequest' when calling updateSessionRequest(Async)");
+            throw new ApiException("Missing the required parameter 'createSessionRequest' when calling updateSessionRequest(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            logger.error("Missing the required parameter 'id' when calling updateSessionReq(Async)");
-            throw new ApiException("Missing the required parameter 'id' when calling updateSessionReq(Async)");
+            logger.error("Missing the required parameter 'id' when calling updateSessionRequest(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling updateSessionRequest(Async)");
         }
         
         
-        okhttp3.Call call = updateSessionReqCall(createSessionRequest, id, progressListener, progressRequestListener);
+        okhttp3.Call call = updateSessionRequestCall(createSessionRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -949,10 +949,10 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
-        logger.info("CALL TO METHOD 'updateSessionReq' STARTED");
-        ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionReqWithHttpInfo(createSessionRequest, id);
-        logger.info("CALL TO METHOD 'updateSessionReq' ENDED");
+    public PtsV2PaymentsPost201Response2 updateSessionRequest(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'updateSessionRequest' STARTED");
+        ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionRequestWithHttpInfo(createSessionRequest, id);
+        logger.info("CALL TO METHOD 'updateSessionRequest' ENDED");
         return resp.getData();
     }
 
@@ -965,9 +965,9 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
+    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionRequestWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, null, null);
+        okhttp3.Call call = updateSessionRequestValidateBeforeCall(createSessionRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -982,7 +982,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateSessionReqAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
+    public okhttp3.Call updateSessionRequestAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1004,7 +1004,7 @@ public class PaymentsApi {
             };
         }
 
-        okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, progressListener, progressRequestListener);
+        okhttp3.Call call = updateSessionRequestValidateBeforeCall(createSessionRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

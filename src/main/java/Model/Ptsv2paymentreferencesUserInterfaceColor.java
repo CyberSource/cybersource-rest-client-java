@@ -245,8 +245,53 @@ public class Ptsv2paymentreferencesUserInterfaceColor {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentreferencesUserInterfaceColor {\n");
+    
+    if (border != null) sb.append("    border: ").append(SENSITIVE_FIELD_PATTERN.matcher("border").matches() ? "[REDACTED]" : toIndentedString(border)).append("\n");
+    if (borderSelected != null) sb.append("    borderSelected: ").append(SENSITIVE_FIELD_PATTERN.matcher("borderSelected").matches() ? "[REDACTED]" : toIndentedString(borderSelected)).append("\n");
+    if (button != null) sb.append("    button: ").append(SENSITIVE_FIELD_PATTERN.matcher("button").matches() ? "[REDACTED]" : toIndentedString(button)).append("\n");
+    if (buttonText != null) sb.append("    buttonText: ").append(SENSITIVE_FIELD_PATTERN.matcher("buttonText").matches() ? "[REDACTED]" : toIndentedString(buttonText)).append("\n");
+    if (checkbox != null) sb.append("    checkbox: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkbox").matches() ? "[REDACTED]" : toIndentedString(checkbox)).append("\n");
+    if (checkboxCheckMark != null) sb.append("    checkboxCheckMark: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkboxCheckMark").matches() ? "[REDACTED]" : toIndentedString(checkboxCheckMark)).append("\n");
+    if (header != null) sb.append("    header: ").append(SENSITIVE_FIELD_PATTERN.matcher("header").matches() ? "[REDACTED]" : toIndentedString(header)).append("\n");
+    if (link != null) sb.append("    link: ").append(SENSITIVE_FIELD_PATTERN.matcher("link").matches() ? "[REDACTED]" : toIndentedString(link)).append("\n");
+    if (text != null) sb.append("    text: ").append(SENSITIVE_FIELD_PATTERN.matcher("text").matches() ? "[REDACTED]" : toIndentedString(text)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesUserInterfaceColor {\n");
     

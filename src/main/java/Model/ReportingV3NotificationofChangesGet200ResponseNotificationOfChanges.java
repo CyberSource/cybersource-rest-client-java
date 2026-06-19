@@ -225,8 +225,52 @@ public class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges {\n");
+    
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(merchantReferenceNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (time != null) sb.append("    time: ").append(SENSITIVE_FIELD_PATTERN.matcher("time").matches() ? "[REDACTED]" : toIndentedString(time)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountType").matches() ? "[REDACTED]" : toIndentedString(accountType)).append("\n");
+    if (routingNumber != null) sb.append("    routingNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("routingNumber").matches() ? "[REDACTED]" : toIndentedString(routingNumber)).append("\n");
+    if (accountNumber != null) sb.append("    accountNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountNumber").matches() ? "[REDACTED]" : toIndentedString(accountNumber)).append("\n");
+    if (consumerName != null) sb.append("    consumerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerName").matches() ? "[REDACTED]" : toIndentedString(consumerName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges {\n");
     

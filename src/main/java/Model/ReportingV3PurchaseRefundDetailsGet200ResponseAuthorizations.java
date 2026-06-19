@@ -225,8 +225,52 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {\n");
+    
+    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (time != null) sb.append("    time: ").append(SENSITIVE_FIELD_PATTERN.matcher("time").matches() ? "[REDACTED]" : toIndentedString(time)).append("\n");
+    if (authorizationRequestId != null) sb.append("    authorizationRequestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationRequestId").matches() ? "[REDACTED]" : toIndentedString(authorizationRequestId)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencyCode").matches() ? "[REDACTED]" : toIndentedString(currencyCode)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
+    if (rcode != null) sb.append("    rcode: ").append(SENSITIVE_FIELD_PATTERN.matcher("rcode").matches() ? "[REDACTED]" : toIndentedString(rcode)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {\n");
     

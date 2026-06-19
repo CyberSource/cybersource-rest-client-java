@@ -276,8 +276,54 @@ public class UnderwritingConfiguration {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class UnderwritingConfiguration {\n");
+    
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
+    if (merchantApplication != null) sb.append("    merchantApplication: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantApplication").matches() ? "[REDACTED]" : toIndentedString(merchantApplication)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    if (metadataExternal != null) sb.append("    metadataExternal: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadataExternal").matches() ? "[REDACTED]" : toIndentedString(metadataExternal)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationInformation").matches() ? "[REDACTED]" : toIndentedString(organizationInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
+    if (depositInformation != null) sb.append("    depositInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("depositInformation").matches() ? "[REDACTED]" : toIndentedString(depositInformation)).append("\n");
+    if (billingInformation != null) sb.append("    billingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("billingInformation").matches() ? "[REDACTED]" : toIndentedString(billingInformation)).append("\n");
+    if (saleRepresentativeInformation != null) sb.append("    saleRepresentativeInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("saleRepresentativeInformation").matches() ? "[REDACTED]" : toIndentedString(saleRepresentativeInformation)).append("\n");
+    if (fileAttachmentInformation != null) sb.append("    fileAttachmentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("fileAttachmentInformation").matches() ? "[REDACTED]" : toIndentedString(fileAttachmentInformation)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnderwritingConfiguration {\n");
     

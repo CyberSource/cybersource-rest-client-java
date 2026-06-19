@@ -476,8 +476,63 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {\n");
+    
+    if (accountType != null) sb.append("    accountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountType").matches() ? "[REDACTED]" : toIndentedString(accountType)).append("\n");
+    if (accountStatus != null) sb.append("    accountStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountStatus").matches() ? "[REDACTED]" : toIndentedString(accountStatus)).append("\n");
+    if (balances != null) sb.append("    balances: ").append(SENSITIVE_FIELD_PATTERN.matcher("balances").matches() ? "[REDACTED]" : toIndentedString(balances)).append("\n");
+    if (balanceAmount != null) sb.append("    balanceAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("balanceAmount").matches() ? "[REDACTED]" : toIndentedString(balanceAmount)).append("\n");
+    if (balanceAmountType != null) sb.append("    balanceAmountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("balanceAmountType").matches() ? "[REDACTED]" : toIndentedString(balanceAmountType)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (balanceSign != null) sb.append("    balanceSign: ").append(SENSITIVE_FIELD_PATTERN.matcher("balanceSign").matches() ? "[REDACTED]" : toIndentedString(balanceSign)).append("\n");
+    if (affluenceIndicator != null) sb.append("    affluenceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("affluenceIndicator").matches() ? "[REDACTED]" : toIndentedString(affluenceIndicator)).append("\n");
+    if (category != null) sb.append("    category: ").append(SENSITIVE_FIELD_PATTERN.matcher("category").matches() ? "[REDACTED]" : toIndentedString(category)).append("\n");
+    if (commercial != null) sb.append("    commercial: ").append(SENSITIVE_FIELD_PATTERN.matcher("commercial").matches() ? "[REDACTED]" : toIndentedString(commercial)).append("\n");
+    if (group != null) sb.append("    group: ").append(SENSITIVE_FIELD_PATTERN.matcher("group").matches() ? "[REDACTED]" : toIndentedString(group)).append("\n");
+    if (healthCare != null) sb.append("    healthCare: ").append(SENSITIVE_FIELD_PATTERN.matcher("healthCare").matches() ? "[REDACTED]" : toIndentedString(healthCare)).append("\n");
+    if (payroll != null) sb.append("    payroll: ").append(SENSITIVE_FIELD_PATTERN.matcher("payroll").matches() ? "[REDACTED]" : toIndentedString(payroll)).append("\n");
+    if (level3Eligible != null) sb.append("    level3Eligible: ").append(SENSITIVE_FIELD_PATTERN.matcher("level3Eligible").matches() ? "[REDACTED]" : toIndentedString(level3Eligible)).append("\n");
+    if (pinlessDebit != null) sb.append("    pinlessDebit: ").append(SENSITIVE_FIELD_PATTERN.matcher("pinlessDebit").matches() ? "[REDACTED]" : toIndentedString(pinlessDebit)).append("\n");
+    if (signatureDebit != null) sb.append("    signatureDebit: ").append(SENSITIVE_FIELD_PATTERN.matcher("signatureDebit").matches() ? "[REDACTED]" : toIndentedString(signatureDebit)).append("\n");
+    if (prepaid != null) sb.append("    prepaid: ").append(SENSITIVE_FIELD_PATTERN.matcher("prepaid").matches() ? "[REDACTED]" : toIndentedString(prepaid)).append("\n");
+    if (regulated != null) sb.append("    regulated: ").append(SENSITIVE_FIELD_PATTERN.matcher("regulated").matches() ? "[REDACTED]" : toIndentedString(regulated)).append("\n");
+    if (accountHolderType != null) sb.append("    accountHolderType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accountHolderType").matches() ? "[REDACTED]" : toIndentedString(accountHolderType)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {\n");
     

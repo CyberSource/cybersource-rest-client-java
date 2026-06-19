@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Acpv1instructionsinstructionIdcredentialsTransactionData;
-import Model.Acpv1tokensPaymentInformation;
+import Model.Iccv1instructionsinstructionIdcredentialsTransactionData;
+import Model.Iccv1tokensPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,10 +37,10 @@ public class AgenticRetrievePaymentCredentialsRequest {
   private String clientCorrelationId = null;
 
   @SerializedName("paymentInformation")
-  private Acpv1tokensPaymentInformation paymentInformation = null;
+  private Iccv1tokensPaymentInformation paymentInformation = null;
 
   @SerializedName("transactionData")
-  private List<Acpv1instructionsinstructionIdcredentialsTransactionData> transactionData = new ArrayList<Acpv1instructionsinstructionIdcredentialsTransactionData>();
+  private List<Iccv1instructionsinstructionIdcredentialsTransactionData> transactionData = new ArrayList<Iccv1instructionsinstructionIdcredentialsTransactionData>();
 
   public AgenticRetrievePaymentCredentialsRequest clientCorrelationId(String clientCorrelationId) {
     this.clientCorrelationId = clientCorrelationId;
@@ -60,7 +60,7 @@ public class AgenticRetrievePaymentCredentialsRequest {
     this.clientCorrelationId = clientCorrelationId;
   }
 
-  public AgenticRetrievePaymentCredentialsRequest paymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public AgenticRetrievePaymentCredentialsRequest paymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -70,20 +70,20 @@ public class AgenticRetrievePaymentCredentialsRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(required = true, value = "")
-  public Acpv1tokensPaymentInformation getPaymentInformation() {
+  public Iccv1tokensPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Acpv1tokensPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Iccv1tokensPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public AgenticRetrievePaymentCredentialsRequest transactionData(List<Acpv1instructionsinstructionIdcredentialsTransactionData> transactionData) {
+  public AgenticRetrievePaymentCredentialsRequest transactionData(List<Iccv1instructionsinstructionIdcredentialsTransactionData> transactionData) {
     this.transactionData = transactionData;
     return this;
   }
 
-  public AgenticRetrievePaymentCredentialsRequest addTransactionDataItem(Acpv1instructionsinstructionIdcredentialsTransactionData transactionDataItem) {
+  public AgenticRetrievePaymentCredentialsRequest addTransactionDataItem(Iccv1instructionsinstructionIdcredentialsTransactionData transactionDataItem) {
     this.transactionData.add(transactionDataItem);
     return this;
   }
@@ -93,11 +93,11 @@ public class AgenticRetrievePaymentCredentialsRequest {
    * @return transactionData
   **/
   @ApiModelProperty(required = true, value = "List of transaction data.")
-  public List<Acpv1instructionsinstructionIdcredentialsTransactionData> getTransactionData() {
+  public List<Iccv1instructionsinstructionIdcredentialsTransactionData> getTransactionData() {
     return transactionData;
   }
 
-  public void setTransactionData(List<Acpv1instructionsinstructionIdcredentialsTransactionData> transactionData) {
+  public void setTransactionData(List<Iccv1instructionsinstructionIdcredentialsTransactionData> transactionData) {
     this.transactionData = transactionData;
   }
 
@@ -122,8 +122,47 @@ public class AgenticRetrievePaymentCredentialsRequest {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class AgenticRetrievePaymentCredentialsRequest {\n");
+    
+    if (clientCorrelationId != null) sb.append("    clientCorrelationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientCorrelationId").matches() ? "[REDACTED]" : toIndentedString(clientCorrelationId)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
+    if (transactionData != null) sb.append("    transactionData: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionData").matches() ? "[REDACTED]" : toIndentedString(transactionData)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgenticRetrievePaymentCredentialsRequest {\n");
     

@@ -355,8 +355,64 @@ public class Tmsv2TokenizedCard {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Tmsv2TokenizedCard {\n");
+    
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (object != null) sb.append("    object: ").append(SENSITIVE_FIELD_PATTERN.matcher("object").matches() ? "[REDACTED]" : toIndentedString(object)).append("\n");
+    if (source != null) sb.append("    source: ").append(SENSITIVE_FIELD_PATTERN.matcher("source").matches() ? "[REDACTED]" : toIndentedString(source)).append("\n");
+    if (state != null) sb.append("    state: ").append(SENSITIVE_FIELD_PATTERN.matcher("state").matches() ? "[REDACTED]" : toIndentedString(state)).append("\n");
+    if (enrollmentId != null) sb.append("    enrollmentId: ").append(SENSITIVE_FIELD_PATTERN.matcher("enrollmentId").matches() ? "[REDACTED]" : toIndentedString(enrollmentId)).append("\n");
+    if (tokenReferenceId != null) sb.append("    tokenReferenceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("tokenReferenceId").matches() ? "[REDACTED]" : toIndentedString(tokenReferenceId)).append("\n");
+    if (number != null) sb.append("    number: ").append(SENSITIVE_FIELD_PATTERN.matcher("number").matches() ? "[REDACTED]" : toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationMonth").matches() ? "[REDACTED]" : toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationYear").matches() ? "[REDACTED]" : toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (cryptogram != null) sb.append("    cryptogram: ").append(SENSITIVE_FIELD_PATTERN.matcher("cryptogram").matches() ? "[REDACTED]" : toIndentedString(cryptogram)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("securityCode").matches() ? "[REDACTED]" : toIndentedString(securityCode)).append("\n");
+    if (eci != null) sb.append("    eci: ").append(SENSITIVE_FIELD_PATTERN.matcher("eci").matches() ? "[REDACTED]" : toIndentedString(eci)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestorId").matches() ? "[REDACTED]" : toIndentedString(requestorId)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountReference").matches() ? "[REDACTED]" : toIndentedString(paymentAccountReference)).append("\n");
+    if (applicationTransactionCounter != null) sb.append("    applicationTransactionCounter: ").append(SENSITIVE_FIELD_PATTERN.matcher("applicationTransactionCounter").matches() ? "[REDACTED]" : toIndentedString(applicationTransactionCounter)).append("\n");
+    if (card != null) sb.append("    card: ").append(SENSITIVE_FIELD_PATTERN.matcher("card").matches() ? "[REDACTED]" : toIndentedString(card)).append("\n");
+    if (verificationResults != null) sb.append("    verificationResults: ").append(SENSITIVE_FIELD_PATTERN.matcher("verificationResults").matches() ? "[REDACTED]" : toIndentedString(verificationResults)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(SENSITIVE_FIELD_PATTERN.matcher("metadata").matches() ? "[REDACTED]" : toIndentedString(metadata)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCard {\n");
     

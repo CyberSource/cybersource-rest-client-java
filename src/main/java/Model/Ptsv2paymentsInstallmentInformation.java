@@ -445,8 +445,62 @@ public class Ptsv2paymentsInstallmentInformation {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsInstallmentInformation {\n");
+    
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(SENSITIVE_FIELD_PATTERN.matcher("frequency").matches() ? "[REDACTED]" : toIndentedString(frequency)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(SENSITIVE_FIELD_PATTERN.matcher("planType").matches() ? "[REDACTED]" : toIndentedString(planType)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(SENSITIVE_FIELD_PATTERN.matcher("sequence").matches() ? "[REDACTED]" : toIndentedString(sequence)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalCount").matches() ? "[REDACTED]" : toIndentedString(totalCount)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentDate").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentDate)).append("\n");
+    if (invoiceData != null) sb.append("    invoiceData: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceData").matches() ? "[REDACTED]" : toIndentedString(invoiceData)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (eligibilityInquiry != null) sb.append("    eligibilityInquiry: ").append(SENSITIVE_FIELD_PATTERN.matcher("eligibilityInquiry").matches() ? "[REDACTED]" : toIndentedString(eligibilityInquiry)).append("\n");
+    if (gracePeriodDuration != null) sb.append("    gracePeriodDuration: ").append(SENSITIVE_FIELD_PATTERN.matcher("gracePeriodDuration").matches() ? "[REDACTED]" : toIndentedString(gracePeriodDuration)).append("\n");
+    if (gracePeriodDurationType != null) sb.append("    gracePeriodDurationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("gracePeriodDurationType").matches() ? "[REDACTED]" : toIndentedString(gracePeriodDurationType)).append("\n");
+    if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentAmount").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentAmount)).append("\n");
+    if (validationIndicator != null) sb.append("    validationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("validationIndicator").matches() ? "[REDACTED]" : toIndentedString(validationIndicator)).append("\n");
+    if (identifier != null) sb.append("    identifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("identifier").matches() ? "[REDACTED]" : toIndentedString(identifier)).append("\n");
+    if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("annualInterestRate").matches() ? "[REDACTED]" : toIndentedString(annualInterestRate)).append("\n");
+    if (interestIndicator != null) sb.append("    interestIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("interestIndicator").matches() ? "[REDACTED]" : toIndentedString(interestIndicator)).append("\n");
+    if (isGovernmentPlan != null) sb.append("    isGovernmentPlan: ").append(SENSITIVE_FIELD_PATTERN.matcher("isGovernmentPlan").matches() ? "[REDACTED]" : toIndentedString(isGovernmentPlan)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsInstallmentInformation {\n");
     

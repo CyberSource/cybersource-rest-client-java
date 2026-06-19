@@ -180,8 +180,50 @@ public class ECheckConfigCommonProcessors {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ECheckConfigCommonProcessors {\n");
+    
+    if (companyEntryDescription != null) sb.append("    companyEntryDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyEntryDescription").matches() ? "[REDACTED]" : toIndentedString(companyEntryDescription)).append("\n");
+    if (companyId != null) sb.append("    companyId: ").append(SENSITIVE_FIELD_PATTERN.matcher("companyId").matches() ? "[REDACTED]" : toIndentedString(companyId)).append("\n");
+    if (batchGroup != null) sb.append("    batchGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchGroup").matches() ? "[REDACTED]" : toIndentedString(batchGroup)).append("\n");
+    if (enableAccuityForAvs != null) sb.append("    enableAccuityForAvs: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableAccuityForAvs").matches() ? "[REDACTED]" : toIndentedString(enableAccuityForAvs)).append("\n");
+    if (accuityCheckType != null) sb.append("    accuityCheckType: ").append(SENSITIVE_FIELD_PATTERN.matcher("accuityCheckType").matches() ? "[REDACTED]" : toIndentedString(accuityCheckType)).append("\n");
+    if (setCompletedState != null) sb.append("    setCompletedState: ").append(SENSITIVE_FIELD_PATTERN.matcher("setCompletedState").matches() ? "[REDACTED]" : toIndentedString(setCompletedState)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigCommonProcessors {\n");
     

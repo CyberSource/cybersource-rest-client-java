@@ -775,8 +775,76 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsOrderInformationAmountDetails {\n");
+    
+    if (refundBalance != null) sb.append("    refundBalance: ").append(SENSITIVE_FIELD_PATTERN.matcher("refundBalance").matches() ? "[REDACTED]" : toIndentedString(refundBalance)).append("\n");
+    if (giftWrapAmount != null) sb.append("    giftWrapAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("giftWrapAmount").matches() ? "[REDACTED]" : toIndentedString(giftWrapAmount)).append("\n");
+    if (invoiceAmount != null) sb.append("    invoiceAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceAmount").matches() ? "[REDACTED]" : toIndentedString(invoiceAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
+    if (subTotalAmount != null) sb.append("    subTotalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("subTotalAmount").matches() ? "[REDACTED]" : toIndentedString(subTotalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
+    if (dutyAmount != null) sb.append("    dutyAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("dutyAmount").matches() ? "[REDACTED]" : toIndentedString(dutyAmount)).append("\n");
+    if (gratuityAmount != null) sb.append("    gratuityAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("gratuityAmount").matches() ? "[REDACTED]" : toIndentedString(gratuityAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    if (nationalTaxIncluded != null) sb.append("    nationalTaxIncluded: ").append(SENSITIVE_FIELD_PATTERN.matcher("nationalTaxIncluded").matches() ? "[REDACTED]" : toIndentedString(nationalTaxIncluded)).append("\n");
+    if (taxAppliedAfterDiscount != null) sb.append("    taxAppliedAfterDiscount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAppliedAfterDiscount").matches() ? "[REDACTED]" : toIndentedString(taxAppliedAfterDiscount)).append("\n");
+    if (taxAppliedLevel != null) sb.append("    taxAppliedLevel: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAppliedLevel").matches() ? "[REDACTED]" : toIndentedString(taxAppliedLevel)).append("\n");
+    if (taxTypeCode != null) sb.append("    taxTypeCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxTypeCode").matches() ? "[REDACTED]" : toIndentedString(taxTypeCode)).append("\n");
+    if (freightAmount != null) sb.append("    freightAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("freightAmount").matches() ? "[REDACTED]" : toIndentedString(freightAmount)).append("\n");
+    if (foreignAmount != null) sb.append("    foreignAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("foreignAmount").matches() ? "[REDACTED]" : toIndentedString(foreignAmount)).append("\n");
+    if (foreignCurrency != null) sb.append("    foreignCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("foreignCurrency").matches() ? "[REDACTED]" : toIndentedString(foreignCurrency)).append("\n");
+    if (exchangeRate != null) sb.append("    exchangeRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeRate").matches() ? "[REDACTED]" : toIndentedString(exchangeRate)).append("\n");
+    if (exchangeRateTimeStamp != null) sb.append("    exchangeRateTimeStamp: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeRateTimeStamp").matches() ? "[REDACTED]" : toIndentedString(exchangeRateTimeStamp)).append("\n");
+    if (surcharge != null) sb.append("    surcharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("surcharge").matches() ? "[REDACTED]" : toIndentedString(surcharge)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementAmount").matches() ? "[REDACTED]" : toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementCurrency").matches() ? "[REDACTED]" : toIndentedString(settlementCurrency)).append("\n");
+    if (amexAdditionalAmounts != null) sb.append("    amexAdditionalAmounts: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexAdditionalAmounts").matches() ? "[REDACTED]" : toIndentedString(amexAdditionalAmounts)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxDetails").matches() ? "[REDACTED]" : toIndentedString(taxDetails)).append("\n");
+    if (serviceFeeAmount != null) sb.append("    serviceFeeAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("serviceFeeAmount").matches() ? "[REDACTED]" : toIndentedString(serviceFeeAmount)).append("\n");
+    if (originalAmount != null) sb.append("    originalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalAmount").matches() ? "[REDACTED]" : toIndentedString(originalAmount)).append("\n");
+    if (originalCurrency != null) sb.append("    originalCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalCurrency").matches() ? "[REDACTED]" : toIndentedString(originalCurrency)).append("\n");
+    if (cashbackAmount != null) sb.append("    cashbackAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("cashbackAmount").matches() ? "[REDACTED]" : toIndentedString(cashbackAmount)).append("\n");
+    if (currencyConversion != null) sb.append("    currencyConversion: ").append(SENSITIVE_FIELD_PATTERN.matcher("currencyConversion").matches() ? "[REDACTED]" : toIndentedString(currencyConversion)).append("\n");
+    if (octSurcharge != null) sb.append("    octSurcharge: ").append(SENSITIVE_FIELD_PATTERN.matcher("octSurcharge").matches() ? "[REDACTED]" : toIndentedString(octSurcharge)).append("\n");
+    if (order != null) sb.append("    order: ").append(SENSITIVE_FIELD_PATTERN.matcher("order").matches() ? "[REDACTED]" : toIndentedString(order)).append("\n");
+    if (anticipatedAmount != null) sb.append("    anticipatedAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("anticipatedAmount").matches() ? "[REDACTED]" : toIndentedString(anticipatedAmount)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetails {\n");
     

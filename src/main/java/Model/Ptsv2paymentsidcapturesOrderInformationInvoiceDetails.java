@@ -212,8 +212,51 @@ public class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails {\n");
+    
+    if (purchaseOrderNumber != null) sb.append("    purchaseOrderNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseOrderNumber").matches() ? "[REDACTED]" : toIndentedString(purchaseOrderNumber)).append("\n");
+    if (purchaseOrderDate != null) sb.append("    purchaseOrderDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseOrderDate").matches() ? "[REDACTED]" : toIndentedString(purchaseOrderDate)).append("\n");
+    if (purchaseContactName != null) sb.append("    purchaseContactName: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseContactName").matches() ? "[REDACTED]" : toIndentedString(purchaseContactName)).append("\n");
+    if (taxable != null) sb.append("    taxable: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxable").matches() ? "[REDACTED]" : toIndentedString(taxable)).append("\n");
+    if (vatInvoiceReferenceNumber != null) sb.append("    vatInvoiceReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("vatInvoiceReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(vatInvoiceReferenceNumber)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("commodityCode").matches() ? "[REDACTED]" : toIndentedString(commodityCode)).append("\n");
+    if (transactionAdviceAddendum != null) sb.append("    transactionAdviceAddendum: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionAdviceAddendum").matches() ? "[REDACTED]" : toIndentedString(transactionAdviceAddendum)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails {\n");
     

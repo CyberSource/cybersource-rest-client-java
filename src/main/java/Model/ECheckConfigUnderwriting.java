@@ -268,8 +268,54 @@ public class ECheckConfigUnderwriting {
   }
 
 
+  private static final java.util.regex.Pattern SENSITIVE_FIELD_PATTERN =
+      java.util.regex.Pattern.compile(
+          "^(password|apiKey|accessToken|refreshToken|clientSecret|secret|secretKey"
+          + "|passphrase|privateKey|authToken|bearerToken|idToken"
+          + "|sharedSecret|webhookSecret|keyPassword|encryptionKey|signingKey"
+          + "|cardNumber|pan|cvv|cvn|cvv2|securityCode|pin|accountNumber"
+          + "|number|expirationMonth|expirationYear|ssn|taxId)$");
+
+  /**
+   * Returns a masked string representation of this object.
+   * Sensitive fields (passwords, API keys, card numbers, etc.) are replaced
+   * with {@code [REDACTED]} to prevent accidental exposure in logs.
+   *
+   * <p>To inspect sensitive field values during local debugging, use
+   * {@link #toDebugString()} instead, or call the individual getter methods.
+   *
+   * @return masked string representation
+   */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ECheckConfigUnderwriting {\n");
+    
+    if (standardEntryClassCodes != null) sb.append("    standardEntryClassCodes: ").append(SENSITIVE_FIELD_PATTERN.matcher("standardEntryClassCodes").matches() ? "[REDACTED]" : toIndentedString(standardEntryClassCodes)).append("\n");
+    if (enableHold != null) sb.append("    enableHold: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableHold").matches() ? "[REDACTED]" : toIndentedString(enableHold)).append("\n");
+    if (monthlyTotalTransactionAmountLimit != null) sb.append("    monthlyTotalTransactionAmountLimit: ").append(SENSITIVE_FIELD_PATTERN.matcher("monthlyTotalTransactionAmountLimit").matches() ? "[REDACTED]" : toIndentedString(monthlyTotalTransactionAmountLimit)).append("\n");
+    if (holdingDays != null) sb.append("    holdingDays: ").append(SENSITIVE_FIELD_PATTERN.matcher("holdingDays").matches() ? "[REDACTED]" : toIndentedString(holdingDays)).append("\n");
+    if (enableCredits != null) sb.append("    enableCredits: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableCredits").matches() ? "[REDACTED]" : toIndentedString(enableCredits)).append("\n");
+    if (transactionAmountLimit != null) sb.append("    transactionAmountLimit: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionAmountLimit").matches() ? "[REDACTED]" : toIndentedString(transactionAmountLimit)).append("\n");
+    if (riskReserveMethod != null) sb.append("    riskReserveMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskReserveMethod").matches() ? "[REDACTED]" : toIndentedString(riskReserveMethod)).append("\n");
+    if (riskReserveRate != null) sb.append("    riskReserveRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskReserveRate").matches() ? "[REDACTED]" : toIndentedString(riskReserveRate)).append("\n");
+    if (riskReserveTargetAmount != null) sb.append("    riskReserveTargetAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskReserveTargetAmount").matches() ? "[REDACTED]" : toIndentedString(riskReserveTargetAmount)).append("\n");
+    if (solutionOrganizationId != null) sb.append("    solutionOrganizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("solutionOrganizationId").matches() ? "[REDACTED]" : toIndentedString(solutionOrganizationId)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns an unmasked string representation of this object, including all
+   * sensitive field values in plaintext.
+   *
+   * <p><b>WARNING:</b> For local debugging only. Never pass this output to a
+   * logger or include it in error messages in production environments, as it
+   * will expose credentials, card numbers, and other sensitive data.
+   *
+   * @return unmasked string representation
+   */
+  public String toDebugString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigUnderwriting {\n");
     
