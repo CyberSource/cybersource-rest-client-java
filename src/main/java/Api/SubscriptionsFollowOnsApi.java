@@ -32,7 +32,7 @@ import java.io.InputStream;
 import Model.CreateSubscriptionRequest1;
 import Model.CreateSubscriptionResponse;
 import Model.GetSubscriptionResponse1;
-import Model.InlineResponse4005;
+import Model.InlineResponse4007;
 import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 
@@ -83,7 +83,7 @@ public class SubscriptionsFollowOnsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createFollowOnSubscription,createFollowOnSubscriptionAsync,createFollowOnSubscriptionWithHttpInfo,createFollowOnSubscriptionCall")) {
             try {
@@ -244,7 +244,7 @@ public class SubscriptionsFollowOnsApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "optional";
+        String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFollowOnSubscription,getFollowOnSubscriptionAsync,getFollowOnSubscriptionWithHttpInfo,getFollowOnSubscriptionCall")) {
             try {

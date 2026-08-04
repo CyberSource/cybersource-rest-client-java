@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **String** | Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.)  |  [optional]
-**status** | **String** | Possible values:   - &#x60;INVALID_REQUEST&#x60;  |  [optional]
-**message** | **String** | The detail message related to the status and reason |  [optional]
-**reason** | **String** | The reason of the status.  Possible values:   - &#x60;INVALID_REQUEST&#x60;  |  [optional]
-**details** | [**List&lt;InlineResponse40012Details&gt;**](InlineResponse40012Details.md) |  |  [optional]
+**status** | **String** | The status of the submitted request.  Possible values: - BAD_REQUEST |  [optional]
+**message** | **String** | The detail message related to the status and reason listed above. |  [optional]
+**code** | **String** | An optional short string which identifies the exact error. |  [optional]
+**details** | [**List&lt;InlineResponse40012Details&gt;**](InlineResponse40012Details.md) | An optional array which provides more details of the error. |  [optional]
+**submitTimeUtc** | **String** | Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  |  [optional]
 
 
 

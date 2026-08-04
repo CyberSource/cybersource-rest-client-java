@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.GetSubscriptionsPaymentsResponse1Links;
+import Model.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition;
 import Model.Iplv2paymentlinksProcessingInformation;
 import Model.PblPaymentLinksPost201ResponseOrderInformation;
 import Model.PblPaymentLinksPost201ResponsePurchaseInformation;
@@ -27,6 +28,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * PblPaymentLinksPost201Response
@@ -53,6 +56,9 @@ public class PblPaymentLinksPost201Response {
 
   @SerializedName("orderInformation")
   private PblPaymentLinksPost201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValuesWithDefinition")
+  private List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition = null;
 
   public PblPaymentLinksPost201Response links(GetSubscriptionsPaymentsResponse1Links links) {
     this.links = links;
@@ -180,6 +186,32 @@ public class PblPaymentLinksPost201Response {
     this.orderInformation = orderInformation;
   }
 
+  public PblPaymentLinksPost201Response merchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+    return this;
+  }
+
+  public PblPaymentLinksPost201Response addMerchantDefinedFieldValuesWithDefinitionItem(InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition merchantDefinedFieldValuesWithDefinitionItem) {
+    if (this.merchantDefinedFieldValuesWithDefinition == null) {
+      this.merchantDefinedFieldValuesWithDefinition = new ArrayList<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition>();
+    }
+    this.merchantDefinedFieldValuesWithDefinition.add(merchantDefinedFieldValuesWithDefinitionItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValuesWithDefinition
+   * @return merchantDefinedFieldValuesWithDefinition
+  **/
+  @ApiModelProperty(value = "")
+  public List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> getMerchantDefinedFieldValuesWithDefinition() {
+    return merchantDefinedFieldValuesWithDefinition;
+  }
+
+  public void setMerchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -196,12 +228,13 @@ public class PblPaymentLinksPost201Response {
         Objects.equals(this.status, pblPaymentLinksPost201Response.status) &&
         Objects.equals(this.processingInformation, pblPaymentLinksPost201Response.processingInformation) &&
         Objects.equals(this.purchaseInformation, pblPaymentLinksPost201Response.purchaseInformation) &&
-        Objects.equals(this.orderInformation, pblPaymentLinksPost201Response.orderInformation);
+        Objects.equals(this.orderInformation, pblPaymentLinksPost201Response.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValuesWithDefinition, pblPaymentLinksPost201Response.merchantDefinedFieldValuesWithDefinition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, processingInformation, purchaseInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, processingInformation, purchaseInformation, orderInformation, merchantDefinedFieldValuesWithDefinition);
   }
 
 
@@ -235,6 +268,7 @@ public class PblPaymentLinksPost201Response {
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     if (purchaseInformation != null) sb.append("    purchaseInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseInformation").matches() ? "[REDACTED]" : toIndentedString(purchaseInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValuesWithDefinition != null) sb.append("    merchantDefinedFieldValuesWithDefinition: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedFieldValuesWithDefinition").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedFieldValuesWithDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -260,6 +294,7 @@ public class PblPaymentLinksPost201Response {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (purchaseInformation != null) sb.append("    purchaseInformation: ").append(toIndentedString(purchaseInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValuesWithDefinition != null) sb.append("    merchantDefinedFieldValuesWithDefinition: ").append(toIndentedString(merchantDefinedFieldValuesWithDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

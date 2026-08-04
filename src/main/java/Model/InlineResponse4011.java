@@ -15,8 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4011Fields;
-import Model.InlineResponse4011Links;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,149 +23,76 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse4011
  */
 
 public class InlineResponse4011 {
-  @SerializedName("_links")
-  private InlineResponse4011Links links = null;
+  @SerializedName("id")
+  private String id = null;
 
-  @SerializedName("code")
-  private String code = null;
+  @SerializedName("submitTimeStampUtc")
+  private String submitTimeStampUtc = null;
 
-  @SerializedName("correlationId")
-  private String correlationId = null;
-
-  @SerializedName("detail")
-  private String detail = null;
-
-  @SerializedName("fields")
-  private List<InlineResponse4011Fields> fields = null;
-
-  @SerializedName("localizationKey")
-  private String localizationKey = null;
+  @SerializedName("reason")
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse4011 links(InlineResponse4011Links links) {
-    this.links = links;
+  public InlineResponse4011 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @return id
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse4011Links getLinks() {
-    return links;
+  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
+  public String getId() {
+    return id;
   }
 
-  public void setLinks(InlineResponse4011Links links) {
-    this.links = links;
+  public void setId(String id) {
+    this.id = id;
   }
 
-  public InlineResponse4011 code(String code) {
-    this.code = code;
+  public InlineResponse4011 submitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
     return this;
   }
 
    /**
-   * Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR 
-   * @return code
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeStampUtc
   **/
-  @ApiModelProperty(value = "Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR ")
-  public String getCode() {
-    return code;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeStampUtc() {
+    return submitTimeStampUtc;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
   }
 
-  public InlineResponse4011 correlationId(String correlationId) {
-    this.correlationId = correlationId;
+  public InlineResponse4011 reason(String reason) {
+    this.reason = reason;
     return this;
   }
 
    /**
-   * Get correlationId
-   * @return correlationId
+   * The reason of the status.  Possible values: - UNAUTHORIZED 
+   * @return reason
   **/
-  @ApiModelProperty(example = "c7b74452a7314f9ca28197d1084447a5", value = "")
-  public String getCorrelationId() {
-    return correlationId;
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - UNAUTHORIZED ")
+  public String getReason() {
+    return reason;
   }
 
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
-  }
-
-  public InlineResponse4011 detail(String detail) {
-    this.detail = detail;
-    return this;
-  }
-
-   /**
-   * Get detail
-   * @return detail
-  **/
-  @ApiModelProperty(example = "One or more fields failed validation", value = "")
-  public String getDetail() {
-    return detail;
-  }
-
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
-
-  public InlineResponse4011 fields(List<InlineResponse4011Fields> fields) {
-    this.fields = fields;
-    return this;
-  }
-
-  public InlineResponse4011 addFieldsItem(InlineResponse4011Fields fieldsItem) {
-    if (this.fields == null) {
-      this.fields = new ArrayList<InlineResponse4011Fields>();
-    }
-    this.fields.add(fieldsItem);
-    return this;
-  }
-
-   /**
-   * Get fields
-   * @return fields
-  **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse4011Fields> getFields() {
-    return fields;
-  }
-
-  public void setFields(List<InlineResponse4011Fields> fields) {
-    this.fields = fields;
-  }
-
-  public InlineResponse4011 localizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported 
-   * @return localizationKey
-  **/
-  @ApiModelProperty(value = "Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported ")
-  public String getLocalizationKey() {
-    return localizationKey;
-  }
-
-  public void setLocalizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public InlineResponse4011 message(String message) {
@@ -176,10 +101,10 @@ public class InlineResponse4011 {
   }
 
    /**
-   * Get message
+   * The detail message related to the status and reason listed above. 
    * @return message
   **/
-  @ApiModelProperty(example = "Field validation error", value = "")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above. ")
   public String getMessage() {
     return message;
   }
@@ -198,18 +123,15 @@ public class InlineResponse4011 {
       return false;
     }
     InlineResponse4011 inlineResponse4011 = (InlineResponse4011) o;
-    return Objects.equals(this.links, inlineResponse4011.links) &&
-        Objects.equals(this.code, inlineResponse4011.code) &&
-        Objects.equals(this.correlationId, inlineResponse4011.correlationId) &&
-        Objects.equals(this.detail, inlineResponse4011.detail) &&
-        Objects.equals(this.fields, inlineResponse4011.fields) &&
-        Objects.equals(this.localizationKey, inlineResponse4011.localizationKey) &&
+    return Objects.equals(this.id, inlineResponse4011.id) &&
+        Objects.equals(this.submitTimeStampUtc, inlineResponse4011.submitTimeStampUtc) &&
+        Objects.equals(this.reason, inlineResponse4011.reason) &&
         Objects.equals(this.message, inlineResponse4011.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, code, correlationId, detail, fields, localizationKey, message);
+    return Objects.hash(id, submitTimeStampUtc, reason, message);
   }
 
 
@@ -236,12 +158,9 @@ public class InlineResponse4011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4011 {\n");
     
-    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
-    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
-    if (correlationId != null) sb.append("    correlationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("correlationId").matches() ? "[REDACTED]" : toIndentedString(correlationId)).append("\n");
-    if (detail != null) sb.append("    detail: ").append(SENSITIVE_FIELD_PATTERN.matcher("detail").matches() ? "[REDACTED]" : toIndentedString(detail)).append("\n");
-    if (fields != null) sb.append("    fields: ").append(SENSITIVE_FIELD_PATTERN.matcher("fields").matches() ? "[REDACTED]" : toIndentedString(fields)).append("\n");
-    if (localizationKey != null) sb.append("    localizationKey: ").append(SENSITIVE_FIELD_PATTERN.matcher("localizationKey").matches() ? "[REDACTED]" : toIndentedString(localizationKey)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -261,12 +180,9 @@ public class InlineResponse4011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4011 {\n");
     
-    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    if (detail != null) sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    if (fields != null) sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-    if (localizationKey != null) sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();

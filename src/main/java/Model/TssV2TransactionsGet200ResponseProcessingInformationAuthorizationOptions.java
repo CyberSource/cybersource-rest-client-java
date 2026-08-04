@@ -42,6 +42,9 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
   @SerializedName("cardVerificationIndicator")
   private Boolean cardVerificationIndicator = null;
 
+  @SerializedName("aftIndicator")
+  private Boolean aftIndicator = null;
+
   @SerializedName("initiator")
   private TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
@@ -117,6 +120,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     this.cardVerificationIndicator = cardVerificationIndicator;
   }
 
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions aftIndicator(Boolean aftIndicator) {
+    this.aftIndicator = aftIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - &#x60;true&#x60; (This is an AFT transaction)   - &#x60;false&#x60; (default value) (This is not an AFT transaction) 
+   * @return aftIndicator
+  **/
+  @ApiModelProperty(value = "Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) ")
+  public Boolean AftIndicator() {
+    return aftIndicator;
+  }
+
+  public void setAftIndicator(Boolean aftIndicator) {
+    this.aftIndicator = aftIndicator;
+  }
+
   public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions initiator(TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator) {
     this.initiator = initiator;
     return this;
@@ -149,12 +170,13 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
         Objects.equals(this.authIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.authIndicator) &&
         Objects.equals(this.extendAuthIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.extendAuthIndicator) &&
         Objects.equals(this.cardVerificationIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.cardVerificationIndicator) &&
+        Objects.equals(this.aftIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.aftIndicator) &&
         Objects.equals(this.initiator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.initiator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, authIndicator, extendAuthIndicator, cardVerificationIndicator, initiator);
+    return Objects.hash(authType, authIndicator, extendAuthIndicator, cardVerificationIndicator, aftIndicator, initiator);
   }
 
 
@@ -185,6 +207,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     if (authIndicator != null) sb.append("    authIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("authIndicator").matches() ? "[REDACTED]" : toIndentedString(authIndicator)).append("\n");
     if (extendAuthIndicator != null) sb.append("    extendAuthIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("extendAuthIndicator").matches() ? "[REDACTED]" : toIndentedString(extendAuthIndicator)).append("\n");
     if (cardVerificationIndicator != null) sb.append("    cardVerificationIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardVerificationIndicator").matches() ? "[REDACTED]" : toIndentedString(cardVerificationIndicator)).append("\n");
+    if (aftIndicator != null) sb.append("    aftIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("aftIndicator").matches() ? "[REDACTED]" : toIndentedString(aftIndicator)).append("\n");
     if (initiator != null) sb.append("    initiator: ").append(SENSITIVE_FIELD_PATTERN.matcher("initiator").matches() ? "[REDACTED]" : toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -208,6 +231,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
     if (extendAuthIndicator != null) sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
     if (cardVerificationIndicator != null) sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
+    if (aftIndicator != null) sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
     if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();

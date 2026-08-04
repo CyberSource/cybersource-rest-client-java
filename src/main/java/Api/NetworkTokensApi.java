@@ -43,8 +43,8 @@ import Model.InlineResponse502;
 import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.PostPaymentCredentialsRequest;
 import Model.PostPaymentCredentialsRequest1;
+import Model.PostTokenizedCardDeleteRequest;
 import Model.PostTokenizedCardRequest;
-import Model.TmsTokenizedCardDeleteRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -426,7 +426,7 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postIssuerLifeCycleSimulationRequest, PostIssuerLifeCycleSimulationRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postIssuerLifeCycleSimulation,postIssuerLifeCycleSimulationAsync,postIssuerLifeCycleSimulationWithHttpInfo,postIssuerLifeCycleSimulationCall")) {
             try {
@@ -1073,9 +1073,9 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenizedCardDeleteCall(String tokenizedCardId, String profileId, TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenizedCardDeleteCall(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postTokenizedCardDeleteRequest, TmsTokenizedCardDeleteRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postTokenizedCardDeleteRequest, PostTokenizedCardDeleteRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         String inboundMLEStatus = "optional";
 
@@ -1131,7 +1131,7 @@ public class NetworkTokensApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenizedCardDeleteValidateBeforeCall(String tokenizedCardId, String profileId, TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call postTokenizedCardDeleteValidateBeforeCall(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenizedCardId' is set
         if (tokenizedCardId == null) {
@@ -1158,7 +1158,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public void postTokenizedCardDelete(String tokenizedCardId, String profileId, TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest) throws ApiException, ConfigException {
+    public void postTokenizedCardDelete(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenizedCardDelete' STARTED");
         postTokenizedCardDeleteWithHttpInfo(tokenizedCardId, profileId, postTokenizedCardDeleteRequest);
 
@@ -1174,7 +1174,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<Void> postTokenizedCardDeleteWithHttpInfo(String tokenizedCardId, String profileId, TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest) throws ApiException, ConfigException {
+    public ApiResponse<Void> postTokenizedCardDeleteWithHttpInfo(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenizedCardDeleteValidateBeforeCall(tokenizedCardId, profileId, postTokenizedCardDeleteRequest, null, null);
         return apiClient.execute(call);
@@ -1191,7 +1191,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenizedCardDeleteAsync(String tokenizedCardId, String profileId, TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ApiCallback<Void> callback) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenizedCardDeleteAsync(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ApiCallback<Void> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

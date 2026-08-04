@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.ProcessingInfoAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
+import Model.Ptsv2paymentsProcessingInformationCardVerification;
 import Model.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer;
 import Model.Ptsv2paymentsProcessingInformationJapanPaymentOptions;
 import Model.Ptsv2paymentsProcessingInformationLoanOptions;
@@ -97,6 +98,9 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("authorizationOptions")
   private ProcessingInfoAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("cardVerification")
+  private Ptsv2paymentsProcessingInformationCardVerification cardVerification = null;
 
   @SerializedName("captureOptions")
   private Ptsv2paymentsProcessingInformationCaptureOptions captureOptions = null;
@@ -542,6 +546,24 @@ public class Ptsv2paymentsProcessingInformation {
 
   public void setAuthorizationOptions(ProcessingInfoAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
+  }
+
+  public Ptsv2paymentsProcessingInformation cardVerification(Ptsv2paymentsProcessingInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
+    return this;
+  }
+
+   /**
+   * Get cardVerification
+   * @return cardVerification
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationCardVerification getCardVerification() {
+    return cardVerification;
+  }
+
+  public void setCardVerification(Ptsv2paymentsProcessingInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
   }
 
   public Ptsv2paymentsProcessingInformation captureOptions(Ptsv2paymentsProcessingInformationCaptureOptions captureOptions) {
@@ -1095,6 +1117,7 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.visaCheckoutId, ptsv2paymentsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.industryDataType, ptsv2paymentsProcessingInformation.industryDataType) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsProcessingInformation.authorizationOptions) &&
+        Objects.equals(this.cardVerification, ptsv2paymentsProcessingInformation.cardVerification) &&
         Objects.equals(this.captureOptions, ptsv2paymentsProcessingInformation.captureOptions) &&
         Objects.equals(this.recurringOptions, ptsv2paymentsProcessingInformation.recurringOptions) &&
         Objects.equals(this.bankTransferOptions, ptsv2paymentsProcessingInformation.bankTransferOptions) &&
@@ -1128,7 +1151,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId, amexIndirectModelType, walletTransactionIntent, destinationType, programIndicators, inquiryType);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, cardVerification, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId, amexIndirectModelType, walletTransactionIntent, destinationType, programIndicators, inquiryType);
   }
 
 
@@ -1174,6 +1197,7 @@ public class Ptsv2paymentsProcessingInformation {
     if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(SENSITIVE_FIELD_PATTERN.matcher("visaCheckoutId").matches() ? "[REDACTED]" : toIndentedString(visaCheckoutId)).append("\n");
     if (industryDataType != null) sb.append("    industryDataType: ").append(SENSITIVE_FIELD_PATTERN.matcher("industryDataType").matches() ? "[REDACTED]" : toIndentedString(industryDataType)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(SENSITIVE_FIELD_PATTERN.matcher("cardVerification").matches() ? "[REDACTED]" : toIndentedString(cardVerification)).append("\n");
     if (captureOptions != null) sb.append("    captureOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("captureOptions").matches() ? "[REDACTED]" : toIndentedString(captureOptions)).append("\n");
     if (recurringOptions != null) sb.append("    recurringOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringOptions").matches() ? "[REDACTED]" : toIndentedString(recurringOptions)).append("\n");
     if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankTransferOptions").matches() ? "[REDACTED]" : toIndentedString(bankTransferOptions)).append("\n");
@@ -1240,6 +1264,7 @@ public class Ptsv2paymentsProcessingInformation {
     if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
     if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
     if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");

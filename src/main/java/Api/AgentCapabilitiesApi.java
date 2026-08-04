@@ -29,6 +29,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.AcpCompleteCheckoutRequest;
+import Model.AcpCreateCheckoutSessionRequest;
+import Model.AcpUpdateCheckoutSessionRequest;
+import Model.AddAgentKeyResponse201;
+import Model.AgentRegistrationConflictResponse409;
+import Model.AgentRegistrationResponse201;
+import Model.AgentRegistrationValidationErrorResponse422;
+import Model.AgentRequest;
+import Model.AgentUpdate;
 import Model.AgenticCancelPurchaseIntentRequest;
 import Model.AgenticCardEnrollmentBadRequestResponse400;
 import Model.AgenticCardEnrollmentRequest;
@@ -42,6 +51,17 @@ import Model.AgenticPendingPurchaseIntentResponse202;
 import Model.AgenticRetrievePaymentCredentialsRequest;
 import Model.AgenticRetrievePaymentCredentialsResponse200;
 import Model.AgenticUpdatePurchaseIntentRequest;
+import Model.InlineResponse20017;
+import Model.InlineResponse20018;
+import Model.InlineResponse20113;
+import Model.InlineResponse20114;
+import Model.InlineResponse40016;
+import Model.KeyRequest;
+import Model.KeyUpdate;
+import Model.ListAgentKeysResponse200;
+import Model.UcpCompleteCheckoutRequest;
+import Model.UcpCreateCheckoutSessionRequest;
+import Model.UcpUpdateCheckoutSessionRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -76,6 +96,522 @@ public class AgentCapabilitiesApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for activateAgentKey
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call activateAgentKeyCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "activateAgentKey,activateAgentKeyAsync,activateAgentKeyWithHttpInfo,activateAgentKeyCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "activateAgentKey,activateAgentKeyAsync,activateAgentKeyWithHttpInfo,activateAgentKeyCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys/{keyId}/activate"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()))
+            .replaceAll("\\{" + "keyId" + "\\}", apiClient.escapeString(keyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call activateAgentKeyValidateBeforeCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling activateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling activateAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            logger.error("Missing the required parameter 'keyId' when calling activateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling activateAgentKey(Async)");
+        }
+        
+        
+        okhttp3.Call call = activateAgentKeyCall(agentId, keyId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Activate a key
+     * Activate a deactivated key. Raises 404 if agent or key not found, 403 if agent is deactivated.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @return AddAgentKeyResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AddAgentKeyResponse201 activateAgentKey(String agentId, String keyId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'activateAgentKey' STARTED");
+        ApiResponse<AddAgentKeyResponse201> resp = activateAgentKeyWithHttpInfo(agentId, keyId);
+        logger.info("CALL TO METHOD 'activateAgentKey' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Activate a key
+     * Activate a deactivated key. Raises 404 if agent or key not found, 403 if agent is deactivated.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AddAgentKeyResponse201> activateAgentKeyWithHttpInfo(String agentId, String keyId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = activateAgentKeyValidateBeforeCall(agentId, keyId, null, null);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Activate a key (asynchronously)
+     * Activate a deactivated key. Raises 404 if agent or key not found, 403 if agent is deactivated.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call activateAgentKeyAsync(String agentId, String keyId, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = activateAgentKeyValidateBeforeCall(agentId, keyId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for addAgentKey
+     * @param agentId Unique agent identifier (required)
+     * @param keyRequest Key creation request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call addAgentKeyCall(String agentId, KeyRequest keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyRequest, KeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "addAgentKey,addAgentKeyAsync,addAgentKeyWithHttpInfo,addAgentKeyCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "addAgentKey,addAgentKeyAsync,addAgentKeyWithHttpInfo,addAgentKeyCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call addAgentKeyValidateBeforeCall(String agentId, KeyRequest keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling addAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling addAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyRequest' is set
+        if (keyRequest == null) {
+            logger.error("Missing the required parameter 'keyRequest' when calling addAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyRequest' when calling addAgentKey(Async)");
+        }
+        
+        
+        okhttp3.Call call = addAgentKeyCall(agentId, keyRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Add a key to an agent
+     * [category 1 — Agent_Capabilities] Upload a Base64-encoded public key for an agent.
+     * @param agentId Unique agent identifier (required)
+     * @param keyRequest Key creation request (required)
+     * @return AddAgentKeyResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AddAgentKeyResponse201 addAgentKey(String agentId, KeyRequest keyRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'addAgentKey' STARTED");
+        ApiResponse<AddAgentKeyResponse201> resp = addAgentKeyWithHttpInfo(agentId, keyRequest);
+        logger.info("CALL TO METHOD 'addAgentKey' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Add a key to an agent
+     * [category 1 — Agent_Capabilities] Upload a Base64-encoded public key for an agent.
+     * @param agentId Unique agent identifier (required)
+     * @param keyRequest Key creation request (required)
+     * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AddAgentKeyResponse201> addAgentKeyWithHttpInfo(String agentId, KeyRequest keyRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, keyRequest, null, null);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Add a key to an agent (asynchronously)
+     * [category 1 — Agent_Capabilities] Upload a Base64-encoded public key for an agent.
+     * @param agentId Unique agent identifier (required)
+     * @param keyRequest Key creation request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call addAgentKeyAsync(String agentId, KeyRequest keyRequest, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, keyRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cancelCheckout
+     * @param sessionId The unique identifier of the ACP checkout session to cancel. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call cancelCheckoutCall(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "cancelCheckout,cancelCheckoutAsync,cancelCheckoutWithHttpInfo,cancelCheckoutCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "cancelCheckout,cancelCheckoutAsync,cancelCheckoutWithHttpInfo,cancelCheckoutCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout_sessions/{session_id}/cancel"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (userAgent != null)
+        localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
+        if (requestId != null)
+        localVarHeaderParams.put("Request-Id", apiClient.parameterToString(requestId));
+        if (signature != null)
+        localVarHeaderParams.put("Signature", apiClient.parameterToString(signature));
+        if (timestamp != null)
+        localVarHeaderParams.put("Timestamp", apiClient.parameterToString(timestamp));
+        if (apIVersion != null)
+        localVarHeaderParams.put("API-Version", apiClient.parameterToString(apIVersion));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call cancelCheckoutValidateBeforeCall(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling cancelCheckout(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling cancelCheckout(Async)");
+        }
+        
+        
+        okhttp3.Call call = cancelCheckoutCall(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Cancel Checkout ACP
+     * Cancels an active ACP checkout session. No charge is made to the buyer.  This call is safe to make multiple times — cancelling an already-cancelled session returns a successful response without error.  Sessions also expire automatically after 30 minutes of inactivity, so explicit cancellation is optional but recommended to release any reserved inventory immediately. 
+     * @param sessionId The unique identifier of the ACP checkout session to cancel. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return InlineResponse20018
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20018 cancelCheckout(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'cancelCheckout' STARTED");
+        ApiResponse<InlineResponse20018> resp = cancelCheckoutWithHttpInfo(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        logger.info("CALL TO METHOD 'cancelCheckout' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Cancel Checkout ACP
+     * Cancels an active ACP checkout session. No charge is made to the buyer.  This call is safe to make multiple times — cancelling an already-cancelled session returns a successful response without error.  Sessions also expire automatically after 30 minutes of inactivity, so explicit cancellation is optional but recommended to release any reserved inventory immediately. 
+     * @param sessionId The unique identifier of the ACP checkout session to cancel. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return ApiResponse&lt;InlineResponse20018&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20018> cancelCheckoutWithHttpInfo(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = cancelCheckoutValidateBeforeCall(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Cancel Checkout ACP (asynchronously)
+     * Cancels an active ACP checkout session. No charge is made to the buyer.  This call is safe to make multiple times — cancelling an already-cancelled session returns a successful response without error.  Sessions also expire automatically after 30 minutes of inactivity, so explicit cancellation is optional but recommended to release any reserved inventory immediately. 
+     * @param sessionId The unique identifier of the ACP checkout session to cancel. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call cancelCheckoutAsync(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20018> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = cancelCheckoutValidateBeforeCall(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for cancelPurchaseIntent
      * @param instructionId  (required)
@@ -232,6 +768,207 @@ public class AgentCapabilitiesApi {
 
         okhttp3.Call call = cancelPurchaseIntentValidateBeforeCall(instructionId, agenticCancelPurchaseIntentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AgenticCreatePurchaseIntentResponse200>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for completeCheckout
+     * @param sessionId The unique identifier of the ACP checkout session to complete. (required)
+     * @param acpCompleteCheckoutRequest Final buyer and payment details needed to place the order. Both &#x60;buyer&#x60; and &#x60;payment&#x60; may have been provided in earlier Create/Update calls; if so, they can be omitted here. At least a valid payment token is required to process the transaction.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call completeCheckoutCall(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpCompleteCheckoutRequest, AcpCompleteCheckoutRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "completeCheckout,completeCheckoutAsync,completeCheckoutWithHttpInfo,completeCheckoutCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "completeCheckout,completeCheckoutAsync,completeCheckoutWithHttpInfo,completeCheckoutCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout_sessions/{session_id}/complete"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (userAgent != null)
+        localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
+        if (requestId != null)
+        localVarHeaderParams.put("Request-Id", apiClient.parameterToString(requestId));
+        if (signature != null)
+        localVarHeaderParams.put("Signature", apiClient.parameterToString(signature));
+        if (timestamp != null)
+        localVarHeaderParams.put("Timestamp", apiClient.parameterToString(timestamp));
+        if (apIVersion != null)
+        localVarHeaderParams.put("API-Version", apiClient.parameterToString(apIVersion));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call completeCheckoutValidateBeforeCall(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling completeCheckout(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling completeCheckout(Async)");
+        }
+        
+        // verify the required parameter 'acpCompleteCheckoutRequest' is set
+        if (acpCompleteCheckoutRequest == null) {
+            logger.error("Missing the required parameter 'acpCompleteCheckoutRequest' when calling completeCheckout(Async)");
+            throw new ApiException("Missing the required parameter 'acpCompleteCheckoutRequest' when calling completeCheckout(Async)");
+        }
+        
+        
+        okhttp3.Call call = completeCheckoutCall(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Complete Checkout ACP
+     * **Final step of the ACP checkout flow.**  Submits payment and buyer information to place the order with the merchant. On success, the session transitions to &#x60;completed&#x60; and an &#x60;order_id&#x60; is returned confirming the merchant accepted the order.  Once completed, the session is immutable — it cannot be updated or cancelled.  **Payment token:** The &#x60;payment.token&#x60; must be a valid token from the payment provider configured for the merchant (e.g. a tokenized card from Stripe or Braintree). ACG forwards the token to the merchant&#39;s payment processor — it is never stored. 
+     * @param sessionId The unique identifier of the ACP checkout session to complete. (required)
+     * @param acpCompleteCheckoutRequest Final buyer and payment details needed to place the order. Both &#x60;buyer&#x60; and &#x60;payment&#x60; may have been provided in earlier Create/Update calls; if so, they can be omitted here. At least a valid payment token is required to process the transaction.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return InlineResponse20017
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20017 completeCheckout(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'completeCheckout' STARTED");
+        ApiResponse<InlineResponse20017> resp = completeCheckoutWithHttpInfo(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        logger.info("CALL TO METHOD 'completeCheckout' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Complete Checkout ACP
+     * **Final step of the ACP checkout flow.**  Submits payment and buyer information to place the order with the merchant. On success, the session transitions to &#x60;completed&#x60; and an &#x60;order_id&#x60; is returned confirming the merchant accepted the order.  Once completed, the session is immutable — it cannot be updated or cancelled.  **Payment token:** The &#x60;payment.token&#x60; must be a valid token from the payment provider configured for the merchant (e.g. a tokenized card from Stripe or Braintree). ACG forwards the token to the merchant&#39;s payment processor — it is never stored. 
+     * @param sessionId The unique identifier of the ACP checkout session to complete. (required)
+     * @param acpCompleteCheckoutRequest Final buyer and payment details needed to place the order. Both &#x60;buyer&#x60; and &#x60;payment&#x60; may have been provided in earlier Create/Update calls; if so, they can be omitted here. At least a valid payment token is required to process the transaction.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return ApiResponse&lt;InlineResponse20017&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20017> completeCheckoutWithHttpInfo(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = completeCheckoutValidateBeforeCall(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Complete Checkout ACP (asynchronously)
+     * **Final step of the ACP checkout flow.**  Submits payment and buyer information to place the order with the merchant. On success, the session transitions to &#x60;completed&#x60; and an &#x60;order_id&#x60; is returned confirming the merchant accepted the order.  Once completed, the session is immutable — it cannot be updated or cancelled.  **Payment token:** The &#x60;payment.token&#x60; must be a valid token from the payment provider configured for the merchant (e.g. a tokenized card from Stripe or Braintree). ACG forwards the token to the merchant&#39;s payment processor — it is never stored. 
+     * @param sessionId The unique identifier of the ACP checkout session to complete. (required)
+     * @param acpCompleteCheckoutRequest Final buyer and payment details needed to place the order. Both &#x60;buyer&#x60; and &#x60;payment&#x60; may have been provided in earlier Create/Update calls; if so, they can be omitted here. At least a valid payment token is required to process the transaction.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call completeCheckoutAsync(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20017> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = completeCheckoutValidateBeforeCall(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -395,6 +1132,355 @@ public class AgentCapabilitiesApi {
         return call;
     }
     /**
+     * Build call for createCheckoutSession
+     * @param acpCreateCheckoutSessionRequest The cart contents and buyer context for this checkout session. &#x60;items&#x60; is required. &#x60;buyer&#x60; and &#x60;fulfillment_address&#x60; are optional on creation and can be provided via Update Session before completing checkout.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createCheckoutSessionCall(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpCreateCheckoutSessionRequest, AcpCreateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createCheckoutSession,createCheckoutSessionAsync,createCheckoutSessionWithHttpInfo,createCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createCheckoutSession,createCheckoutSessionAsync,createCheckoutSessionWithHttpInfo,createCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout_sessions";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (userAgent != null)
+        localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
+        if (requestId != null)
+        localVarHeaderParams.put("Request-Id", apiClient.parameterToString(requestId));
+        if (signature != null)
+        localVarHeaderParams.put("Signature", apiClient.parameterToString(signature));
+        if (timestamp != null)
+        localVarHeaderParams.put("Timestamp", apiClient.parameterToString(timestamp));
+        if (apIVersion != null)
+        localVarHeaderParams.put("API-Version", apiClient.parameterToString(apIVersion));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createCheckoutSessionValidateBeforeCall(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'acpCreateCheckoutSessionRequest' is set
+        if (acpCreateCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'acpCreateCheckoutSessionRequest' when calling createCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'acpCreateCheckoutSessionRequest' when calling createCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = createCheckoutSessionCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create Checkout Session ACP
+     * **Step 1 of the ACP checkout flow.**  Initiates a new ACP checkout session with the buyer&#39;s cart. ACG validates item availability against the merchant&#39;s catalog, calculates initial pricing and tax, and returns a session object with a unique &#x60;id&#x60;.  **Store the &#x60;id&#x60;** — every subsequent call in this checkout flow (update, complete, cancel) requires it.  The session remains active for 30 minutes. A new session must be created after expiry.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; header to safely retry this call without creating duplicate sessions. 
+     * @param acpCreateCheckoutSessionRequest The cart contents and buyer context for this checkout session. &#x60;items&#x60; is required. &#x60;buyer&#x60; and &#x60;fulfillment_address&#x60; are optional on creation and can be provided via Update Session before completing checkout.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return InlineResponse20113
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20113 createCheckoutSession(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'createCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20113> resp = createCheckoutSessionWithHttpInfo(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        logger.info("CALL TO METHOD 'createCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create Checkout Session ACP
+     * **Step 1 of the ACP checkout flow.**  Initiates a new ACP checkout session with the buyer&#39;s cart. ACG validates item availability against the merchant&#39;s catalog, calculates initial pricing and tax, and returns a session object with a unique &#x60;id&#x60;.  **Store the &#x60;id&#x60;** — every subsequent call in this checkout flow (update, complete, cancel) requires it.  The session remains active for 30 minutes. A new session must be created after expiry.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; header to safely retry this call without creating duplicate sessions. 
+     * @param acpCreateCheckoutSessionRequest The cart contents and buyer context for this checkout session. &#x60;items&#x60; is required. &#x60;buyer&#x60; and &#x60;fulfillment_address&#x60; are optional on creation and can be provided via Update Session before completing checkout.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20113> createCheckoutSessionWithHttpInfo(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Checkout Session ACP (asynchronously)
+     * **Step 1 of the ACP checkout flow.**  Initiates a new ACP checkout session with the buyer&#39;s cart. ACG validates item availability against the merchant&#39;s catalog, calculates initial pricing and tax, and returns a session object with a unique &#x60;id&#x60;.  **Store the &#x60;id&#x60;** — every subsequent call in this checkout flow (update, complete, cancel) requires it.  The session remains active for 30 minutes. A new session must be created after expiry.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; header to safely retry this call without creating duplicate sessions. 
+     * @param acpCreateCheckoutSessionRequest The cart contents and buyer context for this checkout session. &#x60;items&#x60; is required. &#x60;buyer&#x60; and &#x60;fulfillment_address&#x60; are optional on creation and can be provided via Update Session before completing checkout.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createCheckoutSessionAsync(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for deactivateAgentKey
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call deactivateAgentKeyCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deactivateAgentKey,deactivateAgentKeyAsync,deactivateAgentKeyWithHttpInfo,deactivateAgentKeyCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "deactivateAgentKey,deactivateAgentKeyAsync,deactivateAgentKeyWithHttpInfo,deactivateAgentKeyCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys/{keyId}"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()))
+            .replaceAll("\\{" + "keyId" + "\\}", apiClient.escapeString(keyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deactivateAgentKeyValidateBeforeCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling deactivateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling deactivateAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            logger.error("Missing the required parameter 'keyId' when calling deactivateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling deactivateAgentKey(Async)");
+        }
+        
+        
+        okhttp3.Call call = deactivateAgentKeyCall(agentId, keyId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Deactivate a key
+     * Deactivate a key (soft delete). Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public void deactivateAgentKey(String agentId, String keyId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'deactivateAgentKey' STARTED");
+        deactivateAgentKeyWithHttpInfo(agentId, keyId);
+
+    }
+
+    /**
+     * Deactivate a key
+     * Deactivate a key (soft delete). Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<Void> deactivateAgentKeyWithHttpInfo(String agentId, String keyId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = deactivateAgentKeyValidateBeforeCall(agentId, keyId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Deactivate a key (asynchronously)
+     * Deactivate a key (soft delete). Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call deactivateAgentKeyAsync(String agentId, String keyId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = deactivateAgentKeyValidateBeforeCall(agentId, keyId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for enrollCard
      * @param agenticCardEnrollmentRequest  (required)
      * @param progressListener Progress listener
@@ -543,6 +1629,522 @@ public class AgentCapabilitiesApi {
         return call;
     }
     /**
+     * Build call for getAgent
+     * @param agentId Unique agent identifier (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getAgentCall(String agentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAgent,getAgentAsync,getAgentWithHttpInfo,getAgentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getAgent,getAgentAsync,getAgentWithHttpInfo,getAgentCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAgentValidateBeforeCall(String agentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling getAgent(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling getAgent(Async)");
+        }
+        
+        
+        okhttp3.Call call = getAgentCall(agentId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get an agent
+     * [category 1 — Agent_Capabilities] Get agent by ID with all keys. Raises 404 if agent not found.
+     * @param agentId Unique agent identifier (required)
+     * @return AgentRegistrationResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AgentRegistrationResponse201 getAgent(String agentId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'getAgent' STARTED");
+        ApiResponse<AgentRegistrationResponse201> resp = getAgentWithHttpInfo(agentId);
+        logger.info("CALL TO METHOD 'getAgent' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get an agent
+     * [category 1 — Agent_Capabilities] Get agent by ID with all keys. Raises 404 if agent not found.
+     * @param agentId Unique agent identifier (required)
+     * @return ApiResponse&lt;AgentRegistrationResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AgentRegistrationResponse201> getAgentWithHttpInfo(String agentId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = getAgentValidateBeforeCall(agentId, null, null);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get an agent (asynchronously)
+     * [category 1 — Agent_Capabilities] Get agent by ID with all keys. Raises 404 if agent not found.
+     * @param agentId Unique agent identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getAgentAsync(String agentId, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getAgentValidateBeforeCall(agentId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getAgentKey
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getAgentKeyCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAgentKey,getAgentKeyAsync,getAgentKeyWithHttpInfo,getAgentKeyCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getAgentKey,getAgentKeyAsync,getAgentKeyWithHttpInfo,getAgentKeyCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys/{keyId}"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()))
+            .replaceAll("\\{" + "keyId" + "\\}", apiClient.escapeString(keyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAgentKeyValidateBeforeCall(String agentId, String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling getAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling getAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            logger.error("Missing the required parameter 'keyId' when calling getAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling getAgentKey(Async)");
+        }
+        
+        
+        okhttp3.Call call = getAgentKeyCall(agentId, keyId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get a key by agent and key ID
+     * Get a specific key by agent ID and key ID. Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @return AddAgentKeyResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AddAgentKeyResponse201 getAgentKey(String agentId, String keyId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'getAgentKey' STARTED");
+        ApiResponse<AddAgentKeyResponse201> resp = getAgentKeyWithHttpInfo(agentId, keyId);
+        logger.info("CALL TO METHOD 'getAgentKey' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get a key by agent and key ID
+     * Get a specific key by agent ID and key ID. Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AddAgentKeyResponse201> getAgentKeyWithHttpInfo(String agentId, String keyId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = getAgentKeyValidateBeforeCall(agentId, keyId, null, null);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get a key by agent and key ID (asynchronously)
+     * Get a specific key by agent ID and key ID. Raises 404 if key not found.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getAgentKeyAsync(String agentId, String keyId, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getAgentKeyValidateBeforeCall(agentId, keyId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCheckoutSession
+     * @param sessionId The unique identifier of the ACP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpGetCheckoutSessionRequest Empty request body. (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getCheckoutSessionCall(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpGetCheckoutSessionRequest, Object.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCheckoutSession,getCheckoutSessionAsync,getCheckoutSessionWithHttpInfo,getCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "getCheckoutSession,getCheckoutSessionAsync,getCheckoutSessionWithHttpInfo,getCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout_sessions/{session_id}"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (userAgent != null)
+        localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
+        if (requestId != null)
+        localVarHeaderParams.put("Request-Id", apiClient.parameterToString(requestId));
+        if (signature != null)
+        localVarHeaderParams.put("Signature", apiClient.parameterToString(signature));
+        if (timestamp != null)
+        localVarHeaderParams.put("Timestamp", apiClient.parameterToString(timestamp));
+        if (apIVersion != null)
+        localVarHeaderParams.put("API-Version", apiClient.parameterToString(apIVersion));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCheckoutSessionValidateBeforeCall(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling getCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling getCheckoutSession(Async)");
+        }
+        
+        // verify the required parameter 'acpGetCheckoutSessionRequest' is set
+        if (acpGetCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'acpGetCheckoutSessionRequest' when calling getCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'acpGetCheckoutSessionRequest' when calling getCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = getCheckoutSessionCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get Checkout Session ACP
+     * Retrieves the current state of an ACP checkout session, including line items, buyer information,  and current totals.  Use this to: - Verify session status before presenting a checkout summary to the buyer - Resume an interrupted checkout flow - Poll for status after an async operation - Confirm a session has not expired before submitting payment 
+     * @param sessionId The unique identifier of the ACP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpGetCheckoutSessionRequest Empty request body. (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return InlineResponse20113
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20113 getCheckoutSession(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'getCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20113> resp = getCheckoutSessionWithHttpInfo(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        logger.info("CALL TO METHOD 'getCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get Checkout Session ACP
+     * Retrieves the current state of an ACP checkout session, including line items, buyer information,  and current totals.  Use this to: - Verify session status before presenting a checkout summary to the buyer - Resume an interrupted checkout flow - Poll for status after an async operation - Confirm a session has not expired before submitting payment 
+     * @param sessionId The unique identifier of the ACP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpGetCheckoutSessionRequest Empty request body. (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20113> getCheckoutSessionWithHttpInfo(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Checkout Session ACP (asynchronously)
+     * Retrieves the current state of an ACP checkout session, including line items, buyer information,  and current totals.  Use this to: - Verify session status before presenting a checkout summary to the buyer - Resume an interrupted checkout flow - Poll for status after an async operation - Confirm a session has not expired before submitting payment 
+     * @param sessionId The unique identifier of the ACP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpGetCheckoutSessionRequest Empty request body. (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call getCheckoutSessionAsync(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for initiatePurchaseIntent
      * @param agenticCreatePurchaseIntentRequest  (required)
      * @param progressListener Progress listener
@@ -687,6 +2289,318 @@ public class AgentCapabilitiesApi {
 
         okhttp3.Call call = initiatePurchaseIntentValidateBeforeCall(agenticCreatePurchaseIntentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AgenticCreatePurchaseIntentResponse200>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listAgentKeys
+     * @param agentId Unique agent identifier (required)
+     * @param page Page number (1-indexed) (optional, default to 1)
+     * @param pageSize Items per page (max 100) (optional, default to 30)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call listAgentKeysCall(String agentId, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "listAgentKeys,listAgentKeysAsync,listAgentKeysWithHttpInfo,listAgentKeysCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "listAgentKeys,listAgentKeysAsync,listAgentKeysWithHttpInfo,listAgentKeysCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageSize", pageSize));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAgentKeysValidateBeforeCall(String agentId, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling listAgentKeys(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling listAgentKeys(Async)");
+        }
+        
+        
+        okhttp3.Call call = listAgentKeysCall(agentId, page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List keys for an agent
+     * [category 1 — Agent_Capabilities] List all keys for a specific agent with pagination.
+     * @param agentId Unique agent identifier (required)
+     * @param page Page number (1-indexed) (optional, default to 1)
+     * @param pageSize Items per page (max 100) (optional, default to 30)
+     * @return ListAgentKeysResponse200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ListAgentKeysResponse200 listAgentKeys(String agentId, Integer page, Integer pageSize) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'listAgentKeys' STARTED");
+        ApiResponse<ListAgentKeysResponse200> resp = listAgentKeysWithHttpInfo(agentId, page, pageSize);
+        logger.info("CALL TO METHOD 'listAgentKeys' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * List keys for an agent
+     * [category 1 — Agent_Capabilities] List all keys for a specific agent with pagination.
+     * @param agentId Unique agent identifier (required)
+     * @param page Page number (1-indexed) (optional, default to 1)
+     * @param pageSize Items per page (max 100) (optional, default to 30)
+     * @return ApiResponse&lt;ListAgentKeysResponse200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<ListAgentKeysResponse200> listAgentKeysWithHttpInfo(String agentId, Integer page, Integer pageSize) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = listAgentKeysValidateBeforeCall(agentId, page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ListAgentKeysResponse200>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List keys for an agent (asynchronously)
+     * [category 1 — Agent_Capabilities] List all keys for a specific agent with pagination.
+     * @param agentId Unique agent identifier (required)
+     * @param page Page number (1-indexed) (optional, default to 1)
+     * @param pageSize Items per page (max 100) (optional, default to 30)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call listAgentKeysAsync(String agentId, Integer page, Integer pageSize, final ApiCallback<ListAgentKeysResponse200> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = listAgentKeysValidateBeforeCall(agentId, page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ListAgentKeysResponse200>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for registerAgent
+     * @param agentRequest Agent registration request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call registerAgentCall(AgentRequest agentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agentRequest, AgentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "registerAgent,registerAgentAsync,registerAgentWithHttpInfo,registerAgentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "registerAgent,registerAgentAsync,registerAgentWithHttpInfo,registerAgentCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call registerAgentValidateBeforeCall(AgentRequest agentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentRequest' is set
+        if (agentRequest == null) {
+            logger.error("Missing the required parameter 'agentRequest' when calling registerAgent(Async)");
+            throw new ApiException("Missing the required parameter 'agentRequest' when calling registerAgent(Async)");
+        }
+        
+        
+        okhttp3.Call call = registerAgentCall(agentRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Register an agent
+     * Register a new AI agent in the VARS. Once registered, the agent can upload public keys that merchants and Visa services use to verify request signatures. Raises 409 if domain, contactEmail, or tokenRequestorId already exists.
+     * @param agentRequest Agent registration request (required)
+     * @return AgentRegistrationResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AgentRegistrationResponse201 registerAgent(AgentRequest agentRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'registerAgent' STARTED");
+        ApiResponse<AgentRegistrationResponse201> resp = registerAgentWithHttpInfo(agentRequest);
+        logger.info("CALL TO METHOD 'registerAgent' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Register an agent
+     * Register a new AI agent in the VARS. Once registered, the agent can upload public keys that merchants and Visa services use to verify request signatures. Raises 409 if domain, contactEmail, or tokenRequestorId already exists.
+     * @param agentRequest Agent registration request (required)
+     * @return ApiResponse&lt;AgentRegistrationResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AgentRegistrationResponse201> registerAgentWithHttpInfo(AgentRequest agentRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = registerAgentValidateBeforeCall(agentRequest, null, null);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Register an agent (asynchronously)
+     * Register a new AI agent in the VARS. Once registered, the agent can upload public keys that merchants and Visa services use to verify request signatures. Raises 409 if domain, contactEmail, or tokenRequestorId already exists.
+     * @param agentRequest Agent registration request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call registerAgentAsync(AgentRequest agentRequest, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = registerAgentValidateBeforeCall(agentRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -846,6 +2760,1325 @@ public class AgentCapabilitiesApi {
 
         okhttp3.Call call = retrievePaymentCredentialsValidateBeforeCall(instructionId, agenticRetrievePaymentCredentialsRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AgenticRetrievePaymentCredentialsResponse200>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for ucpCancelCheckout
+     * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCancelCheckoutCall(String sessionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCancelCheckout,ucpCancelCheckoutAsync,ucpCancelCheckoutWithHttpInfo,ucpCancelCheckoutCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "ucpCancelCheckout,ucpCancelCheckoutAsync,ucpCancelCheckoutWithHttpInfo,ucpCancelCheckoutCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout-sessions/{session_id}/cancel"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call ucpCancelCheckoutValidateBeforeCall(String sessionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling ucpCancelCheckout(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling ucpCancelCheckout(Async)");
+        }
+        
+        
+        okhttp3.Call call = ucpCancelCheckoutCall(sessionId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Cancel Checkout UCP
+     * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
+     * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
+     * @return InlineResponse20114
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20114 ucpCancelCheckout(String sessionId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'ucpCancelCheckout' STARTED");
+        ApiResponse<InlineResponse20114> resp = ucpCancelCheckoutWithHttpInfo(sessionId);
+        logger.info("CALL TO METHOD 'ucpCancelCheckout' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Cancel Checkout UCP
+     * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
+     * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
+     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20114> ucpCancelCheckoutWithHttpInfo(String sessionId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Cancel Checkout UCP (asynchronously)
+     * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
+     * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCancelCheckoutAsync(String sessionId, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for ucpCompleteCheckout
+     * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
+     * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
+     * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCompleteCheckoutCall(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpCompleteCheckoutRequest, UcpCompleteCheckoutRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCompleteCheckout,ucpCompleteCheckoutAsync,ucpCompleteCheckoutWithHttpInfo,ucpCompleteCheckoutCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "ucpCompleteCheckout,ucpCompleteCheckoutAsync,ucpCompleteCheckoutWithHttpInfo,ucpCompleteCheckoutCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout-sessions/{session_id}/complete"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("idempotency-key", apiClient.parameterToString(idempotencyKey));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call ucpCompleteCheckoutValidateBeforeCall(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling ucpCompleteCheckout(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling ucpCompleteCheckout(Async)");
+        }
+        
+        
+        okhttp3.Call call = ucpCompleteCheckoutCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Complete Checkout UCP
+     * **Final step of the UCP checkout flow.**  Finalizes the session and places the order with the merchant. ACG translates the UCP completion request to the merchant&#39;s checkout API.  On success, the session transitions to &#x60;completed&#x60;. An &#x60;order_id&#x60; is not returned in the UCP response — use the ACP Complete endpoint if you need order confirmation details.  **Always use an &#x60;idempotency-key&#x60;** to prevent duplicate orders on network retries. 
+     * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
+     * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
+     * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
+     * @return InlineResponse20114
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20114 ucpCompleteCheckout(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'ucpCompleteCheckout' STARTED");
+        ApiResponse<InlineResponse20114> resp = ucpCompleteCheckoutWithHttpInfo(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+        logger.info("CALL TO METHOD 'ucpCompleteCheckout' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Complete Checkout UCP
+     * **Final step of the UCP checkout flow.**  Finalizes the session and places the order with the merchant. ACG translates the UCP completion request to the merchant&#39;s checkout API.  On success, the session transitions to &#x60;completed&#x60;. An &#x60;order_id&#x60; is not returned in the UCP response — use the ACP Complete endpoint if you need order confirmation details.  **Always use an &#x60;idempotency-key&#x60;** to prevent duplicate orders on network retries. 
+     * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
+     * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
+     * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
+     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20114> ucpCompleteCheckoutWithHttpInfo(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Complete Checkout UCP (asynchronously)
+     * **Final step of the UCP checkout flow.**  Finalizes the session and places the order with the merchant. ACG translates the UCP completion request to the merchant&#39;s checkout API.  On success, the session transitions to &#x60;completed&#x60;. An &#x60;order_id&#x60; is not returned in the UCP response — use the ACP Complete endpoint if you need order confirmation details.  **Always use an &#x60;idempotency-key&#x60;** to prevent duplicate orders on network retries. 
+     * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
+     * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
+     * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCompleteCheckoutAsync(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for ucpCreateCheckoutSession
+     * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
+     * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCreateCheckoutSessionCall(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpCreateCheckoutSessionRequest, UcpCreateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCreateCheckoutSession,ucpCreateCheckoutSessionAsync,ucpCreateCheckoutSessionWithHttpInfo,ucpCreateCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "ucpCreateCheckoutSession,ucpCreateCheckoutSessionAsync,ucpCreateCheckoutSessionWithHttpInfo,ucpCreateCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout-sessions";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("idempotency-key", apiClient.parameterToString(idempotencyKey));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call ucpCreateCheckoutSessionValidateBeforeCall(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'ucpCreateCheckoutSessionRequest' is set
+        if (ucpCreateCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'ucpCreateCheckoutSessionRequest' when calling ucpCreateCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'ucpCreateCheckoutSessionRequest' when calling ucpCreateCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = ucpCreateCheckoutSessionCall(ucpCreateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create Checkout Session UCP
+     * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
+     * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
+     * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
+     * @return InlineResponse20114
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20114 ucpCreateCheckoutSession(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20114> resp = ucpCreateCheckoutSessionWithHttpInfo(ucpCreateCheckoutSessionRequest, idempotencyKey);
+        logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create Checkout Session UCP
+     * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
+     * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
+     * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
+     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20114> ucpCreateCheckoutSessionWithHttpInfo(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Checkout Session UCP (asynchronously)
+     * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
+     * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
+     * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpCreateCheckoutSessionAsync(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for ucpGetCheckoutSession
+     * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param ucpGetCheckoutSessionRequest Empty request body. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpGetCheckoutSessionCall(String sessionId, Object ucpGetCheckoutSessionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpGetCheckoutSessionRequest, Object.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpGetCheckoutSession,ucpGetCheckoutSessionAsync,ucpGetCheckoutSessionWithHttpInfo,ucpGetCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "ucpGetCheckoutSession,ucpGetCheckoutSessionAsync,ucpGetCheckoutSessionWithHttpInfo,ucpGetCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout-sessions/{session_id}"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call ucpGetCheckoutSessionValidateBeforeCall(String sessionId, Object ucpGetCheckoutSessionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling ucpGetCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling ucpGetCheckoutSession(Async)");
+        }
+        
+        // verify the required parameter 'ucpGetCheckoutSessionRequest' is set
+        if (ucpGetCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'ucpGetCheckoutSessionRequest' when calling ucpGetCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'ucpGetCheckoutSessionRequest' when calling ucpGetCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = ucpGetCheckoutSessionCall(sessionId, ucpGetCheckoutSessionRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get Checkout Session UCP
+     * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
+     * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param ucpGetCheckoutSessionRequest Empty request body. (required)
+     * @return InlineResponse20114
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20114 ucpGetCheckoutSession(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'ucpGetCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20114> resp = ucpGetCheckoutSessionWithHttpInfo(sessionId, ucpGetCheckoutSessionRequest);
+        logger.info("CALL TO METHOD 'ucpGetCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get Checkout Session UCP
+     * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
+     * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param ucpGetCheckoutSessionRequest Empty request body. (required)
+     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20114> ucpGetCheckoutSessionWithHttpInfo(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Checkout Session UCP (asynchronously)
+     * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
+     * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param ucpGetCheckoutSessionRequest Empty request body. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpGetCheckoutSessionAsync(String sessionId, Object ucpGetCheckoutSessionRequest, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for ucpUpdateCheckoutSession
+     * @param sessionId The unique identifier of the UCP checkout session to update. (required)
+     * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
+     * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpUpdateCheckoutSessionCall(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpUpdateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpUpdateCheckoutSession,ucpUpdateCheckoutSessionAsync,ucpUpdateCheckoutSessionWithHttpInfo,ucpUpdateCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "ucpUpdateCheckoutSession,ucpUpdateCheckoutSessionAsync,ucpUpdateCheckoutSessionWithHttpInfo,ucpUpdateCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout-sessions/{session_id}"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("idempotency-key", apiClient.parameterToString(idempotencyKey));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call ucpUpdateCheckoutSessionValidateBeforeCall(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling ucpUpdateCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling ucpUpdateCheckoutSession(Async)");
+        }
+        
+        // verify the required parameter 'ucpUpdateCheckoutSessionRequest' is set
+        if (ucpUpdateCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'ucpUpdateCheckoutSessionRequest' when calling ucpUpdateCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'ucpUpdateCheckoutSessionRequest' when calling ucpUpdateCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = ucpUpdateCheckoutSessionCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update Checkout Session UCP
+     * Modifies an active UCP checkout session and returns the updated session state.  Use this to change line item quantities, update fulfillment address or method, or apply discount codes. Totals are recalculated and returned in the response.  Only the fields you include in the request body are updated. 
+     * @param sessionId The unique identifier of the UCP checkout session to update. (required)
+     * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
+     * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
+     * @return InlineResponse20114
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20114 ucpUpdateCheckoutSession(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20114> resp = ucpUpdateCheckoutSessionWithHttpInfo(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+        logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update Checkout Session UCP
+     * Modifies an active UCP checkout session and returns the updated session state.  Use this to change line item quantities, update fulfillment address or method, or apply discount codes. Totals are recalculated and returned in the response.  Only the fields you include in the request body are updated. 
+     * @param sessionId The unique identifier of the UCP checkout session to update. (required)
+     * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
+     * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
+     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20114> ucpUpdateCheckoutSessionWithHttpInfo(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Checkout Session UCP (asynchronously)
+     * Modifies an active UCP checkout session and returns the updated session state.  Use this to change line item quantities, update fulfillment address or method, or apply discount codes. Totals are recalculated and returned in the response.  Only the fields you include in the request body are updated. 
+     * @param sessionId The unique identifier of the UCP checkout session to update. (required)
+     * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
+     * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call ucpUpdateCheckoutSessionAsync(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateAgent
+     * @param agentId Unique agent identifier (required)
+     * @param agentUpdate Agent update request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateAgentCall(String agentId, AgentUpdate agentUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agentUpdate, AgentUpdate.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateAgent,updateAgentAsync,updateAgentWithHttpInfo,updateAgentCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "updateAgent,updateAgentAsync,updateAgentWithHttpInfo,updateAgentCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateAgentValidateBeforeCall(String agentId, AgentUpdate agentUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling updateAgent(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling updateAgent(Async)");
+        }
+        
+        // verify the required parameter 'agentUpdate' is set
+        if (agentUpdate == null) {
+            logger.error("Missing the required parameter 'agentUpdate' when calling updateAgent(Async)");
+            throw new ApiException("Missing the required parameter 'agentUpdate' when calling updateAgent(Async)");
+        }
+        
+        
+        okhttp3.Call call = updateAgentCall(agentId, agentUpdate, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update an agent
+     * [category 1 — Agent_Capabilities] Update agent information. Updatable fields are name, domain, description, contactEmail, and agentMetadata. Extra fields (e.g. tokenRequestorId, keys) will return 422 Validation Error. Raises 404 if agent not found, 403 if agent is deactivated, 409 if new domain or contactEmail already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param agentUpdate Agent update request (required)
+     * @return AgentRegistrationResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AgentRegistrationResponse201 updateAgent(String agentId, AgentUpdate agentUpdate) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'updateAgent' STARTED");
+        ApiResponse<AgentRegistrationResponse201> resp = updateAgentWithHttpInfo(agentId, agentUpdate);
+        logger.info("CALL TO METHOD 'updateAgent' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update an agent
+     * [category 1 — Agent_Capabilities] Update agent information. Updatable fields are name, domain, description, contactEmail, and agentMetadata. Extra fields (e.g. tokenRequestorId, keys) will return 422 Validation Error. Raises 404 if agent not found, 403 if agent is deactivated, 409 if new domain or contactEmail already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param agentUpdate Agent update request (required)
+     * @return ApiResponse&lt;AgentRegistrationResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AgentRegistrationResponse201> updateAgentWithHttpInfo(String agentId, AgentUpdate agentUpdate) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = updateAgentValidateBeforeCall(agentId, agentUpdate, null, null);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update an agent (asynchronously)
+     * [category 1 — Agent_Capabilities] Update agent information. Updatable fields are name, domain, description, contactEmail, and agentMetadata. Extra fields (e.g. tokenRequestorId, keys) will return 422 Validation Error. Raises 404 if agent not found, 403 if agent is deactivated, 409 if new domain or contactEmail already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param agentUpdate Agent update request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateAgentAsync(String agentId, AgentUpdate agentUpdate, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = updateAgentValidateBeforeCall(agentId, agentUpdate, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateAgentKey
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param keyUpdate Key update request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateAgentKeyCall(String agentId, String keyId, KeyUpdate keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyUpdate, KeyUpdate.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateAgentKey,updateAgentKeyAsync,updateAgentKeyWithHttpInfo,updateAgentKeyCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "updateAgentKey,updateAgentKeyAsync,updateAgentKeyWithHttpInfo,updateAgentKeyCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/agents/{agentId}/keys/{keyId}"
+            .replaceAll("\\{" + "agentId" + "\\}", apiClient.escapeString(agentId.toString()))
+            .replaceAll("\\{" + "keyId" + "\\}", apiClient.escapeString(keyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateAgentKeyValidateBeforeCall(String agentId, String keyId, KeyUpdate keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'agentId' is set
+        if (agentId == null) {
+            logger.error("Missing the required parameter 'agentId' when calling updateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'agentId' when calling updateAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            logger.error("Missing the required parameter 'keyId' when calling updateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling updateAgentKey(Async)");
+        }
+        
+        // verify the required parameter 'keyUpdate' is set
+        if (keyUpdate == null) {
+            logger.error("Missing the required parameter 'keyUpdate' when calling updateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'keyUpdate' when calling updateAgentKey(Async)");
+        }
+        
+        
+        okhttp3.Call call = updateAgentKeyCall(agentId, keyId, keyUpdate, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update a key
+     * Update key information. Updatable fields are keyName, publicKey, algorithm, and expirationDate. Raises 404 if agent or key not found, 403 if agent or key is deactivated, 409 if new keyName already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param keyUpdate Key update request (required)
+     * @return AddAgentKeyResponse201
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public AddAgentKeyResponse201 updateAgentKey(String agentId, String keyId, KeyUpdate keyUpdate) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'updateAgentKey' STARTED");
+        ApiResponse<AddAgentKeyResponse201> resp = updateAgentKeyWithHttpInfo(agentId, keyId, keyUpdate);
+        logger.info("CALL TO METHOD 'updateAgentKey' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update a key
+     * Update key information. Updatable fields are keyName, publicKey, algorithm, and expirationDate. Raises 404 if agent or key not found, 403 if agent or key is deactivated, 409 if new keyName already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param keyUpdate Key update request (required)
+     * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<AddAgentKeyResponse201> updateAgentKeyWithHttpInfo(String agentId, String keyId, KeyUpdate keyUpdate) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, keyUpdate, null, null);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a key (asynchronously)
+     * Update key information. Updatable fields are keyName, publicKey, algorithm, and expirationDate. Raises 404 if agent or key not found, 403 if agent or key is deactivated, 409 if new keyName already exists.
+     * @param agentId Unique agent identifier (required)
+     * @param keyId Unique key identifier (required)
+     * @param keyUpdate Key update request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateAgentKeyAsync(String agentId, String keyId, KeyUpdate keyUpdate, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, keyUpdate, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateCheckoutSession
+     * @param sessionId The unique identifier of the ACP checkout session to update. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpUpdateCheckoutSessionRequest Fields to update. All fields are optional — only included fields are changed. To replace the cart entirely, provide the full &#x60;items&#x60; array.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateCheckoutSessionCall(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpUpdateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "mandatory";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateCheckoutSession,updateCheckoutSessionAsync,updateCheckoutSessionWithHttpInfo,updateCheckoutSessionCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "updateCheckoutSession,updateCheckoutSessionAsync,updateCheckoutSessionWithHttpInfo,updateCheckoutSessionCall");
+        
+        // create path and map variables
+        String localVarPath = "/icc/v1/checkout_sessions/{session_id}"
+            .replaceAll("\\{" + "session_id" + "\\}", apiClient.escapeString(sessionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (idempotencyKey != null)
+        localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (userAgent != null)
+        localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
+        if (requestId != null)
+        localVarHeaderParams.put("Request-Id", apiClient.parameterToString(requestId));
+        if (signature != null)
+        localVarHeaderParams.put("Signature", apiClient.parameterToString(signature));
+        if (timestamp != null)
+        localVarHeaderParams.put("Timestamp", apiClient.parameterToString(timestamp));
+        if (apIVersion != null)
+        localVarHeaderParams.put("API-Version", apiClient.parameterToString(apIVersion));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateCheckoutSessionValidateBeforeCall(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'sessionId' is set
+        if (sessionId == null) {
+            logger.error("Missing the required parameter 'sessionId' when calling updateCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling updateCheckoutSession(Async)");
+        }
+        
+        // verify the required parameter 'acpUpdateCheckoutSessionRequest' is set
+        if (acpUpdateCheckoutSessionRequest == null) {
+            logger.error("Missing the required parameter 'acpUpdateCheckoutSessionRequest' when calling updateCheckoutSession(Async)");
+            throw new ApiException("Missing the required parameter 'acpUpdateCheckoutSessionRequest' when calling updateCheckoutSession(Async)");
+        }
+        
+        
+        okhttp3.Call call = updateCheckoutSessionCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update Checkout Session ACP
+     * Modifies an active ACP checkout session and returns the updated session state with recalculated totals.  Use this to: - Add, remove, or change quantities of cart items - Apply or remove discount codes - Update the buyer&#39;s shipping address or contact details - Trigger re-calculation of shipping costs and tax  Only fields included in the request body are updated — omitted fields retain their current values.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; to safely retry updates without applying them twice. 
+     * @param sessionId The unique identifier of the ACP checkout session to update. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpUpdateCheckoutSessionRequest Fields to update. All fields are optional — only included fields are changed. To replace the cart entirely, provide the full &#x60;items&#x60; array.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return InlineResponse20113
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse20113 updateCheckoutSession(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'updateCheckoutSession' STARTED");
+        ApiResponse<InlineResponse20113> resp = updateCheckoutSessionWithHttpInfo(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        logger.info("CALL TO METHOD 'updateCheckoutSession' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update Checkout Session ACP
+     * Modifies an active ACP checkout session and returns the updated session state with recalculated totals.  Use this to: - Add, remove, or change quantities of cart items - Apply or remove discount codes - Update the buyer&#39;s shipping address or contact details - Trigger re-calculation of shipping costs and tax  Only fields included in the request body are updated — omitted fields retain their current values.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; to safely retry updates without applying them twice. 
+     * @param sessionId The unique identifier of the ACP checkout session to update. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpUpdateCheckoutSessionRequest Fields to update. All fields are optional — only included fields are changed. To replace the cart entirely, provide the full &#x60;items&#x60; array.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse20113> updateCheckoutSessionWithHttpInfo(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Checkout Session ACP (asynchronously)
+     * Modifies an active ACP checkout session and returns the updated session state with recalculated totals.  Use this to: - Add, remove, or change quantities of cart items - Apply or remove discount codes - Update the buyer&#39;s shipping address or contact details - Trigger re-calculation of shipping costs and tax  Only fields included in the request body are updated — omitted fields retain their current values.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; to safely retry updates without applying them twice. 
+     * @param sessionId The unique identifier of the ACP checkout session to update. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
+     * @param acpUpdateCheckoutSessionRequest Fields to update. All fields are optional — only included fields are changed. To replace the cart entirely, provide the full &#x60;items&#x60; array.  (required)
+     * @param idempotencyKey Client-generated unique key to ensure this request is processed exactly once. If a request with the same key was already processed, the original response is returned.  (optional)
+     * @param acceptLanguage Preferred language for the response (e.g. &#x60;en-US&#x60;, &#x60;fr-FR&#x60;). Passed to the merchant backend for localized content.  (optional)
+     * @param userAgent Client user agent string identifying the AI agent platform and version.  (optional)
+     * @param requestId Unique request identifier for distributed tracing and debugging. Echoed back in the response headers.  (optional)
+     * @param signature Request signature for payload integrity verification.  (optional)
+     * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
+     * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call updateCheckoutSessionAsync(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

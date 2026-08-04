@@ -20,7 +20,7 @@ import Model.DeletePlanResponse;
 import Model.GetAllPlansResponse;
 import Model.GetPlanCodeResponse;
 import Model.GetPlanResponse;
-import Model.InlineResponse4003;
+import Model.InlineResponse4005;
 import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 import Model.UpdatePlanRequest;

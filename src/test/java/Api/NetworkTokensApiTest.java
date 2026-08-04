@@ -27,8 +27,8 @@ import Model.InlineResponse502;
 import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.PostPaymentCredentialsRequest;
 import Model.PostPaymentCredentialsRequest1;
+import Model.PostTokenizedCardDeleteRequest;
 import Model.PostTokenizedCardRequest;
-import Model.TmsTokenizedCardDeleteRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -165,7 +165,7 @@ public class NetworkTokensApiTest {
     public void postTokenizedCardDeleteTest() throws Exception {
         String tokenizedCardId = null;
         String profileId = null;
-        TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest = null;
+        PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest = null;
         api.postTokenizedCardDelete(tokenizedCardId, profileId, postTokenizedCardDeleteRequest);
 
         // TODO: test validations

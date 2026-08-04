@@ -15,11 +15,11 @@ package Api;
 
 import Model.AccountValidationsRequest;
 import Model.InlineResponse20015;
-import Model.InlineResponse40012;
+import Model.InlineResponse40014;
 import Model.InlineResponse4033;
 import Model.InlineResponse4046;
 import Model.InlineResponse4222;
-import Model.InlineResponse5022;
+import Model.InlineResponse5024;
 import org.junit.Test;
 import org.junit.Ignore;
 

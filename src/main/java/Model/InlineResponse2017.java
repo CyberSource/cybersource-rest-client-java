@@ -15,7 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2017Payloads;
+import Model.InlineResponse2017IntegrationInformation;
+import Model.InlineResponse2017OrganizationInformation;
+import Model.InlineResponse2017ProductInformationSetups;
+import Model.InlineResponse2017RegistrationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,199 +27,202 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse2017
  */
 
 public class InlineResponse2017 {
-  @SerializedName("eventDate")
-  private String eventDate = null;
+  @SerializedName("id")
+  private String id = null;
 
-  @SerializedName("eventType")
-  private String eventType = null;
+  @SerializedName("submitTimeUtc")
+  private DateTime submitTimeUtc = null;
 
-  @SerializedName("organizationId")
-  private String organizationId = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("payloads")
-  private InlineResponse2017Payloads payloads = null;
+  @SerializedName("registrationInformation")
+  private InlineResponse2017RegistrationInformation registrationInformation = null;
 
-  @SerializedName("productId")
-  private String productId = null;
+  @SerializedName("integrationInformation")
+  private InlineResponse2017IntegrationInformation integrationInformation = null;
 
-  @SerializedName("requestType")
-  private String requestType = null;
+  @SerializedName("organizationInformation")
+  private InlineResponse2017OrganizationInformation organizationInformation = null;
 
-  @SerializedName("retryNumber")
-  private Integer retryNumber = null;
+  @SerializedName("productInformationSetups")
+  private List<InlineResponse2017ProductInformationSetups> productInformationSetups = null;
 
-  @SerializedName("transactionTraceId")
-  private String transactionTraceId = null;
+  @SerializedName("message")
+  private String message = null;
 
-  @SerializedName("webhookId")
-  private String webhookId = null;
+  @SerializedName("details")
+  private Map<String, List<Object>> details = null;
 
-  public InlineResponse2017 eventDate(String eventDate) {
-    this.eventDate = eventDate;
+  public InlineResponse2017 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Date that the webhook was delivered
-   * @return eventDate
+   * Get id
+   * @return id
   **/
-  @ApiModelProperty(value = "Date that the webhook was delivered")
-  public String getEventDate() {
-    return eventDate;
+  @ApiModelProperty(example = "12351234", value = "")
+  public String getId() {
+    return id;
   }
 
-  public void setEventDate(String eventDate) {
-    this.eventDate = eventDate;
-  }
-
-  public InlineResponse2017 eventType(String eventType) {
-    this.eventType = eventType;
-    return this;
+  public void setId(String id) {
+    this.id = id;
   }
 
    /**
-   * The event name the webhook was delivered for
-   * @return eventType
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "The event name the webhook was delivered for")
-  public String getEventType() {
-    return eventType;
-  }
-
-  public void setEventType(String eventType) {
-    this.eventType = eventType;
-  }
-
-  public InlineResponse2017 organizationId(String organizationId) {
-    this.organizationId = organizationId;
-    return this;
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
+    return submitTimeUtc;
   }
 
    /**
-   * The Organization Identifier.
-   * @return organizationId
+   * The status of Registration request Possible Values:   - &#39;INITIALIZED&#39;   - &#39;RECEIVED&#39;   - &#39;PROCESSING&#39;   - &#39;SUCCESS&#39;   - &#39;FAILURE&#39;   - &#39;PARTIAL&#39; 
+   * @return status
   **/
-  @ApiModelProperty(value = "The Organization Identifier.")
-  public String getOrganizationId() {
-    return organizationId;
+  @ApiModelProperty(value = "The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' ")
+  public String getStatus() {
+    return status;
   }
 
-  public void setOrganizationId(String organizationId) {
-    this.organizationId = organizationId;
-  }
-
-  public InlineResponse2017 payloads(InlineResponse2017Payloads payloads) {
-    this.payloads = payloads;
+  public InlineResponse2017 registrationInformation(InlineResponse2017RegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
     return this;
   }
 
    /**
-   * Get payloads
-   * @return payloads
+   * Get registrationInformation
+   * @return registrationInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2017Payloads getPayloads() {
-    return payloads;
+  public InlineResponse2017RegistrationInformation getRegistrationInformation() {
+    return registrationInformation;
   }
 
-  public void setPayloads(InlineResponse2017Payloads payloads) {
-    this.payloads = payloads;
+  public void setRegistrationInformation(InlineResponse2017RegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
   }
 
-  public InlineResponse2017 productId(String productId) {
-    this.productId = productId;
+  public InlineResponse2017 integrationInformation(InlineResponse2017IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
     return this;
   }
 
    /**
-   * The product the webhook was delivered for
-   * @return productId
+   * Get integrationInformation
+   * @return integrationInformation
   **/
-  @ApiModelProperty(value = "The product the webhook was delivered for")
-  public String getProductId() {
-    return productId;
+  @ApiModelProperty(value = "")
+  public InlineResponse2017IntegrationInformation getIntegrationInformation() {
+    return integrationInformation;
   }
 
-  public void setProductId(String productId) {
-    this.productId = productId;
+  public void setIntegrationInformation(InlineResponse2017IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
   }
 
-  public InlineResponse2017 requestType(String requestType) {
-    this.requestType = requestType;
+  public InlineResponse2017 organizationInformation(InlineResponse2017OrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
     return this;
   }
 
    /**
-   * Identifies the the type of request
-   * @return requestType
+   * Get organizationInformation
+   * @return organizationInformation
   **/
-  @ApiModelProperty(value = "Identifies the the type of request")
-  public String getRequestType() {
-    return requestType;
+  @ApiModelProperty(value = "")
+  public InlineResponse2017OrganizationInformation getOrganizationInformation() {
+    return organizationInformation;
   }
 
-  public void setRequestType(String requestType) {
-    this.requestType = requestType;
+  public void setOrganizationInformation(InlineResponse2017OrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
   }
 
-  public InlineResponse2017 retryNumber(Integer retryNumber) {
-    this.retryNumber = retryNumber;
+  public InlineResponse2017 productInformationSetups(List<InlineResponse2017ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+    return this;
+  }
+
+  public InlineResponse2017 addProductInformationSetupsItem(InlineResponse2017ProductInformationSetups productInformationSetupsItem) {
+    if (this.productInformationSetups == null) {
+      this.productInformationSetups = new ArrayList<InlineResponse2017ProductInformationSetups>();
+    }
+    this.productInformationSetups.add(productInformationSetupsItem);
     return this;
   }
 
    /**
-   * The number of retry attempts for a given webhook
-   * @return retryNumber
+   * Get productInformationSetups
+   * @return productInformationSetups
   **/
-  @ApiModelProperty(value = "The number of retry attempts for a given webhook")
-  public Integer getRetryNumber() {
-    return retryNumber;
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2017ProductInformationSetups> getProductInformationSetups() {
+    return productInformationSetups;
   }
 
-  public void setRetryNumber(Integer retryNumber) {
-    this.retryNumber = retryNumber;
+  public void setProductInformationSetups(List<InlineResponse2017ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
   }
 
-  public InlineResponse2017 transactionTraceId(String transactionTraceId) {
-    this.transactionTraceId = transactionTraceId;
+  public InlineResponse2017 message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * The identifier for the webhook
-   * @return transactionTraceId
+   * Get message
+   * @return message
   **/
-  @ApiModelProperty(value = "The identifier for the webhook")
-  public String getTransactionTraceId() {
-    return transactionTraceId;
+  @ApiModelProperty(example = "Request was processed succesfully.", value = "")
+  public String getMessage() {
+    return message;
   }
 
-  public void setTransactionTraceId(String transactionTraceId) {
-    this.transactionTraceId = transactionTraceId;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
-  public InlineResponse2017 webhookId(String webhookId) {
-    this.webhookId = webhookId;
+  public InlineResponse2017 details(Map<String, List<Object>> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse2017 putDetailsItem(String key, List<Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<String, List<Object>>();
+    }
+    this.details.put(key, detailsItem);
     return this;
   }
 
    /**
-   * The identifier of the subscription
-   * @return webhookId
+   * Get details
+   * @return details
   **/
-  @ApiModelProperty(value = "The identifier of the subscription")
-  public String getWebhookId() {
-    return webhookId;
+  @ApiModelProperty(value = "")
+  public Map<String, List<Object>> getDetails() {
+    return details;
   }
 
-  public void setWebhookId(String webhookId) {
-    this.webhookId = webhookId;
+  public void setDetails(Map<String, List<Object>> details) {
+    this.details = details;
   }
 
 
@@ -229,20 +235,20 @@ public class InlineResponse2017 {
       return false;
     }
     InlineResponse2017 inlineResponse2017 = (InlineResponse2017) o;
-    return Objects.equals(this.eventDate, inlineResponse2017.eventDate) &&
-        Objects.equals(this.eventType, inlineResponse2017.eventType) &&
-        Objects.equals(this.organizationId, inlineResponse2017.organizationId) &&
-        Objects.equals(this.payloads, inlineResponse2017.payloads) &&
-        Objects.equals(this.productId, inlineResponse2017.productId) &&
-        Objects.equals(this.requestType, inlineResponse2017.requestType) &&
-        Objects.equals(this.retryNumber, inlineResponse2017.retryNumber) &&
-        Objects.equals(this.transactionTraceId, inlineResponse2017.transactionTraceId) &&
-        Objects.equals(this.webhookId, inlineResponse2017.webhookId);
+    return Objects.equals(this.id, inlineResponse2017.id) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse2017.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse2017.status) &&
+        Objects.equals(this.registrationInformation, inlineResponse2017.registrationInformation) &&
+        Objects.equals(this.integrationInformation, inlineResponse2017.integrationInformation) &&
+        Objects.equals(this.organizationInformation, inlineResponse2017.organizationInformation) &&
+        Objects.equals(this.productInformationSetups, inlineResponse2017.productInformationSetups) &&
+        Objects.equals(this.message, inlineResponse2017.message) &&
+        Objects.equals(this.details, inlineResponse2017.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDate, eventType, organizationId, payloads, productId, requestType, retryNumber, transactionTraceId, webhookId);
+    return Objects.hash(id, submitTimeUtc, status, registrationInformation, integrationInformation, organizationInformation, productInformationSetups, message, details);
   }
 
 
@@ -269,15 +275,15 @@ public class InlineResponse2017 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2017 {\n");
     
-    if (eventDate != null) sb.append("    eventDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventDate").matches() ? "[REDACTED]" : toIndentedString(eventDate)).append("\n");
-    if (eventType != null) sb.append("    eventType: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventType").matches() ? "[REDACTED]" : toIndentedString(eventType)).append("\n");
-    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
-    if (payloads != null) sb.append("    payloads: ").append(SENSITIVE_FIELD_PATTERN.matcher("payloads").matches() ? "[REDACTED]" : toIndentedString(payloads)).append("\n");
-    if (productId != null) sb.append("    productId: ").append(SENSITIVE_FIELD_PATTERN.matcher("productId").matches() ? "[REDACTED]" : toIndentedString(productId)).append("\n");
-    if (requestType != null) sb.append("    requestType: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestType").matches() ? "[REDACTED]" : toIndentedString(requestType)).append("\n");
-    if (retryNumber != null) sb.append("    retryNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("retryNumber").matches() ? "[REDACTED]" : toIndentedString(retryNumber)).append("\n");
-    if (transactionTraceId != null) sb.append("    transactionTraceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTraceId").matches() ? "[REDACTED]" : toIndentedString(transactionTraceId)).append("\n");
-    if (webhookId != null) sb.append("    webhookId: ").append(SENSITIVE_FIELD_PATTERN.matcher("webhookId").matches() ? "[REDACTED]" : toIndentedString(webhookId)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("registrationInformation").matches() ? "[REDACTED]" : toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("integrationInformation").matches() ? "[REDACTED]" : toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationInformation").matches() ? "[REDACTED]" : toIndentedString(organizationInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(SENSITIVE_FIELD_PATTERN.matcher("productInformationSetups").matches() ? "[REDACTED]" : toIndentedString(productInformationSetups)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -296,15 +302,15 @@ public class InlineResponse2017 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2017 {\n");
     
-    if (eventDate != null) sb.append("    eventDate: ").append(toIndentedString(eventDate)).append("\n");
-    if (eventType != null) sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    if (payloads != null) sb.append("    payloads: ").append(toIndentedString(payloads)).append("\n");
-    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    if (requestType != null) sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
-    if (retryNumber != null) sb.append("    retryNumber: ").append(toIndentedString(retryNumber)).append("\n");
-    if (transactionTraceId != null) sb.append("    transactionTraceId: ").append(toIndentedString(transactionTraceId)).append("\n");
-    if (webhookId != null) sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

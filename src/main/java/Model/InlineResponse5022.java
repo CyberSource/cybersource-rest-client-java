@@ -29,34 +29,55 @@ import java.io.IOException;
  */
 
 public class InlineResponse5022 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("id")
+  private String id = null;
+
+  @SerializedName("submitTimeStampUtc")
+  private String submitTimeStampUtc = null;
 
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("message")
-  private String message = null;
-
   @SerializedName("reason")
   private String reason = null;
 
-  public InlineResponse5022 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  @SerializedName("message")
+  private String message = null;
+
+  public InlineResponse5022 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @return submitTimeUtc
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @return id
   **/
-  @ApiModelProperty(value = "Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
+  public String getId() {
+    return id;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public InlineResponse5022 submitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeStampUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeStampUtc() {
+    return submitTimeStampUtc;
+  }
+
+  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
   }
 
   public InlineResponse5022 status(String status) {
@@ -65,10 +86,10 @@ public class InlineResponse5022 {
   }
 
    /**
-   * The status of the submitted transaction. Possible values:   - &#x60;SERVER_ERROR&#x60; 
+   * Possible values: - SERVER_ERROR 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:   - `SERVER_ERROR` ")
+  @ApiModelProperty(value = "Possible values: - SERVER_ERROR ")
   public String getStatus() {
     return status;
   }
@@ -77,40 +98,40 @@ public class InlineResponse5022 {
     this.status = status;
   }
 
-  public InlineResponse5022 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detail message related to the status and reason
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detail message related to the status and reason")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
   public InlineResponse5022 reason(String reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * The reason of the status.  Possible values:   - &#x60;SYSTEM_ERROR&#x60;   - &#x60;SERVER_TIMEOUT&#x60;   - &#x60;SERVICE_TIMEOUT&#x60; 
+   * The reason of the status.  Possible values: - SYSTEM_ERROR 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:   - `SYSTEM_ERROR`   - `SERVER_TIMEOUT`   - `SERVICE_TIMEOUT` ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - SYSTEM_ERROR ")
   public String getReason() {
     return reason;
   }
 
   public void setReason(String reason) {
     this.reason = reason;
+  }
+
+  public InlineResponse5022 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * The detail message related to the status and reason listed above. 
+   * @return message
+  **/
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above. ")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -123,15 +144,16 @@ public class InlineResponse5022 {
       return false;
     }
     InlineResponse5022 inlineResponse5022 = (InlineResponse5022) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse5022.submitTimeUtc) &&
+    return Objects.equals(this.id, inlineResponse5022.id) &&
+        Objects.equals(this.submitTimeStampUtc, inlineResponse5022.submitTimeStampUtc) &&
         Objects.equals(this.status, inlineResponse5022.status) &&
-        Objects.equals(this.message, inlineResponse5022.message) &&
-        Objects.equals(this.reason, inlineResponse5022.reason);
+        Objects.equals(this.reason, inlineResponse5022.reason) &&
+        Objects.equals(this.message, inlineResponse5022.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, message, reason);
+    return Objects.hash(id, submitTimeStampUtc, status, reason, message);
   }
 
 
@@ -158,10 +180,11 @@ public class InlineResponse5022 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse5022 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
     if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +203,11 @@ public class InlineResponse5022 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse5022 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

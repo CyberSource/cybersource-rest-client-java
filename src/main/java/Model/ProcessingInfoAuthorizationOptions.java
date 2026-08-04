@@ -62,6 +62,9 @@ public class ProcessingInfoAuthorizationOptions {
   @SerializedName("declineAvsFlags")
   private List<String> declineAvsFlags = null;
 
+  @SerializedName("declineAniFlags")
+  private List<String> declineAniFlags = null;
+
   @SerializedName("ignoreCvResult")
   private Boolean ignoreCvResult = false;
 
@@ -299,6 +302,32 @@ public class ProcessingInfoAuthorizationOptions {
 
   public void setDeclineAvsFlags(List<String> declineAvsFlags) {
     this.declineAvsFlags = declineAvsFlags;
+  }
+
+  public ProcessingInfoAuthorizationOptions declineAniFlags(List<String> declineAniFlags) {
+    this.declineAniFlags = declineAniFlags;
+    return this;
+  }
+
+  public ProcessingInfoAuthorizationOptions addDeclineAniFlagsItem(String declineAniFlagsItem) {
+    if (this.declineAniFlags == null) {
+      this.declineAniFlags = new ArrayList<String>();
+    }
+    this.declineAniFlags.add(declineAniFlagsItem);
+    return this;
+  }
+
+   /**
+   * User-defined list of ANI (Address Name Inquiry) codes that will cause the system to decline a transaction.  Address Name Inquiry is a Verification suite product which checks whether the name shared in the  transaction matches with the one stored at the issuing bank. This field replicates the same behavior  as AVS (which uses DAVSNO flag), but for ANI verification using the DANINO flag.  **Important**:  - By default, no ANI codes cause declines (empty/null) - Merchant specifies which ANI codes should trigger declines - When triggered, returns reason code 217 with reply flag &#x60;DANINO&#x60; - Use space to separate values in the list - To receive declines for the ANI code N, include the value N in the list  ### ANI Result Codes  |ANI Code|Description| |--- |--- | |Y|Match: Full name match with issuing bank records| |O|Partial match: Partial name match with issuing bank records| |N|No match: Name does not match issuing bank records| |U|Unverified: ANI verification not performed or not supported| |R|Retry: System should retry the ANI check|  ### Reply Flag When Triggered  When a transaction&#39;s ANI result matches one of the codes in this list, the system returns: - **Reason Code**: 217 - **Reply Flag**: &#x60;DANINO&#x60; - **Description**: Decline. The authorization request was approved by the issuing bank but was    flagged because it did not pass the Address Name Inquiry (ANI) check. - **Possible Action**: Review the order for the possibility of fraud.  #### Used by **Authorization** Optional field for controlling ANI-based declines.  #### API Ticket ACCAPI-2138 
+   * @return declineAniFlags
+  **/
+  @ApiModelProperty(value = "User-defined list of ANI (Address Name Inquiry) codes that will cause the system to decline a transaction.  Address Name Inquiry is a Verification suite product which checks whether the name shared in the  transaction matches with the one stored at the issuing bank. This field replicates the same behavior  as AVS (which uses DAVSNO flag), but for ANI verification using the DANINO flag.  **Important**:  - By default, no ANI codes cause declines (empty/null) - Merchant specifies which ANI codes should trigger declines - When triggered, returns reason code 217 with reply flag `DANINO` - Use space to separate values in the list - To receive declines for the ANI code N, include the value N in the list  ### ANI Result Codes  |ANI Code|Description| |--- |--- | |Y|Match: Full name match with issuing bank records| |O|Partial match: Partial name match with issuing bank records| |N|No match: Name does not match issuing bank records| |U|Unverified: ANI verification not performed or not supported| |R|Retry: System should retry the ANI check|  ### Reply Flag When Triggered  When a transaction's ANI result matches one of the codes in this list, the system returns: - **Reason Code**: 217 - **Reply Flag**: `DANINO` - **Description**: Decline. The authorization request was approved by the issuing bank but was    flagged because it did not pass the Address Name Inquiry (ANI) check. - **Possible Action**: Review the order for the possibility of fraud.  #### Used by **Authorization** Optional field for controlling ANI-based declines.  #### API Ticket ACCAPI-2138 ")
+  public List<String> getDeclineAniFlags() {
+    return declineAniFlags;
+  }
+
+  public void setDeclineAniFlags(List<String> declineAniFlags) {
+    this.declineAniFlags = declineAniFlags;
   }
 
   public ProcessingInfoAuthorizationOptions ignoreCvResult(Boolean ignoreCvResult) {
@@ -627,6 +656,7 @@ public class ProcessingInfoAuthorizationOptions {
         Objects.equals(this.balanceInquiry, processingInfoAuthorizationOptions.balanceInquiry) &&
         Objects.equals(this.ignoreAvsResult, processingInfoAuthorizationOptions.ignoreAvsResult) &&
         Objects.equals(this.declineAvsFlags, processingInfoAuthorizationOptions.declineAvsFlags) &&
+        Objects.equals(this.declineAniFlags, processingInfoAuthorizationOptions.declineAniFlags) &&
         Objects.equals(this.ignoreCvResult, processingInfoAuthorizationOptions.ignoreCvResult) &&
         Objects.equals(this.initiator, processingInfoAuthorizationOptions.initiator) &&
         Objects.equals(this.billPayment, processingInfoAuthorizationOptions.billPayment) &&
@@ -648,7 +678,7 @@ public class ProcessingInfoAuthorizationOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator, transactionMode, aftIndicator, serviceType, balanceUpdate, moneyLoad);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, declineAniFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator, transactionMode, aftIndicator, serviceType, balanceUpdate, moneyLoad);
   }
 
 
@@ -685,6 +715,7 @@ public class ProcessingInfoAuthorizationOptions {
     if (balanceInquiry != null) sb.append("    balanceInquiry: ").append(SENSITIVE_FIELD_PATTERN.matcher("balanceInquiry").matches() ? "[REDACTED]" : toIndentedString(balanceInquiry)).append("\n");
     if (ignoreAvsResult != null) sb.append("    ignoreAvsResult: ").append(SENSITIVE_FIELD_PATTERN.matcher("ignoreAvsResult").matches() ? "[REDACTED]" : toIndentedString(ignoreAvsResult)).append("\n");
     if (declineAvsFlags != null) sb.append("    declineAvsFlags: ").append(SENSITIVE_FIELD_PATTERN.matcher("declineAvsFlags").matches() ? "[REDACTED]" : toIndentedString(declineAvsFlags)).append("\n");
+    if (declineAniFlags != null) sb.append("    declineAniFlags: ").append(SENSITIVE_FIELD_PATTERN.matcher("declineAniFlags").matches() ? "[REDACTED]" : toIndentedString(declineAniFlags)).append("\n");
     if (ignoreCvResult != null) sb.append("    ignoreCvResult: ").append(SENSITIVE_FIELD_PATTERN.matcher("ignoreCvResult").matches() ? "[REDACTED]" : toIndentedString(ignoreCvResult)).append("\n");
     if (initiator != null) sb.append("    initiator: ").append(SENSITIVE_FIELD_PATTERN.matcher("initiator").matches() ? "[REDACTED]" : toIndentedString(initiator)).append("\n");
     if (billPayment != null) sb.append("    billPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("billPayment").matches() ? "[REDACTED]" : toIndentedString(billPayment)).append("\n");
@@ -730,6 +761,7 @@ public class ProcessingInfoAuthorizationOptions {
     if (balanceInquiry != null) sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
     if (ignoreAvsResult != null) sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
     if (declineAvsFlags != null) sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
+    if (declineAniFlags != null) sb.append("    declineAniFlags: ").append(toIndentedString(declineAniFlags)).append("\n");
     if (ignoreCvResult != null) sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
     if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     if (billPayment != null) sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");

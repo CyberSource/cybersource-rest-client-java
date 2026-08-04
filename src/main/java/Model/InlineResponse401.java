@@ -29,34 +29,70 @@ import java.io.IOException;
  */
 
 public class InlineResponse401 {
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("id")
+  private String id = null;
+
+  @SerializedName("submitTimeStampUtc")
+  private String submitTimeStampUtc = null;
+
+  @SerializedName("reason")
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("code")
-  private String code = null;
-
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
-
-  public InlineResponse401 status(String status) {
-    this.status = status;
+  public InlineResponse401 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * The status of the submitted request.   Possible values: - UNAUTHORIZED
-   * @return status
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @return id
   **/
-  @ApiModelProperty(value = "The status of the submitted request.   Possible values: - UNAUTHORIZED")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
+  public String getId() {
+    return id;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public InlineResponse401 submitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeStampUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeStampUtc() {
+    return submitTimeStampUtc;
+  }
+
+  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+  }
+
+  public InlineResponse401 reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status.  Possible values: - UNAUTHORIZED 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - UNAUTHORIZED ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public InlineResponse401 message(String message) {
@@ -65,52 +101,16 @@ public class InlineResponse401 {
   }
 
    /**
-   * The detail message related to the status and reason listed above.
+   * The detail message related to the status and reason listed above. 
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above. ")
   public String getMessage() {
     return message;
   }
 
   public void setMessage(String message) {
     this.message = message;
-  }
-
-  public InlineResponse401 code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * An optional short string which identifies the exact error.
-   * @return code
-  **/
-  @ApiModelProperty(value = "An optional short string which identifies the exact error.")
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public InlineResponse401 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
   }
 
 
@@ -123,15 +123,15 @@ public class InlineResponse401 {
       return false;
     }
     InlineResponse401 inlineResponse401 = (InlineResponse401) o;
-    return Objects.equals(this.status, inlineResponse401.status) &&
-        Objects.equals(this.message, inlineResponse401.message) &&
-        Objects.equals(this.code, inlineResponse401.code) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse401.submitTimeUtc);
+    return Objects.equals(this.id, inlineResponse401.id) &&
+        Objects.equals(this.submitTimeStampUtc, inlineResponse401.submitTimeStampUtc) &&
+        Objects.equals(this.reason, inlineResponse401.reason) &&
+        Objects.equals(this.message, inlineResponse401.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message, code, submitTimeUtc);
+    return Objects.hash(id, submitTimeStampUtc, reason, message);
   }
 
 
@@ -158,10 +158,10 @@ public class InlineResponse401 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse401 {\n");
     
-    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +180,10 @@ public class InlineResponse401 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse401 {\n");
     
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,9 +30,9 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse20016;
-import Model.InlineResponse2019;
-import Model.InlineResponse40013;
-import Model.InlineResponse5023;
+import Model.InlineResponse20112;
+import Model.InlineResponse40015;
+import Model.InlineResponse5025;
 import Model.OfferRequest;
 
 import java.lang.reflect.Type;
@@ -205,13 +205,13 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param offerRequest  (required)
-     * @return InlineResponse2019
+     * @return InlineResponse20112
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2019 createOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
+    public InlineResponse20112 createOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOffer' STARTED");
-        ApiResponse<InlineResponse2019> resp = createOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
+        ApiResponse<InlineResponse20112> resp = createOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
         logger.info("CALL TO METHOD 'createOffer' ENDED");
         return resp.getData();
     }
@@ -225,14 +225,14 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param offerRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2019&gt;
+     * @return ApiResponse&lt;InlineResponse20112&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2019> createOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20112> createOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -250,7 +250,7 @@ public class OffersApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ApiCallback<InlineResponse2019> callback) throws ApiException, ConfigException {
+    public okhttp3.Call createOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -273,7 +273,7 @@ public class OffersApi {
         }
 
         okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -320,7 +320,7 @@ This API attempts to delete a network token from the card association with a spe
 NetworkTokensApi apiInstance = new NetworkTokensApi();
 String tokenizedCardId = "tokenizedCardId_example"; // String | The Id of a tokenized card.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
-TmsTokenizedCardDeleteRequest postTokenizedCardDeleteRequest = new TmsTokenizedCardDeleteRequest(); // TmsTokenizedCardDeleteRequest | 
+PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest = new PostTokenizedCardDeleteRequest(); // PostTokenizedCardDeleteRequest | 
 try {
     apiInstance.postTokenizedCardDelete(tokenizedCardId, profileId, postTokenizedCardDeleteRequest);
 } catch (ApiException e) {
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenizedCardId** | **String**| The Id of a tokenized card. |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
- **postTokenizedCardDeleteRequest** | [**TmsTokenizedCardDeleteRequest**](TmsTokenizedCardDeleteRequest.md)|  | [optional]
+ **postTokenizedCardDeleteRequest** | [**PostTokenizedCardDeleteRequest**](PostTokenizedCardDeleteRequest.md)|  | [optional]
 
 ### Return type
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getRegistration**](MerchantBoardingApi.md#getRegistration) | **GET** /boarding/v1/registrations/{registrationId} | Gets all the information on a boarding registration
+[**patchRegistration**](MerchantBoardingApi.md#patchRegistration) | **PATCH** /boarding/v1/registrations/{registrationId} | Updates the information on a boarding registration
 [**postRegistration**](MerchantBoardingApi.md#postRegistration) | **POST** /boarding/v1/registrations | Create a boarding registration
 
 
@@ -53,9 +54,58 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="patchRegistration"></a>
+# **patchRegistration**
+> InlineResponse2005 patchRegistration(registrationId, patchRegistrationBody, vCIdempotencyId)
+
+Updates the information on a boarding registration
+
+This end point will partially update a boarding registration 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.MerchantBoardingApi;
+
+
+MerchantBoardingApi apiInstance = new MerchantBoardingApi();
+String registrationId = "registrationId_example"; // String | Identifies the boarding registration to be updated
+PatchRegistrationBody patchRegistrationBody = new PatchRegistrationBody(); // PatchRegistrationBody | Boarding registration data to be patched
+String vCIdempotencyId = "vCIdempotencyId_example"; // String | defines idempotency of the request
+try {
+    InlineResponse2005 result = apiInstance.patchRegistration(registrationId, patchRegistrationBody, vCIdempotencyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MerchantBoardingApi#patchRegistration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registrationId** | **String**| Identifies the boarding registration to be updated |
+ **patchRegistrationBody** | [**PatchRegistrationBody**](PatchRegistrationBody.md)| Boarding registration data to be patched |
+ **vCIdempotencyId** | **String**| defines idempotency of the request | [optional]
+
+### Return type
+
+[**InlineResponse2005**](InlineResponse2005.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2014 postRegistration(postRegistrationBody, vCIdempotencyId)
+> InlineResponse2017 postRegistration(postRegistrationBody, vCIdempotencyId)
 
 Create a boarding registration
 
@@ -72,7 +122,7 @@ MerchantBoardingApi apiInstance = new MerchantBoardingApi();
 PostRegistrationBody postRegistrationBody = new PostRegistrationBody(); // PostRegistrationBody | Boarding registration data
 String vCIdempotencyId = "vCIdempotencyId_example"; // String | defines idempotency of the request
 try {
-    InlineResponse2014 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
+    InlineResponse2017 result = apiInstance.postRegistration(postRegistrationBody, vCIdempotencyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantBoardingApi#postRegistration");
@@ -89,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2017**](InlineResponse2017.md)
 
 ### Authorization
 

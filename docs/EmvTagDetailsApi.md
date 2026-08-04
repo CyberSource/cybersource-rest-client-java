@@ -65,7 +65,7 @@ Pass an EMV Tag-Length-Value (TLV) string for parsing.
 
 
 EmvTagDetailsApi apiInstance = new EmvTagDetailsApi();
-Body body = new Body(); // Body | 
+Body2 body = new Body2(); // Body2 | 
 try {
     TssV2PostEmvTags200Response result = apiInstance.parseEmvTags(body);
     System.out.println(result);
@@ -79,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  |
+ **body** | [**Body2**](Body2.md)|  |
 
 ### Return type
 

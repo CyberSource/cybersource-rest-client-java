@@ -31,8 +31,8 @@ import java.io.InputStream;
 
 import Model.CreateWebhook;
 import Model.InlineResponse2006;
-import Model.InlineResponse2015;
-import Model.InlineResponse2016;
+import Model.InlineResponse2018;
+import Model.InlineResponse2019;
 import Model.SaveSymEgressKey;
 
 import java.lang.reflect.Type;
@@ -300,13 +300,13 @@ public class CreateNewWebhooksApi {
      * Create a New Webhook Subscription
      * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
      * @param createWebhook The webhook payload (optional)
-     * @return InlineResponse2016
+     * @return InlineResponse2019
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2016 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException, ConfigException {
+    public InlineResponse2019 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' STARTED");
-        ApiResponse<InlineResponse2016> resp = notificationSubscriptionsV2WebhooksPostWithHttpInfo(createWebhook);
+        ApiResponse<InlineResponse2019> resp = notificationSubscriptionsV2WebhooksPostWithHttpInfo(createWebhook);
         logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' ENDED");
         return resp.getData();
     }
@@ -315,14 +315,14 @@ public class CreateNewWebhooksApi {
      * Create a New Webhook Subscription
      * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
      * @param createWebhook The webhook payload (optional)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse&lt;InlineResponse2019&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2016> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2019> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -335,7 +335,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2016> callback) throws ApiException, ConfigException {
+    public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2019> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -358,7 +358,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2019>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -454,13 +454,13 @@ public class CreateNewWebhooksApi {
      * @param vCSenderOrganizationId Sender organization id (optional)
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return InlineResponse2015
+     * @return InlineResponse2018
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2015 saveSymEgressKey(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
+    public InlineResponse2018 saveSymEgressKey(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
-        ApiResponse<InlineResponse2015> resp = saveSymEgressKeyWithHttpInfo(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
+        ApiResponse<InlineResponse2018> resp = saveSymEgressKeyWithHttpInfo(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
     }
@@ -472,14 +472,14 @@ public class CreateNewWebhooksApi {
      * @param vCSenderOrganizationId Sender organization id (optional)
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;InlineResponse2018&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2015> saveSymEgressKeyWithHttpInfo(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2018> saveSymEgressKeyWithHttpInfo(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -495,7 +495,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveSymEgressKeyAsync(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
+    public okhttp3.Call saveSymEgressKeyAsync(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2018> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -518,7 +518,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

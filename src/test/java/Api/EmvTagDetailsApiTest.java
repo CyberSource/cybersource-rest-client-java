@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.Body;
+import Model.Body2;
 import Model.TssV2GetEmvTags200Response;
 import Model.TssV2PostEmvTags200Response;
 import org.junit.Test;
@@ -59,7 +59,7 @@ public class EmvTagDetailsApiTest {
      */
     @Test
     public void parseEmvTagsTest() throws Exception {
-        Body body = null;
+        Body2 body = null;
         TssV2PostEmvTags200Response response = api.parseEmvTags(body);
 
         // TODO: test validations

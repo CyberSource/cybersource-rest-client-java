@@ -89,10 +89,10 @@ public class InlineResponse4006 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION   
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_CARD_TYPE 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION   ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_CARD_TYPE ")
   public String getReason() {
     return reason;
   }

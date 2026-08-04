@@ -44,6 +44,12 @@ public class Ptsv1pushfundstransferProcessingInformation {
   @SerializedName("networkPartnerId")
   private String networkPartnerId = null;
 
+  @SerializedName("transactionTypeIndicator")
+  private String transactionTypeIndicator = null;
+
+  @SerializedName("interchangeRateDesignator")
+  private String interchangeRateDesignator = null;
+
   @SerializedName("processingCode")
   private String processingCode = null;
 
@@ -65,10 +71,10 @@ public class Ptsv1pushfundstransferProcessingInformation {
   }
 
    /**
-   * Money Transfer (MT) - &#x60;AA&#x60;: Account to Account - &#x60;BI&#x60;: Bank-Initiated Money Transfer - &#x60;CD&#x60;: Cash Deposit - &#x60;FT&#x60;: Funds Transfer - &#x60;TU&#x60;: Prepaid Card Loan - &#x60;WT&#x60;: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - &#x60;PP&#x60;: P2P Money Transfer  Funds Disbursement (FD) - &#x60;BB&#x60;: Business-to-business Supplier Payments - &#x60;BP&#x60;: Non-Card Bill Pay  - &#x60;CP&#x60;: Credit Card Bill Pay - &#x60;FD&#x60;: General Funds Disbursements - &#x60;GD&#x60;: Government Disbursements and Government Initiated Tax Refunds - &#x60;GP&#x60;: Gambling/Gaming Payouts (other than online gaming) - &#x60;LO&#x60;: Loyalty Payments - &#x60;MD&#x60;: Merchant Settlement - &#x60;MI&#x60;: Faster Refunds - &#x60;OG&#x60;: Online Gambling Payouts - &#x60;PD&#x60;: Payroll and Pension Disbursements - &#x60;RP&#x60;: Request-to-Pay Service 
+   * Payouts transaction type.  Money Transfer (MT) - &#x60;AA&#x60;: Account to Account - &#x60;BI&#x60;: Bank-Initiated Money Transfer - &#x60;CD&#x60;: Cash Deposit - &#x60;FT&#x60;: Funds Transfer - &#x60;LA&#x60;: Liquid Assets - &#x60;PP&#x60;: P2P Money Transfer - &#x60;WT&#x60;: Wallet Transfer-Staged Digital Wallet (SDW) Transfer  Funds Disbursement (FD) - &#x60;BB&#x60;: Business-to-business Supplier Payments - &#x60;BP&#x60;: Non-Card Bill Pay - &#x60;CP&#x60;: Credit Card Bill Pay - &#x60;FD&#x60;: General Funds Disbursements - &#x60;GD&#x60;: Government Disbursements and Government Initiated Tax Refunds - &#x60;GP&#x60;: Gambling/Gaming Payouts (other than online gaming) - &#x60;LO&#x60;: Loyalty Payments - &#x60;MD&#x60;: Merchant Settlement - &#x60;MI&#x60;: Faster Refunds - &#x60;OG&#x60;: Online Gambling Payouts - &#x60;PD&#x60;: Payroll and Pension Disbursements - &#x60;RP&#x60;: Request-to-Pay Service - &#x60;TU&#x60;: Prepaid Card Load  Supported BAIs vary by payment gateway and configuration. Clients are responsible for confirming gateway specific BAI availability. Conditional - If not provided in payload, the value is picked from Merchant Configuration. 
    * @return businessApplicationId
   **/
-  @ApiModelProperty(value = "Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `TU`: Prepaid Card Loan - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - `PP`: P2P Money Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay  - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service ")
+  @ApiModelProperty(value = "Payouts transaction type.  Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `LA`: Liquid Assets - `PP`: P2P Money Transfer - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service - `TU`: Prepaid Card Load  Supported BAIs vary by payment gateway and configuration. Clients are responsible for confirming gateway specific BAI availability. Conditional - If not provided in payload, the value is picked from Merchant Configuration. ")
   public String getBusinessApplicationId() {
     return businessApplicationId;
   }
@@ -119,16 +125,52 @@ public class Ptsv1pushfundstransferProcessingInformation {
   }
 
    /**
-   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. 
    * @return networkPartnerId
   **/
-  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. ")
+  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. ")
   public String getNetworkPartnerId() {
     return networkPartnerId;
   }
 
   public void setNetworkPartnerId(String networkPartnerId) {
     this.networkPartnerId = networkPartnerId;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation transactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+    return this;
+  }
+
+   /**
+   * Transaction Type Identifier for Mastercard Send. 3-character code that identifies the transaction type on the Mastercard network. When provided, this value takes priority over businessApplicationId for determining the payment type. 
+   * @return transactionTypeIndicator
+  **/
+  @ApiModelProperty(value = "Transaction Type Identifier for Mastercard Send. 3-character code that identifies the transaction type on the Mastercard network. When provided, this value takes priority over businessApplicationId for determining the payment type. ")
+  public String getTransactionTypeIndicator() {
+    return transactionTypeIndicator;
+  }
+
+  public void setTransactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation interchangeRateDesignator(String interchangeRateDesignator) {
+    this.interchangeRateDesignator = interchangeRateDesignator;
+    return this;
+  }
+
+   /**
+   * The IRD used for clearing the transaction on the Mastercard network. Details - Alphanumeric, length 2 characters.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
+   * @return interchangeRateDesignator
+  **/
+  @ApiModelProperty(value = "The IRD used for clearing the transaction on the Mastercard network. Details - Alphanumeric, length 2 characters.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. ")
+  public String getInterchangeRateDesignator() {
+    return interchangeRateDesignator;
+  }
+
+  public void setInterchangeRateDesignator(String interchangeRateDesignator) {
+    this.interchangeRateDesignator = interchangeRateDesignator;
   }
 
   public Ptsv1pushfundstransferProcessingInformation processingCode(String processingCode) {
@@ -243,6 +285,8 @@ public class Ptsv1pushfundstransferProcessingInformation {
         Objects.equals(this.payoutsOptions, ptsv1pushfundstransferProcessingInformation.payoutsOptions) &&
         Objects.equals(this.feeProgramId, ptsv1pushfundstransferProcessingInformation.feeProgramId) &&
         Objects.equals(this.networkPartnerId, ptsv1pushfundstransferProcessingInformation.networkPartnerId) &&
+        Objects.equals(this.transactionTypeIndicator, ptsv1pushfundstransferProcessingInformation.transactionTypeIndicator) &&
+        Objects.equals(this.interchangeRateDesignator, ptsv1pushfundstransferProcessingInformation.interchangeRateDesignator) &&
         Objects.equals(this.processingCode, ptsv1pushfundstransferProcessingInformation.processingCode) &&
         Objects.equals(this.sharingGroupCode, ptsv1pushfundstransferProcessingInformation.sharingGroupCode) &&
         Objects.equals(this.purposeOfPayment, ptsv1pushfundstransferProcessingInformation.purposeOfPayment) &&
@@ -252,7 +296,7 @@ public class Ptsv1pushfundstransferProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, payoutsOptions, feeProgramId, networkPartnerId, processingCode, sharingGroupCode, purposeOfPayment, reconciliationId, accountVerificationCode);
+    return Objects.hash(businessApplicationId, payoutsOptions, feeProgramId, networkPartnerId, transactionTypeIndicator, interchangeRateDesignator, processingCode, sharingGroupCode, purposeOfPayment, reconciliationId, accountVerificationCode);
   }
 
 
@@ -283,6 +327,8 @@ public class Ptsv1pushfundstransferProcessingInformation {
     if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("payoutsOptions").matches() ? "[REDACTED]" : toIndentedString(payoutsOptions)).append("\n");
     if (feeProgramId != null) sb.append("    feeProgramId: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeProgramId").matches() ? "[REDACTED]" : toIndentedString(feeProgramId)).append("\n");
     if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("networkPartnerId").matches() ? "[REDACTED]" : toIndentedString(networkPartnerId)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTypeIndicator").matches() ? "[REDACTED]" : toIndentedString(transactionTypeIndicator)).append("\n");
+    if (interchangeRateDesignator != null) sb.append("    interchangeRateDesignator: ").append(SENSITIVE_FIELD_PATTERN.matcher("interchangeRateDesignator").matches() ? "[REDACTED]" : toIndentedString(interchangeRateDesignator)).append("\n");
     if (processingCode != null) sb.append("    processingCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingCode").matches() ? "[REDACTED]" : toIndentedString(processingCode)).append("\n");
     if (sharingGroupCode != null) sb.append("    sharingGroupCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("sharingGroupCode").matches() ? "[REDACTED]" : toIndentedString(sharingGroupCode)).append("\n");
     if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("purposeOfPayment").matches() ? "[REDACTED]" : toIndentedString(purposeOfPayment)).append("\n");
@@ -310,6 +356,8 @@ public class Ptsv1pushfundstransferProcessingInformation {
     if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
     if (feeProgramId != null) sb.append("    feeProgramId: ").append(toIndentedString(feeProgramId)).append("\n");
     if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
+    if (interchangeRateDesignator != null) sb.append("    interchangeRateDesignator: ").append(toIndentedString(interchangeRateDesignator)).append("\n");
     if (processingCode != null) sb.append("    processingCode: ").append(toIndentedString(processingCode)).append("\n");
     if (sharingGroupCode != null) sb.append("    sharingGroupCode: ").append(toIndentedString(sharingGroupCode)).append("\n");
     if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");

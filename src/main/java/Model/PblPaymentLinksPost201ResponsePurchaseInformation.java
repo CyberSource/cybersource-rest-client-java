@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.LocalDate;
 
 /**
  * Contains link specific detail.
@@ -32,6 +33,18 @@ import java.io.IOException;
 public class PblPaymentLinksPost201ResponsePurchaseInformation {
   @SerializedName("purchaseNumber")
   private String purchaseNumber = null;
+
+  @SerializedName("transactionReferenceNumber")
+  private String transactionReferenceNumber = null;
+
+  @SerializedName("expirationDate")
+  private LocalDate expirationDate = null;
+
+  @SerializedName("expirationAmount")
+  private String expirationAmount = null;
+
+  @SerializedName("expirationQuantity")
+  private String expirationQuantity = null;
 
   @SerializedName("createdDate")
   private String createdDate = null;
@@ -55,6 +68,78 @@ public class PblPaymentLinksPost201ResponsePurchaseInformation {
 
   public void setPurchaseNumber(String purchaseNumber) {
     this.purchaseNumber = purchaseNumber;
+  }
+
+  public PblPaymentLinksPost201ResponsePurchaseInformation transactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+    return this;
+  }
+
+   /**
+   * The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. 
+   * @return transactionReferenceNumber
+  **/
+  @ApiModelProperty(value = "The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. ")
+  public String getTransactionReferenceNumber() {
+    return transactionReferenceNumber;
+  }
+
+  public void setTransactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+  }
+
+  public PblPaymentLinksPost201ResponsePurchaseInformation expirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * Define an expiration date for the link.  The date must be today or in the future.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day.  The invoice link automatically expires 12 months after the due date. 
+   * @return expirationDate
+  **/
+  @ApiModelProperty(value = "Define an expiration date for the link.  The date must be today or in the future.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. ")
+  public LocalDate getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+
+  public PblPaymentLinksPost201ResponsePurchaseInformation expirationAmount(String expirationAmount) {
+    this.expirationAmount = expirationAmount;
+    return this;
+  }
+
+   /**
+   * Define an expiry amount for the link.  Must be null or greater than 0.  If the total price of all transactions for this link exceeds the expiry amount, the link will expire. 
+   * @return expirationAmount
+  **/
+  @ApiModelProperty(value = "Define an expiry amount for the link.  Must be null or greater than 0.  If the total price of all transactions for this link exceeds the expiry amount, the link will expire. ")
+  public String getExpirationAmount() {
+    return expirationAmount;
+  }
+
+  public void setExpirationAmount(String expirationAmount) {
+    this.expirationAmount = expirationAmount;
+  }
+
+  public PblPaymentLinksPost201ResponsePurchaseInformation expirationQuantity(String expirationQuantity) {
+    this.expirationQuantity = expirationQuantity;
+    return this;
+  }
+
+   /**
+   * Define an expiration quantity for the link.  Must be null or greater than 0.  If the total quantity of items sold exceeds the expiration quantity, the link is expired. 
+   * @return expirationQuantity
+  **/
+  @ApiModelProperty(value = "Define an expiration quantity for the link.  Must be null or greater than 0.  If the total quantity of items sold exceeds the expiration quantity, the link is expired. ")
+  public String getExpirationQuantity() {
+    return expirationQuantity;
+  }
+
+  public void setExpirationQuantity(String expirationQuantity) {
+    this.expirationQuantity = expirationQuantity;
   }
 
   public PblPaymentLinksPost201ResponsePurchaseInformation createdDate(String createdDate) {
@@ -104,13 +189,17 @@ public class PblPaymentLinksPost201ResponsePurchaseInformation {
     }
     PblPaymentLinksPost201ResponsePurchaseInformation pblPaymentLinksPost201ResponsePurchaseInformation = (PblPaymentLinksPost201ResponsePurchaseInformation) o;
     return Objects.equals(this.purchaseNumber, pblPaymentLinksPost201ResponsePurchaseInformation.purchaseNumber) &&
+        Objects.equals(this.transactionReferenceNumber, pblPaymentLinksPost201ResponsePurchaseInformation.transactionReferenceNumber) &&
+        Objects.equals(this.expirationDate, pblPaymentLinksPost201ResponsePurchaseInformation.expirationDate) &&
+        Objects.equals(this.expirationAmount, pblPaymentLinksPost201ResponsePurchaseInformation.expirationAmount) &&
+        Objects.equals(this.expirationQuantity, pblPaymentLinksPost201ResponsePurchaseInformation.expirationQuantity) &&
         Objects.equals(this.createdDate, pblPaymentLinksPost201ResponsePurchaseInformation.createdDate) &&
         Objects.equals(this.paymentLink, pblPaymentLinksPost201ResponsePurchaseInformation.paymentLink);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(purchaseNumber, createdDate, paymentLink);
+    return Objects.hash(purchaseNumber, transactionReferenceNumber, expirationDate, expirationAmount, expirationQuantity, createdDate, paymentLink);
   }
 
 
@@ -138,6 +227,10 @@ public class PblPaymentLinksPost201ResponsePurchaseInformation {
     sb.append("class PblPaymentLinksPost201ResponsePurchaseInformation {\n");
     
     if (purchaseNumber != null) sb.append("    purchaseNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseNumber").matches() ? "[REDACTED]" : toIndentedString(purchaseNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationDate").matches() ? "[REDACTED]" : toIndentedString(expirationDate)).append("\n");
+    if (expirationAmount != null) sb.append("    expirationAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationAmount").matches() ? "[REDACTED]" : toIndentedString(expirationAmount)).append("\n");
+    if (expirationQuantity != null) sb.append("    expirationQuantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationQuantity").matches() ? "[REDACTED]" : toIndentedString(expirationQuantity)).append("\n");
     if (createdDate != null) sb.append("    createdDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("createdDate").matches() ? "[REDACTED]" : toIndentedString(createdDate)).append("\n");
     if (paymentLink != null) sb.append("    paymentLink: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentLink").matches() ? "[REDACTED]" : toIndentedString(paymentLink)).append("\n");
     sb.append("}");
@@ -159,6 +252,10 @@ public class PblPaymentLinksPost201ResponsePurchaseInformation {
     sb.append("class PblPaymentLinksPost201ResponsePurchaseInformation {\n");
     
     if (purchaseNumber != null) sb.append("    purchaseNumber: ").append(toIndentedString(purchaseNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    if (expirationAmount != null) sb.append("    expirationAmount: ").append(toIndentedString(expirationAmount)).append("\n");
+    if (expirationQuantity != null) sb.append("    expirationQuantity: ").append(toIndentedString(expirationQuantity)).append("\n");
     if (createdDate != null) sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     if (paymentLink != null) sb.append("    paymentLink: ").append(toIndentedString(paymentLink)).append("\n");
     sb.append("}");
