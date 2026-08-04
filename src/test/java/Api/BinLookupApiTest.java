@@ -16,7 +16,7 @@ package Api;
 import Model.BinLookup403Response;
 import Model.BinLookupv400Response;
 import Model.CreateBinLookupRequest;
-import Model.InlineResponse2013;
+import Model.InlineResponse2016;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -47,7 +47,7 @@ public class BinLookupApiTest {
     @Test
     public void getAccountInfoTest() throws Exception {
         CreateBinLookupRequest createBinLookupRequest = null;
-        InlineResponse2013 response = api.getAccountInfo(createBinLookupRequest);
+        InlineResponse2016 response = api.getAccountInfo(createBinLookupRequest);
 
         // TODO: test validations
     }

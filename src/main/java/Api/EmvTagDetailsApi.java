@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.Body;
+import Model.Body2;
 import Model.TssV2GetEmvTags200Response;
 import Model.TssV2PostEmvTags200Response;
 
@@ -216,9 +216,9 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call parseEmvTagsCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call parseEmvTagsCall(Body2 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body2.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         String inboundMLEStatus = "false";
 
@@ -271,7 +271,7 @@ public class EmvTagDetailsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call parseEmvTagsValidateBeforeCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call parseEmvTagsValidateBeforeCall(Body2 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -297,7 +297,7 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public TssV2PostEmvTags200Response parseEmvTags(Body body) throws ApiException, ConfigException {
+    public TssV2PostEmvTags200Response parseEmvTags(Body2 body) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
         ApiResponse<TssV2PostEmvTags200Response> resp = parseEmvTagsWithHttpInfo(body);
         logger.info("CALL TO METHOD 'parseEmvTags' ENDED");
@@ -312,7 +312,7 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(Body body) throws ApiException, ConfigException {
+    public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(Body2 body) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = parseEmvTagsValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<TssV2PostEmvTags200Response>(){}.getType();
@@ -328,7 +328,7 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call parseEmvTagsAsync(Body body, final ApiCallback<TssV2PostEmvTags200Response> callback) throws ApiException, ConfigException {
+    public okhttp3.Call parseEmvTagsAsync(Body2 body, final ApiCallback<TssV2PostEmvTags200Response> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

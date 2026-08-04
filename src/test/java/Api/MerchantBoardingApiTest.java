@@ -14,11 +14,12 @@
 package Api;
 
 import Model.InlineResponse2005;
-import Model.InlineResponse2014;
-import Model.InlineResponse4009;
+import Model.InlineResponse2017;
+import Model.InlineResponse40011;
 import Model.InlineResponse4043;
 import Model.InlineResponse4221;
 import Model.InlineResponse5002;
+import Model.PatchRegistrationBody;
 import Model.PostRegistrationBody;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -55,6 +56,24 @@ public class MerchantBoardingApiTest {
     }
     
     /**
+     * Updates the information on a boarding registration
+     *
+     * This end point will partially update a boarding registration 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void patchRegistrationTest() throws Exception {
+        String registrationId = null;
+        PatchRegistrationBody patchRegistrationBody = null;
+        String vCIdempotencyId = null;
+        InlineResponse2005 response = api.patchRegistration(registrationId, patchRegistrationBody, vCIdempotencyId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create a boarding registration
      *
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
@@ -66,7 +85,7 @@ public class MerchantBoardingApiTest {
     public void postRegistrationTest() throws Exception {
         PostRegistrationBody postRegistrationBody = null;
         String vCIdempotencyId = null;
-        InlineResponse2014 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
+        InlineResponse2017 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
 
         // TODO: test validations
     }

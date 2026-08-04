@@ -30,11 +30,12 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse2005;
-import Model.InlineResponse2014;
-import Model.InlineResponse4009;
+import Model.InlineResponse2017;
+import Model.InlineResponse40011;
 import Model.InlineResponse4043;
 import Model.InlineResponse4221;
 import Model.InlineResponse5002;
+import Model.PatchRegistrationBody;
 import Model.PostRegistrationBody;
 
 import java.lang.reflect.Type;
@@ -223,6 +224,171 @@ public class MerchantBoardingApi {
         return call;
     }
     /**
+     * Build call for patchRegistration
+     * @param registrationId Identifies the boarding registration to be updated (required)
+     * @param patchRegistrationBody Boarding registration data to be patched (required)
+     * @param vCIdempotencyId defines idempotency of the request (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call patchRegistrationCall(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchRegistrationBody, PatchRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        String inboundMLEStatus = "optional";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchRegistration,patchRegistrationAsync,patchRegistrationWithHttpInfo,patchRegistrationCall")) {
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "patchRegistration,patchRegistrationAsync,patchRegistrationWithHttpInfo,patchRegistrationCall");
+        
+        // create path and map variables
+        String localVarPath = "/boarding/v1/registrations/{registrationId}"
+            .replaceAll("\\{" + "registrationId" + "\\}", apiClient.escapeString(registrationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (vCIdempotencyId != null)
+        localVarHeaderParams.put("v-c-idempotency-id", apiClient.parameterToString(vCIdempotencyId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call patchRegistrationValidateBeforeCall(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        // verify the required parameter 'registrationId' is set
+        if (registrationId == null) {
+            logger.error("Missing the required parameter 'registrationId' when calling patchRegistration(Async)");
+            throw new ApiException("Missing the required parameter 'registrationId' when calling patchRegistration(Async)");
+        }
+        
+        // verify the required parameter 'patchRegistrationBody' is set
+        if (patchRegistrationBody == null) {
+            logger.error("Missing the required parameter 'patchRegistrationBody' when calling patchRegistration(Async)");
+            throw new ApiException("Missing the required parameter 'patchRegistrationBody' when calling patchRegistration(Async)");
+        }
+        
+        
+        okhttp3.Call call = patchRegistrationCall(registrationId, patchRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Updates the information on a boarding registration
+     * This end point will partially update a boarding registration 
+     * @param registrationId Identifies the boarding registration to be updated (required)
+     * @param patchRegistrationBody Boarding registration data to be patched (required)
+     * @param vCIdempotencyId defines idempotency of the request (optional)
+     * @return InlineResponse2005
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public InlineResponse2005 patchRegistration(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'patchRegistration' STARTED");
+        ApiResponse<InlineResponse2005> resp = patchRegistrationWithHttpInfo(registrationId, patchRegistrationBody, vCIdempotencyId);
+        logger.info("CALL TO METHOD 'patchRegistration' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Updates the information on a boarding registration
+     * This end point will partially update a boarding registration 
+     * @param registrationId Identifies the boarding registration to be updated (required)
+     * @param patchRegistrationBody Boarding registration data to be patched (required)
+     * @param vCIdempotencyId defines idempotency of the request (optional)
+     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<InlineResponse2005> patchRegistrationWithHttpInfo(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        okhttp3.Call call = patchRegistrationValidateBeforeCall(registrationId, patchRegistrationBody, vCIdempotencyId, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Updates the information on a boarding registration (asynchronously)
+     * This end point will partially update a boarding registration 
+     * @param registrationId Identifies the boarding registration to be updated (required)
+     * @param patchRegistrationBody Boarding registration data to be patched (required)
+     * @param vCIdempotencyId defines idempotency of the request (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call patchRegistrationAsync(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2005> callback) throws ApiException, ConfigException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = patchRegistrationValidateBeforeCall(registrationId, patchRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postRegistration
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
@@ -236,7 +402,7 @@ public class MerchantBoardingApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "mandatory";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postRegistration,postRegistrationAsync,postRegistrationWithHttpInfo,postRegistrationCall")) {
             try {
@@ -312,13 +478,13 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return InlineResponse2014
+     * @return InlineResponse2017
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2014 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public InlineResponse2017 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
-        ApiResponse<InlineResponse2014> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
+        ApiResponse<InlineResponse2017> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
         return resp.getData();
     }
@@ -328,14 +494,14 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;InlineResponse2017&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2014> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2017> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -349,7 +515,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
+    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2017> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -372,7 +538,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

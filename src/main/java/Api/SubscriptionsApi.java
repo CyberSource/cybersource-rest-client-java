@@ -38,10 +38,10 @@ import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
 import Model.GetSubscriptionsPaymentsResponse;
 import Model.GetSubscriptionsPaymentsResponse1;
-import Model.InlineResponse4003;
-import Model.InlineResponse4004;
+import Model.InlineResponse4005;
 import Model.InlineResponse4006;
-import Model.InlineResponse4007;
+import Model.InlineResponse4008;
+import Model.InlineResponse4009;
 import Model.InlineResponse4041;
 import Model.PtsV2PaymentsPost502Response;
 import Model.SuspendSubscriptionResponse;
@@ -1194,7 +1194,7 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePayments, UpdatePayments.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "subscriptionsIdPaymentsPut,subscriptionsIdPaymentsPutAsync,subscriptionsIdPaymentsPutWithHttpInfo,subscriptionsIdPaymentsPutCall")) {
             try {
@@ -1505,7 +1505,7 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateSubscription,updateSubscriptionAsync,updateSubscriptionWithHttpInfo,updateSubscriptionCall")) {
             try {

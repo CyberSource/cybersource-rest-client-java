@@ -16,7 +16,9 @@ package Api;
 import Model.InlineResponse2004;
 import Model.InlineResponse4042;
 import Model.MerchantDefinedFieldCore;
+import Model.MerchantDefinedFieldCore1;
 import Model.MerchantDefinedFieldDefinitionRequest;
+import Model.MerchantDefinedFieldDefinitionRequest1;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -53,6 +55,23 @@ public class MerchantDefinedFieldsApiTest {
     }
     
     /**
+     * Create a PayByLink merchant defined field for a given reference type
+     *
+     * Creates a merchant defined field for the given reference type (&#x60;Purchase&#x60; or &#x60;Donation&#x60;). The field type is independent of the reference type: both &#x60;Purchase&#x60; and &#x60;Donation&#x60; support both &#x60;Text&#x60; and &#x60;Select&#x60; fields. Set &#x60;fieldType&#x60; to &#x60;Text&#x60; or &#x60;Select&#x60; accordingly. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void createPblMerchantDefinedFieldDefinitionTest() throws Exception {
+        String referenceType = null;
+        MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest = null;
+        List<InlineResponse2004> response = api.createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Delete a MerchantDefinedField by ID
      *
      * 
@@ -65,6 +84,23 @@ public class MerchantDefinedFieldsApiTest {
         String referenceType = null;
         Long id = null;
         api.deleteMerchantDefinedFieldsDefinitions(referenceType, id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete a PayByLink MerchantDefinedField by ID
+     *
+     * 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void deletePblMerchantDefinedFieldsDefinitionsTest() throws Exception {
+        String referenceType = null;
+        Long id = null;
+        api.deletePblMerchantDefinedFieldsDefinitions(referenceType, id);
 
         // TODO: test validations
     }
@@ -86,6 +122,22 @@ public class MerchantDefinedFieldsApiTest {
     }
     
     /**
+     * Get all PayByLink merchant defined fields for a given reference type
+     *
+     * 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getPblMerchantDefinedFieldsDefinitionsTest() throws Exception {
+        String referenceType = null;
+        List<InlineResponse2004> response = api.getPblMerchantDefinedFieldsDefinitions(referenceType);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a MerchantDefinedField by ID
      *
      * 
@@ -99,6 +151,24 @@ public class MerchantDefinedFieldsApiTest {
         Long id = null;
         MerchantDefinedFieldCore merchantDefinedFieldCore = null;
         List<InlineResponse2004> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a PayByLink MerchantDefinedField by ID
+     *
+     * 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void putPblMerchantDefinedFieldsDefinitionsTest() throws Exception {
+        String referenceType = null;
+        Long id = null;
+        MerchantDefinedFieldCore1 merchantDefinedFieldCore = null;
+        List<InlineResponse2004> response = api.putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
 
         // TODO: test validations
     }

@@ -15,6 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2018KeyInformation;
+import Model.Kmsegressv2keyssymClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,9 +27,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Egress Asymmetric Key Information Response. 
+ * Egress Key Information Response 
  */
-@ApiModel(description = "Egress Asymmetric Key Information Response. ")
+@ApiModel(description = "Egress Key Information Response ")
 
 public class InlineResponse2018 {
   @SerializedName("submitTimeUtc")
@@ -35,6 +37,12 @@ public class InlineResponse2018 {
 
   @SerializedName("status")
   private String status = null;
+
+  @SerializedName("clientReferenceInformation")
+  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
+
+  @SerializedName("keyInformation")
+  private InlineResponse2018KeyInformation keyInformation = null;
 
   public InlineResponse2018 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -72,6 +80,42 @@ public class InlineResponse2018 {
     this.status = status;
   }
 
+  public InlineResponse2018 clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
+  public InlineResponse2018 keyInformation(InlineResponse2018KeyInformation keyInformation) {
+    this.keyInformation = keyInformation;
+    return this;
+  }
+
+   /**
+   * Get keyInformation
+   * @return keyInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2018KeyInformation getKeyInformation() {
+    return keyInformation;
+  }
+
+  public void setKeyInformation(InlineResponse2018KeyInformation keyInformation) {
+    this.keyInformation = keyInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +127,14 @@ public class InlineResponse2018 {
     }
     InlineResponse2018 inlineResponse2018 = (InlineResponse2018) o;
     return Objects.equals(this.submitTimeUtc, inlineResponse2018.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2018.status);
+        Objects.equals(this.status, inlineResponse2018.status) &&
+        Objects.equals(this.clientReferenceInformation, inlineResponse2018.clientReferenceInformation) &&
+        Objects.equals(this.keyInformation, inlineResponse2018.keyInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status);
+    return Objects.hash(submitTimeUtc, status, clientReferenceInformation, keyInformation);
   }
 
 
@@ -117,6 +163,8 @@ public class InlineResponse2018 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
+    if (keyInformation != null) sb.append("    keyInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("keyInformation").matches() ? "[REDACTED]" : toIndentedString(keyInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -137,6 +185,8 @@ public class InlineResponse2018 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -111,10 +111,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
   }
 
    /**
-   * Type of digital payment solution for the transaction. 
+   * Type of digital payment solution for the transaction.  Note: After the upcoming service update, this field will return the applicable payment solution code for supported digital wallet transactions. 
    * @return paymentSolution
   **/
-  @ApiModelProperty(value = "Type of digital payment solution for the transaction. ")
+  @ApiModelProperty(value = "Type of digital payment solution for the transaction.  Note: After the upcoming service update, this field will return the applicable payment solution code for supported digital wallet transactions. ")
   public String getPaymentSolution() {
     return paymentSolution;
   }

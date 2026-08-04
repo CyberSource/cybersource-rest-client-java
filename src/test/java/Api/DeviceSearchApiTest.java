@@ -15,8 +15,8 @@ package Api;
 
 import Model.InlineResponse20011;
 import Model.InlineResponse2009;
-import Model.InlineResponse40010;
-import Model.InlineResponse401;
+import Model.InlineResponse40012;
+import Model.InlineResponse4012;
 import Model.InlineResponse4032;
 import Model.InlineResponse4045;
 import Model.InlineResponse5003;

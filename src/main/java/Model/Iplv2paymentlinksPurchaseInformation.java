@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.LocalDate;
 
 /**
  * Contains link specific detail.
@@ -32,6 +33,18 @@ import java.io.IOException;
 public class Iplv2paymentlinksPurchaseInformation {
   @SerializedName("purchaseNumber")
   private String purchaseNumber = null;
+
+  @SerializedName("transactionReferenceNumber")
+  private String transactionReferenceNumber = null;
+
+  @SerializedName("expirationDate")
+  private LocalDate expirationDate = null;
+
+  @SerializedName("expirationAmount")
+  private String expirationAmount = null;
+
+  @SerializedName("expirationQuantity")
+  private String expirationQuantity = null;
 
   public Iplv2paymentlinksPurchaseInformation purchaseNumber(String purchaseNumber) {
     this.purchaseNumber = purchaseNumber;
@@ -51,6 +64,78 @@ public class Iplv2paymentlinksPurchaseInformation {
     this.purchaseNumber = purchaseNumber;
   }
 
+  public Iplv2paymentlinksPurchaseInformation transactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+    return this;
+  }
+
+   /**
+   * The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. 
+   * @return transactionReferenceNumber
+  **/
+  @ApiModelProperty(value = "The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. ")
+  public String getTransactionReferenceNumber() {
+    return transactionReferenceNumber;
+  }
+
+  public void setTransactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+  }
+
+  public Iplv2paymentlinksPurchaseInformation expirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * Define an expiration date for the link.  The date must be today or in the future.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day.  The invoice link automatically expires 12 months after the due date. 
+   * @return expirationDate
+  **/
+  @ApiModelProperty(value = "Define an expiration date for the link.  The date must be today or in the future.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. ")
+  public LocalDate getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+
+  public Iplv2paymentlinksPurchaseInformation expirationAmount(String expirationAmount) {
+    this.expirationAmount = expirationAmount;
+    return this;
+  }
+
+   /**
+   * Define an expiry amount for the link.  Must be null or greater than 0.  If the total price of all transactions for this link exceeds the expiry amount, the link will expire. 
+   * @return expirationAmount
+  **/
+  @ApiModelProperty(value = "Define an expiry amount for the link.  Must be null or greater than 0.  If the total price of all transactions for this link exceeds the expiry amount, the link will expire. ")
+  public String getExpirationAmount() {
+    return expirationAmount;
+  }
+
+  public void setExpirationAmount(String expirationAmount) {
+    this.expirationAmount = expirationAmount;
+  }
+
+  public Iplv2paymentlinksPurchaseInformation expirationQuantity(String expirationQuantity) {
+    this.expirationQuantity = expirationQuantity;
+    return this;
+  }
+
+   /**
+   * Define an expiration quantity for the link.  Must be null or greater than 0.  If the total quantity of items sold exceeds the expiration quantity, the link is expired. 
+   * @return expirationQuantity
+  **/
+  @ApiModelProperty(value = "Define an expiration quantity for the link.  Must be null or greater than 0.  If the total quantity of items sold exceeds the expiration quantity, the link is expired. ")
+  public String getExpirationQuantity() {
+    return expirationQuantity;
+  }
+
+  public void setExpirationQuantity(String expirationQuantity) {
+    this.expirationQuantity = expirationQuantity;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +146,16 @@ public class Iplv2paymentlinksPurchaseInformation {
       return false;
     }
     Iplv2paymentlinksPurchaseInformation iplv2paymentlinksPurchaseInformation = (Iplv2paymentlinksPurchaseInformation) o;
-    return Objects.equals(this.purchaseNumber, iplv2paymentlinksPurchaseInformation.purchaseNumber);
+    return Objects.equals(this.purchaseNumber, iplv2paymentlinksPurchaseInformation.purchaseNumber) &&
+        Objects.equals(this.transactionReferenceNumber, iplv2paymentlinksPurchaseInformation.transactionReferenceNumber) &&
+        Objects.equals(this.expirationDate, iplv2paymentlinksPurchaseInformation.expirationDate) &&
+        Objects.equals(this.expirationAmount, iplv2paymentlinksPurchaseInformation.expirationAmount) &&
+        Objects.equals(this.expirationQuantity, iplv2paymentlinksPurchaseInformation.expirationQuantity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(purchaseNumber);
+    return Objects.hash(purchaseNumber, transactionReferenceNumber, expirationDate, expirationAmount, expirationQuantity);
   }
 
 
@@ -94,6 +183,10 @@ public class Iplv2paymentlinksPurchaseInformation {
     sb.append("class Iplv2paymentlinksPurchaseInformation {\n");
     
     if (purchaseNumber != null) sb.append("    purchaseNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseNumber").matches() ? "[REDACTED]" : toIndentedString(purchaseNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationDate").matches() ? "[REDACTED]" : toIndentedString(expirationDate)).append("\n");
+    if (expirationAmount != null) sb.append("    expirationAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationAmount").matches() ? "[REDACTED]" : toIndentedString(expirationAmount)).append("\n");
+    if (expirationQuantity != null) sb.append("    expirationQuantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationQuantity").matches() ? "[REDACTED]" : toIndentedString(expirationQuantity)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -113,6 +206,10 @@ public class Iplv2paymentlinksPurchaseInformation {
     sb.append("class Iplv2paymentlinksPurchaseInformation {\n");
     
     if (purchaseNumber != null) sb.append("    purchaseNumber: ").append(toIndentedString(purchaseNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    if (expirationAmount != null) sb.append("    expirationAmount: ").append(toIndentedString(expirationAmount)).append("\n");
+    if (expirationQuantity != null) sb.append("    expirationQuantity: ").append(toIndentedString(expirationQuantity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

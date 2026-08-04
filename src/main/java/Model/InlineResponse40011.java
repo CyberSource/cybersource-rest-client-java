@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4001Details;
+import Model.InlineResponse40011Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,53 +26,99 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse40011
  */
 
 public class InlineResponse40011 {
-  @SerializedName("correlationId")
-  private String correlationId = null;
+  @SerializedName("submitTimeUtc")
+  private DateTime submitTimeUtc = null;
 
-  @SerializedName("details")
-  private List<InlineResponse4001Details> details = null;
-
-  @SerializedName("informationLink")
-  private String informationLink = null;
-
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("status")
+  private String status = null;
 
   @SerializedName("reason")
   private String reason = null;
 
-  public InlineResponse40011 correlationId(String correlationId) {
-    this.correlationId = correlationId;
+  @SerializedName("message")
+  private String message = null;
+
+  @SerializedName("details")
+  private List<InlineResponse40011Details> details = null;
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public InlineResponse40011 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * Get correlationId
-   * @return correlationId
+   * The http status description of the submitted request.
+   * @return status
   **/
-  @ApiModelProperty(value = "")
-  public String getCorrelationId() {
-    return correlationId;
+  @ApiModelProperty(example = "BAD_REQUEST", value = "The http status description of the submitted request.")
+  public String getStatus() {
+    return status;
   }
 
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public InlineResponse40011 details(List<InlineResponse4001Details> details) {
+  public InlineResponse40011 reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
+  }
+
+  public InlineResponse40011 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Descriptive message for the error.
+   * @return message
+  **/
+  @ApiModelProperty(value = "Descriptive message for the error.")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public InlineResponse40011 details(List<InlineResponse40011Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse40011 addDetailsItem(InlineResponse4001Details detailsItem) {
+  public InlineResponse40011 addDetailsItem(InlineResponse40011Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4001Details>();
+      this.details = new ArrayList<InlineResponse40011Details>();
     }
     this.details.add(detailsItem);
     return this;
@@ -83,66 +129,12 @@ public class InlineResponse40011 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse4001Details> getDetails() {
+  public List<InlineResponse40011Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse4001Details> details) {
+  public void setDetails(List<InlineResponse40011Details> details) {
     this.details = details;
-  }
-
-  public InlineResponse40011 informationLink(String informationLink) {
-    this.informationLink = informationLink;
-    return this;
-  }
-
-   /**
-   * Get informationLink
-   * @return informationLink
-  **/
-  @ApiModelProperty(value = "")
-  public String getInformationLink() {
-    return informationLink;
-  }
-
-  public void setInformationLink(String informationLink) {
-    this.informationLink = informationLink;
-  }
-
-  public InlineResponse40011 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Get message
-   * @return message
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public InlineResponse40011 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
-   * @return reason
-  **/
-  @ApiModelProperty(required = true, value = "Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
   }
 
 
@@ -155,16 +147,16 @@ public class InlineResponse40011 {
       return false;
     }
     InlineResponse40011 inlineResponse40011 = (InlineResponse40011) o;
-    return Objects.equals(this.correlationId, inlineResponse40011.correlationId) &&
-        Objects.equals(this.details, inlineResponse40011.details) &&
-        Objects.equals(this.informationLink, inlineResponse40011.informationLink) &&
+    return Objects.equals(this.submitTimeUtc, inlineResponse40011.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse40011.status) &&
+        Objects.equals(this.reason, inlineResponse40011.reason) &&
         Objects.equals(this.message, inlineResponse40011.message) &&
-        Objects.equals(this.reason, inlineResponse40011.reason);
+        Objects.equals(this.details, inlineResponse40011.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(correlationId, details, informationLink, message, reason);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -191,11 +183,11 @@ public class InlineResponse40011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse40011 {\n");
     
-    if (correlationId != null) sb.append("    correlationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("correlationId").matches() ? "[REDACTED]" : toIndentedString(correlationId)).append("\n");
-    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
-    if (informationLink != null) sb.append("    informationLink: ").append(SENSITIVE_FIELD_PATTERN.matcher("informationLink").matches() ? "[REDACTED]" : toIndentedString(informationLink)).append("\n");
-    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -214,11 +206,11 @@ public class InlineResponse40011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse40011 {\n");
     
-    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    if (informationLink != null) sb.append("    informationLink: ").append(toIndentedString(informationLink)).append("\n");
-    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

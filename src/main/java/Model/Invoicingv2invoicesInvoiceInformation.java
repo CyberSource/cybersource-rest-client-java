@@ -34,6 +34,9 @@ public class Invoicingv2invoicesInvoiceInformation {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
 
+  @SerializedName("transactionReferenceNumber")
+  private String transactionReferenceNumber = null;
+
   @SerializedName("description")
   private String description = null;
 
@@ -70,6 +73,24 @@ public class Invoicingv2invoicesInvoiceInformation {
     this.invoiceNumber = invoiceNumber;
   }
 
+  public Invoicingv2invoicesInvoiceInformation transactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+    return this;
+  }
+
+   /**
+   * The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. 
+   * @return transactionReferenceNumber
+  **/
+  @ApiModelProperty(value = "The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. ")
+  public String getTransactionReferenceNumber() {
+    return transactionReferenceNumber;
+  }
+
+  public void setTransactionReferenceNumber(String transactionReferenceNumber) {
+    this.transactionReferenceNumber = transactionReferenceNumber;
+  }
+
   public Invoicingv2invoicesInvoiceInformation description(String description) {
     this.description = description;
     return this;
@@ -94,10 +115,10 @@ public class Invoicingv2invoicesInvoiceInformation {
   }
 
    /**
-   * The invoice due date. This field is required for creating an invoice. Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * The invoice due date. This field is required for creating an invoice. Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day.  The invoice link automatically expires 12 months after the due date. 
    * @return dueDate
   **/
-  @ApiModelProperty(required = true, value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  @ApiModelProperty(required = true, value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. ")
   public LocalDate getDueDate() {
     return dueDate;
   }
@@ -112,10 +133,10 @@ public class Invoicingv2invoicesInvoiceInformation {
   }
 
    /**
-   * Define an expiration date for the link.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * Define an expiration date for the link.  The date must be today or in the future.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day.  The invoice link automatically expires 12 months after the due date. 
    * @return expirationDate
   **/
-  @ApiModelProperty(value = "Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  @ApiModelProperty(value = "Define an expiration date for the link.  The date must be today or in the future.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. ")
   public LocalDate getExpirationDate() {
     return expirationDate;
   }
@@ -189,6 +210,7 @@ public class Invoicingv2invoicesInvoiceInformation {
     }
     Invoicingv2invoicesInvoiceInformation invoicingv2invoicesInvoiceInformation = (Invoicingv2invoicesInvoiceInformation) o;
     return Objects.equals(this.invoiceNumber, invoicingv2invoicesInvoiceInformation.invoiceNumber) &&
+        Objects.equals(this.transactionReferenceNumber, invoicingv2invoicesInvoiceInformation.transactionReferenceNumber) &&
         Objects.equals(this.description, invoicingv2invoicesInvoiceInformation.description) &&
         Objects.equals(this.dueDate, invoicingv2invoicesInvoiceInformation.dueDate) &&
         Objects.equals(this.expirationDate, invoicingv2invoicesInvoiceInformation.expirationDate) &&
@@ -199,7 +221,7 @@ public class Invoicingv2invoicesInvoiceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, description, dueDate, expirationDate, sendImmediately, allowPartialPayments, deliveryMode);
+    return Objects.hash(invoiceNumber, transactionReferenceNumber, description, dueDate, expirationDate, sendImmediately, allowPartialPayments, deliveryMode);
   }
 
 
@@ -227,6 +249,7 @@ public class Invoicingv2invoicesInvoiceInformation {
     sb.append("class Invoicingv2invoicesInvoiceInformation {\n");
     
     if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceNumber").matches() ? "[REDACTED]" : toIndentedString(invoiceNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionReferenceNumber").matches() ? "[REDACTED]" : toIndentedString(transactionReferenceNumber)).append("\n");
     if (description != null) sb.append("    description: ").append(SENSITIVE_FIELD_PATTERN.matcher("description").matches() ? "[REDACTED]" : toIndentedString(description)).append("\n");
     if (dueDate != null) sb.append("    dueDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("dueDate").matches() ? "[REDACTED]" : toIndentedString(dueDate)).append("\n");
     if (expirationDate != null) sb.append("    expirationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationDate").matches() ? "[REDACTED]" : toIndentedString(expirationDate)).append("\n");
@@ -252,6 +275,7 @@ public class Invoicingv2invoicesInvoiceInformation {
     sb.append("class Invoicingv2invoicesInvoiceInformation {\n");
     
     if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (dueDate != null) sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");

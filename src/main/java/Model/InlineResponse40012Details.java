@@ -35,16 +35,19 @@ public class InlineResponse40012Details {
   @SerializedName("reason")
   private String reason = null;
 
+  @SerializedName("code")
+  private String code = null;
+
   public InlineResponse40012Details field(String field) {
     this.field = field;
     return this;
   }
 
    /**
-   * This is the flattened JSON object field name/path that is either missing or invalid. 
+   * This is the flattened JSON object field name/path that is either missing or invalid.
    * @return field
   **/
-  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid. ")
+  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid.")
   public String getField() {
     return field;
   }
@@ -59,16 +62,34 @@ public class InlineResponse40012Details {
   }
 
    /**
-   * Possible reasons for the error.  Possible values:   - &#x60;MISSING_FIELD&#x60;   - &#x60;INVALID_DATA&#x60; 
+   * Possible reasons for the error. 
    * @return reason
   **/
-  @ApiModelProperty(value = "Possible reasons for the error.  Possible values:   - `MISSING_FIELD`   - `INVALID_DATA` ")
+  @ApiModelProperty(value = "Possible reasons for the error. ")
   public String getReason() {
     return reason;
   }
 
   public void setReason(String reason) {
     this.reason = reason;
+  }
+
+  public InlineResponse40012Details code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * An optional short string which identifies the exact field error.
+   * @return code
+  **/
+  @ApiModelProperty(value = "An optional short string which identifies the exact field error.")
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -82,12 +103,13 @@ public class InlineResponse40012Details {
     }
     InlineResponse40012Details inlineResponse40012Details = (InlineResponse40012Details) o;
     return Objects.equals(this.field, inlineResponse40012Details.field) &&
-        Objects.equals(this.reason, inlineResponse40012Details.reason);
+        Objects.equals(this.reason, inlineResponse40012Details.reason) &&
+        Objects.equals(this.code, inlineResponse40012Details.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(field, reason);
+    return Objects.hash(field, reason, code);
   }
 
 
@@ -116,6 +138,7 @@ public class InlineResponse40012Details {
     
     if (field != null) sb.append("    field: ").append(SENSITIVE_FIELD_PATTERN.matcher("field").matches() ? "[REDACTED]" : toIndentedString(field)).append("\n");
     if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,6 +159,7 @@ public class InlineResponse40012Details {
     
     if (field != null) sb.append("    field: ").append(toIndentedString(field)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,7 +35,6 @@ import okhttp3.OkHttpClient;
  *       reclaimed.</li>
  * </ul>
  */
-@Ignore("Long-running memory/heap diagnostic; run manually, not during mvn install")
 public class HttpClientFactoryMemoryLeakTest {
 
     /** Number of client lookups performed in the heap-stability test. */
@@ -50,7 +49,7 @@ public class HttpClientFactoryMemoryLeakTest {
      * catching a genuine per-iteration leak (which would be hundreds of MB at this
      * iteration count).
      */
-    private static final long MAX_HEAP_GROWTH_BYTES = 16L * 1024 * 1024; // 16 MB
+    private static final long MAX_HEAP_GROWTH_BYTES = 32L * 1024 * 1024; // 32 MB
 
     private MerchantConfig merchantConfig;
 

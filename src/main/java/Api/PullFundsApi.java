@@ -94,7 +94,7 @@ public class PullFundsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pullFundsRefundRequest, PullFundsRefundRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPullFundsRefund,createPullFundsRefundAsync,createPullFundsRefundWithHttpInfo,createPullFundsRefundCall")) {
             try {
@@ -325,7 +325,7 @@ public class PullFundsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pullFundsReversalRequest, PullFundsReversalRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPullFundsReversal,createPullFundsReversalAsync,createPullFundsReversalWithHttpInfo,createPullFundsReversalCall")) {
             try {
@@ -555,7 +555,7 @@ public class PullFundsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pullFundsRequest, PullFundsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPullFundsTransfer,createPullFundsTransferAsync,createPullFundsTransferWithHttpInfo,createPullFundsTransferCall")) {
             try {

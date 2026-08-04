@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Boardingv1registrationsIntegrationInformationTenantInformation;
+import Model.TenantInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class Boardingv1registrationsIntegrationInformationTenantConfigurations {
   private String solutionId = null;
 
   @SerializedName("tenantInformation")
-  private Boardingv1registrationsIntegrationInformationTenantInformation tenantInformation = null;
+  private TenantInformation tenantInformation = null;
 
   public Boardingv1registrationsIntegrationInformationTenantConfigurations solutionId(String solutionId) {
     this.solutionId = solutionId;
@@ -54,7 +54,7 @@ public class Boardingv1registrationsIntegrationInformationTenantConfigurations {
     this.solutionId = solutionId;
   }
 
-  public Boardingv1registrationsIntegrationInformationTenantConfigurations tenantInformation(Boardingv1registrationsIntegrationInformationTenantInformation tenantInformation) {
+  public Boardingv1registrationsIntegrationInformationTenantConfigurations tenantInformation(TenantInformation tenantInformation) {
     this.tenantInformation = tenantInformation;
     return this;
   }
@@ -64,11 +64,11 @@ public class Boardingv1registrationsIntegrationInformationTenantConfigurations {
    * @return tenantInformation
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsIntegrationInformationTenantInformation getTenantInformation() {
+  public TenantInformation getTenantInformation() {
     return tenantInformation;
   }
 
-  public void setTenantInformation(Boardingv1registrationsIntegrationInformationTenantInformation tenantInformation) {
+  public void setTenantInformation(TenantInformation tenantInformation) {
     this.tenantInformation = tenantInformation;
   }
 

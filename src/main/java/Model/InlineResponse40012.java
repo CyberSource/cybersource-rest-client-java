@@ -32,38 +32,20 @@ import java.util.List;
  */
 
 public class InlineResponse40012 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
-
   @SerializedName("status")
   private String status = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("reason")
-  private String reason = null;
+  @SerializedName("code")
+  private String code = null;
 
   @SerializedName("details")
   private List<InlineResponse40012Details> details = null;
 
-  public InlineResponse40012 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(value = "Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
 
   public InlineResponse40012 status(String status) {
     this.status = status;
@@ -71,10 +53,10 @@ public class InlineResponse40012 {
   }
 
    /**
-   * Possible values:   - &#x60;INVALID_REQUEST&#x60; 
+   * The status of the submitted request.  Possible values: - BAD_REQUEST
    * @return status
   **/
-  @ApiModelProperty(value = "Possible values:   - `INVALID_REQUEST` ")
+  @ApiModelProperty(value = "The status of the submitted request.  Possible values: - BAD_REQUEST")
   public String getStatus() {
     return status;
   }
@@ -89,10 +71,10 @@ public class InlineResponse40012 {
   }
 
    /**
-   * The detail message related to the status and reason
+   * The detail message related to the status and reason listed above.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
   public String getMessage() {
     return message;
   }
@@ -101,22 +83,22 @@ public class InlineResponse40012 {
     this.message = message;
   }
 
-  public InlineResponse40012 reason(String reason) {
-    this.reason = reason;
+  public InlineResponse40012 code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * The reason of the status.  Possible values:   - &#x60;INVALID_REQUEST&#x60; 
-   * @return reason
+   * An optional short string which identifies the exact error.
+   * @return code
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:   - `INVALID_REQUEST` ")
-  public String getReason() {
-    return reason;
+  @ApiModelProperty(value = "An optional short string which identifies the exact error.")
+  public String getCode() {
+    return code;
   }
 
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setCode(String code) {
+    this.code = code;
   }
 
   public InlineResponse40012 details(List<InlineResponse40012Details> details) {
@@ -133,16 +115,34 @@ public class InlineResponse40012 {
   }
 
    /**
-   * Get details
+   * An optional array which provides more details of the error.
    * @return details
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An optional array which provides more details of the error.")
   public List<InlineResponse40012Details> getDetails() {
     return details;
   }
 
   public void setDetails(List<InlineResponse40012Details> details) {
     this.details = details;
+  }
+
+  public InlineResponse40012 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
   }
 
 
@@ -155,16 +155,16 @@ public class InlineResponse40012 {
       return false;
     }
     InlineResponse40012 inlineResponse40012 = (InlineResponse40012) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse40012.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse40012.status) &&
+    return Objects.equals(this.status, inlineResponse40012.status) &&
         Objects.equals(this.message, inlineResponse40012.message) &&
-        Objects.equals(this.reason, inlineResponse40012.reason) &&
-        Objects.equals(this.details, inlineResponse40012.details);
+        Objects.equals(this.code, inlineResponse40012.code) &&
+        Objects.equals(this.details, inlineResponse40012.details) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse40012.submitTimeUtc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, message, reason, details);
+    return Objects.hash(status, message, code, details, submitTimeUtc);
   }
 
 
@@ -191,11 +191,11 @@ public class InlineResponse40012 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse40012 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
     if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -214,11 +214,11 @@ public class InlineResponse40012 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse40012 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }

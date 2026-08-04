@@ -15,8 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2015KeyInformation;
-import Model.Kmsegressv2keyssymClientReferenceInformation;
+import Model.InlineResponse2015ClientReferenceInformation;
+import Model.InlineResponse2015ErrorInformation;
+import Model.InlineResponse2015Links;
+import Model.InlineResponse2015Transactions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,41 +27,51 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Egress Key Information Response 
+ * InlineResponse2015
  */
-@ApiModel(description = "Egress Key Information Response ")
 
 public class InlineResponse2015 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("id")
+  private String id = null;
 
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("submitTimeStampUtc")
+  private String submitTimeStampUtc = null;
+
+  @SerializedName("_links")
+  private InlineResponse2015Links links = null;
+
+  @SerializedName("transactions")
+  private List<InlineResponse2015Transactions> transactions = null;
+
   @SerializedName("clientReferenceInformation")
-  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
+  private InlineResponse2015ClientReferenceInformation clientReferenceInformation = null;
 
-  @SerializedName("keyInformation")
-  private InlineResponse2015KeyInformation keyInformation = null;
+  @SerializedName("errorInformation")
+  private InlineResponse2015ErrorInformation errorInformation = null;
 
-  public InlineResponse2015 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse2015 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
-   * @return submitTimeUtc
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @return id
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
+  public String getId() {
+    return id;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public InlineResponse2015 status(String status) {
@@ -68,10 +80,10 @@ public class InlineResponse2015 {
   }
 
    /**
-   * The status of the submitted transaction. Possible values:  - ACCEPTED 
+   * The status of the submitted transaction.  Possible values: - &#x60;COMPLETED&#x60; - &#x60;SERVER_ERROR&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;DECLINED&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:  - ACCEPTED ")
+  @ApiModelProperty(required = true, value = "The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` ")
   public String getStatus() {
     return status;
   }
@@ -80,7 +92,69 @@ public class InlineResponse2015 {
     this.status = status;
   }
 
-  public InlineResponse2015 clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
+  public InlineResponse2015 submitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeStampUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeStampUtc() {
+    return submitTimeStampUtc;
+  }
+
+  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+  }
+
+  public InlineResponse2015 links(InlineResponse2015Links links) {
+    this.links = links;
+    return this;
+  }
+
+   /**
+   * Get links
+   * @return links
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2015Links getLinks() {
+    return links;
+  }
+
+  public void setLinks(InlineResponse2015Links links) {
+    this.links = links;
+  }
+
+  public InlineResponse2015 transactions(List<InlineResponse2015Transactions> transactions) {
+    this.transactions = transactions;
+    return this;
+  }
+
+  public InlineResponse2015 addTransactionsItem(InlineResponse2015Transactions transactionsItem) {
+    if (this.transactions == null) {
+      this.transactions = new ArrayList<InlineResponse2015Transactions>();
+    }
+    this.transactions.add(transactionsItem);
+    return this;
+  }
+
+   /**
+   * Get transactions
+   * @return transactions
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2015Transactions> getTransactions() {
+    return transactions;
+  }
+
+  public void setTransactions(List<InlineResponse2015Transactions> transactions) {
+    this.transactions = transactions;
+  }
+
+  public InlineResponse2015 clientReferenceInformation(InlineResponse2015ClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -90,30 +164,30 @@ public class InlineResponse2015 {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
+  public InlineResponse2015ClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(InlineResponse2015ClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public InlineResponse2015 keyInformation(InlineResponse2015KeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public InlineResponse2015 errorInformation(InlineResponse2015ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
     return this;
   }
 
    /**
-   * Get keyInformation
-   * @return keyInformation
+   * Get errorInformation
+   * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2015KeyInformation getKeyInformation() {
-    return keyInformation;
+  public InlineResponse2015ErrorInformation getErrorInformation() {
+    return errorInformation;
   }
 
-  public void setKeyInformation(InlineResponse2015KeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
+  public void setErrorInformation(InlineResponse2015ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
   }
 
 
@@ -126,15 +200,18 @@ public class InlineResponse2015 {
       return false;
     }
     InlineResponse2015 inlineResponse2015 = (InlineResponse2015) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2015.submitTimeUtc) &&
+    return Objects.equals(this.id, inlineResponse2015.id) &&
         Objects.equals(this.status, inlineResponse2015.status) &&
+        Objects.equals(this.submitTimeStampUtc, inlineResponse2015.submitTimeStampUtc) &&
+        Objects.equals(this.links, inlineResponse2015.links) &&
+        Objects.equals(this.transactions, inlineResponse2015.transactions) &&
         Objects.equals(this.clientReferenceInformation, inlineResponse2015.clientReferenceInformation) &&
-        Objects.equals(this.keyInformation, inlineResponse2015.keyInformation);
+        Objects.equals(this.errorInformation, inlineResponse2015.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, clientReferenceInformation, keyInformation);
+    return Objects.hash(id, status, submitTimeStampUtc, links, transactions, clientReferenceInformation, errorInformation);
   }
 
 
@@ -161,10 +238,13 @@ public class InlineResponse2015 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2015 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (transactions != null) sb.append("    transactions: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactions").matches() ? "[REDACTED]" : toIndentedString(transactions)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
-    if (keyInformation != null) sb.append("    keyInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("keyInformation").matches() ? "[REDACTED]" : toIndentedString(keyInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,10 +263,13 @@ public class InlineResponse2015 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2015 {\n");
     
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (transactions != null) sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

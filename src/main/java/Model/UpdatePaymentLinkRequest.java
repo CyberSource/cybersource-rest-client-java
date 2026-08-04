@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Invoicingv2invoicesClientReferenceInformation;
+import Model.Invoicingv2invoicesMerchantDefinedFieldValues;
 import Model.Iplv2paymentlinksidOrderInformation;
 import Model.Iplv2paymentlinksidProcessingInformation;
 import Model.Iplv2paymentlinksidPurchaseInformation;
@@ -27,6 +28,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UpdatePaymentLinkRequest
@@ -47,6 +50,9 @@ public class UpdatePaymentLinkRequest {
 
   @SerializedName("orderInformation")
   private Iplv2paymentlinksidOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValues")
+  private List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues = null;
 
   public UpdatePaymentLinkRequest status(String status) {
     this.status = status;
@@ -138,6 +144,32 @@ public class UpdatePaymentLinkRequest {
     this.orderInformation = orderInformation;
   }
 
+  public UpdatePaymentLinkRequest merchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+    return this;
+  }
+
+  public UpdatePaymentLinkRequest addMerchantDefinedFieldValuesItem(Invoicingv2invoicesMerchantDefinedFieldValues merchantDefinedFieldValuesItem) {
+    if (this.merchantDefinedFieldValues == null) {
+      this.merchantDefinedFieldValues = new ArrayList<Invoicingv2invoicesMerchantDefinedFieldValues>();
+    }
+    this.merchantDefinedFieldValues.add(merchantDefinedFieldValuesItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValues
+   * @return merchantDefinedFieldValues
+  **/
+  @ApiModelProperty(value = "")
+  public List<Invoicingv2invoicesMerchantDefinedFieldValues> getMerchantDefinedFieldValues() {
+    return merchantDefinedFieldValues;
+  }
+
+  public void setMerchantDefinedFieldValues(List<Invoicingv2invoicesMerchantDefinedFieldValues> merchantDefinedFieldValues) {
+    this.merchantDefinedFieldValues = merchantDefinedFieldValues;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +184,13 @@ public class UpdatePaymentLinkRequest {
         Objects.equals(this.clientReferenceInformation, updatePaymentLinkRequest.clientReferenceInformation) &&
         Objects.equals(this.processingInformation, updatePaymentLinkRequest.processingInformation) &&
         Objects.equals(this.purchaseInformation, updatePaymentLinkRequest.purchaseInformation) &&
-        Objects.equals(this.orderInformation, updatePaymentLinkRequest.orderInformation);
+        Objects.equals(this.orderInformation, updatePaymentLinkRequest.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValues, updatePaymentLinkRequest.merchantDefinedFieldValues);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, clientReferenceInformation, processingInformation, purchaseInformation, orderInformation);
+    return Objects.hash(status, clientReferenceInformation, processingInformation, purchaseInformation, orderInformation, merchantDefinedFieldValues);
   }
 
 
@@ -189,6 +222,7 @@ public class UpdatePaymentLinkRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     if (purchaseInformation != null) sb.append("    purchaseInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("purchaseInformation").matches() ? "[REDACTED]" : toIndentedString(purchaseInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValues != null) sb.append("    merchantDefinedFieldValues: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedFieldValues").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedFieldValues)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -212,6 +246,7 @@ public class UpdatePaymentLinkRequest {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (purchaseInformation != null) sb.append("    purchaseInformation: ").append(toIndentedString(purchaseInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValues != null) sb.append("    merchantDefinedFieldValues: ").append(toIndentedString(merchantDefinedFieldValues)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -76,6 +76,9 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
   @SerializedName("enableMerchantEmailNotifications")
   private Boolean enableMerchantEmailNotifications = false;
 
+  @SerializedName("merchantEmail")
+  private String merchantEmail = null;
+
   @SerializedName("customLabels")
   private List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels = null;
 
@@ -334,6 +337,24 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     this.enableMerchantEmailNotifications = enableMerchantEmailNotifications;
   }
 
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation merchantEmail(String merchantEmail) {
+    this.merchantEmail = merchantEmail;
+    return this;
+  }
+
+   /**
+   * The merchant&#39;s email address for receiving payment notifications.
+   * @return merchantEmail
+  **/
+  @ApiModelProperty(value = "The merchant's email address for receiving payment notifications.")
+  public String getMerchantEmail() {
+    return merchantEmail;
+  }
+
+  public void setMerchantEmail(String merchantEmail) {
+    this.merchantEmail = merchantEmail;
+  }
+
   public Invoicingv2invoiceSettingsInvoiceSettingsInformation customLabels(List<InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels> customLabels) {
     this.customLabels = customLabels;
     return this;
@@ -402,13 +423,14 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
         Objects.equals(this.phoneNumber, invoicingv2invoiceSettingsInvoiceSettingsInformation.phoneNumber) &&
         Objects.equals(this.email, invoicingv2invoiceSettingsInvoiceSettingsInformation.email) &&
         Objects.equals(this.enableMerchantEmailNotifications, invoicingv2invoiceSettingsInvoiceSettingsInformation.enableMerchantEmailNotifications) &&
+        Objects.equals(this.merchantEmail, invoicingv2invoiceSettingsInvoiceSettingsInformation.merchantEmail) &&
         Objects.equals(this.customLabels, invoicingv2invoiceSettingsInvoiceSettingsInformation.customLabels) &&
         Objects.equals(this.customRedirectUrls, invoicingv2invoiceSettingsInvoiceSettingsInformation.customRedirectUrls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications, customLabels, customRedirectUrls);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications, merchantEmail, customLabels, customRedirectUrls);
   }
 
 
@@ -449,6 +471,7 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
     if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
     if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(SENSITIVE_FIELD_PATTERN.matcher("enableMerchantEmailNotifications").matches() ? "[REDACTED]" : toIndentedString(enableMerchantEmailNotifications)).append("\n");
+    if (merchantEmail != null) sb.append("    merchantEmail: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantEmail").matches() ? "[REDACTED]" : toIndentedString(merchantEmail)).append("\n");
     if (customLabels != null) sb.append("    customLabels: ").append(SENSITIVE_FIELD_PATTERN.matcher("customLabels").matches() ? "[REDACTED]" : toIndentedString(customLabels)).append("\n");
     if (customRedirectUrls != null) sb.append("    customRedirectUrls: ").append(SENSITIVE_FIELD_PATTERN.matcher("customRedirectUrls").matches() ? "[REDACTED]" : toIndentedString(customRedirectUrls)).append("\n");
     sb.append("}");
@@ -483,6 +506,7 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(toIndentedString(enableMerchantEmailNotifications)).append("\n");
+    if (merchantEmail != null) sb.append("    merchantEmail: ").append(toIndentedString(merchantEmail)).append("\n");
     if (customLabels != null) sb.append("    customLabels: ").append(toIndentedString(customLabels)).append("\n");
     if (customRedirectUrls != null) sb.append("    customRedirectUrls: ").append(toIndentedString(customRedirectUrls)).append("\n");
     sb.append("}");

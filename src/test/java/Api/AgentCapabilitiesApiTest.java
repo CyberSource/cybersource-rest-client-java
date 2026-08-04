@@ -13,6 +13,15 @@
 
 package Api;
 
+import Model.AcpCompleteCheckoutRequest;
+import Model.AcpCreateCheckoutSessionRequest;
+import Model.AcpUpdateCheckoutSessionRequest;
+import Model.AddAgentKeyResponse201;
+import Model.AgentRegistrationConflictResponse409;
+import Model.AgentRegistrationResponse201;
+import Model.AgentRegistrationValidationErrorResponse422;
+import Model.AgentRequest;
+import Model.AgentUpdate;
 import Model.AgenticCancelPurchaseIntentRequest;
 import Model.AgenticCardEnrollmentBadRequestResponse400;
 import Model.AgenticCardEnrollmentRequest;
@@ -26,6 +35,17 @@ import Model.AgenticPendingPurchaseIntentResponse202;
 import Model.AgenticRetrievePaymentCredentialsRequest;
 import Model.AgenticRetrievePaymentCredentialsResponse200;
 import Model.AgenticUpdatePurchaseIntentRequest;
+import Model.InlineResponse20017;
+import Model.InlineResponse20018;
+import Model.InlineResponse20113;
+import Model.InlineResponse20114;
+import Model.InlineResponse40016;
+import Model.KeyRequest;
+import Model.KeyUpdate;
+import Model.ListAgentKeysResponse200;
+import Model.UcpCompleteCheckoutRequest;
+import Model.UcpCreateCheckoutSessionRequest;
+import Model.UcpUpdateCheckoutSessionRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,6 +65,63 @@ public class AgentCapabilitiesApiTest {
 
     
     /**
+     * Activate a key
+     *
+     * Activate a deactivated key. Raises 404 if agent or key not found, 403 if agent is deactivated.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void activateAgentKeyTest() throws Exception {
+        String agentId = null;
+        String keyId = null;
+        AddAgentKeyResponse201 response = api.activateAgentKey(agentId, keyId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Add a key to an agent
+     *
+     * [category 1 — Agent_Capabilities] Upload a Base64-encoded public key for an agent.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void addAgentKeyTest() throws Exception {
+        String agentId = null;
+        KeyRequest keyRequest = null;
+        AddAgentKeyResponse201 response = api.addAgentKey(agentId, keyRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Cancel Checkout ACP
+     *
+     * Cancels an active ACP checkout session. No charge is made to the buyer.  This call is safe to make multiple times — cancelling an already-cancelled session returns a successful response without error.  Sessions also expire automatically after 30 minutes of inactivity, so explicit cancellation is optional but recommended to release any reserved inventory immediately. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelCheckoutTest() throws Exception {
+        String sessionId = null;
+        String idempotencyKey = null;
+        String acceptLanguage = null;
+        String userAgent = null;
+        String requestId = null;
+        String signature = null;
+        String timestamp = null;
+        String apIVersion = null;
+        InlineResponse20018 response = api.cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Cancel a purchase intent
      *
      * Cancel an existing purchase intent (instruction) identified by its instructionId. The agent calls this endpoint when the consumer decides to abandon the purchase before payment credentials have been used. Requires device information and assurance data for identity verification. Returns status CANCELLED (HTTP 200) on success, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required before cancellation can proceed.
@@ -57,6 +134,30 @@ public class AgentCapabilitiesApiTest {
         String instructionId = null;
         AgenticCancelPurchaseIntentRequest agenticCancelPurchaseIntentRequest = null;
         AgenticCreatePurchaseIntentResponse200 response = api.cancelPurchaseIntent(instructionId, agenticCancelPurchaseIntentRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Complete Checkout ACP
+     *
+     * **Final step of the ACP checkout flow.**  Submits payment and buyer information to place the order with the merchant. On success, the session transitions to &#x60;completed&#x60; and an &#x60;order_id&#x60; is returned confirming the merchant accepted the order.  Once completed, the session is immutable — it cannot be updated or cancelled.  **Payment token:** The &#x60;payment.token&#x60; must be a valid token from the payment provider configured for the merchant (e.g. a tokenized card from Stripe or Braintree). ACG forwards the token to the merchant&#39;s payment processor — it is never stored. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void completeCheckoutTest() throws Exception {
+        String sessionId = null;
+        AcpCompleteCheckoutRequest acpCompleteCheckoutRequest = null;
+        String idempotencyKey = null;
+        String acceptLanguage = null;
+        String userAgent = null;
+        String requestId = null;
+        String signature = null;
+        String timestamp = null;
+        String apIVersion = null;
+        InlineResponse20017 response = api.completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -79,6 +180,46 @@ public class AgentCapabilitiesApiTest {
     }
     
     /**
+     * Create Checkout Session ACP
+     *
+     * **Step 1 of the ACP checkout flow.**  Initiates a new ACP checkout session with the buyer&#39;s cart. ACG validates item availability against the merchant&#39;s catalog, calculates initial pricing and tax, and returns a session object with a unique &#x60;id&#x60;.  **Store the &#x60;id&#x60;** — every subsequent call in this checkout flow (update, complete, cancel) requires it.  The session remains active for 30 minutes. A new session must be created after expiry.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; header to safely retry this call without creating duplicate sessions. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void createCheckoutSessionTest() throws Exception {
+        AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest = null;
+        String idempotencyKey = null;
+        String acceptLanguage = null;
+        String userAgent = null;
+        String requestId = null;
+        String signature = null;
+        String timestamp = null;
+        String apIVersion = null;
+        InlineResponse20113 response = api.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Deactivate a key
+     *
+     * Deactivate a key (soft delete). Raises 404 if key not found.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void deactivateAgentKeyTest() throws Exception {
+        String agentId = null;
+        String keyId = null;
+        api.deactivateAgentKey(agentId, keyId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Enroll a card
      *
      * Enroll a payment card for agentic or e-commerce transactions. This is typically the first step in the Intelligent Commerce payment lifecycle — the agent calls this endpoint to register a consumer&#39;s card, creating a tokenized reference that can be used in subsequent purchase instructions and payment credential retrieval. Requires device information, consumer identity, billing details, and payment instrument references. Returns a status of ACTIVE (HTTP 200) if enrollment completes immediately, or PENDING (HTTP 202) with pendingEvents if cardholder authentication is required. Call this endpoint when a consumer wants to add a new payment card or when setting up a card for agentic payment flows.
@@ -90,6 +231,63 @@ public class AgentCapabilitiesApiTest {
     public void enrollCardTest() throws Exception {
         AgenticCardEnrollmentRequest agenticCardEnrollmentRequest = null;
         AgenticCardEnrollmentResponse200 response = api.enrollCard(agenticCardEnrollmentRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get an agent
+     *
+     * [category 1 — Agent_Capabilities] Get agent by ID with all keys. Raises 404 if agent not found.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getAgentTest() throws Exception {
+        String agentId = null;
+        AgentRegistrationResponse201 response = api.getAgent(agentId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get a key by agent and key ID
+     *
+     * Get a specific key by agent ID and key ID. Raises 404 if key not found.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getAgentKeyTest() throws Exception {
+        String agentId = null;
+        String keyId = null;
+        AddAgentKeyResponse201 response = api.getAgentKey(agentId, keyId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Checkout Session ACP
+     *
+     * Retrieves the current state of an ACP checkout session, including line items, buyer information,  and current totals.  Use this to: - Verify session status before presenting a checkout summary to the buyer - Resume an interrupted checkout flow - Poll for status after an async operation - Confirm a session has not expired before submitting payment 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getCheckoutSessionTest() throws Exception {
+        String sessionId = null;
+        Object acpGetCheckoutSessionRequest = null;
+        String idempotencyKey = null;
+        String acceptLanguage = null;
+        String userAgent = null;
+        String requestId = null;
+        String signature = null;
+        String timestamp = null;
+        String apIVersion = null;
+        InlineResponse20113 response = api.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -111,6 +309,40 @@ public class AgentCapabilitiesApiTest {
     }
     
     /**
+     * List keys for an agent
+     *
+     * [category 1 — Agent_Capabilities] List all keys for a specific agent with pagination.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void listAgentKeysTest() throws Exception {
+        String agentId = null;
+        Integer page = null;
+        Integer pageSize = null;
+        ListAgentKeysResponse200 response = api.listAgentKeys(agentId, page, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Register an agent
+     *
+     * Register a new AI agent in the VARS. Once registered, the agent can upload public keys that merchants and Visa services use to verify request signatures. Raises 409 if domain, contactEmail, or tokenRequestorId already exists.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void registerAgentTest() throws Exception {
+        AgentRequest agentRequest = null;
+        AgentRegistrationResponse201 response = api.registerAgent(agentRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Retrieve payment credentials
      *
      * Retrieve tokenized payment credentials for a purchase intent to complete the transaction at a merchant. The agent calls this endpoint after a purchase intent has been created and approved, providing transaction-level details including order information, merchant details, payment options, and production information. Returns COMPLETED (HTTP 200) with a signed payload containing encrypted payment credentials (authorization token and JWS-signed payload), or PENDING (HTTP 202) with pendingEvents if additional cardholder authentication is required. The signed payload is used by the merchant&#39;s payment processor to complete the transaction.
@@ -123,6 +355,151 @@ public class AgentCapabilitiesApiTest {
         String instructionId = null;
         AgenticRetrievePaymentCredentialsRequest agenticRetrievePaymentCredentialsRequest = null;
         AgenticRetrievePaymentCredentialsResponse200 response = api.retrievePaymentCredentials(instructionId, agenticRetrievePaymentCredentialsRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Cancel Checkout UCP
+     *
+     * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ucpCancelCheckoutTest() throws Exception {
+        String sessionId = null;
+        InlineResponse20114 response = api.ucpCancelCheckout(sessionId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Complete Checkout UCP
+     *
+     * **Final step of the UCP checkout flow.**  Finalizes the session and places the order with the merchant. ACG translates the UCP completion request to the merchant&#39;s checkout API.  On success, the session transitions to &#x60;completed&#x60;. An &#x60;order_id&#x60; is not returned in the UCP response — use the ACP Complete endpoint if you need order confirmation details.  **Always use an &#x60;idempotency-key&#x60;** to prevent duplicate orders on network retries. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ucpCompleteCheckoutTest() throws Exception {
+        String sessionId = null;
+        String idempotencyKey = null;
+        UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest = null;
+        InlineResponse20114 response = api.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create Checkout Session UCP
+     *
+     * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ucpCreateCheckoutSessionTest() throws Exception {
+        UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest = null;
+        String idempotencyKey = null;
+        InlineResponse20114 response = api.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Checkout Session UCP
+     *
+     * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ucpGetCheckoutSessionTest() throws Exception {
+        String sessionId = null;
+        Object ucpGetCheckoutSessionRequest = null;
+        InlineResponse20114 response = api.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Checkout Session UCP
+     *
+     * Modifies an active UCP checkout session and returns the updated session state.  Use this to change line item quantities, update fulfillment address or method, or apply discount codes. Totals are recalculated and returned in the response.  Only the fields you include in the request body are updated. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ucpUpdateCheckoutSessionTest() throws Exception {
+        String sessionId = null;
+        UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest = null;
+        String idempotencyKey = null;
+        InlineResponse20114 response = api.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update an agent
+     *
+     * [category 1 — Agent_Capabilities] Update agent information. Updatable fields are name, domain, description, contactEmail, and agentMetadata. Extra fields (e.g. tokenRequestorId, keys) will return 422 Validation Error. Raises 404 if agent not found, 403 if agent is deactivated, 409 if new domain or contactEmail already exists.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void updateAgentTest() throws Exception {
+        String agentId = null;
+        AgentUpdate agentUpdate = null;
+        AgentRegistrationResponse201 response = api.updateAgent(agentId, agentUpdate);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a key
+     *
+     * Update key information. Updatable fields are keyName, publicKey, algorithm, and expirationDate. Raises 404 if agent or key not found, 403 if agent or key is deactivated, 409 if new keyName already exists.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void updateAgentKeyTest() throws Exception {
+        String agentId = null;
+        String keyId = null;
+        KeyUpdate keyUpdate = null;
+        AddAgentKeyResponse201 response = api.updateAgentKey(agentId, keyId, keyUpdate);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Checkout Session ACP
+     *
+     * Modifies an active ACP checkout session and returns the updated session state with recalculated totals.  Use this to: - Add, remove, or change quantities of cart items - Apply or remove discount codes - Update the buyer&#39;s shipping address or contact details - Trigger re-calculation of shipping costs and tax  Only fields included in the request body are updated — omitted fields retain their current values.  **Idempotency:** Supply an &#x60;Idempotency-Key&#x60; to safely retry updates without applying them twice. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void updateCheckoutSessionTest() throws Exception {
+        String sessionId = null;
+        AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest = null;
+        String idempotencyKey = null;
+        String acceptLanguage = null;
+        String userAgent = null;
+        String requestId = null;
+        String signature = null;
+        String timestamp = null;
+        String apIVersion = null;
+        InlineResponse20113 response = api.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }

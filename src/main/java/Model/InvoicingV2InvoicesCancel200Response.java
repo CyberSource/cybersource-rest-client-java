@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
+import Model.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesProcessingInformation;
@@ -28,6 +29,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InvoicingV2InvoicesCancel200Response
@@ -57,6 +60,9 @@ public class InvoicingV2InvoicesCancel200Response {
 
   @SerializedName("orderInformation")
   private InvoicingV2InvoicesPost201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("merchantDefinedFieldValuesWithDefinition")
+  private List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition = null;
 
   public InvoicingV2InvoicesCancel200Response links(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
@@ -202,6 +208,32 @@ public class InvoicingV2InvoicesCancel200Response {
     this.orderInformation = orderInformation;
   }
 
+  public InvoicingV2InvoicesCancel200Response merchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+    return this;
+  }
+
+  public InvoicingV2InvoicesCancel200Response addMerchantDefinedFieldValuesWithDefinitionItem(InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition merchantDefinedFieldValuesWithDefinitionItem) {
+    if (this.merchantDefinedFieldValuesWithDefinition == null) {
+      this.merchantDefinedFieldValuesWithDefinition = new ArrayList<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition>();
+    }
+    this.merchantDefinedFieldValuesWithDefinition.add(merchantDefinedFieldValuesWithDefinitionItem);
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedFieldValuesWithDefinition
+   * @return merchantDefinedFieldValuesWithDefinition
+  **/
+  @ApiModelProperty(value = "")
+  public List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> getMerchantDefinedFieldValuesWithDefinition() {
+    return merchantDefinedFieldValuesWithDefinition;
+  }
+
+  public void setMerchantDefinedFieldValuesWithDefinition(List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition) {
+    this.merchantDefinedFieldValuesWithDefinition = merchantDefinedFieldValuesWithDefinition;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -219,12 +251,13 @@ public class InvoicingV2InvoicesCancel200Response {
         Objects.equals(this.customerInformation, invoicingV2InvoicesCancel200Response.customerInformation) &&
         Objects.equals(this.processingInformation, invoicingV2InvoicesCancel200Response.processingInformation) &&
         Objects.equals(this.invoiceInformation, invoicingV2InvoicesCancel200Response.invoiceInformation) &&
-        Objects.equals(this.orderInformation, invoicingV2InvoicesCancel200Response.orderInformation);
+        Objects.equals(this.orderInformation, invoicingV2InvoicesCancel200Response.orderInformation) &&
+        Objects.equals(this.merchantDefinedFieldValuesWithDefinition, invoicingV2InvoicesCancel200Response.merchantDefinedFieldValuesWithDefinition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation, merchantDefinedFieldValuesWithDefinition);
   }
 
 
@@ -259,6 +292,7 @@ public class InvoicingV2InvoicesCancel200Response {
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceInformation").matches() ? "[REDACTED]" : toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValuesWithDefinition != null) sb.append("    merchantDefinedFieldValuesWithDefinition: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedFieldValuesWithDefinition").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedFieldValuesWithDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -285,6 +319,7 @@ public class InvoicingV2InvoicesCancel200Response {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantDefinedFieldValuesWithDefinition != null) sb.append("    merchantDefinedFieldValuesWithDefinition: ").append(toIndentedString(merchantDefinedFieldValuesWithDefinition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

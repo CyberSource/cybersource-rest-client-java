@@ -80,7 +80,7 @@ public class PaymentTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(request, Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
             try {
