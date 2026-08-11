@@ -5,7 +5,7 @@
 	<artifactId>cybersource-rest-client-java</artifactId>
 	<packaging>jar</packaging>
 	<name>cybersource-rest-client-java</name>
-	<version>0.0.92</version>
+	<version>0.0.93</version>
 	<url>http://developer.cybersource.com</url>
 	<description>Cybersource Rest Client SDK</description>
 	
@@ -333,7 +333,7 @@
 		<dependency>
 		    <groupId>org.bouncycastle</groupId>
 		    <artifactId>bcpg-jdk18on</artifactId>
-		    <version>1.84</version>
+		    <version>1.85</version>
 		</dependency>
 	</dependencies>
 
@@ -350,6 +350,6 @@
 		<junit-version>4.13.2</junit-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log4j.version>2.26.1</log4j.version>
-		<authentication.sdk.version>0.0.44</authentication.sdk.version>
+		<authentication.sdk.version>0.0.45</authentication.sdk.version>
 	</properties>
 </project>
