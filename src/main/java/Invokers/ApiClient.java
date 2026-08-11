@@ -919,9 +919,8 @@ public class ApiClient {
 		}
 
 		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
-			T respBody = (T) response.body().byteStream();
-
-			return respBody;
+			// Transfer response ownership to the caller: closing the returned stream closes the response.
+			return (T) new ResponseClosingInputStream(response);
 		} else if (returnType.equals(File.class)) {
 			// Handle file downloading.
 			return (T) downloadFileFromResponse(response);
@@ -1093,6 +1092,7 @@ public class ApiClient {
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		Response response = null;
+		boolean streamingResponse = false;
 		try {
 			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime()) / 1000000);
 			response = call.execute();
@@ -1107,8 +1107,10 @@ public class ApiClient {
 			}
 
 			T data = handleResponse(response, returnType);
-			
-			logger.info("HTTP Response Body :\n{}", data);
+			// The caller now owns the response and is responsible for closing the stream.
+			streamingResponse = data instanceof ResponseClosingInputStream;
+
+			if (!streamingResponse) { logger.info("HTTP Response Body :\n{}", data); }
 
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), response.message(), data);
 		} catch (IOException e) {
@@ -1119,7 +1121,7 @@ public class ApiClient {
 			logger.error("ApiException : " + e.getMessage());
 			throw new ApiException(e);
 		} finally {
-			if (response != null && response.body() != null) {
+			if (!streamingResponse && response != null && response.body() != null) {
 				response.body().close();
 			}
 		}
@@ -1762,5 +1764,27 @@ public class ApiClient {
 		}
 
 		return randomId;
+	}
+
+	/**
+	 * InputStream returned for streaming responses. Closing this stream closes the
+	 * underlying OkHttp {@link Response}, transferring response ownership to the caller.
+	 */
+	private static final class ResponseClosingInputStream extends FilterInputStream {
+		private final Response response;
+
+		ResponseClosingInputStream(Response response) {
+			super(response.body().byteStream());
+			this.response = response;
+		}
+
+		@Override
+		public void close() throws IOException {
+			try {
+				super.close();
+			} finally {
+				response.close();
+			}
+		}
 	}
 }
