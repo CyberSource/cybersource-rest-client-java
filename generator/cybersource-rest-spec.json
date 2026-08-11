@@ -4752,7 +4752,7 @@
                                                             "description": "Flag that indicates whether or not the ticket is restricted (nonrefundable).\nPossible values:\n- 0: No restriction (refundable)\n- 1: Restricted (nonrefundable)\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces;\nspecial characters are not included.\nOptional request field.\n"
                                                         },
                                                         "transactionType": {
-                                                            "type": "integer",
+                                                            "type": "string",
                                                             "maxLength": 2,
                                                             "description": "Type of charge.\nPossible values:\n- 01: Charge is for an airline ticket\n- 02: Charge is for an item that is not an airline ticket\n"
                                                         },
@@ -4926,14 +4926,14 @@
                                                                         "description": "IATA code for the class of service for this leg of the trip.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "stopoverIndicator": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 1,
                                                                         "description": "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values:\n- `O` (capital letter \"O\") (default): Stopover allowed\n- `X` (capital letter \"X\"): Stopover not allowed\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureDate": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 8,
-                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `YYYYMMDD`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
+                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `MMDDYY`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "destinationAirportCode": {
                                                                         "type": "string",
@@ -4966,7 +4966,7 @@
                                                                         "description": "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of departure for this leg of the trip. The format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -4976,7 +4976,7 @@
                                                                         "description": "AM or PM for the departure time.\nPossible values:\n- A: 12:00 midnight to 11:59 a.m.\n- P: 12:00 noon to 11:59 p.m\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "arrivalTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of arrival for this leg of the trip.\nThe format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -28416,7 +28416,7 @@
                                                             "description": "Flag that indicates whether or not the ticket is restricted (nonrefundable).\nPossible values:\n- 0: No restriction (refundable)\n- 1: Restricted (nonrefundable)\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces;\nspecial characters are not included.\nOptional request field.\n"
                                                         },
                                                         "transactionType": {
-                                                            "type": "integer",
+                                                            "type": "string",
                                                             "maxLength": 2,
                                                             "description": "Type of charge.\nPossible values:\n- 01: Charge is for an airline ticket\n- 02: Charge is for an item that is not an airline ticket\n"
                                                         },
@@ -28590,14 +28590,14 @@
                                                                         "description": "IATA code for the class of service for this leg of the trip.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "stopoverIndicator": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 1,
                                                                         "description": "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values:\n- `O` (capital letter \"O\") (default): Stopover allowed\n- `X` (capital letter \"X\"): Stopover not allowed\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureDate": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 8,
-                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `YYYYMMDD`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
+                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `MMDDYY`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "destinationAirportCode": {
                                                                         "type": "string",
@@ -28630,7 +28630,7 @@
                                                                         "description": "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of departure for this leg of the trip. The format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -28640,7 +28640,7 @@
                                                                         "description": "AM or PM for the departure time.\nPossible values:\n- A: 12:00 midnight to 11:59 a.m.\n- P: 12:00 noon to 11:59 p.m\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "arrivalTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of arrival for this leg of the trip.\nThe format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -31354,7 +31354,7 @@
                                                             "description": "Flag that indicates whether or not the ticket is restricted (nonrefundable).\nPossible values:\n- 0: No restriction (refundable)\n- 1: Restricted (nonrefundable)\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces;\nspecial characters are not included.\nOptional request field.\n"
                                                         },
                                                         "transactionType": {
-                                                            "type": "integer",
+                                                            "type": "string",
                                                             "maxLength": 2,
                                                             "description": "Type of charge.\nPossible values:\n- 01: Charge is for an airline ticket\n- 02: Charge is for an item that is not an airline ticket\n"
                                                         },
@@ -31528,14 +31528,14 @@
                                                                         "description": "IATA code for the class of service for this leg of the trip.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "stopoverIndicator": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 1,
                                                                         "description": "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values:\n- `O` (capital letter \"O\") (default): Stopover allowed\n- `X` (capital letter \"X\"): Stopover not allowed\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureDate": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 8,
-                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `YYYYMMDD`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
+                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `MMDDYY`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "destinationAirportCode": {
                                                                         "type": "string",
@@ -31568,7 +31568,7 @@
                                                                         "description": "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of departure for this leg of the trip. The format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -31578,7 +31578,7 @@
                                                                         "description": "AM or PM for the departure time.\nPossible values:\n- A: 12:00 midnight to 11:59 a.m.\n- P: 12:00 noon to 11:59 p.m\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "arrivalTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of arrival for this leg of the trip.\nThe format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -34184,7 +34184,7 @@
                                                             "description": "Flag that indicates whether or not the ticket is restricted (nonrefundable).\nPossible values:\n- 0: No restriction (refundable)\n- 1: Restricted (nonrefundable)\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces;\nspecial characters are not included.\nOptional request field.\n"
                                                         },
                                                         "transactionType": {
-                                                            "type": "integer",
+                                                            "type": "string",
                                                             "maxLength": 2,
                                                             "description": "Type of charge.\nPossible values:\n- 01: Charge is for an airline ticket\n- 02: Charge is for an item that is not an airline ticket\n"
                                                         },
@@ -34358,14 +34358,14 @@
                                                                         "description": "IATA code for the class of service for this leg of the trip.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "stopoverIndicator": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 1,
                                                                         "description": "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values:\n- `O` (capital letter \"O\") (default): Stopover allowed\n- `X` (capital letter \"X\"): Stopover not allowed\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureDate": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 8,
-                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `YYYYMMDD`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
+                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `MMDDYY`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "destinationAirportCode": {
                                                                         "type": "string",
@@ -34398,7 +34398,7 @@
                                                                         "description": "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of departure for this leg of the trip. The format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -34408,7 +34408,7 @@
                                                                         "description": "AM or PM for the departure time.\nPossible values:\n- A: 12:00 midnight to 11:59 a.m.\n- P: 12:00 noon to 11:59 p.m\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "arrivalTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of arrival for this leg of the trip.\nThe format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -37310,7 +37310,7 @@
                                                             "description": "Flag that indicates whether or not the ticket is restricted (nonrefundable).\nPossible values:\n- 0: No restriction (refundable)\n- 1: Restricted (nonrefundable)\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces;\nspecial characters are not included.\nOptional request field.\n"
                                                         },
                                                         "transactionType": {
-                                                            "type": "integer",
+                                                            "type": "string",
                                                             "maxLength": 2,
                                                             "description": "Type of charge.\nPossible values:\n- 01: Charge is for an airline ticket\n- 02: Charge is for an item that is not an airline ticket\n"
                                                         },
@@ -37484,14 +37484,14 @@
                                                                         "description": "IATA code for the class of service for this leg of the trip.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "stopoverIndicator": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 1,
                                                                         "description": "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values:\n- `O` (capital letter \"O\") (default): Stopover allowed\n- `X` (capital letter \"X\"): Stopover not allowed\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureDate": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 8,
-                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `YYYYMMDD`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
+                                                                        "description": "Departure date for the first leg of the trip.\nFormat: `MMDDYY`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "destinationAirportCode": {
                                                                         "type": "string",
@@ -37524,7 +37524,7 @@
                                                                         "description": "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "departureTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of departure for this leg of the trip. The format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`.\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -37534,7 +37534,7 @@
                                                                         "description": "AM or PM for the departure time.\nPossible values:\n- A: 12:00 midnight to 11:59 a.m.\n- P: 12:00 noon to 11:59 p.m\nFormat: English characters only.\nRestricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included.\nOptional request field for travel legs.\n"
                                                                     },
                                                                     "arrivalTime": {
-                                                                        "type": "integer",
+                                                                        "type": "string",
                                                                         "maxLength": 4,
                                                                         "description": "Time of arrival for this leg of the trip.\nThe format is military time and HHMM:\nIf not all zeros, then the hours must be `00-23` and the minutes must be `00-59`\nFormat: English characters only.\nOptional request field for travel legs.\n"
                                                                     },
@@ -106154,13 +106154,13 @@
                                 "legs": [
                                     {
                                         "carrierCode": "UA",
-                                        "departureDate": "2023-01-01",
+                                        "departureDate": "010123",
                                         "destination": "DEFGH",
                                         "origin": "LAX"
                                     },
                                     {
                                         "carrierCode": "AS",
-                                        "departureDate": "2023-02-21",
+                                        "departureDate": "022123",
                                         "destination": "RESD",
                                         "origin": "ECF"
                                     }
