@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createQueryApi"></a>
 # **createQueryApi**
-> InlineResponse2015 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset)
+> InlineResponse2014 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset)
 
 Query Transaction Details
 
@@ -34,7 +34,7 @@ String vCOrganizationId = "vCOrganizationId_example"; // String |
 Integer limit = 56; // Integer | The maximum number of options to be retrieved from the processor and displayed to the consumer. 
 Integer offset = 56; // Integer | Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. 
 try {
-    InlineResponse2015 result = apiInstance.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+    InlineResponse2014 result = apiInstance.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionQueryApi#createQueryApi");
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 

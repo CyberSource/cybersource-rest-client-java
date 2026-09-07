@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ucv1sessionsDataAcquirerInformation;
 import Model.Ucv1sessionsDataAggregatorInformation;
 import Model.Ucv1sessionsDataBuyerInformation;
 import Model.Ucv1sessionsDataClientReferenceInformation;
@@ -46,6 +47,9 @@ import java.util.List;
 public class Ucv1sessionsData {
   @SerializedName("aggregatorInformation")
   private Ucv1sessionsDataAggregatorInformation aggregatorInformation = null;
+
+  @SerializedName("acquirerInformation")
+  private Ucv1sessionsDataAcquirerInformation acquirerInformation = null;
 
   @SerializedName("orderInformation")
   private Ucv1sessionsDataOrderInformation orderInformation = null;
@@ -99,6 +103,24 @@ public class Ucv1sessionsData {
 
   public void setAggregatorInformation(Ucv1sessionsDataAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
+  }
+
+  public Ucv1sessionsData acquirerInformation(Ucv1sessionsDataAcquirerInformation acquirerInformation) {
+    this.acquirerInformation = acquirerInformation;
+    return this;
+  }
+
+   /**
+   * Get acquirerInformation
+   * @return acquirerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ucv1sessionsDataAcquirerInformation getAcquirerInformation() {
+    return acquirerInformation;
+  }
+
+  public void setAcquirerInformation(Ucv1sessionsDataAcquirerInformation acquirerInformation) {
+    this.acquirerInformation = acquirerInformation;
   }
 
   public Ucv1sessionsData orderInformation(Ucv1sessionsDataOrderInformation orderInformation) {
@@ -336,6 +358,7 @@ public class Ucv1sessionsData {
     }
     Ucv1sessionsData ucv1sessionsData = (Ucv1sessionsData) o;
     return Objects.equals(this.aggregatorInformation, ucv1sessionsData.aggregatorInformation) &&
+        Objects.equals(this.acquirerInformation, ucv1sessionsData.acquirerInformation) &&
         Objects.equals(this.orderInformation, ucv1sessionsData.orderInformation) &&
         Objects.equals(this.buyerInformation, ucv1sessionsData.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, ucv1sessionsData.clientReferenceInformation) &&
@@ -352,7 +375,7 @@ public class Ucv1sessionsData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregatorInformation, orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, senderInformation, deviceInformation, paymentInformation, installmentInformation, merchantDefinedInformation);
+    return Objects.hash(aggregatorInformation, acquirerInformation, orderInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, merchantInformation, processingInformation, recipientInformation, senderInformation, deviceInformation, paymentInformation, installmentInformation, merchantDefinedInformation);
   }
 
 
@@ -380,6 +403,7 @@ public class Ucv1sessionsData {
     sb.append("class Ucv1sessionsData {\n");
     
     if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("aggregatorInformation").matches() ? "[REDACTED]" : toIndentedString(aggregatorInformation)).append("\n");
+    if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirerInformation").matches() ? "[REDACTED]" : toIndentedString(acquirerInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
@@ -411,6 +435,7 @@ public class Ucv1sessionsData {
     sb.append("class Ucv1sessionsData {\n");
     
     if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
+    if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");

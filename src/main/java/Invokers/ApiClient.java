@@ -276,7 +276,7 @@ public class ApiClient {
 	 * @return An instance of OkHttpClient
 	 */
 	public OkHttpClient getHttpClient() throws ConfigException {
-	    httpClient = createInternalHttpClient();
+		httpClient = createInternalHttpClient();
 		return httpClient;
 	}
 
@@ -639,13 +639,13 @@ public class ApiClient {
 	 * @return ApiClient
 	 */
 	public ApiClient addDefaultHeader(String key, String value) {
-		defaultHeaderMap.put(key, value);    
+		defaultHeaderMap.put(key, value);	
 		return this;
 	}
 
 	/**
 	 * @see <a href=
-	 *      "https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)">setLenient</a>
+	 *	  "https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)">setLenient</a>
 	 *
 	 * @return True if lenientOnJson is enabled, false otherwise.
 	 */
@@ -700,7 +700,7 @@ public class ApiClient {
 	 * system's default tempopary folder.
 	 *
 	 * @see <a href=
-	 *      "https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile">createTempFile</a>
+	 *	  "https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile">createTempFile</a>
 	 * @return Temporary folder path
 	 */
 	public String getTempFolderPath() {
@@ -765,8 +765,8 @@ public class ApiClient {
 	 * Format to {@code Pair} objects.
 	 *
 	 * @param collectionFormat collection format (e.g. csv, tsv)
-	 * @param name             Name
-	 * @param value            Value
+	 * @param name			 Name
+	 * @param value			Value
 	 * @return A list of Pair objects
 	 */
 	public List<Pair> parameterToPairs(String collectionFormat, String name, Object value) {
@@ -852,7 +852,7 @@ public class ApiClient {
 	 *
 	 * @param accepts The accepts array to select from
 	 * @return The Accept header to use. If the given array is empty, null will be
-	 *         returned (not to set the Accept header explicitly).
+	 *		 returned (not to set the Accept header explicitly).
 	 */
 	public String selectHeaderAccept(String[] accepts) {
 		if (accepts.length == 0) {
@@ -872,7 +872,7 @@ public class ApiClient {
 	 *
 	 * @param contentTypes The Content-Type array to select from
 	 * @return The Content-Type header to use. If the given array is empty, JSON
-	 *         will be used.
+	 *		 will be used.
 	 */
 	public String selectHeaderContentType(String[] contentTypes) {
 		if (contentTypes.length == 0) {
@@ -904,13 +904,13 @@ public class ApiClient {
 	 * Deserialize response body to Java object, according to the return type and
 	 * the Content-Type response header.
 	 *
-	 * @param <T>        Type
+	 * @param <T>		Type
 	 * @param response   HTTP response
 	 * @param returnType The type of the Java object
 	 * @return The deserialized Java object
 	 * @throws ApiException If fail to deserialize response body, i.e. cannot read
-	 *                      response body or the Content-Type of the response is not
-	 *                      supported.
+	 *					  response body or the Content-Type of the response is not
+	 *					  supported.
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> T deserialize(Response response, Type returnType) throws ApiException {
@@ -975,7 +975,7 @@ public class ApiClient {
 	 * Serialize the given Java object into request body according to the object's
 	 * class and the request Content-Type.
 	 *
-	 * @param obj         The Java object
+	 * @param obj		 The Java object
 	 * @param contentType The request Content-Type
 	 * @return The serialized request body
 	 * @throws ApiException If fail to serialize the given object
@@ -1006,7 +1006,7 @@ public class ApiClient {
 	 *
 	 * @param response An instance of the Response object
 	 * @throws ApiException If fail to read file content from response and write to
-	 *                      disk
+	 *					  disk
 	 * @return Downloaded file
 	 */
 	public File downloadFileFromResponse(Response response) throws ApiException {
@@ -1083,11 +1083,11 @@ public class ApiClient {
 	 * return type.
 	 *
 	 * @param returnType The return type used to deserialize HTTP response body
-	 * @param <T>        The return type corresponding to (same with) returnType
-	 * @param call       Call
+	 * @param <T>		The return type corresponding to (same with) returnType
+	 * @param call	   Call
 	 * @return ApiResponse object containing response status, headers and data,
-	 *         which is a Java object deserialized from response body and would be
-	 *         null when returnType is null.
+	 *		 which is a Java object deserialized from response body and would be
+	 *		 null when returnType is null.
 	 * @throws ApiException If fail to execute the call
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
@@ -1130,8 +1130,8 @@ public class ApiClient {
 	/**
 	 * {@link #executeAsync(Call, Type, ApiCallback)}
 	 *
-	 * @param <T>      Type
-	 * @param call     An instance of the Call object
+	 * @param <T>	  Type
+	 * @param call	 An instance of the Call object
 	 * @param callback ApiCallback&lt;T&gt;
 	 */
 	public <T> void executeAsync(Call call, ApiCallback<T> callback) {
@@ -1142,8 +1142,8 @@ public class ApiClient {
 	 * Execute HTTP call asynchronously.
 	 *
 	 * @see #execute(Call, Type)
-	 * @param <T>        Type
-	 * @param call       The callback to be executed when the API call finishes
+	 * @param <T>		Type
+	 * @param call	   The callback to be executed when the API call finishes
 	 * @param returnType Return type
 	 * @param callback   ApiCallback
 	 */
@@ -1173,11 +1173,11 @@ public class ApiClient {
 	 * Handle the given response, return the deserialized object when the response
 	 * is successful.
 	 *
-	 * @param <T>        Type
+	 * @param <T>		Type
 	 * @param response   Response
 	 * @param returnType Return type
 	 * @throws ApiException If the response has a unsuccessful status code or fail
-	 *                      to deserialize the response body
+	 *					  to deserialize the response body
 	 * @return Type
 	 */
 	public <T> T handleResponse(Response response, Type returnType) throws ApiException {
@@ -1220,18 +1220,18 @@ public class ApiClient {
 	/**
 	 * Build HTTP call with the given options.
 	 *
-	 * @param path                    The sub-path of the HTTP URL
-	 * @param method                  The request method, one of "GET", "HEAD",
-	 *                                "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
-	 * @param queryParams             The query parameters
-	 * @param body                    The request body object
-	 * @param headerParams            The header parameters
-	 * @param formParams              The form parameters
-	 * @param authNames               The authentications to apply
+	 * @param path					The sub-path of the HTTP URL
+	 * @param method				  The request method, one of "GET", "HEAD",
+	 *								"OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
+	 * @param queryParams			 The query parameters
+	 * @param body					The request body object
+	 * @param headerParams			The header parameters
+	 * @param formParams			  The form parameters
+	 * @param authNames			   The authentications to apply
 	 * @param progressRequestListener Progress request listener
 	 * @return The HTTP call
 	 * @throws ApiException If fail to serialize the request body object
-     * @throws ConfigException If creation of merchant configuration fails
+	 * @throws ConfigException If creation of merchant configuration fails
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
@@ -1283,8 +1283,8 @@ public class ApiClient {
 	}
 
 	private OkHttpClient createInternalHttpClient() throws ConfigException {
-        return HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
-    }
+		return HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+	}
 	
 	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
 		if(requestBody!=null) {
@@ -1309,7 +1309,9 @@ public class ApiClient {
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
 				url.append(path);
-				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
+				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP) ||
+						(merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT) &&
+						merchantConfig.getJwtKeyType().equalsIgnoreCase(GlobalLabelParameters.JWT_KEY_TYPE_SHARED_SECRET))) {
 					// support (constant) query string in `path`, e.g.
 					// "/posts?draft=1"
 					String prefix = path.contains("?") ? "&" : "?";
@@ -1372,9 +1374,9 @@ public class ApiClient {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-VERSIONUNKNOWN");
 			}
 			requestHeaderMap.put("v-c-sdk-telemetry-merchant-id", merchantConfig.getMerchantID());
-            if(merchantConfig.isSDK()) {
-            	requestHeaderMap.put("v-c-sdk-telemetry-mcp", "true");
-            }
+			if(merchantConfig.isSDK()) {
+				requestHeaderMap.put("v-c-sdk-telemetry-mcp", "true");
+			}
 
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
@@ -1386,14 +1388,14 @@ public class ApiClient {
 	/**
 	 * Build an HTTP request with the given options.
 	 *
-	 * @param path                    The sub-path of the HTTP URL
-	 * @param method                  The request method, one of "GET", "HEAD",
-	 *                                "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
-	 * @param queryParams             The query parameters
-	 * @param reqBody                 The request body object
-	 * @param headerParams            The header parameters
-	 * @param formParams              The form parameters
-	 * @param authNames               The authentications to apply
+	 * @param path					The sub-path of the HTTP URL
+	 * @param method				  The request method, one of "GET", "HEAD",
+	 *								"OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
+	 * @param queryParams			 The query parameters
+	 * @param reqBody				 The request body object
+	 * @param headerParams			The header parameters
+	 * @param formParams			  The form parameters
+	 * @param authNames			   The authentications to apply
 	 * @param progressRequestListener Progress request listener
 	 * @return The HTTP request
 	 * @throws ApiException If fail to serialize the request body object
@@ -1455,7 +1457,7 @@ public class ApiClient {
 	 * Build full URL by concatenating base path, the given sub path and query
 	 * parameters.
 	 *
-	 * @param path        The sub path
+	 * @param path		The sub path
 	 * @param queryParams The query parameters
 	 * @return The full URL
 	 */
@@ -1515,7 +1517,7 @@ public class ApiClient {
 	/**
 	 * Update query and header parameters based on authentication settings.
 	 *
-	 * @param authNames    The authentications to apply
+	 * @param authNames	The authentications to apply
 	 * @param queryParams  List of query parameters
 	 * @param headerParams Map of header parameters
 	 */

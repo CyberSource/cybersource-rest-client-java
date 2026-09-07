@@ -53,8 +53,8 @@ import Model.AgenticRetrievePaymentCredentialsResponse200;
 import Model.AgenticUpdatePurchaseIntentRequest;
 import Model.InlineResponse20017;
 import Model.InlineResponse20018;
+import Model.InlineResponse20112;
 import Model.InlineResponse20113;
-import Model.InlineResponse20114;
 import Model.InlineResponse40016;
 import Model.KeyRequest;
 import Model.KeyUpdate;
@@ -1245,13 +1245,13 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20113
+     * @return InlineResponse20112
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 createCheckoutSession(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public InlineResponse20112 createCheckoutSession(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = createCheckoutSessionWithHttpInfo(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<InlineResponse20112> resp = createCheckoutSessionWithHttpInfo(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'createCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -1267,14 +1267,14 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;InlineResponse20112&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> createCheckoutSessionWithHttpInfo(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20112> createCheckoutSessionWithHttpInfo(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1294,7 +1294,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createCheckoutSessionAsync(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+    public okhttp3.Call createCheckoutSessionAsync(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1317,7 +1317,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2066,13 +2066,13 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20113
+     * @return InlineResponse20112
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 getCheckoutSession(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public InlineResponse20112 getCheckoutSession(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = getCheckoutSessionWithHttpInfo(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<InlineResponse20112> resp = getCheckoutSessionWithHttpInfo(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'getCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -2089,14 +2089,14 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;InlineResponse20112&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> getCheckoutSessionWithHttpInfo(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20112> getCheckoutSessionWithHttpInfo(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2117,7 +2117,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCheckoutSessionAsync(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+    public okhttp3.Call getCheckoutSessionAsync(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2140,7 +2140,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2853,13 +2853,13 @@ public class AgentCapabilitiesApi {
      * Cancel Checkout UCP
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
-     * @return InlineResponse20114
+     * @return InlineResponse20113
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20114 ucpCancelCheckout(String sessionId) throws ApiException, ConfigException {
+    public InlineResponse20113 ucpCancelCheckout(String sessionId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCancelCheckout' STARTED");
-        ApiResponse<InlineResponse20114> resp = ucpCancelCheckoutWithHttpInfo(sessionId);
+        ApiResponse<InlineResponse20113> resp = ucpCancelCheckoutWithHttpInfo(sessionId);
         logger.info("CALL TO METHOD 'ucpCancelCheckout' ENDED");
         return resp.getData();
     }
@@ -2868,14 +2868,14 @@ public class AgentCapabilitiesApi {
      * Cancel Checkout UCP
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
-     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @return ApiResponse&lt;InlineResponse20113&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20114> ucpCancelCheckoutWithHttpInfo(String sessionId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20113> ucpCancelCheckoutWithHttpInfo(String sessionId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2888,7 +2888,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCancelCheckoutAsync(String sessionId, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+    public okhttp3.Call ucpCancelCheckoutAsync(String sessionId, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2911,7 +2911,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -3008,13 +3008,13 @@ public class AgentCapabilitiesApi {
      * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
      * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
      * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
-     * @return InlineResponse20114
+     * @return InlineResponse20113
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20114 ucpCompleteCheckout(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
+    public InlineResponse20113 ucpCompleteCheckout(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCompleteCheckout' STARTED");
-        ApiResponse<InlineResponse20114> resp = ucpCompleteCheckoutWithHttpInfo(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+        ApiResponse<InlineResponse20113> resp = ucpCompleteCheckoutWithHttpInfo(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
         logger.info("CALL TO METHOD 'ucpCompleteCheckout' ENDED");
         return resp.getData();
     }
@@ -3025,14 +3025,14 @@ public class AgentCapabilitiesApi {
      * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
      * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
      * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
-     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @return ApiResponse&lt;InlineResponse20113&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20114> ucpCompleteCheckoutWithHttpInfo(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20113> ucpCompleteCheckoutWithHttpInfo(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -3047,7 +3047,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCompleteCheckoutAsync(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+    public okhttp3.Call ucpCompleteCheckoutAsync(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -3070,7 +3070,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -3164,13 +3164,13 @@ public class AgentCapabilitiesApi {
      * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
      * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
      * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
-     * @return InlineResponse20114
+     * @return InlineResponse20113
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20114 ucpCreateCheckoutSession(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public InlineResponse20113 ucpCreateCheckoutSession(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20114> resp = ucpCreateCheckoutSessionWithHttpInfo(ucpCreateCheckoutSessionRequest, idempotencyKey);
+        ApiResponse<InlineResponse20113> resp = ucpCreateCheckoutSessionWithHttpInfo(ucpCreateCheckoutSessionRequest, idempotencyKey);
         logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -3180,14 +3180,14 @@ public class AgentCapabilitiesApi {
      * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
      * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
      * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
-     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @return ApiResponse&lt;InlineResponse20113&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20114> ucpCreateCheckoutSessionWithHttpInfo(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20113> ucpCreateCheckoutSessionWithHttpInfo(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -3201,7 +3201,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCreateCheckoutSessionAsync(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+    public okhttp3.Call ucpCreateCheckoutSessionAsync(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -3224,7 +3224,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -3323,13 +3323,13 @@ public class AgentCapabilitiesApi {
      * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
      * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
      * @param ucpGetCheckoutSessionRequest Empty request body. (required)
-     * @return InlineResponse20114
+     * @return InlineResponse20113
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20114 ucpGetCheckoutSession(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
+    public InlineResponse20113 ucpGetCheckoutSession(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpGetCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20114> resp = ucpGetCheckoutSessionWithHttpInfo(sessionId, ucpGetCheckoutSessionRequest);
+        ApiResponse<InlineResponse20113> resp = ucpGetCheckoutSessionWithHttpInfo(sessionId, ucpGetCheckoutSessionRequest);
         logger.info("CALL TO METHOD 'ucpGetCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -3339,14 +3339,14 @@ public class AgentCapabilitiesApi {
      * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
      * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
      * @param ucpGetCheckoutSessionRequest Empty request body. (required)
-     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @return ApiResponse&lt;InlineResponse20113&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20114> ucpGetCheckoutSessionWithHttpInfo(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20113> ucpGetCheckoutSessionWithHttpInfo(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -3360,7 +3360,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpGetCheckoutSessionAsync(String sessionId, Object ucpGetCheckoutSessionRequest, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+    public okhttp3.Call ucpGetCheckoutSessionAsync(String sessionId, Object ucpGetCheckoutSessionRequest, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -3383,7 +3383,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -3486,13 +3486,13 @@ public class AgentCapabilitiesApi {
      * @param sessionId The unique identifier of the UCP checkout session to update. (required)
      * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
      * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
-     * @return InlineResponse20114
+     * @return InlineResponse20113
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20114 ucpUpdateCheckoutSession(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public InlineResponse20113 ucpUpdateCheckoutSession(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20114> resp = ucpUpdateCheckoutSessionWithHttpInfo(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+        ApiResponse<InlineResponse20113> resp = ucpUpdateCheckoutSessionWithHttpInfo(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
         logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -3503,14 +3503,14 @@ public class AgentCapabilitiesApi {
      * @param sessionId The unique identifier of the UCP checkout session to update. (required)
      * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
      * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
-     * @return ApiResponse&lt;InlineResponse20114&gt;
+     * @return ApiResponse&lt;InlineResponse20113&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20114> ucpUpdateCheckoutSessionWithHttpInfo(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20113> ucpUpdateCheckoutSessionWithHttpInfo(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -3525,7 +3525,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpUpdateCheckoutSessionAsync(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20114> callback) throws ApiException, ConfigException {
+    public okhttp3.Call ucpUpdateCheckoutSessionAsync(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -3548,7 +3548,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20114>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -4004,13 +4004,13 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20113
+     * @return InlineResponse20112
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 updateCheckoutSession(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public InlineResponse20112 updateCheckoutSession(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = updateCheckoutSessionWithHttpInfo(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<InlineResponse20112> resp = updateCheckoutSessionWithHttpInfo(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'updateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -4027,14 +4027,14 @@ public class AgentCapabilitiesApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;InlineResponse20112&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> updateCheckoutSessionWithHttpInfo(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse20112> updateCheckoutSessionWithHttpInfo(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -4055,7 +4055,7 @@ public class AgentCapabilitiesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateCheckoutSessionAsync(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
+    public okhttp3.Call updateCheckoutSessionAsync(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -4078,7 +4078,7 @@ public class AgentCapabilitiesApi {
         }
 
         okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

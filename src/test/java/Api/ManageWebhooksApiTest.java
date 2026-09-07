@@ -16,7 +16,7 @@ package Api;
 import Model.InlineResponse2007;
 import Model.InlineResponse2008;
 import Model.InlineResponse20110;
-import Model.InlineResponse20111;
+import Model.InlineResponse2018;
 import Model.InlineResponse2019;
 import Model.InlineResponse4044;
 import Model.SaveAsymEgressKey;
@@ -67,7 +67,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void getWebhookSubscriptionByIdTest() throws Exception {
         String webhookId = null;
-        InlineResponse2019 response = api.getWebhookSubscriptionById(webhookId);
+        InlineResponse2018 response = api.getWebhookSubscriptionById(webhookId);
 
         // TODO: test validations
     }
@@ -101,7 +101,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void notificationSubscriptionsV1WebhooksWebhookIdPostTest() throws Exception {
         String webhookId = null;
-        InlineResponse20110 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+        InlineResponse2019 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
 
         // TODO: test validations
     }
@@ -154,7 +154,7 @@ public class ManageWebhooksApiTest {
         String vCCorrelationId = null;
         String vCSenderOrganizationId = null;
         String vCPermissions = null;
-        InlineResponse20111 response = api.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
+        InlineResponse20110 response = api.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
 
         // TODO: test validations
     }

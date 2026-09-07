@@ -80,7 +80,7 @@ public class SearchTransactionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSearchRequest, CreateSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createSearch,createSearchAsync,createSearchWithHttpInfo,createSearchCall")) {
             try {
@@ -231,7 +231,7 @@ public class SearchTransactionsApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getSearch,getSearchAsync,getSearchWithHttpInfo,getSearchCall")) {
             try {

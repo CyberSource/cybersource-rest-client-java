@@ -30,7 +30,7 @@ import java.io.IOException;
 
 public class InlineResponse2004 {
   @SerializedName("id")
-  private Long id = null;
+  private String id = null;
 
   @SerializedName("fieldType")
   private String fieldType = null;
@@ -65,7 +65,7 @@ public class InlineResponse2004 {
   @SerializedName("merchantDefinedDataIndex")
   private Integer merchantDefinedDataIndex = null;
 
-  public InlineResponse2004 id(Long id) {
+  public InlineResponse2004 id(String id) {
     this.id = id;
     return this;
   }
@@ -75,11 +75,11 @@ public class InlineResponse2004 {
    * @return id
   **/
   @ApiModelProperty(value = "")
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

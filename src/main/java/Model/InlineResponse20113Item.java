@@ -25,19 +25,19 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Item detail within an ACP line item response.
+ * Product details for this line item.
  */
-@ApiModel(description = "Item detail within an ACP line item response.")
+@ApiModel(description = "Product details for this line item.")
 
 public class InlineResponse20113Item {
   @SerializedName("id")
   private String id = null;
 
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("title")
+  private String title = null;
 
-  @SerializedName("quantity")
-  private Integer quantity = null;
+  @SerializedName("price")
+  private Integer price = null;
 
   public InlineResponse20113Item id(String id) {
     this.id = id;
@@ -45,10 +45,10 @@ public class InlineResponse20113Item {
   }
 
    /**
-   * Product identifier.
+   * The merchant&#39;s product ID or SKU.
    * @return id
   **/
-  @ApiModelProperty(example = "2", value = "Product identifier.")
+  @ApiModelProperty(example = "prod-001", value = "The merchant's product ID or SKU.")
   public String getId() {
     return id;
   }
@@ -57,40 +57,40 @@ public class InlineResponse20113Item {
     this.id = id;
   }
 
-  public InlineResponse20113Item name(String name) {
-    this.name = name;
+  public InlineResponse20113Item title(String title) {
+    this.title = title;
     return this;
   }
 
    /**
-   * Product display name.
-   * @return name
+   * Human-readable product name.
+   * @return title
   **/
-  @ApiModelProperty(example = "Premium Wireless Headphones", value = "Product display name.")
-  public String getName() {
-    return name;
+  @ApiModelProperty(example = "Wireless Mouse", value = "Human-readable product name.")
+  public String getTitle() {
+    return title;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
-  public InlineResponse20113Item quantity(Integer quantity) {
-    this.quantity = quantity;
+  public InlineResponse20113Item price(Integer price) {
+    this.price = price;
     return this;
   }
 
    /**
-   * Number of units.
-   * @return quantity
+   * Unit price in cents. Example: 2999 &#x3D; $29.99 USD.
+   * @return price
   **/
-  @ApiModelProperty(example = "2", value = "Number of units.")
-  public Integer getQuantity() {
-    return quantity;
+  @ApiModelProperty(example = "2999", value = "Unit price in cents. Example: 2999 = $29.99 USD.")
+  public Integer getPrice() {
+    return price;
   }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+  public void setPrice(Integer price) {
+    this.price = price;
   }
 
 
@@ -104,13 +104,13 @@ public class InlineResponse20113Item {
     }
     InlineResponse20113Item inlineResponse20113Item = (InlineResponse20113Item) o;
     return Objects.equals(this.id, inlineResponse20113Item.id) &&
-        Objects.equals(this.name, inlineResponse20113Item.name) &&
-        Objects.equals(this.quantity, inlineResponse20113Item.quantity);
+        Objects.equals(this.title, inlineResponse20113Item.title) &&
+        Objects.equals(this.price, inlineResponse20113Item.price);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, quantity);
+    return Objects.hash(id, title, price);
   }
 
 
@@ -138,8 +138,8 @@ public class InlineResponse20113Item {
     sb.append("class InlineResponse20113Item {\n");
     
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
-    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
-    if (quantity != null) sb.append("    quantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("quantity").matches() ? "[REDACTED]" : toIndentedString(quantity)).append("\n");
+    if (title != null) sb.append("    title: ").append(SENSITIVE_FIELD_PATTERN.matcher("title").matches() ? "[REDACTED]" : toIndentedString(title)).append("\n");
+    if (price != null) sb.append("    price: ").append(SENSITIVE_FIELD_PATTERN.matcher("price").matches() ? "[REDACTED]" : toIndentedString(price)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,8 +159,8 @@ public class InlineResponse20113Item {
     sb.append("class InlineResponse20113Item {\n");
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    if (price != null) sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("}");
     return sb.toString();
   }

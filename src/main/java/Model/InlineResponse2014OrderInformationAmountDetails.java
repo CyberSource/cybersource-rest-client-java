@@ -29,46 +29,55 @@ import java.io.IOException;
  */
 
 public class InlineResponse2014OrderInformationAmountDetails {
-  @SerializedName("markupRate")
-  private String markupRate = null;
+  @SerializedName("authorizedAmount")
+  private String authorizedAmount = null;
+
+  @SerializedName("currency")
+  private String currency = null;
 
   @SerializedName("exchangeRate")
   private String exchangeRate = null;
 
-  @SerializedName("originalAmount")
-  private String originalAmount = null;
-
-  @SerializedName("destinationAmount")
-  private String destinationAmount = null;
-
-  @SerializedName("originalAmountWithoutMarkup")
-  private String originalAmountWithoutMarkup = null;
+  @SerializedName("totalAmount")
+  private String totalAmount = null;
 
   @SerializedName("settlementAmount")
   private String settlementAmount = null;
 
-  @SerializedName("settlementCurrency")
-  private String settlementCurrency = null;
-
-  @SerializedName("settlementExchangeRate")
-  private String settlementExchangeRate = null;
-
-  public InlineResponse2014OrderInformationAmountDetails markupRate(String markupRate) {
-    this.markupRate = markupRate;
+  public InlineResponse2014OrderInformationAmountDetails authorizedAmount(String authorizedAmount) {
+    this.authorizedAmount = authorizedAmount;
     return this;
   }
 
    /**
-   * The markup between the offer exchange rate and wholesale rates, i.e. the mark up. Expressed as a percentage of 100, e.g. 3.75.  If the markup value is not supplied in the API, and the Acquiring BIN is provided, the markup configured during onboarding will be picked up and applied to the transaction. To override any markup defaults set up on the account, always send a markup value of 0.00 to indicate 0% markup.   Supported by Visa Direct. 
-   * @return markupRate
+   * Amount that was authorized. 
+   * @return authorizedAmount
   **/
-  @ApiModelProperty(value = "The markup between the offer exchange rate and wholesale rates, i.e. the mark up. Expressed as a percentage of 100, e.g. 3.75.  If the markup value is not supplied in the API, and the Acquiring BIN is provided, the markup configured during onboarding will be picked up and applied to the transaction. To override any markup defaults set up on the account, always send a markup value of 0.00 to indicate 0% markup.   Supported by Visa Direct. ")
-  public String getMarkupRate() {
-    return markupRate;
+  @ApiModelProperty(value = "Amount that was authorized. ")
+  public String getAuthorizedAmount() {
+    return authorizedAmount;
   }
 
-  public void setMarkupRate(String markupRate) {
-    this.markupRate = markupRate;
+  public void setAuthorizedAmount(String authorizedAmount) {
+    this.authorizedAmount = authorizedAmount;
+  }
+
+  public InlineResponse2014OrderInformationAmountDetails currency(String currency) {
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * Currency used for the order. Use the three-character ISO Standard Currency Codes. 
+   * @return currency
+  **/
+  @ApiModelProperty(value = "Currency used for the order. Use the three-character ISO Standard Currency Codes. ")
+  public String getCurrency() {
+    return currency;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
   }
 
   public InlineResponse2014OrderInformationAmountDetails exchangeRate(String exchangeRate) {
@@ -77,10 +86,10 @@ public class InlineResponse2014OrderInformationAmountDetails {
   }
 
    /**
-   * Exchange rate returned by the card network.
+   * The rate of conversion of the currency given in the request. 
    * @return exchangeRate
   **/
-  @ApiModelProperty(value = "Exchange rate returned by the card network.")
+  @ApiModelProperty(value = "The rate of conversion of the currency given in the request. ")
   public String getExchangeRate() {
     return exchangeRate;
   }
@@ -89,58 +98,22 @@ public class InlineResponse2014OrderInformationAmountDetails {
     this.exchangeRate = exchangeRate;
   }
 
-  public InlineResponse2014OrderInformationAmountDetails originalAmount(String originalAmount) {
-    this.originalAmount = originalAmount;
+  public InlineResponse2014OrderInformationAmountDetails totalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
     return this;
   }
 
    /**
-   * Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
-   * @return originalAmount
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
+   * @return totalAmount
   **/
-  @ApiModelProperty(value = "Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. ")
-  public String getOriginalAmount() {
-    return originalAmount;
+  @ApiModelProperty(value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. ")
+  public String getTotalAmount() {
+    return totalAmount;
   }
 
-  public void setOriginalAmount(String originalAmount) {
-    this.originalAmount = originalAmount;
-  }
-
-  public InlineResponse2014OrderInformationAmountDetails destinationAmount(String destinationAmount) {
-    this.destinationAmount = destinationAmount;
-    return this;
-  }
-
-   /**
-   * Amount in your destination&#39;s local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
-   * @return destinationAmount
-  **/
-  @ApiModelProperty(value = "Amount in your destination's local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. ")
-  public String getDestinationAmount() {
-    return destinationAmount;
-  }
-
-  public void setDestinationAmount(String destinationAmount) {
-    this.destinationAmount = destinationAmount;
-  }
-
-  public InlineResponse2014OrderInformationAmountDetails originalAmountWithoutMarkup(String originalAmountWithoutMarkup) {
-    this.originalAmountWithoutMarkup = originalAmountWithoutMarkup;
-    return this;
-  }
-
-   /**
-   * Original Transaction Amount excluding markup in source currency. This field will be returned in a source-to-destination inquiry response when markup is applicable.  Supported by Visa Direct 
-   * @return originalAmountWithoutMarkup
-  **/
-  @ApiModelProperty(value = "Original Transaction Amount excluding markup in source currency. This field will be returned in a source-to-destination inquiry response when markup is applicable.  Supported by Visa Direct ")
-  public String getOriginalAmountWithoutMarkup() {
-    return originalAmountWithoutMarkup;
-  }
-
-  public void setOriginalAmountWithoutMarkup(String originalAmountWithoutMarkup) {
-    this.originalAmountWithoutMarkup = originalAmountWithoutMarkup;
+  public void setTotalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
   }
 
   public InlineResponse2014OrderInformationAmountDetails settlementAmount(String settlementAmount) {
@@ -149,52 +122,16 @@ public class InlineResponse2014OrderInformationAmountDetails {
   }
 
    /**
-   * The transaction amount in settlement currency.
+   * This is a multicurrency field. It contains the transaction amount, converted to the currency used to bill the cardholder&#39;s account. 
    * @return settlementAmount
   **/
-  @ApiModelProperty(value = "The transaction amount in settlement currency.")
+  @ApiModelProperty(value = "This is a multicurrency field. It contains the transaction amount, converted to the currency used to bill the cardholder's account. ")
   public String getSettlementAmount() {
     return settlementAmount;
   }
 
   public void setSettlementAmount(String settlementAmount) {
     this.settlementAmount = settlementAmount;
-  }
-
-  public InlineResponse2014OrderInformationAmountDetails settlementCurrency(String settlementCurrency) {
-    this.settlementCurrency = settlementCurrency;
-    return this;
-  }
-
-   /**
-   * The currency in which Visa or Mastercard settles with the acquirer/acquirer.  Use [ISO 4217 3-Alpha Currency Codes](https://developer.cybersource.com/content/dam/docs/cybs/en-us/currency-codes/reference/all/na/currency-codes.pdf). 
-   * @return settlementCurrency
-  **/
-  @ApiModelProperty(value = "The currency in which Visa or Mastercard settles with the acquirer/acquirer.  Use [ISO 4217 3-Alpha Currency Codes](https://developer.cybersource.com/content/dam/docs/cybs/en-us/currency-codes/reference/all/na/currency-codes.pdf). ")
-  public String getSettlementCurrency() {
-    return settlementCurrency;
-  }
-
-  public void setSettlementCurrency(String settlementCurrency) {
-    this.settlementCurrency = settlementCurrency;
-  }
-
-  public InlineResponse2014OrderInformationAmountDetails settlementExchangeRate(String settlementExchangeRate) {
-    this.settlementExchangeRate = settlementExchangeRate;
-    return this;
-  }
-
-   /**
-   * Exchange rate returned by the card network for settlement.
-   * @return settlementExchangeRate
-  **/
-  @ApiModelProperty(value = "Exchange rate returned by the card network for settlement.")
-  public String getSettlementExchangeRate() {
-    return settlementExchangeRate;
-  }
-
-  public void setSettlementExchangeRate(String settlementExchangeRate) {
-    this.settlementExchangeRate = settlementExchangeRate;
   }
 
 
@@ -207,19 +144,16 @@ public class InlineResponse2014OrderInformationAmountDetails {
       return false;
     }
     InlineResponse2014OrderInformationAmountDetails inlineResponse2014OrderInformationAmountDetails = (InlineResponse2014OrderInformationAmountDetails) o;
-    return Objects.equals(this.markupRate, inlineResponse2014OrderInformationAmountDetails.markupRate) &&
+    return Objects.equals(this.authorizedAmount, inlineResponse2014OrderInformationAmountDetails.authorizedAmount) &&
+        Objects.equals(this.currency, inlineResponse2014OrderInformationAmountDetails.currency) &&
         Objects.equals(this.exchangeRate, inlineResponse2014OrderInformationAmountDetails.exchangeRate) &&
-        Objects.equals(this.originalAmount, inlineResponse2014OrderInformationAmountDetails.originalAmount) &&
-        Objects.equals(this.destinationAmount, inlineResponse2014OrderInformationAmountDetails.destinationAmount) &&
-        Objects.equals(this.originalAmountWithoutMarkup, inlineResponse2014OrderInformationAmountDetails.originalAmountWithoutMarkup) &&
-        Objects.equals(this.settlementAmount, inlineResponse2014OrderInformationAmountDetails.settlementAmount) &&
-        Objects.equals(this.settlementCurrency, inlineResponse2014OrderInformationAmountDetails.settlementCurrency) &&
-        Objects.equals(this.settlementExchangeRate, inlineResponse2014OrderInformationAmountDetails.settlementExchangeRate);
+        Objects.equals(this.totalAmount, inlineResponse2014OrderInformationAmountDetails.totalAmount) &&
+        Objects.equals(this.settlementAmount, inlineResponse2014OrderInformationAmountDetails.settlementAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(markupRate, exchangeRate, originalAmount, destinationAmount, originalAmountWithoutMarkup, settlementAmount, settlementCurrency, settlementExchangeRate);
+    return Objects.hash(authorizedAmount, currency, exchangeRate, totalAmount, settlementAmount);
   }
 
 
@@ -246,14 +180,11 @@ public class InlineResponse2014OrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014OrderInformationAmountDetails {\n");
     
-    if (markupRate != null) sb.append("    markupRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("markupRate").matches() ? "[REDACTED]" : toIndentedString(markupRate)).append("\n");
+    if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizedAmount").matches() ? "[REDACTED]" : toIndentedString(authorizedAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
     if (exchangeRate != null) sb.append("    exchangeRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("exchangeRate").matches() ? "[REDACTED]" : toIndentedString(exchangeRate)).append("\n");
-    if (originalAmount != null) sb.append("    originalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalAmount").matches() ? "[REDACTED]" : toIndentedString(originalAmount)).append("\n");
-    if (destinationAmount != null) sb.append("    destinationAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationAmount").matches() ? "[REDACTED]" : toIndentedString(destinationAmount)).append("\n");
-    if (originalAmountWithoutMarkup != null) sb.append("    originalAmountWithoutMarkup: ").append(SENSITIVE_FIELD_PATTERN.matcher("originalAmountWithoutMarkup").matches() ? "[REDACTED]" : toIndentedString(originalAmountWithoutMarkup)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
     if (settlementAmount != null) sb.append("    settlementAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementAmount").matches() ? "[REDACTED]" : toIndentedString(settlementAmount)).append("\n");
-    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementCurrency").matches() ? "[REDACTED]" : toIndentedString(settlementCurrency)).append("\n");
-    if (settlementExchangeRate != null) sb.append("    settlementExchangeRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("settlementExchangeRate").matches() ? "[REDACTED]" : toIndentedString(settlementExchangeRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -272,14 +203,11 @@ public class InlineResponse2014OrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014OrderInformationAmountDetails {\n");
     
-    if (markupRate != null) sb.append("    markupRate: ").append(toIndentedString(markupRate)).append("\n");
+    if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     if (exchangeRate != null) sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
-    if (originalAmount != null) sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
-    if (destinationAmount != null) sb.append("    destinationAmount: ").append(toIndentedString(destinationAmount)).append("\n");
-    if (originalAmountWithoutMarkup != null) sb.append("    originalAmountWithoutMarkup: ").append(toIndentedString(originalAmountWithoutMarkup)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
-    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
-    if (settlementExchangeRate != null) sb.append("    settlementExchangeRate: ").append(toIndentedString(settlementExchangeRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

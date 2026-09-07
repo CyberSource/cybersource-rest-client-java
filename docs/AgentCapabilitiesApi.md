@@ -341,7 +341,7 @@ No authorization required
 
 <a name="createCheckoutSession"></a>
 # **createCheckoutSession**
-> InlineResponse20113 createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> InlineResponse20112 createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Create Checkout Session ACP
 
@@ -364,7 +364,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20113 result = apiInstance.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    InlineResponse20112 result = apiInstance.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#createCheckoutSession");
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 
@@ -583,7 +583,7 @@ No authorization required
 
 <a name="getCheckoutSession"></a>
 # **getCheckoutSession**
-> InlineResponse20113 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> InlineResponse20112 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Get Checkout Session ACP
 
@@ -607,7 +607,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20113 result = apiInstance.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    InlineResponse20112 result = apiInstance.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#getCheckoutSession");
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 
@@ -830,7 +830,7 @@ No authorization required
 
 <a name="ucpCancelCheckout"></a>
 # **ucpCancelCheckout**
-> InlineResponse20114 ucpCancelCheckout(sessionId)
+> InlineResponse20113 ucpCancelCheckout(sessionId)
 
 Cancel Checkout UCP
 
@@ -846,7 +846,7 @@ Cancels an active UCP checkout session. No charge is made.  This operation is id
 AgentCapabilitiesApi apiInstance = new AgentCapabilitiesApi();
 String sessionId = "sess_abc123"; // String | The unique identifier of the UCP checkout session to cancel.
 try {
-    InlineResponse20114 result = apiInstance.ucpCancelCheckout(sessionId);
+    InlineResponse20113 result = apiInstance.ucpCancelCheckout(sessionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#ucpCancelCheckout");
@@ -862,7 +862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -875,7 +875,7 @@ No authorization required
 
 <a name="ucpCompleteCheckout"></a>
 # **ucpCompleteCheckout**
-> InlineResponse20114 ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest)
+> InlineResponse20113 ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest)
 
 Complete Checkout UCP
 
@@ -893,7 +893,7 @@ String sessionId = "sess_abc123"; // String | The unique identifier of the UCP c
 String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. 
 UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest = new UcpCompleteCheckoutRequest(); // UcpCompleteCheckoutRequest | UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. 
 try {
-    InlineResponse20114 result = apiInstance.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+    InlineResponse20113 result = apiInstance.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#ucpCompleteCheckout");
@@ -911,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -924,7 +924,7 @@ No authorization required
 
 <a name="ucpCreateCheckoutSession"></a>
 # **ucpCreateCheckoutSession**
-> InlineResponse20114 ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey)
+> InlineResponse20113 ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey)
 
 Create Checkout Session UCP
 
@@ -941,7 +941,7 @@ AgentCapabilitiesApi apiInstance = new AgentCapabilitiesApi();
 UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest = new UcpCreateCheckoutSessionRequest(); // UcpCreateCheckoutSessionRequest | UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information. 
 String idempotencyKey = "fc23729f-dc9b-4619-8742-2cf9d7bfdf1b"; // String | Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. 
 try {
-    InlineResponse20114 result = apiInstance.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
+    InlineResponse20113 result = apiInstance.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#ucpCreateCheckoutSession");
@@ -958,7 +958,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -971,7 +971,7 @@ No authorization required
 
 <a name="ucpGetCheckoutSession"></a>
 # **ucpGetCheckoutSession**
-> InlineResponse20114 ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
+> InlineResponse20113 ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
 
 Get Checkout Session UCP
 
@@ -988,7 +988,7 @@ AgentCapabilitiesApi apiInstance = new AgentCapabilitiesApi();
 String sessionId = "sess_abc123"; // String | The unique identifier of the UCP checkout session to retrieve. Obtained from the `id` field in the Create Session response. 
 Object ucpGetCheckoutSessionRequest = null; // Object | Empty request body.
 try {
-    InlineResponse20114 result = apiInstance.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
+    InlineResponse20113 result = apiInstance.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#ucpGetCheckoutSession");
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -1018,7 +1018,7 @@ No authorization required
 
 <a name="ucpUpdateCheckoutSession"></a>
 # **ucpUpdateCheckoutSession**
-> InlineResponse20114 ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey)
+> InlineResponse20113 ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey)
 
 Update Checkout Session UCP
 
@@ -1036,7 +1036,7 @@ String sessionId = "sess_abc123"; // String | The unique identifier of the UCP c
 UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest = new UcpUpdateCheckoutSessionRequest(); // UcpUpdateCheckoutSessionRequest | UCP session update payload. All fields are optional — only fields you include will be applied. 
 String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Client-generated unique key for idempotency. Lowercase per UCP spec.
 try {
-    InlineResponse20114 result = apiInstance.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+    InlineResponse20113 result = apiInstance.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#ucpUpdateCheckoutSession");
@@ -1054,7 +1054,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -1163,7 +1163,7 @@ No authorization required
 
 <a name="updateCheckoutSession"></a>
 # **updateCheckoutSession**
-> InlineResponse20113 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> InlineResponse20112 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Update Checkout Session ACP
 
@@ -1187,7 +1187,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20113 result = apiInstance.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    InlineResponse20112 result = apiInstance.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentCapabilitiesApi#updateCheckoutSession");
@@ -1211,7 +1211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 

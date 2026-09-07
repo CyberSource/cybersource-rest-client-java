@@ -15,7 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2013Results;
+import Model.InlineResponse2013ErrorInformation;
+import Model.InlineResponse2013OrderInformation;
+import Model.InlineResponse2013ProcessingInformation;
+import Model.InlineResponse2013ProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,75 +27,157 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.joda.time.DateTime;
 
 /**
- * Successful label submission response envelope returned for HTTP 201
+ * InlineResponse2013
  */
-@ApiModel(description = "Successful label submission response envelope returned for HTTP 201")
 
 public class InlineResponse2013 {
-  @SerializedName("requestId")
-  private String requestId = null;
+  @SerializedName("id")
+  private String id = null;
 
-  @SerializedName("submitTimeUtc")
-  private DateTime submitTimeUtc = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("results")
-  private InlineResponse2013Results results = null;
+  @SerializedName("submitTimeStampUtc")
+  private String submitTimeStampUtc = null;
 
-  public InlineResponse2013 requestId(String requestId) {
-    this.requestId = requestId;
+  @SerializedName("orderInformation")
+  private InlineResponse2013OrderInformation orderInformation = null;
+
+  @SerializedName("errorInformation")
+  private InlineResponse2013ErrorInformation errorInformation = null;
+
+  @SerializedName("processorInformation")
+  private InlineResponse2013ProcessorInformation processorInformation = null;
+
+  @SerializedName("processingInformation")
+  private InlineResponse2013ProcessingInformation processingInformation = null;
+
+  public InlineResponse2013 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Echoes the unique request identifier submitted in the original label request, enabling end-to-end correlation between request and response.
-   * @return requestId
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @return id
   **/
-  @ApiModelProperty(example = "req_123456789", required = true, value = "Echoes the unique request identifier submitted in the original label request, enabling end-to-end correlation between request and response.")
-  public String getRequestId() {
-    return requestId;
+  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
+  public String getId() {
+    return id;
   }
 
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
+  public void setId(String id) {
+    this.id = id;
   }
 
-  public InlineResponse2013 submitTimeUtc(DateTime submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse2013 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * UTC timestamp indicating when the label submission request was received and processed.
-   * @return submitTimeUtc
+   * The status of the submitted transaction.  Possible values: - &#x60;COMPLETED&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;SERVER_ERROR&#x60; 
+   * @return status
   **/
-  @ApiModelProperty(example = "2025-12-30T12:00:00.000Z", required = true, value = "UTC timestamp indicating when the label submission request was received and processed.")
-  public DateTime getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR` ")
+  public String getStatus() {
+    return status;
   }
 
-  public void setSubmitTimeUtc(DateTime submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public InlineResponse2013 results(InlineResponse2013Results results) {
-    this.results = results;
+  public InlineResponse2013 submitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
     return this;
   }
 
    /**
-   * Get results
-   * @return results
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeStampUtc
   **/
-  @ApiModelProperty(required = true, value = "")
-  public InlineResponse2013Results getResults() {
-    return results;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeStampUtc() {
+    return submitTimeStampUtc;
   }
 
-  public void setResults(InlineResponse2013Results results) {
-    this.results = results;
+  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
+    this.submitTimeStampUtc = submitTimeStampUtc;
+  }
+
+  public InlineResponse2013 orderInformation(InlineResponse2013OrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2013OrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(InlineResponse2013OrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+  }
+
+  public InlineResponse2013 errorInformation(InlineResponse2013ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+    return this;
+  }
+
+   /**
+   * Get errorInformation
+   * @return errorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2013ErrorInformation getErrorInformation() {
+    return errorInformation;
+  }
+
+  public void setErrorInformation(InlineResponse2013ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+  }
+
+  public InlineResponse2013 processorInformation(InlineResponse2013ProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+    return this;
+  }
+
+   /**
+   * Get processorInformation
+   * @return processorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2013ProcessorInformation getProcessorInformation() {
+    return processorInformation;
+  }
+
+  public void setProcessorInformation(InlineResponse2013ProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+  }
+
+  public InlineResponse2013 processingInformation(InlineResponse2013ProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2013ProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(InlineResponse2013ProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
   }
 
 
@@ -105,14 +190,18 @@ public class InlineResponse2013 {
       return false;
     }
     InlineResponse2013 inlineResponse2013 = (InlineResponse2013) o;
-    return Objects.equals(this.requestId, inlineResponse2013.requestId) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2013.submitTimeUtc) &&
-        Objects.equals(this.results, inlineResponse2013.results);
+    return Objects.equals(this.id, inlineResponse2013.id) &&
+        Objects.equals(this.status, inlineResponse2013.status) &&
+        Objects.equals(this.submitTimeStampUtc, inlineResponse2013.submitTimeStampUtc) &&
+        Objects.equals(this.orderInformation, inlineResponse2013.orderInformation) &&
+        Objects.equals(this.errorInformation, inlineResponse2013.errorInformation) &&
+        Objects.equals(this.processorInformation, inlineResponse2013.processorInformation) &&
+        Objects.equals(this.processingInformation, inlineResponse2013.processingInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestId, submitTimeUtc, results);
+    return Objects.hash(id, status, submitTimeStampUtc, orderInformation, errorInformation, processorInformation, processingInformation);
   }
 
 
@@ -139,9 +228,13 @@ public class InlineResponse2013 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013 {\n");
     
-    if (requestId != null) sb.append("    requestId: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestId").matches() ? "[REDACTED]" : toIndentedString(requestId)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
-    if (results != null) sb.append("    results: ").append(SENSITIVE_FIELD_PATTERN.matcher("results").matches() ? "[REDACTED]" : toIndentedString(results)).append("\n");
+    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -160,9 +253,13 @@ public class InlineResponse2013 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013 {\n");
     
-    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    if (results != null) sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse20110Payloads;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,197 +25,51 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse20110
+ * Egress Asymmetric Key Information Response. 
  */
+@ApiModel(description = "Egress Asymmetric Key Information Response. ")
 
 public class InlineResponse20110 {
-  @SerializedName("eventDate")
-  private String eventDate = null;
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
 
-  @SerializedName("eventType")
-  private String eventType = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("organizationId")
-  private String organizationId = null;
-
-  @SerializedName("payloads")
-  private InlineResponse20110Payloads payloads = null;
-
-  @SerializedName("productId")
-  private String productId = null;
-
-  @SerializedName("requestType")
-  private String requestType = null;
-
-  @SerializedName("retryNumber")
-  private Integer retryNumber = null;
-
-  @SerializedName("transactionTraceId")
-  private String transactionTraceId = null;
-
-  @SerializedName("webhookId")
-  private String webhookId = null;
-
-  public InlineResponse20110 eventDate(String eventDate) {
-    this.eventDate = eventDate;
+  public InlineResponse20110 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
     return this;
   }
 
    /**
-   * Date that the webhook was delivered
-   * @return eventDate
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Date that the webhook was delivered")
-  public String getEventDate() {
-    return eventDate;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
   }
 
-  public void setEventDate(String eventDate) {
-    this.eventDate = eventDate;
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse20110 eventType(String eventType) {
-    this.eventType = eventType;
+  public InlineResponse20110 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * The event name the webhook was delivered for
-   * @return eventType
+   * The status of the submitted transaction. Possible values:  - ACCEPTED 
+   * @return status
   **/
-  @ApiModelProperty(value = "The event name the webhook was delivered for")
-  public String getEventType() {
-    return eventType;
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:  - ACCEPTED ")
+  public String getStatus() {
+    return status;
   }
 
-  public void setEventType(String eventType) {
-    this.eventType = eventType;
-  }
-
-  public InlineResponse20110 organizationId(String organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * The Organization Identifier.
-   * @return organizationId
-  **/
-  @ApiModelProperty(value = "The Organization Identifier.")
-  public String getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(String organizationId) {
-    this.organizationId = organizationId;
-  }
-
-  public InlineResponse20110 payloads(InlineResponse20110Payloads payloads) {
-    this.payloads = payloads;
-    return this;
-  }
-
-   /**
-   * Get payloads
-   * @return payloads
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse20110Payloads getPayloads() {
-    return payloads;
-  }
-
-  public void setPayloads(InlineResponse20110Payloads payloads) {
-    this.payloads = payloads;
-  }
-
-  public InlineResponse20110 productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * The product the webhook was delivered for
-   * @return productId
-  **/
-  @ApiModelProperty(value = "The product the webhook was delivered for")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public InlineResponse20110 requestType(String requestType) {
-    this.requestType = requestType;
-    return this;
-  }
-
-   /**
-   * Identifies the the type of request
-   * @return requestType
-  **/
-  @ApiModelProperty(value = "Identifies the the type of request")
-  public String getRequestType() {
-    return requestType;
-  }
-
-  public void setRequestType(String requestType) {
-    this.requestType = requestType;
-  }
-
-  public InlineResponse20110 retryNumber(Integer retryNumber) {
-    this.retryNumber = retryNumber;
-    return this;
-  }
-
-   /**
-   * The number of retry attempts for a given webhook
-   * @return retryNumber
-  **/
-  @ApiModelProperty(value = "The number of retry attempts for a given webhook")
-  public Integer getRetryNumber() {
-    return retryNumber;
-  }
-
-  public void setRetryNumber(Integer retryNumber) {
-    this.retryNumber = retryNumber;
-  }
-
-  public InlineResponse20110 transactionTraceId(String transactionTraceId) {
-    this.transactionTraceId = transactionTraceId;
-    return this;
-  }
-
-   /**
-   * The identifier for the webhook
-   * @return transactionTraceId
-  **/
-  @ApiModelProperty(value = "The identifier for the webhook")
-  public String getTransactionTraceId() {
-    return transactionTraceId;
-  }
-
-  public void setTransactionTraceId(String transactionTraceId) {
-    this.transactionTraceId = transactionTraceId;
-  }
-
-  public InlineResponse20110 webhookId(String webhookId) {
-    this.webhookId = webhookId;
-    return this;
-  }
-
-   /**
-   * The identifier of the subscription
-   * @return webhookId
-  **/
-  @ApiModelProperty(value = "The identifier of the subscription")
-  public String getWebhookId() {
-    return webhookId;
-  }
-
-  public void setWebhookId(String webhookId) {
-    this.webhookId = webhookId;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
 
@@ -229,20 +82,13 @@ public class InlineResponse20110 {
       return false;
     }
     InlineResponse20110 inlineResponse20110 = (InlineResponse20110) o;
-    return Objects.equals(this.eventDate, inlineResponse20110.eventDate) &&
-        Objects.equals(this.eventType, inlineResponse20110.eventType) &&
-        Objects.equals(this.organizationId, inlineResponse20110.organizationId) &&
-        Objects.equals(this.payloads, inlineResponse20110.payloads) &&
-        Objects.equals(this.productId, inlineResponse20110.productId) &&
-        Objects.equals(this.requestType, inlineResponse20110.requestType) &&
-        Objects.equals(this.retryNumber, inlineResponse20110.retryNumber) &&
-        Objects.equals(this.transactionTraceId, inlineResponse20110.transactionTraceId) &&
-        Objects.equals(this.webhookId, inlineResponse20110.webhookId);
+    return Objects.equals(this.submitTimeUtc, inlineResponse20110.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse20110.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDate, eventType, organizationId, payloads, productId, requestType, retryNumber, transactionTraceId, webhookId);
+    return Objects.hash(submitTimeUtc, status);
   }
 
 
@@ -269,15 +115,8 @@ public class InlineResponse20110 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20110 {\n");
     
-    if (eventDate != null) sb.append("    eventDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventDate").matches() ? "[REDACTED]" : toIndentedString(eventDate)).append("\n");
-    if (eventType != null) sb.append("    eventType: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventType").matches() ? "[REDACTED]" : toIndentedString(eventType)).append("\n");
-    if (organizationId != null) sb.append("    organizationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("organizationId").matches() ? "[REDACTED]" : toIndentedString(organizationId)).append("\n");
-    if (payloads != null) sb.append("    payloads: ").append(SENSITIVE_FIELD_PATTERN.matcher("payloads").matches() ? "[REDACTED]" : toIndentedString(payloads)).append("\n");
-    if (productId != null) sb.append("    productId: ").append(SENSITIVE_FIELD_PATTERN.matcher("productId").matches() ? "[REDACTED]" : toIndentedString(productId)).append("\n");
-    if (requestType != null) sb.append("    requestType: ").append(SENSITIVE_FIELD_PATTERN.matcher("requestType").matches() ? "[REDACTED]" : toIndentedString(requestType)).append("\n");
-    if (retryNumber != null) sb.append("    retryNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("retryNumber").matches() ? "[REDACTED]" : toIndentedString(retryNumber)).append("\n");
-    if (transactionTraceId != null) sb.append("    transactionTraceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionTraceId").matches() ? "[REDACTED]" : toIndentedString(transactionTraceId)).append("\n");
-    if (webhookId != null) sb.append("    webhookId: ").append(SENSITIVE_FIELD_PATTERN.matcher("webhookId").matches() ? "[REDACTED]" : toIndentedString(webhookId)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -296,15 +135,8 @@ public class InlineResponse20110 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20110 {\n");
     
-    if (eventDate != null) sb.append("    eventDate: ").append(toIndentedString(eventDate)).append("\n");
-    if (eventType != null) sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    if (payloads != null) sb.append("    payloads: ").append(toIndentedString(payloads)).append("\n");
-    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    if (requestType != null) sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
-    if (retryNumber != null) sb.append("    retryNumber: ").append(toIndentedString(retryNumber)).append("\n");
-    if (transactionTraceId != null) sb.append("    transactionTraceId: ").append(toIndentedString(transactionTraceId)).append("\n");
-    if (webhookId != null) sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

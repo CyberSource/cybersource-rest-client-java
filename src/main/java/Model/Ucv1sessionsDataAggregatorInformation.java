@@ -189,10 +189,10 @@ public class Ucv1sessionsDataAggregatorInformation {
   }
 
    /**
-   * Acquirer country.
+   * Acquirer country used for Payment Facilitator scenarios.
    * @return country
   **/
-  @ApiModelProperty(value = "Acquirer country.")
+  @ApiModelProperty(value = "Acquirer country used for Payment Facilitator scenarios.")
   public String getCountry() {
     return country;
   }

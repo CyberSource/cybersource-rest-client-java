@@ -15,14 +15,15 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.AcpCheckoutSessionResponseBuyer;
-import Model.InlineResponse20113FulfillmentAddress;
-import Model.InlineResponse20113FulfillmentOptions;
+import Model.Iccv1checkoutsessionsFulfillmentTotals;
+import Model.InlineResponse20112Links;
+import Model.InlineResponse20113Discounts;
+import Model.InlineResponse20113Fulfillment;
 import Model.InlineResponse20113LineItems;
-import Model.InlineResponse20113Links;
-import Model.InlineResponse20113Messages;
-import Model.InlineResponse20113PaymentProvider;
-import Model.InlineResponse20113Totals;
+import Model.InlineResponse20113Order;
+import Model.InlineResponse20113Payment;
+import Model.InlineResponse20113Ucp;
+import Model.UcpCheckoutSessionResponseBuyer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,10 +36,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * InlineResponse20113
+ * UCP checkout session state. Total amounts are expressed in cents (not micros).
  */
+@ApiModel(description = "UCP checkout session state. Total amounts are expressed in cents (not micros).")
 
 public class InlineResponse20113 {
+  @SerializedName("ucp")
+  private InlineResponse20113Ucp ucp = null;
+
   @SerializedName("id")
   private String id = null;
 
@@ -48,32 +53,47 @@ public class InlineResponse20113 {
   @SerializedName("currency")
   private String currency = null;
 
+  @SerializedName("buyer")
+  private UcpCheckoutSessionResponseBuyer buyer = null;
+
   @SerializedName("line_items")
   private List<InlineResponse20113LineItems> lineItems = null;
 
-  @SerializedName("fulfillment_address")
-  private InlineResponse20113FulfillmentAddress fulfillmentAddress = null;
-
-  @SerializedName("fulfillment_options")
-  private List<InlineResponse20113FulfillmentOptions> fulfillmentOptions = null;
-
-  @SerializedName("fulfillment_option_id")
-  private String fulfillmentOptionId = null;
-
   @SerializedName("totals")
-  private List<InlineResponse20113Totals> totals = null;
+  private List<Iccv1checkoutsessionsFulfillmentTotals> totals = null;
 
-  @SerializedName("buyer")
-  private AcpCheckoutSessionResponseBuyer buyer = null;
+  @SerializedName("fulfillment")
+  private InlineResponse20113Fulfillment fulfillment = null;
 
-  @SerializedName("payment_provider")
-  private InlineResponse20113PaymentProvider paymentProvider = null;
+  @SerializedName("payment")
+  private InlineResponse20113Payment payment = null;
 
-  @SerializedName("messages")
-  private List<InlineResponse20113Messages> messages = null;
+  @SerializedName("discounts")
+  private InlineResponse20113Discounts discounts = null;
+
+  @SerializedName("order")
+  private InlineResponse20113Order order = null;
 
   @SerializedName("links")
-  private List<InlineResponse20113Links> links = null;
+  private List<InlineResponse20112Links> links = null;
+
+  public InlineResponse20113 ucp(InlineResponse20113Ucp ucp) {
+    this.ucp = ucp;
+    return this;
+  }
+
+   /**
+   * Get ucp
+   * @return ucp
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse20113Ucp getUcp() {
+    return ucp;
+  }
+
+  public void setUcp(InlineResponse20113Ucp ucp) {
+    this.ucp = ucp;
+  }
 
   public InlineResponse20113 id(String id) {
     this.id = id;
@@ -81,10 +101,10 @@ public class InlineResponse20113 {
   }
 
    /**
-   * Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel). 
+   * Unique UCP session identifier. Required for all subsequent UCP calls (update, complete, cancel). 
    * @return id
   **/
-  @ApiModelProperty(example = "sess_abc123", value = "Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel). ")
+  @ApiModelProperty(example = "sess_abc123", value = "Unique UCP session identifier. Required for all subsequent UCP calls (update, complete, cancel). ")
   public String getId() {
     return id;
   }
@@ -99,10 +119,10 @@ public class InlineResponse20113 {
   }
 
    /**
-   * Current lifecycle state of the session per ACP spec: - &#x60;not_ready_for_payment&#x60; — session is open but not yet ready - &#x60;ready_for_payment&#x60; — session is ready to be completed - &#x60;completed&#x60; — order has been placed; session is immutable - &#x60;canceled&#x60; — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled
+   * Current lifecycle state of the session. - &#x60;active&#x60; — open and modifiable - &#x60;completed&#x60; — order placed, immutable - &#x60;cancelled&#x60; — abandoned, no charge made   Possible values: - active - completed - cancelled
    * @return status
   **/
-  @ApiModelProperty(value = "Current lifecycle state of the session per ACP spec: - `not_ready_for_payment` — session is open but not yet ready - `ready_for_payment` — session is ready to be completed - `completed` — order has been placed; session is immutable - `canceled` — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled")
+  @ApiModelProperty(value = "Current lifecycle state of the session. - `active` — open and modifiable - `completed` — order placed, immutable - `cancelled` — abandoned, no charge made   Possible values: - active - completed - cancelled")
   public String getStatus() {
     return status;
   }
@@ -117,16 +137,34 @@ public class InlineResponse20113 {
   }
 
    /**
-   * ISO 4217 lowercase currency code for this session.
+   * ISO 4217 currency code for this session (e.g. &#x60;USD&#x60;, &#x60;EUR&#x60;).
    * @return currency
   **/
-  @ApiModelProperty(example = "usd", value = "ISO 4217 lowercase currency code for this session.")
+  @ApiModelProperty(example = "USD", value = "ISO 4217 currency code for this session (e.g. `USD`, `EUR`).")
   public String getCurrency() {
     return currency;
   }
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public InlineResponse20113 buyer(UcpCheckoutSessionResponseBuyer buyer) {
+    this.buyer = buyer;
+    return this;
+  }
+
+   /**
+   * Get buyer
+   * @return buyer
+  **/
+  @ApiModelProperty(value = "")
+  public UcpCheckoutSessionResponseBuyer getBuyer() {
+    return buyer;
+  }
+
+  public void setBuyer(UcpCheckoutSessionResponseBuyer buyer) {
+    this.buyer = buyer;
   }
 
   public InlineResponse20113 lineItems(List<InlineResponse20113LineItems> lineItems) {
@@ -143,10 +181,10 @@ public class InlineResponse20113 {
   }
 
    /**
-   * Line items with merchant-confirmed pricing.
+   * Cart line items with merchant-confirmed pricing.
    * @return lineItems
   **/
-  @ApiModelProperty(value = "Line items with merchant-confirmed pricing.")
+  @ApiModelProperty(value = "Cart line items with merchant-confirmed pricing.")
   public List<InlineResponse20113LineItems> getLineItems() {
     return lineItems;
   }
@@ -155,179 +193,127 @@ public class InlineResponse20113 {
     this.lineItems = lineItems;
   }
 
-  public InlineResponse20113 fulfillmentAddress(InlineResponse20113FulfillmentAddress fulfillmentAddress) {
-    this.fulfillmentAddress = fulfillmentAddress;
-    return this;
-  }
-
-   /**
-   * Get fulfillmentAddress
-   * @return fulfillmentAddress
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse20113FulfillmentAddress getFulfillmentAddress() {
-    return fulfillmentAddress;
-  }
-
-  public void setFulfillmentAddress(InlineResponse20113FulfillmentAddress fulfillmentAddress) {
-    this.fulfillmentAddress = fulfillmentAddress;
-  }
-
-  public InlineResponse20113 fulfillmentOptions(List<InlineResponse20113FulfillmentOptions> fulfillmentOptions) {
-    this.fulfillmentOptions = fulfillmentOptions;
-    return this;
-  }
-
-  public InlineResponse20113 addFulfillmentOptionsItem(InlineResponse20113FulfillmentOptions fulfillmentOptionsItem) {
-    if (this.fulfillmentOptions == null) {
-      this.fulfillmentOptions = new ArrayList<InlineResponse20113FulfillmentOptions>();
-    }
-    this.fulfillmentOptions.add(fulfillmentOptionsItem);
-    return this;
-  }
-
-   /**
-   * Available fulfillment methods with pricing.
-   * @return fulfillmentOptions
-  **/
-  @ApiModelProperty(value = "Available fulfillment methods with pricing.")
-  public List<InlineResponse20113FulfillmentOptions> getFulfillmentOptions() {
-    return fulfillmentOptions;
-  }
-
-  public void setFulfillmentOptions(List<InlineResponse20113FulfillmentOptions> fulfillmentOptions) {
-    this.fulfillmentOptions = fulfillmentOptions;
-  }
-
-  public InlineResponse20113 fulfillmentOptionId(String fulfillmentOptionId) {
-    this.fulfillmentOptionId = fulfillmentOptionId;
-    return this;
-  }
-
-   /**
-   * ID of the currently selected fulfillment option.
-   * @return fulfillmentOptionId
-  **/
-  @ApiModelProperty(example = "fulfillment-standard-001", value = "ID of the currently selected fulfillment option.")
-  public String getFulfillmentOptionId() {
-    return fulfillmentOptionId;
-  }
-
-  public void setFulfillmentOptionId(String fulfillmentOptionId) {
-    this.fulfillmentOptionId = fulfillmentOptionId;
-  }
-
-  public InlineResponse20113 totals(List<InlineResponse20113Totals> totals) {
+  public InlineResponse20113 totals(List<Iccv1checkoutsessionsFulfillmentTotals> totals) {
     this.totals = totals;
     return this;
   }
 
-  public InlineResponse20113 addTotalsItem(InlineResponse20113Totals totalsItem) {
+  public InlineResponse20113 addTotalsItem(Iccv1checkoutsessionsFulfillmentTotals totalsItem) {
     if (this.totals == null) {
-      this.totals = new ArrayList<InlineResponse20113Totals>();
+      this.totals = new ArrayList<Iccv1checkoutsessionsFulfillmentTotals>();
     }
     this.totals.add(totalsItem);
     return this;
   }
 
    /**
-   * Order cost breakdown as an array of typed total lines. All amounts in minor units (cents).
+   * Order cost breakdown. Each entry represents one total type (subtotal, tax, shipping, discount, or grand total). Amounts are in **cents** (not micros). 
    * @return totals
   **/
-  @ApiModelProperty(value = "Order cost breakdown as an array of typed total lines. All amounts in minor units (cents).")
-  public List<InlineResponse20113Totals> getTotals() {
+  @ApiModelProperty(value = "Order cost breakdown. Each entry represents one total type (subtotal, tax, shipping, discount, or grand total). Amounts are in **cents** (not micros). ")
+  public List<Iccv1checkoutsessionsFulfillmentTotals> getTotals() {
     return totals;
   }
 
-  public void setTotals(List<InlineResponse20113Totals> totals) {
+  public void setTotals(List<Iccv1checkoutsessionsFulfillmentTotals> totals) {
     this.totals = totals;
   }
 
-  public InlineResponse20113 buyer(AcpCheckoutSessionResponseBuyer buyer) {
-    this.buyer = buyer;
+  public InlineResponse20113 fulfillment(InlineResponse20113Fulfillment fulfillment) {
+    this.fulfillment = fulfillment;
     return this;
   }
 
    /**
-   * Get buyer
-   * @return buyer
+   * Get fulfillment
+   * @return fulfillment
   **/
   @ApiModelProperty(value = "")
-  public AcpCheckoutSessionResponseBuyer getBuyer() {
-    return buyer;
+  public InlineResponse20113Fulfillment getFulfillment() {
+    return fulfillment;
   }
 
-  public void setBuyer(AcpCheckoutSessionResponseBuyer buyer) {
-    this.buyer = buyer;
+  public void setFulfillment(InlineResponse20113Fulfillment fulfillment) {
+    this.fulfillment = fulfillment;
   }
 
-  public InlineResponse20113 paymentProvider(InlineResponse20113PaymentProvider paymentProvider) {
-    this.paymentProvider = paymentProvider;
+  public InlineResponse20113 payment(InlineResponse20113Payment payment) {
+    this.payment = payment;
     return this;
   }
 
    /**
-   * Get paymentProvider
-   * @return paymentProvider
+   * Get payment
+   * @return payment
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse20113PaymentProvider getPaymentProvider() {
-    return paymentProvider;
+  public InlineResponse20113Payment getPayment() {
+    return payment;
   }
 
-  public void setPaymentProvider(InlineResponse20113PaymentProvider paymentProvider) {
-    this.paymentProvider = paymentProvider;
+  public void setPayment(InlineResponse20113Payment payment) {
+    this.payment = payment;
   }
 
-  public InlineResponse20113 messages(List<InlineResponse20113Messages> messages) {
-    this.messages = messages;
-    return this;
-  }
-
-  public InlineResponse20113 addMessagesItem(InlineResponse20113Messages messagesItem) {
-    if (this.messages == null) {
-      this.messages = new ArrayList<InlineResponse20113Messages>();
-    }
-    this.messages.add(messagesItem);
+  public InlineResponse20113 discounts(InlineResponse20113Discounts discounts) {
+    this.discounts = discounts;
     return this;
   }
 
    /**
-   * Informational or error messages from the merchant backend.
-   * @return messages
+   * Get discounts
+   * @return discounts
   **/
-  @ApiModelProperty(value = "Informational or error messages from the merchant backend.")
-  public List<InlineResponse20113Messages> getMessages() {
-    return messages;
+  @ApiModelProperty(value = "")
+  public InlineResponse20113Discounts getDiscounts() {
+    return discounts;
   }
 
-  public void setMessages(List<InlineResponse20113Messages> messages) {
-    this.messages = messages;
+  public void setDiscounts(InlineResponse20113Discounts discounts) {
+    this.discounts = discounts;
   }
 
-  public InlineResponse20113 links(List<InlineResponse20113Links> links) {
+  public InlineResponse20113 order(InlineResponse20113Order order) {
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Get order
+   * @return order
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse20113Order getOrder() {
+    return order;
+  }
+
+  public void setOrder(InlineResponse20113Order order) {
+    this.order = order;
+  }
+
+  public InlineResponse20113 links(List<InlineResponse20112Links> links) {
     this.links = links;
     return this;
   }
 
-  public InlineResponse20113 addLinksItem(InlineResponse20113Links linksItem) {
+  public InlineResponse20113 addLinksItem(InlineResponse20112Links linksItem) {
     if (this.links == null) {
-      this.links = new ArrayList<InlineResponse20113Links>();
+      this.links = new ArrayList<InlineResponse20112Links>();
     }
     this.links.add(linksItem);
     return this;
   }
 
    /**
-   * Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies). 
+   * Related resource links (e.g. terms of use, privacy policy).
    * @return links
   **/
-  @ApiModelProperty(value = "Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies). ")
-  public List<InlineResponse20113Links> getLinks() {
+  @ApiModelProperty(value = "Related resource links (e.g. terms of use, privacy policy).")
+  public List<InlineResponse20112Links> getLinks() {
     return links;
   }
 
-  public void setLinks(List<InlineResponse20113Links> links) {
+  public void setLinks(List<InlineResponse20112Links> links) {
     this.links = links;
   }
 
@@ -341,23 +327,23 @@ public class InlineResponse20113 {
       return false;
     }
     InlineResponse20113 inlineResponse20113 = (InlineResponse20113) o;
-    return Objects.equals(this.id, inlineResponse20113.id) &&
+    return Objects.equals(this.ucp, inlineResponse20113.ucp) &&
+        Objects.equals(this.id, inlineResponse20113.id) &&
         Objects.equals(this.status, inlineResponse20113.status) &&
         Objects.equals(this.currency, inlineResponse20113.currency) &&
-        Objects.equals(this.lineItems, inlineResponse20113.lineItems) &&
-        Objects.equals(this.fulfillmentAddress, inlineResponse20113.fulfillmentAddress) &&
-        Objects.equals(this.fulfillmentOptions, inlineResponse20113.fulfillmentOptions) &&
-        Objects.equals(this.fulfillmentOptionId, inlineResponse20113.fulfillmentOptionId) &&
-        Objects.equals(this.totals, inlineResponse20113.totals) &&
         Objects.equals(this.buyer, inlineResponse20113.buyer) &&
-        Objects.equals(this.paymentProvider, inlineResponse20113.paymentProvider) &&
-        Objects.equals(this.messages, inlineResponse20113.messages) &&
+        Objects.equals(this.lineItems, inlineResponse20113.lineItems) &&
+        Objects.equals(this.totals, inlineResponse20113.totals) &&
+        Objects.equals(this.fulfillment, inlineResponse20113.fulfillment) &&
+        Objects.equals(this.payment, inlineResponse20113.payment) &&
+        Objects.equals(this.discounts, inlineResponse20113.discounts) &&
+        Objects.equals(this.order, inlineResponse20113.order) &&
         Objects.equals(this.links, inlineResponse20113.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, currency, lineItems, fulfillmentAddress, fulfillmentOptions, fulfillmentOptionId, totals, buyer, paymentProvider, messages, links);
+    return Objects.hash(ucp, id, status, currency, buyer, lineItems, totals, fulfillment, payment, discounts, order, links);
   }
 
 
@@ -384,17 +370,17 @@ public class InlineResponse20113 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20113 {\n");
     
+    if (ucp != null) sb.append("    ucp: ").append(SENSITIVE_FIELD_PATTERN.matcher("ucp").matches() ? "[REDACTED]" : toIndentedString(ucp)).append("\n");
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
-    if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
-    if (fulfillmentAddress != null) sb.append("    fulfillmentAddress: ").append(SENSITIVE_FIELD_PATTERN.matcher("fulfillmentAddress").matches() ? "[REDACTED]" : toIndentedString(fulfillmentAddress)).append("\n");
-    if (fulfillmentOptions != null) sb.append("    fulfillmentOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("fulfillmentOptions").matches() ? "[REDACTED]" : toIndentedString(fulfillmentOptions)).append("\n");
-    if (fulfillmentOptionId != null) sb.append("    fulfillmentOptionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("fulfillmentOptionId").matches() ? "[REDACTED]" : toIndentedString(fulfillmentOptionId)).append("\n");
-    if (totals != null) sb.append("    totals: ").append(SENSITIVE_FIELD_PATTERN.matcher("totals").matches() ? "[REDACTED]" : toIndentedString(totals)).append("\n");
     if (buyer != null) sb.append("    buyer: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyer").matches() ? "[REDACTED]" : toIndentedString(buyer)).append("\n");
-    if (paymentProvider != null) sb.append("    paymentProvider: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentProvider").matches() ? "[REDACTED]" : toIndentedString(paymentProvider)).append("\n");
-    if (messages != null) sb.append("    messages: ").append(SENSITIVE_FIELD_PATTERN.matcher("messages").matches() ? "[REDACTED]" : toIndentedString(messages)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(SENSITIVE_FIELD_PATTERN.matcher("totals").matches() ? "[REDACTED]" : toIndentedString(totals)).append("\n");
+    if (fulfillment != null) sb.append("    fulfillment: ").append(SENSITIVE_FIELD_PATTERN.matcher("fulfillment").matches() ? "[REDACTED]" : toIndentedString(fulfillment)).append("\n");
+    if (payment != null) sb.append("    payment: ").append(SENSITIVE_FIELD_PATTERN.matcher("payment").matches() ? "[REDACTED]" : toIndentedString(payment)).append("\n");
+    if (discounts != null) sb.append("    discounts: ").append(SENSITIVE_FIELD_PATTERN.matcher("discounts").matches() ? "[REDACTED]" : toIndentedString(discounts)).append("\n");
+    if (order != null) sb.append("    order: ").append(SENSITIVE_FIELD_PATTERN.matcher("order").matches() ? "[REDACTED]" : toIndentedString(order)).append("\n");
     if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -414,17 +400,17 @@ public class InlineResponse20113 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20113 {\n");
     
+    if (ucp != null) sb.append("    ucp: ").append(toIndentedString(ucp)).append("\n");
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    if (fulfillmentAddress != null) sb.append("    fulfillmentAddress: ").append(toIndentedString(fulfillmentAddress)).append("\n");
-    if (fulfillmentOptions != null) sb.append("    fulfillmentOptions: ").append(toIndentedString(fulfillmentOptions)).append("\n");
-    if (fulfillmentOptionId != null) sb.append("    fulfillmentOptionId: ").append(toIndentedString(fulfillmentOptionId)).append("\n");
-    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     if (buyer != null) sb.append("    buyer: ").append(toIndentedString(buyer)).append("\n");
-    if (paymentProvider != null) sb.append("    paymentProvider: ").append(toIndentedString(paymentProvider)).append("\n");
-    if (messages != null) sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
+    if (fulfillment != null) sb.append("    fulfillment: ").append(toIndentedString(fulfillment)).append("\n");
+    if (payment != null) sb.append("    payment: ").append(toIndentedString(payment)).append("\n");
+    if (discounts != null) sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
+    if (order != null) sb.append("    order: ").append(toIndentedString(order)).append("\n");
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

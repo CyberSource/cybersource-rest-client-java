@@ -37,8 +37,8 @@ import Model.AgenticRetrievePaymentCredentialsResponse200;
 import Model.AgenticUpdatePurchaseIntentRequest;
 import Model.InlineResponse20017;
 import Model.InlineResponse20018;
+import Model.InlineResponse20112;
 import Model.InlineResponse20113;
-import Model.InlineResponse20114;
 import Model.InlineResponse40016;
 import Model.KeyRequest;
 import Model.KeyUpdate;
@@ -197,7 +197,7 @@ public class AgentCapabilitiesApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20113 response = api.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        InlineResponse20112 response = api.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -287,7 +287,7 @@ public class AgentCapabilitiesApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20113 response = api.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        InlineResponse20112 response = api.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -370,7 +370,7 @@ public class AgentCapabilitiesApiTest {
     @Test
     public void ucpCancelCheckoutTest() throws Exception {
         String sessionId = null;
-        InlineResponse20114 response = api.ucpCancelCheckout(sessionId);
+        InlineResponse20113 response = api.ucpCancelCheckout(sessionId);
 
         // TODO: test validations
     }
@@ -388,7 +388,7 @@ public class AgentCapabilitiesApiTest {
         String sessionId = null;
         String idempotencyKey = null;
         UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest = null;
-        InlineResponse20114 response = api.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+        InlineResponse20113 response = api.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
 
         // TODO: test validations
     }
@@ -405,7 +405,7 @@ public class AgentCapabilitiesApiTest {
     public void ucpCreateCheckoutSessionTest() throws Exception {
         UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest = null;
         String idempotencyKey = null;
-        InlineResponse20114 response = api.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
+        InlineResponse20113 response = api.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
 
         // TODO: test validations
     }
@@ -422,7 +422,7 @@ public class AgentCapabilitiesApiTest {
     public void ucpGetCheckoutSessionTest() throws Exception {
         String sessionId = null;
         Object ucpGetCheckoutSessionRequest = null;
-        InlineResponse20114 response = api.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
+        InlineResponse20113 response = api.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
 
         // TODO: test validations
     }
@@ -440,7 +440,7 @@ public class AgentCapabilitiesApiTest {
         String sessionId = null;
         UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest = null;
         String idempotencyKey = null;
-        InlineResponse20114 response = api.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+        InlineResponse20113 response = api.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
 
         // TODO: test validations
     }
@@ -499,7 +499,7 @@ public class AgentCapabilitiesApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20113 response = api.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        InlineResponse20112 response = api.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }

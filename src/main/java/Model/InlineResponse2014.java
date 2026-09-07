@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2014ClientReferenceInformation;
 import Model.InlineResponse2014ErrorInformation;
-import Model.InlineResponse2014OrderInformation;
-import Model.InlineResponse2014ProcessingInformation;
-import Model.InlineResponse2014ProcessorInformation;
+import Model.InlineResponse2014Links;
+import Model.InlineResponse2014Transactions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,6 +27,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2014
@@ -42,17 +44,17 @@ public class InlineResponse2014 {
   @SerializedName("submitTimeStampUtc")
   private String submitTimeStampUtc = null;
 
-  @SerializedName("orderInformation")
-  private InlineResponse2014OrderInformation orderInformation = null;
+  @SerializedName("_links")
+  private InlineResponse2014Links links = null;
+
+  @SerializedName("transactions")
+  private List<InlineResponse2014Transactions> transactions = null;
+
+  @SerializedName("clientReferenceInformation")
+  private InlineResponse2014ClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("errorInformation")
   private InlineResponse2014ErrorInformation errorInformation = null;
-
-  @SerializedName("processorInformation")
-  private InlineResponse2014ProcessorInformation processorInformation = null;
-
-  @SerializedName("processingInformation")
-  private InlineResponse2014ProcessingInformation processingInformation = null;
 
   public InlineResponse2014 id(String id) {
     this.id = id;
@@ -78,10 +80,10 @@ public class InlineResponse2014 {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values: - &#x60;COMPLETED&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;SERVER_ERROR&#x60; 
+   * The status of the submitted transaction.  Possible values: - &#x60;COMPLETED&#x60; - &#x60;SERVER_ERROR&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;DECLINED&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR` ")
+  @ApiModelProperty(required = true, value = "The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` ")
   public String getStatus() {
     return status;
   }
@@ -108,22 +110,66 @@ public class InlineResponse2014 {
     this.submitTimeStampUtc = submitTimeStampUtc;
   }
 
-  public InlineResponse2014 orderInformation(InlineResponse2014OrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
+  public InlineResponse2014 links(InlineResponse2014Links links) {
+    this.links = links;
     return this;
   }
 
    /**
-   * Get orderInformation
-   * @return orderInformation
+   * Get links
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2014OrderInformation getOrderInformation() {
-    return orderInformation;
+  public InlineResponse2014Links getLinks() {
+    return links;
   }
 
-  public void setOrderInformation(InlineResponse2014OrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
+  public void setLinks(InlineResponse2014Links links) {
+    this.links = links;
+  }
+
+  public InlineResponse2014 transactions(List<InlineResponse2014Transactions> transactions) {
+    this.transactions = transactions;
+    return this;
+  }
+
+  public InlineResponse2014 addTransactionsItem(InlineResponse2014Transactions transactionsItem) {
+    if (this.transactions == null) {
+      this.transactions = new ArrayList<InlineResponse2014Transactions>();
+    }
+    this.transactions.add(transactionsItem);
+    return this;
+  }
+
+   /**
+   * Get transactions
+   * @return transactions
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2014Transactions> getTransactions() {
+    return transactions;
+  }
+
+  public void setTransactions(List<InlineResponse2014Transactions> transactions) {
+    this.transactions = transactions;
+  }
+
+  public InlineResponse2014 clientReferenceInformation(InlineResponse2014ClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014ClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(InlineResponse2014ClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
   }
 
   public InlineResponse2014 errorInformation(InlineResponse2014ErrorInformation errorInformation) {
@@ -144,42 +190,6 @@ public class InlineResponse2014 {
     this.errorInformation = errorInformation;
   }
 
-  public InlineResponse2014 processorInformation(InlineResponse2014ProcessorInformation processorInformation) {
-    this.processorInformation = processorInformation;
-    return this;
-  }
-
-   /**
-   * Get processorInformation
-   * @return processorInformation
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2014ProcessorInformation getProcessorInformation() {
-    return processorInformation;
-  }
-
-  public void setProcessorInformation(InlineResponse2014ProcessorInformation processorInformation) {
-    this.processorInformation = processorInformation;
-  }
-
-  public InlineResponse2014 processingInformation(InlineResponse2014ProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-    return this;
-  }
-
-   /**
-   * Get processingInformation
-   * @return processingInformation
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2014ProcessingInformation getProcessingInformation() {
-    return processingInformation;
-  }
-
-  public void setProcessingInformation(InlineResponse2014ProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,15 +203,15 @@ public class InlineResponse2014 {
     return Objects.equals(this.id, inlineResponse2014.id) &&
         Objects.equals(this.status, inlineResponse2014.status) &&
         Objects.equals(this.submitTimeStampUtc, inlineResponse2014.submitTimeStampUtc) &&
-        Objects.equals(this.orderInformation, inlineResponse2014.orderInformation) &&
-        Objects.equals(this.errorInformation, inlineResponse2014.errorInformation) &&
-        Objects.equals(this.processorInformation, inlineResponse2014.processorInformation) &&
-        Objects.equals(this.processingInformation, inlineResponse2014.processingInformation);
+        Objects.equals(this.links, inlineResponse2014.links) &&
+        Objects.equals(this.transactions, inlineResponse2014.transactions) &&
+        Objects.equals(this.clientReferenceInformation, inlineResponse2014.clientReferenceInformation) &&
+        Objects.equals(this.errorInformation, inlineResponse2014.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, submitTimeStampUtc, orderInformation, errorInformation, processorInformation, processingInformation);
+    return Objects.hash(id, status, submitTimeStampUtc, links, transactions, clientReferenceInformation, errorInformation);
   }
 
 
@@ -231,10 +241,10 @@ public class InlineResponse2014 {
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
-    if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
+    if (transactions != null) sb.append("    transactions: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactions").matches() ? "[REDACTED]" : toIndentedString(transactions)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientReferenceInformation").matches() ? "[REDACTED]" : toIndentedString(clientReferenceInformation)).append("\n");
     if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
-    if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
-    if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -256,10 +266,10 @@ public class InlineResponse2014 {
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
-    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (transactions != null) sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
-    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

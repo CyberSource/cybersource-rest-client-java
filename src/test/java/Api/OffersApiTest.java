@@ -14,7 +14,7 @@
 package Api;
 
 import Model.InlineResponse20016;
-import Model.InlineResponse20112;
+import Model.InlineResponse20111;
 import Model.InlineResponse40015;
 import Model.InlineResponse5025;
 import Model.OfferRequest;
@@ -52,7 +52,7 @@ public class OffersApiTest {
         String vCCorrelationId = null;
         String vCOrganizationId = null;
         OfferRequest offerRequest = null;
-        InlineResponse20112 response = api.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
+        InlineResponse20111 response = api.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
 
         // TODO: test validations
     }

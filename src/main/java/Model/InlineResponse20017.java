@@ -18,11 +18,11 @@ import java.util.Arrays;
 import Model.AcpCompleteCheckoutResponseBuyer;
 import Model.InlineResponse20017FulfillmentAddress;
 import Model.InlineResponse20017Order;
-import Model.InlineResponse20113FulfillmentOptions;
-import Model.InlineResponse20113LineItems;
-import Model.InlineResponse20113Links;
-import Model.InlineResponse20113Messages;
-import Model.InlineResponse20113Totals;
+import Model.InlineResponse20112FulfillmentOptions;
+import Model.InlineResponse20112LineItems;
+import Model.InlineResponse20112Links;
+import Model.InlineResponse20112Messages;
+import Model.InlineResponse20112Totals;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,28 +52,28 @@ public class InlineResponse20017 {
   private AcpCompleteCheckoutResponseBuyer buyer = null;
 
   @SerializedName("line_items")
-  private List<InlineResponse20113LineItems> lineItems = null;
+  private List<InlineResponse20112LineItems> lineItems = null;
 
   @SerializedName("fulfillment_address")
   private InlineResponse20017FulfillmentAddress fulfillmentAddress = null;
 
   @SerializedName("fulfillment_options")
-  private List<InlineResponse20113FulfillmentOptions> fulfillmentOptions = null;
+  private List<InlineResponse20112FulfillmentOptions> fulfillmentOptions = null;
 
   @SerializedName("fulfillment_option_id")
   private String fulfillmentOptionId = null;
 
   @SerializedName("totals")
-  private List<InlineResponse20113Totals> totals = null;
+  private List<InlineResponse20112Totals> totals = null;
 
   @SerializedName("order")
   private InlineResponse20017Order order = null;
 
   @SerializedName("messages")
-  private List<InlineResponse20113Messages> messages = null;
+  private List<InlineResponse20112Messages> messages = null;
 
   @SerializedName("links")
-  private List<InlineResponse20113Links> links = null;
+  private List<InlineResponse20112Links> links = null;
 
   public InlineResponse20017 id(String id) {
     this.id = id;
@@ -147,14 +147,14 @@ public class InlineResponse20017 {
     this.buyer = buyer;
   }
 
-  public InlineResponse20017 lineItems(List<InlineResponse20113LineItems> lineItems) {
+  public InlineResponse20017 lineItems(List<InlineResponse20112LineItems> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
 
-  public InlineResponse20017 addLineItemsItem(InlineResponse20113LineItems lineItemsItem) {
+  public InlineResponse20017 addLineItemsItem(InlineResponse20112LineItems lineItemsItem) {
     if (this.lineItems == null) {
-      this.lineItems = new ArrayList<InlineResponse20113LineItems>();
+      this.lineItems = new ArrayList<InlineResponse20112LineItems>();
     }
     this.lineItems.add(lineItemsItem);
     return this;
@@ -165,11 +165,11 @@ public class InlineResponse20017 {
    * @return lineItems
   **/
   @ApiModelProperty(value = "Final line items with confirmed pricing.")
-  public List<InlineResponse20113LineItems> getLineItems() {
+  public List<InlineResponse20112LineItems> getLineItems() {
     return lineItems;
   }
 
-  public void setLineItems(List<InlineResponse20113LineItems> lineItems) {
+  public void setLineItems(List<InlineResponse20112LineItems> lineItems) {
     this.lineItems = lineItems;
   }
 
@@ -191,14 +191,14 @@ public class InlineResponse20017 {
     this.fulfillmentAddress = fulfillmentAddress;
   }
 
-  public InlineResponse20017 fulfillmentOptions(List<InlineResponse20113FulfillmentOptions> fulfillmentOptions) {
+  public InlineResponse20017 fulfillmentOptions(List<InlineResponse20112FulfillmentOptions> fulfillmentOptions) {
     this.fulfillmentOptions = fulfillmentOptions;
     return this;
   }
 
-  public InlineResponse20017 addFulfillmentOptionsItem(InlineResponse20113FulfillmentOptions fulfillmentOptionsItem) {
+  public InlineResponse20017 addFulfillmentOptionsItem(InlineResponse20112FulfillmentOptions fulfillmentOptionsItem) {
     if (this.fulfillmentOptions == null) {
-      this.fulfillmentOptions = new ArrayList<InlineResponse20113FulfillmentOptions>();
+      this.fulfillmentOptions = new ArrayList<InlineResponse20112FulfillmentOptions>();
     }
     this.fulfillmentOptions.add(fulfillmentOptionsItem);
     return this;
@@ -209,11 +209,11 @@ public class InlineResponse20017 {
    * @return fulfillmentOptions
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse20113FulfillmentOptions> getFulfillmentOptions() {
+  public List<InlineResponse20112FulfillmentOptions> getFulfillmentOptions() {
     return fulfillmentOptions;
   }
 
-  public void setFulfillmentOptions(List<InlineResponse20113FulfillmentOptions> fulfillmentOptions) {
+  public void setFulfillmentOptions(List<InlineResponse20112FulfillmentOptions> fulfillmentOptions) {
     this.fulfillmentOptions = fulfillmentOptions;
   }
 
@@ -235,14 +235,14 @@ public class InlineResponse20017 {
     this.fulfillmentOptionId = fulfillmentOptionId;
   }
 
-  public InlineResponse20017 totals(List<InlineResponse20113Totals> totals) {
+  public InlineResponse20017 totals(List<InlineResponse20112Totals> totals) {
     this.totals = totals;
     return this;
   }
 
-  public InlineResponse20017 addTotalsItem(InlineResponse20113Totals totalsItem) {
+  public InlineResponse20017 addTotalsItem(InlineResponse20112Totals totalsItem) {
     if (this.totals == null) {
-      this.totals = new ArrayList<InlineResponse20113Totals>();
+      this.totals = new ArrayList<InlineResponse20112Totals>();
     }
     this.totals.add(totalsItem);
     return this;
@@ -253,11 +253,11 @@ public class InlineResponse20017 {
    * @return totals
   **/
   @ApiModelProperty(value = "Final order totals as typed total lines. All amounts in minor units (cents).")
-  public List<InlineResponse20113Totals> getTotals() {
+  public List<InlineResponse20112Totals> getTotals() {
     return totals;
   }
 
-  public void setTotals(List<InlineResponse20113Totals> totals) {
+  public void setTotals(List<InlineResponse20112Totals> totals) {
     this.totals = totals;
   }
 
@@ -279,14 +279,14 @@ public class InlineResponse20017 {
     this.order = order;
   }
 
-  public InlineResponse20017 messages(List<InlineResponse20113Messages> messages) {
+  public InlineResponse20017 messages(List<InlineResponse20112Messages> messages) {
     this.messages = messages;
     return this;
   }
 
-  public InlineResponse20017 addMessagesItem(InlineResponse20113Messages messagesItem) {
+  public InlineResponse20017 addMessagesItem(InlineResponse20112Messages messagesItem) {
     if (this.messages == null) {
-      this.messages = new ArrayList<InlineResponse20113Messages>();
+      this.messages = new ArrayList<InlineResponse20112Messages>();
     }
     this.messages.add(messagesItem);
     return this;
@@ -297,22 +297,22 @@ public class InlineResponse20017 {
    * @return messages
   **/
   @ApiModelProperty(value = "Informational or error messages from the merchant backend.")
-  public List<InlineResponse20113Messages> getMessages() {
+  public List<InlineResponse20112Messages> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<InlineResponse20113Messages> messages) {
+  public void setMessages(List<InlineResponse20112Messages> messages) {
     this.messages = messages;
   }
 
-  public InlineResponse20017 links(List<InlineResponse20113Links> links) {
+  public InlineResponse20017 links(List<InlineResponse20112Links> links) {
     this.links = links;
     return this;
   }
 
-  public InlineResponse20017 addLinksItem(InlineResponse20113Links linksItem) {
+  public InlineResponse20017 addLinksItem(InlineResponse20112Links linksItem) {
     if (this.links == null) {
-      this.links = new ArrayList<InlineResponse20113Links>();
+      this.links = new ArrayList<InlineResponse20112Links>();
     }
     this.links.add(linksItem);
     return this;
@@ -323,11 +323,11 @@ public class InlineResponse20017 {
    * @return links
   **/
   @ApiModelProperty(value = "Related resource links from the merchant (e.g. terms of use, privacy policy).")
-  public List<InlineResponse20113Links> getLinks() {
+  public List<InlineResponse20112Links> getLinks() {
     return links;
   }
 
-  public void setLinks(List<InlineResponse20113Links> links) {
+  public void setLinks(List<InlineResponse20112Links> links) {
     this.links = links;
   }
 

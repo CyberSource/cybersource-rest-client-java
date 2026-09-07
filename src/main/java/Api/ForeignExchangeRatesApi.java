@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.Body;
-import Model.InlineResponse2014;
+import Model.InlineResponse2013;
 import Model.InlineResponse4003;
 import Model.InlineResponse401;
 import Model.InlineResponse5022;
@@ -214,13 +214,13 @@ public class ForeignExchangeRatesApi {
      * @param vCPermissions  (required)
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
-     * @return InlineResponse2014
+     * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2014 createFxRates(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
+    public InlineResponse2013 createFxRates(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createFxRates' STARTED");
-        ApiResponse<InlineResponse2014> resp = createFxRatesWithHttpInfo(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+        ApiResponse<InlineResponse2013> resp = createFxRatesWithHttpInfo(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
         logger.info("CALL TO METHOD 'createFxRates' ENDED");
         return resp.getData();
     }
@@ -235,14 +235,14 @@ public class ForeignExchangeRatesApi {
      * @param vCPermissions  (required)
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;InlineResponse2013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2014> createFxRatesWithHttpInfo(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2013> createFxRatesWithHttpInfo(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createFxRatesValidateBeforeCall(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -261,7 +261,7 @@ public class ForeignExchangeRatesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createFxRatesAsync(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
+    public okhttp3.Call createFxRatesAsync(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ApiCallback<InlineResponse2013> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -284,7 +284,7 @@ public class ForeignExchangeRatesApi {
         }
 
         okhttp3.Call call = createFxRatesValidateBeforeCall(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
