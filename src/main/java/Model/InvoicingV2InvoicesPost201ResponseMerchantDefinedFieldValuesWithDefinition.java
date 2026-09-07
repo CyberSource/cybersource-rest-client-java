@@ -29,6 +29,9 @@ import java.io.IOException;
  */
 
 public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition {
+  @SerializedName("mdfValueId")
+  private String mdfValueId = null;
+
   @SerializedName("referenceType")
   private String referenceType = null;
 
@@ -67,6 +70,24 @@ public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDef
 
   @SerializedName("merchantDefinedDataIndex")
   private Integer merchantDefinedDataIndex = null;
+
+  public InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition mdfValueId(String mdfValueId) {
+    this.mdfValueId = mdfValueId;
+    return this;
+  }
+
+   /**
+   * Get mdfValueId
+   * @return mdfValueId
+  **/
+  @ApiModelProperty(value = "")
+  public String getMdfValueId() {
+    return mdfValueId;
+  }
+
+  public void setMdfValueId(String mdfValueId) {
+    this.mdfValueId = mdfValueId;
+  }
 
   public InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition referenceType(String referenceType) {
     this.referenceType = referenceType;
@@ -312,7 +333,8 @@ public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDef
       return false;
     }
     InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition = (InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition) o;
-    return Objects.equals(this.referenceType, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.referenceType) &&
+    return Objects.equals(this.mdfValueId, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.mdfValueId) &&
+        Objects.equals(this.referenceType, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.referenceType) &&
         Objects.equals(this.label, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.label) &&
         Objects.equals(this.fieldType, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.fieldType) &&
         Objects.equals(this.customerVisible, invoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition.customerVisible) &&
@@ -329,7 +351,7 @@ public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDef
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceType, label, fieldType, customerVisible, readOnly, textMinLength, textMaxLength, textDefaultValue, possibleValues, value, position, definitionId, merchantDefinedDataIndex);
+    return Objects.hash(mdfValueId, referenceType, label, fieldType, customerVisible, readOnly, textMinLength, textMaxLength, textDefaultValue, possibleValues, value, position, definitionId, merchantDefinedDataIndex);
   }
 
 
@@ -356,6 +378,7 @@ public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDef
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition {\n");
     
+    if (mdfValueId != null) sb.append("    mdfValueId: ").append(SENSITIVE_FIELD_PATTERN.matcher("mdfValueId").matches() ? "[REDACTED]" : toIndentedString(mdfValueId)).append("\n");
     if (referenceType != null) sb.append("    referenceType: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceType").matches() ? "[REDACTED]" : toIndentedString(referenceType)).append("\n");
     if (label != null) sb.append("    label: ").append(SENSITIVE_FIELD_PATTERN.matcher("label").matches() ? "[REDACTED]" : toIndentedString(label)).append("\n");
     if (fieldType != null) sb.append("    fieldType: ").append(SENSITIVE_FIELD_PATTERN.matcher("fieldType").matches() ? "[REDACTED]" : toIndentedString(fieldType)).append("\n");
@@ -387,6 +410,7 @@ public class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDef
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition {\n");
     
+    if (mdfValueId != null) sb.append("    mdfValueId: ").append(toIndentedString(mdfValueId)).append("\n");
     if (referenceType != null) sb.append("    referenceType: ").append(toIndentedString(referenceType)).append("\n");
     if (label != null) sb.append("    label: ").append(toIndentedString(label)).append("\n");
     if (fieldType != null) sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");

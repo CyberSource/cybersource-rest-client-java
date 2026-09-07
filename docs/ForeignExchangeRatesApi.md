@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createFxRates"></a>
 # **createFxRates**
-> InlineResponse2014 createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
+> InlineResponse2013 createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
 
 Retrieve Foreign Exchange Rates
 
@@ -31,7 +31,7 @@ String vCPermissions = "vCPermissions_example"; // String |
 String vCCorrelationId = "vCCorrelationId_example"; // String | 
 String vCOrganizationId = "vCOrganizationId_example"; // String | 
 try {
-    InlineResponse2014 result = apiInstance.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+    InlineResponse2013 result = apiInstance.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ForeignExchangeRatesApi#createFxRates");
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2013**](InlineResponse2013.md)
 
 ### Authorization
 

@@ -43,6 +43,9 @@ public class Ucv1sessionsCompleteMandate {
   @SerializedName("consumerAuthentication")
   private String consumerAuthentication = null;
 
+  @SerializedName("suppress")
+  private Boolean suppress = null;
+
   public Ucv1sessionsCompleteMandate type(String type) {
     this.type = type;
     return this;
@@ -115,6 +118,24 @@ public class Ucv1sessionsCompleteMandate {
     this.consumerAuthentication = consumerAuthentication;
   }
 
+  public Ucv1sessionsCompleteMandate suppress(Boolean suppress) {
+    this.suppress = suppress;
+    return this;
+  }
+
+   /**
+   * Controls whether the Complete Mandate experience or related processing is suppressed. 
+   * @return suppress
+  **/
+  @ApiModelProperty(example = "true", value = "Controls whether the Complete Mandate experience or related processing is suppressed. ")
+  public Boolean Suppress() {
+    return suppress;
+  }
+
+  public void setSuppress(Boolean suppress) {
+    this.suppress = suppress;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +149,13 @@ public class Ucv1sessionsCompleteMandate {
     return Objects.equals(this.type, ucv1sessionsCompleteMandate.type) &&
         Objects.equals(this.tms, ucv1sessionsCompleteMandate.tms) &&
         Objects.equals(this.decisionManager, ucv1sessionsCompleteMandate.decisionManager) &&
-        Objects.equals(this.consumerAuthentication, ucv1sessionsCompleteMandate.consumerAuthentication);
+        Objects.equals(this.consumerAuthentication, ucv1sessionsCompleteMandate.consumerAuthentication) &&
+        Objects.equals(this.suppress, ucv1sessionsCompleteMandate.suppress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, tms, decisionManager, consumerAuthentication);
+    return Objects.hash(type, tms, decisionManager, consumerAuthentication, suppress);
   }
 
 
@@ -164,6 +186,7 @@ public class Ucv1sessionsCompleteMandate {
     if (tms != null) sb.append("    tms: ").append(SENSITIVE_FIELD_PATTERN.matcher("tms").matches() ? "[REDACTED]" : toIndentedString(tms)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManager").matches() ? "[REDACTED]" : toIndentedString(decisionManager)).append("\n");
     if (consumerAuthentication != null) sb.append("    consumerAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("consumerAuthentication").matches() ? "[REDACTED]" : toIndentedString(consumerAuthentication)).append("\n");
+    if (suppress != null) sb.append("    suppress: ").append(SENSITIVE_FIELD_PATTERN.matcher("suppress").matches() ? "[REDACTED]" : toIndentedString(suppress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -186,6 +209,7 @@ public class Ucv1sessionsCompleteMandate {
     if (tms != null) sb.append("    tms: ").append(toIndentedString(tms)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     if (consumerAuthentication != null) sb.append("    consumerAuthentication: ").append(toIndentedString(consumerAuthentication)).append("\n");
+    if (suppress != null) sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

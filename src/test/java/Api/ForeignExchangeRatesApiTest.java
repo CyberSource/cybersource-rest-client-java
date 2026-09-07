@@ -14,7 +14,7 @@
 package Api;
 
 import Model.Body;
-import Model.InlineResponse2014;
+import Model.InlineResponse2013;
 import Model.InlineResponse4003;
 import Model.InlineResponse401;
 import Model.InlineResponse5022;
@@ -53,7 +53,7 @@ public class ForeignExchangeRatesApiTest {
         String vCPermissions = null;
         String vCCorrelationId = null;
         String vCOrganizationId = null;
-        InlineResponse2014 response = api.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+        InlineResponse2013 response = api.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
 
         // TODO: test validations
     }

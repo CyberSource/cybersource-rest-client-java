@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
+**id** | **String** |  |  [optional]
 **fieldType** | **String** |  |  [optional]
 **label** | **String** |  |  [optional]
 **customerVisible** | **Boolean** |  |  [optional]

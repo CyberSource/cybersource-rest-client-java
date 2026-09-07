@@ -80,7 +80,7 @@ public class TransactionDetailsApi {
             localVarPostBody = "{}";
         }
         
-        String inboundMLEStatus = "false";
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTransaction,getTransactionAsync,getTransactionWithHttpInfo,getTransactionCall")) {
             try {

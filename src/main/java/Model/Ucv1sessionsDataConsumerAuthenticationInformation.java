@@ -41,6 +41,9 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
   @SerializedName("productCode")
   private String productCode = null;
 
+  @SerializedName("languagePreference")
+  private String languagePreference = null;
+
   public Ucv1sessionsDataConsumerAuthenticationInformation challengeCode(String challengeCode) {
     this.challengeCode = challengeCode;
     return this;
@@ -113,6 +116,24 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     this.productCode = productCode;
   }
 
+  public Ucv1sessionsDataConsumerAuthenticationInformation languagePreference(String languagePreference) {
+    this.languagePreference = languagePreference;
+    return this;
+  }
+
+   /**
+   * Preferred language to be used for cardholder authentication and challenge experiences (subject to issuer/ACS support). 
+   * @return languagePreference
+  **/
+  @ApiModelProperty(example = "en_US", value = "Preferred language to be used for cardholder authentication and challenge experiences (subject to issuer/ACS support). ")
+  public String getLanguagePreference() {
+    return languagePreference;
+  }
+
+  public void setLanguagePreference(String languagePreference) {
+    this.languagePreference = languagePreference;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +147,13 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     return Objects.equals(this.challengeCode, ucv1sessionsDataConsumerAuthenticationInformation.challengeCode) &&
         Objects.equals(this.messageCategory, ucv1sessionsDataConsumerAuthenticationInformation.messageCategory) &&
         Objects.equals(this.acsWindowSize, ucv1sessionsDataConsumerAuthenticationInformation.acsWindowSize) &&
-        Objects.equals(this.productCode, ucv1sessionsDataConsumerAuthenticationInformation.productCode);
+        Objects.equals(this.productCode, ucv1sessionsDataConsumerAuthenticationInformation.productCode) &&
+        Objects.equals(this.languagePreference, ucv1sessionsDataConsumerAuthenticationInformation.languagePreference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(challengeCode, messageCategory, acsWindowSize, productCode);
+    return Objects.hash(challengeCode, messageCategory, acsWindowSize, productCode, languagePreference);
   }
 
 
@@ -162,6 +184,7 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     if (messageCategory != null) sb.append("    messageCategory: ").append(SENSITIVE_FIELD_PATTERN.matcher("messageCategory").matches() ? "[REDACTED]" : toIndentedString(messageCategory)).append("\n");
     if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(SENSITIVE_FIELD_PATTERN.matcher("acsWindowSize").matches() ? "[REDACTED]" : toIndentedString(acsWindowSize)).append("\n");
     if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
+    if (languagePreference != null) sb.append("    languagePreference: ").append(SENSITIVE_FIELD_PATTERN.matcher("languagePreference").matches() ? "[REDACTED]" : toIndentedString(languagePreference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -184,6 +207,7 @@ public class Ucv1sessionsDataConsumerAuthenticationInformation {
     if (messageCategory != null) sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
     if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
     if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (languagePreference != null) sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("}");
     return sb.toString();
   }

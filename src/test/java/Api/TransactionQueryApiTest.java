@@ -14,7 +14,7 @@
 package Api;
 
 import Model.Body1;
-import Model.InlineResponse2015;
+import Model.InlineResponse2014;
 import Model.InlineResponse4004;
 import Model.InlineResponse4011;
 import Model.InlineResponse5023;
@@ -56,7 +56,7 @@ public class TransactionQueryApiTest {
         String vCOrganizationId = null;
         Integer limit = null;
         Integer offset = null;
-        InlineResponse2015 response = api.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+        InlineResponse2014 response = api.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
 
         // TODO: test validations
     }

@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 
 import Model.Body1;
-import Model.InlineResponse2015;
+import Model.InlineResponse2014;
 import Model.InlineResponse4004;
 import Model.InlineResponse4011;
 import Model.InlineResponse5023;
@@ -231,13 +231,13 @@ public class TransactionQueryApi {
      * @param vCOrganizationId  (required)
      * @param limit The maximum number of options to be retrieved from the processor and displayed to the consumer.  (optional)
      * @param offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list.  (optional)
-     * @return InlineResponse2015
+     * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2015 createQueryApi(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
+    public InlineResponse2014 createQueryApi(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createQueryApi' STARTED");
-        ApiResponse<InlineResponse2015> resp = createQueryApiWithHttpInfo(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+        ApiResponse<InlineResponse2014> resp = createQueryApiWithHttpInfo(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
         logger.info("CALL TO METHOD 'createQueryApi' ENDED");
         return resp.getData();
     }
@@ -255,14 +255,14 @@ public class TransactionQueryApi {
      * @param vCOrganizationId  (required)
      * @param limit The maximum number of options to be retrieved from the processor and displayed to the consumer.  (optional)
      * @param offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list.  (optional)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;InlineResponse2014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2015> createQueryApiWithHttpInfo(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
+    public ApiResponse<InlineResponse2014> createQueryApiWithHttpInfo(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createQueryApiValidateBeforeCall(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -284,7 +284,7 @@ public class TransactionQueryApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createQueryApiAsync(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ApiCallback<InlineResponse2015> callback) throws ApiException, ConfigException {
+    public okhttp3.Call createQueryApiAsync(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -307,7 +307,7 @@ public class TransactionQueryApi {
         }
 
         okhttp3.Call call = createQueryApiValidateBeforeCall(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

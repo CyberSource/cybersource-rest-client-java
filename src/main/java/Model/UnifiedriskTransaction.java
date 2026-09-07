@@ -15,6 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.UnifiedriskTransactionAdditionalFees;
+import Model.UnifiedriskTransactionAmount;
+import Model.UnifiedriskTransactionBatchDetails;
+import Model.UnifiedriskTransactionCheckDetails;
+import Model.UnifiedriskTransactionRecurringDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,15 +28,98 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 
 /**
- * Transaction reference identifying which previously assessed transaction this label applies to
+ * Financial transaction metadata including amounts, status, type, channel, and recurring payment details
  */
-@ApiModel(description = "Transaction reference identifying which previously assessed transaction this label applies to")
+@ApiModel(description = "Financial transaction metadata including amounts, status, type, channel, and recurring payment details")
 
 public class UnifiedriskTransaction {
   @SerializedName("transactionId")
   private String transactionId = null;
+
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("statusReason")
+  private String statusReason = null;
+
+  @SerializedName("messageType")
+  private String messageType = null;
+
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("attribute")
+  private String attribute = null;
+
+  @SerializedName("initiator")
+  private String initiator = null;
+
+  @SerializedName("channel")
+  private String channel = null;
+
+  @SerializedName("timestamp")
+  private DateTime timestamp = null;
+
+  @SerializedName("cutoffDateTime")
+  private DateTime cutoffDateTime = null;
+
+  @SerializedName("isRecurring")
+  private Boolean isRecurring = null;
+
+  @SerializedName("preOrder")
+  private Boolean preOrder = null;
+
+  @SerializedName("preOrderDate")
+  private LocalDate preOrderDate = null;
+
+  @SerializedName("reordered")
+  private Boolean reordered = null;
+
+  @SerializedName("destinationCountry")
+  private String destinationCountry = null;
+
+  @SerializedName("declinePhase")
+  private String declinePhase = null;
+
+  @SerializedName("trustedMerchant")
+  private Boolean trustedMerchant = null;
+
+  @SerializedName("additionalFees")
+  private UnifiedriskTransactionAdditionalFees additionalFees = null;
+
+  @SerializedName("amount")
+  private UnifiedriskTransactionAmount amount = null;
+
+  @SerializedName("recurringDetails")
+  private UnifiedriskTransactionRecurringDetails recurringDetails = null;
+
+  @SerializedName("direction")
+  private String direction = null;
+
+  @SerializedName("isChargeback")
+  private Boolean isChargeback = null;
+
+  @SerializedName("fraudLiability")
+  private String fraudLiability = null;
+
+  @SerializedName("onUsFlag")
+  private Boolean onUsFlag = null;
+
+  @SerializedName("numberOfTransactions")
+  private Integer numberOfTransactions = null;
+
+  @SerializedName("batchDetails")
+  private UnifiedriskTransactionBatchDetails batchDetails = null;
+
+  @SerializedName("checkDetails")
+  private UnifiedriskTransactionCheckDetails checkDetails = null;
+
+  @SerializedName("purpose")
+  private String purpose = null;
 
   public UnifiedriskTransaction transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -39,16 +127,502 @@ public class UnifiedriskTransaction {
   }
 
    /**
-   * The transaction identifier correlating this label to the original risk assessment request
+   * Unique identifier for the transaction being assessed
    * @return transactionId
   **/
-  @ApiModelProperty(example = "txn-label-003", required = true, value = "The transaction identifier correlating this label to the original risk assessment request")
+  @ApiModelProperty(example = "txn_987654321", value = "Unique identifier for the transaction being assessed")
   public String getTransactionId() {
     return transactionId;
   }
 
   public void setTransactionId(String transactionId) {
     this.transactionId = transactionId;
+  }
+
+  public UnifiedriskTransaction status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Transaction status: NEW, APPROVED, DECLINED, REVERSED, FRAUD
+   * @return status
+  **/
+  @ApiModelProperty(example = "NEW", value = "Transaction status: NEW, APPROVED, DECLINED, REVERSED, FRAUD")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public UnifiedriskTransaction statusReason(String statusReason) {
+    this.statusReason = statusReason;
+    return this;
+  }
+
+   /**
+   * Reason code for the transaction status
+   * @return statusReason
+  **/
+  @ApiModelProperty(example = "1101", value = "Reason code for the transaction status")
+  public String getStatusReason() {
+    return statusReason;
+  }
+
+  public void setStatusReason(String statusReason) {
+    this.statusReason = statusReason;
+  }
+
+  public UnifiedriskTransaction messageType(String messageType) {
+    this.messageType = messageType;
+    return this;
+  }
+
+   /**
+   * Message type: AUTHORIZATION, INQUIRY, ADVICE, REVERSAL
+   * @return messageType
+  **/
+  @ApiModelProperty(example = "AUTHORIZATION", value = "Message type: AUTHORIZATION, INQUIRY, ADVICE, REVERSAL")
+  public String getMessageType() {
+    return messageType;
+  }
+
+  public void setMessageType(String messageType) {
+    this.messageType = messageType;
+  }
+
+  public UnifiedriskTransaction type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * The type of transaction being processed
+   * @return type
+  **/
+  @ApiModelProperty(example = "CMPI_LOOKUP, CASH, ATM", value = "The type of transaction being processed")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public UnifiedriskTransaction attribute(String attribute) {
+    this.attribute = attribute;
+    return this;
+  }
+
+   /**
+   * Transaction attribute: AGGREGATION, CARDLESS_ATM, etc
+   * @return attribute
+  **/
+  @ApiModelProperty(example = "PURCHASE", value = "Transaction attribute: AGGREGATION, CARDLESS_ATM, etc")
+  public String getAttribute() {
+    return attribute;
+  }
+
+  public void setAttribute(String attribute) {
+    this.attribute = attribute;
+  }
+
+  public UnifiedriskTransaction initiator(String initiator) {
+    this.initiator = initiator;
+    return this;
+  }
+
+   /**
+   * Who initiated transaction: MERCHANT, CUSTOMER
+   * @return initiator
+  **/
+  @ApiModelProperty(example = "CUSTOMER", value = "Who initiated transaction: MERCHANT, CUSTOMER")
+  public String getInitiator() {
+    return initiator;
+  }
+
+  public void setInitiator(String initiator) {
+    this.initiator = initiator;
+  }
+
+  public UnifiedriskTransaction channel(String channel) {
+    this.channel = channel;
+    return this;
+  }
+
+   /**
+   * Channel used: ONLINE, MOBILE, ATM, BRANCH, etc
+   * @return channel
+  **/
+  @ApiModelProperty(example = "ONLINE", value = "Channel used: ONLINE, MOBILE, ATM, BRANCH, etc")
+  public String getChannel() {
+    return channel;
+  }
+
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
+
+  public UnifiedriskTransaction timestamp(DateTime timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+
+   /**
+   * Local transaction timestamp without timezone
+   * @return timestamp
+  **/
+  @ApiModelProperty(example = "2021-08-21T14:41:23", value = "Local transaction timestamp without timezone")
+  public DateTime getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(DateTime timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public UnifiedriskTransaction cutoffDateTime(DateTime cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
+    return this;
+  }
+
+   /**
+   * Cutoff date/time for event or journey
+   * @return cutoffDateTime
+  **/
+  @ApiModelProperty(example = "2024-03-15T18:00:00Z", value = "Cutoff date/time for event or journey")
+  public DateTime getCutoffDateTime() {
+    return cutoffDateTime;
+  }
+
+  public void setCutoffDateTime(DateTime cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
+  }
+
+  public UnifiedriskTransaction isRecurring(Boolean isRecurring) {
+    this.isRecurring = isRecurring;
+    return this;
+  }
+
+   /**
+   * Indicates if this is a recurring transaction
+   * @return isRecurring
+  **/
+  @ApiModelProperty(example = "false", value = "Indicates if this is a recurring transaction")
+  public Boolean IsRecurring() {
+    return isRecurring;
+  }
+
+  public void setIsRecurring(Boolean isRecurring) {
+    this.isRecurring = isRecurring;
+  }
+
+  public UnifiedriskTransaction preOrder(Boolean preOrder) {
+    this.preOrder = preOrder;
+    return this;
+  }
+
+   /**
+   * Indicates if this is a pre-order
+   * @return preOrder
+  **/
+  @ApiModelProperty(example = "false", value = "Indicates if this is a pre-order")
+  public Boolean PreOrder() {
+    return preOrder;
+  }
+
+  public void setPreOrder(Boolean preOrder) {
+    this.preOrder = preOrder;
+  }
+
+  public UnifiedriskTransaction preOrderDate(LocalDate preOrderDate) {
+    this.preOrderDate = preOrderDate;
+    return this;
+  }
+
+   /**
+   * Expected availability date for pre-order
+   * @return preOrderDate
+  **/
+  @ApiModelProperty(example = "3/15/24", value = "Expected availability date for pre-order")
+  public LocalDate getPreOrderDate() {
+    return preOrderDate;
+  }
+
+  public void setPreOrderDate(LocalDate preOrderDate) {
+    this.preOrderDate = preOrderDate;
+  }
+
+  public UnifiedriskTransaction reordered(Boolean reordered) {
+    this.reordered = reordered;
+    return this;
+  }
+
+   /**
+   * Indicates if customer is reordering
+   * @return reordered
+  **/
+  @ApiModelProperty(example = "false", value = "Indicates if customer is reordering")
+  public Boolean Reordered() {
+    return reordered;
+  }
+
+  public void setReordered(Boolean reordered) {
+    this.reordered = reordered;
+  }
+
+  public UnifiedriskTransaction destinationCountry(String destinationCountry) {
+    this.destinationCountry = destinationCountry;
+    return this;
+  }
+
+   /**
+   * Destination country for funds
+   * @return destinationCountry
+  **/
+  @ApiModelProperty(example = "US", value = "Destination country for funds")
+  public String getDestinationCountry() {
+    return destinationCountry;
+  }
+
+  public void setDestinationCountry(String destinationCountry) {
+    this.destinationCountry = destinationCountry;
+  }
+
+  public UnifiedriskTransaction declinePhase(String declinePhase) {
+    this.declinePhase = declinePhase;
+    return this;
+  }
+
+   /**
+   * Phase where transaction was declined
+   * @return declinePhase
+  **/
+  @ApiModelProperty(example = "ISSUER", value = "Phase where transaction was declined")
+  public String getDeclinePhase() {
+    return declinePhase;
+  }
+
+  public void setDeclinePhase(String declinePhase) {
+    this.declinePhase = declinePhase;
+  }
+
+  public UnifiedriskTransaction trustedMerchant(Boolean trustedMerchant) {
+    this.trustedMerchant = trustedMerchant;
+    return this;
+  }
+
+   /**
+   * Indicates if merchant is on trusted list
+   * @return trustedMerchant
+  **/
+  @ApiModelProperty(example = "false", value = "Indicates if merchant is on trusted list")
+  public Boolean TrustedMerchant() {
+    return trustedMerchant;
+  }
+
+  public void setTrustedMerchant(Boolean trustedMerchant) {
+    this.trustedMerchant = trustedMerchant;
+  }
+
+  public UnifiedriskTransaction additionalFees(UnifiedriskTransactionAdditionalFees additionalFees) {
+    this.additionalFees = additionalFees;
+    return this;
+  }
+
+   /**
+   * Get additionalFees
+   * @return additionalFees
+  **/
+  @ApiModelProperty(value = "")
+  public UnifiedriskTransactionAdditionalFees getAdditionalFees() {
+    return additionalFees;
+  }
+
+  public void setAdditionalFees(UnifiedriskTransactionAdditionalFees additionalFees) {
+    this.additionalFees = additionalFees;
+  }
+
+  public UnifiedriskTransaction amount(UnifiedriskTransactionAmount amount) {
+    this.amount = amount;
+    return this;
+  }
+
+   /**
+   * Get amount
+   * @return amount
+  **/
+  @ApiModelProperty(value = "")
+  public UnifiedriskTransactionAmount getAmount() {
+    return amount;
+  }
+
+  public void setAmount(UnifiedriskTransactionAmount amount) {
+    this.amount = amount;
+  }
+
+  public UnifiedriskTransaction recurringDetails(UnifiedriskTransactionRecurringDetails recurringDetails) {
+    this.recurringDetails = recurringDetails;
+    return this;
+  }
+
+   /**
+   * Get recurringDetails
+   * @return recurringDetails
+  **/
+  @ApiModelProperty(value = "")
+  public UnifiedriskTransactionRecurringDetails getRecurringDetails() {
+    return recurringDetails;
+  }
+
+  public void setRecurringDetails(UnifiedriskTransactionRecurringDetails recurringDetails) {
+    this.recurringDetails = recurringDetails;
+  }
+
+  public UnifiedriskTransaction direction(String direction) {
+    this.direction = direction;
+    return this;
+  }
+
+   /**
+   * Direction of the transaction flow relative to the customer&#39;s account (e.g., CREDIT for incoming funds, DEBIT for outgoing funds). Determines risk model orientation and velocity tracking
+   * @return direction
+  **/
+  @ApiModelProperty(value = "Direction of the transaction flow relative to the customer's account (e.g., CREDIT for incoming funds, DEBIT for outgoing funds). Determines risk model orientation and velocity tracking")
+  public String getDirection() {
+    return direction;
+  }
+
+  public void setDirection(String direction) {
+    this.direction = direction;
+  }
+
+  public UnifiedriskTransaction isChargeback(Boolean isChargeback) {
+    this.isChargeback = isChargeback;
+    return this;
+  }
+
+   /**
+   * Indicates whether this transaction represents a chargeback or dispute reversal. True signals a disputed transaction requiring fraud investigation and issuer liability assessment
+   * @return isChargeback
+  **/
+  @ApiModelProperty(value = "Indicates whether this transaction represents a chargeback or dispute reversal. True signals a disputed transaction requiring fraud investigation and issuer liability assessment")
+  public Boolean IsChargeback() {
+    return isChargeback;
+  }
+
+  public void setIsChargeback(Boolean isChargeback) {
+    this.isChargeback = isChargeback;
+  }
+
+  public UnifiedriskTransaction fraudLiability(String fraudLiability) {
+    this.fraudLiability = fraudLiability;
+    return this;
+  }
+
+   /**
+   * Indicates which party bears fraud liability for this transaction (e.g., ISSUER, MERCHANT, ACQUIRER). Liability shifts apply in 3DS-authenticated or EMV chip transactions
+   * @return fraudLiability
+  **/
+  @ApiModelProperty(value = "Indicates which party bears fraud liability for this transaction (e.g., ISSUER, MERCHANT, ACQUIRER). Liability shifts apply in 3DS-authenticated or EMV chip transactions")
+  public String getFraudLiability() {
+    return fraudLiability;
+  }
+
+  public void setFraudLiability(String fraudLiability) {
+    this.fraudLiability = fraudLiability;
+  }
+
+  public UnifiedriskTransaction onUsFlag(Boolean onUsFlag) {
+    this.onUsFlag = onUsFlag;
+    return this;
+  }
+
+   /**
+   * Indicates whether the transaction is an on-us transaction where the issuing and acquiring institutions are the same entity. On-us transactions may follow different risk rules and processing paths
+   * @return onUsFlag
+  **/
+  @ApiModelProperty(value = "Indicates whether the transaction is an on-us transaction where the issuing and acquiring institutions are the same entity. On-us transactions may follow different risk rules and processing paths")
+  public Boolean OnUsFlag() {
+    return onUsFlag;
+  }
+
+  public void setOnUsFlag(Boolean onUsFlag) {
+    this.onUsFlag = onUsFlag;
+  }
+
+  public UnifiedriskTransaction numberOfTransactions(Integer numberOfTransactions) {
+    this.numberOfTransactions = numberOfTransactions;
+    return this;
+  }
+
+   /**
+   * Total count of transactions associated with this batch, order, or session. Used for velocity-based risk rules and aggregated fraud monitoring
+   * @return numberOfTransactions
+  **/
+  @ApiModelProperty(value = "Total count of transactions associated with this batch, order, or session. Used for velocity-based risk rules and aggregated fraud monitoring")
+  public Integer getNumberOfTransactions() {
+    return numberOfTransactions;
+  }
+
+  public void setNumberOfTransactions(Integer numberOfTransactions) {
+    this.numberOfTransactions = numberOfTransactions;
+  }
+
+  public UnifiedriskTransaction batchDetails(UnifiedriskTransactionBatchDetails batchDetails) {
+    this.batchDetails = batchDetails;
+    return this;
+  }
+
+   /**
+   * Get batchDetails
+   * @return batchDetails
+  **/
+  @ApiModelProperty(value = "")
+  public UnifiedriskTransactionBatchDetails getBatchDetails() {
+    return batchDetails;
+  }
+
+  public void setBatchDetails(UnifiedriskTransactionBatchDetails batchDetails) {
+    this.batchDetails = batchDetails;
+  }
+
+  public UnifiedriskTransaction checkDetails(UnifiedriskTransactionCheckDetails checkDetails) {
+    this.checkDetails = checkDetails;
+    return this;
+  }
+
+   /**
+   * Get checkDetails
+   * @return checkDetails
+  **/
+  @ApiModelProperty(value = "")
+  public UnifiedriskTransactionCheckDetails getCheckDetails() {
+    return checkDetails;
+  }
+
+  public void setCheckDetails(UnifiedriskTransactionCheckDetails checkDetails) {
+    this.checkDetails = checkDetails;
+  }
+
+  public UnifiedriskTransaction purpose(String purpose) {
+    this.purpose = purpose;
+    return this;
+  }
+
+   /**
+   * Business purpose or reason code for this transaction (e.g., PURCH for purchase, SALA for salary, REFND for refund). Used for transaction classification and AML monitoring
+   * @return purpose
+  **/
+  @ApiModelProperty(value = "Business purpose or reason code for this transaction (e.g., PURCH for purchase, SALA for salary, REFND for refund). Used for transaction classification and AML monitoring")
+  public String getPurpose() {
+    return purpose;
+  }
+
+  public void setPurpose(String purpose) {
+    this.purpose = purpose;
   }
 
 
@@ -61,12 +635,39 @@ public class UnifiedriskTransaction {
       return false;
     }
     UnifiedriskTransaction unifiedriskTransaction = (UnifiedriskTransaction) o;
-    return Objects.equals(this.transactionId, unifiedriskTransaction.transactionId);
+    return Objects.equals(this.transactionId, unifiedriskTransaction.transactionId) &&
+        Objects.equals(this.status, unifiedriskTransaction.status) &&
+        Objects.equals(this.statusReason, unifiedriskTransaction.statusReason) &&
+        Objects.equals(this.messageType, unifiedriskTransaction.messageType) &&
+        Objects.equals(this.type, unifiedriskTransaction.type) &&
+        Objects.equals(this.attribute, unifiedriskTransaction.attribute) &&
+        Objects.equals(this.initiator, unifiedriskTransaction.initiator) &&
+        Objects.equals(this.channel, unifiedriskTransaction.channel) &&
+        Objects.equals(this.timestamp, unifiedriskTransaction.timestamp) &&
+        Objects.equals(this.cutoffDateTime, unifiedriskTransaction.cutoffDateTime) &&
+        Objects.equals(this.isRecurring, unifiedriskTransaction.isRecurring) &&
+        Objects.equals(this.preOrder, unifiedriskTransaction.preOrder) &&
+        Objects.equals(this.preOrderDate, unifiedriskTransaction.preOrderDate) &&
+        Objects.equals(this.reordered, unifiedriskTransaction.reordered) &&
+        Objects.equals(this.destinationCountry, unifiedriskTransaction.destinationCountry) &&
+        Objects.equals(this.declinePhase, unifiedriskTransaction.declinePhase) &&
+        Objects.equals(this.trustedMerchant, unifiedriskTransaction.trustedMerchant) &&
+        Objects.equals(this.additionalFees, unifiedriskTransaction.additionalFees) &&
+        Objects.equals(this.amount, unifiedriskTransaction.amount) &&
+        Objects.equals(this.recurringDetails, unifiedriskTransaction.recurringDetails) &&
+        Objects.equals(this.direction, unifiedriskTransaction.direction) &&
+        Objects.equals(this.isChargeback, unifiedriskTransaction.isChargeback) &&
+        Objects.equals(this.fraudLiability, unifiedriskTransaction.fraudLiability) &&
+        Objects.equals(this.onUsFlag, unifiedriskTransaction.onUsFlag) &&
+        Objects.equals(this.numberOfTransactions, unifiedriskTransaction.numberOfTransactions) &&
+        Objects.equals(this.batchDetails, unifiedriskTransaction.batchDetails) &&
+        Objects.equals(this.checkDetails, unifiedriskTransaction.checkDetails) &&
+        Objects.equals(this.purpose, unifiedriskTransaction.purpose);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId);
+    return Objects.hash(transactionId, status, statusReason, messageType, type, attribute, initiator, channel, timestamp, cutoffDateTime, isRecurring, preOrder, preOrderDate, reordered, destinationCountry, declinePhase, trustedMerchant, additionalFees, amount, recurringDetails, direction, isChargeback, fraudLiability, onUsFlag, numberOfTransactions, batchDetails, checkDetails, purpose);
   }
 
 
@@ -94,6 +695,33 @@ public class UnifiedriskTransaction {
     sb.append("class UnifiedriskTransaction {\n");
     
     if (transactionId != null) sb.append("    transactionId: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionId").matches() ? "[REDACTED]" : toIndentedString(transactionId)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (statusReason != null) sb.append("    statusReason: ").append(SENSITIVE_FIELD_PATTERN.matcher("statusReason").matches() ? "[REDACTED]" : toIndentedString(statusReason)).append("\n");
+    if (messageType != null) sb.append("    messageType: ").append(SENSITIVE_FIELD_PATTERN.matcher("messageType").matches() ? "[REDACTED]" : toIndentedString(messageType)).append("\n");
+    if (type != null) sb.append("    type: ").append(SENSITIVE_FIELD_PATTERN.matcher("type").matches() ? "[REDACTED]" : toIndentedString(type)).append("\n");
+    if (attribute != null) sb.append("    attribute: ").append(SENSITIVE_FIELD_PATTERN.matcher("attribute").matches() ? "[REDACTED]" : toIndentedString(attribute)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(SENSITIVE_FIELD_PATTERN.matcher("initiator").matches() ? "[REDACTED]" : toIndentedString(initiator)).append("\n");
+    if (channel != null) sb.append("    channel: ").append(SENSITIVE_FIELD_PATTERN.matcher("channel").matches() ? "[REDACTED]" : toIndentedString(channel)).append("\n");
+    if (timestamp != null) sb.append("    timestamp: ").append(SENSITIVE_FIELD_PATTERN.matcher("timestamp").matches() ? "[REDACTED]" : toIndentedString(timestamp)).append("\n");
+    if (cutoffDateTime != null) sb.append("    cutoffDateTime: ").append(SENSITIVE_FIELD_PATTERN.matcher("cutoffDateTime").matches() ? "[REDACTED]" : toIndentedString(cutoffDateTime)).append("\n");
+    if (isRecurring != null) sb.append("    isRecurring: ").append(SENSITIVE_FIELD_PATTERN.matcher("isRecurring").matches() ? "[REDACTED]" : toIndentedString(isRecurring)).append("\n");
+    if (preOrder != null) sb.append("    preOrder: ").append(SENSITIVE_FIELD_PATTERN.matcher("preOrder").matches() ? "[REDACTED]" : toIndentedString(preOrder)).append("\n");
+    if (preOrderDate != null) sb.append("    preOrderDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("preOrderDate").matches() ? "[REDACTED]" : toIndentedString(preOrderDate)).append("\n");
+    if (reordered != null) sb.append("    reordered: ").append(SENSITIVE_FIELD_PATTERN.matcher("reordered").matches() ? "[REDACTED]" : toIndentedString(reordered)).append("\n");
+    if (destinationCountry != null) sb.append("    destinationCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationCountry").matches() ? "[REDACTED]" : toIndentedString(destinationCountry)).append("\n");
+    if (declinePhase != null) sb.append("    declinePhase: ").append(SENSITIVE_FIELD_PATTERN.matcher("declinePhase").matches() ? "[REDACTED]" : toIndentedString(declinePhase)).append("\n");
+    if (trustedMerchant != null) sb.append("    trustedMerchant: ").append(SENSITIVE_FIELD_PATTERN.matcher("trustedMerchant").matches() ? "[REDACTED]" : toIndentedString(trustedMerchant)).append("\n");
+    if (additionalFees != null) sb.append("    additionalFees: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalFees").matches() ? "[REDACTED]" : toIndentedString(additionalFees)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(SENSITIVE_FIELD_PATTERN.matcher("amount").matches() ? "[REDACTED]" : toIndentedString(amount)).append("\n");
+    if (recurringDetails != null) sb.append("    recurringDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("recurringDetails").matches() ? "[REDACTED]" : toIndentedString(recurringDetails)).append("\n");
+    if (direction != null) sb.append("    direction: ").append(SENSITIVE_FIELD_PATTERN.matcher("direction").matches() ? "[REDACTED]" : toIndentedString(direction)).append("\n");
+    if (isChargeback != null) sb.append("    isChargeback: ").append(SENSITIVE_FIELD_PATTERN.matcher("isChargeback").matches() ? "[REDACTED]" : toIndentedString(isChargeback)).append("\n");
+    if (fraudLiability != null) sb.append("    fraudLiability: ").append(SENSITIVE_FIELD_PATTERN.matcher("fraudLiability").matches() ? "[REDACTED]" : toIndentedString(fraudLiability)).append("\n");
+    if (onUsFlag != null) sb.append("    onUsFlag: ").append(SENSITIVE_FIELD_PATTERN.matcher("onUsFlag").matches() ? "[REDACTED]" : toIndentedString(onUsFlag)).append("\n");
+    if (numberOfTransactions != null) sb.append("    numberOfTransactions: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfTransactions").matches() ? "[REDACTED]" : toIndentedString(numberOfTransactions)).append("\n");
+    if (batchDetails != null) sb.append("    batchDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchDetails").matches() ? "[REDACTED]" : toIndentedString(batchDetails)).append("\n");
+    if (checkDetails != null) sb.append("    checkDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("checkDetails").matches() ? "[REDACTED]" : toIndentedString(checkDetails)).append("\n");
+    if (purpose != null) sb.append("    purpose: ").append(SENSITIVE_FIELD_PATTERN.matcher("purpose").matches() ? "[REDACTED]" : toIndentedString(purpose)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -113,6 +741,33 @@ public class UnifiedriskTransaction {
     sb.append("class UnifiedriskTransaction {\n");
     
     if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (statusReason != null) sb.append("    statusReason: ").append(toIndentedString(statusReason)).append("\n");
+    if (messageType != null) sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (attribute != null) sb.append("    attribute: ").append(toIndentedString(attribute)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (channel != null) sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    if (timestamp != null) sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    if (cutoffDateTime != null) sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");
+    if (isRecurring != null) sb.append("    isRecurring: ").append(toIndentedString(isRecurring)).append("\n");
+    if (preOrder != null) sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
+    if (preOrderDate != null) sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
+    if (reordered != null) sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
+    if (destinationCountry != null) sb.append("    destinationCountry: ").append(toIndentedString(destinationCountry)).append("\n");
+    if (declinePhase != null) sb.append("    declinePhase: ").append(toIndentedString(declinePhase)).append("\n");
+    if (trustedMerchant != null) sb.append("    trustedMerchant: ").append(toIndentedString(trustedMerchant)).append("\n");
+    if (additionalFees != null) sb.append("    additionalFees: ").append(toIndentedString(additionalFees)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (recurringDetails != null) sb.append("    recurringDetails: ").append(toIndentedString(recurringDetails)).append("\n");
+    if (direction != null) sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    if (isChargeback != null) sb.append("    isChargeback: ").append(toIndentedString(isChargeback)).append("\n");
+    if (fraudLiability != null) sb.append("    fraudLiability: ").append(toIndentedString(fraudLiability)).append("\n");
+    if (onUsFlag != null) sb.append("    onUsFlag: ").append(toIndentedString(onUsFlag)).append("\n");
+    if (numberOfTransactions != null) sb.append("    numberOfTransactions: ").append(toIndentedString(numberOfTransactions)).append("\n");
+    if (batchDetails != null) sb.append("    batchDetails: ").append(toIndentedString(batchDetails)).append("\n");
+    if (checkDetails != null) sb.append("    checkDetails: ").append(toIndentedString(checkDetails)).append("\n");
+    if (purpose != null) sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -59,10 +59,10 @@ public class InlineResponse2014ErrorInformationDetails {
   }
 
    /**
-   * Possible reasons for the error.  Possible values: - &#x60;MISSING_FIELD&#x60; - &#x60;INVALID_DATA&#x60; 
+   * Possible reasons for the error.  Possible values: - &#x60;INVALID_DATA&#x60; - &#x60;SYSTEM_ERROR&#x60; - &#x60;NOT_FOUND&#x60; - &#x60;UNAUTHORIZED&#x60; - &#x60;SYSTEM_TIMEOUT&#x60; - &#x60;PROCESSOR_ERROR&#x60; 
    * @return reason
   **/
-  @ApiModelProperty(value = "Possible reasons for the error.  Possible values: - `MISSING_FIELD` - `INVALID_DATA` ")
+  @ApiModelProperty(value = "Possible reasons for the error.  Possible values: - `INVALID_DATA` - `SYSTEM_ERROR` - `NOT_FOUND` - `UNAUTHORIZED` - `SYSTEM_TIMEOUT` - `PROCESSOR_ERROR` ")
   public String getReason() {
     return reason;
   }

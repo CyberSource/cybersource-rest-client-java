@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Iccv1checkoutsessionsFulfillmentTotals;
 import Model.InlineResponse20113Item;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -24,11 +25,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * A single line item in an ACP session response. All amounts in minor units (cents).
+ * A single product line item in a UCP session response.
  */
-@ApiModel(description = "A single line item in an ACP session response. All amounts in minor units (cents).")
+@ApiModel(description = "A single product line item in a UCP session response.")
 
 public class InlineResponse20113LineItems {
   @SerializedName("id")
@@ -37,20 +40,11 @@ public class InlineResponse20113LineItems {
   @SerializedName("item")
   private InlineResponse20113Item item = null;
 
-  @SerializedName("base_amount")
-  private Integer baseAmount = null;
+  @SerializedName("quantity")
+  private Integer quantity = null;
 
-  @SerializedName("discount")
-  private Integer discount = null;
-
-  @SerializedName("subtotal")
-  private Integer subtotal = null;
-
-  @SerializedName("tax")
-  private Integer tax = null;
-
-  @SerializedName("total")
-  private Integer total = null;
+  @SerializedName("totals")
+  private List<Iccv1checkoutsessionsFulfillmentTotals> totals = null;
 
   public InlineResponse20113LineItems id(String id) {
     this.id = id;
@@ -88,94 +82,48 @@ public class InlineResponse20113LineItems {
     this.item = item;
   }
 
-  public InlineResponse20113LineItems baseAmount(Integer baseAmount) {
-    this.baseAmount = baseAmount;
+  public InlineResponse20113LineItems quantity(Integer quantity) {
+    this.quantity = quantity;
     return this;
   }
 
    /**
-   * Unit price × quantity before discounts, in minor units.
-   * @return baseAmount
+   * Number of units in this line item. Minimum 1.
+   * @return quantity
   **/
-  @ApiModelProperty(example = "39998", value = "Unit price × quantity before discounts, in minor units.")
-  public Integer getBaseAmount() {
-    return baseAmount;
+  @ApiModelProperty(example = "1", value = "Number of units in this line item. Minimum 1.")
+  public Integer getQuantity() {
+    return quantity;
   }
 
-  public void setBaseAmount(Integer baseAmount) {
-    this.baseAmount = baseAmount;
+  public void setQuantity(Integer quantity) {
+    this.quantity = quantity;
   }
 
-  public InlineResponse20113LineItems discount(Integer discount) {
-    this.discount = discount;
+  public InlineResponse20113LineItems totals(List<Iccv1checkoutsessionsFulfillmentTotals> totals) {
+    this.totals = totals;
+    return this;
+  }
+
+  public InlineResponse20113LineItems addTotalsItem(Iccv1checkoutsessionsFulfillmentTotals totalsItem) {
+    if (this.totals == null) {
+      this.totals = new ArrayList<Iccv1checkoutsessionsFulfillmentTotals>();
+    }
+    this.totals.add(totalsItem);
     return this;
   }
 
    /**
-   * Discount amount for this line item, in minor units.
-   * @return discount
+   * Per-line-item cost breakdown (subtotal, tax, etc.). Amounts in cents.
+   * @return totals
   **/
-  @ApiModelProperty(example = "0", value = "Discount amount for this line item, in minor units.")
-  public Integer getDiscount() {
-    return discount;
+  @ApiModelProperty(value = "Per-line-item cost breakdown (subtotal, tax, etc.). Amounts in cents.")
+  public List<Iccv1checkoutsessionsFulfillmentTotals> getTotals() {
+    return totals;
   }
 
-  public void setDiscount(Integer discount) {
-    this.discount = discount;
-  }
-
-  public InlineResponse20113LineItems subtotal(Integer subtotal) {
-    this.subtotal = subtotal;
-    return this;
-  }
-
-   /**
-   * base_amount minus discount, in minor units.
-   * @return subtotal
-  **/
-  @ApiModelProperty(example = "39998", value = "base_amount minus discount, in minor units.")
-  public Integer getSubtotal() {
-    return subtotal;
-  }
-
-  public void setSubtotal(Integer subtotal) {
-    this.subtotal = subtotal;
-  }
-
-  public InlineResponse20113LineItems tax(Integer tax) {
-    this.tax = tax;
-    return this;
-  }
-
-   /**
-   * Tax on this line item, in minor units.
-   * @return tax
-  **/
-  @ApiModelProperty(example = "3400", value = "Tax on this line item, in minor units.")
-  public Integer getTax() {
-    return tax;
-  }
-
-  public void setTax(Integer tax) {
-    this.tax = tax;
-  }
-
-  public InlineResponse20113LineItems total(Integer total) {
-    this.total = total;
-    return this;
-  }
-
-   /**
-   * subtotal plus tax, in minor units.
-   * @return total
-  **/
-  @ApiModelProperty(example = "43398", value = "subtotal plus tax, in minor units.")
-  public Integer getTotal() {
-    return total;
-  }
-
-  public void setTotal(Integer total) {
-    this.total = total;
+  public void setTotals(List<Iccv1checkoutsessionsFulfillmentTotals> totals) {
+    this.totals = totals;
   }
 
 
@@ -190,16 +138,13 @@ public class InlineResponse20113LineItems {
     InlineResponse20113LineItems inlineResponse20113LineItems = (InlineResponse20113LineItems) o;
     return Objects.equals(this.id, inlineResponse20113LineItems.id) &&
         Objects.equals(this.item, inlineResponse20113LineItems.item) &&
-        Objects.equals(this.baseAmount, inlineResponse20113LineItems.baseAmount) &&
-        Objects.equals(this.discount, inlineResponse20113LineItems.discount) &&
-        Objects.equals(this.subtotal, inlineResponse20113LineItems.subtotal) &&
-        Objects.equals(this.tax, inlineResponse20113LineItems.tax) &&
-        Objects.equals(this.total, inlineResponse20113LineItems.total);
+        Objects.equals(this.quantity, inlineResponse20113LineItems.quantity) &&
+        Objects.equals(this.totals, inlineResponse20113LineItems.totals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, item, baseAmount, discount, subtotal, tax, total);
+    return Objects.hash(id, item, quantity, totals);
   }
 
 
@@ -228,11 +173,8 @@ public class InlineResponse20113LineItems {
     
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (item != null) sb.append("    item: ").append(SENSITIVE_FIELD_PATTERN.matcher("item").matches() ? "[REDACTED]" : toIndentedString(item)).append("\n");
-    if (baseAmount != null) sb.append("    baseAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("baseAmount").matches() ? "[REDACTED]" : toIndentedString(baseAmount)).append("\n");
-    if (discount != null) sb.append("    discount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discount").matches() ? "[REDACTED]" : toIndentedString(discount)).append("\n");
-    if (subtotal != null) sb.append("    subtotal: ").append(SENSITIVE_FIELD_PATTERN.matcher("subtotal").matches() ? "[REDACTED]" : toIndentedString(subtotal)).append("\n");
-    if (tax != null) sb.append("    tax: ").append(SENSITIVE_FIELD_PATTERN.matcher("tax").matches() ? "[REDACTED]" : toIndentedString(tax)).append("\n");
-    if (total != null) sb.append("    total: ").append(SENSITIVE_FIELD_PATTERN.matcher("total").matches() ? "[REDACTED]" : toIndentedString(total)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(SENSITIVE_FIELD_PATTERN.matcher("quantity").matches() ? "[REDACTED]" : toIndentedString(quantity)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(SENSITIVE_FIELD_PATTERN.matcher("totals").matches() ? "[REDACTED]" : toIndentedString(totals)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -253,11 +195,8 @@ public class InlineResponse20113LineItems {
     
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (item != null) sb.append("    item: ").append(toIndentedString(item)).append("\n");
-    if (baseAmount != null) sb.append("    baseAmount: ").append(toIndentedString(baseAmount)).append("\n");
-    if (discount != null) sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
-    if (subtotal != null) sb.append("    subtotal: ").append(toIndentedString(subtotal)).append("\n");
-    if (tax != null) sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
-    if (total != null) sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     sb.append("}");
     return sb.toString();
   }

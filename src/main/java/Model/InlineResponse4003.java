@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014ErrorInformationDetails;
+import Model.InlineResponse2013ErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,7 +48,7 @@ public class InlineResponse4003 {
   private String message = null;
 
   @SerializedName("details")
-  private List<InlineResponse2014ErrorInformationDetails> details = null;
+  private List<InlineResponse2013ErrorInformationDetails> details = null;
 
   public InlineResponse4003 id(String id) {
     this.id = id;
@@ -140,14 +140,14 @@ public class InlineResponse4003 {
     this.message = message;
   }
 
-  public InlineResponse4003 details(List<InlineResponse2014ErrorInformationDetails> details) {
+  public InlineResponse4003 details(List<InlineResponse2013ErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4003 addDetailsItem(InlineResponse2014ErrorInformationDetails detailsItem) {
+  public InlineResponse4003 addDetailsItem(InlineResponse2013ErrorInformationDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse2014ErrorInformationDetails>();
+      this.details = new ArrayList<InlineResponse2013ErrorInformationDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -158,11 +158,11 @@ public class InlineResponse4003 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2014ErrorInformationDetails> getDetails() {
+  public List<InlineResponse2013ErrorInformationDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse2014ErrorInformationDetails> details) {
+  public void setDetails(List<InlineResponse2013ErrorInformationDetails> details) {
     this.details = details;
   }
 

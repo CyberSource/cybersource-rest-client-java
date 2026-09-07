@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2014ProcessingInformationRouting;
+import Model.InlineResponse2014ProcessingInformationPayoutsOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,25 +30,88 @@ import java.io.IOException;
  */
 
 public class InlineResponse2014ProcessingInformation {
-  @SerializedName("routing")
-  private InlineResponse2014ProcessingInformationRouting routing = null;
+  @SerializedName("businessApplicationId")
+  private String businessApplicationId = null;
 
-  public InlineResponse2014ProcessingInformation routing(InlineResponse2014ProcessingInformationRouting routing) {
-    this.routing = routing;
+  @SerializedName("commerceIndicator")
+  private String commerceIndicator = null;
+
+  @SerializedName("payoutsOptions")
+  private InlineResponse2014ProcessingInformationPayoutsOptions payoutsOptions = null;
+
+  @SerializedName("reconciliationId")
+  private String reconciliationId = null;
+
+  public InlineResponse2014ProcessingInformation businessApplicationId(String businessApplicationId) {
+    this.businessApplicationId = businessApplicationId;
     return this;
   }
 
    /**
-   * Get routing
-   * @return routing
+   * Payouts transaction type.  Possible Values: - &#x60;AA&#x60; - Account to account - &#x60;AB&#x60; - Business to Business - &#x60;PP&#x60; - Person to person - &#x60;TU&#x60; - Top-up for enhanced prepaid loads - &#x60;WT&#x60; - Wallet transfer - &#x60;BI&#x60; - Bank Initiated - &#x60;FT&#x60; - Funds Transfer - &#x60;FD&#x60; - Funds Disbursement - &#x60;GD&#x60; - Government Disbursement - &#x60;PD&#x60; - Payroll Disbursement - &#x60;LA&#x60; - Liquid Assets - &#x60;CP&#x60; - Card Bill Payment - &#x60;MP&#x60; - Non-card Bill Payment - &#x60;CD&#x60; - Cash Deposit - &#x60;CI&#x60; - Cash in - &#x60;CO&#x60; - Cash out - &#x60;GP&#x60; - Gambling Payment - &#x60;LO&#x60; - Loyalty and Offers - &#x60;MD&#x60; - Merchant Disbursement - &#x60;MI&#x60; - Merchant Initiated OCT for Faster Refund - &#x60;OG&#x60; - Online Gambling - &#x60;OT&#x60; - Own Account Transfer - &#x60;PS&#x60; - Payment for goods and services - &#x60;RP&#x60; - Request-To-Pay Service 
+   * @return businessApplicationId
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2014ProcessingInformationRouting getRouting() {
-    return routing;
+  @ApiModelProperty(value = "Payouts transaction type.  Possible Values: - `AA` - Account to account - `AB` - Business to Business - `PP` - Person to person - `TU` - Top-up for enhanced prepaid loads - `WT` - Wallet transfer - `BI` - Bank Initiated - `FT` - Funds Transfer - `FD` - Funds Disbursement - `GD` - Government Disbursement - `PD` - Payroll Disbursement - `LA` - Liquid Assets - `CP` - Card Bill Payment - `MP` - Non-card Bill Payment - `CD` - Cash Deposit - `CI` - Cash in - `CO` - Cash out - `GP` - Gambling Payment - `LO` - Loyalty and Offers - `MD` - Merchant Disbursement - `MI` - Merchant Initiated OCT for Faster Refund - `OG` - Online Gambling - `OT` - Own Account Transfer - `PS` - Payment for goods and services - `RP` - Request-To-Pay Service ")
+  public String getBusinessApplicationId() {
+    return businessApplicationId;
   }
 
-  public void setRouting(InlineResponse2014ProcessingInformationRouting routing) {
-    this.routing = routing;
+  public void setBusinessApplicationId(String businessApplicationId) {
+    this.businessApplicationId = businessApplicationId;
+  }
+
+  public InlineResponse2014ProcessingInformation commerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+    return this;
+  }
+
+   /**
+   * Type of transaction. 
+   * @return commerceIndicator
+  **/
+  @ApiModelProperty(value = "Type of transaction. ")
+  public String getCommerceIndicator() {
+    return commerceIndicator;
+  }
+
+  public void setCommerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+  }
+
+  public InlineResponse2014ProcessingInformation payoutsOptions(InlineResponse2014ProcessingInformationPayoutsOptions payoutsOptions) {
+    this.payoutsOptions = payoutsOptions;
+    return this;
+  }
+
+   /**
+   * Get payoutsOptions
+   * @return payoutsOptions
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2014ProcessingInformationPayoutsOptions getPayoutsOptions() {
+    return payoutsOptions;
+  }
+
+  public void setPayoutsOptions(InlineResponse2014ProcessingInformationPayoutsOptions payoutsOptions) {
+    this.payoutsOptions = payoutsOptions;
+  }
+
+  public InlineResponse2014ProcessingInformation reconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+    return this;
+  }
+
+   /**
+   * CyberSource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is This value is used for reconciliation purposes. 
+   * @return reconciliationId
+  **/
+  @ApiModelProperty(value = "CyberSource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is This value is used for reconciliation purposes. ")
+  public String getReconciliationId() {
+    return reconciliationId;
+  }
+
+  public void setReconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
   }
 
 
@@ -61,12 +124,15 @@ public class InlineResponse2014ProcessingInformation {
       return false;
     }
     InlineResponse2014ProcessingInformation inlineResponse2014ProcessingInformation = (InlineResponse2014ProcessingInformation) o;
-    return Objects.equals(this.routing, inlineResponse2014ProcessingInformation.routing);
+    return Objects.equals(this.businessApplicationId, inlineResponse2014ProcessingInformation.businessApplicationId) &&
+        Objects.equals(this.commerceIndicator, inlineResponse2014ProcessingInformation.commerceIndicator) &&
+        Objects.equals(this.payoutsOptions, inlineResponse2014ProcessingInformation.payoutsOptions) &&
+        Objects.equals(this.reconciliationId, inlineResponse2014ProcessingInformation.reconciliationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routing);
+    return Objects.hash(businessApplicationId, commerceIndicator, payoutsOptions, reconciliationId);
   }
 
 
@@ -93,7 +159,10 @@ public class InlineResponse2014ProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014ProcessingInformation {\n");
     
-    if (routing != null) sb.append("    routing: ").append(SENSITIVE_FIELD_PATTERN.matcher("routing").matches() ? "[REDACTED]" : toIndentedString(routing)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("commerceIndicator").matches() ? "[REDACTED]" : toIndentedString(commerceIndicator)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("payoutsOptions").matches() ? "[REDACTED]" : toIndentedString(payoutsOptions)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -112,7 +181,10 @@ public class InlineResponse2014ProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2014ProcessingInformation {\n");
     
-    if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
