@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PaymentsProductsPayerAuthentication;
+import Model.PaymentsProductsTax;
 import Model.RiskProductsDecisionManager;
 import Model.RiskProductsFraudManagementEssentials;
 import Model.RiskProductsPortfolioRiskControls;
@@ -44,6 +45,9 @@ public class RiskProducts {
 
   @SerializedName("enhancedAuthentication")
   private PaymentsProductsPayerAuthentication enhancedAuthentication = null;
+
+  @SerializedName("vpri")
+  private PaymentsProductsTax vpri = null;
 
   public RiskProducts fraudManagementEssentials(RiskProductsFraudManagementEssentials fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
@@ -117,6 +121,24 @@ public class RiskProducts {
     this.enhancedAuthentication = enhancedAuthentication;
   }
 
+  public RiskProducts vpri(PaymentsProductsTax vpri) {
+    this.vpri = vpri;
+    return this;
+  }
+
+   /**
+   * Get vpri
+   * @return vpri
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getVpri() {
+    return vpri;
+  }
+
+  public void setVpri(PaymentsProductsTax vpri) {
+    this.vpri = vpri;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +152,13 @@ public class RiskProducts {
     return Objects.equals(this.fraudManagementEssentials, riskProducts.fraudManagementEssentials) &&
         Objects.equals(this.decisionManager, riskProducts.decisionManager) &&
         Objects.equals(this.portfolioRiskControls, riskProducts.portfolioRiskControls) &&
-        Objects.equals(this.enhancedAuthentication, riskProducts.enhancedAuthentication);
+        Objects.equals(this.enhancedAuthentication, riskProducts.enhancedAuthentication) &&
+        Objects.equals(this.vpri, riskProducts.vpri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fraudManagementEssentials, decisionManager, portfolioRiskControls, enhancedAuthentication);
+    return Objects.hash(fraudManagementEssentials, decisionManager, portfolioRiskControls, enhancedAuthentication, vpri);
   }
 
 
@@ -166,6 +189,7 @@ public class RiskProducts {
     if (decisionManager != null) sb.append("    decisionManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManager").matches() ? "[REDACTED]" : toIndentedString(decisionManager)).append("\n");
     if (portfolioRiskControls != null) sb.append("    portfolioRiskControls: ").append(SENSITIVE_FIELD_PATTERN.matcher("portfolioRiskControls").matches() ? "[REDACTED]" : toIndentedString(portfolioRiskControls)).append("\n");
     if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("enhancedAuthentication").matches() ? "[REDACTED]" : toIndentedString(enhancedAuthentication)).append("\n");
+    if (vpri != null) sb.append("    vpri: ").append(SENSITIVE_FIELD_PATTERN.matcher("vpri").matches() ? "[REDACTED]" : toIndentedString(vpri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,6 +212,7 @@ public class RiskProducts {
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     if (portfolioRiskControls != null) sb.append("    portfolioRiskControls: ").append(toIndentedString(portfolioRiskControls)).append("\n");
     if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(toIndentedString(enhancedAuthentication)).append("\n");
+    if (vpri != null) sb.append("    vpri: ").append(toIndentedString(vpri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

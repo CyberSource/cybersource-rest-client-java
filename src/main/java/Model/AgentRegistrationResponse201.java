@@ -25,9 +25,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.joda.time.DateTime;
 
 /**
@@ -58,7 +56,7 @@ public class AgentRegistrationResponse201 {
   private String agentType = null;
 
   @SerializedName("agentMetadata")
-  private Map<String, String> agentMetadata = null;
+  private Object agentMetadata = null;
 
   @SerializedName("isActive")
   private Boolean isActive = null;
@@ -96,10 +94,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Agent name
+   * Display name for the agent
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "Agent name")
+  @ApiModelProperty(required = true, value = "Display name for the agent")
   public String getName() {
     return name;
   }
@@ -114,10 +112,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent&#39;s home domain
    * @return domain
   **/
-  @ApiModelProperty(required = true, value = "Agent domain URL")
+  @ApiModelProperty(required = true, value = "Fully-qualified HTTPS URL of the agent's home domain")
   public String getDomain() {
     return domain;
   }
@@ -132,10 +130,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Agent description
+   * Description of the agent&#39;s purpose or capabilities
    * @return description
   **/
-  @ApiModelProperty(value = "Agent description")
+  @ApiModelProperty(value = "Description of the agent's purpose or capabilities")
   public String getDescription() {
     return description;
   }
@@ -150,10 +148,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @return contactEmail
   **/
-  @ApiModelProperty(value = "Contact email")
+  @ApiModelProperty(value = "Contact email for the team or individual responsible for this agent")
   public String getContactEmail() {
     return contactEmail;
   }
@@ -168,10 +166,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Unique token requestor identifier
+   * Token Requestor ID (TRID) assigned by Visa, shared with the parent trusted agent for OSAs
    * @return tokenRequestorId
   **/
-  @ApiModelProperty(required = true, value = "Unique token requestor identifier")
+  @ApiModelProperty(required = true, value = "Token Requestor ID (TRID) assigned by Visa, shared with the parent trusted agent for OSAs")
   public String getTokenRequestorId() {
     return tokenRequestorId;
   }
@@ -186,10 +184,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Agent classification: &#39;trusted&#39; (commercially onboarded) or &#39;known&#39; (open-source/unverified)  Possible values: - trusted - known
+   * Agent classification: &#39;trusted&#39; (commercially onboarded via Visa) or &#39;known&#39; (open-source/community agent, unverified)  Possible values: - trusted - known
    * @return agentType
   **/
-  @ApiModelProperty(required = true, value = "Agent classification: 'trusted' (commercially onboarded) or 'known' (open-source/unverified)  Possible values: - trusted - known")
+  @ApiModelProperty(required = true, value = "Agent classification: 'trusted' (commercially onboarded via Visa) or 'known' (open-source/community agent, unverified)  Possible values: - trusted - known")
   public String getAgentType() {
     return agentType;
   }
@@ -198,29 +196,21 @@ public class AgentRegistrationResponse201 {
     this.agentType = agentType;
   }
 
-  public AgentRegistrationResponse201 agentMetadata(Map<String, String> agentMetadata) {
+  public AgentRegistrationResponse201 agentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
     return this;
   }
 
-  public AgentRegistrationResponse201 putAgentMetadataItem(String key, String agentMetadataItem) {
-    if (this.agentMetadata == null) {
-      this.agentMetadata = new HashMap<String, String>();
-    }
-    this.agentMetadata.put(key, agentMetadataItem);
-    return this;
-  }
-
    /**
-   * Additional agent metadata
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
    * @return agentMetadata
   **/
-  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Additional agent metadata")
-  public Map<String, String> getAgentMetadata() {
+  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.")
+  public Object getAgentMetadata() {
     return agentMetadata;
   }
 
-  public void setAgentMetadata(Map<String, String> agentMetadata) {
+  public void setAgentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
   }
 
@@ -230,10 +220,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Whether the agent is active
+   * Whether the agent is currently active. Deactivated agents cannot add or activate keys.
    * @return isActive
   **/
-  @ApiModelProperty(required = true, value = "Whether the agent is active")
+  @ApiModelProperty(required = true, value = "Whether the agent is currently active. Deactivated agents cannot add or activate keys.")
   public Boolean IsActive() {
     return isActive;
   }
@@ -248,10 +238,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Creation timestamp
+   * ISO 8601 UTC timestamp when the agent was registered
    * @return createdAt
   **/
-  @ApiModelProperty(required = true, value = "Creation timestamp")
+  @ApiModelProperty(required = true, value = "ISO 8601 UTC timestamp when the agent was registered")
   public DateTime getCreatedAt() {
     return createdAt;
   }
@@ -266,10 +256,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * Last update timestamp
+   * ISO 8601 UTC timestamp when the agent was last updated
    * @return updatedAt
   **/
-  @ApiModelProperty(required = true, value = "Last update timestamp")
+  @ApiModelProperty(required = true, value = "ISO 8601 UTC timestamp when the agent was last updated")
   public DateTime getUpdatedAt() {
     return updatedAt;
   }
@@ -292,10 +282,10 @@ public class AgentRegistrationResponse201 {
   }
 
    /**
-   * List of keys associated with the agent
+   * List of public keys associated with the agent (both active and deactivated)
    * @return keys
   **/
-  @ApiModelProperty(value = "List of keys associated with the agent")
+  @ApiModelProperty(value = "List of public keys associated with the agent (both active and deactivated)")
   public List<AgentRegistrationResponse201Keys> getKeys() {
     return keys;
   }

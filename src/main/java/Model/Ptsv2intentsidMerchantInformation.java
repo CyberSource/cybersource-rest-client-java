@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2intentsMerchantInformationMerchantDescriptor;
+import Model.Ptsv2intentsidMerchantInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class Ptsv2intentsidMerchantInformation {
   @SerializedName("merchantDescriptor")
-  private Ptsv2intentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
+  private Ptsv2intentsidMerchantInformationMerchantDescriptor merchantDescriptor = null;
 
-  public Ptsv2intentsidMerchantInformation merchantDescriptor(Ptsv2intentsMerchantInformationMerchantDescriptor merchantDescriptor) {
+  public Ptsv2intentsidMerchantInformation merchantDescriptor(Ptsv2intentsidMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
     return this;
   }
@@ -43,11 +43,11 @@ public class Ptsv2intentsidMerchantInformation {
    * @return merchantDescriptor
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2intentsMerchantInformationMerchantDescriptor getMerchantDescriptor() {
+  public Ptsv2intentsidMerchantInformationMerchantDescriptor getMerchantDescriptor() {
     return merchantDescriptor;
   }
 
-  public void setMerchantDescriptor(Ptsv2intentsMerchantInformationMerchantDescriptor merchantDescriptor) {
+  public void setMerchantDescriptor(Ptsv2intentsidMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
   }
 

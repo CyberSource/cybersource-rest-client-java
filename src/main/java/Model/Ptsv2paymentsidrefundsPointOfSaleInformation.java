@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsidcapturesPointOfSaleInformationEmv;
+import Model.Ptsv2paymentsidrefundsPointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 public class Ptsv2paymentsidrefundsPointOfSaleInformation {
   @SerializedName("emv")
-  private Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv = null;
+  private Ptsv2paymentsidrefundsPointOfSaleInformationEmv emv = null;
 
   @SerializedName("terminalCategory")
   private String terminalCategory = null;
 
-  public Ptsv2paymentsidrefundsPointOfSaleInformation emv(Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv) {
+  public Ptsv2paymentsidrefundsPointOfSaleInformation emv(Ptsv2paymentsidrefundsPointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
   }
@@ -46,11 +46,11 @@ public class Ptsv2paymentsidrefundsPointOfSaleInformation {
    * @return emv
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidcapturesPointOfSaleInformationEmv getEmv() {
+  public Ptsv2paymentsidrefundsPointOfSaleInformationEmv getEmv() {
     return emv;
   }
 
-  public void setEmv(Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv) {
+  public void setEmv(Ptsv2paymentsidrefundsPointOfSaleInformationEmv emv) {
     this.emv = emv;
   }
 

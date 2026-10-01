@@ -25,23 +25,23 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 
 /**
- * Full product record as stored in the ACG catalog. Contains all ingest fields plus server-assigned metadata timestamps. 
+ * Product record as stored in the ACG catalog. Only the fields listed here are persisted — the full ingest payload (&#x60;ProductInput&#x60;) contains additional fields that are validated and forwarded to protocol backends but are not retained in the catalog store. 
  */
-@ApiModel(description = "Full product record as stored in the ACG catalog. Contains all ingest fields plus server-assigned metadata timestamps. ")
+@ApiModel(description = "Product record as stored in the ACG catalog. Only the fields listed here are persisted — the full ingest payload (`ProductInput`) contains additional fields that are validated and forwarded to protocol backends but are not retained in the catalog store. ")
 
 public class InlineResponse20020Products {
-  @SerializedName("id")
-  private String id = null;
-
   @SerializedName("item_id")
   private String itemId = null;
+
+  @SerializedName("is_eligible_search")
+  private Boolean isEligibleSearch = null;
+
+  @SerializedName("is_eligible_checkout")
+  private Boolean isEligibleCheckout = null;
 
   @SerializedName("title")
   private String title = null;
@@ -55,29 +55,11 @@ public class InlineResponse20020Products {
   @SerializedName("image_url")
   private String imageUrl = null;
 
-  @SerializedName("additional_image_urls")
-  private String additionalImageUrls = null;
-
-  @SerializedName("video_url")
-  private String videoUrl = null;
-
-  @SerializedName("model_3d_url")
-  private String model3dUrl = null;
-
   @SerializedName("product_category")
   private String productCategory = null;
 
   @SerializedName("brand")
   private String brand = null;
-
-  @SerializedName("gtin")
-  private String gtin = null;
-
-  @SerializedName("mpn")
-  private String mpn = null;
-
-  @SerializedName("condition")
-  private String condition = null;
 
   @SerializedName("material")
   private String material = null;
@@ -85,38 +67,26 @@ public class InlineResponse20020Products {
   @SerializedName("weight")
   private String weight = null;
 
-  @SerializedName("dimensions")
-  private String dimensions = null;
+  @SerializedName("price")
+  private BigDecimal price = null;
 
-  @SerializedName("length")
-  private String length = null;
+  @SerializedName("currency")
+  private String currency = null;
 
-  @SerializedName("width")
-  private String width = null;
-
-  @SerializedName("height")
-  private String height = null;
-
-  @SerializedName("dimensions_unit")
-  private String dimensionsUnit = null;
-
-  @SerializedName("item_weight_unit")
-  private String itemWeightUnit = null;
-
-  @SerializedName("age_group")
-  private String ageGroup = null;
+  @SerializedName("availability")
+  private String availability = null;
 
   @SerializedName("color")
   private String color = null;
 
-  @SerializedName("size")
-  private String size = null;
-
-  @SerializedName("size_system")
-  private String sizeSystem = null;
-
   @SerializedName("gender")
   private String gender = null;
+
+  @SerializedName("age_group")
+  private String ageGroup = null;
+
+  @SerializedName("shipping_price")
+  private String shippingPrice = null;
 
   @SerializedName("group_id")
   private String groupId = null;
@@ -124,152 +94,14 @@ public class InlineResponse20020Products {
   @SerializedName("listing_has_variations")
   private Boolean listingHasVariations = null;
 
-  @SerializedName("item_group_title")
-  private String itemGroupTitle = null;
-
-  @SerializedName("offer_id")
-  private String offerId = null;
-
-  @SerializedName("variant_dict")
-  private Map<String, String> variantDict = null;
-
-  @SerializedName("custom_variant1_category")
-  private String customVariant1Category = null;
-
-  @SerializedName("custom_variant1_option")
-  private String customVariant1Option = null;
-
-  @SerializedName("custom_variant2_category")
-  private String customVariant2Category = null;
-
-  @SerializedName("custom_variant2_option")
-  private String customVariant2Option = null;
-
-  @SerializedName("custom_variant3_category")
-  private String customVariant3Category = null;
-
-  @SerializedName("custom_variant3_option")
-  private String customVariant3Option = null;
-
-  @SerializedName("price")
-  private BigDecimal price = null;
-
-  @SerializedName("currency")
-  private String currency = null;
-
-  @SerializedName("sale_price")
-  private BigDecimal salePrice = null;
-
-  @SerializedName("sale_price_start_date")
-  private LocalDate salePriceStartDate = null;
-
-  @SerializedName("sale_price_end_date")
-  private LocalDate salePriceEndDate = null;
-
-  @SerializedName("unit_pricing_measure")
-  private String unitPricingMeasure = null;
-
-  @SerializedName("base_measure")
-  private String baseMeasure = null;
-
-  @SerializedName("pricing_trend")
-  private String pricingTrend = null;
-
-  @SerializedName("geo_price")
-  private String geoPrice = null;
-
-  @SerializedName("geo_availability")
-  private String geoAvailability = null;
-
-  @SerializedName("availability")
-  private String availability = null;
-
-  @SerializedName("availability_date")
-  private LocalDate availabilityDate = null;
-
-  @SerializedName("expiration_date")
-  private LocalDate expirationDate = null;
-
-  @SerializedName("seller_name")
+  @SerializedName("sellerName")
   private String sellerName = null;
 
   @SerializedName("seller_url")
   private String sellerUrl = null;
 
-  @SerializedName("marketplace_seller")
-  private String marketplaceSeller = null;
-
-  @SerializedName("seller_privacy_policy")
-  private String sellerPrivacyPolicy = null;
-
-  @SerializedName("seller_tos")
-  private String sellerTos = null;
-
-  @SerializedName("shipping_price")
-  private String shippingPrice = null;
-
-  @SerializedName("delivery_estimate")
-  private LocalDate deliveryEstimate = null;
-
-  @SerializedName("pickup_method")
-  private String pickupMethod = null;
-
-  @SerializedName("pickup_sla")
-  private String pickupSla = null;
-
-  @SerializedName("is_digital")
-  private Boolean isDigital = null;
-
   @SerializedName("return_policy")
   private String returnPolicy = null;
-
-  @SerializedName("accepts_returns")
-  private Boolean acceptsReturns = null;
-
-  @SerializedName("return_deadline_in_days")
-  private Integer returnDeadlineInDays = null;
-
-  @SerializedName("accepts_exchanges")
-  private Boolean acceptsExchanges = null;
-
-  @SerializedName("is_eligible_search")
-  private Boolean isEligibleSearch = null;
-
-  @SerializedName("is_eligible_checkout")
-  private Boolean isEligibleCheckout = null;
-
-  @SerializedName("popularity_score")
-  private BigDecimal popularityScore = null;
-
-  @SerializedName("return_rate")
-  private String returnRate = null;
-
-  @SerializedName("warning")
-  private String warning = null;
-
-  @SerializedName("warning_url")
-  private String warningUrl = null;
-
-  @SerializedName("age_restriction")
-  private Integer ageRestriction = null;
-
-  @SerializedName("review_count")
-  private Integer reviewCount = null;
-
-  @SerializedName("star_rating")
-  private String starRating = null;
-
-  @SerializedName("store_review_count")
-  private Integer storeReviewCount = null;
-
-  @SerializedName("store_star_rating")
-  private String storeStarRating = null;
-
-  @SerializedName("related_product_id")
-  private String relatedProductId = null;
-
-  @SerializedName("relationship_type")
-  private String relationshipType = null;
 
   @SerializedName("target_countries")
   private List<String> targetCountries = null;
@@ -277,38 +109,11 @@ public class InlineResponse20020Products {
   @SerializedName("store_country")
   private String storeCountry = null;
 
-  @SerializedName("q_and_a")
-  private List<Map<String, Object>> qAndA = null;
-
-  @SerializedName("qandA")
-  private List<Map<String, Object>> qandA = null;
-
-  @SerializedName("reviews")
-  private List<Map<String, Object>> reviews = null;
-
-  @SerializedName("created_at")
+  @SerializedName("createdAt")
   private DateTime createdAt = null;
 
-  @SerializedName("updated_at")
+  @SerializedName("updatedAt")
   private DateTime updatedAt = null;
-
-  public InlineResponse20020Products id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * The merchant SKU / &#x60;item_id&#x60; as stored in the ACG catalog. Equivalent to the &#x60;item_id&#x60; field submitted during feed ingestion. 
-   * @return id
-  **/
-  @ApiModelProperty(value = "The merchant SKU / `item_id` as stored in the ACG catalog. Equivalent to the `item_id` field submitted during feed ingestion. ")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public InlineResponse20020Products itemId(String itemId) {
     this.itemId = itemId;
@@ -326,6 +131,42 @@ public class InlineResponse20020Products {
 
   public void setItemId(String itemId) {
     this.itemId = itemId;
+  }
+
+  public InlineResponse20020Products isEligibleSearch(Boolean isEligibleSearch) {
+    this.isEligibleSearch = isEligibleSearch;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, product appears in AI agent discovery results.
+   * @return isEligibleSearch
+  **/
+  @ApiModelProperty(value = "When `true`, product appears in AI agent discovery results.")
+  public Boolean IsEligibleSearch() {
+    return isEligibleSearch;
+  }
+
+  public void setIsEligibleSearch(Boolean isEligibleSearch) {
+    this.isEligibleSearch = isEligibleSearch;
+  }
+
+  public InlineResponse20020Products isEligibleCheckout(Boolean isEligibleCheckout) {
+    this.isEligibleCheckout = isEligibleCheckout;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, product can be added to a checkout session.
+   * @return isEligibleCheckout
+  **/
+  @ApiModelProperty(value = "When `true`, product can be added to a checkout session.")
+  public Boolean IsEligibleCheckout() {
+    return isEligibleCheckout;
+  }
+
+  public void setIsEligibleCheckout(Boolean isEligibleCheckout) {
+    this.isEligibleCheckout = isEligibleCheckout;
   }
 
   public InlineResponse20020Products title(String title) {
@@ -400,60 +241,6 @@ public class InlineResponse20020Products {
     this.imageUrl = imageUrl;
   }
 
-  public InlineResponse20020Products additionalImageUrls(String additionalImageUrls) {
-    this.additionalImageUrls = additionalImageUrls;
-    return this;
-  }
-
-   /**
-   * Additional product image URLs.
-   * @return additionalImageUrls
-  **/
-  @ApiModelProperty(value = "Additional product image URLs.")
-  public String getAdditionalImageUrls() {
-    return additionalImageUrls;
-  }
-
-  public void setAdditionalImageUrls(String additionalImageUrls) {
-    this.additionalImageUrls = additionalImageUrls;
-  }
-
-  public InlineResponse20020Products videoUrl(String videoUrl) {
-    this.videoUrl = videoUrl;
-    return this;
-  }
-
-   /**
-   * URL to a product video.
-   * @return videoUrl
-  **/
-  @ApiModelProperty(value = "URL to a product video.")
-  public String getVideoUrl() {
-    return videoUrl;
-  }
-
-  public void setVideoUrl(String videoUrl) {
-    this.videoUrl = videoUrl;
-  }
-
-  public InlineResponse20020Products model3dUrl(String model3dUrl) {
-    this.model3dUrl = model3dUrl;
-    return this;
-  }
-
-   /**
-   * URL to a 3D model asset.
-   * @return model3dUrl
-  **/
-  @ApiModelProperty(value = "URL to a 3D model asset.")
-  public String getModel3dUrl() {
-    return model3dUrl;
-  }
-
-  public void setModel3dUrl(String model3dUrl) {
-    this.model3dUrl = model3dUrl;
-  }
-
   public InlineResponse20020Products productCategory(String productCategory) {
     this.productCategory = productCategory;
     return this;
@@ -488,60 +275,6 @@ public class InlineResponse20020Products {
 
   public void setBrand(String brand) {
     this.brand = brand;
-  }
-
-  public InlineResponse20020Products gtin(String gtin) {
-    this.gtin = gtin;
-    return this;
-  }
-
-   /**
-   * Global Trade Item Number.
-   * @return gtin
-  **/
-  @ApiModelProperty(value = "Global Trade Item Number.")
-  public String getGtin() {
-    return gtin;
-  }
-
-  public void setGtin(String gtin) {
-    this.gtin = gtin;
-  }
-
-  public InlineResponse20020Products mpn(String mpn) {
-    this.mpn = mpn;
-    return this;
-  }
-
-   /**
-   * Manufacturer Part Number.
-   * @return mpn
-  **/
-  @ApiModelProperty(value = "Manufacturer Part Number.")
-  public String getMpn() {
-    return mpn;
-  }
-
-  public void setMpn(String mpn) {
-    this.mpn = mpn;
-  }
-
-  public InlineResponse20020Products condition(String condition) {
-    this.condition = condition;
-    return this;
-  }
-
-   /**
-   * Product condition (e.g. new, used, refurbished).
-   * @return condition
-  **/
-  @ApiModelProperty(value = "Product condition (e.g. new, used, refurbished).")
-  public String getCondition() {
-    return condition;
-  }
-
-  public void setCondition(String condition) {
-    this.condition = condition;
   }
 
   public InlineResponse20020Products material(String material) {
@@ -580,112 +313,94 @@ public class InlineResponse20020Products {
     this.weight = weight;
   }
 
-  public InlineResponse20020Products dimensions(String dimensions) {
-    this.dimensions = dimensions;
+  public InlineResponse20020Products price(BigDecimal price) {
+    this.price = price;
     return this;
   }
 
    /**
-   * Combined dimension string (e.g. \&quot;10x5x3 cm\&quot;).
-   * @return dimensions
+   * Product price as a decimal number.
+   * @return price
   **/
-  @ApiModelProperty(value = "Combined dimension string (e.g. \"10x5x3 cm\").")
-  public String getDimensions() {
-    return dimensions;
+  @ApiModelProperty(value = "Product price as a decimal number.")
+  public BigDecimal getPrice() {
+    return price;
   }
 
-  public void setDimensions(String dimensions) {
-    this.dimensions = dimensions;
+  public void setPrice(BigDecimal price) {
+    this.price = price;
   }
 
-  public InlineResponse20020Products length(String length) {
-    this.length = length;
+  public InlineResponse20020Products currency(String currency) {
+    this.currency = currency;
     return this;
   }
 
    /**
-   * Product length. Pair with &#x60;dimensions_unit&#x60; for unit context.
-   * @return length
+   * ISO 4217 currency code.
+   * @return currency
   **/
-  @ApiModelProperty(value = "Product length. Pair with `dimensions_unit` for unit context.")
-  public String getLength() {
-    return length;
+  @ApiModelProperty(value = "ISO 4217 currency code.")
+  public String getCurrency() {
+    return currency;
   }
 
-  public void setLength(String length) {
-    this.length = length;
+  public void setCurrency(String currency) {
+    this.currency = currency;
   }
 
-  public InlineResponse20020Products width(String width) {
-    this.width = width;
+  public InlineResponse20020Products availability(String availability) {
+    this.availability = availability;
     return this;
   }
 
    /**
-   * Product width. Pair with &#x60;dimensions_unit&#x60; for unit context.
-   * @return width
+   * Current stock status.  Possible values: - in_stock - out_of_stock - preorder - pre_order - backorder - unknown
+   * @return availability
   **/
-  @ApiModelProperty(value = "Product width. Pair with `dimensions_unit` for unit context.")
-  public String getWidth() {
-    return width;
+  @ApiModelProperty(value = "Current stock status.  Possible values: - in_stock - out_of_stock - preorder - pre_order - backorder - unknown")
+  public String getAvailability() {
+    return availability;
   }
 
-  public void setWidth(String width) {
-    this.width = width;
+  public void setAvailability(String availability) {
+    this.availability = availability;
   }
 
-  public InlineResponse20020Products height(String height) {
-    this.height = height;
+  public InlineResponse20020Products color(String color) {
+    this.color = color;
     return this;
   }
 
    /**
-   * Product height. Pair with &#x60;dimensions_unit&#x60; for unit context.
-   * @return height
+   * Primary product color.
+   * @return color
   **/
-  @ApiModelProperty(value = "Product height. Pair with `dimensions_unit` for unit context.")
-  public String getHeight() {
-    return height;
+  @ApiModelProperty(value = "Primary product color.")
+  public String getColor() {
+    return color;
   }
 
-  public void setHeight(String height) {
-    this.height = height;
+  public void setColor(String color) {
+    this.color = color;
   }
 
-  public InlineResponse20020Products dimensionsUnit(String dimensionsUnit) {
-    this.dimensionsUnit = dimensionsUnit;
+  public InlineResponse20020Products gender(String gender) {
+    this.gender = gender;
     return this;
   }
 
    /**
-   * Unit for dimension values (e.g. \&quot;cm\&quot;, \&quot;in\&quot;, \&quot;mm\&quot;).
-   * @return dimensionsUnit
+   * Target gender (e.g. \&quot;male\&quot;, \&quot;female\&quot;, \&quot;unisex\&quot;).
+   * @return gender
   **/
-  @ApiModelProperty(value = "Unit for dimension values (e.g. \"cm\", \"in\", \"mm\").")
-  public String getDimensionsUnit() {
-    return dimensionsUnit;
+  @ApiModelProperty(value = "Target gender (e.g. \"male\", \"female\", \"unisex\").")
+  public String getGender() {
+    return gender;
   }
 
-  public void setDimensionsUnit(String dimensionsUnit) {
-    this.dimensionsUnit = dimensionsUnit;
-  }
-
-  public InlineResponse20020Products itemWeightUnit(String itemWeightUnit) {
-    this.itemWeightUnit = itemWeightUnit;
-    return this;
-  }
-
-   /**
-   * Unit for weight value (e.g. \&quot;kg\&quot;, \&quot;lb\&quot;, \&quot;oz\&quot;).
-   * @return itemWeightUnit
-  **/
-  @ApiModelProperty(value = "Unit for weight value (e.g. \"kg\", \"lb\", \"oz\").")
-  public String getItemWeightUnit() {
-    return itemWeightUnit;
-  }
-
-  public void setItemWeightUnit(String itemWeightUnit) {
-    this.itemWeightUnit = itemWeightUnit;
+  public void setGender(String gender) {
+    this.gender = gender;
   }
 
   public InlineResponse20020Products ageGroup(String ageGroup) {
@@ -706,76 +421,22 @@ public class InlineResponse20020Products {
     this.ageGroup = ageGroup;
   }
 
-  public InlineResponse20020Products color(String color) {
-    this.color = color;
+  public InlineResponse20020Products shippingPrice(String shippingPrice) {
+    this.shippingPrice = shippingPrice;
     return this;
   }
 
    /**
-   * Primary product color. Used for variant filtering.
-   * @return color
+   * Shipping cost string as provided by the merchant.
+   * @return shippingPrice
   **/
-  @ApiModelProperty(value = "Primary product color. Used for variant filtering.")
-  public String getColor() {
-    return color;
+  @ApiModelProperty(value = "Shipping cost string as provided by the merchant.")
+  public String getShippingPrice() {
+    return shippingPrice;
   }
 
-  public void setColor(String color) {
-    this.color = color;
-  }
-
-  public InlineResponse20020Products size(String size) {
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Product size (e.g. \&quot;M\&quot;, \&quot;42\&quot;, \&quot;XL\&quot;). Used for variant filtering.
-   * @return size
-  **/
-  @ApiModelProperty(value = "Product size (e.g. \"M\", \"42\", \"XL\"). Used for variant filtering.")
-  public String getSize() {
-    return size;
-  }
-
-  public void setSize(String size) {
-    this.size = size;
-  }
-
-  public InlineResponse20020Products sizeSystem(String sizeSystem) {
-    this.sizeSystem = sizeSystem;
-    return this;
-  }
-
-   /**
-   * Size standard used (e.g. \&quot;US\&quot;, \&quot;EU\&quot;, \&quot;UK\&quot;).
-   * @return sizeSystem
-  **/
-  @ApiModelProperty(value = "Size standard used (e.g. \"US\", \"EU\", \"UK\").")
-  public String getSizeSystem() {
-    return sizeSystem;
-  }
-
-  public void setSizeSystem(String sizeSystem) {
-    this.sizeSystem = sizeSystem;
-  }
-
-  public InlineResponse20020Products gender(String gender) {
-    this.gender = gender;
-    return this;
-  }
-
-   /**
-   * Target gender (e.g. \&quot;male\&quot;, \&quot;female\&quot;, \&quot;unisex\&quot;).
-   * @return gender
-  **/
-  @ApiModelProperty(value = "Target gender (e.g. \"male\", \"female\", \"unisex\").")
-  public String getGender() {
-    return gender;
-  }
-
-  public void setGender(String gender) {
-    this.gender = gender;
+  public void setShippingPrice(String shippingPrice) {
+    this.shippingPrice = shippingPrice;
   }
 
   public InlineResponse20020Products groupId(String groupId) {
@@ -814,420 +475,16 @@ public class InlineResponse20020Products {
     this.listingHasVariations = listingHasVariations;
   }
 
-  public InlineResponse20020Products itemGroupTitle(String itemGroupTitle) {
-    this.itemGroupTitle = itemGroupTitle;
-    return this;
-  }
-
-   /**
-   * Display title for the variant group.
-   * @return itemGroupTitle
-  **/
-  @ApiModelProperty(value = "Display title for the variant group.")
-  public String getItemGroupTitle() {
-    return itemGroupTitle;
-  }
-
-  public void setItemGroupTitle(String itemGroupTitle) {
-    this.itemGroupTitle = itemGroupTitle;
-  }
-
-  public InlineResponse20020Products offerId(String offerId) {
-    this.offerId = offerId;
-    return this;
-  }
-
-   /**
-   * Merchant-assigned offer identifier.
-   * @return offerId
-  **/
-  @ApiModelProperty(value = "Merchant-assigned offer identifier.")
-  public String getOfferId() {
-    return offerId;
-  }
-
-  public void setOfferId(String offerId) {
-    this.offerId = offerId;
-  }
-
-  public InlineResponse20020Products variantDict(Map<String, String> variantDict) {
-    this.variantDict = variantDict;
-    return this;
-  }
-
-  public InlineResponse20020Products putVariantDictItem(String key, String variantDictItem) {
-    if (this.variantDict == null) {
-      this.variantDict = new HashMap<String, String>();
-    }
-    this.variantDict.put(key, variantDictItem);
-    return this;
-  }
-
-   /**
-   * Get variantDict
-   * @return variantDict
-  **/
-  @ApiModelProperty(value = "")
-  public Map<String, String> getVariantDict() {
-    return variantDict;
-  }
-
-  public void setVariantDict(Map<String, String> variantDict) {
-    this.variantDict = variantDict;
-  }
-
-  public InlineResponse20020Products customVariant1Category(String customVariant1Category) {
-    this.customVariant1Category = customVariant1Category;
-    return this;
-  }
-
-   /**
-   * Get customVariant1Category
-   * @return customVariant1Category
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant1Category() {
-    return customVariant1Category;
-  }
-
-  public void setCustomVariant1Category(String customVariant1Category) {
-    this.customVariant1Category = customVariant1Category;
-  }
-
-  public InlineResponse20020Products customVariant1Option(String customVariant1Option) {
-    this.customVariant1Option = customVariant1Option;
-    return this;
-  }
-
-   /**
-   * Get customVariant1Option
-   * @return customVariant1Option
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant1Option() {
-    return customVariant1Option;
-  }
-
-  public void setCustomVariant1Option(String customVariant1Option) {
-    this.customVariant1Option = customVariant1Option;
-  }
-
-  public InlineResponse20020Products customVariant2Category(String customVariant2Category) {
-    this.customVariant2Category = customVariant2Category;
-    return this;
-  }
-
-   /**
-   * Get customVariant2Category
-   * @return customVariant2Category
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant2Category() {
-    return customVariant2Category;
-  }
-
-  public void setCustomVariant2Category(String customVariant2Category) {
-    this.customVariant2Category = customVariant2Category;
-  }
-
-  public InlineResponse20020Products customVariant2Option(String customVariant2Option) {
-    this.customVariant2Option = customVariant2Option;
-    return this;
-  }
-
-   /**
-   * Get customVariant2Option
-   * @return customVariant2Option
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant2Option() {
-    return customVariant2Option;
-  }
-
-  public void setCustomVariant2Option(String customVariant2Option) {
-    this.customVariant2Option = customVariant2Option;
-  }
-
-  public InlineResponse20020Products customVariant3Category(String customVariant3Category) {
-    this.customVariant3Category = customVariant3Category;
-    return this;
-  }
-
-   /**
-   * Get customVariant3Category
-   * @return customVariant3Category
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant3Category() {
-    return customVariant3Category;
-  }
-
-  public void setCustomVariant3Category(String customVariant3Category) {
-    this.customVariant3Category = customVariant3Category;
-  }
-
-  public InlineResponse20020Products customVariant3Option(String customVariant3Option) {
-    this.customVariant3Option = customVariant3Option;
-    return this;
-  }
-
-   /**
-   * Get customVariant3Option
-   * @return customVariant3Option
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustomVariant3Option() {
-    return customVariant3Option;
-  }
-
-  public void setCustomVariant3Option(String customVariant3Option) {
-    this.customVariant3Option = customVariant3Option;
-  }
-
-  public InlineResponse20020Products price(BigDecimal price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Product price as a decimal number.
-   * @return price
-  **/
-  @ApiModelProperty(value = "Product price as a decimal number.")
-  public BigDecimal getPrice() {
-    return price;
-  }
-
-  public void setPrice(BigDecimal price) {
-    this.price = price;
-  }
-
-  public InlineResponse20020Products currency(String currency) {
-    this.currency = currency;
-    return this;
-  }
-
-   /**
-   * ISO 4217 currency code.
-   * @return currency
-  **/
-  @ApiModelProperty(value = "ISO 4217 currency code.")
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
-  }
-
-  public InlineResponse20020Products salePrice(BigDecimal salePrice) {
-    this.salePrice = salePrice;
-    return this;
-  }
-
-   /**
-   * Get salePrice
-   * @return salePrice
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getSalePrice() {
-    return salePrice;
-  }
-
-  public void setSalePrice(BigDecimal salePrice) {
-    this.salePrice = salePrice;
-  }
-
-  public InlineResponse20020Products salePriceStartDate(LocalDate salePriceStartDate) {
-    this.salePriceStartDate = salePriceStartDate;
-    return this;
-  }
-
-   /**
-   * Get salePriceStartDate
-   * @return salePriceStartDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getSalePriceStartDate() {
-    return salePriceStartDate;
-  }
-
-  public void setSalePriceStartDate(LocalDate salePriceStartDate) {
-    this.salePriceStartDate = salePriceStartDate;
-  }
-
-  public InlineResponse20020Products salePriceEndDate(LocalDate salePriceEndDate) {
-    this.salePriceEndDate = salePriceEndDate;
-    return this;
-  }
-
-   /**
-   * Get salePriceEndDate
-   * @return salePriceEndDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getSalePriceEndDate() {
-    return salePriceEndDate;
-  }
-
-  public void setSalePriceEndDate(LocalDate salePriceEndDate) {
-    this.salePriceEndDate = salePriceEndDate;
-  }
-
-  public InlineResponse20020Products unitPricingMeasure(String unitPricingMeasure) {
-    this.unitPricingMeasure = unitPricingMeasure;
-    return this;
-  }
-
-   /**
-   * Get unitPricingMeasure
-   * @return unitPricingMeasure
-  **/
-  @ApiModelProperty(value = "")
-  public String getUnitPricingMeasure() {
-    return unitPricingMeasure;
-  }
-
-  public void setUnitPricingMeasure(String unitPricingMeasure) {
-    this.unitPricingMeasure = unitPricingMeasure;
-  }
-
-  public InlineResponse20020Products baseMeasure(String baseMeasure) {
-    this.baseMeasure = baseMeasure;
-    return this;
-  }
-
-   /**
-   * Get baseMeasure
-   * @return baseMeasure
-  **/
-  @ApiModelProperty(value = "")
-  public String getBaseMeasure() {
-    return baseMeasure;
-  }
-
-  public void setBaseMeasure(String baseMeasure) {
-    this.baseMeasure = baseMeasure;
-  }
-
-  public InlineResponse20020Products pricingTrend(String pricingTrend) {
-    this.pricingTrend = pricingTrend;
-    return this;
-  }
-
-   /**
-   * Get pricingTrend
-   * @return pricingTrend
-  **/
-  @ApiModelProperty(value = "")
-  public String getPricingTrend() {
-    return pricingTrend;
-  }
-
-  public void setPricingTrend(String pricingTrend) {
-    this.pricingTrend = pricingTrend;
-  }
-
-  public InlineResponse20020Products geoPrice(String geoPrice) {
-    this.geoPrice = geoPrice;
-    return this;
-  }
-
-   /**
-   * Get geoPrice
-   * @return geoPrice
-  **/
-  @ApiModelProperty(value = "")
-  public String getGeoPrice() {
-    return geoPrice;
-  }
-
-  public void setGeoPrice(String geoPrice) {
-    this.geoPrice = geoPrice;
-  }
-
-  public InlineResponse20020Products geoAvailability(String geoAvailability) {
-    this.geoAvailability = geoAvailability;
-    return this;
-  }
-
-   /**
-   * Get geoAvailability
-   * @return geoAvailability
-  **/
-  @ApiModelProperty(value = "")
-  public String getGeoAvailability() {
-    return geoAvailability;
-  }
-
-  public void setGeoAvailability(String geoAvailability) {
-    this.geoAvailability = geoAvailability;
-  }
-
-  public InlineResponse20020Products availability(String availability) {
-    this.availability = availability;
-    return this;
-  }
-
-   /**
-   * Current stock status.  Possible values: - in_stock - out_of_stock - preorder - backorder
-   * @return availability
-  **/
-  @ApiModelProperty(value = "Current stock status.  Possible values: - in_stock - out_of_stock - preorder - backorder")
-  public String getAvailability() {
-    return availability;
-  }
-
-  public void setAvailability(String availability) {
-    this.availability = availability;
-  }
-
-  public InlineResponse20020Products availabilityDate(LocalDate availabilityDate) {
-    this.availabilityDate = availabilityDate;
-    return this;
-  }
-
-   /**
-   * Get availabilityDate
-   * @return availabilityDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getAvailabilityDate() {
-    return availabilityDate;
-  }
-
-  public void setAvailabilityDate(LocalDate availabilityDate) {
-    this.availabilityDate = availabilityDate;
-  }
-
-  public InlineResponse20020Products expirationDate(LocalDate expirationDate) {
-    this.expirationDate = expirationDate;
-    return this;
-  }
-
-   /**
-   * Get expirationDate
-   * @return expirationDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getExpirationDate() {
-    return expirationDate;
-  }
-
-  public void setExpirationDate(LocalDate expirationDate) {
-    this.expirationDate = expirationDate;
-  }
-
   public InlineResponse20020Products sellerName(String sellerName) {
     this.sellerName = sellerName;
     return this;
   }
 
    /**
-   * Merchant or seller display name. Max 70 characters. 
+   * Merchant or seller display name.
    * @return sellerName
   **/
-  @ApiModelProperty(value = "Merchant or seller display name. Max 70 characters. ")
+  @ApiModelProperty(value = "Merchant or seller display name.")
   public String getSellerName() {
     return sellerName;
   }
@@ -1242,10 +499,10 @@ public class InlineResponse20020Products {
   }
 
    /**
-   * Get sellerUrl
+   * URL to the seller&#39;s storefront.
    * @return sellerUrl
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL to the seller's storefront.")
   public String getSellerUrl() {
     return sellerUrl;
   }
@@ -1254,454 +511,22 @@ public class InlineResponse20020Products {
     this.sellerUrl = sellerUrl;
   }
 
-  public InlineResponse20020Products marketplaceSeller(String marketplaceSeller) {
-    this.marketplaceSeller = marketplaceSeller;
-    return this;
-  }
-
-   /**
-   * Get marketplaceSeller
-   * @return marketplaceSeller
-  **/
-  @ApiModelProperty(value = "")
-  public String getMarketplaceSeller() {
-    return marketplaceSeller;
-  }
-
-  public void setMarketplaceSeller(String marketplaceSeller) {
-    this.marketplaceSeller = marketplaceSeller;
-  }
-
-  public InlineResponse20020Products sellerPrivacyPolicy(String sellerPrivacyPolicy) {
-    this.sellerPrivacyPolicy = sellerPrivacyPolicy;
-    return this;
-  }
-
-   /**
-   * Get sellerPrivacyPolicy
-   * @return sellerPrivacyPolicy
-  **/
-  @ApiModelProperty(value = "")
-  public String getSellerPrivacyPolicy() {
-    return sellerPrivacyPolicy;
-  }
-
-  public void setSellerPrivacyPolicy(String sellerPrivacyPolicy) {
-    this.sellerPrivacyPolicy = sellerPrivacyPolicy;
-  }
-
-  public InlineResponse20020Products sellerTos(String sellerTos) {
-    this.sellerTos = sellerTos;
-    return this;
-  }
-
-   /**
-   * Get sellerTos
-   * @return sellerTos
-  **/
-  @ApiModelProperty(value = "")
-  public String getSellerTos() {
-    return sellerTos;
-  }
-
-  public void setSellerTos(String sellerTos) {
-    this.sellerTos = sellerTos;
-  }
-
-  public InlineResponse20020Products shippingPrice(String shippingPrice) {
-    this.shippingPrice = shippingPrice;
-    return this;
-  }
-
-   /**
-   * Get shippingPrice
-   * @return shippingPrice
-  **/
-  @ApiModelProperty(value = "")
-  public String getShippingPrice() {
-    return shippingPrice;
-  }
-
-  public void setShippingPrice(String shippingPrice) {
-    this.shippingPrice = shippingPrice;
-  }
-
-  public InlineResponse20020Products deliveryEstimate(LocalDate deliveryEstimate) {
-    this.deliveryEstimate = deliveryEstimate;
-    return this;
-  }
-
-   /**
-   * Get deliveryEstimate
-   * @return deliveryEstimate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getDeliveryEstimate() {
-    return deliveryEstimate;
-  }
-
-  public void setDeliveryEstimate(LocalDate deliveryEstimate) {
-    this.deliveryEstimate = deliveryEstimate;
-  }
-
-  public InlineResponse20020Products pickupMethod(String pickupMethod) {
-    this.pickupMethod = pickupMethod;
-    return this;
-  }
-
-   /**
-   * Get pickupMethod
-   * @return pickupMethod
-  **/
-  @ApiModelProperty(value = "")
-  public String getPickupMethod() {
-    return pickupMethod;
-  }
-
-  public void setPickupMethod(String pickupMethod) {
-    this.pickupMethod = pickupMethod;
-  }
-
-  public InlineResponse20020Products pickupSla(String pickupSla) {
-    this.pickupSla = pickupSla;
-    return this;
-  }
-
-   /**
-   * Get pickupSla
-   * @return pickupSla
-  **/
-  @ApiModelProperty(value = "")
-  public String getPickupSla() {
-    return pickupSla;
-  }
-
-  public void setPickupSla(String pickupSla) {
-    this.pickupSla = pickupSla;
-  }
-
-  public InlineResponse20020Products isDigital(Boolean isDigital) {
-    this.isDigital = isDigital;
-    return this;
-  }
-
-   /**
-   * Get isDigital
-   * @return isDigital
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean IsDigital() {
-    return isDigital;
-  }
-
-  public void setIsDigital(Boolean isDigital) {
-    this.isDigital = isDigital;
-  }
-
   public InlineResponse20020Products returnPolicy(String returnPolicy) {
     this.returnPolicy = returnPolicy;
     return this;
   }
 
    /**
-   * Get returnPolicy
+   * Merchant return policy text.
    * @return returnPolicy
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Merchant return policy text.")
   public String getReturnPolicy() {
     return returnPolicy;
   }
 
   public void setReturnPolicy(String returnPolicy) {
     this.returnPolicy = returnPolicy;
-  }
-
-  public InlineResponse20020Products acceptsReturns(Boolean acceptsReturns) {
-    this.acceptsReturns = acceptsReturns;
-    return this;
-  }
-
-   /**
-   * Get acceptsReturns
-   * @return acceptsReturns
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean AcceptsReturns() {
-    return acceptsReturns;
-  }
-
-  public void setAcceptsReturns(Boolean acceptsReturns) {
-    this.acceptsReturns = acceptsReturns;
-  }
-
-  public InlineResponse20020Products returnDeadlineInDays(Integer returnDeadlineInDays) {
-    this.returnDeadlineInDays = returnDeadlineInDays;
-    return this;
-  }
-
-   /**
-   * Get returnDeadlineInDays
-   * @return returnDeadlineInDays
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getReturnDeadlineInDays() {
-    return returnDeadlineInDays;
-  }
-
-  public void setReturnDeadlineInDays(Integer returnDeadlineInDays) {
-    this.returnDeadlineInDays = returnDeadlineInDays;
-  }
-
-  public InlineResponse20020Products acceptsExchanges(Boolean acceptsExchanges) {
-    this.acceptsExchanges = acceptsExchanges;
-    return this;
-  }
-
-   /**
-   * Get acceptsExchanges
-   * @return acceptsExchanges
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean AcceptsExchanges() {
-    return acceptsExchanges;
-  }
-
-  public void setAcceptsExchanges(Boolean acceptsExchanges) {
-    this.acceptsExchanges = acceptsExchanges;
-  }
-
-  public InlineResponse20020Products isEligibleSearch(Boolean isEligibleSearch) {
-    this.isEligibleSearch = isEligibleSearch;
-    return this;
-  }
-
-   /**
-   * When &#x60;true&#x60;, product appears in AI agent discovery results.
-   * @return isEligibleSearch
-  **/
-  @ApiModelProperty(value = "When `true`, product appears in AI agent discovery results.")
-  public Boolean IsEligibleSearch() {
-    return isEligibleSearch;
-  }
-
-  public void setIsEligibleSearch(Boolean isEligibleSearch) {
-    this.isEligibleSearch = isEligibleSearch;
-  }
-
-  public InlineResponse20020Products isEligibleCheckout(Boolean isEligibleCheckout) {
-    this.isEligibleCheckout = isEligibleCheckout;
-    return this;
-  }
-
-   /**
-   * When &#x60;true&#x60;, product can be added to a checkout session.
-   * @return isEligibleCheckout
-  **/
-  @ApiModelProperty(value = "When `true`, product can be added to a checkout session.")
-  public Boolean IsEligibleCheckout() {
-    return isEligibleCheckout;
-  }
-
-  public void setIsEligibleCheckout(Boolean isEligibleCheckout) {
-    this.isEligibleCheckout = isEligibleCheckout;
-  }
-
-  public InlineResponse20020Products popularityScore(BigDecimal popularityScore) {
-    this.popularityScore = popularityScore;
-    return this;
-  }
-
-   /**
-   * Get popularityScore
-   * @return popularityScore
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getPopularityScore() {
-    return popularityScore;
-  }
-
-  public void setPopularityScore(BigDecimal popularityScore) {
-    this.popularityScore = popularityScore;
-  }
-
-  public InlineResponse20020Products returnRate(String returnRate) {
-    this.returnRate = returnRate;
-    return this;
-  }
-
-   /**
-   * Get returnRate
-   * @return returnRate
-  **/
-  @ApiModelProperty(value = "")
-  public String getReturnRate() {
-    return returnRate;
-  }
-
-  public void setReturnRate(String returnRate) {
-    this.returnRate = returnRate;
-  }
-
-  public InlineResponse20020Products warning(String warning) {
-    this.warning = warning;
-    return this;
-  }
-
-   /**
-   * Get warning
-   * @return warning
-  **/
-  @ApiModelProperty(value = "")
-  public String getWarning() {
-    return warning;
-  }
-
-  public void setWarning(String warning) {
-    this.warning = warning;
-  }
-
-  public InlineResponse20020Products warningUrl(String warningUrl) {
-    this.warningUrl = warningUrl;
-    return this;
-  }
-
-   /**
-   * Get warningUrl
-   * @return warningUrl
-  **/
-  @ApiModelProperty(value = "")
-  public String getWarningUrl() {
-    return warningUrl;
-  }
-
-  public void setWarningUrl(String warningUrl) {
-    this.warningUrl = warningUrl;
-  }
-
-  public InlineResponse20020Products ageRestriction(Integer ageRestriction) {
-    this.ageRestriction = ageRestriction;
-    return this;
-  }
-
-   /**
-   * Get ageRestriction
-   * @return ageRestriction
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getAgeRestriction() {
-    return ageRestriction;
-  }
-
-  public void setAgeRestriction(Integer ageRestriction) {
-    this.ageRestriction = ageRestriction;
-  }
-
-  public InlineResponse20020Products reviewCount(Integer reviewCount) {
-    this.reviewCount = reviewCount;
-    return this;
-  }
-
-   /**
-   * Get reviewCount
-   * @return reviewCount
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getReviewCount() {
-    return reviewCount;
-  }
-
-  public void setReviewCount(Integer reviewCount) {
-    this.reviewCount = reviewCount;
-  }
-
-  public InlineResponse20020Products starRating(String starRating) {
-    this.starRating = starRating;
-    return this;
-  }
-
-   /**
-   * Get starRating
-   * @return starRating
-  **/
-  @ApiModelProperty(value = "")
-  public String getStarRating() {
-    return starRating;
-  }
-
-  public void setStarRating(String starRating) {
-    this.starRating = starRating;
-  }
-
-  public InlineResponse20020Products storeReviewCount(Integer storeReviewCount) {
-    this.storeReviewCount = storeReviewCount;
-    return this;
-  }
-
-   /**
-   * Get storeReviewCount
-   * @return storeReviewCount
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getStoreReviewCount() {
-    return storeReviewCount;
-  }
-
-  public void setStoreReviewCount(Integer storeReviewCount) {
-    this.storeReviewCount = storeReviewCount;
-  }
-
-  public InlineResponse20020Products storeStarRating(String storeStarRating) {
-    this.storeStarRating = storeStarRating;
-    return this;
-  }
-
-   /**
-   * Get storeStarRating
-   * @return storeStarRating
-  **/
-  @ApiModelProperty(value = "")
-  public String getStoreStarRating() {
-    return storeStarRating;
-  }
-
-  public void setStoreStarRating(String storeStarRating) {
-    this.storeStarRating = storeStarRating;
-  }
-
-  public InlineResponse20020Products relatedProductId(String relatedProductId) {
-    this.relatedProductId = relatedProductId;
-    return this;
-  }
-
-   /**
-   * Get relatedProductId
-   * @return relatedProductId
-  **/
-  @ApiModelProperty(value = "")
-  public String getRelatedProductId() {
-    return relatedProductId;
-  }
-
-  public void setRelatedProductId(String relatedProductId) {
-    this.relatedProductId = relatedProductId;
-  }
-
-  public InlineResponse20020Products relationshipType(String relationshipType) {
-    this.relationshipType = relationshipType;
-    return this;
-  }
-
-   /**
-   * Get relationshipType
-   * @return relationshipType
-  **/
-  @ApiModelProperty(value = "")
-  public String getRelationshipType() {
-    return relationshipType;
-  }
-
-  public void setRelationshipType(String relationshipType) {
-    this.relationshipType = relationshipType;
   }
 
   public InlineResponse20020Products targetCountries(List<String> targetCountries) {
@@ -1746,84 +571,6 @@ public class InlineResponse20020Products {
 
   public void setStoreCountry(String storeCountry) {
     this.storeCountry = storeCountry;
-  }
-
-  public InlineResponse20020Products qAndA(List<Map<String, Object>> qAndA) {
-    this.qAndA = qAndA;
-    return this;
-  }
-
-  public InlineResponse20020Products addQAndAItem(Map<String, Object> qAndAItem) {
-    if (this.qAndA == null) {
-      this.qAndA = new ArrayList<Map<String, Object>>();
-    }
-    this.qAndA.add(qAndAItem);
-    return this;
-  }
-
-   /**
-   * Get qAndA
-   * @return qAndA
-  **/
-  @ApiModelProperty(value = "")
-  public List<Map<String, Object>> getQAndA() {
-    return qAndA;
-  }
-
-  public void setQAndA(List<Map<String, Object>> qAndA) {
-    this.qAndA = qAndA;
-  }
-
-  public InlineResponse20020Products qandA(List<Map<String, Object>> qandA) {
-    this.qandA = qandA;
-    return this;
-  }
-
-  public InlineResponse20020Products addQandAItem(Map<String, Object> qandAItem) {
-    if (this.qandA == null) {
-      this.qandA = new ArrayList<Map<String, Object>>();
-    }
-    this.qandA.add(qandAItem);
-    return this;
-  }
-
-   /**
-   * Get qandA
-   * @return qandA
-  **/
-  @ApiModelProperty(value = "")
-  public List<Map<String, Object>> getQandA() {
-    return qandA;
-  }
-
-  public void setQandA(List<Map<String, Object>> qandA) {
-    this.qandA = qandA;
-  }
-
-  public InlineResponse20020Products reviews(List<Map<String, Object>> reviews) {
-    this.reviews = reviews;
-    return this;
-  }
-
-  public InlineResponse20020Products addReviewsItem(Map<String, Object> reviewsItem) {
-    if (this.reviews == null) {
-      this.reviews = new ArrayList<Map<String, Object>>();
-    }
-    this.reviews.add(reviewsItem);
-    return this;
-  }
-
-   /**
-   * Get reviews
-   * @return reviews
-  **/
-  @ApiModelProperty(value = "")
-  public List<Map<String, Object>> getReviews() {
-    return reviews;
-  }
-
-  public void setReviews(List<Map<String, Object>> reviews) {
-    this.reviews = reviews;
   }
 
   public InlineResponse20020Products createdAt(DateTime createdAt) {
@@ -1872,96 +619,38 @@ public class InlineResponse20020Products {
       return false;
     }
     InlineResponse20020Products inlineResponse20020Products = (InlineResponse20020Products) o;
-    return Objects.equals(this.id, inlineResponse20020Products.id) &&
-        Objects.equals(this.itemId, inlineResponse20020Products.itemId) &&
+    return Objects.equals(this.itemId, inlineResponse20020Products.itemId) &&
+        Objects.equals(this.isEligibleSearch, inlineResponse20020Products.isEligibleSearch) &&
+        Objects.equals(this.isEligibleCheckout, inlineResponse20020Products.isEligibleCheckout) &&
         Objects.equals(this.title, inlineResponse20020Products.title) &&
         Objects.equals(this.description, inlineResponse20020Products.description) &&
         Objects.equals(this.url, inlineResponse20020Products.url) &&
         Objects.equals(this.imageUrl, inlineResponse20020Products.imageUrl) &&
-        Objects.equals(this.additionalImageUrls, inlineResponse20020Products.additionalImageUrls) &&
-        Objects.equals(this.videoUrl, inlineResponse20020Products.videoUrl) &&
-        Objects.equals(this.model3dUrl, inlineResponse20020Products.model3dUrl) &&
         Objects.equals(this.productCategory, inlineResponse20020Products.productCategory) &&
         Objects.equals(this.brand, inlineResponse20020Products.brand) &&
-        Objects.equals(this.gtin, inlineResponse20020Products.gtin) &&
-        Objects.equals(this.mpn, inlineResponse20020Products.mpn) &&
-        Objects.equals(this.condition, inlineResponse20020Products.condition) &&
         Objects.equals(this.material, inlineResponse20020Products.material) &&
         Objects.equals(this.weight, inlineResponse20020Products.weight) &&
-        Objects.equals(this.dimensions, inlineResponse20020Products.dimensions) &&
-        Objects.equals(this.length, inlineResponse20020Products.length) &&
-        Objects.equals(this.width, inlineResponse20020Products.width) &&
-        Objects.equals(this.height, inlineResponse20020Products.height) &&
-        Objects.equals(this.dimensionsUnit, inlineResponse20020Products.dimensionsUnit) &&
-        Objects.equals(this.itemWeightUnit, inlineResponse20020Products.itemWeightUnit) &&
-        Objects.equals(this.ageGroup, inlineResponse20020Products.ageGroup) &&
-        Objects.equals(this.color, inlineResponse20020Products.color) &&
-        Objects.equals(this.size, inlineResponse20020Products.size) &&
-        Objects.equals(this.sizeSystem, inlineResponse20020Products.sizeSystem) &&
-        Objects.equals(this.gender, inlineResponse20020Products.gender) &&
-        Objects.equals(this.groupId, inlineResponse20020Products.groupId) &&
-        Objects.equals(this.listingHasVariations, inlineResponse20020Products.listingHasVariations) &&
-        Objects.equals(this.itemGroupTitle, inlineResponse20020Products.itemGroupTitle) &&
-        Objects.equals(this.offerId, inlineResponse20020Products.offerId) &&
-        Objects.equals(this.variantDict, inlineResponse20020Products.variantDict) &&
-        Objects.equals(this.customVariant1Category, inlineResponse20020Products.customVariant1Category) &&
-        Objects.equals(this.customVariant1Option, inlineResponse20020Products.customVariant1Option) &&
-        Objects.equals(this.customVariant2Category, inlineResponse20020Products.customVariant2Category) &&
-        Objects.equals(this.customVariant2Option, inlineResponse20020Products.customVariant2Option) &&
-        Objects.equals(this.customVariant3Category, inlineResponse20020Products.customVariant3Category) &&
-        Objects.equals(this.customVariant3Option, inlineResponse20020Products.customVariant3Option) &&
         Objects.equals(this.price, inlineResponse20020Products.price) &&
         Objects.equals(this.currency, inlineResponse20020Products.currency) &&
-        Objects.equals(this.salePrice, inlineResponse20020Products.salePrice) &&
-        Objects.equals(this.salePriceStartDate, inlineResponse20020Products.salePriceStartDate) &&
-        Objects.equals(this.salePriceEndDate, inlineResponse20020Products.salePriceEndDate) &&
-        Objects.equals(this.unitPricingMeasure, inlineResponse20020Products.unitPricingMeasure) &&
-        Objects.equals(this.baseMeasure, inlineResponse20020Products.baseMeasure) &&
-        Objects.equals(this.pricingTrend, inlineResponse20020Products.pricingTrend) &&
-        Objects.equals(this.geoPrice, inlineResponse20020Products.geoPrice) &&
-        Objects.equals(this.geoAvailability, inlineResponse20020Products.geoAvailability) &&
         Objects.equals(this.availability, inlineResponse20020Products.availability) &&
-        Objects.equals(this.availabilityDate, inlineResponse20020Products.availabilityDate) &&
-        Objects.equals(this.expirationDate, inlineResponse20020Products.expirationDate) &&
+        Objects.equals(this.color, inlineResponse20020Products.color) &&
+        Objects.equals(this.gender, inlineResponse20020Products.gender) &&
+        Objects.equals(this.ageGroup, inlineResponse20020Products.ageGroup) &&
+        Objects.equals(this.shippingPrice, inlineResponse20020Products.shippingPrice) &&
+        Objects.equals(this.groupId, inlineResponse20020Products.groupId) &&
+        Objects.equals(this.listingHasVariations, inlineResponse20020Products.listingHasVariations) &&
         Objects.equals(this.sellerName, inlineResponse20020Products.sellerName) &&
         Objects.equals(this.sellerUrl, inlineResponse20020Products.sellerUrl) &&
-        Objects.equals(this.marketplaceSeller, inlineResponse20020Products.marketplaceSeller) &&
-        Objects.equals(this.sellerPrivacyPolicy, inlineResponse20020Products.sellerPrivacyPolicy) &&
-        Objects.equals(this.sellerTos, inlineResponse20020Products.sellerTos) &&
-        Objects.equals(this.shippingPrice, inlineResponse20020Products.shippingPrice) &&
-        Objects.equals(this.deliveryEstimate, inlineResponse20020Products.deliveryEstimate) &&
-        Objects.equals(this.pickupMethod, inlineResponse20020Products.pickupMethod) &&
-        Objects.equals(this.pickupSla, inlineResponse20020Products.pickupSla) &&
-        Objects.equals(this.isDigital, inlineResponse20020Products.isDigital) &&
         Objects.equals(this.returnPolicy, inlineResponse20020Products.returnPolicy) &&
-        Objects.equals(this.acceptsReturns, inlineResponse20020Products.acceptsReturns) &&
-        Objects.equals(this.returnDeadlineInDays, inlineResponse20020Products.returnDeadlineInDays) &&
-        Objects.equals(this.acceptsExchanges, inlineResponse20020Products.acceptsExchanges) &&
-        Objects.equals(this.isEligibleSearch, inlineResponse20020Products.isEligibleSearch) &&
-        Objects.equals(this.isEligibleCheckout, inlineResponse20020Products.isEligibleCheckout) &&
-        Objects.equals(this.popularityScore, inlineResponse20020Products.popularityScore) &&
-        Objects.equals(this.returnRate, inlineResponse20020Products.returnRate) &&
-        Objects.equals(this.warning, inlineResponse20020Products.warning) &&
-        Objects.equals(this.warningUrl, inlineResponse20020Products.warningUrl) &&
-        Objects.equals(this.ageRestriction, inlineResponse20020Products.ageRestriction) &&
-        Objects.equals(this.reviewCount, inlineResponse20020Products.reviewCount) &&
-        Objects.equals(this.starRating, inlineResponse20020Products.starRating) &&
-        Objects.equals(this.storeReviewCount, inlineResponse20020Products.storeReviewCount) &&
-        Objects.equals(this.storeStarRating, inlineResponse20020Products.storeStarRating) &&
-        Objects.equals(this.relatedProductId, inlineResponse20020Products.relatedProductId) &&
-        Objects.equals(this.relationshipType, inlineResponse20020Products.relationshipType) &&
         Objects.equals(this.targetCountries, inlineResponse20020Products.targetCountries) &&
         Objects.equals(this.storeCountry, inlineResponse20020Products.storeCountry) &&
-        Objects.equals(this.qAndA, inlineResponse20020Products.qAndA) &&
-        Objects.equals(this.qandA, inlineResponse20020Products.qandA) &&
-        Objects.equals(this.reviews, inlineResponse20020Products.reviews) &&
         Objects.equals(this.createdAt, inlineResponse20020Products.createdAt) &&
         Objects.equals(this.updatedAt, inlineResponse20020Products.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, itemId, title, description, url, imageUrl, additionalImageUrls, videoUrl, model3dUrl, productCategory, brand, gtin, mpn, condition, material, weight, dimensions, length, width, height, dimensionsUnit, itemWeightUnit, ageGroup, color, size, sizeSystem, gender, groupId, listingHasVariations, itemGroupTitle, offerId, variantDict, customVariant1Category, customVariant1Option, customVariant2Category, customVariant2Option, customVariant3Category, customVariant3Option, price, currency, salePrice, salePriceStartDate, salePriceEndDate, unitPricingMeasure, baseMeasure, pricingTrend, geoPrice, geoAvailability, availability, availabilityDate, expirationDate, sellerName, sellerUrl, marketplaceSeller, sellerPrivacyPolicy, sellerTos, shippingPrice, deliveryEstimate, pickupMethod, pickupSla, isDigital, returnPolicy, acceptsReturns, returnDeadlineInDays, acceptsExchanges, isEligibleSearch, isEligibleCheckout, popularityScore, returnRate, warning, warningUrl, ageRestriction, reviewCount, starRating, storeReviewCount, storeStarRating, relatedProductId, relationshipType, targetCountries, storeCountry, qAndA, qandA, reviews, createdAt, updatedAt);
+    return Objects.hash(itemId, isEligibleSearch, isEligibleCheckout, title, description, url, imageUrl, productCategory, brand, material, weight, price, currency, availability, color, gender, ageGroup, shippingPrice, groupId, listingHasVariations, sellerName, sellerUrl, returnPolicy, targetCountries, storeCountry, createdAt, updatedAt);
   }
 
 
@@ -1988,89 +677,31 @@ public class InlineResponse20020Products {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20020Products {\n");
     
-    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (itemId != null) sb.append("    itemId: ").append(SENSITIVE_FIELD_PATTERN.matcher("itemId").matches() ? "[REDACTED]" : toIndentedString(itemId)).append("\n");
+    if (isEligibleSearch != null) sb.append("    isEligibleSearch: ").append(SENSITIVE_FIELD_PATTERN.matcher("isEligibleSearch").matches() ? "[REDACTED]" : toIndentedString(isEligibleSearch)).append("\n");
+    if (isEligibleCheckout != null) sb.append("    isEligibleCheckout: ").append(SENSITIVE_FIELD_PATTERN.matcher("isEligibleCheckout").matches() ? "[REDACTED]" : toIndentedString(isEligibleCheckout)).append("\n");
     if (title != null) sb.append("    title: ").append(SENSITIVE_FIELD_PATTERN.matcher("title").matches() ? "[REDACTED]" : toIndentedString(title)).append("\n");
     if (description != null) sb.append("    description: ").append(SENSITIVE_FIELD_PATTERN.matcher("description").matches() ? "[REDACTED]" : toIndentedString(description)).append("\n");
     if (url != null) sb.append("    url: ").append(SENSITIVE_FIELD_PATTERN.matcher("url").matches() ? "[REDACTED]" : toIndentedString(url)).append("\n");
     if (imageUrl != null) sb.append("    imageUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("imageUrl").matches() ? "[REDACTED]" : toIndentedString(imageUrl)).append("\n");
-    if (additionalImageUrls != null) sb.append("    additionalImageUrls: ").append(SENSITIVE_FIELD_PATTERN.matcher("additionalImageUrls").matches() ? "[REDACTED]" : toIndentedString(additionalImageUrls)).append("\n");
-    if (videoUrl != null) sb.append("    videoUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("videoUrl").matches() ? "[REDACTED]" : toIndentedString(videoUrl)).append("\n");
-    if (model3dUrl != null) sb.append("    model3dUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("model3dUrl").matches() ? "[REDACTED]" : toIndentedString(model3dUrl)).append("\n");
     if (productCategory != null) sb.append("    productCategory: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCategory").matches() ? "[REDACTED]" : toIndentedString(productCategory)).append("\n");
     if (brand != null) sb.append("    brand: ").append(SENSITIVE_FIELD_PATTERN.matcher("brand").matches() ? "[REDACTED]" : toIndentedString(brand)).append("\n");
-    if (gtin != null) sb.append("    gtin: ").append(SENSITIVE_FIELD_PATTERN.matcher("gtin").matches() ? "[REDACTED]" : toIndentedString(gtin)).append("\n");
-    if (mpn != null) sb.append("    mpn: ").append(SENSITIVE_FIELD_PATTERN.matcher("mpn").matches() ? "[REDACTED]" : toIndentedString(mpn)).append("\n");
-    if (condition != null) sb.append("    condition: ").append(SENSITIVE_FIELD_PATTERN.matcher("condition").matches() ? "[REDACTED]" : toIndentedString(condition)).append("\n");
     if (material != null) sb.append("    material: ").append(SENSITIVE_FIELD_PATTERN.matcher("material").matches() ? "[REDACTED]" : toIndentedString(material)).append("\n");
     if (weight != null) sb.append("    weight: ").append(SENSITIVE_FIELD_PATTERN.matcher("weight").matches() ? "[REDACTED]" : toIndentedString(weight)).append("\n");
-    if (dimensions != null) sb.append("    dimensions: ").append(SENSITIVE_FIELD_PATTERN.matcher("dimensions").matches() ? "[REDACTED]" : toIndentedString(dimensions)).append("\n");
-    if (length != null) sb.append("    length: ").append(SENSITIVE_FIELD_PATTERN.matcher("length").matches() ? "[REDACTED]" : toIndentedString(length)).append("\n");
-    if (width != null) sb.append("    width: ").append(SENSITIVE_FIELD_PATTERN.matcher("width").matches() ? "[REDACTED]" : toIndentedString(width)).append("\n");
-    if (height != null) sb.append("    height: ").append(SENSITIVE_FIELD_PATTERN.matcher("height").matches() ? "[REDACTED]" : toIndentedString(height)).append("\n");
-    if (dimensionsUnit != null) sb.append("    dimensionsUnit: ").append(SENSITIVE_FIELD_PATTERN.matcher("dimensionsUnit").matches() ? "[REDACTED]" : toIndentedString(dimensionsUnit)).append("\n");
-    if (itemWeightUnit != null) sb.append("    itemWeightUnit: ").append(SENSITIVE_FIELD_PATTERN.matcher("itemWeightUnit").matches() ? "[REDACTED]" : toIndentedString(itemWeightUnit)).append("\n");
-    if (ageGroup != null) sb.append("    ageGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("ageGroup").matches() ? "[REDACTED]" : toIndentedString(ageGroup)).append("\n");
-    if (color != null) sb.append("    color: ").append(SENSITIVE_FIELD_PATTERN.matcher("color").matches() ? "[REDACTED]" : toIndentedString(color)).append("\n");
-    if (size != null) sb.append("    size: ").append(SENSITIVE_FIELD_PATTERN.matcher("size").matches() ? "[REDACTED]" : toIndentedString(size)).append("\n");
-    if (sizeSystem != null) sb.append("    sizeSystem: ").append(SENSITIVE_FIELD_PATTERN.matcher("sizeSystem").matches() ? "[REDACTED]" : toIndentedString(sizeSystem)).append("\n");
-    if (gender != null) sb.append("    gender: ").append(SENSITIVE_FIELD_PATTERN.matcher("gender").matches() ? "[REDACTED]" : toIndentedString(gender)).append("\n");
-    if (groupId != null) sb.append("    groupId: ").append(SENSITIVE_FIELD_PATTERN.matcher("groupId").matches() ? "[REDACTED]" : toIndentedString(groupId)).append("\n");
-    if (listingHasVariations != null) sb.append("    listingHasVariations: ").append(SENSITIVE_FIELD_PATTERN.matcher("listingHasVariations").matches() ? "[REDACTED]" : toIndentedString(listingHasVariations)).append("\n");
-    if (itemGroupTitle != null) sb.append("    itemGroupTitle: ").append(SENSITIVE_FIELD_PATTERN.matcher("itemGroupTitle").matches() ? "[REDACTED]" : toIndentedString(itemGroupTitle)).append("\n");
-    if (offerId != null) sb.append("    offerId: ").append(SENSITIVE_FIELD_PATTERN.matcher("offerId").matches() ? "[REDACTED]" : toIndentedString(offerId)).append("\n");
-    if (variantDict != null) sb.append("    variantDict: ").append(SENSITIVE_FIELD_PATTERN.matcher("variantDict").matches() ? "[REDACTED]" : toIndentedString(variantDict)).append("\n");
-    if (customVariant1Category != null) sb.append("    customVariant1Category: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant1Category").matches() ? "[REDACTED]" : toIndentedString(customVariant1Category)).append("\n");
-    if (customVariant1Option != null) sb.append("    customVariant1Option: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant1Option").matches() ? "[REDACTED]" : toIndentedString(customVariant1Option)).append("\n");
-    if (customVariant2Category != null) sb.append("    customVariant2Category: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant2Category").matches() ? "[REDACTED]" : toIndentedString(customVariant2Category)).append("\n");
-    if (customVariant2Option != null) sb.append("    customVariant2Option: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant2Option").matches() ? "[REDACTED]" : toIndentedString(customVariant2Option)).append("\n");
-    if (customVariant3Category != null) sb.append("    customVariant3Category: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant3Category").matches() ? "[REDACTED]" : toIndentedString(customVariant3Category)).append("\n");
-    if (customVariant3Option != null) sb.append("    customVariant3Option: ").append(SENSITIVE_FIELD_PATTERN.matcher("customVariant3Option").matches() ? "[REDACTED]" : toIndentedString(customVariant3Option)).append("\n");
     if (price != null) sb.append("    price: ").append(SENSITIVE_FIELD_PATTERN.matcher("price").matches() ? "[REDACTED]" : toIndentedString(price)).append("\n");
     if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
-    if (salePrice != null) sb.append("    salePrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("salePrice").matches() ? "[REDACTED]" : toIndentedString(salePrice)).append("\n");
-    if (salePriceStartDate != null) sb.append("    salePriceStartDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("salePriceStartDate").matches() ? "[REDACTED]" : toIndentedString(salePriceStartDate)).append("\n");
-    if (salePriceEndDate != null) sb.append("    salePriceEndDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("salePriceEndDate").matches() ? "[REDACTED]" : toIndentedString(salePriceEndDate)).append("\n");
-    if (unitPricingMeasure != null) sb.append("    unitPricingMeasure: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitPricingMeasure").matches() ? "[REDACTED]" : toIndentedString(unitPricingMeasure)).append("\n");
-    if (baseMeasure != null) sb.append("    baseMeasure: ").append(SENSITIVE_FIELD_PATTERN.matcher("baseMeasure").matches() ? "[REDACTED]" : toIndentedString(baseMeasure)).append("\n");
-    if (pricingTrend != null) sb.append("    pricingTrend: ").append(SENSITIVE_FIELD_PATTERN.matcher("pricingTrend").matches() ? "[REDACTED]" : toIndentedString(pricingTrend)).append("\n");
-    if (geoPrice != null) sb.append("    geoPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("geoPrice").matches() ? "[REDACTED]" : toIndentedString(geoPrice)).append("\n");
-    if (geoAvailability != null) sb.append("    geoAvailability: ").append(SENSITIVE_FIELD_PATTERN.matcher("geoAvailability").matches() ? "[REDACTED]" : toIndentedString(geoAvailability)).append("\n");
     if (availability != null) sb.append("    availability: ").append(SENSITIVE_FIELD_PATTERN.matcher("availability").matches() ? "[REDACTED]" : toIndentedString(availability)).append("\n");
-    if (availabilityDate != null) sb.append("    availabilityDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("availabilityDate").matches() ? "[REDACTED]" : toIndentedString(availabilityDate)).append("\n");
-    if (expirationDate != null) sb.append("    expirationDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("expirationDate").matches() ? "[REDACTED]" : toIndentedString(expirationDate)).append("\n");
+    if (color != null) sb.append("    color: ").append(SENSITIVE_FIELD_PATTERN.matcher("color").matches() ? "[REDACTED]" : toIndentedString(color)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(SENSITIVE_FIELD_PATTERN.matcher("gender").matches() ? "[REDACTED]" : toIndentedString(gender)).append("\n");
+    if (ageGroup != null) sb.append("    ageGroup: ").append(SENSITIVE_FIELD_PATTERN.matcher("ageGroup").matches() ? "[REDACTED]" : toIndentedString(ageGroup)).append("\n");
+    if (shippingPrice != null) sb.append("    shippingPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingPrice").matches() ? "[REDACTED]" : toIndentedString(shippingPrice)).append("\n");
+    if (groupId != null) sb.append("    groupId: ").append(SENSITIVE_FIELD_PATTERN.matcher("groupId").matches() ? "[REDACTED]" : toIndentedString(groupId)).append("\n");
+    if (listingHasVariations != null) sb.append("    listingHasVariations: ").append(SENSITIVE_FIELD_PATTERN.matcher("listingHasVariations").matches() ? "[REDACTED]" : toIndentedString(listingHasVariations)).append("\n");
     if (sellerName != null) sb.append("    sellerName: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerName").matches() ? "[REDACTED]" : toIndentedString(sellerName)).append("\n");
     if (sellerUrl != null) sb.append("    sellerUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerUrl").matches() ? "[REDACTED]" : toIndentedString(sellerUrl)).append("\n");
-    if (marketplaceSeller != null) sb.append("    marketplaceSeller: ").append(SENSITIVE_FIELD_PATTERN.matcher("marketplaceSeller").matches() ? "[REDACTED]" : toIndentedString(marketplaceSeller)).append("\n");
-    if (sellerPrivacyPolicy != null) sb.append("    sellerPrivacyPolicy: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerPrivacyPolicy").matches() ? "[REDACTED]" : toIndentedString(sellerPrivacyPolicy)).append("\n");
-    if (sellerTos != null) sb.append("    sellerTos: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerTos").matches() ? "[REDACTED]" : toIndentedString(sellerTos)).append("\n");
-    if (shippingPrice != null) sb.append("    shippingPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingPrice").matches() ? "[REDACTED]" : toIndentedString(shippingPrice)).append("\n");
-    if (deliveryEstimate != null) sb.append("    deliveryEstimate: ").append(SENSITIVE_FIELD_PATTERN.matcher("deliveryEstimate").matches() ? "[REDACTED]" : toIndentedString(deliveryEstimate)).append("\n");
-    if (pickupMethod != null) sb.append("    pickupMethod: ").append(SENSITIVE_FIELD_PATTERN.matcher("pickupMethod").matches() ? "[REDACTED]" : toIndentedString(pickupMethod)).append("\n");
-    if (pickupSla != null) sb.append("    pickupSla: ").append(SENSITIVE_FIELD_PATTERN.matcher("pickupSla").matches() ? "[REDACTED]" : toIndentedString(pickupSla)).append("\n");
-    if (isDigital != null) sb.append("    isDigital: ").append(SENSITIVE_FIELD_PATTERN.matcher("isDigital").matches() ? "[REDACTED]" : toIndentedString(isDigital)).append("\n");
     if (returnPolicy != null) sb.append("    returnPolicy: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnPolicy").matches() ? "[REDACTED]" : toIndentedString(returnPolicy)).append("\n");
-    if (acceptsReturns != null) sb.append("    acceptsReturns: ").append(SENSITIVE_FIELD_PATTERN.matcher("acceptsReturns").matches() ? "[REDACTED]" : toIndentedString(acceptsReturns)).append("\n");
-    if (returnDeadlineInDays != null) sb.append("    returnDeadlineInDays: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnDeadlineInDays").matches() ? "[REDACTED]" : toIndentedString(returnDeadlineInDays)).append("\n");
-    if (acceptsExchanges != null) sb.append("    acceptsExchanges: ").append(SENSITIVE_FIELD_PATTERN.matcher("acceptsExchanges").matches() ? "[REDACTED]" : toIndentedString(acceptsExchanges)).append("\n");
-    if (isEligibleSearch != null) sb.append("    isEligibleSearch: ").append(SENSITIVE_FIELD_PATTERN.matcher("isEligibleSearch").matches() ? "[REDACTED]" : toIndentedString(isEligibleSearch)).append("\n");
-    if (isEligibleCheckout != null) sb.append("    isEligibleCheckout: ").append(SENSITIVE_FIELD_PATTERN.matcher("isEligibleCheckout").matches() ? "[REDACTED]" : toIndentedString(isEligibleCheckout)).append("\n");
-    if (popularityScore != null) sb.append("    popularityScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("popularityScore").matches() ? "[REDACTED]" : toIndentedString(popularityScore)).append("\n");
-    if (returnRate != null) sb.append("    returnRate: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnRate").matches() ? "[REDACTED]" : toIndentedString(returnRate)).append("\n");
-    if (warning != null) sb.append("    warning: ").append(SENSITIVE_FIELD_PATTERN.matcher("warning").matches() ? "[REDACTED]" : toIndentedString(warning)).append("\n");
-    if (warningUrl != null) sb.append("    warningUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("warningUrl").matches() ? "[REDACTED]" : toIndentedString(warningUrl)).append("\n");
-    if (ageRestriction != null) sb.append("    ageRestriction: ").append(SENSITIVE_FIELD_PATTERN.matcher("ageRestriction").matches() ? "[REDACTED]" : toIndentedString(ageRestriction)).append("\n");
-    if (reviewCount != null) sb.append("    reviewCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("reviewCount").matches() ? "[REDACTED]" : toIndentedString(reviewCount)).append("\n");
-    if (starRating != null) sb.append("    starRating: ").append(SENSITIVE_FIELD_PATTERN.matcher("starRating").matches() ? "[REDACTED]" : toIndentedString(starRating)).append("\n");
-    if (storeReviewCount != null) sb.append("    storeReviewCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeReviewCount").matches() ? "[REDACTED]" : toIndentedString(storeReviewCount)).append("\n");
-    if (storeStarRating != null) sb.append("    storeStarRating: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeStarRating").matches() ? "[REDACTED]" : toIndentedString(storeStarRating)).append("\n");
-    if (relatedProductId != null) sb.append("    relatedProductId: ").append(SENSITIVE_FIELD_PATTERN.matcher("relatedProductId").matches() ? "[REDACTED]" : toIndentedString(relatedProductId)).append("\n");
-    if (relationshipType != null) sb.append("    relationshipType: ").append(SENSITIVE_FIELD_PATTERN.matcher("relationshipType").matches() ? "[REDACTED]" : toIndentedString(relationshipType)).append("\n");
     if (targetCountries != null) sb.append("    targetCountries: ").append(SENSITIVE_FIELD_PATTERN.matcher("targetCountries").matches() ? "[REDACTED]" : toIndentedString(targetCountries)).append("\n");
     if (storeCountry != null) sb.append("    storeCountry: ").append(SENSITIVE_FIELD_PATTERN.matcher("storeCountry").matches() ? "[REDACTED]" : toIndentedString(storeCountry)).append("\n");
-    if (qAndA != null) sb.append("    qAndA: ").append(SENSITIVE_FIELD_PATTERN.matcher("qAndA").matches() ? "[REDACTED]" : toIndentedString(qAndA)).append("\n");
-    if (qandA != null) sb.append("    qandA: ").append(SENSITIVE_FIELD_PATTERN.matcher("qandA").matches() ? "[REDACTED]" : toIndentedString(qandA)).append("\n");
-    if (reviews != null) sb.append("    reviews: ").append(SENSITIVE_FIELD_PATTERN.matcher("reviews").matches() ? "[REDACTED]" : toIndentedString(reviews)).append("\n");
     if (createdAt != null) sb.append("    createdAt: ").append(SENSITIVE_FIELD_PATTERN.matcher("createdAt").matches() ? "[REDACTED]" : toIndentedString(createdAt)).append("\n");
     if (updatedAt != null) sb.append("    updatedAt: ").append(SENSITIVE_FIELD_PATTERN.matcher("updatedAt").matches() ? "[REDACTED]" : toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -2091,89 +722,31 @@ public class InlineResponse20020Products {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20020Products {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (itemId != null) sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
+    if (isEligibleSearch != null) sb.append("    isEligibleSearch: ").append(toIndentedString(isEligibleSearch)).append("\n");
+    if (isEligibleCheckout != null) sb.append("    isEligibleCheckout: ").append(toIndentedString(isEligibleCheckout)).append("\n");
     if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
     if (imageUrl != null) sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-    if (additionalImageUrls != null) sb.append("    additionalImageUrls: ").append(toIndentedString(additionalImageUrls)).append("\n");
-    if (videoUrl != null) sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
-    if (model3dUrl != null) sb.append("    model3dUrl: ").append(toIndentedString(model3dUrl)).append("\n");
     if (productCategory != null) sb.append("    productCategory: ").append(toIndentedString(productCategory)).append("\n");
     if (brand != null) sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
-    if (gtin != null) sb.append("    gtin: ").append(toIndentedString(gtin)).append("\n");
-    if (mpn != null) sb.append("    mpn: ").append(toIndentedString(mpn)).append("\n");
-    if (condition != null) sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
     if (material != null) sb.append("    material: ").append(toIndentedString(material)).append("\n");
     if (weight != null) sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    if (dimensions != null) sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
-    if (length != null) sb.append("    length: ").append(toIndentedString(length)).append("\n");
-    if (width != null) sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    if (height != null) sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    if (dimensionsUnit != null) sb.append("    dimensionsUnit: ").append(toIndentedString(dimensionsUnit)).append("\n");
-    if (itemWeightUnit != null) sb.append("    itemWeightUnit: ").append(toIndentedString(itemWeightUnit)).append("\n");
-    if (ageGroup != null) sb.append("    ageGroup: ").append(toIndentedString(ageGroup)).append("\n");
-    if (color != null) sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    if (size != null) sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    if (sizeSystem != null) sb.append("    sizeSystem: ").append(toIndentedString(sizeSystem)).append("\n");
-    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    if (groupId != null) sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-    if (listingHasVariations != null) sb.append("    listingHasVariations: ").append(toIndentedString(listingHasVariations)).append("\n");
-    if (itemGroupTitle != null) sb.append("    itemGroupTitle: ").append(toIndentedString(itemGroupTitle)).append("\n");
-    if (offerId != null) sb.append("    offerId: ").append(toIndentedString(offerId)).append("\n");
-    if (variantDict != null) sb.append("    variantDict: ").append(toIndentedString(variantDict)).append("\n");
-    if (customVariant1Category != null) sb.append("    customVariant1Category: ").append(toIndentedString(customVariant1Category)).append("\n");
-    if (customVariant1Option != null) sb.append("    customVariant1Option: ").append(toIndentedString(customVariant1Option)).append("\n");
-    if (customVariant2Category != null) sb.append("    customVariant2Category: ").append(toIndentedString(customVariant2Category)).append("\n");
-    if (customVariant2Option != null) sb.append("    customVariant2Option: ").append(toIndentedString(customVariant2Option)).append("\n");
-    if (customVariant3Category != null) sb.append("    customVariant3Category: ").append(toIndentedString(customVariant3Category)).append("\n");
-    if (customVariant3Option != null) sb.append("    customVariant3Option: ").append(toIndentedString(customVariant3Option)).append("\n");
     if (price != null) sb.append("    price: ").append(toIndentedString(price)).append("\n");
     if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    if (salePrice != null) sb.append("    salePrice: ").append(toIndentedString(salePrice)).append("\n");
-    if (salePriceStartDate != null) sb.append("    salePriceStartDate: ").append(toIndentedString(salePriceStartDate)).append("\n");
-    if (salePriceEndDate != null) sb.append("    salePriceEndDate: ").append(toIndentedString(salePriceEndDate)).append("\n");
-    if (unitPricingMeasure != null) sb.append("    unitPricingMeasure: ").append(toIndentedString(unitPricingMeasure)).append("\n");
-    if (baseMeasure != null) sb.append("    baseMeasure: ").append(toIndentedString(baseMeasure)).append("\n");
-    if (pricingTrend != null) sb.append("    pricingTrend: ").append(toIndentedString(pricingTrend)).append("\n");
-    if (geoPrice != null) sb.append("    geoPrice: ").append(toIndentedString(geoPrice)).append("\n");
-    if (geoAvailability != null) sb.append("    geoAvailability: ").append(toIndentedString(geoAvailability)).append("\n");
     if (availability != null) sb.append("    availability: ").append(toIndentedString(availability)).append("\n");
-    if (availabilityDate != null) sb.append("    availabilityDate: ").append(toIndentedString(availabilityDate)).append("\n");
-    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    if (color != null) sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    if (ageGroup != null) sb.append("    ageGroup: ").append(toIndentedString(ageGroup)).append("\n");
+    if (shippingPrice != null) sb.append("    shippingPrice: ").append(toIndentedString(shippingPrice)).append("\n");
+    if (groupId != null) sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+    if (listingHasVariations != null) sb.append("    listingHasVariations: ").append(toIndentedString(listingHasVariations)).append("\n");
     if (sellerName != null) sb.append("    sellerName: ").append(toIndentedString(sellerName)).append("\n");
     if (sellerUrl != null) sb.append("    sellerUrl: ").append(toIndentedString(sellerUrl)).append("\n");
-    if (marketplaceSeller != null) sb.append("    marketplaceSeller: ").append(toIndentedString(marketplaceSeller)).append("\n");
-    if (sellerPrivacyPolicy != null) sb.append("    sellerPrivacyPolicy: ").append(toIndentedString(sellerPrivacyPolicy)).append("\n");
-    if (sellerTos != null) sb.append("    sellerTos: ").append(toIndentedString(sellerTos)).append("\n");
-    if (shippingPrice != null) sb.append("    shippingPrice: ").append(toIndentedString(shippingPrice)).append("\n");
-    if (deliveryEstimate != null) sb.append("    deliveryEstimate: ").append(toIndentedString(deliveryEstimate)).append("\n");
-    if (pickupMethod != null) sb.append("    pickupMethod: ").append(toIndentedString(pickupMethod)).append("\n");
-    if (pickupSla != null) sb.append("    pickupSla: ").append(toIndentedString(pickupSla)).append("\n");
-    if (isDigital != null) sb.append("    isDigital: ").append(toIndentedString(isDigital)).append("\n");
     if (returnPolicy != null) sb.append("    returnPolicy: ").append(toIndentedString(returnPolicy)).append("\n");
-    if (acceptsReturns != null) sb.append("    acceptsReturns: ").append(toIndentedString(acceptsReturns)).append("\n");
-    if (returnDeadlineInDays != null) sb.append("    returnDeadlineInDays: ").append(toIndentedString(returnDeadlineInDays)).append("\n");
-    if (acceptsExchanges != null) sb.append("    acceptsExchanges: ").append(toIndentedString(acceptsExchanges)).append("\n");
-    if (isEligibleSearch != null) sb.append("    isEligibleSearch: ").append(toIndentedString(isEligibleSearch)).append("\n");
-    if (isEligibleCheckout != null) sb.append("    isEligibleCheckout: ").append(toIndentedString(isEligibleCheckout)).append("\n");
-    if (popularityScore != null) sb.append("    popularityScore: ").append(toIndentedString(popularityScore)).append("\n");
-    if (returnRate != null) sb.append("    returnRate: ").append(toIndentedString(returnRate)).append("\n");
-    if (warning != null) sb.append("    warning: ").append(toIndentedString(warning)).append("\n");
-    if (warningUrl != null) sb.append("    warningUrl: ").append(toIndentedString(warningUrl)).append("\n");
-    if (ageRestriction != null) sb.append("    ageRestriction: ").append(toIndentedString(ageRestriction)).append("\n");
-    if (reviewCount != null) sb.append("    reviewCount: ").append(toIndentedString(reviewCount)).append("\n");
-    if (starRating != null) sb.append("    starRating: ").append(toIndentedString(starRating)).append("\n");
-    if (storeReviewCount != null) sb.append("    storeReviewCount: ").append(toIndentedString(storeReviewCount)).append("\n");
-    if (storeStarRating != null) sb.append("    storeStarRating: ").append(toIndentedString(storeStarRating)).append("\n");
-    if (relatedProductId != null) sb.append("    relatedProductId: ").append(toIndentedString(relatedProductId)).append("\n");
-    if (relationshipType != null) sb.append("    relationshipType: ").append(toIndentedString(relationshipType)).append("\n");
     if (targetCountries != null) sb.append("    targetCountries: ").append(toIndentedString(targetCountries)).append("\n");
     if (storeCountry != null) sb.append("    storeCountry: ").append(toIndentedString(storeCountry)).append("\n");
-    if (qAndA != null) sb.append("    qAndA: ").append(toIndentedString(qAndA)).append("\n");
-    if (qandA != null) sb.append("    qandA: ").append(toIndentedString(qandA)).append("\n");
-    if (reviews != null) sb.append("    reviews: ").append(toIndentedString(reviews)).append("\n");
     if (createdAt != null) sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     if (updatedAt != null) sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

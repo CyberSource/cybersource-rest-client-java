@@ -30,6 +30,7 @@ import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
 import Model.Ptsv2paymentsMerchantInformation;
+import Model.Ptsv2paymentsOrderHistory;
 import Model.Ptsv2paymentsOrderInformation;
 import Model.Ptsv2paymentsPaymentInformation;
 import Model.Ptsv2paymentsPointOfSaleInformation;
@@ -74,6 +75,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("orderInformation")
   private Ptsv2paymentsOrderInformation orderInformation = null;
+
+  @SerializedName("orderHistory")
+  private List<Ptsv2paymentsOrderHistory> orderHistory = null;
 
   @SerializedName("buyerInformation")
   private Ptsv2paymentsBuyerInformation buyerInformation = null;
@@ -235,6 +239,32 @@ public class CreatePaymentRequest {
 
   public void setOrderInformation(Ptsv2paymentsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
+  }
+
+  public CreatePaymentRequest orderHistory(List<Ptsv2paymentsOrderHistory> orderHistory) {
+    this.orderHistory = orderHistory;
+    return this;
+  }
+
+  public CreatePaymentRequest addOrderHistoryItem(Ptsv2paymentsOrderHistory orderHistoryItem) {
+    if (this.orderHistory == null) {
+      this.orderHistory = new ArrayList<Ptsv2paymentsOrderHistory>();
+    }
+    this.orderHistory.add(orderHistoryItem);
+    return this;
+  }
+
+   /**
+   * Array of the buyer&#39;s previous orders. 
+   * @return orderHistory
+  **/
+  @ApiModelProperty(value = "Array of the buyer's previous orders. ")
+  public List<Ptsv2paymentsOrderHistory> getOrderHistory() {
+    return orderHistory;
+  }
+
+  public void setOrderHistory(List<Ptsv2paymentsOrderHistory> orderHistory) {
+    this.orderHistory = orderHistory;
   }
 
   public CreatePaymentRequest buyerInformation(Ptsv2paymentsBuyerInformation buyerInformation) {
@@ -692,6 +722,7 @@ public class CreatePaymentRequest {
         Objects.equals(this.issuerInformation, createPaymentRequest.issuerInformation) &&
         Objects.equals(this.paymentInformation, createPaymentRequest.paymentInformation) &&
         Objects.equals(this.orderInformation, createPaymentRequest.orderInformation) &&
+        Objects.equals(this.orderHistory, createPaymentRequest.orderHistory) &&
         Objects.equals(this.buyerInformation, createPaymentRequest.buyerInformation) &&
         Objects.equals(this.senderInformation, createPaymentRequest.senderInformation) &&
         Objects.equals(this.recipientInformation, createPaymentRequest.recipientInformation) &&
@@ -720,7 +751,7 @@ public class CreatePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, senderInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, unscheduledPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, orderHistory, buyerInformation, senderInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, unscheduledPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -752,6 +783,7 @@ public class CreatePaymentRequest {
     if (issuerInformation != null) sb.append("    issuerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("issuerInformation").matches() ? "[REDACTED]" : toIndentedString(issuerInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (orderHistory != null) sb.append("    orderHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderHistory").matches() ? "[REDACTED]" : toIndentedString(orderHistory)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("senderInformation").matches() ? "[REDACTED]" : toIndentedString(senderInformation)).append("\n");
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("recipientInformation").matches() ? "[REDACTED]" : toIndentedString(recipientInformation)).append("\n");
@@ -799,6 +831,7 @@ public class CreatePaymentRequest {
     if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (orderHistory != null) sb.append("    orderHistory: ").append(toIndentedString(orderHistory)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");

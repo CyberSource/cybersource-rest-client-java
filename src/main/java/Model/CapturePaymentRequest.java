@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
+import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
@@ -27,7 +28,6 @@ import Model.Ptsv2paymentsidcapturesInstallmentInformation;
 import Model.Ptsv2paymentsidcapturesMerchantInformation;
 import Model.Ptsv2paymentsidcapturesOrderInformation;
 import Model.Ptsv2paymentsidcapturesPaymentInformation;
-import Model.Ptsv2paymentsidcapturesPointOfSaleInformation;
 import Model.Ptsv2paymentsidcapturesProcessingInformation;
 import Model.Ptsv2paymentsidcapturesProcessorInformation;
 import com.google.gson.TypeAdapter;
@@ -71,7 +71,7 @@ public class CapturePaymentRequest {
   private Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private Ptsv2paymentsidcapturesPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
@@ -235,7 +235,7 @@ public class CapturePaymentRequest {
     this.aggregatorInformation = aggregatorInformation;
   }
 
-  public CapturePaymentRequest pointOfSaleInformation(Ptsv2paymentsidcapturesPointOfSaleInformation pointOfSaleInformation) {
+  public CapturePaymentRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -245,11 +245,11 @@ public class CapturePaymentRequest {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidcapturesPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(Ptsv2paymentsidcapturesPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 

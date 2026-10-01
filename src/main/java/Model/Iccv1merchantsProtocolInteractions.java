@@ -43,7 +43,7 @@ public class Iccv1merchantsProtocolInteractions {
   private String documentationUrl = null;
 
   @SerializedName("metadata")
-  private Map<String, String> metadata = null;
+  private Map<String, Object> metadata = null;
 
   public Iccv1merchantsProtocolInteractions protocol(String protocol) {
     this.protocol = protocol;
@@ -99,14 +99,14 @@ public class Iccv1merchantsProtocolInteractions {
     this.documentationUrl = documentationUrl;
   }
 
-  public Iccv1merchantsProtocolInteractions metadata(Map<String, String> metadata) {
+  public Iccv1merchantsProtocolInteractions metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public Iccv1merchantsProtocolInteractions putMetadataItem(String key, String metadataItem) {
+  public Iccv1merchantsProtocolInteractions putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
-      this.metadata = new HashMap<String, String>();
+      this.metadata = new HashMap<String, Object>();
     }
     this.metadata.put(key, metadataItem);
     return this;
@@ -117,11 +117,11 @@ public class Iccv1merchantsProtocolInteractions {
    * @return metadata
   **/
   @ApiModelProperty(example = "{\"version\":\"1.0\",\"authScheme\":\"oauth2\"}", value = "Optional metadata (max 10KB)")
-  public Map<String, String> getMetadata() {
+  public Map<String, Object> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

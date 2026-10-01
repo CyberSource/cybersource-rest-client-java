@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
 import Model.Ptsv2voidsProcessingInformation;
@@ -44,6 +45,9 @@ public class MitVoidRequest {
 
   @SerializedName("processingInformation")
   private Ptsv2voidsProcessingInformation processingInformation = null;
+
+  @SerializedName("pointOfSaleInformation")
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   public MitVoidRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -117,6 +121,24 @@ public class MitVoidRequest {
     this.processingInformation = processingInformation;
   }
 
+  public MitVoidRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+    return this;
+  }
+
+   /**
+   * Get pointOfSaleInformation
+   * @return pointOfSaleInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
+    return pointOfSaleInformation;
+  }
+
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +152,13 @@ public class MitVoidRequest {
     return Objects.equals(this.clientReferenceInformation, mitVoidRequest.clientReferenceInformation) &&
         Objects.equals(this.paymentInformation, mitVoidRequest.paymentInformation) &&
         Objects.equals(this.orderInformation, mitVoidRequest.orderInformation) &&
-        Objects.equals(this.processingInformation, mitVoidRequest.processingInformation);
+        Objects.equals(this.processingInformation, mitVoidRequest.processingInformation) &&
+        Objects.equals(this.pointOfSaleInformation, mitVoidRequest.pointOfSaleInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, processingInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, processingInformation, pointOfSaleInformation);
   }
 
 
@@ -166,6 +189,7 @@ public class MitVoidRequest {
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleInformation").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,6 +212,7 @@ public class MitVoidRequest {
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

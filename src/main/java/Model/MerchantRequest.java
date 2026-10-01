@@ -93,10 +93,10 @@ public class MerchantRequest {
   }
 
    /**
-   * Base merchant URL (must use HTTPS)
+   * Base URL of the merchant&#39;s domain. Must use HTTPS and be unique across all registrations.
    * @return merchantUrl
   **/
-  @ApiModelProperty(required = true, value = "Base merchant URL (must use HTTPS)")
+  @ApiModelProperty(required = true, value = "Base URL of the merchant's domain. Must use HTTPS and be unique across all registrations.")
   public String getMerchantUrl() {
     return merchantUrl;
   }
@@ -111,10 +111,10 @@ public class MerchantRequest {
   }
 
    /**
-   * Visa Merchant ID — unique identifier
+   * Visa Merchant ID (VMID). Must be unique — raises 409 if already in use.
    * @return vmid
   **/
-  @ApiModelProperty(value = "Visa Merchant ID — unique identifier")
+  @ApiModelProperty(value = "Visa Merchant ID (VMID). Must be unique — raises 409 if already in use.")
   public String getVmid() {
     return vmid;
   }
@@ -129,10 +129,10 @@ public class MerchantRequest {
   }
 
    /**
-   * Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * Transaction processing indicator:  - ***TAP*** — Trusted Agent Protocol  - ***ACG*** — Agentic Checkout Gateway  - ***BOTH*** — supports both TAP and ACG   Possible values: - TAP - ACG - BOTH
    * @return indicator
   **/
-  @ApiModelProperty(required = true, value = "Transaction processing type  Possible values: - TAP - ACG - BOTH")
+  @ApiModelProperty(required = true, value = "Transaction processing indicator:  - ***TAP*** — Trusted Agent Protocol  - ***ACG*** — Agentic Checkout Gateway  - ***BOTH*** — supports both TAP and ACG   Possible values: - TAP - ACG - BOTH")
   public String getIndicator() {
     return indicator;
   }
@@ -147,10 +147,10 @@ public class MerchantRequest {
   }
 
    /**
-   * Authentication cryptogram type (defaults to DAVV)  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation. Defaults to ***DAVV*** if not provided.  Possible values: - TAVV - DAVV
    * @return cryptogramType
   **/
-  @ApiModelProperty(value = "Authentication cryptogram type (defaults to DAVV)  Possible values: - TAVV - DAVV")
+  @ApiModelProperty(value = "Authentication cryptogram type used for payment credential generation. Defaults to ***DAVV*** if not provided.  Possible values: - TAVV - DAVV")
   public String getCryptogramType() {
     return cryptogramType;
   }
@@ -165,10 +165,10 @@ public class MerchantRequest {
   }
 
    /**
-   * Credential delivery format (defaults to UNENCRYPTED)  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an &#x60;encryptionKey&#x60;. Defaults to ***UNENCRYPTED***.  Possible values: - ENCRYPTED - UNENCRYPTED
    * @return paymentPayloadType
   **/
-  @ApiModelProperty(value = "Credential delivery format (defaults to UNENCRYPTED)  Possible values: - ENCRYPTED - UNENCRYPTED")
+  @ApiModelProperty(value = "Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an `encryptionKey`. Defaults to ***UNENCRYPTED***.  Possible values: - ENCRYPTED - UNENCRYPTED")
   public String getPaymentPayloadType() {
     return paymentPayloadType;
   }
@@ -209,10 +209,10 @@ public class MerchantRequest {
   }
 
    /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \&quot;Visa\&quot;).
    * @return acceptanceRelationships
   **/
-  @ApiModelProperty(value = "List of acceptance network relationships")
+  @ApiModelProperty(value = "List of payment network acceptance relationships (e.g., \"Visa\").")
   public List<String> getAcceptanceRelationships() {
     return acceptanceRelationships;
   }
@@ -235,10 +235,10 @@ public class MerchantRequest {
   }
 
    /**
-   * List of protocol configurations (ucp, acp, x402) with HTTPS URLs
+   * List of protocol interaction configurations defining the merchant&#39;s endpoint for each supported protocol (ucp, acp, x402).
    * @return protocolInteractions
   **/
-  @ApiModelProperty(value = "List of protocol configurations (ucp, acp, x402) with HTTPS URLs")
+  @ApiModelProperty(value = "List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).")
   public List<Iccv1merchantsProtocolInteractions> getProtocolInteractions() {
     return protocolInteractions;
   }

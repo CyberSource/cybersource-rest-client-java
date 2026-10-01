@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * UnifiedriskTransactionAdditionalFees
@@ -31,7 +30,7 @@ import java.math.BigDecimal;
 
 public class UnifiedriskTransactionAdditionalFees {
   @SerializedName("value")
-  private BigDecimal value = null;
+  private String value = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -40,7 +39,7 @@ public class UnifiedriskTransactionAdditionalFees {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private BigDecimal baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("merchantCurrency")
   private String merchantCurrency = null;
@@ -48,7 +47,7 @@ public class UnifiedriskTransactionAdditionalFees {
   @SerializedName("merchantValue")
   private String merchantValue = null;
 
-  public UnifiedriskTransactionAdditionalFees value(BigDecimal value) {
+  public UnifiedriskTransactionAdditionalFees value(String value) {
     this.value = value;
     return this;
   }
@@ -57,12 +56,12 @@ public class UnifiedriskTransactionAdditionalFees {
    * Additional fees amount
    * @return value
   **/
-  @ApiModelProperty(example = "5.0", value = "Additional fees amount")
-  public BigDecimal getValue() {
+  @ApiModelProperty(example = "5", value = "Additional fees amount")
+  public String getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -102,7 +101,7 @@ public class UnifiedriskTransactionAdditionalFees {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskTransactionAdditionalFees baseValue(BigDecimal baseValue) {
+  public UnifiedriskTransactionAdditionalFees baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -112,11 +111,11 @@ public class UnifiedriskTransactionAdditionalFees {
    * @return baseValue
   **/
   @ApiModelProperty(example = "4.25", value = "Additional fees in base currency")
-  public BigDecimal getBaseValue() {
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(BigDecimal baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 

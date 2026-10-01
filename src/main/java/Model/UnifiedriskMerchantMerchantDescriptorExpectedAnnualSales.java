@@ -37,7 +37,7 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private Integer baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -46,10 +46,10 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
   private String merchantCurrency = null;
 
   @SerializedName("merchantValue")
-  private Integer merchantValue = null;
+  private String merchantValue = null;
 
   @SerializedName("value")
-  private Integer value = null;
+  private String value = null;
 
   @SerializedName("expectedAnnualVolume")
   private Integer expectedAnnualVolume = null;
@@ -90,7 +90,7 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales baseValue(Integer baseValue) {
+  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -100,11 +100,11 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
    * @return baseValue
   **/
   @ApiModelProperty(value = "Expected annual sales value in the base currency, in minor units")
-  public Integer getBaseValue() {
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(Integer baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 
@@ -144,7 +144,7 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
     this.merchantCurrency = merchantCurrency;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales merchantValue(Integer merchantValue) {
+  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales merchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
     return this;
   }
@@ -154,15 +154,15 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
    * @return merchantValue
   **/
   @ApiModelProperty(value = "Expected annual sales in the merchant's local currency, in minor units")
-  public Integer getMerchantValue() {
+  public String getMerchantValue() {
     return merchantValue;
   }
 
-  public void setMerchantValue(Integer merchantValue) {
+  public void setMerchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales value(Integer value) {
+  public UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales value(String value) {
     this.value = value;
     return this;
   }
@@ -172,11 +172,11 @@ public class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales {
    * @return value
   **/
   @ApiModelProperty(value = "Expected annual sales amount in the specified currency, in minor units")
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(Integer value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

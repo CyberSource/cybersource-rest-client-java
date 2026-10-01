@@ -52,28 +52,28 @@ public class InlineResponse20017 {
   private AcpCompleteCheckoutResponseBuyer buyer = null;
 
   @SerializedName("line_items")
-  private List<InlineResponse20112LineItems> lineItems = null;
+  private List<InlineResponse20112LineItems> lineItems = new ArrayList<InlineResponse20112LineItems>();
 
   @SerializedName("fulfillment_address")
   private InlineResponse20017FulfillmentAddress fulfillmentAddress = null;
 
   @SerializedName("fulfillment_options")
-  private List<InlineResponse20112FulfillmentOptions> fulfillmentOptions = null;
+  private List<InlineResponse20112FulfillmentOptions> fulfillmentOptions = new ArrayList<InlineResponse20112FulfillmentOptions>();
 
   @SerializedName("fulfillment_option_id")
   private String fulfillmentOptionId = null;
 
   @SerializedName("totals")
-  private List<InlineResponse20112Totals> totals = null;
+  private List<InlineResponse20112Totals> totals = new ArrayList<InlineResponse20112Totals>();
 
   @SerializedName("order")
   private InlineResponse20017Order order = null;
 
   @SerializedName("messages")
-  private List<InlineResponse20112Messages> messages = null;
+  private List<InlineResponse20112Messages> messages = new ArrayList<InlineResponse20112Messages>();
 
   @SerializedName("links")
-  private List<InlineResponse20112Links> links = null;
+  private List<InlineResponse20112Links> links = new ArrayList<InlineResponse20112Links>();
 
   public InlineResponse20017 id(String id) {
     this.id = id;
@@ -84,7 +84,7 @@ public class InlineResponse20017 {
    * The checkout session identifier.
    * @return id
   **/
-  @ApiModelProperty(example = "sess_abc123", value = "The checkout session identifier.")
+  @ApiModelProperty(example = "sess_abc123", required = true, value = "The checkout session identifier.")
   public String getId() {
     return id;
   }
@@ -102,7 +102,7 @@ public class InlineResponse20017 {
    * Will always be &#x60;completed&#x60; on a successful response.  Possible values: - completed
    * @return status
   **/
-  @ApiModelProperty(value = "Will always be `completed` on a successful response.  Possible values: - completed")
+  @ApiModelProperty(required = true, value = "Will always be `completed` on a successful response.  Possible values: - completed")
   public String getStatus() {
     return status;
   }
@@ -120,7 +120,7 @@ public class InlineResponse20017 {
    * ISO 4217 lowercase currency code.
    * @return currency
   **/
-  @ApiModelProperty(example = "usd", value = "ISO 4217 lowercase currency code.")
+  @ApiModelProperty(example = "usd", required = true, value = "ISO 4217 lowercase currency code.")
   public String getCurrency() {
     return currency;
   }
@@ -138,7 +138,7 @@ public class InlineResponse20017 {
    * Get buyer
    * @return buyer
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public AcpCompleteCheckoutResponseBuyer getBuyer() {
     return buyer;
   }
@@ -153,9 +153,6 @@ public class InlineResponse20017 {
   }
 
   public InlineResponse20017 addLineItemsItem(InlineResponse20112LineItems lineItemsItem) {
-    if (this.lineItems == null) {
-      this.lineItems = new ArrayList<InlineResponse20112LineItems>();
-    }
     this.lineItems.add(lineItemsItem);
     return this;
   }
@@ -164,7 +161,7 @@ public class InlineResponse20017 {
    * Final line items with confirmed pricing.
    * @return lineItems
   **/
-  @ApiModelProperty(value = "Final line items with confirmed pricing.")
+  @ApiModelProperty(required = true, value = "Final line items with confirmed pricing.")
   public List<InlineResponse20112LineItems> getLineItems() {
     return lineItems;
   }
@@ -197,9 +194,6 @@ public class InlineResponse20017 {
   }
 
   public InlineResponse20017 addFulfillmentOptionsItem(InlineResponse20112FulfillmentOptions fulfillmentOptionsItem) {
-    if (this.fulfillmentOptions == null) {
-      this.fulfillmentOptions = new ArrayList<InlineResponse20112FulfillmentOptions>();
-    }
     this.fulfillmentOptions.add(fulfillmentOptionsItem);
     return this;
   }
@@ -208,7 +202,7 @@ public class InlineResponse20017 {
    * Get fulfillmentOptions
    * @return fulfillmentOptions
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<InlineResponse20112FulfillmentOptions> getFulfillmentOptions() {
     return fulfillmentOptions;
   }
@@ -226,7 +220,7 @@ public class InlineResponse20017 {
    * ID of the selected fulfillment option.
    * @return fulfillmentOptionId
   **/
-  @ApiModelProperty(value = "ID of the selected fulfillment option.")
+  @ApiModelProperty(required = true, value = "ID of the selected fulfillment option.")
   public String getFulfillmentOptionId() {
     return fulfillmentOptionId;
   }
@@ -241,9 +235,6 @@ public class InlineResponse20017 {
   }
 
   public InlineResponse20017 addTotalsItem(InlineResponse20112Totals totalsItem) {
-    if (this.totals == null) {
-      this.totals = new ArrayList<InlineResponse20112Totals>();
-    }
     this.totals.add(totalsItem);
     return this;
   }
@@ -252,7 +243,7 @@ public class InlineResponse20017 {
    * Final order totals as typed total lines. All amounts in minor units (cents).
    * @return totals
   **/
-  @ApiModelProperty(value = "Final order totals as typed total lines. All amounts in minor units (cents).")
+  @ApiModelProperty(required = true, value = "Final order totals as typed total lines. All amounts in minor units (cents).")
   public List<InlineResponse20112Totals> getTotals() {
     return totals;
   }
@@ -270,7 +261,7 @@ public class InlineResponse20017 {
    * Get order
    * @return order
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public InlineResponse20017Order getOrder() {
     return order;
   }
@@ -285,9 +276,6 @@ public class InlineResponse20017 {
   }
 
   public InlineResponse20017 addMessagesItem(InlineResponse20112Messages messagesItem) {
-    if (this.messages == null) {
-      this.messages = new ArrayList<InlineResponse20112Messages>();
-    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -296,7 +284,7 @@ public class InlineResponse20017 {
    * Informational or error messages from the merchant backend.
    * @return messages
   **/
-  @ApiModelProperty(value = "Informational or error messages from the merchant backend.")
+  @ApiModelProperty(required = true, value = "Informational or error messages from the merchant backend.")
   public List<InlineResponse20112Messages> getMessages() {
     return messages;
   }
@@ -311,9 +299,6 @@ public class InlineResponse20017 {
   }
 
   public InlineResponse20017 addLinksItem(InlineResponse20112Links linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<InlineResponse20112Links>();
-    }
     this.links.add(linksItem);
     return this;
   }
@@ -322,7 +307,7 @@ public class InlineResponse20017 {
    * Related resource links from the merchant (e.g. terms of use, privacy policy).
    * @return links
   **/
-  @ApiModelProperty(value = "Related resource links from the merchant (e.g. terms of use, privacy policy).")
+  @ApiModelProperty(required = true, value = "Related resource links from the merchant (e.g. terms of use, privacy policy).")
   public List<InlineResponse20112Links> getLinks() {
     return links;
   }

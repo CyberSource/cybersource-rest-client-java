@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Iccv1merchantsApiIntegrations;
 import Model.Iccv1merchantsProtocolInteractions;
-import Model.Iccv1merchantsWebIntegrations;
+import Model.MerchantRegistrationResponse201ApiIntegrations;
+import Model.MerchantRegistrationResponse201WebIntegrations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,10 +54,10 @@ public class MerchantUpdate {
   private List<Iccv1merchantsProtocolInteractions> protocolInteractions = null;
 
   @SerializedName("webIntegrations")
-  private Iccv1merchantsWebIntegrations webIntegrations = null;
+  private MerchantRegistrationResponse201WebIntegrations webIntegrations = null;
 
   @SerializedName("apiIntegrations")
-  private Iccv1merchantsApiIntegrations apiIntegrations = null;
+  private MerchantRegistrationResponse201ApiIntegrations apiIntegrations = null;
 
   public MerchantUpdate merchantName(String merchantName) {
     this.merchantName = merchantName;
@@ -83,10 +83,10 @@ public class MerchantUpdate {
   }
 
    /**
-   * Base merchant URL (must use HTTPS)
+   * Base URL of the merchant&#39;s domain. Must use HTTPS and be unique — raises 409 if already registered.
    * @return merchantUrl
   **/
-  @ApiModelProperty(value = "Base merchant URL (must use HTTPS)")
+  @ApiModelProperty(value = "Base URL of the merchant's domain. Must use HTTPS and be unique — raises 409 if already registered.")
   public String getMerchantUrl() {
     return merchantUrl;
   }
@@ -101,10 +101,10 @@ public class MerchantUpdate {
   }
 
    /**
-   * Authentication cryptogram type  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation.  Possible values: - TAVV - DAVV
    * @return cryptogramType
   **/
-  @ApiModelProperty(value = "Authentication cryptogram type  Possible values: - TAVV - DAVV")
+  @ApiModelProperty(value = "Authentication cryptogram type used for payment credential generation.  Possible values: - TAVV - DAVV")
   public String getCryptogramType() {
     return cryptogramType;
   }
@@ -119,10 +119,10 @@ public class MerchantUpdate {
   }
 
    /**
-   * Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an active encryption key. Returns 400 if no active key exists.  Possible values: - ENCRYPTED - UNENCRYPTED
    * @return paymentPayloadType
   **/
-  @ApiModelProperty(value = "Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED")
+  @ApiModelProperty(value = "Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an active encryption key. Returns 400 if no active key exists.  Possible values: - ENCRYPTED - UNENCRYPTED")
   public String getPaymentPayloadType() {
     return paymentPayloadType;
   }
@@ -145,10 +145,10 @@ public class MerchantUpdate {
   }
 
    /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \&quot;Visa\&quot;).
    * @return acceptanceRelationships
   **/
-  @ApiModelProperty(value = "List of acceptance network relationships")
+  @ApiModelProperty(value = "List of payment network acceptance relationships (e.g., \"Visa\").")
   public List<String> getAcceptanceRelationships() {
     return acceptanceRelationships;
   }
@@ -171,10 +171,10 @@ public class MerchantUpdate {
   }
 
    /**
-   * List of protocol configurations
+   * List of protocol interaction configurations defining the merchant&#39;s endpoint for each supported protocol (ucp, acp, x402).
    * @return protocolInteractions
   **/
-  @ApiModelProperty(value = "List of protocol configurations")
+  @ApiModelProperty(value = "List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).")
   public List<Iccv1merchantsProtocolInteractions> getProtocolInteractions() {
     return protocolInteractions;
   }
@@ -183,7 +183,7 @@ public class MerchantUpdate {
     this.protocolInteractions = protocolInteractions;
   }
 
-  public MerchantUpdate webIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
+  public MerchantUpdate webIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
     return this;
   }
@@ -193,15 +193,15 @@ public class MerchantUpdate {
    * @return webIntegrations
   **/
   @ApiModelProperty(value = "")
-  public Iccv1merchantsWebIntegrations getWebIntegrations() {
+  public MerchantRegistrationResponse201WebIntegrations getWebIntegrations() {
     return webIntegrations;
   }
 
-  public void setWebIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
+  public void setWebIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
   }
 
-  public MerchantUpdate apiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
+  public MerchantUpdate apiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
     return this;
   }
@@ -211,11 +211,11 @@ public class MerchantUpdate {
    * @return apiIntegrations
   **/
   @ApiModelProperty(value = "")
-  public Iccv1merchantsApiIntegrations getApiIntegrations() {
+  public MerchantRegistrationResponse201ApiIntegrations getApiIntegrations() {
     return apiIntegrations;
   }
 
-  public void setApiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
+  public void setApiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
   }
 

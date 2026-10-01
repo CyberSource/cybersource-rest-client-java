@@ -25,6 +25,7 @@ import Model.Ptsv2paymentreferencesProcessingInformation;
 import Model.Ptsv2paymentreferencesTravelInformation;
 import Model.Ptsv2paymentreferencesUserInterface;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsOrderHistory;
 import Model.Ptsv2refreshpaymentstatusidClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -53,6 +54,9 @@ public class CreateSessionReq {
 
   @SerializedName("orderInformation")
   private Ptsv2paymentreferencesOrderInformation orderInformation = null;
+
+  @SerializedName("orderHistory")
+  private List<Ptsv2paymentsOrderHistory> orderHistory = null;
 
   @SerializedName("buyerInformation")
   private Ptsv2paymentreferencesBuyerInformation buyerInformation = null;
@@ -145,6 +149,32 @@ public class CreateSessionReq {
 
   public void setOrderInformation(Ptsv2paymentreferencesOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
+  }
+
+  public CreateSessionReq orderHistory(List<Ptsv2paymentsOrderHistory> orderHistory) {
+    this.orderHistory = orderHistory;
+    return this;
+  }
+
+  public CreateSessionReq addOrderHistoryItem(Ptsv2paymentsOrderHistory orderHistoryItem) {
+    if (this.orderHistory == null) {
+      this.orderHistory = new ArrayList<Ptsv2paymentsOrderHistory>();
+    }
+    this.orderHistory.add(orderHistoryItem);
+    return this;
+  }
+
+   /**
+   * Array of the buyer&#39;s previous orders. 
+   * @return orderHistory
+  **/
+  @ApiModelProperty(value = "Array of the buyer's previous orders. ")
+  public List<Ptsv2paymentsOrderHistory> getOrderHistory() {
+    return orderHistory;
+  }
+
+  public void setOrderHistory(List<Ptsv2paymentsOrderHistory> orderHistory) {
+    this.orderHistory = orderHistory;
   }
 
   public CreateSessionReq buyerInformation(Ptsv2paymentreferencesBuyerInformation buyerInformation) {
@@ -295,6 +325,7 @@ public class CreateSessionReq {
         Objects.equals(this.processingInformation, createSessionReq.processingInformation) &&
         Objects.equals(this.paymentInformation, createSessionReq.paymentInformation) &&
         Objects.equals(this.orderInformation, createSessionReq.orderInformation) &&
+        Objects.equals(this.orderHistory, createSessionReq.orderHistory) &&
         Objects.equals(this.buyerInformation, createSessionReq.buyerInformation) &&
         Objects.equals(this.deviceInformation, createSessionReq.deviceInformation) &&
         Objects.equals(this.merchantInformation, createSessionReq.merchantInformation) &&
@@ -306,7 +337,7 @@ public class CreateSessionReq {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, userInterface, merchantDefinedInformation, agreementInformation, travelInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, orderHistory, buyerInformation, deviceInformation, merchantInformation, userInterface, merchantDefinedInformation, agreementInformation, travelInformation);
   }
 
 
@@ -337,6 +368,7 @@ public class CreateSessionReq {
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (orderHistory != null) sb.append("    orderHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderHistory").matches() ? "[REDACTED]" : toIndentedString(orderHistory)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
     if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
@@ -366,6 +398,7 @@ public class CreateSessionReq {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (orderHistory != null) sb.append("    orderHistory: ").append(toIndentedString(orderHistory)).append("\n");
     if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");

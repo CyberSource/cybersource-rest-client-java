@@ -39,6 +39,9 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
 
+  @SerializedName("freeText")
+  private String freeText = null;
+
   public PtsV2PaymentsPost201ResponsePointOfSaleInformation emv(PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
@@ -93,6 +96,24 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     this.terminalId = terminalId;
   }
 
+  public PtsV2PaymentsPost201ResponsePointOfSaleInformation freeText(String freeText) {
+    this.freeText = freeText;
+    return this;
+  }
+
+   /**
+   * The issuers must use DE 123 (Receipt Free Text) to respond with free-text messages, if the transaction requires this message to be displayed on the POS device. The issuer must request their Customer Implementation Service agent to enable DE 123 for this use, as it is not enabled as a default feature. When enabled, consider the test case on DE 123 for this use (Issuer Mastercard and Debit Mastercard - MSR Product and Services - Receipt Free Text (Peru) - Authorization Requests). 
+   * @return freeText
+  **/
+  @ApiModelProperty(value = "The issuers must use DE 123 (Receipt Free Text) to respond with free-text messages, if the transaction requires this message to be displayed on the POS device. The issuer must request their Customer Implementation Service agent to enable DE 123 for this use, as it is not enabled as a default feature. When enabled, consider the test case on DE 123 for this use (Issuer Mastercard and Debit Mastercard - MSR Product and Services - Receipt Free Text (Peru) - Authorization Requests). ")
+  public String getFreeText() {
+    return freeText;
+  }
+
+  public void setFreeText(String freeText) {
+    this.freeText = freeText;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +126,13 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     PtsV2PaymentsPost201ResponsePointOfSaleInformation ptsV2PaymentsPost201ResponsePointOfSaleInformation = (PtsV2PaymentsPost201ResponsePointOfSaleInformation) o;
     return Objects.equals(this.emv, ptsV2PaymentsPost201ResponsePointOfSaleInformation.emv) &&
         Objects.equals(this.amexCapnData, ptsV2PaymentsPost201ResponsePointOfSaleInformation.amexCapnData) &&
-        Objects.equals(this.terminalId, ptsV2PaymentsPost201ResponsePointOfSaleInformation.terminalId);
+        Objects.equals(this.terminalId, ptsV2PaymentsPost201ResponsePointOfSaleInformation.terminalId) &&
+        Objects.equals(this.freeText, ptsV2PaymentsPost201ResponsePointOfSaleInformation.freeText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emv, amexCapnData, terminalId);
+    return Objects.hash(emv, amexCapnData, terminalId, freeText);
   }
 
 
@@ -140,6 +162,7 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     if (emv != null) sb.append("    emv: ").append(SENSITIVE_FIELD_PATTERN.matcher("emv").matches() ? "[REDACTED]" : toIndentedString(emv)).append("\n");
     if (amexCapnData != null) sb.append("    amexCapnData: ").append(SENSITIVE_FIELD_PATTERN.matcher("amexCapnData").matches() ? "[REDACTED]" : toIndentedString(amexCapnData)).append("\n");
     if (terminalId != null) sb.append("    terminalId: ").append(SENSITIVE_FIELD_PATTERN.matcher("terminalId").matches() ? "[REDACTED]" : toIndentedString(terminalId)).append("\n");
+    if (freeText != null) sb.append("    freeText: ").append(SENSITIVE_FIELD_PATTERN.matcher("freeText").matches() ? "[REDACTED]" : toIndentedString(freeText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -161,6 +184,7 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     if (amexCapnData != null) sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
     if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (freeText != null) sb.append("    freeText: ").append(toIndentedString(freeText)).append("\n");
     sb.append("}");
     return sb.toString();
   }

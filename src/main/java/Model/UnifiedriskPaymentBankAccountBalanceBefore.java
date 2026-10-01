@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * UnifiedriskPaymentBankAccountBalanceBefore
@@ -31,7 +30,7 @@ import java.math.BigDecimal;
 
 public class UnifiedriskPaymentBankAccountBalanceBefore {
   @SerializedName("value")
-  private BigDecimal value = null;
+  private String value = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -40,7 +39,7 @@ public class UnifiedriskPaymentBankAccountBalanceBefore {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private BigDecimal baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("merchantCurrency")
   private String merchantCurrency = null;
@@ -48,7 +47,7 @@ public class UnifiedriskPaymentBankAccountBalanceBefore {
   @SerializedName("merchantValue")
   private String merchantValue = null;
 
-  public UnifiedriskPaymentBankAccountBalanceBefore value(BigDecimal value) {
+  public UnifiedriskPaymentBankAccountBalanceBefore value(String value) {
     this.value = value;
     return this;
   }
@@ -57,12 +56,12 @@ public class UnifiedriskPaymentBankAccountBalanceBefore {
    * Account balance before transaction    
    * @return value
   **/
-  @ApiModelProperty(example = "1000.0", value = "Account balance before transaction    ")
-  public BigDecimal getValue() {
+  @ApiModelProperty(example = "1000", value = "Account balance before transaction    ")
+  public String getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -102,7 +101,7 @@ public class UnifiedriskPaymentBankAccountBalanceBefore {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskPaymentBankAccountBalanceBefore baseValue(BigDecimal baseValue) {
+  public UnifiedriskPaymentBankAccountBalanceBefore baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -111,12 +110,12 @@ public class UnifiedriskPaymentBankAccountBalanceBefore {
    * Balance in base currency    
    * @return baseValue
   **/
-  @ApiModelProperty(example = "850.0", value = "Balance in base currency    ")
-  public BigDecimal getBaseValue() {
+  @ApiModelProperty(example = "850", value = "Balance in base currency    ")
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(BigDecimal baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 

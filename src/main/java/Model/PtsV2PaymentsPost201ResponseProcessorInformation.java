@@ -183,6 +183,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("cedpVerifiedIndicator")
   private String cedpVerifiedIndicator = null;
 
+  @SerializedName("transactionLinkIdentifier")
+  private String transactionLinkIdentifier = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -1047,6 +1050,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.cedpVerifiedIndicator = cedpVerifiedIndicator;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation transactionLinkIdentifier(String transactionLinkIdentifier) {
+    this.transactionLinkIdentifier = transactionLinkIdentifier;
+    return this;
+  }
+
+   /**
+   * Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0). 
+   * @return transactionLinkIdentifier
+  **/
+  @ApiModelProperty(value = "Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0). ")
+  public String getTransactionLinkIdentifier() {
+    return transactionLinkIdentifier;
+  }
+
+  public void setTransactionLinkIdentifier(String transactionLinkIdentifier) {
+    this.transactionLinkIdentifier = transactionLinkIdentifier;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1104,12 +1125,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus) &&
         Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction) &&
         Objects.equals(this.network, ptsV2PaymentsPost201ResponseProcessorInformation.network) &&
-        Objects.equals(this.cedpVerifiedIndicator, ptsV2PaymentsPost201ResponseProcessorInformation.cedpVerifiedIndicator);
+        Objects.equals(this.cedpVerifiedIndicator, ptsV2PaymentsPost201ResponseProcessorInformation.cedpVerifiedIndicator) &&
+        Objects.equals(this.transactionLinkIdentifier, ptsV2PaymentsPost201ResponseProcessorInformation.transactionLinkIdentifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, responseSourceCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction, network, cedpVerifiedIndicator);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, responseSourceCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction, network, cedpVerifiedIndicator, transactionLinkIdentifier);
   }
 
 
@@ -1184,6 +1206,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantRiskPrediction").matches() ? "[REDACTED]" : toIndentedString(merchantRiskPrediction)).append("\n");
     if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
     if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("cedpVerifiedIndicator").matches() ? "[REDACTED]" : toIndentedString(cedpVerifiedIndicator)).append("\n");
+    if (transactionLinkIdentifier != null) sb.append("    transactionLinkIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionLinkIdentifier").matches() ? "[REDACTED]" : toIndentedString(transactionLinkIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1250,6 +1273,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
     if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     if (cedpVerifiedIndicator != null) sb.append("    cedpVerifiedIndicator: ").append(toIndentedString(cedpVerifiedIndicator)).append("\n");
+    if (transactionLinkIdentifier != null) sb.append("    transactionLinkIdentifier: ").append(toIndentedString(transactionLinkIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

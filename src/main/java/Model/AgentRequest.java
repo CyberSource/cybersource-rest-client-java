@@ -25,9 +25,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Request object for registering a new AI agent in the VARS.
@@ -51,7 +49,7 @@ public class AgentRequest {
   private String tokenRequestorId = null;
 
   @SerializedName("agentMetadata")
-  private Map<String, String> agentMetadata = null;
+  private Object agentMetadata = null;
 
   @SerializedName("keys")
   private List<Iccv1agentsKeys> keys = null;
@@ -62,10 +60,10 @@ public class AgentRequest {
   }
 
    /**
-   * Agent name
+   * Display name for the agent
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "Agent name")
+  @ApiModelProperty(required = true, value = "Display name for the agent")
   public String getName() {
     return name;
   }
@@ -80,10 +78,10 @@ public class AgentRequest {
   }
 
    /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent&#39;s home domain. Must be unique — registration raises 409 if it already exists.
    * @return domain
   **/
-  @ApiModelProperty(required = true, value = "Agent domain URL")
+  @ApiModelProperty(required = true, value = "Fully-qualified HTTPS URL of the agent's home domain. Must be unique — registration raises 409 if it already exists.")
   public String getDomain() {
     return domain;
   }
@@ -98,10 +96,10 @@ public class AgentRequest {
   }
 
    /**
-   * Agent description
+   * Description of the agent&#39;s purpose or capabilities
    * @return description
   **/
-  @ApiModelProperty(required = true, value = "Agent description")
+  @ApiModelProperty(required = true, value = "Description of the agent's purpose or capabilities")
   public String getDescription() {
     return description;
   }
@@ -116,10 +114,10 @@ public class AgentRequest {
   }
 
    /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @return contactEmail
   **/
-  @ApiModelProperty(required = true, value = "Contact email")
+  @ApiModelProperty(required = true, value = "Contact email for the team or individual responsible for this agent")
   public String getContactEmail() {
     return contactEmail;
   }
@@ -134,10 +132,10 @@ public class AgentRequest {
   }
 
    /**
-   * Unique token requestor identifier
+   * Token Requestor ID (TRID) assigned by Visa
    * @return tokenRequestorId
   **/
-  @ApiModelProperty(required = true, value = "Unique token requestor identifier")
+  @ApiModelProperty(required = true, value = "Token Requestor ID (TRID) assigned by Visa")
   public String getTokenRequestorId() {
     return tokenRequestorId;
   }
@@ -146,29 +144,21 @@ public class AgentRequest {
     this.tokenRequestorId = tokenRequestorId;
   }
 
-  public AgentRequest agentMetadata(Map<String, String> agentMetadata) {
+  public AgentRequest agentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
     return this;
   }
 
-  public AgentRequest putAgentMetadataItem(String key, String agentMetadataItem) {
-    if (this.agentMetadata == null) {
-      this.agentMetadata = new HashMap<String, String>();
-    }
-    this.agentMetadata.put(key, agentMetadataItem);
-    return this;
-  }
-
    /**
-   * Optional metadata (e.g., framework, version)
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
    * @return agentMetadata
   **/
-  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Optional metadata (e.g., framework, version)")
-  public Map<String, String> getAgentMetadata() {
+  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.")
+  public Object getAgentMetadata() {
     return agentMetadata;
   }
 
-  public void setAgentMetadata(Map<String, String> agentMetadata) {
+  public void setAgentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
   }
 
@@ -186,10 +176,10 @@ public class AgentRequest {
   }
 
    /**
-   * Optional list of keys to create with the agent
+   * Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate. 
    * @return keys
   **/
-  @ApiModelProperty(value = "Optional list of keys to create with the agent")
+  @ApiModelProperty(value = "Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate. ")
   public List<Iccv1agentsKeys> getKeys() {
     return keys;
   }

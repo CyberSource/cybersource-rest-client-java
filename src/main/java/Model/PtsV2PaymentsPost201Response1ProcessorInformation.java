@@ -52,6 +52,9 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   @SerializedName("sellerProtection")
   private ProcessorInformationSellerProtection sellerProtection = null;
 
+  @SerializedName("paymentUrl")
+  private String paymentUrl = null;
+
   @SerializedName("avs")
   private PtsV2PaymentsPost201Response1ProcessorInformationAvs avs = null;
 
@@ -181,6 +184,24 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     this.sellerProtection = sellerProtection;
   }
 
+  public PtsV2PaymentsPost201Response1ProcessorInformation paymentUrl(String paymentUrl) {
+    this.paymentUrl = paymentUrl;
+    return this;
+  }
+
+   /**
+   * Direct the customer to this URL to complete the payment.
+   * @return paymentUrl
+  **/
+  @ApiModelProperty(value = "Direct the customer to this URL to complete the payment.")
+  public String getPaymentUrl() {
+    return paymentUrl;
+  }
+
+  public void setPaymentUrl(String paymentUrl) {
+    this.paymentUrl = paymentUrl;
+  }
+
   public PtsV2PaymentsPost201Response1ProcessorInformation avs(PtsV2PaymentsPost201Response1ProcessorInformationAvs avs) {
     this.avs = avs;
     return this;
@@ -216,12 +237,13 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
         Objects.equals(this.responseDetails, ptsV2PaymentsPost201Response1ProcessorInformation.responseDetails) &&
         Objects.equals(this.responseCode, ptsV2PaymentsPost201Response1ProcessorInformation.responseCode) &&
         Objects.equals(this.sellerProtection, ptsV2PaymentsPost201Response1ProcessorInformation.sellerProtection) &&
+        Objects.equals(this.paymentUrl, ptsV2PaymentsPost201Response1ProcessorInformation.paymentUrl) &&
         Objects.equals(this.avs, ptsV2PaymentsPost201Response1ProcessorInformation.avs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, tradeNumber, rawResponse, rawResponseLocal, responseDetails, responseCode, sellerProtection, avs);
+    return Objects.hash(transactionId, tradeNumber, rawResponse, rawResponseLocal, responseDetails, responseCode, sellerProtection, paymentUrl, avs);
   }
 
 
@@ -255,6 +277,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
     if (responseCode != null) sb.append("    responseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseCode").matches() ? "[REDACTED]" : toIndentedString(responseCode)).append("\n");
     if (sellerProtection != null) sb.append("    sellerProtection: ").append(SENSITIVE_FIELD_PATTERN.matcher("sellerProtection").matches() ? "[REDACTED]" : toIndentedString(sellerProtection)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentUrl").matches() ? "[REDACTED]" : toIndentedString(paymentUrl)).append("\n");
     if (avs != null) sb.append("    avs: ").append(SENSITIVE_FIELD_PATTERN.matcher("avs").matches() ? "[REDACTED]" : toIndentedString(avs)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -281,6 +304,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
     if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
     if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
     sb.append("}");
     return sb.toString();

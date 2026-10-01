@@ -70,7 +70,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Unique fulfillment option ID. Pass as &#x60;fulfillment_option_id&#x60; to select it.
    * @return id
   **/
-  @ApiModelProperty(example = "fulfillment-standard-001", value = "Unique fulfillment option ID. Pass as `fulfillment_option_id` to select it.")
+  @ApiModelProperty(example = "fulfillment-standard-001", required = true, value = "Unique fulfillment option ID. Pass as `fulfillment_option_id` to select it.")
   public String getId() {
     return id;
   }
@@ -88,7 +88,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Fulfillment method type.  Possible values: - shipping - digital
    * @return type
   **/
-  @ApiModelProperty(example = "shipping", value = "Fulfillment method type.  Possible values: - shipping - digital")
+  @ApiModelProperty(example = "shipping", required = true, value = "Fulfillment method type.  Possible values: - shipping - digital")
   public String getType() {
     return type;
   }
@@ -106,7 +106,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Display name for this fulfillment option.
    * @return title
   **/
-  @ApiModelProperty(example = "Standard Shipping", value = "Display name for this fulfillment option.")
+  @ApiModelProperty(example = "Standard Shipping", required = true, value = "Display name for this fulfillment option.")
   public String getTitle() {
     return title;
   }
@@ -196,7 +196,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Shipping cost before tax, in minor units.
    * @return subtotal
   **/
-  @ApiModelProperty(example = "599", value = "Shipping cost before tax, in minor units.")
+  @ApiModelProperty(example = "599", required = true, value = "Shipping cost before tax, in minor units.")
   public Integer getSubtotal() {
     return subtotal;
   }
@@ -214,7 +214,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Tax on shipping cost, in minor units.
    * @return tax
   **/
-  @ApiModelProperty(example = "50", value = "Tax on shipping cost, in minor units.")
+  @ApiModelProperty(example = "50", required = true, value = "Tax on shipping cost, in minor units.")
   public Integer getTax() {
     return tax;
   }
@@ -232,7 +232,7 @@ public class InlineResponse20112FulfillmentOptions {
    * Total shipping cost including tax, in minor units.
    * @return total
   **/
-  @ApiModelProperty(example = "649", value = "Total shipping cost including tax, in minor units.")
+  @ApiModelProperty(example = "649", required = true, value = "Total shipping cost including tax, in minor units.")
   public Integer getTotal() {
     return total;
   }

@@ -48,7 +48,7 @@ public class InlineResponse20112Totals {
    * Total type: - &#x60;items_base_amount&#x60; — sum of all line item base amounts before adjustments - &#x60;subtotal&#x60; — total after discounts - &#x60;tax&#x60; — total tax - &#x60;fulfillment&#x60; — shipping or delivery cost - &#x60;total&#x60; — final amount charged   Possible values: - items_base_amount - subtotal - tax - fulfillment - total
    * @return type
   **/
-  @ApiModelProperty(example = "subtotal", value = "Total type: - `items_base_amount` — sum of all line item base amounts before adjustments - `subtotal` — total after discounts - `tax` — total tax - `fulfillment` — shipping or delivery cost - `total` — final amount charged   Possible values: - items_base_amount - subtotal - tax - fulfillment - total")
+  @ApiModelProperty(example = "subtotal", required = true, value = "Total type: - `items_base_amount` — sum of all line item base amounts before adjustments - `subtotal` — total after discounts - `tax` — total tax - `fulfillment` — shipping or delivery cost - `total` — final amount charged   Possible values: - items_base_amount - subtotal - tax - fulfillment - total")
   public String getType() {
     return type;
   }
@@ -66,7 +66,7 @@ public class InlineResponse20112Totals {
    * Human-readable label for display in checkout UI.
    * @return displayText
   **/
-  @ApiModelProperty(example = "Subtotal", value = "Human-readable label for display in checkout UI.")
+  @ApiModelProperty(example = "Subtotal", required = true, value = "Human-readable label for display in checkout UI.")
   public String getDisplayText() {
     return displayText;
   }
@@ -84,7 +84,7 @@ public class InlineResponse20112Totals {
    * Amount in minor units (cents). Example: 39998 &#x3D; $399.98 USD.
    * @return amount
   **/
-  @ApiModelProperty(example = "39998", value = "Amount in minor units (cents). Example: 39998 = $399.98 USD.")
+  @ApiModelProperty(example = "39998", required = true, value = "Amount in minor units (cents). Example: 39998 = $399.98 USD.")
   public Integer getAmount() {
     return amount;
   }

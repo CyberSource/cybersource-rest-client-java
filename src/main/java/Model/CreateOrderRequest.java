@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2intentsBuyerInformation;
 import Model.Ptsv2intentsClientReferenceInformation;
 import Model.Ptsv2intentsEventInformation;
 import Model.Ptsv2intentsMerchantInformation;
@@ -52,6 +53,9 @@ public class CreateOrderRequest {
 
   @SerializedName("orderInformation")
   private Ptsv2intentsOrderInformation orderInformation = null;
+
+  @SerializedName("buyerInformation")
+  private Ptsv2intentsBuyerInformation buyerInformation = null;
 
   @SerializedName("senderInformation")
   private Ptsv2intentsSenderInformation senderInformation = null;
@@ -155,6 +159,24 @@ public class CreateOrderRequest {
     this.orderInformation = orderInformation;
   }
 
+  public CreateOrderRequest buyerInformation(Ptsv2intentsBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+    return this;
+  }
+
+   /**
+   * Get buyerInformation
+   * @return buyerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2intentsBuyerInformation getBuyerInformation() {
+    return buyerInformation;
+  }
+
+  public void setBuyerInformation(Ptsv2intentsBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+  }
+
   public CreateOrderRequest senderInformation(Ptsv2intentsSenderInformation senderInformation) {
     this.senderInformation = senderInformation;
     return this;
@@ -242,6 +264,7 @@ public class CreateOrderRequest {
         Objects.equals(this.merchantInformation, createOrderRequest.merchantInformation) &&
         Objects.equals(this.paymentInformation, createOrderRequest.paymentInformation) &&
         Objects.equals(this.orderInformation, createOrderRequest.orderInformation) &&
+        Objects.equals(this.buyerInformation, createOrderRequest.buyerInformation) &&
         Objects.equals(this.senderInformation, createOrderRequest.senderInformation) &&
         Objects.equals(this.eventInformation, createOrderRequest.eventInformation) &&
         Objects.equals(this.travelInformation, createOrderRequest.travelInformation) &&
@@ -250,7 +273,7 @@ public class CreateOrderRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, merchantInformation, paymentInformation, orderInformation, senderInformation, eventInformation, travelInformation, recipientInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, merchantInformation, paymentInformation, orderInformation, buyerInformation, senderInformation, eventInformation, travelInformation, recipientInformation);
   }
 
 
@@ -282,6 +305,7 @@ public class CreateOrderRequest {
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerInformation").matches() ? "[REDACTED]" : toIndentedString(buyerInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("senderInformation").matches() ? "[REDACTED]" : toIndentedString(senderInformation)).append("\n");
     if (eventInformation != null) sb.append("    eventInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventInformation").matches() ? "[REDACTED]" : toIndentedString(eventInformation)).append("\n");
     if (travelInformation != null) sb.append("    travelInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelInformation").matches() ? "[REDACTED]" : toIndentedString(travelInformation)).append("\n");
@@ -309,6 +333,7 @@ public class CreateOrderRequest {
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     if (eventInformation != null) sb.append("    eventInformation: ").append(toIndentedString(eventInformation)).append("\n");
     if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");

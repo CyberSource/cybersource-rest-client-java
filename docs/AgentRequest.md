@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Agent name | 
-**domain** | **String** | Agent domain URL | 
-**description** | **String** | Agent description | 
-**contactEmail** | **String** | Contact email | 
-**tokenRequestorId** | **String** | Unique token requestor identifier | 
-**agentMetadata** | **Map&lt;String, String&gt;** | Optional metadata (e.g., framework, version) |  [optional]
-**keys** | [**List&lt;Iccv1agentsKeys&gt;**](Iccv1agentsKeys.md) | Optional list of keys to create with the agent |  [optional]
+**name** | **String** | Display name for the agent | 
+**domain** | **String** | Fully-qualified HTTPS URL of the agent&#39;s home domain. Must be unique — registration raises 409 if it already exists. | 
+**description** | **String** | Description of the agent&#39;s purpose or capabilities | 
+**contactEmail** | **String** | Contact email for the team or individual responsible for this agent | 
+**tokenRequestorId** | **String** | Token Requestor ID (TRID) assigned by Visa | 
+**agentMetadata** | **Object** | Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB. |  [optional]
+**keys** | [**List&lt;Iccv1agentsKeys&gt;**](Iccv1agentsKeys.md) | Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.  |  [optional]
 
 
 

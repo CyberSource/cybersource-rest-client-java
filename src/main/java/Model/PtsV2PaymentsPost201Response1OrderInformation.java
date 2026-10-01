@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201Response1OrderInformationAmountDetails;
 import Model.PtsV2PaymentsPost201Response1OrderInformationBillTo;
+import Model.PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor;
 import Model.PtsV2PaymentsPost201Response1OrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,6 +33,18 @@ import java.io.IOException;
  */
 
 public class PtsV2PaymentsPost201Response1OrderInformation {
+  @SerializedName("referenceId")
+  private String referenceId = null;
+
+  @SerializedName("description")
+  private String description = null;
+
+  @SerializedName("customId")
+  private String customId = null;
+
+  @SerializedName("merchantDescriptor")
+  private PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor = null;
+
   @SerializedName("billTo")
   private PtsV2PaymentsPost201Response1OrderInformationBillTo billTo = null;
 
@@ -40,6 +53,78 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
 
   @SerializedName("amountDetails")
   private PtsV2PaymentsPost201Response1OrderInformationAmountDetails amountDetails = null;
+
+  public PtsV2PaymentsPost201Response1OrderInformation referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+
+   /**
+   * Merchant-generated order reference or tracking number for the payment. 
+   * @return referenceId
+  **/
+  @ApiModelProperty(value = "Merchant-generated order reference or tracking number for the payment. ")
+  public String getReferenceId() {
+    return referenceId;
+  }
+
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+  public PtsV2PaymentsPost201Response1OrderInformation description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Description of the order, as provided by the merchant in the original request. 
+   * @return description
+  **/
+  @ApiModelProperty(value = "Description of the order, as provided by the merchant in the original request. ")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public PtsV2PaymentsPost201Response1OrderInformation customId(String customId) {
+    this.customId = customId;
+    return this;
+  }
+
+   /**
+   * Merchant-defined custom identifier for the order. 
+   * @return customId
+  **/
+  @ApiModelProperty(value = "Merchant-defined custom identifier for the order. ")
+  public String getCustomId() {
+    return customId;
+  }
+
+  public void setCustomId(String customId) {
+    this.customId = customId;
+  }
+
+  public PtsV2PaymentsPost201Response1OrderInformation merchantDescriptor(PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
+    return this;
+  }
+
+   /**
+   * Get merchantDescriptor
+   * @return merchantDescriptor
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor getMerchantDescriptor() {
+    return merchantDescriptor;
+  }
+
+  public void setMerchantDescriptor(PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
+  }
 
   public PtsV2PaymentsPost201Response1OrderInformation billTo(PtsV2PaymentsPost201Response1OrderInformationBillTo billTo) {
     this.billTo = billTo;
@@ -105,14 +190,18 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
       return false;
     }
     PtsV2PaymentsPost201Response1OrderInformation ptsV2PaymentsPost201Response1OrderInformation = (PtsV2PaymentsPost201Response1OrderInformation) o;
-    return Objects.equals(this.billTo, ptsV2PaymentsPost201Response1OrderInformation.billTo) &&
+    return Objects.equals(this.referenceId, ptsV2PaymentsPost201Response1OrderInformation.referenceId) &&
+        Objects.equals(this.description, ptsV2PaymentsPost201Response1OrderInformation.description) &&
+        Objects.equals(this.customId, ptsV2PaymentsPost201Response1OrderInformation.customId) &&
+        Objects.equals(this.merchantDescriptor, ptsV2PaymentsPost201Response1OrderInformation.merchantDescriptor) &&
+        Objects.equals(this.billTo, ptsV2PaymentsPost201Response1OrderInformation.billTo) &&
         Objects.equals(this.shipTo, ptsV2PaymentsPost201Response1OrderInformation.shipTo) &&
         Objects.equals(this.amountDetails, ptsV2PaymentsPost201Response1OrderInformation.amountDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billTo, shipTo, amountDetails);
+    return Objects.hash(referenceId, description, customId, merchantDescriptor, billTo, shipTo, amountDetails);
   }
 
 
@@ -139,6 +228,10 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1OrderInformation {\n");
     
+    if (referenceId != null) sb.append("    referenceId: ").append(SENSITIVE_FIELD_PATTERN.matcher("referenceId").matches() ? "[REDACTED]" : toIndentedString(referenceId)).append("\n");
+    if (description != null) sb.append("    description: ").append(SENSITIVE_FIELD_PATTERN.matcher("description").matches() ? "[REDACTED]" : toIndentedString(description)).append("\n");
+    if (customId != null) sb.append("    customId: ").append(SENSITIVE_FIELD_PATTERN.matcher("customId").matches() ? "[REDACTED]" : toIndentedString(customId)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDescriptor").matches() ? "[REDACTED]" : toIndentedString(merchantDescriptor)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
     if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
     if (amountDetails != null) sb.append("    amountDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountDetails").matches() ? "[REDACTED]" : toIndentedString(amountDetails)).append("\n");
@@ -160,6 +253,10 @@ public class PtsV2PaymentsPost201Response1OrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1OrderInformation {\n");
     
+    if (referenceId != null) sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (customId != null) sb.append("    customId: ").append(toIndentedString(customId)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");

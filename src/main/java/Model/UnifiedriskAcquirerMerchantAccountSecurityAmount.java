@@ -34,7 +34,7 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private Integer baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -43,10 +43,10 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
   private String merchantCurrency = null;
 
   @SerializedName("merchantValue")
-  private Integer merchantValue = null;
+  private String merchantValue = null;
 
   @SerializedName("value")
-  private Integer value = null;
+  private String value = null;
 
   public UnifiedriskAcquirerMerchantAccountSecurityAmount baseCurrency(String baseCurrency) {
     this.baseCurrency = baseCurrency;
@@ -66,7 +66,7 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskAcquirerMerchantAccountSecurityAmount baseValue(Integer baseValue) {
+  public UnifiedriskAcquirerMerchantAccountSecurityAmount baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -76,11 +76,11 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
    * @return baseValue
   **/
   @ApiModelProperty(value = "The monetary value of the security deposit or holdback amount expressed in the base currency, typically in minor units (e.g., cents)")
-  public Integer getBaseValue() {
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(Integer baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 
@@ -120,7 +120,7 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
     this.merchantCurrency = merchantCurrency;
   }
 
-  public UnifiedriskAcquirerMerchantAccountSecurityAmount merchantValue(Integer merchantValue) {
+  public UnifiedriskAcquirerMerchantAccountSecurityAmount merchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
     return this;
   }
@@ -130,15 +130,15 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
    * @return merchantValue
   **/
   @ApiModelProperty(value = "The security deposit or holdback amount expressed in the merchant's local currency, in minor units")
-  public Integer getMerchantValue() {
+  public String getMerchantValue() {
     return merchantValue;
   }
 
-  public void setMerchantValue(Integer merchantValue) {
+  public void setMerchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
   }
 
-  public UnifiedriskAcquirerMerchantAccountSecurityAmount value(Integer value) {
+  public UnifiedriskAcquirerMerchantAccountSecurityAmount value(String value) {
     this.value = value;
     return this;
   }
@@ -148,11 +148,11 @@ public class UnifiedriskAcquirerMerchantAccountSecurityAmount {
    * @return value
   **/
   @ApiModelProperty(value = "The security deposit or holdback amount in the transaction currency, in minor units (e.g., cents)")
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(Integer value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

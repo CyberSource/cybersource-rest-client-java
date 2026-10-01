@@ -26,9 +26,9 @@ import java.io.IOException;
 import org.joda.time.DateTime;
 
 /**
- * Request object for updating an existing agent key. All fields are optional.
+ * All fields are optional. publicKey and algorithm must be provided together when either is updated.
  */
-@ApiModel(description = "Request object for updating an existing agent key. All fields are optional.")
+@ApiModel(description = "All fields are optional. publicKey and algorithm must be provided together when either is updated.")
 
 public class KeyUpdate {
   @SerializedName("keyName")
@@ -49,10 +49,10 @@ public class KeyUpdate {
   }
 
    /**
-   * Unique identifier for the key
+   * Unique  name for this key within the agent. Must be unique per agent.
    * @return keyName
   **/
-  @ApiModelProperty(value = "Unique identifier for the key")
+  @ApiModelProperty(value = "Unique  name for this key within the agent. Must be unique per agent.")
   public String getKeyName() {
     return keyName;
   }
@@ -67,10 +67,10 @@ public class KeyUpdate {
   }
 
    /**
-   * Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.
+   * Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK. Must be provided together with &#x60;algorithm&#x60;.
    * @return publicKey
   **/
-  @ApiModelProperty(value = "Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.")
+  @ApiModelProperty(value = "Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK. Must be provided together with `algorithm`.")
   public String getPublicKey() {
     return publicKey;
   }
@@ -85,10 +85,10 @@ public class KeyUpdate {
   }
 
    /**
-   * Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA
+   * HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must be provided together with &#x60;publicKey&#x60;:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519
    * @return algorithm
   **/
-  @ApiModelProperty(value = "Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA")
+  @ApiModelProperty(value = "HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must be provided together with `publicKey`:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519")
   public String getAlgorithm() {
     return algorithm;
   }
@@ -103,10 +103,10 @@ public class KeyUpdate {
   }
 
    /**
-   * Key expiration date in UTC
+   * Key expiration date-time in UTC.
    * @return expirationDate
   **/
-  @ApiModelProperty(value = "Key expiration date in UTC")
+  @ApiModelProperty(value = "Key expiration date-time in UTC.")
   public DateTime getExpirationDate() {
     return expirationDate;
   }
