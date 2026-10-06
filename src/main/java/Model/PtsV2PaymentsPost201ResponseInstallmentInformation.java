@@ -107,6 +107,24 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
   @SerializedName("firstInstallmentDate")
   private String firstInstallmentDate = null;
 
+  @SerializedName("gracePeriodDuration")
+  private String gracePeriodDuration = null;
+
+  @SerializedName("paymentType")
+  private String paymentType = null;
+
+  @SerializedName("amountType")
+  private String amountType = null;
+
+  @SerializedName("percentageDiscount")
+  private String percentageDiscount = null;
+
+  @SerializedName("interestIndicator")
+  private String interestIndicator = null;
+
+  @SerializedName("financingCurrency")
+  private String financingCurrency = null;
+
   public PtsV2PaymentsPost201ResponseInstallmentInformation additionalCosts(String additionalCosts) {
     this.additionalCosts = additionalCosts;
     return this;
@@ -577,6 +595,114 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     this.firstInstallmentDate = firstInstallmentDate;
   }
 
+  public PtsV2PaymentsPost201ResponseInstallmentInformation gracePeriodDuration(String gracePeriodDuration) {
+    this.gracePeriodDuration = gracePeriodDuration;
+    return this;
+  }
+
+   /**
+   * Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece. 
+   * @return gracePeriodDuration
+  **/
+  @ApiModelProperty(value = "Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece. ")
+  public String getGracePeriodDuration() {
+    return gracePeriodDuration;
+  }
+
+  public void setGracePeriodDuration(String gracePeriodDuration) {
+    this.gracePeriodDuration = gracePeriodDuration;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation paymentType(String paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Payment plan for the installments. This field is supported only for installment payments on Visa Platform Connect, RuPay and SPG-KSA seamless flow.  Possible values for a standing-instruction (SI) merchant-initiated transaction (MIT) with Diners Club or Mastercard in India or with an India-issued card: - 1: SI with a fixed amount. - 2: SI with a maximum amount. - 3: Other kind of SI.  Possible values for a type of Installment transaction for on-soil transaction in Kingdom of Saudi Arabia - 1: Registration or first transaction. - 2: Subsequent transaction.  Possible values for other kinds of installment payments: - 0 (default): Regular installment. This value is not allowed for airline transactions. - 1: Installment payment with down payment. - 2: Installment payment without down payment. This value is supported only for airline transactions. - 3: Installment payment; down payment and boarding fee will follow. This value is supported only for airline transactions. - 4: Down payment only; regular installment payment will follow. - 5: Boarding fee only. This value is supported only for airline transactions. - 6: SI de-registration on RuPay for the payer authentication seamless flow. 
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "Payment plan for the installments. This field is supported only for installment payments on Visa Platform Connect, RuPay and SPG-KSA seamless flow.  Possible values for a standing-instruction (SI) merchant-initiated transaction (MIT) with Diners Club or Mastercard in India or with an India-issued card: - 1: SI with a fixed amount. - 2: SI with a maximum amount. - 3: Other kind of SI.  Possible values for a type of Installment transaction for on-soil transaction in Kingdom of Saudi Arabia - 1: Registration or first transaction. - 2: Subsequent transaction.  Possible values for other kinds of installment payments: - 0 (default): Regular installment. This value is not allowed for airline transactions. - 1: Installment payment with down payment. - 2: Installment payment without down payment. This value is supported only for airline transactions. - 3: Installment payment; down payment and boarding fee will follow. This value is supported only for airline transactions. - 4: Down payment only; regular installment payment will follow. - 5: Boarding fee only. This value is supported only for airline transactions. - 6: SI de-registration on RuPay for the payer authentication seamless flow. ")
+  public String getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(String paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation amountType(String amountType) {
+    this.amountType = amountType;
+    return this;
+  }
+
+   /**
+   * Valid Values from Issuer - Percentage &#x3D; 999v99 Example P123.12 - Amount &#x3D; 9(10)v99 Example A123.12 
+   * @return amountType
+  **/
+  @ApiModelProperty(value = "Valid Values from Issuer - Percentage = 999v99 Example P123.12 - Amount = 9(10)v99 Example A123.12 ")
+  public String getAmountType() {
+    return amountType;
+  }
+
+  public void setAmountType(String amountType) {
+    this.amountType = amountType;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation percentageDiscount(String percentageDiscount) {
+    this.percentageDiscount = percentageDiscount;
+    return this;
+  }
+
+   /**
+   * Valid Values from Issuer 
+   * @return percentageDiscount
+  **/
+  @ApiModelProperty(value = "Valid Values from Issuer ")
+  public String getPercentageDiscount() {
+    return percentageDiscount;
+  }
+
+  public void setPercentageDiscount(String percentageDiscount) {
+    this.percentageDiscount = percentageDiscount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation interestIndicator(String interestIndicator) {
+    this.interestIndicator = interestIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available 
+   * @return interestIndicator
+  **/
+  @ApiModelProperty(value = "Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available ")
+  public String getInterestIndicator() {
+    return interestIndicator;
+  }
+
+  public void setInterestIndicator(String interestIndicator) {
+    this.interestIndicator = interestIndicator;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation financingCurrency(String financingCurrency) {
+    this.financingCurrency = financingCurrency;
+    return this;
+  }
+
+   /**
+   * Valid Values from Issuer 
+   * @return financingCurrency
+  **/
+  @ApiModelProperty(value = "Valid Values from Issuer ")
+  public String getFinancingCurrency() {
+    return financingCurrency;
+  }
+
+  public void setFinancingCurrency(String financingCurrency) {
+    this.financingCurrency = financingCurrency;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -612,12 +738,18 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
         Objects.equals(this.minimumTotalCount, ptsV2PaymentsPost201ResponseInstallmentInformation.minimumTotalCount) &&
         Objects.equals(this.maximumTotalCount, ptsV2PaymentsPost201ResponseInstallmentInformation.maximumTotalCount) &&
         Objects.equals(this.firstInstallmentAmount, ptsV2PaymentsPost201ResponseInstallmentInformation.firstInstallmentAmount) &&
-        Objects.equals(this.firstInstallmentDate, ptsV2PaymentsPost201ResponseInstallmentInformation.firstInstallmentDate);
+        Objects.equals(this.firstInstallmentDate, ptsV2PaymentsPost201ResponseInstallmentInformation.firstInstallmentDate) &&
+        Objects.equals(this.gracePeriodDuration, ptsV2PaymentsPost201ResponseInstallmentInformation.gracePeriodDuration) &&
+        Objects.equals(this.paymentType, ptsV2PaymentsPost201ResponseInstallmentInformation.paymentType) &&
+        Objects.equals(this.amountType, ptsV2PaymentsPost201ResponseInstallmentInformation.amountType) &&
+        Objects.equals(this.percentageDiscount, ptsV2PaymentsPost201ResponseInstallmentInformation.percentageDiscount) &&
+        Objects.equals(this.interestIndicator, ptsV2PaymentsPost201ResponseInstallmentInformation.interestIndicator) &&
+        Objects.equals(this.financingCurrency, ptsV2PaymentsPost201ResponseInstallmentInformation.financingCurrency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalCosts, additionalCostsPercentage, amount, amountFunded, amountRequestedPercentage, annualFinancingCost, annualInterestRate, expenses, expensesPercentage, fees, feesPercentage, frequency, insurance, insurancePercentage, invoiceData, monthlyInterestRate, planType, sequence, taxes, taxesPercentage, totalAmount, totalCount, minimumTotalCount, maximumTotalCount, firstInstallmentAmount, firstInstallmentDate);
+    return Objects.hash(additionalCosts, additionalCostsPercentage, amount, amountFunded, amountRequestedPercentage, annualFinancingCost, annualInterestRate, expenses, expensesPercentage, fees, feesPercentage, frequency, insurance, insurancePercentage, invoiceData, monthlyInterestRate, planType, sequence, taxes, taxesPercentage, totalAmount, totalCount, minimumTotalCount, maximumTotalCount, firstInstallmentAmount, firstInstallmentDate, gracePeriodDuration, paymentType, amountType, percentageDiscount, interestIndicator, financingCurrency);
   }
 
 
@@ -670,6 +802,12 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     if (maximumTotalCount != null) sb.append("    maximumTotalCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("maximumTotalCount").matches() ? "[REDACTED]" : toIndentedString(maximumTotalCount)).append("\n");
     if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentAmount").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentAmount)).append("\n");
     if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("firstInstallmentDate").matches() ? "[REDACTED]" : toIndentedString(firstInstallmentDate)).append("\n");
+    if (gracePeriodDuration != null) sb.append("    gracePeriodDuration: ").append(SENSITIVE_FIELD_PATTERN.matcher("gracePeriodDuration").matches() ? "[REDACTED]" : toIndentedString(gracePeriodDuration)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(SENSITIVE_FIELD_PATTERN.matcher("amountType").matches() ? "[REDACTED]" : toIndentedString(amountType)).append("\n");
+    if (percentageDiscount != null) sb.append("    percentageDiscount: ").append(SENSITIVE_FIELD_PATTERN.matcher("percentageDiscount").matches() ? "[REDACTED]" : toIndentedString(percentageDiscount)).append("\n");
+    if (interestIndicator != null) sb.append("    interestIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("interestIndicator").matches() ? "[REDACTED]" : toIndentedString(interestIndicator)).append("\n");
+    if (financingCurrency != null) sb.append("    financingCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("financingCurrency").matches() ? "[REDACTED]" : toIndentedString(financingCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -714,6 +852,12 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     if (maximumTotalCount != null) sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
     if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
     if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
+    if (gracePeriodDuration != null) sb.append("    gracePeriodDuration: ").append(toIndentedString(gracePeriodDuration)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
+    if (percentageDiscount != null) sb.append("    percentageDiscount: ").append(toIndentedString(percentageDiscount)).append("\n");
+    if (interestIndicator != null) sb.append("    interestIndicator: ").append(toIndentedString(interestIndicator)).append("\n");
+    if (financingCurrency != null) sb.append("    financingCurrency: ").append(toIndentedString(financingCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

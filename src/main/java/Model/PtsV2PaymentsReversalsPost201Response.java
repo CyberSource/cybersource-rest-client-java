@@ -19,9 +19,9 @@ import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseIssuerInformation;
+import Model.PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails;
-import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -67,7 +67,7 @@ public class PtsV2PaymentsReversalsPost201Response {
   private PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation authorizationInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+  private PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
 
   public PtsV2PaymentsReversalsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -249,7 +249,7 @@ public class PtsV2PaymentsReversalsPost201Response {
     this.authorizationInformation = authorizationInformation;
   }
 
-  public PtsV2PaymentsReversalsPost201Response pointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public PtsV2PaymentsReversalsPost201Response pointOfSaleInformation(PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -259,11 +259,11 @@ public class PtsV2PaymentsReversalsPost201Response {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {
+  public PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 

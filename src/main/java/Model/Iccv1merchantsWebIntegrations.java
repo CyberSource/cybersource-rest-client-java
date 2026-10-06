@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Web-based integration configuration for a merchant checkout flow.
+ * Web-based checkout integration configuration for browser or app-based agent interactions.
  */
-@ApiModel(description = "Web-based integration configuration for a merchant checkout flow.")
+@ApiModel(description = "Web-based checkout integration configuration for browser or app-based agent interactions.")
 
 public class Iccv1merchantsWebIntegrations {
   @SerializedName("integrationSpec")
@@ -40,7 +40,7 @@ public class Iccv1merchantsWebIntegrations {
   private String url = null;
 
   @SerializedName("metadata")
-  private Map<String, String> metadata = null;
+  private Map<String, Object> metadata = null;
 
   public Iccv1merchantsWebIntegrations integrationSpec(String integrationSpec) {
     this.integrationSpec = integrationSpec;
@@ -78,14 +78,14 @@ public class Iccv1merchantsWebIntegrations {
     this.url = url;
   }
 
-  public Iccv1merchantsWebIntegrations metadata(Map<String, String> metadata) {
+  public Iccv1merchantsWebIntegrations metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public Iccv1merchantsWebIntegrations putMetadataItem(String key, String metadataItem) {
+  public Iccv1merchantsWebIntegrations putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
-      this.metadata = new HashMap<String, String>();
+      this.metadata = new HashMap<String, Object>();
     }
     this.metadata.put(key, metadataItem);
     return this;
@@ -96,11 +96,11 @@ public class Iccv1merchantsWebIntegrations {
    * @return metadata
   **/
   @ApiModelProperty(example = "{\"authScheme\":\"oauth2\",\"supportedActions\":\"browse,checkout,order_status\"}", value = "Optional metadata (max 10KB)")
-  public Map<String, String> getMetadata() {
+  public Map<String, Object> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

@@ -16,9 +16,9 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsDeviceInformation;
 import Model.Ptsv2paymentsidreversalsOrderInformation;
-import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsProcessingInformation;
 import Model.Ptsv2paymentsidreversalsReversalInformation;
 import Model.Ptsv2reversalsProcessorInformation;
@@ -49,7 +49,7 @@ public class MitReversalRequest {
   private Ptsv2paymentsidreversalsOrderInformation orderInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("deviceInformation")
   private Ptsv2paymentsidreversalsDeviceInformation deviceInformation = null;
@@ -129,7 +129,7 @@ public class MitReversalRequest {
     this.orderInformation = orderInformation;
   }
 
-  public MitReversalRequest pointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public MitReversalRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -139,11 +139,11 @@ public class MitReversalRequest {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 

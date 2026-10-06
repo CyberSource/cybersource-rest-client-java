@@ -51,25 +51,25 @@ public class InlineResponse20018 {
   private AcpCheckoutSessionResponseBuyer buyer = null;
 
   @SerializedName("line_items")
-  private List<InlineResponse20112LineItems> lineItems = null;
+  private List<InlineResponse20112LineItems> lineItems = new ArrayList<InlineResponse20112LineItems>();
 
   @SerializedName("fulfillment_address")
   private InlineResponse20017FulfillmentAddress fulfillmentAddress = null;
 
   @SerializedName("fulfillment_options")
-  private List<InlineResponse20112FulfillmentOptions> fulfillmentOptions = null;
+  private List<InlineResponse20112FulfillmentOptions> fulfillmentOptions = new ArrayList<InlineResponse20112FulfillmentOptions>();
 
   @SerializedName("fulfillment_option_id")
   private String fulfillmentOptionId = null;
 
   @SerializedName("totals")
-  private List<InlineResponse20112Totals> totals = null;
+  private List<InlineResponse20112Totals> totals = new ArrayList<InlineResponse20112Totals>();
 
   @SerializedName("messages")
-  private List<InlineResponse20112Messages> messages = null;
+  private List<InlineResponse20112Messages> messages = new ArrayList<InlineResponse20112Messages>();
 
   @SerializedName("links")
-  private List<InlineResponse20112Links> links = null;
+  private List<InlineResponse20112Links> links = new ArrayList<InlineResponse20112Links>();
 
   public InlineResponse20018 id(String id) {
     this.id = id;
@@ -80,7 +80,7 @@ public class InlineResponse20018 {
    * The checkout session identifier.
    * @return id
   **/
-  @ApiModelProperty(example = "sess_abc123", value = "The checkout session identifier.")
+  @ApiModelProperty(example = "sess_abc123", required = true, value = "The checkout session identifier.")
   public String getId() {
     return id;
   }
@@ -98,7 +98,7 @@ public class InlineResponse20018 {
    * Will always be &#x60;canceled&#x60; on a successful response.  Possible values: - canceled
    * @return status
   **/
-  @ApiModelProperty(value = "Will always be `canceled` on a successful response.  Possible values: - canceled")
+  @ApiModelProperty(required = true, value = "Will always be `canceled` on a successful response.  Possible values: - canceled")
   public String getStatus() {
     return status;
   }
@@ -116,7 +116,7 @@ public class InlineResponse20018 {
    * ISO 4217 lowercase currency code.
    * @return currency
   **/
-  @ApiModelProperty(example = "usd", value = "ISO 4217 lowercase currency code.")
+  @ApiModelProperty(example = "usd", required = true, value = "ISO 4217 lowercase currency code.")
   public String getCurrency() {
     return currency;
   }
@@ -149,9 +149,6 @@ public class InlineResponse20018 {
   }
 
   public InlineResponse20018 addLineItemsItem(InlineResponse20112LineItems lineItemsItem) {
-    if (this.lineItems == null) {
-      this.lineItems = new ArrayList<InlineResponse20112LineItems>();
-    }
     this.lineItems.add(lineItemsItem);
     return this;
   }
@@ -160,7 +157,7 @@ public class InlineResponse20018 {
    * Line items with merchant-confirmed pricing.
    * @return lineItems
   **/
-  @ApiModelProperty(value = "Line items with merchant-confirmed pricing.")
+  @ApiModelProperty(required = true, value = "Line items with merchant-confirmed pricing.")
   public List<InlineResponse20112LineItems> getLineItems() {
     return lineItems;
   }
@@ -193,9 +190,6 @@ public class InlineResponse20018 {
   }
 
   public InlineResponse20018 addFulfillmentOptionsItem(InlineResponse20112FulfillmentOptions fulfillmentOptionsItem) {
-    if (this.fulfillmentOptions == null) {
-      this.fulfillmentOptions = new ArrayList<InlineResponse20112FulfillmentOptions>();
-    }
     this.fulfillmentOptions.add(fulfillmentOptionsItem);
     return this;
   }
@@ -204,7 +198,7 @@ public class InlineResponse20018 {
    * Available fulfillment methods with pricing.
    * @return fulfillmentOptions
   **/
-  @ApiModelProperty(value = "Available fulfillment methods with pricing.")
+  @ApiModelProperty(required = true, value = "Available fulfillment methods with pricing.")
   public List<InlineResponse20112FulfillmentOptions> getFulfillmentOptions() {
     return fulfillmentOptions;
   }
@@ -237,9 +231,6 @@ public class InlineResponse20018 {
   }
 
   public InlineResponse20018 addTotalsItem(InlineResponse20112Totals totalsItem) {
-    if (this.totals == null) {
-      this.totals = new ArrayList<InlineResponse20112Totals>();
-    }
     this.totals.add(totalsItem);
     return this;
   }
@@ -248,7 +239,7 @@ public class InlineResponse20018 {
    * Order cost breakdown as typed total lines. All amounts in minor units (cents).
    * @return totals
   **/
-  @ApiModelProperty(value = "Order cost breakdown as typed total lines. All amounts in minor units (cents).")
+  @ApiModelProperty(required = true, value = "Order cost breakdown as typed total lines. All amounts in minor units (cents).")
   public List<InlineResponse20112Totals> getTotals() {
     return totals;
   }
@@ -263,9 +254,6 @@ public class InlineResponse20018 {
   }
 
   public InlineResponse20018 addMessagesItem(InlineResponse20112Messages messagesItem) {
-    if (this.messages == null) {
-      this.messages = new ArrayList<InlineResponse20112Messages>();
-    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -274,7 +262,7 @@ public class InlineResponse20018 {
    * Informational or error messages from the merchant backend.
    * @return messages
   **/
-  @ApiModelProperty(value = "Informational or error messages from the merchant backend.")
+  @ApiModelProperty(required = true, value = "Informational or error messages from the merchant backend.")
   public List<InlineResponse20112Messages> getMessages() {
     return messages;
   }
@@ -289,9 +277,6 @@ public class InlineResponse20018 {
   }
 
   public InlineResponse20018 addLinksItem(InlineResponse20112Links linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<InlineResponse20112Links>();
-    }
     this.links.add(linksItem);
     return this;
   }
@@ -300,7 +285,7 @@ public class InlineResponse20018 {
    * Related resource links from the merchant (e.g. terms of use, privacy policy).
    * @return links
   **/
-  @ApiModelProperty(value = "Related resource links from the merchant (e.g. terms of use, privacy policy).")
+  @ApiModelProperty(required = true, value = "Related resource links from the merchant (e.g. terms of use, privacy policy).")
   public List<InlineResponse20112Links> getLinks() {
     return links;
   }

@@ -44,6 +44,9 @@ public class PtsV2PaymentsPost201Response1 {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
+  @SerializedName("updateTimeUtc")
+  private String updateTimeUtc = null;
+
   @SerializedName("processorInformation")
   private PtsV2PaymentsPost201Response1ProcessorInformation processorInformation = null;
 
@@ -117,6 +120,24 @@ public class PtsV2PaymentsPost201Response1 {
 
   public void setSubmitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
+  }
+
+  public PtsV2PaymentsPost201Response1 updateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
+    return this;
+  }
+
+   /**
+   * The date and time when the request was last updated. **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). 
+   * @return updateTimeUtc
+  **/
+  @ApiModelProperty(value = "The date and time when the request was last updated. **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). ")
+  public String getUpdateTimeUtc() {
+    return updateTimeUtc;
+  }
+
+  public void setUpdateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
   }
 
   public PtsV2PaymentsPost201Response1 processorInformation(PtsV2PaymentsPost201Response1ProcessorInformation processorInformation) {
@@ -258,6 +279,7 @@ public class PtsV2PaymentsPost201Response1 {
     return Objects.equals(this.id, ptsV2PaymentsPost201Response1.id) &&
         Objects.equals(this.status, ptsV2PaymentsPost201Response1.status) &&
         Objects.equals(this.submitTimeUtc, ptsV2PaymentsPost201Response1.submitTimeUtc) &&
+        Objects.equals(this.updateTimeUtc, ptsV2PaymentsPost201Response1.updateTimeUtc) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsPost201Response1.processorInformation) &&
         Objects.equals(this.reconciliationId, ptsV2PaymentsPost201Response1.reconciliationId) &&
         Objects.equals(this.paymentInformation, ptsV2PaymentsPost201Response1.paymentInformation) &&
@@ -269,7 +291,7 @@ public class PtsV2PaymentsPost201Response1 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, submitTimeUtc, processorInformation, reconciliationId, paymentInformation, orderInformation, clientReferenceInformation, issuerInformation, errorInformation);
+    return Objects.hash(id, status, submitTimeUtc, updateTimeUtc, processorInformation, reconciliationId, paymentInformation, orderInformation, clientReferenceInformation, issuerInformation, errorInformation);
   }
 
 
@@ -299,6 +321,7 @@ public class PtsV2PaymentsPost201Response1 {
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("updateTimeUtc").matches() ? "[REDACTED]" : toIndentedString(updateTimeUtc)).append("\n");
     if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentInformation").matches() ? "[REDACTED]" : toIndentedString(paymentInformation)).append("\n");
@@ -327,6 +350,7 @@ public class PtsV2PaymentsPost201Response1 {
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");

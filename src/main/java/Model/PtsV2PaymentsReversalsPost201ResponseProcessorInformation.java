@@ -60,6 +60,9 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
   @SerializedName("network")
   private Ptsv2paymentsProcessorInformationReversalNetwork network = null;
 
+  @SerializedName("transactionLinkIdentifier")
+  private String transactionLinkIdentifier = null;
+
   public PtsV2PaymentsReversalsPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
     return this;
@@ -240,6 +243,24 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     this.network = network;
   }
 
+  public PtsV2PaymentsReversalsPost201ResponseProcessorInformation transactionLinkIdentifier(String transactionLinkIdentifier) {
+    this.transactionLinkIdentifier = transactionLinkIdentifier;
+    return this;
+  }
+
+   /**
+   * Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0). 
+   * @return transactionLinkIdentifier
+  **/
+  @ApiModelProperty(value = "Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0). ")
+  public String getTransactionLinkIdentifier() {
+    return transactionLinkIdentifier;
+  }
+
+  public void setTransactionLinkIdentifier(String transactionLinkIdentifier) {
+    this.transactionLinkIdentifier = transactionLinkIdentifier;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,12 +280,13 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
         Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceReplyCode) &&
         Objects.equals(this.responseDetails, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseDetails) &&
         Objects.equals(this.providerResponse, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.providerResponse) &&
-        Objects.equals(this.network, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.network);
+        Objects.equals(this.network, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.network) &&
+        Objects.equals(this.transactionLinkIdentifier, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.transactionLinkIdentifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, networkTransactionId, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse, network);
+    return Objects.hash(transactionId, responseCode, networkTransactionId, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse, network, transactionLinkIdentifier);
   }
 
 
@@ -301,6 +323,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     if (responseDetails != null) sb.append("    responseDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("responseDetails").matches() ? "[REDACTED]" : toIndentedString(responseDetails)).append("\n");
     if (providerResponse != null) sb.append("    providerResponse: ").append(SENSITIVE_FIELD_PATTERN.matcher("providerResponse").matches() ? "[REDACTED]" : toIndentedString(providerResponse)).append("\n");
     if (network != null) sb.append("    network: ").append(SENSITIVE_FIELD_PATTERN.matcher("network").matches() ? "[REDACTED]" : toIndentedString(network)).append("\n");
+    if (transactionLinkIdentifier != null) sb.append("    transactionLinkIdentifier: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionLinkIdentifier").matches() ? "[REDACTED]" : toIndentedString(transactionLinkIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -329,6 +352,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
     if (providerResponse != null) sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
     if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (transactionLinkIdentifier != null) sb.append("    transactionLinkIdentifier: ").append(toIndentedString(transactionLinkIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

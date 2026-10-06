@@ -178,10 +178,10 @@ public class ActivateMerchantKeyResponse200 {
   }
 
    /**
-   * JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM
+   * JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM
    * @return encryptionType
   **/
-  @ApiModelProperty(required = true, value = "JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM")
+  @ApiModelProperty(required = true, value = "JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM")
   public String getEncryptionType() {
     return encryptionType;
   }

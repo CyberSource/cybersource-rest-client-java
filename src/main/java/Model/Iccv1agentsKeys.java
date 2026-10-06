@@ -49,10 +49,10 @@ public class Iccv1agentsKeys {
   }
 
    /**
-   * Unique identifier for the key
+   * Unique name for this key within the agent. Must be unique per agent.
    * @return keyName
   **/
-  @ApiModelProperty(required = true, value = "Unique identifier for the key")
+  @ApiModelProperty(required = true, value = "Unique name for this key within the agent. Must be unique per agent.")
   public String getKeyName() {
     return keyName;
   }
@@ -67,10 +67,10 @@ public class Iccv1agentsKeys {
   }
 
    /**
-   * Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.
+   * Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK.
    * @return publicKey
   **/
-  @ApiModelProperty(required = true, value = "Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.")
+  @ApiModelProperty(required = true, value = "Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK.")
   public String getPublicKey() {
     return publicKey;
   }
@@ -85,10 +85,10 @@ public class Iccv1agentsKeys {
   }
 
    /**
-   * Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA
+   * HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must match the key type and curve:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519
    * @return algorithm
   **/
-  @ApiModelProperty(required = true, value = "Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA")
+  @ApiModelProperty(example = "rsa-pss-sha512", required = true, value = "HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must match the key type and curve:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519")
   public String getAlgorithm() {
     return algorithm;
   }
@@ -103,10 +103,10 @@ public class Iccv1agentsKeys {
   }
 
    /**
-   * Key expiration date in UTC (defaults to 14 days from now if not provided)
+   * Key expiration date-time in UTC. Defaults to 14 days from registration if omitted.
    * @return expirationDate
   **/
-  @ApiModelProperty(value = "Key expiration date in UTC (defaults to 14 days from now if not provided)")
+  @ApiModelProperty(value = "Key expiration date-time in UTC. Defaults to 14 days from registration if omitted.")
   public DateTime getExpirationDate() {
     return expirationDate;
   }

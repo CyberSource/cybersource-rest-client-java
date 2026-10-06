@@ -45,6 +45,9 @@ public class InlineResponse2016SetupsValueAddedServices {
   @SerializedName("webhooks")
   private PaymentsConfigurationSetupDigitalPayments webhooks = null;
 
+  @SerializedName("smarterRetry")
+  private PaymentsConfigurationSetupDigitalPayments smarterRetry = null;
+
   public InlineResponse2016SetupsValueAddedServices reporting(PaymentsConfigurationSetupDigitalPayments reporting) {
     this.reporting = reporting;
     return this;
@@ -135,6 +138,24 @@ public class InlineResponse2016SetupsValueAddedServices {
     this.webhooks = webhooks;
   }
 
+  public InlineResponse2016SetupsValueAddedServices smarterRetry(PaymentsConfigurationSetupDigitalPayments smarterRetry) {
+    this.smarterRetry = smarterRetry;
+    return this;
+  }
+
+   /**
+   * Get smarterRetry
+   * @return smarterRetry
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsConfigurationSetupDigitalPayments getSmarterRetry() {
+    return smarterRetry;
+  }
+
+  public void setSmarterRetry(PaymentsConfigurationSetupDigitalPayments smarterRetry) {
+    this.smarterRetry = smarterRetry;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +170,13 @@ public class InlineResponse2016SetupsValueAddedServices {
         Objects.equals(this.transactionSearch, inlineResponse2016SetupsValueAddedServices.transactionSearch) &&
         Objects.equals(this.bankAccountValidation, inlineResponse2016SetupsValueAddedServices.bankAccountValidation) &&
         Objects.equals(this.flexapi, inlineResponse2016SetupsValueAddedServices.flexapi) &&
-        Objects.equals(this.webhooks, inlineResponse2016SetupsValueAddedServices.webhooks);
+        Objects.equals(this.webhooks, inlineResponse2016SetupsValueAddedServices.webhooks) &&
+        Objects.equals(this.smarterRetry, inlineResponse2016SetupsValueAddedServices.smarterRetry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reporting, transactionSearch, bankAccountValidation, flexapi, webhooks);
+    return Objects.hash(reporting, transactionSearch, bankAccountValidation, flexapi, webhooks, smarterRetry);
   }
 
 
@@ -186,6 +208,7 @@ public class InlineResponse2016SetupsValueAddedServices {
     if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(SENSITIVE_FIELD_PATTERN.matcher("bankAccountValidation").matches() ? "[REDACTED]" : toIndentedString(bankAccountValidation)).append("\n");
     if (flexapi != null) sb.append("    flexapi: ").append(SENSITIVE_FIELD_PATTERN.matcher("flexapi").matches() ? "[REDACTED]" : toIndentedString(flexapi)).append("\n");
     if (webhooks != null) sb.append("    webhooks: ").append(SENSITIVE_FIELD_PATTERN.matcher("webhooks").matches() ? "[REDACTED]" : toIndentedString(webhooks)).append("\n");
+    if (smarterRetry != null) sb.append("    smarterRetry: ").append(SENSITIVE_FIELD_PATTERN.matcher("smarterRetry").matches() ? "[REDACTED]" : toIndentedString(smarterRetry)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -209,6 +232,7 @@ public class InlineResponse2016SetupsValueAddedServices {
     if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
     if (flexapi != null) sb.append("    flexapi: ").append(toIndentedString(flexapi)).append("\n");
     if (webhooks != null) sb.append("    webhooks: ").append(toIndentedString(webhooks)).append("\n");
+    if (smarterRetry != null) sb.append("    smarterRetry: ").append(toIndentedString(smarterRetry)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsidreversalsPointOfSaleInformationEmv;
+import Model.PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,7 +43,7 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
   private Integer cardholderVerificationMethodUsed = null;
 
   @SerializedName("emv")
-  private Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv = null;
+  private PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv emv = null;
 
   public TssV2TransactionsGet200ResponsePointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -119,7 +119,7 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
   }
 
-  public TssV2TransactionsGet200ResponsePointOfSaleInformation emv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+  public TssV2TransactionsGet200ResponsePointOfSaleInformation emv(PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
   }
@@ -129,11 +129,11 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
    * @return emv
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidreversalsPointOfSaleInformationEmv getEmv() {
+  public PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv getEmv() {
     return emv;
   }
 
-  public void setEmv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+  public void setEmv(PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv emv) {
     this.emv = emv;
   }
 

@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Iccv1merchantsApiIntegrations;
 import Model.Iccv1merchantsProtocolInteractions;
-import Model.Iccv1merchantsWebIntegrations;
+import Model.MerchantRegistrationResponse201ApiIntegrations;
 import Model.MerchantRegistrationResponse201Keys;
+import Model.MerchantRegistrationResponse201WebIntegrations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -68,10 +68,10 @@ public class MerchantRegistrationResponse201 {
   private List<Iccv1merchantsProtocolInteractions> protocolInteractions = null;
 
   @SerializedName("webIntegrations")
-  private Iccv1merchantsWebIntegrations webIntegrations = null;
+  private MerchantRegistrationResponse201WebIntegrations webIntegrations = null;
 
   @SerializedName("apiIntegrations")
-  private Iccv1merchantsApiIntegrations apiIntegrations = null;
+  private MerchantRegistrationResponse201ApiIntegrations apiIntegrations = null;
 
   @SerializedName("isActive")
   private Boolean isActive = null;
@@ -127,10 +127,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Base merchant URL
+   * Fully-qualified HTTPS URL of the merchant&#39;s domain
    * @return merchantUrl
   **/
-  @ApiModelProperty(required = true, value = "Base merchant URL")
+  @ApiModelProperty(required = true, value = "Fully-qualified HTTPS URL of the merchant's domain")
   public String getMerchantUrl() {
     return merchantUrl;
   }
@@ -145,10 +145,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Visa Merchant ID
+   * Visa Merchant ID (VMID) — unique identifier assigned by Visa
    * @return vmid
   **/
-  @ApiModelProperty(value = "Visa Merchant ID")
+  @ApiModelProperty(value = "Visa Merchant ID (VMID) — unique identifier assigned by Visa")
   public String getVmid() {
     return vmid;
   }
@@ -163,10 +163,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Authentication cryptogram type  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation: &#39;TAVV&#39; (Token Authentication Verification Value) or &#39;DAVV&#39; (Device Authentication Verification Value)  Possible values: - TAVV - DAVV
    * @return cryptogramType
   **/
-  @ApiModelProperty(value = "Authentication cryptogram type  Possible values: - TAVV - DAVV")
+  @ApiModelProperty(value = "Authentication cryptogram type used for payment credential generation: 'TAVV' (Token Authentication Verification Value) or 'DAVV' (Device Authentication Verification Value)  Possible values: - TAVV - DAVV")
   public String getCryptogramType() {
     return cryptogramType;
   }
@@ -181,10 +181,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format: &#39;ENCRYPTED&#39; (JWE-wrapped, requires an active encryption key) or &#39;UNENCRYPTED&#39;  Possible values: - ENCRYPTED - UNENCRYPTED
    * @return paymentPayloadType
   **/
-  @ApiModelProperty(value = "Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED")
+  @ApiModelProperty(value = "Credential delivery format: 'ENCRYPTED' (JWE-wrapped, requires an active encryption key) or 'UNENCRYPTED'  Possible values: - ENCRYPTED - UNENCRYPTED")
   public String getPaymentPayloadType() {
     return paymentPayloadType;
   }
@@ -199,10 +199,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * Transaction processing indicator: &#39;TAP&#39; (Trusted Agent Protocol), &#39;ACG&#39; (Agentic Checkout Gateway), or &#39;BOTH&#39;  Possible values: - TAP - ACG - BOTH
    * @return indicator
   **/
-  @ApiModelProperty(required = true, value = "Transaction processing type  Possible values: - TAP - ACG - BOTH")
+  @ApiModelProperty(required = true, value = "Transaction processing indicator: 'TAP' (Trusted Agent Protocol), 'ACG' (Agentic Checkout Gateway), or 'BOTH'  Possible values: - TAP - ACG - BOTH")
   public String getIndicator() {
     return indicator;
   }
@@ -217,10 +217,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * Additional merchant metadata
+   * Free-form metadata object for additional merchant context
    * @return merchantMetadata
   **/
-  @ApiModelProperty(value = "Additional merchant metadata")
+  @ApiModelProperty(value = "Free-form metadata object for additional merchant context")
   public Object getMerchantMetadata() {
     return merchantMetadata;
   }
@@ -243,10 +243,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \&quot;Visa\&quot;)
    * @return acceptanceRelationships
   **/
-  @ApiModelProperty(value = "List of acceptance network relationships")
+  @ApiModelProperty(value = "List of payment network acceptance relationships (e.g., \"Visa\")")
   public List<String> getAcceptanceRelationships() {
     return acceptanceRelationships;
   }
@@ -269,10 +269,10 @@ public class MerchantRegistrationResponse201 {
   }
 
    /**
-   * List of protocol interaction configurations (ucp, acp, x402)
+   * List of protocol endpoint configurations defining how agents interact with this merchant (ucp, acp, x402)
    * @return protocolInteractions
   **/
-  @ApiModelProperty(value = "List of protocol interaction configurations (ucp, acp, x402)")
+  @ApiModelProperty(value = "List of protocol endpoint configurations defining how agents interact with this merchant (ucp, acp, x402)")
   public List<Iccv1merchantsProtocolInteractions> getProtocolInteractions() {
     return protocolInteractions;
   }
@@ -281,7 +281,7 @@ public class MerchantRegistrationResponse201 {
     this.protocolInteractions = protocolInteractions;
   }
 
-  public MerchantRegistrationResponse201 webIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
+  public MerchantRegistrationResponse201 webIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
     return this;
   }
@@ -291,15 +291,15 @@ public class MerchantRegistrationResponse201 {
    * @return webIntegrations
   **/
   @ApiModelProperty(value = "")
-  public Iccv1merchantsWebIntegrations getWebIntegrations() {
+  public MerchantRegistrationResponse201WebIntegrations getWebIntegrations() {
     return webIntegrations;
   }
 
-  public void setWebIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
+  public void setWebIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
   }
 
-  public MerchantRegistrationResponse201 apiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
+  public MerchantRegistrationResponse201 apiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
     return this;
   }
@@ -309,11 +309,11 @@ public class MerchantRegistrationResponse201 {
    * @return apiIntegrations
   **/
   @ApiModelProperty(value = "")
-  public Iccv1merchantsApiIntegrations getApiIntegrations() {
+  public MerchantRegistrationResponse201ApiIntegrations getApiIntegrations() {
     return apiIntegrations;
   }
 
-  public void setApiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
+  public void setApiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
   }
 

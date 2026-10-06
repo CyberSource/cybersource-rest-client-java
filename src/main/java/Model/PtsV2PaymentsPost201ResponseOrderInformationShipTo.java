@@ -53,6 +53,9 @@ public class PtsV2PaymentsPost201ResponseOrderInformationShipTo {
   @SerializedName("country")
   private String country = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
 
@@ -200,6 +203,24 @@ public class PtsV2PaymentsPost201ResponseOrderInformationShipTo {
     this.country = country;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformationShipTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email address of the shipping recipient. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email address of the shipping recipient. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public PtsV2PaymentsPost201ResponseOrderInformationShipTo phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
@@ -236,12 +257,13 @@ public class PtsV2PaymentsPost201ResponseOrderInformationShipTo {
         Objects.equals(this.administrativeArea, ptsV2PaymentsPost201ResponseOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.postalCode, ptsV2PaymentsPost201ResponseOrderInformationShipTo.postalCode) &&
         Objects.equals(this.country, ptsV2PaymentsPost201ResponseOrderInformationShipTo.country) &&
+        Objects.equals(this.email, ptsV2PaymentsPost201ResponseOrderInformationShipTo.email) &&
         Objects.equals(this.phoneNumber, ptsV2PaymentsPost201ResponseOrderInformationShipTo.phoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstname, lastname, address1, address2, locality, administrativeArea, postalCode, country, phoneNumber);
+    return Objects.hash(firstname, lastname, address1, address2, locality, administrativeArea, postalCode, country, email, phoneNumber);
   }
 
 
@@ -276,6 +298,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationShipTo {
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(SENSITIVE_FIELD_PATTERN.matcher("administrativeArea").matches() ? "[REDACTED]" : toIndentedString(administrativeArea)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
     if (country != null) sb.append("    country: ").append(SENSITIVE_FIELD_PATTERN.matcher("country").matches() ? "[REDACTED]" : toIndentedString(country)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("phoneNumber").matches() ? "[REDACTED]" : toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -303,6 +326,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationShipTo {
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();

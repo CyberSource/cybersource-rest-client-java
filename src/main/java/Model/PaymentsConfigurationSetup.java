@@ -92,6 +92,9 @@ public class PaymentsConfigurationSetup {
   @SerializedName("batchUpload")
   private PaymentsConfigurationSetupDigitalPayments batchUpload = null;
 
+  @SerializedName("paymentEvents")
+  private PaymentsConfigurationSetupDigitalPayments paymentEvents = null;
+
   @SerializedName("transactGuard")
   private PaymentsConfigurationSetupDigitalPayments transactGuard = null;
 
@@ -458,6 +461,24 @@ public class PaymentsConfigurationSetup {
     this.batchUpload = batchUpload;
   }
 
+  public PaymentsConfigurationSetup paymentEvents(PaymentsConfigurationSetupDigitalPayments paymentEvents) {
+    this.paymentEvents = paymentEvents;
+    return this;
+  }
+
+   /**
+   * Get paymentEvents
+   * @return paymentEvents
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsConfigurationSetupDigitalPayments getPaymentEvents() {
+    return paymentEvents;
+  }
+
+  public void setPaymentEvents(PaymentsConfigurationSetupDigitalPayments paymentEvents) {
+    this.paymentEvents = paymentEvents;
+  }
+
   public PaymentsConfigurationSetup transactGuard(PaymentsConfigurationSetupDigitalPayments transactGuard) {
     this.transactGuard = transactGuard;
     return this;
@@ -524,13 +545,14 @@ public class PaymentsConfigurationSetup {
         Objects.equals(this.receivablesManager, paymentsConfigurationSetup.receivablesManager) &&
         Objects.equals(this.serviceFee, paymentsConfigurationSetup.serviceFee) &&
         Objects.equals(this.batchUpload, paymentsConfigurationSetup.batchUpload) &&
+        Objects.equals(this.paymentEvents, paymentsConfigurationSetup.paymentEvents) &&
         Objects.equals(this.transactGuard, paymentsConfigurationSetup.transactGuard) &&
         Objects.equals(this.microform, paymentsConfigurationSetup.microform);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload, transactGuard, microform);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee, batchUpload, paymentEvents, transactGuard, microform);
   }
 
 
@@ -577,6 +599,7 @@ public class PaymentsConfigurationSetup {
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("receivablesManager").matches() ? "[REDACTED]" : toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(SENSITIVE_FIELD_PATTERN.matcher("serviceFee").matches() ? "[REDACTED]" : toIndentedString(serviceFee)).append("\n");
     if (batchUpload != null) sb.append("    batchUpload: ").append(SENSITIVE_FIELD_PATTERN.matcher("batchUpload").matches() ? "[REDACTED]" : toIndentedString(batchUpload)).append("\n");
+    if (paymentEvents != null) sb.append("    paymentEvents: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentEvents").matches() ? "[REDACTED]" : toIndentedString(paymentEvents)).append("\n");
     if (transactGuard != null) sb.append("    transactGuard: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactGuard").matches() ? "[REDACTED]" : toIndentedString(transactGuard)).append("\n");
     if (microform != null) sb.append("    microform: ").append(SENSITIVE_FIELD_PATTERN.matcher("microform").matches() ? "[REDACTED]" : toIndentedString(microform)).append("\n");
     sb.append("}");
@@ -617,6 +640,7 @@ public class PaymentsConfigurationSetup {
     if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     if (batchUpload != null) sb.append("    batchUpload: ").append(toIndentedString(batchUpload)).append("\n");
+    if (paymentEvents != null) sb.append("    paymentEvents: ").append(toIndentedString(paymentEvents)).append("\n");
     if (transactGuard != null) sb.append("    transactGuard: ").append(toIndentedString(transactGuard)).append("\n");
     if (microform != null) sb.append("    microform: ").append(toIndentedString(microform)).append("\n");
     sb.append("}");

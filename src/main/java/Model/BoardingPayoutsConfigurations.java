@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.BoardingPayoutsConfigurationsCommon;
+import Model.BoardingPayoutsConfigurationsProcessors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +38,7 @@ public class BoardingPayoutsConfigurations {
   private BoardingPayoutsConfigurationsCommon common = null;
 
   @SerializedName("processors")
-  private Map<String, Object> processors = null;
+  private Map<String, BoardingPayoutsConfigurationsProcessors> processors = null;
 
   public BoardingPayoutsConfigurations common(BoardingPayoutsConfigurationsCommon common) {
     this.common = common;
@@ -57,14 +58,14 @@ public class BoardingPayoutsConfigurations {
     this.common = common;
   }
 
-  public BoardingPayoutsConfigurations processors(Map<String, Object> processors) {
+  public BoardingPayoutsConfigurations processors(Map<String, BoardingPayoutsConfigurationsProcessors> processors) {
     this.processors = processors;
     return this;
   }
 
-  public BoardingPayoutsConfigurations putProcessorsItem(String key, Object processorsItem) {
+  public BoardingPayoutsConfigurations putProcessorsItem(String key, BoardingPayoutsConfigurationsProcessors processorsItem) {
     if (this.processors == null) {
-      this.processors = new HashMap<String, Object>();
+      this.processors = new HashMap<String, BoardingPayoutsConfigurationsProcessors>();
     }
     this.processors.put(key, processorsItem);
     return this;
@@ -75,11 +76,11 @@ public class BoardingPayoutsConfigurations {
    * @return processors
   **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getProcessors() {
+  public Map<String, BoardingPayoutsConfigurationsProcessors> getProcessors() {
     return processors;
   }
 
-  public void setProcessors(Map<String, Object> processors) {
+  public void setProcessors(Map<String, BoardingPayoutsConfigurationsProcessors> processors) {
     this.processors = processors;
   }
 

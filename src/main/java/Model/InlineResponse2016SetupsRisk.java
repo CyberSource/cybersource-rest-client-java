@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PaymentsConfigurationSetupCardProcessing;
+import Model.PaymentsConfigurationSetupDigitalPayments;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,6 +39,9 @@ public class InlineResponse2016SetupsRisk {
 
   @SerializedName("enhancedAuthentication")
   private PaymentsConfigurationSetupCardProcessing enhancedAuthentication = null;
+
+  @SerializedName("vpri")
+  private PaymentsConfigurationSetupDigitalPayments vpri = null;
 
   public InlineResponse2016SetupsRisk fraudManagementEssentials(PaymentsConfigurationSetupCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
@@ -93,6 +97,24 @@ public class InlineResponse2016SetupsRisk {
     this.enhancedAuthentication = enhancedAuthentication;
   }
 
+  public InlineResponse2016SetupsRisk vpri(PaymentsConfigurationSetupDigitalPayments vpri) {
+    this.vpri = vpri;
+    return this;
+  }
+
+   /**
+   * Get vpri
+   * @return vpri
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsConfigurationSetupDigitalPayments getVpri() {
+    return vpri;
+  }
+
+  public void setVpri(PaymentsConfigurationSetupDigitalPayments vpri) {
+    this.vpri = vpri;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +127,13 @@ public class InlineResponse2016SetupsRisk {
     InlineResponse2016SetupsRisk inlineResponse2016SetupsRisk = (InlineResponse2016SetupsRisk) o;
     return Objects.equals(this.fraudManagementEssentials, inlineResponse2016SetupsRisk.fraudManagementEssentials) &&
         Objects.equals(this.decisionManager, inlineResponse2016SetupsRisk.decisionManager) &&
-        Objects.equals(this.enhancedAuthentication, inlineResponse2016SetupsRisk.enhancedAuthentication);
+        Objects.equals(this.enhancedAuthentication, inlineResponse2016SetupsRisk.enhancedAuthentication) &&
+        Objects.equals(this.vpri, inlineResponse2016SetupsRisk.vpri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fraudManagementEssentials, decisionManager, enhancedAuthentication);
+    return Objects.hash(fraudManagementEssentials, decisionManager, enhancedAuthentication, vpri);
   }
 
 
@@ -140,6 +163,7 @@ public class InlineResponse2016SetupsRisk {
     if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(SENSITIVE_FIELD_PATTERN.matcher("fraudManagementEssentials").matches() ? "[REDACTED]" : toIndentedString(fraudManagementEssentials)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(SENSITIVE_FIELD_PATTERN.matcher("decisionManager").matches() ? "[REDACTED]" : toIndentedString(decisionManager)).append("\n");
     if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(SENSITIVE_FIELD_PATTERN.matcher("enhancedAuthentication").matches() ? "[REDACTED]" : toIndentedString(enhancedAuthentication)).append("\n");
+    if (vpri != null) sb.append("    vpri: ").append(SENSITIVE_FIELD_PATTERN.matcher("vpri").matches() ? "[REDACTED]" : toIndentedString(vpri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -161,6 +185,7 @@ public class InlineResponse2016SetupsRisk {
     if (fraudManagementEssentials != null) sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
     if (decisionManager != null) sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");
     if (enhancedAuthentication != null) sb.append("    enhancedAuthentication: ").append(toIndentedString(enhancedAuthentication)).append("\n");
+    if (vpri != null) sb.append("    vpri: ").append(toIndentedString(vpri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

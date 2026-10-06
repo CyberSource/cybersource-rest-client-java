@@ -1309,9 +1309,11 @@ public class ApiClient {
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
 				url.append(path);
+				// Due to changes from JWTv1 to JWTv2, and the inclusion of request-resource-path as part of the
+				// payload claimset, we need to ensure that the query parameters are included in the request target
+				// prior to generating the authentication token.
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP) ||
-						(merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT) &&
-						merchantConfig.getJwtKeyType().equalsIgnoreCase(GlobalLabelParameters.JWT_KEY_TYPE_SHARED_SECRET))) {
+						merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
 					// support (constant) query string in `path`, e.g.
 					// "/posts?draft=1"
 					String prefix = path.contains("?") ? "&" : "?";

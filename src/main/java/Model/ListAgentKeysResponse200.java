@@ -70,10 +70,10 @@ public class ListAgentKeysResponse200 {
   }
 
    /**
-   * Agent name
+   * Display name of the agent
    * @return agentName
   **/
-  @ApiModelProperty(required = true, value = "Agent name")
+  @ApiModelProperty(required = true, value = "Display name of the agent")
   public String getAgentName() {
     return agentName;
   }
@@ -93,10 +93,10 @@ public class ListAgentKeysResponse200 {
   }
 
    /**
-   * List of keys (without agentId/agentName/agentType since they are at parent level)
+   * Paginated list of public keys belonging to this agent (agentId/agentName/agentType omitted — available at the parent level)
    * @return keys
   **/
-  @ApiModelProperty(required = true, value = "List of keys (without agentId/agentName/agentType since they are at parent level)")
+  @ApiModelProperty(required = true, value = "Paginated list of public keys belonging to this agent (agentId/agentName/agentType omitted — available at the parent level)")
   public List<AgentRegistrationResponse201Keys> getKeys() {
     return keys;
   }

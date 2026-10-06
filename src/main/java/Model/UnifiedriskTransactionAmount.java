@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * UnifiedriskTransactionAmount
@@ -31,7 +30,7 @@ import java.math.BigDecimal;
 
 public class UnifiedriskTransactionAmount {
   @SerializedName("value")
-  private BigDecimal value = null;
+  private String value = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -40,15 +39,15 @@ public class UnifiedriskTransactionAmount {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private BigDecimal baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("merchantCurrency")
   private String merchantCurrency = null;
 
   @SerializedName("merchantValue")
-  private BigDecimal merchantValue = null;
+  private String merchantValue = null;
 
-  public UnifiedriskTransactionAmount value(BigDecimal value) {
+  public UnifiedriskTransactionAmount value(String value) {
     this.value = value;
     return this;
   }
@@ -58,11 +57,11 @@ public class UnifiedriskTransactionAmount {
    * @return value
   **/
   @ApiModelProperty(example = "100.5", value = "Transaction amount in the specified currency")
-  public BigDecimal getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -102,7 +101,7 @@ public class UnifiedriskTransactionAmount {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskTransactionAmount baseValue(BigDecimal baseValue) {
+  public UnifiedriskTransactionAmount baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -112,11 +111,11 @@ public class UnifiedriskTransactionAmount {
    * @return baseValue
   **/
   @ApiModelProperty(example = "85.5", value = "Amount in base currency")
-  public BigDecimal getBaseValue() {
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(BigDecimal baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 
@@ -138,7 +137,7 @@ public class UnifiedriskTransactionAmount {
     this.merchantCurrency = merchantCurrency;
   }
 
-  public UnifiedriskTransactionAmount merchantValue(BigDecimal merchantValue) {
+  public UnifiedriskTransactionAmount merchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
     return this;
   }
@@ -148,11 +147,11 @@ public class UnifiedriskTransactionAmount {
    * @return merchantValue
   **/
   @ApiModelProperty(value = "Transaction amount expressed in the merchant's local currency, used for cross-currency comparison and risk threshold evaluation against merchant's baseline")
-  public BigDecimal getMerchantValue() {
+  public String getMerchantValue() {
     return merchantValue;
   }
 
-  public void setMerchantValue(BigDecimal merchantValue) {
+  public void setMerchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
   }
 

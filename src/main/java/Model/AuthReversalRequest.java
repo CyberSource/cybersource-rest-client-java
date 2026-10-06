@@ -15,12 +15,12 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsProcessorInformationReversal;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
 import Model.Ptsv2paymentsidreversalsDeviceInformation;
 import Model.Ptsv2paymentsidreversalsOrderInformation;
 import Model.Ptsv2paymentsidreversalsPaymentInformation;
-import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsProcessingInformation;
 import Model.Ptsv2paymentsidreversalsReversalInformation;
 import com.google.gson.TypeAdapter;
@@ -50,7 +50,7 @@ public class AuthReversalRequest {
   private Ptsv2paymentsidreversalsOrderInformation orderInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("paymentInformation")
   private Ptsv2paymentsidreversalsPaymentInformation paymentInformation = null;
@@ -133,7 +133,7 @@ public class AuthReversalRequest {
     this.orderInformation = orderInformation;
   }
 
-  public AuthReversalRequest pointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public AuthReversalRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -143,11 +143,11 @@ public class AuthReversalRequest {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 

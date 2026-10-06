@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse20019Errors;
-import Model.InlineResponse20019GoogleMerchant;
+import Model.InlineResponse20019Processing;
+import Model.InlineResponse20019Syndication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,48 +25,45 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import org.joda.time.DateTime;
+import java.util.Map;
 
 /**
- * Result of a product feed ingestion request.
+ * Processing and syndication status of a product feed job.
  */
-@ApiModel(description = "Result of a product feed ingestion request.")
+@ApiModel(description = "Processing and syndication status of a product feed job.")
 
 public class InlineResponse20019 {
+  @SerializedName("jobId")
+  private String jobId = null;
+
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("feed_id")
-  private String feedId = null;
+  @SerializedName("processing")
+  private InlineResponse20019Processing processing = null;
 
-  @SerializedName("total_submitted")
-  private Integer totalSubmitted = null;
+  @SerializedName("syndication")
+  private Map<String, InlineResponse20019Syndication> syndication = null;
 
-  @SerializedName("success_count")
-  private Integer successCount = null;
+  public InlineResponse20019 jobId(String jobId) {
+    this.jobId = jobId;
+    return this;
+  }
 
-  @SerializedName("failed_count")
-  private Integer failedCount = null;
+   /**
+   * Unique identifier of the feed submission job.
+   * @return jobId
+  **/
+  @ApiModelProperty(example = "550e8400-e29b-41d4-a716-446655440000", value = "Unique identifier of the feed submission job.")
+  public String getJobId() {
+    return jobId;
+  }
 
-  @SerializedName("errors")
-  private List<InlineResponse20019Errors> errors = null;
-
-  @SerializedName("ingested_at")
-  private DateTime ingestedAt = null;
-
-  @SerializedName("forwarded_to_agent")
-  private Boolean forwardedToAgent = null;
-
-  @SerializedName("agent_endpoint")
-  private String agentEndpoint = null;
-
-  @SerializedName("forwarded_to_ucp_agent")
-  private Boolean forwardedToUcpAgent = null;
-
-  @SerializedName("google_merchant")
-  private InlineResponse20019GoogleMerchant googleMerchant = null;
+  public void setJobId(String jobId) {
+    this.jobId = jobId;
+  }
 
   public InlineResponse20019 status(String status) {
     this.status = status;
@@ -74,10 +71,10 @@ public class InlineResponse20019 {
   }
 
    /**
-   * Overall ingestion result: - &#x60;success&#x60; — all products were validated and saved - &#x60;partial_success&#x60; — some products failed validation; &#x60;errors&#x60; lists the failures - &#x60;failed&#x60; — no products were saved; check &#x60;errors&#x60; for details   Possible values: - success - partial_success - failed
+   * Overall status of the feed job.  Possible values: - PENDING - PROCESSING - COMPLETED - FAILED
    * @return status
   **/
-  @ApiModelProperty(example = "success", value = "Overall ingestion result: - `success` — all products were validated and saved - `partial_success` — some products failed validation; `errors` lists the failures - `failed` — no products were saved; check `errors` for details   Possible values: - success - partial_success - failed")
+  @ApiModelProperty(example = "COMPLETED", value = "Overall status of the feed job.  Possible values: - PENDING - PROCESSING - COMPLETED - FAILED")
   public String getStatus() {
     return status;
   }
@@ -86,192 +83,48 @@ public class InlineResponse20019 {
     this.status = status;
   }
 
-  public InlineResponse20019 feedId(String feedId) {
-    this.feedId = feedId;
+  public InlineResponse20019 processing(InlineResponse20019Processing processing) {
+    this.processing = processing;
     return this;
   }
 
    /**
-   * Unique identifier for this feed ingestion job. Use this with the Syndication Status endpoint to monitor the asynchronous protocol sync progress (e.g. to Google Merchant Center). 
-   * @return feedId
-  **/
-  @ApiModelProperty(example = "550e8400-e29b-41d4-a716-446655440000", value = "Unique identifier for this feed ingestion job. Use this with the Syndication Status endpoint to monitor the asynchronous protocol sync progress (e.g. to Google Merchant Center). ")
-  public String getFeedId() {
-    return feedId;
-  }
-
-  public void setFeedId(String feedId) {
-    this.feedId = feedId;
-  }
-
-  public InlineResponse20019 totalSubmitted(Integer totalSubmitted) {
-    this.totalSubmitted = totalSubmitted;
-    return this;
-  }
-
-   /**
-   * Total number of product records in the submitted feed.
-   * @return totalSubmitted
-  **/
-  @ApiModelProperty(example = "100", value = "Total number of product records in the submitted feed.")
-  public Integer getTotalSubmitted() {
-    return totalSubmitted;
-  }
-
-  public void setTotalSubmitted(Integer totalSubmitted) {
-    this.totalSubmitted = totalSubmitted;
-  }
-
-  public InlineResponse20019 successCount(Integer successCount) {
-    this.successCount = successCount;
-    return this;
-  }
-
-   /**
-   * Number of products that passed validation and were saved to the catalog.
-   * @return successCount
-  **/
-  @ApiModelProperty(example = "98", value = "Number of products that passed validation and were saved to the catalog.")
-  public Integer getSuccessCount() {
-    return successCount;
-  }
-
-  public void setSuccessCount(Integer successCount) {
-    this.successCount = successCount;
-  }
-
-  public InlineResponse20019 failedCount(Integer failedCount) {
-    this.failedCount = failedCount;
-    return this;
-  }
-
-   /**
-   * Number of products that failed validation and were not saved.
-   * @return failedCount
-  **/
-  @ApiModelProperty(example = "2", value = "Number of products that failed validation and were not saved.")
-  public Integer getFailedCount() {
-    return failedCount;
-  }
-
-  public void setFailedCount(Integer failedCount) {
-    this.failedCount = failedCount;
-  }
-
-  public InlineResponse20019 errors(List<InlineResponse20019Errors> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public InlineResponse20019 addErrorsItem(InlineResponse20019Errors errorsItem) {
-    if (this.errors == null) {
-      this.errors = new ArrayList<InlineResponse20019Errors>();
-    }
-    this.errors.add(errorsItem);
-    return this;
-  }
-
-   /**
-   * Per-product validation errors for products that failed ingestion. Each entry identifies the product, the specific field that failed, and the reason. &#x60;null&#x60; when &#x60;failed_count&#x60; is zero. 
-   * @return errors
-  **/
-  @ApiModelProperty(value = "Per-product validation errors for products that failed ingestion. Each entry identifies the product, the specific field that failed, and the reason. `null` when `failed_count` is zero. ")
-  public List<InlineResponse20019Errors> getErrors() {
-    return errors;
-  }
-
-  public void setErrors(List<InlineResponse20019Errors> errors) {
-    this.errors = errors;
-  }
-
-  public InlineResponse20019 ingestedAt(DateTime ingestedAt) {
-    this.ingestedAt = ingestedAt;
-    return this;
-  }
-
-   /**
-   * ISO 8601 timestamp when the ingestion completed.
-   * @return ingestedAt
-  **/
-  @ApiModelProperty(value = "ISO 8601 timestamp when the ingestion completed.")
-  public DateTime getIngestedAt() {
-    return ingestedAt;
-  }
-
-  public void setIngestedAt(DateTime ingestedAt) {
-    this.ingestedAt = ingestedAt;
-  }
-
-  public InlineResponse20019 forwardedToAgent(Boolean forwardedToAgent) {
-    this.forwardedToAgent = forwardedToAgent;
-    return this;
-  }
-
-   /**
-   * Indicates whether the ingested products were scheduled for syndication to the configured AI agent endpoint. Set to &#x60;true&#x60; when at least one product was successfully saved. Note: syndication is asynchronous — this field confirms the dispatch was initiated, not that the agent received the data. 
-   * @return forwardedToAgent
-  **/
-  @ApiModelProperty(example = "true", value = "Indicates whether the ingested products were scheduled for syndication to the configured AI agent endpoint. Set to `true` when at least one product was successfully saved. Note: syndication is asynchronous — this field confirms the dispatch was initiated, not that the agent received the data. ")
-  public Boolean ForwardedToAgent() {
-    return forwardedToAgent;
-  }
-
-  public void setForwardedToAgent(Boolean forwardedToAgent) {
-    this.forwardedToAgent = forwardedToAgent;
-  }
-
-  public InlineResponse20019 agentEndpoint(String agentEndpoint) {
-    this.agentEndpoint = agentEndpoint;
-    return this;
-  }
-
-   /**
-   * The AI agent endpoint URL that the products were forwarded to. Present when &#x60;forwarded_to_agent&#x60; is &#x60;true&#x60;. 
-   * @return agentEndpoint
-  **/
-  @ApiModelProperty(example = "https://agent.example.com/products", value = "The AI agent endpoint URL that the products were forwarded to. Present when `forwarded_to_agent` is `true`. ")
-  public String getAgentEndpoint() {
-    return agentEndpoint;
-  }
-
-  public void setAgentEndpoint(String agentEndpoint) {
-    this.agentEndpoint = agentEndpoint;
-  }
-
-  public InlineResponse20019 forwardedToUcpAgent(Boolean forwardedToUcpAgent) {
-    this.forwardedToUcpAgent = forwardedToUcpAgent;
-    return this;
-  }
-
-   /**
-   * Indicates whether the ingested products were scheduled for syndication to the UCP (Unified Commerce Platform) agent. Set to &#x60;true&#x60; when UCP syndication is enabled and at least one product was successfully saved. 
-   * @return forwardedToUcpAgent
-  **/
-  @ApiModelProperty(example = "true", value = "Indicates whether the ingested products were scheduled for syndication to the UCP (Unified Commerce Platform) agent. Set to `true` when UCP syndication is enabled and at least one product was successfully saved. ")
-  public Boolean ForwardedToUcpAgent() {
-    return forwardedToUcpAgent;
-  }
-
-  public void setForwardedToUcpAgent(Boolean forwardedToUcpAgent) {
-    this.forwardedToUcpAgent = forwardedToUcpAgent;
-  }
-
-  public InlineResponse20019 googleMerchant(InlineResponse20019GoogleMerchant googleMerchant) {
-    this.googleMerchant = googleMerchant;
-    return this;
-  }
-
-   /**
-   * Get googleMerchant
-   * @return googleMerchant
+   * Get processing
+   * @return processing
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse20019GoogleMerchant getGoogleMerchant() {
-    return googleMerchant;
+  public InlineResponse20019Processing getProcessing() {
+    return processing;
   }
 
-  public void setGoogleMerchant(InlineResponse20019GoogleMerchant googleMerchant) {
-    this.googleMerchant = googleMerchant;
+  public void setProcessing(InlineResponse20019Processing processing) {
+    this.processing = processing;
+  }
+
+  public InlineResponse20019 syndication(Map<String, InlineResponse20019Syndication> syndication) {
+    this.syndication = syndication;
+    return this;
+  }
+
+  public InlineResponse20019 putSyndicationItem(String key, InlineResponse20019Syndication syndicationItem) {
+    if (this.syndication == null) {
+      this.syndication = new HashMap<String, InlineResponse20019Syndication>();
+    }
+    this.syndication.put(key, syndicationItem);
+    return this;
+  }
+
+   /**
+   * Per-protocol syndication status, keyed by lowercase protocol name (e.g. &#x60;acp&#x60;, &#x60;ucp&#x60;). 
+   * @return syndication
+  **/
+  @ApiModelProperty(example = "{\"acp\":{\"status\":\"SUCCESS\",\"completedAt\":\"2026-08-31T18:04:12Z\",\"retries\":0}}", value = "Per-protocol syndication status, keyed by lowercase protocol name (e.g. `acp`, `ucp`). ")
+  public Map<String, InlineResponse20019Syndication> getSyndication() {
+    return syndication;
+  }
+
+  public void setSyndication(Map<String, InlineResponse20019Syndication> syndication) {
+    this.syndication = syndication;
   }
 
 
@@ -284,22 +137,15 @@ public class InlineResponse20019 {
       return false;
     }
     InlineResponse20019 inlineResponse20019 = (InlineResponse20019) o;
-    return Objects.equals(this.status, inlineResponse20019.status) &&
-        Objects.equals(this.feedId, inlineResponse20019.feedId) &&
-        Objects.equals(this.totalSubmitted, inlineResponse20019.totalSubmitted) &&
-        Objects.equals(this.successCount, inlineResponse20019.successCount) &&
-        Objects.equals(this.failedCount, inlineResponse20019.failedCount) &&
-        Objects.equals(this.errors, inlineResponse20019.errors) &&
-        Objects.equals(this.ingestedAt, inlineResponse20019.ingestedAt) &&
-        Objects.equals(this.forwardedToAgent, inlineResponse20019.forwardedToAgent) &&
-        Objects.equals(this.agentEndpoint, inlineResponse20019.agentEndpoint) &&
-        Objects.equals(this.forwardedToUcpAgent, inlineResponse20019.forwardedToUcpAgent) &&
-        Objects.equals(this.googleMerchant, inlineResponse20019.googleMerchant);
+    return Objects.equals(this.jobId, inlineResponse20019.jobId) &&
+        Objects.equals(this.status, inlineResponse20019.status) &&
+        Objects.equals(this.processing, inlineResponse20019.processing) &&
+        Objects.equals(this.syndication, inlineResponse20019.syndication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, feedId, totalSubmitted, successCount, failedCount, errors, ingestedAt, forwardedToAgent, agentEndpoint, forwardedToUcpAgent, googleMerchant);
+    return Objects.hash(jobId, status, processing, syndication);
   }
 
 
@@ -326,17 +172,10 @@ public class InlineResponse20019 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20019 {\n");
     
+    if (jobId != null) sb.append("    jobId: ").append(SENSITIVE_FIELD_PATTERN.matcher("jobId").matches() ? "[REDACTED]" : toIndentedString(jobId)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (feedId != null) sb.append("    feedId: ").append(SENSITIVE_FIELD_PATTERN.matcher("feedId").matches() ? "[REDACTED]" : toIndentedString(feedId)).append("\n");
-    if (totalSubmitted != null) sb.append("    totalSubmitted: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalSubmitted").matches() ? "[REDACTED]" : toIndentedString(totalSubmitted)).append("\n");
-    if (successCount != null) sb.append("    successCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("successCount").matches() ? "[REDACTED]" : toIndentedString(successCount)).append("\n");
-    if (failedCount != null) sb.append("    failedCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("failedCount").matches() ? "[REDACTED]" : toIndentedString(failedCount)).append("\n");
-    if (errors != null) sb.append("    errors: ").append(SENSITIVE_FIELD_PATTERN.matcher("errors").matches() ? "[REDACTED]" : toIndentedString(errors)).append("\n");
-    if (ingestedAt != null) sb.append("    ingestedAt: ").append(SENSITIVE_FIELD_PATTERN.matcher("ingestedAt").matches() ? "[REDACTED]" : toIndentedString(ingestedAt)).append("\n");
-    if (forwardedToAgent != null) sb.append("    forwardedToAgent: ").append(SENSITIVE_FIELD_PATTERN.matcher("forwardedToAgent").matches() ? "[REDACTED]" : toIndentedString(forwardedToAgent)).append("\n");
-    if (agentEndpoint != null) sb.append("    agentEndpoint: ").append(SENSITIVE_FIELD_PATTERN.matcher("agentEndpoint").matches() ? "[REDACTED]" : toIndentedString(agentEndpoint)).append("\n");
-    if (forwardedToUcpAgent != null) sb.append("    forwardedToUcpAgent: ").append(SENSITIVE_FIELD_PATTERN.matcher("forwardedToUcpAgent").matches() ? "[REDACTED]" : toIndentedString(forwardedToUcpAgent)).append("\n");
-    if (googleMerchant != null) sb.append("    googleMerchant: ").append(SENSITIVE_FIELD_PATTERN.matcher("googleMerchant").matches() ? "[REDACTED]" : toIndentedString(googleMerchant)).append("\n");
+    if (processing != null) sb.append("    processing: ").append(SENSITIVE_FIELD_PATTERN.matcher("processing").matches() ? "[REDACTED]" : toIndentedString(processing)).append("\n");
+    if (syndication != null) sb.append("    syndication: ").append(SENSITIVE_FIELD_PATTERN.matcher("syndication").matches() ? "[REDACTED]" : toIndentedString(syndication)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -355,17 +194,10 @@ public class InlineResponse20019 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20019 {\n");
     
+    if (jobId != null) sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (feedId != null) sb.append("    feedId: ").append(toIndentedString(feedId)).append("\n");
-    if (totalSubmitted != null) sb.append("    totalSubmitted: ").append(toIndentedString(totalSubmitted)).append("\n");
-    if (successCount != null) sb.append("    successCount: ").append(toIndentedString(successCount)).append("\n");
-    if (failedCount != null) sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
-    if (errors != null) sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-    if (ingestedAt != null) sb.append("    ingestedAt: ").append(toIndentedString(ingestedAt)).append("\n");
-    if (forwardedToAgent != null) sb.append("    forwardedToAgent: ").append(toIndentedString(forwardedToAgent)).append("\n");
-    if (agentEndpoint != null) sb.append("    agentEndpoint: ").append(toIndentedString(agentEndpoint)).append("\n");
-    if (forwardedToUcpAgent != null) sb.append("    forwardedToUcpAgent: ").append(toIndentedString(forwardedToUcpAgent)).append("\n");
-    if (googleMerchant != null) sb.append("    googleMerchant: ").append(toIndentedString(googleMerchant)).append("\n");
+    if (processing != null) sb.append("    processing: ").append(toIndentedString(processing)).append("\n");
+    if (syndication != null) sb.append("    syndication: ").append(toIndentedString(syndication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

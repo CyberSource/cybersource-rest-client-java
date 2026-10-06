@@ -61,6 +61,9 @@ public class PtsV2PaymentsPost201Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
+  @SerializedName("createTimeUtc")
+  private String createTimeUtc = null;
+
   @SerializedName("status")
   private String status = null;
 
@@ -194,6 +197,24 @@ public class PtsV2PaymentsPost201Response {
 
   public void setSubmitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
+  }
+
+  public PtsV2PaymentsPost201Response createTimeUtc(String createTimeUtc) {
+    this.createTimeUtc = createTimeUtc;
+    return this;
+  }
+
+   /**
+   * Time when the authorization was created, in UTC. 
+   * @return createTimeUtc
+  **/
+  @ApiModelProperty(value = "Time when the authorization was created, in UTC. ")
+  public String getCreateTimeUtc() {
+    return createTimeUtc;
+  }
+
+  public void setCreateTimeUtc(String createTimeUtc) {
+    this.createTimeUtc = createTimeUtc;
   }
 
   public PtsV2PaymentsPost201Response status(String status) {
@@ -588,6 +609,7 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.id, ptsV2PaymentsPost201Response.id) &&
         Objects.equals(this.message, ptsV2PaymentsPost201Response.message) &&
         Objects.equals(this.submitTimeUtc, ptsV2PaymentsPost201Response.submitTimeUtc) &&
+        Objects.equals(this.createTimeUtc, ptsV2PaymentsPost201Response.createTimeUtc) &&
         Objects.equals(this.status, ptsV2PaymentsPost201Response.status) &&
         Objects.equals(this.reconciliationId, ptsV2PaymentsPost201Response.reconciliationId) &&
         Objects.equals(this.errorInformation, ptsV2PaymentsPost201Response.errorInformation) &&
@@ -613,7 +635,7 @@ public class PtsV2PaymentsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, merchantInformation, clearingInformation, embeddedActions, watchlistScreeningInformation);
+    return Objects.hash(links, id, message, submitTimeUtc, createTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, merchantInformation, clearingInformation, embeddedActions, watchlistScreeningInformation);
   }
 
 
@@ -644,6 +666,7 @@ public class PtsV2PaymentsPost201Response {
     if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (createTimeUtc != null) sb.append("    createTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("createTimeUtc").matches() ? "[REDACTED]" : toIndentedString(createTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("reconciliationId").matches() ? "[REDACTED]" : toIndentedString(reconciliationId)).append("\n");
     if (errorInformation != null) sb.append("    errorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("errorInformation").matches() ? "[REDACTED]" : toIndentedString(errorInformation)).append("\n");
@@ -687,6 +710,7 @@ public class PtsV2PaymentsPost201Response {
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (createTimeUtc != null) sb.append("    createTimeUtc: ").append(toIndentedString(createTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");

@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * REST/GraphQL API integration configuration for a merchant checkout flow.
+ * REST/GraphQL API integration configuration for programmatic agent interactions.
  */
-@ApiModel(description = "REST/GraphQL API integration configuration for a merchant checkout flow.")
+@ApiModel(description = "REST/GraphQL API integration configuration for programmatic agent interactions.")
 
 public class Iccv1merchantsApiIntegrations {
   @SerializedName("integrationSpec")
@@ -40,7 +40,7 @@ public class Iccv1merchantsApiIntegrations {
   private String url = null;
 
   @SerializedName("metadata")
-  private Map<String, String> metadata = null;
+  private Map<String, Object> metadata = null;
 
   public Iccv1merchantsApiIntegrations integrationSpec(String integrationSpec) {
     this.integrationSpec = integrationSpec;
@@ -78,14 +78,14 @@ public class Iccv1merchantsApiIntegrations {
     this.url = url;
   }
 
-  public Iccv1merchantsApiIntegrations metadata(Map<String, String> metadata) {
+  public Iccv1merchantsApiIntegrations metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public Iccv1merchantsApiIntegrations putMetadataItem(String key, String metadataItem) {
+  public Iccv1merchantsApiIntegrations putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
-      this.metadata = new HashMap<String, String>();
+      this.metadata = new HashMap<String, Object>();
     }
     this.metadata.put(key, metadataItem);
     return this;
@@ -96,11 +96,11 @@ public class Iccv1merchantsApiIntegrations {
    * @return metadata
   **/
   @ApiModelProperty(example = "{\"authScheme\":\"api_key\",\"rateLimit\":\"1000\",\"supportedFormats\":\"json\"}", value = "Optional metadata (max 10KB)")
-  public Map<String, String> getMetadata() {
+  public Map<String, Object> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

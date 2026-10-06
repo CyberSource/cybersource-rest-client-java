@@ -34,7 +34,7 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private Integer baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -43,10 +43,10 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
   private String merchantCurrency = null;
 
   @SerializedName("merchantValue")
-  private Integer merchantValue = null;
+  private String merchantValue = null;
 
   @SerializedName("value")
-  private Integer value = null;
+  private String value = null;
 
   @SerializedName("expectedMonthlyVolume")
   private Integer expectedMonthlyVolume = null;
@@ -69,7 +69,7 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorLimitValue baseValue(Integer baseValue) {
+  public UnifiedriskMerchantMerchantDescriptorLimitValue baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -79,11 +79,11 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
    * @return baseValue
   **/
   @ApiModelProperty(value = "Financial limit amount in the base currency, in minor units")
-  public Integer getBaseValue() {
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(Integer baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 
@@ -123,7 +123,7 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
     this.merchantCurrency = merchantCurrency;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorLimitValue merchantValue(Integer merchantValue) {
+  public UnifiedriskMerchantMerchantDescriptorLimitValue merchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
     return this;
   }
@@ -133,15 +133,15 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
    * @return merchantValue
   **/
   @ApiModelProperty(value = "Financial limit in the merchant's local currency, in minor units")
-  public Integer getMerchantValue() {
+  public String getMerchantValue() {
     return merchantValue;
   }
 
-  public void setMerchantValue(Integer merchantValue) {
+  public void setMerchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
   }
 
-  public UnifiedriskMerchantMerchantDescriptorLimitValue value(Integer value) {
+  public UnifiedriskMerchantMerchantDescriptorLimitValue value(String value) {
     this.value = value;
     return this;
   }
@@ -151,11 +151,11 @@ public class UnifiedriskMerchantMerchantDescriptorLimitValue {
    * @return value
   **/
   @ApiModelProperty(value = "Limit value amount in the specified currency, in minor units")
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(Integer value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

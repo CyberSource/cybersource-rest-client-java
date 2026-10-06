@@ -53,6 +53,9 @@ public class Ptsv2intentsOrderInformationLineItems {
   @SerializedName("taxAmount")
   private String taxAmount = null;
 
+  @SerializedName("shippingPreference")
+  private String shippingPreference = null;
+
   public Ptsv2intentsOrderInformationLineItems productName(String productName) {
     this.productName = productName;
     return this;
@@ -199,6 +202,24 @@ public class Ptsv2intentsOrderInformationLineItems {
     this.taxAmount = taxAmount;
   }
 
+  public Ptsv2intentsOrderInformationLineItems shippingPreference(String shippingPreference) {
+    this.shippingPreference = shippingPreference;
+    return this;
+  }
+
+   /**
+   * Controls shipping behavior during checkout. Use &#x60;NO_SHIPPING&#x60; for digital goods, &#x60;SET_PROVIDED_ADDRESS&#x60; when &#x60;orderInformation.shipTo&#x60; is provided, and &#x60;GET_FROM_FILE&#x60; to use the buyer&#39;s saved address.   Possible values: - NO_SHIPPING - SET_PROVIDED_ADDRESS - GET_FROM_FILE
+   * @return shippingPreference
+  **/
+  @ApiModelProperty(value = "Controls shipping behavior during checkout. Use `NO_SHIPPING` for digital goods, `SET_PROVIDED_ADDRESS` when `orderInformation.shipTo` is provided, and `GET_FROM_FILE` to use the buyer's saved address.   Possible values: - NO_SHIPPING - SET_PROVIDED_ADDRESS - GET_FROM_FILE")
+  public String getShippingPreference() {
+    return shippingPreference;
+  }
+
+  public void setShippingPreference(String shippingPreference) {
+    this.shippingPreference = shippingPreference;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,12 +237,13 @@ public class Ptsv2intentsOrderInformationLineItems {
         Objects.equals(this.typeOfSupply, ptsv2intentsOrderInformationLineItems.typeOfSupply) &&
         Objects.equals(this.unitPrice, ptsv2intentsOrderInformationLineItems.unitPrice) &&
         Objects.equals(this.totalAmount, ptsv2intentsOrderInformationLineItems.totalAmount) &&
-        Objects.equals(this.taxAmount, ptsv2intentsOrderInformationLineItems.taxAmount);
+        Objects.equals(this.taxAmount, ptsv2intentsOrderInformationLineItems.taxAmount) &&
+        Objects.equals(this.shippingPreference, ptsv2intentsOrderInformationLineItems.shippingPreference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productName, productDescription, productSku, quantity, typeOfSupply, unitPrice, totalAmount, taxAmount);
+    return Objects.hash(productName, productDescription, productSku, quantity, typeOfSupply, unitPrice, totalAmount, taxAmount, shippingPreference);
   }
 
 
@@ -256,6 +278,7 @@ public class Ptsv2intentsOrderInformationLineItems {
     if (unitPrice != null) sb.append("    unitPrice: ").append(SENSITIVE_FIELD_PATTERN.matcher("unitPrice").matches() ? "[REDACTED]" : toIndentedString(unitPrice)).append("\n");
     if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
+    if (shippingPreference != null) sb.append("    shippingPreference: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingPreference").matches() ? "[REDACTED]" : toIndentedString(shippingPreference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -282,6 +305,7 @@ public class Ptsv2intentsOrderInformationLineItems {
     if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (shippingPreference != null) sb.append("    shippingPreference: ").append(toIndentedString(shippingPreference)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,6 +32,9 @@ public class Ptsv2intentsMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("value")
+  private String value = null;
+
   @SerializedName("email")
   private String email = null;
 
@@ -51,6 +54,24 @@ public class Ptsv2intentsMerchantInformationMerchantDescriptor {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Ptsv2intentsMerchantInformationMerchantDescriptor value(String value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * Value of the merchant descriptor shown to the buyer for this order. 
+   * @return value
+  **/
+  @ApiModelProperty(value = "Value of the merchant descriptor shown to the buyer for this order. ")
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(String value) {
+    this.value = value;
   }
 
   public Ptsv2intentsMerchantInformationMerchantDescriptor email(String email) {
@@ -82,12 +103,13 @@ public class Ptsv2intentsMerchantInformationMerchantDescriptor {
     }
     Ptsv2intentsMerchantInformationMerchantDescriptor ptsv2intentsMerchantInformationMerchantDescriptor = (Ptsv2intentsMerchantInformationMerchantDescriptor) o;
     return Objects.equals(this.name, ptsv2intentsMerchantInformationMerchantDescriptor.name) &&
+        Objects.equals(this.value, ptsv2intentsMerchantInformationMerchantDescriptor.value) &&
         Objects.equals(this.email, ptsv2intentsMerchantInformationMerchantDescriptor.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email);
+    return Objects.hash(name, value, email);
   }
 
 
@@ -115,6 +137,7 @@ public class Ptsv2intentsMerchantInformationMerchantDescriptor {
     sb.append("class Ptsv2intentsMerchantInformationMerchantDescriptor {\n");
     
     if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (value != null) sb.append("    value: ").append(SENSITIVE_FIELD_PATTERN.matcher("value").matches() ? "[REDACTED]" : toIndentedString(value)).append("\n");
     if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -135,6 +158,7 @@ public class Ptsv2intentsMerchantInformationMerchantDescriptor {
     sb.append("class Ptsv2intentsMerchantInformationMerchantDescriptor {\n");
     
     if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (value != null) sb.append("    value: ").append(toIndentedString(value)).append("\n");
     if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();

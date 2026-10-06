@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor;
+import Model.PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class PtsV2PayoutsPost201ResponseMerchantInformation {
   @SerializedName("merchantDescriptor")
-  private PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor = null;
+  private PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor = null;
 
-  public PtsV2PayoutsPost201ResponseMerchantInformation merchantDescriptor(PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor) {
+  public PtsV2PayoutsPost201ResponseMerchantInformation merchantDescriptor(PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
     return this;
   }
@@ -43,11 +43,11 @@ public class PtsV2PayoutsPost201ResponseMerchantInformation {
    * @return merchantDescriptor
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor getMerchantDescriptor() {
+  public PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor getMerchantDescriptor() {
     return merchantDescriptor;
   }
 
-  public void setMerchantDescriptor(PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor) {
+  public void setMerchantDescriptor(PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
   }
 

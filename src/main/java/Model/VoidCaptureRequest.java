@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
 import Model.Ptsv2paymentsidvoidsAgreementInformation;
 import Model.Ptsv2paymentsidvoidsMerchantInformation;
@@ -52,6 +53,9 @@ public class VoidCaptureRequest {
 
   @SerializedName("processingInformation")
   private Ptsv2paymentsidvoidsProcessingInformation processingInformation = null;
+
+  @SerializedName("pointOfSaleInformation")
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   public VoidCaptureRequest clientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -161,6 +165,24 @@ public class VoidCaptureRequest {
     this.processingInformation = processingInformation;
   }
 
+  public VoidCaptureRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+    return this;
+  }
+
+   /**
+   * Get pointOfSaleInformation
+   * @return pointOfSaleInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
+    return pointOfSaleInformation;
+  }
+
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,12 +198,13 @@ public class VoidCaptureRequest {
         Objects.equals(this.orderInformation, voidCaptureRequest.orderInformation) &&
         Objects.equals(this.agreementInformation, voidCaptureRequest.agreementInformation) &&
         Objects.equals(this.merchantInformation, voidCaptureRequest.merchantInformation) &&
-        Objects.equals(this.processingInformation, voidCaptureRequest.processingInformation);
+        Objects.equals(this.processingInformation, voidCaptureRequest.processingInformation) &&
+        Objects.equals(this.pointOfSaleInformation, voidCaptureRequest.pointOfSaleInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, agreementInformation, merchantInformation, processingInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, agreementInformation, merchantInformation, processingInformation, pointOfSaleInformation);
   }
 
 
@@ -214,6 +237,7 @@ public class VoidCaptureRequest {
     if (agreementInformation != null) sb.append("    agreementInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("agreementInformation").matches() ? "[REDACTED]" : toIndentedString(agreementInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processingInformation").matches() ? "[REDACTED]" : toIndentedString(processingInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleInformation").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -238,6 +262,7 @@ public class VoidCaptureRequest {
     if (agreementInformation != null) sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

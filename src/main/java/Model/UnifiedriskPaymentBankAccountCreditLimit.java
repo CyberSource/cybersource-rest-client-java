@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * UnifiedriskPaymentBankAccountCreditLimit
@@ -31,7 +30,7 @@ import java.math.BigDecimal;
 
 public class UnifiedriskPaymentBankAccountCreditLimit {
   @SerializedName("value")
-  private BigDecimal value = null;
+  private String value = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -40,15 +39,15 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
   private String baseCurrency = null;
 
   @SerializedName("baseValue")
-  private BigDecimal baseValue = null;
+  private String baseValue = null;
 
   @SerializedName("merchantCurrency")
   private String merchantCurrency = null;
 
   @SerializedName("merchantValue")
-  private BigDecimal merchantValue = null;
+  private String merchantValue = null;
 
-  public UnifiedriskPaymentBankAccountCreditLimit value(BigDecimal value) {
+  public UnifiedriskPaymentBankAccountCreditLimit value(String value) {
     this.value = value;
     return this;
   }
@@ -57,12 +56,12 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
    * Credit limit on account    
    * @return value
   **/
-  @ApiModelProperty(example = "5000.0", value = "Credit limit on account    ")
-  public BigDecimal getValue() {
+  @ApiModelProperty(example = "5000", value = "Credit limit on account    ")
+  public String getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -102,7 +101,7 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
     this.baseCurrency = baseCurrency;
   }
 
-  public UnifiedriskPaymentBankAccountCreditLimit baseValue(BigDecimal baseValue) {
+  public UnifiedriskPaymentBankAccountCreditLimit baseValue(String baseValue) {
     this.baseValue = baseValue;
     return this;
   }
@@ -111,12 +110,12 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
    * Value of transaction expressed in the currency defined in the baseCurrency field.    
    * @return baseValue
   **/
-  @ApiModelProperty(example = "6000.0", value = "Value of transaction expressed in the currency defined in the baseCurrency field.    ")
-  public BigDecimal getBaseValue() {
+  @ApiModelProperty(example = "6000", value = "Value of transaction expressed in the currency defined in the baseCurrency field.    ")
+  public String getBaseValue() {
     return baseValue;
   }
 
-  public void setBaseValue(BigDecimal baseValue) {
+  public void setBaseValue(String baseValue) {
     this.baseValue = baseValue;
   }
 
@@ -138,7 +137,7 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
     this.merchantCurrency = merchantCurrency;
   }
 
-  public UnifiedriskPaymentBankAccountCreditLimit merchantValue(BigDecimal merchantValue) {
+  public UnifiedriskPaymentBankAccountCreditLimit merchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
     return this;
   }
@@ -148,11 +147,11 @@ public class UnifiedriskPaymentBankAccountCreditLimit {
    * @return merchantValue
   **/
   @ApiModelProperty(value = "Credit limit amount expressed in the merchant's local currency, used for utilization ratio calculations and cross-currency risk assessment")
-  public BigDecimal getMerchantValue() {
+  public String getMerchantValue() {
     return merchantValue;
   }
 
-  public void setMerchantValue(BigDecimal merchantValue) {
+  public void setMerchantValue(String merchantValue) {
     this.merchantValue = merchantValue;
   }
 

@@ -23,9 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Schema for updating an agent. Only name, domain, description, contactEmail, and agentMetadata can be updated. Extra fields (keys, tokenRequestorId, etc.) will cause a 422 Validation Error.
@@ -46,7 +43,7 @@ public class AgentUpdate {
   private String contactEmail = null;
 
   @SerializedName("agentMetadata")
-  private Map<String, String> agentMetadata = null;
+  private Object agentMetadata = null;
 
   public AgentUpdate name(String name) {
     this.name = name;
@@ -54,10 +51,10 @@ public class AgentUpdate {
   }
 
    /**
-   * Agent name
+   * Display name for the agent
    * @return name
   **/
-  @ApiModelProperty(value = "Agent name")
+  @ApiModelProperty(value = "Display name for the agent")
   public String getName() {
     return name;
   }
@@ -72,10 +69,10 @@ public class AgentUpdate {
   }
 
    /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent&#39;s home domain. Must be unique — raises 409 if already registered.
    * @return domain
   **/
-  @ApiModelProperty(value = "Agent domain URL")
+  @ApiModelProperty(value = "Fully-qualified HTTPS URL of the agent's home domain. Must be unique — raises 409 if already registered.")
   public String getDomain() {
     return domain;
   }
@@ -90,10 +87,10 @@ public class AgentUpdate {
   }
 
    /**
-   * Agent description
+   * Description of the agent&#39;s purpose or capabilities
    * @return description
   **/
-  @ApiModelProperty(value = "Agent description")
+  @ApiModelProperty(value = "Description of the agent's purpose or capabilities")
   public String getDescription() {
     return description;
   }
@@ -108,10 +105,10 @@ public class AgentUpdate {
   }
 
    /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @return contactEmail
   **/
-  @ApiModelProperty(value = "Contact email")
+  @ApiModelProperty(value = "Contact email for the team or individual responsible for this agent")
   public String getContactEmail() {
     return contactEmail;
   }
@@ -120,29 +117,21 @@ public class AgentUpdate {
     this.contactEmail = contactEmail;
   }
 
-  public AgentUpdate agentMetadata(Map<String, String> agentMetadata) {
+  public AgentUpdate agentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
     return this;
   }
 
-  public AgentUpdate putAgentMetadataItem(String key, String agentMetadataItem) {
-    if (this.agentMetadata == null) {
-      this.agentMetadata = new HashMap<String, String>();
-    }
-    this.agentMetadata.put(key, agentMetadataItem);
-    return this;
-  }
-
    /**
-   * Optional metadata (e.g., framework, version)
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
    * @return agentMetadata
   **/
-  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Optional metadata (e.g., framework, version)")
-  public Map<String, String> getAgentMetadata() {
+  @ApiModelProperty(example = "{\"framework\":\"LangChain\",\"frameworkVersion\":\"0.2.1\",\"language\":\"Python\",\"runtimeVersion\":\"3.12\",\"team\":\"payments-ai\",\"environment\":\"production\"}", value = "Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.")
+  public Object getAgentMetadata() {
     return agentMetadata;
   }
 
-  public void setAgentMetadata(Map<String, String> agentMetadata) {
+  public void setAgentMetadata(Object agentMetadata) {
     this.agentMetadata = agentMetadata;
   }
 
