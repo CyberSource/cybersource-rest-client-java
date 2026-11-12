@@ -13,11 +13,11 @@
 
 package Api;
 
-import Model.InlineResponse20019;
-import Model.InlineResponse20020;
-import Model.InlineResponse20021;
-import Model.InlineResponse2021;
-import Model.InlineResponse40016;
+import Model.FeedJobStatusResponse;
+import Model.InlineResponse4007;
+import Model.ProductAcceptedFeedResponse;
+import Model.ProductCatalogResponse;
+import Model.ProductDetailResponse;
 import Model.ProductFeedRequest;
 import java.util.UUID;
 import org.junit.Test;
@@ -51,7 +51,7 @@ public class ProductFeedApiTest {
         Object getAllProductsRequest = null;
         Integer page = null;
         Integer size = null;
-        InlineResponse20020 response = api.getAllProducts(getAllProductsRequest, page, size);
+        ProductCatalogResponse response = api.getAllProducts(getAllProductsRequest, page, size);
 
         // TODO: test validations
     }
@@ -68,7 +68,7 @@ public class ProductFeedApiTest {
     public void getFeedJobStatusTest() throws Exception {
         UUID jobId = null;
         Object getFeedJobStatusRequest = null;
-        InlineResponse20019 response = api.getFeedJobStatus(jobId, getFeedJobStatusRequest);
+        FeedJobStatusResponse response = api.getFeedJobStatus(jobId, getFeedJobStatusRequest);
 
         // TODO: test validations
     }
@@ -85,7 +85,7 @@ public class ProductFeedApiTest {
     public void getProductTest() throws Exception {
         String productId = null;
         Object getProductRequest = null;
-        InlineResponse20021 response = api.getProduct(productId, getProductRequest);
+        ProductDetailResponse response = api.getProduct(productId, getProductRequest);
 
         // TODO: test validations
     }
@@ -101,7 +101,7 @@ public class ProductFeedApiTest {
     @Test
     public void submitProductFeedJsonTest() throws Exception {
         ProductFeedRequest productFeedRequest = null;
-        InlineResponse2021 response = api.submitProductFeedJson(productFeedRequest);
+        ProductAcceptedFeedResponse response = api.submitProductFeedJson(productFeedRequest);
 
         // TODO: test validations
     }

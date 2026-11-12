@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Riskv1decisionsProcessingInformationAuthorizationOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,6 +35,21 @@ import java.util.List;
 public class Riskv1decisionsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
+
+  @SerializedName("businessApplicationId")
+  private String businessApplicationId = null;
+
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
+
+  @SerializedName("preAuthStatus")
+  private String preAuthStatus = null;
+
+  @SerializedName("preAuthResponseCode")
+  private String preAuthResponseCode = null;
+
+  @SerializedName("authorizationOptions")
+  private Riskv1decisionsProcessingInformationAuthorizationOptions authorizationOptions = null;
 
   public Riskv1decisionsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
@@ -61,6 +77,96 @@ public class Riskv1decisionsProcessingInformation {
     this.actionList = actionList;
   }
 
+  public Riskv1decisionsProcessingInformation businessApplicationId(String businessApplicationId) {
+    this.businessApplicationId = businessApplicationId;
+    return this;
+  }
+
+   /**
+   * Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet  
+   * @return businessApplicationId
+  **/
+  @ApiModelProperty(value = "Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet  ")
+  public String getBusinessApplicationId() {
+    return businessApplicationId;
+  }
+
+  public void setBusinessApplicationId(String businessApplicationId) {
+    this.businessApplicationId = businessApplicationId;
+  }
+
+  public Riskv1decisionsProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = "This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+  }
+
+  public Riskv1decisionsProcessingInformation preAuthStatus(String preAuthStatus) {
+    this.preAuthStatus = preAuthStatus;
+    return this;
+  }
+
+   /**
+   * Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation. Possible values: Approved, Rejected, Hold. 
+   * @return preAuthStatus
+  **/
+  @ApiModelProperty(value = "Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation. Possible values: Approved, Rejected, Hold. ")
+  public String getPreAuthStatus() {
+    return preAuthStatus;
+  }
+
+  public void setPreAuthStatus(String preAuthStatus) {
+    this.preAuthStatus = preAuthStatus;
+  }
+
+  public Riskv1decisionsProcessingInformation preAuthResponseCode(String preAuthResponseCode) {
+    this.preAuthResponseCode = preAuthResponseCode;
+    return this;
+  }
+
+   /**
+   * Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. 
+   * @return preAuthResponseCode
+  **/
+  @ApiModelProperty(value = "Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. ")
+  public String getPreAuthResponseCode() {
+    return preAuthResponseCode;
+  }
+
+  public void setPreAuthResponseCode(String preAuthResponseCode) {
+    this.preAuthResponseCode = preAuthResponseCode;
+  }
+
+  public Riskv1decisionsProcessingInformation authorizationOptions(Riskv1decisionsProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+    return this;
+  }
+
+   /**
+   * Get authorizationOptions
+   * @return authorizationOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsProcessingInformationAuthorizationOptions getAuthorizationOptions() {
+    return authorizationOptions;
+  }
+
+  public void setAuthorizationOptions(Riskv1decisionsProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,12 +177,17 @@ public class Riskv1decisionsProcessingInformation {
       return false;
     }
     Riskv1decisionsProcessingInformation riskv1decisionsProcessingInformation = (Riskv1decisionsProcessingInformation) o;
-    return Objects.equals(this.actionList, riskv1decisionsProcessingInformation.actionList);
+    return Objects.equals(this.actionList, riskv1decisionsProcessingInformation.actionList) &&
+        Objects.equals(this.businessApplicationId, riskv1decisionsProcessingInformation.businessApplicationId) &&
+        Objects.equals(this.purposeOfPayment, riskv1decisionsProcessingInformation.purposeOfPayment) &&
+        Objects.equals(this.preAuthStatus, riskv1decisionsProcessingInformation.preAuthStatus) &&
+        Objects.equals(this.preAuthResponseCode, riskv1decisionsProcessingInformation.preAuthResponseCode) &&
+        Objects.equals(this.authorizationOptions, riskv1decisionsProcessingInformation.authorizationOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList);
+    return Objects.hash(actionList, businessApplicationId, purposeOfPayment, preAuthStatus, preAuthResponseCode, authorizationOptions);
   }
 
 
@@ -104,6 +215,11 @@ public class Riskv1decisionsProcessingInformation {
     sb.append("class Riskv1decisionsProcessingInformation {\n");
     
     if (actionList != null) sb.append("    actionList: ").append(SENSITIVE_FIELD_PATTERN.matcher("actionList").matches() ? "[REDACTED]" : toIndentedString(actionList)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("businessApplicationId").matches() ? "[REDACTED]" : toIndentedString(businessApplicationId)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(SENSITIVE_FIELD_PATTERN.matcher("purposeOfPayment").matches() ? "[REDACTED]" : toIndentedString(purposeOfPayment)).append("\n");
+    if (preAuthStatus != null) sb.append("    preAuthStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("preAuthStatus").matches() ? "[REDACTED]" : toIndentedString(preAuthStatus)).append("\n");
+    if (preAuthResponseCode != null) sb.append("    preAuthResponseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("preAuthResponseCode").matches() ? "[REDACTED]" : toIndentedString(preAuthResponseCode)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(SENSITIVE_FIELD_PATTERN.matcher("authorizationOptions").matches() ? "[REDACTED]" : toIndentedString(authorizationOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -123,6 +239,11 @@ public class Riskv1decisionsProcessingInformation {
     sb.append("class Riskv1decisionsProcessingInformation {\n");
     
     if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (preAuthStatus != null) sb.append("    preAuthStatus: ").append(toIndentedString(preAuthStatus)).append("\n");
+    if (preAuthResponseCode != null) sb.append("    preAuthResponseCode: ").append(toIndentedString(preAuthResponseCode)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

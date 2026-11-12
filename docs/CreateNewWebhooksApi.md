@@ -4,59 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v2/products/{organizationId} | Find Products You Can Subscribe To
-[**notificationSubscriptionsV2WebhooksPost**](CreateNewWebhooksApi.md#notificationSubscriptionsV2WebhooksPost) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
-<a name="findProductsToSubscribe"></a>
-# **findProductsToSubscribe**
-> List&lt;InlineResponse2006&gt; findProductsToSubscribe(organizationId)
-
-Find Products You Can Subscribe To
-
-Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.CreateNewWebhooksApi;
-
-
-CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
-String organizationId = "organizationId_example"; // String | The Organization Identifier.
-try {
-    List<InlineResponse2006> result = apiInstance.findProductsToSubscribe(organizationId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The Organization Identifier. |
-
-### Return type
-
-[**List&lt;InlineResponse2006&gt;**](InlineResponse2006.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-<a name="notificationSubscriptionsV2WebhooksPost"></a>
-# **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2018 notificationSubscriptionsV2WebhooksPost(createWebhook)
+<a name="createWebhookSubscription"></a>
+# **createWebhookSubscription**
+> CreateWebhookSubscriptionResponse createWebhookSubscription(createWebhook)
 
 Create a New Webhook Subscription
 
@@ -72,10 +27,10 @@ Create a new webhook subscription. Before creating a webhook, ensure that a sign
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 CreateWebhook createWebhook = new CreateWebhook(); // CreateWebhook | The webhook payload
 try {
-    InlineResponse2018 result = apiInstance.notificationSubscriptionsV2WebhooksPost(createWebhook);
+    CreateWebhookSubscriptionResponse result = apiInstance.createWebhookSubscription(createWebhook);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#notificationSubscriptionsV2WebhooksPost");
+    System.err.println("Exception when calling CreateNewWebhooksApi#createWebhookSubscription");
     e.printStackTrace();
 }
 ```
@@ -88,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2018**](InlineResponse2018.md)
+[**CreateWebhookSubscriptionResponse**](CreateWebhookSubscriptionResponse.md)
 
 ### Authorization
 
@@ -99,9 +54,54 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
+<a name="findProductsToSubscribe"></a>
+# **findProductsToSubscribe**
+> List&lt;ProductCatalogProduct&gt; findProductsToSubscribe(organizationId)
+
+Find Products You Can Subscribe To
+
+Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.CreateNewWebhooksApi;
+
+
+CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
+String organizationId = "organizationId_example"; // String | The Organization Identifier.
+try {
+    List<ProductCatalogProduct> result = apiInstance.findProductsToSubscribe(organizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The Organization Identifier. |
+
+### Return type
+
+[**List&lt;ProductCatalogProduct&gt;**](ProductCatalogProduct.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2017 saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey)
+> SaveSymEgressKeyResponse saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -120,7 +120,7 @@ String vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Se
 String vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
 SaveSymEgressKey saveSymEgressKey = new SaveSymEgressKey(); // SaveSymEgressKey | Provide egress Symmetric key information to save (create or store or refresh)
 try {
-    InlineResponse2017 result = apiInstance.saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
+    SaveSymEgressKeyResponse result = apiInstance.saveSymEgressKey(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CreateNewWebhooksApi#saveSymEgressKey");
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2017**](InlineResponse2017.md)
+[**SaveSymEgressKeyResponse**](SaveSymEgressKeyResponse.md)
 
 ### Authorization
 

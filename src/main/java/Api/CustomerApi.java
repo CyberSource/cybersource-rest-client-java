@@ -29,16 +29,16 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse404;
-import Model.InlineResponse409;
-import Model.InlineResponse410;
-import Model.InlineResponse412;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
 import Model.PatchCustomerRequest;
 import Model.PostCustomerRequest;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms404ErrorResponse;
+import Model.Tms409ErrorResponse;
+import Model.Tms410ErrorResponse;
+import Model.Tms412ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -87,14 +87,20 @@ public class CustomerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteCustomer,deleteCustomerAsync,deleteCustomerWithHttpInfo,deleteCustomerCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -121,10 +127,6 @@ public class CustomerApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -186,7 +188,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerId, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerValidateBeforeCall(customerId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -202,8 +203,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteCustomerAsync(String customerId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -241,14 +240,20 @@ public class CustomerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomer,getCustomerAsync,getCustomerWithHttpInfo,getCustomerCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -275,10 +280,6 @@ public class CustomerApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -342,7 +343,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostCustomerRequest> getCustomerWithHttpInfo(String customerId, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerValidateBeforeCall(customerId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -359,8 +359,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getCustomerAsync(String customerId, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -401,11 +399,17 @@ public class CustomerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerRequest, PatchCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomer,patchCustomerAsync,patchCustomerWithHttpInfo,patchCustomerCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -434,10 +438,6 @@ public class CustomerApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -511,7 +511,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PatchCustomerRequest> patchCustomerWithHttpInfo(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomerValidateBeforeCall(customerId, patchCustomerRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -530,8 +529,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call patchCustomerAsync(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -570,11 +567,17 @@ public class CustomerApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerRequest, PostCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomer,postCustomerAsync,postCustomerWithHttpInfo,postCustomerCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -600,10 +603,6 @@ public class CustomerApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -667,7 +666,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostCustomerRequest> postCustomerWithHttpInfo(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerValidateBeforeCall(postCustomerRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -684,8 +682,6 @@ public class CustomerApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postCustomerAsync(PostCustomerRequest postCustomerRequest, String profileId, final ApiCallback<PostCustomerRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

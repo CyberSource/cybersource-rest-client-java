@@ -37,17 +37,17 @@ import Model.GetAllSubscriptionsResponse;
 import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
 import Model.GetSubscriptionsPaymentsResponse;
-import Model.GetSubscriptionsPaymentsResponse1;
-import Model.InlineResponse4005;
-import Model.InlineResponse4006;
-import Model.InlineResponse4008;
-import Model.InlineResponse4009;
-import Model.InlineResponse4041;
+import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RbsGetPayment400ErrorResponse;
+import Model.RbsPlan400ErrorResponse;
+import Model.RbsPutPayment400ErrorResponse;
+import Model.RbsSubscription400ErrorResponse;
 import Model.SuspendSubscriptionResponse;
 import Model.UpdatePayments;
 import Model.UpdateSubscription;
 import Model.UpdateSubscriptionResponse;
+import Model.UpdateSubscriptionsPaymentsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,14 +96,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "activateSubscription,activateSubscriptionAsync,activateSubscriptionWithHttpInfo,activateSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -130,10 +136,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -197,7 +199,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id, Boolean processMissedPayments) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, processMissedPayments, null, null);
         Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -214,8 +215,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call activateSubscriptionAsync(String id, Boolean processMissedPayments, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -253,14 +252,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "cancelSubscription,cancelSubscriptionAsync,cancelSubscriptionWithHttpInfo,cancelSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -285,10 +290,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -350,7 +351,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<CancelSubscriptionResponse> cancelSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = cancelSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<CancelSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -366,8 +366,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call cancelSubscriptionAsync(String id, final ApiCallback<CancelSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -405,11 +403,17 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createSubscription,createSubscriptionAsync,createSubscriptionWithHttpInfo,createSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -433,10 +437,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -498,7 +498,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createSubscriptionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -514,8 +513,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -558,14 +555,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAllSubscriptions,getAllSubscriptionsAsync,getAllSubscriptionsWithHttpInfo,getAllSubscriptionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -601,10 +604,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -670,7 +669,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, customerId, clientReferenceInformationCode, null, null);
         Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -691,8 +689,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, String customerId, String clientReferenceInformationCode, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -730,14 +726,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getSubscription,getSubscriptionAsync,getSubscriptionWithHttpInfo,getSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -762,10 +764,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -827,7 +825,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -843,8 +840,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getSubscriptionAsync(String id, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -881,14 +876,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getSubscriptionCode,getSubscriptionCodeAsync,getSubscriptionCodeWithHttpInfo,getSubscriptionCodeCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -912,10 +913,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -969,7 +966,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<GetSubscriptionCodeResponse> getSubscriptionCodeWithHttpInfo() throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -984,8 +980,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getSubscriptionCodeAsync(final ApiCallback<GetSubscriptionCodeResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1026,14 +1020,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "subscriptionsIdPaymentsGet,subscriptionsIdPaymentsGetAsync,subscriptionsIdPaymentsGetWithHttpInfo,subscriptionsIdPaymentsGetCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1064,10 +1064,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1135,7 +1131,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<GetSubscriptionsPaymentsResponse> subscriptionsIdPaymentsGetWithHttpInfo(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = subscriptionsIdPaymentsGetValidateBeforeCall(id, offset, limit, scheduledPaymentsCount, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1154,8 +1149,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call subscriptionsIdPaymentsGetAsync(String id, Integer offset, Integer limit, Integer scheduledPaymentsCount, final ApiCallback<GetSubscriptionsPaymentsResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1194,11 +1187,17 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePayments, UpdatePayments.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "subscriptionsIdPaymentsPut,subscriptionsIdPaymentsPutAsync,subscriptionsIdPaymentsPutWithHttpInfo,subscriptionsIdPaymentsPutCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1223,10 +1222,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1275,13 +1270,13 @@ public class SubscriptionsApi {
      * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
      * @param id Subscription Id (required)
      * @param updatePayments Modify payments of a subscription (required)
-     * @return GetSubscriptionsPaymentsResponse1
+     * @return UpdateSubscriptionsPaymentsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
+    public UpdateSubscriptionsPaymentsResponse subscriptionsIdPaymentsPut(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'subscriptionsIdPaymentsPut' STARTED");
-        ApiResponse<GetSubscriptionsPaymentsResponse1> resp = subscriptionsIdPaymentsPutWithHttpInfo(id, updatePayments);
+        ApiResponse<UpdateSubscriptionsPaymentsResponse> resp = subscriptionsIdPaymentsPutWithHttpInfo(id, updatePayments);
         logger.info("CALL TO METHOD 'subscriptionsIdPaymentsPut' ENDED");
         return resp.getData();
     }
@@ -1291,14 +1286,13 @@ public class SubscriptionsApi {
      * Modifies the state of a subscription&#39;s payments. Currently, the only possible modifications are \&quot;skipping\&quot; and \&quot;restoring\&quot; payments.  Marking a payment as \&quot;skipped\&quot; means it will not be processed when its scheduled time arrives. \&quot;Restoring\&quot; a payment removes it from the list of payments to be skipped. 
      * @param id Subscription Id (required)
      * @param updatePayments Modify payments of a subscription (required)
-     * @return ApiResponse&lt;GetSubscriptionsPaymentsResponse1&gt;
+     * @return ApiResponse&lt;UpdateSubscriptionsPaymentsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetSubscriptionsPaymentsResponse1> subscriptionsIdPaymentsPutWithHttpInfo(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UpdateSubscriptionsPaymentsResponse> subscriptionsIdPaymentsPutWithHttpInfo(String id, UpdatePayments updatePayments) throws ApiException, ConfigException {
         okhttp3.Call call = subscriptionsIdPaymentsPutValidateBeforeCall(id, updatePayments, null, null);
-        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse1>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateSubscriptionsPaymentsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1312,9 +1306,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call subscriptionsIdPaymentsPutAsync(String id, UpdatePayments updatePayments, final ApiCallback<GetSubscriptionsPaymentsResponse1> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call subscriptionsIdPaymentsPutAsync(String id, UpdatePayments updatePayments, final ApiCallback<UpdateSubscriptionsPaymentsResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1335,7 +1327,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = subscriptionsIdPaymentsPutValidateBeforeCall(id, updatePayments, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetSubscriptionsPaymentsResponse1>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateSubscriptionsPaymentsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1352,14 +1344,20 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "suspendSubscription,suspendSubscriptionAsync,suspendSubscriptionWithHttpInfo,suspendSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1384,10 +1382,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1449,7 +1443,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<SuspendSubscriptionResponse> suspendSubscriptionWithHttpInfo(String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = suspendSubscriptionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<SuspendSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1465,8 +1458,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call suspendSubscriptionAsync(String id, final ApiCallback<SuspendSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1505,11 +1496,17 @@ public class SubscriptionsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateSubscription,updateSubscriptionAsync,updateSubscriptionWithHttpInfo,updateSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1534,10 +1531,6 @@ public class SubscriptionsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1607,7 +1600,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<UpdateSubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateSubscriptionValidateBeforeCall(id, updateSubscription, null, null);
         Type localVarReturnType = new TypeToken<UpdateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1624,8 +1616,6 @@ public class SubscriptionsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateSubscriptionAsync(String id, UpdateSubscription updateSubscription, final ApiCallback<UpdateSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentInstrumentList1Embedded;
-import Model.PaymentInstrumentListLinks;
+import Model.InstrumentIdentifierPaymentInstrumentListEmbedded1;
+import Model.InstrumentIdentifierPaymentInstrumentListLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,7 +32,7 @@ import java.io.IOException;
 
 public class PaymentInstrumentList1 {
   @SerializedName("_links")
-  private PaymentInstrumentListLinks links = null;
+  private InstrumentIdentifierPaymentInstrumentListLinks links = null;
 
   @SerializedName("offset")
   private Integer offset = null;
@@ -47,9 +47,9 @@ public class PaymentInstrumentList1 {
   private Integer total = null;
 
   @SerializedName("_embedded")
-  private PaymentInstrumentList1Embedded embedded = null;
+  private InstrumentIdentifierPaymentInstrumentListEmbedded1 embedded = null;
 
-  public PaymentInstrumentList1 links(PaymentInstrumentListLinks links) {
+  public PaymentInstrumentList1 links(InstrumentIdentifierPaymentInstrumentListLinks links) {
     this.links = links;
     return this;
   }
@@ -59,11 +59,11 @@ public class PaymentInstrumentList1 {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PaymentInstrumentListLinks getLinks() {
+  public InstrumentIdentifierPaymentInstrumentListLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PaymentInstrumentListLinks links) {
+  public void setLinks(InstrumentIdentifierPaymentInstrumentListLinks links) {
     this.links = links;
   }
 
@@ -103,7 +103,7 @@ public class PaymentInstrumentList1 {
     return total;
   }
 
-  public PaymentInstrumentList1 embedded(PaymentInstrumentList1Embedded embedded) {
+  public PaymentInstrumentList1 embedded(InstrumentIdentifierPaymentInstrumentListEmbedded1 embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -113,11 +113,11 @@ public class PaymentInstrumentList1 {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public PaymentInstrumentList1Embedded getEmbedded() {
+  public InstrumentIdentifierPaymentInstrumentListEmbedded1 getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(PaymentInstrumentList1Embedded embedded) {
+  public void setEmbedded(InstrumentIdentifierPaymentInstrumentListEmbedded1 embedded) {
     this.embedded = embedded;
   }
 

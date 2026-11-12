@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.Body;
-import Model.InlineResponse20012;
-import Model.InlineResponse20013;
-import Model.InlineResponse20014;
-import Model.InlineResponse202;
-import Model.InlineResponse4013;
+import Model.BatchCreateResponse;
+import Model.BatchReportResponse;
+import Model.BatchStatusResponse;
+import Model.BatchesListResponse;
+import Model.InlineResponse4011;
+import Model.PostBatchRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -48,7 +48,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchReportTest() throws Exception {
         String batchId = null;
-        InlineResponse20014 response = api.getBatchReport(batchId);
+        BatchReportResponse response = api.getBatchReport(batchId);
 
         // TODO: test validations
     }
@@ -64,7 +64,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchStatusTest() throws Exception {
         String batchId = null;
-        InlineResponse20013 response = api.getBatchStatus(batchId);
+        BatchStatusResponse response = api.getBatchStatus(batchId);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class BatchesApiTest {
         Long limit = null;
         String fromDate = null;
         String toDate = null;
-        InlineResponse20012 response = api.getBatchesList(offset, limit, fromDate, toDate);
+        BatchesListResponse response = api.getBatchesList(offset, limit, fromDate, toDate);
 
         // TODO: test validations
     }
@@ -98,8 +98,8 @@ public class BatchesApiTest {
      */
     @Test
     public void postBatchTest() throws Exception {
-        Body body = null;
-        InlineResponse202 response = api.postBatch(body);
+        PostBatchRequest postBatchRequest = null;
+        BatchCreateResponse response = api.postBatch(postBatchRequest);
 
         // TODO: test validations
     }

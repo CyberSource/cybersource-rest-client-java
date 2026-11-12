@@ -29,12 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2005;
-import Model.InlineResponse2016;
-import Model.InlineResponse40011;
-import Model.InlineResponse4043;
+import Model.BoardingRegistrationCreateResponse;
+import Model.BoardingRegistrationGetResponse;
+import Model.InlineResponse4002;
+import Model.InlineResponse4042;
 import Model.InlineResponse4221;
-import Model.InlineResponse5002;
+import Model.InlineResponse5001;
 import Model.PatchRegistrationBody;
 import Model.PostRegistrationBody;
 
@@ -84,14 +84,20 @@ public class MerchantBoardingApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getRegistration,getRegistrationAsync,getRegistrationWithHttpInfo,getRegistrationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -116,10 +122,6 @@ public class MerchantBoardingApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -161,13 +163,13 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return InlineResponse2005
+     * @return BoardingRegistrationGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2005 getRegistration(String registrationId) throws ApiException, ConfigException {
+    public BoardingRegistrationGetResponse getRegistration(String registrationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
-        ApiResponse<InlineResponse2005> resp = getRegistrationWithHttpInfo(registrationId);
+        ApiResponse<BoardingRegistrationGetResponse> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
         return resp.getData();
     }
@@ -176,14 +178,13 @@ public class MerchantBoardingApi {
      * Gets all the information on a boarding registration
      * This end point will get all information of a boarding registration 
      * @param registrationId Identifies the boarding registration to be updated (required)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;BoardingRegistrationGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2005> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BoardingRegistrationGetResponse> getRegistrationWithHttpInfo(String registrationId) throws ApiException, ConfigException {
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -196,9 +197,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<InlineResponse2005> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getRegistrationAsync(String registrationId, final ApiCallback<BoardingRegistrationGetResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -219,7 +218,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -238,11 +237,17 @@ public class MerchantBoardingApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchRegistrationBody, PatchRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchRegistration,patchRegistrationAsync,patchRegistrationWithHttpInfo,patchRegistrationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -269,10 +274,6 @@ public class MerchantBoardingApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -322,13 +323,13 @@ public class MerchantBoardingApi {
      * @param registrationId Identifies the boarding registration to be updated (required)
      * @param patchRegistrationBody Boarding registration data to be patched (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return InlineResponse2005
+     * @return BoardingRegistrationGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2005 patchRegistration(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public BoardingRegistrationGetResponse patchRegistration(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'patchRegistration' STARTED");
-        ApiResponse<InlineResponse2005> resp = patchRegistrationWithHttpInfo(registrationId, patchRegistrationBody, vCIdempotencyId);
+        ApiResponse<BoardingRegistrationGetResponse> resp = patchRegistrationWithHttpInfo(registrationId, patchRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'patchRegistration' ENDED");
         return resp.getData();
     }
@@ -339,14 +340,13 @@ public class MerchantBoardingApi {
      * @param registrationId Identifies the boarding registration to be updated (required)
      * @param patchRegistrationBody Boarding registration data to be patched (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;BoardingRegistrationGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2005> patchRegistrationWithHttpInfo(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BoardingRegistrationGetResponse> patchRegistrationWithHttpInfo(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         okhttp3.Call call = patchRegistrationValidateBeforeCall(registrationId, patchRegistrationBody, vCIdempotencyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -361,9 +361,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call patchRegistrationAsync(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2005> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call patchRegistrationAsync(String registrationId, PatchRegistrationBody patchRegistrationBody, String vCIdempotencyId, final ApiCallback<BoardingRegistrationGetResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -384,7 +382,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = patchRegistrationValidateBeforeCall(registrationId, patchRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -402,11 +400,17 @@ public class MerchantBoardingApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postRegistration,postRegistrationAsync,postRegistrationWithHttpInfo,postRegistrationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -432,10 +436,6 @@ public class MerchantBoardingApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -478,13 +478,13 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return InlineResponse2016
+     * @return BoardingRegistrationCreateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2016 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
+    public BoardingRegistrationCreateResponse postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
-        ApiResponse<InlineResponse2016> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
+        ApiResponse<BoardingRegistrationCreateResponse> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
         return resp.getData();
     }
@@ -494,14 +494,13 @@ public class MerchantBoardingApi {
      * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param postRegistrationBody Boarding registration data (required)
      * @param vCIdempotencyId defines idempotency of the request (optional)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse&lt;BoardingRegistrationCreateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2016> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BoardingRegistrationCreateResponse> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException, ConfigException {
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationCreateResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -515,9 +514,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<InlineResponse2016> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postRegistrationAsync(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ApiCallback<BoardingRegistrationCreateResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -538,7 +535,7 @@ public class MerchantBoardingApi {
         }
 
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<BoardingRegistrationCreateResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

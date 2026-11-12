@@ -32,10 +32,10 @@ import java.io.InputStream;
 import Model.AcpCompleteCheckoutRequest;
 import Model.AcpCreateCheckoutSessionRequest;
 import Model.AcpUpdateCheckoutSessionRequest;
-import Model.InlineResponse20017;
-import Model.InlineResponse20018;
-import Model.InlineResponse20112;
-import Model.InlineResponse40016;
+import Model.CancelCheckoutResponse;
+import Model.CheckoutSessionResponse;
+import Model.CompleteCheckoutResponse;
+import Model.InlineResponse4007;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -90,14 +90,20 @@ public class AcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "cancelCheckout,cancelCheckoutAsync,cancelCheckoutWithHttpInfo,cancelCheckoutCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -136,10 +142,6 @@ public class AcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -188,13 +190,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20018
+     * @return CancelCheckoutResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20018 cancelCheckout(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public CancelCheckoutResponse cancelCheckout(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'cancelCheckout' STARTED");
-        ApiResponse<InlineResponse20018> resp = cancelCheckoutWithHttpInfo(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<CancelCheckoutResponse> resp = cancelCheckoutWithHttpInfo(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'cancelCheckout' ENDED");
         return resp.getData();
     }
@@ -210,14 +212,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20018&gt;
+     * @return ApiResponse&lt;CancelCheckoutResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20018> cancelCheckoutWithHttpInfo(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CancelCheckoutResponse> cancelCheckoutWithHttpInfo(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         okhttp3.Call call = cancelCheckoutValidateBeforeCall(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<CancelCheckoutResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -237,9 +238,7 @@ public class AcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call cancelCheckoutAsync(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20018> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call cancelCheckoutAsync(String sessionId, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<CancelCheckoutResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -260,7 +259,7 @@ public class AcpCheckoutApi {
         }
 
         okhttp3.Call call = cancelCheckoutValidateBeforeCall(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<CancelCheckoutResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -285,11 +284,17 @@ public class AcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpCompleteCheckoutRequest, AcpCompleteCheckoutRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "completeCheckout,completeCheckoutAsync,completeCheckoutWithHttpInfo,completeCheckoutCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -328,10 +333,6 @@ public class AcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -387,13 +388,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20017
+     * @return CompleteCheckoutResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20017 completeCheckout(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public CompleteCheckoutResponse completeCheckout(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'completeCheckout' STARTED");
-        ApiResponse<InlineResponse20017> resp = completeCheckoutWithHttpInfo(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<CompleteCheckoutResponse> resp = completeCheckoutWithHttpInfo(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'completeCheckout' ENDED");
         return resp.getData();
     }
@@ -410,14 +411,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20017&gt;
+     * @return ApiResponse&lt;CompleteCheckoutResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20017> completeCheckoutWithHttpInfo(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CompleteCheckoutResponse> completeCheckoutWithHttpInfo(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         okhttp3.Call call = completeCheckoutValidateBeforeCall(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<CompleteCheckoutResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -438,9 +438,7 @@ public class AcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call completeCheckoutAsync(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20017> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call completeCheckoutAsync(String sessionId, AcpCompleteCheckoutRequest acpCompleteCheckoutRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<CompleteCheckoutResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -461,7 +459,7 @@ public class AcpCheckoutApi {
         }
 
         okhttp3.Call call = completeCheckoutValidateBeforeCall(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<CompleteCheckoutResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -485,11 +483,17 @@ public class AcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpCreateCheckoutSessionRequest, AcpCreateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createCheckoutSession,createCheckoutSessionAsync,createCheckoutSessionWithHttpInfo,createCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -527,10 +531,6 @@ public class AcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -579,13 +579,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20112
+     * @return CheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20112 createCheckoutSession(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public CheckoutSessionResponse createCheckoutSession(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20112> resp = createCheckoutSessionWithHttpInfo(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<CheckoutSessionResponse> resp = createCheckoutSessionWithHttpInfo(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'createCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -601,14 +601,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20112&gt;
+     * @return ApiResponse&lt;CheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20112> createCheckoutSessionWithHttpInfo(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CheckoutSessionResponse> createCheckoutSessionWithHttpInfo(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -628,9 +627,7 @@ public class AcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createCheckoutSessionAsync(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createCheckoutSessionAsync(AcpCreateCheckoutSessionRequest acpCreateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<CheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -651,7 +648,7 @@ public class AcpCheckoutApi {
         }
 
         okhttp3.Call call = createCheckoutSessionValidateBeforeCall(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -676,11 +673,17 @@ public class AcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpGetCheckoutSessionRequest, Object.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCheckoutSession,getCheckoutSessionAsync,getCheckoutSessionWithHttpInfo,getCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -719,10 +722,6 @@ public class AcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -778,13 +777,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20112
+     * @return CheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20112 getCheckoutSession(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public CheckoutSessionResponse getCheckoutSession(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20112> resp = getCheckoutSessionWithHttpInfo(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<CheckoutSessionResponse> resp = getCheckoutSessionWithHttpInfo(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'getCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -801,14 +800,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20112&gt;
+     * @return ApiResponse&lt;CheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20112> getCheckoutSessionWithHttpInfo(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CheckoutSessionResponse> getCheckoutSessionWithHttpInfo(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -829,9 +827,7 @@ public class AcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCheckoutSessionAsync(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getCheckoutSessionAsync(String sessionId, Object acpGetCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<CheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -852,7 +848,7 @@ public class AcpCheckoutApi {
         }
 
         okhttp3.Call call = getCheckoutSessionValidateBeforeCall(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -877,11 +873,17 @@ public class AcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(acpUpdateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateCheckoutSession,updateCheckoutSessionAsync,updateCheckoutSessionWithHttpInfo,updateCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -920,10 +922,6 @@ public class AcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -979,13 +977,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return InlineResponse20112
+     * @return CheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20112 updateCheckoutSession(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
+    public CheckoutSessionResponse updateCheckoutSession(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20112> resp = updateCheckoutSessionWithHttpInfo(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        ApiResponse<CheckoutSessionResponse> resp = updateCheckoutSessionWithHttpInfo(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
         logger.info("CALL TO METHOD 'updateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -1002,14 +1000,13 @@ public class AcpCheckoutApi {
      * @param signature Request signature for payload integrity verification.  (optional)
      * @param timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection.  (optional)
      * @param apIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed.  (optional)
-     * @return ApiResponse&lt;InlineResponse20112&gt;
+     * @return ApiResponse&lt;CheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20112> updateCheckoutSessionWithHttpInfo(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CheckoutSessionResponse> updateCheckoutSessionWithHttpInfo(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion) throws ApiException, ConfigException {
         okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1030,9 +1027,7 @@ public class AcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateCheckoutSessionAsync(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<InlineResponse20112> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call updateCheckoutSessionAsync(String sessionId, AcpUpdateCheckoutSessionRequest acpUpdateCheckoutSessionRequest, String idempotencyKey, String acceptLanguage, String userAgent, String requestId, String signature, String timestamp, String apIVersion, final ApiCallback<CheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1053,7 +1048,7 @@ public class AcpCheckoutApi {
         }
 
         okhttp3.Call call = updateCheckoutSessionValidateBeforeCall(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20112>(){}.getType();
+        Type localVarReturnType = new TypeToken<CheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

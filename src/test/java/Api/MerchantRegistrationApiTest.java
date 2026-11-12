@@ -14,14 +14,14 @@
 package Api;
 
 import Model.ActivateMerchantKeyResponse200;
+import Model.AddMerchantKeyRequest;
 import Model.AgentRegistrationConflictResponse409;
-import Model.KeyRequest1;
-import Model.KeyUpdate1;
 import Model.ListMerchantKeysResponse200;
 import Model.MerchantRegistrationResponse201;
 import Model.MerchantRegistrationValidationErrorResponse422;
 import Model.MerchantRequest;
 import Model.MerchantUpdate;
+import Model.UpdateMerchantKeyRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -68,8 +68,8 @@ public class MerchantRegistrationApiTest {
     @Test
     public void addMerchantKeyTest() throws Exception {
         String merchantId = null;
-        KeyRequest1 keyRequest = null;
-        ActivateMerchantKeyResponse200 response = api.addMerchantKey(merchantId, keyRequest);
+        AddMerchantKeyRequest addMerchantKeyRequest = null;
+        ActivateMerchantKeyResponse200 response = api.addMerchantKey(merchantId, addMerchantKeyRequest);
 
         // TODO: test validations
     }
@@ -169,8 +169,8 @@ public class MerchantRegistrationApiTest {
     public void updateMerchantKeyTest() throws Exception {
         String merchantId = null;
         String keyId = null;
-        KeyUpdate1 keyUpdate = null;
-        ActivateMerchantKeyResponse200 response = api.updateMerchantKey(merchantId, keyId, keyUpdate);
+        UpdateMerchantKeyRequest updateMerchantKeyRequest = null;
+        ActivateMerchantKeyResponse200 response = api.updateMerchantKey(merchantId, keyId, updateMerchantKeyRequest);
 
         // TODO: test validations
     }

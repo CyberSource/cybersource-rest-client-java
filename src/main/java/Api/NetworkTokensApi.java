@@ -29,22 +29,22 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2001;
-import Model.InlineResponse2002;
-import Model.InlineResponse2011;
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse404;
-import Model.InlineResponse409;
-import Model.InlineResponse410;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
-import Model.InlineResponse502;
+import Model.CardArtAssetResponse;
+import Model.GetTokenizedCardResponse;
 import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.PostPaymentCredentialsRequest;
-import Model.PostPaymentCredentialsRequest1;
+import Model.PostPaymentCredentialsResponse;
+import Model.PostPaymentCredentialsV3Request;
 import Model.PostTokenizedCardDeleteRequest;
 import Model.PostTokenizedCardRequest;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms404ErrorResponse;
+import Model.Tms409ErrorResponse;
+import Model.Tms410ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
+import Model.Tms502ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -94,14 +94,20 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCardArtAsset,getCardArtAssetAsync,getCardArtAssetWithHttpInfo,getCardArtAssetCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -128,10 +134,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -187,13 +189,13 @@ public class NetworkTokensApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return InlineResponse2002
+     * @return CardArtAssetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2002 getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
+    public CardArtAssetResponse getCardArtAsset(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getCardArtAsset' STARTED");
-        ApiResponse<InlineResponse2002> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
+        ApiResponse<CardArtAssetResponse> resp = getCardArtAssetWithHttpInfo(instrumentIdentifierId, tokenProvider, assetType);
         logger.info("CALL TO METHOD 'getCardArtAsset' ENDED");
         return resp.getData();
     }
@@ -204,14 +206,13 @@ public class NetworkTokensApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param tokenProvider The token provider. (required)
      * @param assetType The type of asset. (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;CardArtAssetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2002> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CardArtAssetResponse> getCardArtAssetWithHttpInfo(String instrumentIdentifierId, String tokenProvider, String assetType) throws ApiException, ConfigException {
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<CardArtAssetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -226,9 +227,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<InlineResponse2002> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getCardArtAssetAsync(String instrumentIdentifierId, String tokenProvider, String assetType, final ApiCallback<CardArtAssetResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -249,7 +248,7 @@ public class NetworkTokensApi {
         }
 
         okhttp3.Call call = getCardArtAssetValidateBeforeCall(instrumentIdentifierId, tokenProvider, assetType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<CardArtAssetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -267,14 +266,20 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getTokenizedCard,getTokenizedCardAsync,getTokenizedCardWithHttpInfo,getTokenizedCardCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -301,10 +306,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -347,13 +348,13 @@ public class NetworkTokensApi {
      * |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. This API returns the details of a tokenized card stored in TMS. You can use this API to check the status of a tokenized card and retrieve details such as the last four digits of the underlying card, expiration date, and card type. 
      * @param tokenizedCardId The Id of a tokenized card. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return InlineResponse2001
+     * @return GetTokenizedCardResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2001 getTokenizedCard(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
+    public GetTokenizedCardResponse getTokenizedCard(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getTokenizedCard' STARTED");
-        ApiResponse<InlineResponse2001> resp = getTokenizedCardWithHttpInfo(tokenizedCardId, profileId);
+        ApiResponse<GetTokenizedCardResponse> resp = getTokenizedCardWithHttpInfo(tokenizedCardId, profileId);
         logger.info("CALL TO METHOD 'getTokenizedCard' ENDED");
         return resp.getData();
     }
@@ -363,14 +364,13 @@ public class NetworkTokensApi {
      * |**Tokenized Cards**&lt;br&gt;A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. This API returns the details of a tokenized card stored in TMS. You can use this API to check the status of a tokenized card and retrieve details such as the last four digits of the underlying card, expiration date, and card type. 
      * @param tokenizedCardId The Id of a tokenized card. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;GetTokenizedCardResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2001> getTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<GetTokenizedCardResponse> getTokenizedCardWithHttpInfo(String tokenizedCardId, String profileId) throws ApiException, ConfigException {
         okhttp3.Call call = getTokenizedCardValidateBeforeCall(tokenizedCardId, profileId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTokenizedCardResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -384,9 +384,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<InlineResponse2001> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getTokenizedCardAsync(String tokenizedCardId, String profileId, final ApiCallback<GetTokenizedCardResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -407,7 +405,7 @@ public class NetworkTokensApi {
         }
 
         okhttp3.Call call = getTokenizedCardValidateBeforeCall(tokenizedCardId, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTokenizedCardResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -426,11 +424,17 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postIssuerLifeCycleSimulationRequest, PostIssuerLifeCycleSimulationRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postIssuerLifeCycleSimulation,postIssuerLifeCycleSimulationAsync,postIssuerLifeCycleSimulationWithHttpInfo,postIssuerLifeCycleSimulationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -457,10 +461,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -536,7 +536,6 @@ public class NetworkTokensApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> postIssuerLifeCycleSimulationWithHttpInfo(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postIssuerLifeCycleSimulationValidateBeforeCall(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest, null, null);
         return apiClient.execute(call);
     }
@@ -553,8 +552,6 @@ public class NetworkTokensApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postIssuerLifeCycleSimulationAsync(String profileId, String tokenizedCardId, PostIssuerLifeCycleSimulationRequest postIssuerLifeCycleSimulationRequest, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -589,15 +586,21 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenPaymentCredentials,postTokenPaymentCredentialsAsync,postTokenPaymentCredentialsWithHttpInfo,postTokenPaymentCredentialsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -624,10 +627,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -647,7 +646,7 @@ public class NetworkTokensApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
@@ -681,7 +680,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+    public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
         ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");
@@ -698,8 +697,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
         okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -716,9 +714,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest1 postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -746,7 +742,7 @@ public class NetworkTokensApi {
     /**
      * Build call for postTokenPaymentCredentialsV3
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
-     * @param postPaymentCredentialsRequest  (required)
+     * @param postPaymentCredentialsV3Request  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -754,15 +750,21 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsV3Call(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call postTokenPaymentCredentialsV3Call(String tokenId, PostPaymentCredentialsV3Request postPaymentCredentialsV3Request, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsV3Request, PostPaymentCredentialsV3Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenPaymentCredentialsV3,postTokenPaymentCredentialsV3Async,postTokenPaymentCredentialsV3WithHttpInfo,postTokenPaymentCredentialsV3Call")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -789,10 +791,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -812,7 +810,7 @@ public class NetworkTokensApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenPaymentCredentialsV3ValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call postTokenPaymentCredentialsV3ValidateBeforeCall(String tokenId, PostPaymentCredentialsV3Request postPaymentCredentialsV3Request, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
@@ -820,14 +818,14 @@ public class NetworkTokensApi {
             throw new ApiException("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentialsV3(Async)");
         }
         
-        // verify the required parameter 'postPaymentCredentialsRequest' is set
-        if (postPaymentCredentialsRequest == null) {
-            logger.error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3(Async)");
-            throw new ApiException("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3(Async)");
+        // verify the required parameter 'postPaymentCredentialsV3Request' is set
+        if (postPaymentCredentialsV3Request == null) {
+            logger.error("Missing the required parameter 'postPaymentCredentialsV3Request' when calling postTokenPaymentCredentialsV3(Async)");
+            throw new ApiException("Missing the required parameter 'postPaymentCredentialsV3Request' when calling postTokenPaymentCredentialsV3(Async)");
         }
         
         
-        okhttp3.Call call = postTokenPaymentCredentialsV3Call(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postTokenPaymentCredentialsV3Call(tokenId, postPaymentCredentialsV3Request, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -840,15 +838,15 @@ public class NetworkTokensApi {
      * Generate Payment Credentials Latest Version v3
      * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
-     * @param postPaymentCredentialsRequest  (required)
+     * @param postPaymentCredentialsV3Request  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return InlineResponse2011
+     * @return PostPaymentCredentialsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2011 postTokenPaymentCredentialsV3(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
+    public PostPaymentCredentialsResponse postTokenPaymentCredentialsV3(String tokenId, PostPaymentCredentialsV3Request postPaymentCredentialsV3Request, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentialsV3' STARTED");
-        ApiResponse<InlineResponse2011> resp = postTokenPaymentCredentialsV3WithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
+        ApiResponse<PostPaymentCredentialsResponse> resp = postTokenPaymentCredentialsV3WithHttpInfo(tokenId, postPaymentCredentialsV3Request, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentialsV3' ENDED");
         return resp.getData();
     }
@@ -857,16 +855,15 @@ public class NetworkTokensApi {
      * Generate Payment Credentials Latest Version v3
      * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
-     * @param postPaymentCredentialsRequest  (required)
+     * @param postPaymentCredentialsV3Request  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;PostPaymentCredentialsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2011> postTokenPaymentCredentialsV3WithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+    public ApiResponse<PostPaymentCredentialsResponse> postTokenPaymentCredentialsV3WithHttpInfo(String tokenId, PostPaymentCredentialsV3Request postPaymentCredentialsV3Request, String profileId) throws ApiException, ConfigException {
+        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsV3Request, profileId, null, null);
+        Type localVarReturnType = new TypeToken<PostPaymentCredentialsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -874,16 +871,14 @@ public class NetworkTokensApi {
      * Generate Payment Credentials Latest Version v3 (asynchronously)
      * **Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated TAVV cryptogram for Visa &amp; MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. &lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.&lt;br&gt;Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
-     * @param postPaymentCredentialsRequest  (required)
+     * @param postPaymentCredentialsV3Request  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenPaymentCredentialsV3Async(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<InlineResponse2011> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postTokenPaymentCredentialsV3Async(String tokenId, PostPaymentCredentialsV3Request postPaymentCredentialsV3Request, String profileId, final ApiCallback<PostPaymentCredentialsResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -903,8 +898,8 @@ public class NetworkTokensApi {
             };
         }
 
-        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        okhttp3.Call call = postTokenPaymentCredentialsV3ValidateBeforeCall(tokenId, postPaymentCredentialsV3Request, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PostPaymentCredentialsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -922,11 +917,17 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postTokenizedCardRequest, PostTokenizedCardRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenizedCard,postTokenizedCardAsync,postTokenizedCardWithHttpInfo,postTokenizedCardCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -952,10 +953,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -998,13 +995,13 @@ public class NetworkTokensApi {
      * **Tokenized cards**&lt;br&gt;A Tokenized card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. This API submits a request to the card association to create a network token. If successful, a tokenized card will be created in TMS to represent the network token. 
      * @param postTokenizedCardRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return InlineResponse2001
+     * @return GetTokenizedCardResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2001 postTokenizedCard(PostTokenizedCardRequest postTokenizedCardRequest, String profileId) throws ApiException, ConfigException {
+    public GetTokenizedCardResponse postTokenizedCard(PostTokenizedCardRequest postTokenizedCardRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postTokenizedCard' STARTED");
-        ApiResponse<InlineResponse2001> resp = postTokenizedCardWithHttpInfo(postTokenizedCardRequest, profileId);
+        ApiResponse<GetTokenizedCardResponse> resp = postTokenizedCardWithHttpInfo(postTokenizedCardRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenizedCard' ENDED");
         return resp.getData();
     }
@@ -1014,14 +1011,13 @@ public class NetworkTokensApi {
      * **Tokenized cards**&lt;br&gt;A Tokenized card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. This API submits a request to the card association to create a network token. If successful, a tokenized card will be created in TMS to represent the network token. 
      * @param postTokenizedCardRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;GetTokenizedCardResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2001> postTokenizedCardWithHttpInfo(PostTokenizedCardRequest postTokenizedCardRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<GetTokenizedCardResponse> postTokenizedCardWithHttpInfo(PostTokenizedCardRequest postTokenizedCardRequest, String profileId) throws ApiException, ConfigException {
         okhttp3.Call call = postTokenizedCardValidateBeforeCall(postTokenizedCardRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTokenizedCardResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1035,9 +1031,7 @@ public class NetworkTokensApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postTokenizedCardAsync(PostTokenizedCardRequest postTokenizedCardRequest, String profileId, final ApiCallback<InlineResponse2001> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postTokenizedCardAsync(PostTokenizedCardRequest postTokenizedCardRequest, String profileId, final ApiCallback<GetTokenizedCardResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1058,7 +1052,7 @@ public class NetworkTokensApi {
         }
 
         okhttp3.Call call = postTokenizedCardValidateBeforeCall(postTokenizedCardRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTokenizedCardResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1077,11 +1071,17 @@ public class NetworkTokensApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postTokenizedCardDeleteRequest, PostTokenizedCardDeleteRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postTokenizedCardDelete,postTokenizedCardDeleteAsync,postTokenizedCardDeleteWithHttpInfo,postTokenizedCardDeleteCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1108,10 +1108,6 @@ public class NetworkTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1175,7 +1171,6 @@ public class NetworkTokensApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> postTokenizedCardDeleteWithHttpInfo(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenizedCardDeleteValidateBeforeCall(tokenizedCardId, profileId, postTokenizedCardDeleteRequest, null, null);
         return apiClient.execute(call);
     }
@@ -1192,8 +1187,6 @@ public class NetworkTokensApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postTokenizedCardDeleteAsync(String tokenizedCardId, String profileId, PostTokenizedCardDeleteRequest postTokenizedCardDeleteRequest, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

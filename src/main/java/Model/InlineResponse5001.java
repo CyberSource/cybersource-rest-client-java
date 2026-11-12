@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,8 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse5001
@@ -33,7 +31,7 @@ import java.util.List;
 
 public class InlineResponse5001 {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
@@ -44,25 +42,13 @@ public class InlineResponse5001 {
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("details")
-  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
-
-  public InlineResponse5001 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
   }
 
   public InlineResponse5001 status(String status) {
@@ -71,10 +57,10 @@ public class InlineResponse5001 {
   }
 
    /**
-   * The status of the submitted transaction. Possible values: - &#x60;SERVER_ERROR&#x60; 
+   * The http status description of the submitted request.
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `SERVER_ERROR` ")
+  @ApiModelProperty(example = "INTERNAL_SERVER_ERROR", value = "The http status description of the submitted request.")
   public String getStatus() {
     return status;
   }
@@ -89,10 +75,10 @@ public class InlineResponse5001 {
   }
 
    /**
-   * The reason of the status. Possible Values: - &#x60;SYSTEM_ERROR&#x60; 
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;SYSTEM_ERROR&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. Possible Values: - `SYSTEM_ERROR` ")
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR' ")
   public String getReason() {
     return reason;
   }
@@ -107,42 +93,16 @@ public class InlineResponse5001 {
   }
 
    /**
-   * Underlying service error with exception.
+   * Descriptive message for the error.
    * @return message
   **/
-  @ApiModelProperty(value = "Underlying service error with exception.")
+  @ApiModelProperty(value = "Descriptive message for the error.")
   public String getMessage() {
     return message;
   }
 
   public void setMessage(String message) {
     this.message = message;
-  }
-
-  public InlineResponse5001 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse5001 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
-    }
-    this.details.add(detailsItem);
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(value = "")
-  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
-    return details;
-  }
-
-  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
   }
 
 
@@ -158,13 +118,12 @@ public class InlineResponse5001 {
     return Objects.equals(this.submitTimeUtc, inlineResponse5001.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse5001.status) &&
         Objects.equals(this.reason, inlineResponse5001.reason) &&
-        Objects.equals(this.message, inlineResponse5001.message) &&
-        Objects.equals(this.details, inlineResponse5001.details);
+        Objects.equals(this.message, inlineResponse5001.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, details);
+    return Objects.hash(submitTimeUtc, status, reason, message);
   }
 
 
@@ -195,7 +154,6 @@ public class InlineResponse5001 {
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -218,7 +176,6 @@ public class InlineResponse5001 {
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods;
+import Model.AlternativePaymentsPaymentMethodConfiguration;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,16 +35,16 @@ import java.util.Map;
 
 public class AlternativePaymentsProcessorConfiguration {
   @SerializedName("paymentMethods")
-  private Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods> paymentMethods = null;
+  private Map<String, AlternativePaymentsPaymentMethodConfiguration> paymentMethods = null;
 
-  public AlternativePaymentsProcessorConfiguration paymentMethods(Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods> paymentMethods) {
+  public AlternativePaymentsProcessorConfiguration paymentMethods(Map<String, AlternativePaymentsPaymentMethodConfiguration> paymentMethods) {
     this.paymentMethods = paymentMethods;
     return this;
   }
 
-  public AlternativePaymentsProcessorConfiguration putPaymentMethodsItem(String key, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods paymentMethodsItem) {
+  public AlternativePaymentsProcessorConfiguration putPaymentMethodsItem(String key, AlternativePaymentsPaymentMethodConfiguration paymentMethodsItem) {
     if (this.paymentMethods == null) {
-      this.paymentMethods = new HashMap<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods>();
+      this.paymentMethods = new HashMap<String, AlternativePaymentsPaymentMethodConfiguration>();
     }
     this.paymentMethods.put(key, paymentMethodsItem);
     return this;
@@ -55,11 +55,11 @@ public class AlternativePaymentsProcessorConfiguration {
    * @return paymentMethods
   **/
   @ApiModelProperty(value = "Payment methods supported by the processor. The following values are supported: - klarna - CREDIT_CARD - DEBIT_CARD ")
-  public Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods> getPaymentMethods() {
+  public Map<String, AlternativePaymentsPaymentMethodConfiguration> getPaymentMethods() {
     return paymentMethods;
   }
 
-  public void setPaymentMethods(Map<String, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods> paymentMethods) {
+  public void setPaymentMethods(Map<String, AlternativePaymentsPaymentMethodConfiguration> paymentMethods) {
     this.paymentMethods = paymentMethods;
   }
 

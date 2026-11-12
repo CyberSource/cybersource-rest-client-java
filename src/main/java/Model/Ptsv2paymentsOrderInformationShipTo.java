@@ -86,6 +86,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
   @SerializedName("method")
   private String method = null;
 
+  @SerializedName("carrierName")
+  private String carrierName = null;
+
   public Ptsv2paymentsOrderInformationShipTo title(String title) {
     this.title = title;
     return this;
@@ -428,6 +431,24 @@ public class Ptsv2paymentsOrderInformationShipTo {
     this.method = method;
   }
 
+  public Ptsv2paymentsOrderInformationShipTo carrierName(String carrierName) {
+    this.carrierName = carrierName;
+    return this;
+  }
+
+   /**
+   * Name of carrier (UPS, FedEx, USPS, etc.) 
+   * @return carrierName
+  **/
+  @ApiModelProperty(value = "Name of carrier (UPS, FedEx, USPS, etc.) ")
+  public String getCarrierName() {
+    return carrierName;
+  }
+
+  public void setCarrierName(String carrierName) {
+    this.carrierName = carrierName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -456,12 +477,13 @@ public class Ptsv2paymentsOrderInformationShipTo {
         Objects.equals(this.company, ptsv2paymentsOrderInformationShipTo.company) &&
         Objects.equals(this.destinationTypes, ptsv2paymentsOrderInformationShipTo.destinationTypes) &&
         Objects.equals(this.destinationCode, ptsv2paymentsOrderInformationShipTo.destinationCode) &&
-        Objects.equals(this.method, ptsv2paymentsOrderInformationShipTo.method);
+        Objects.equals(this.method, ptsv2paymentsOrderInformationShipTo.method) &&
+        Objects.equals(this.carrierName, ptsv2paymentsOrderInformationShipTo.carrierName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, firstName, middleName, lastName, address1, address2, locality, administrativeArea, postalCode, county, country, district, buildingNumber, phoneNumber, email, company, destinationTypes, destinationCode, method);
+    return Objects.hash(title, firstName, middleName, lastName, address1, address2, locality, administrativeArea, postalCode, county, country, district, buildingNumber, phoneNumber, email, company, destinationTypes, destinationCode, method, carrierName);
   }
 
 
@@ -507,6 +529,7 @@ public class Ptsv2paymentsOrderInformationShipTo {
     if (destinationTypes != null) sb.append("    destinationTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationTypes").matches() ? "[REDACTED]" : toIndentedString(destinationTypes)).append("\n");
     if (destinationCode != null) sb.append("    destinationCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationCode").matches() ? "[REDACTED]" : toIndentedString(destinationCode)).append("\n");
     if (method != null) sb.append("    method: ").append(SENSITIVE_FIELD_PATTERN.matcher("method").matches() ? "[REDACTED]" : toIndentedString(method)).append("\n");
+    if (carrierName != null) sb.append("    carrierName: ").append(SENSITIVE_FIELD_PATTERN.matcher("carrierName").matches() ? "[REDACTED]" : toIndentedString(carrierName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -544,6 +567,7 @@ public class Ptsv2paymentsOrderInformationShipTo {
     if (destinationTypes != null) sb.append("    destinationTypes: ").append(toIndentedString(destinationTypes)).append("\n");
     if (destinationCode != null) sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");
     if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (carrierName != null) sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

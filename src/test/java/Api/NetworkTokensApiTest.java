@@ -13,22 +13,22 @@
 
 package Api;
 
-import Model.InlineResponse2001;
-import Model.InlineResponse2002;
-import Model.InlineResponse2011;
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse404;
-import Model.InlineResponse409;
-import Model.InlineResponse410;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
-import Model.InlineResponse502;
+import Model.CardArtAssetResponse;
+import Model.GetTokenizedCardResponse;
 import Model.PostIssuerLifeCycleSimulationRequest;
 import Model.PostPaymentCredentialsRequest;
-import Model.PostPaymentCredentialsRequest1;
+import Model.PostPaymentCredentialsResponse;
+import Model.PostPaymentCredentialsV3Request;
 import Model.PostTokenizedCardDeleteRequest;
 import Model.PostTokenizedCardRequest;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms404ErrorResponse;
+import Model.Tms409ErrorResponse;
+import Model.Tms410ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
+import Model.Tms502ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -60,7 +60,7 @@ public class NetworkTokensApiTest {
         String instrumentIdentifierId = null;
         String tokenProvider = null;
         String assetType = null;
-        InlineResponse2002 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
+        CardArtAssetResponse response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
 
         // TODO: test validations
     }
@@ -77,7 +77,7 @@ public class NetworkTokensApiTest {
     public void getTokenizedCardTest() throws Exception {
         String tokenizedCardId = null;
         String profileId = null;
-        InlineResponse2001 response = api.getTokenizedCard(tokenizedCardId, profileId);
+        GetTokenizedCardResponse response = api.getTokenizedCard(tokenizedCardId, profileId);
 
         // TODO: test validations
     }
@@ -111,7 +111,7 @@ public class NetworkTokensApiTest {
     @Test
     public void postTokenPaymentCredentialsTest() throws Exception {
         String tokenId = null;
-        PostPaymentCredentialsRequest1 postPaymentCredentialsRequest = null;
+        PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
         String profileId = null;
         String response = api.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId);
 
@@ -129,9 +129,9 @@ public class NetworkTokensApiTest {
     @Test
     public void postTokenPaymentCredentialsV3Test() throws Exception {
         String tokenId = null;
-        PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
+        PostPaymentCredentialsV3Request postPaymentCredentialsV3Request = null;
         String profileId = null;
-        InlineResponse2011 response = api.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, profileId);
+        PostPaymentCredentialsResponse response = api.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsV3Request, profileId);
 
         // TODO: test validations
     }
@@ -148,7 +148,7 @@ public class NetworkTokensApiTest {
     public void postTokenizedCardTest() throws Exception {
         PostTokenizedCardRequest postTokenizedCardRequest = null;
         String profileId = null;
-        InlineResponse2001 response = api.postTokenizedCard(postTokenizedCardRequest, profileId);
+        GetTokenizedCardResponse response = api.postTokenizedCard(postTokenizedCardRequest, profileId);
 
         // TODO: test validations
     }

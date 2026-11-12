@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="ucpCancelCheckout"></a>
 # **ucpCancelCheckout**
-> InlineResponse20113 ucpCancelCheckout(sessionId)
+> UcpCheckoutSessionResponse ucpCancelCheckout(sessionId)
 
 Cancel Checkout UCP
 
@@ -29,7 +29,7 @@ Cancels an active UCP checkout session. No charge is made.  This operation is id
 UcpCheckoutApi apiInstance = new UcpCheckoutApi();
 String sessionId = "sess_abc123"; // String | The unique identifier of the UCP checkout session to cancel.
 try {
-    InlineResponse20113 result = apiInstance.ucpCancelCheckout(sessionId);
+    UcpCheckoutSessionResponse result = apiInstance.ucpCancelCheckout(sessionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UcpCheckoutApi#ucpCancelCheckout");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**UcpCheckoutSessionResponse**](UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 
 <a name="ucpCompleteCheckout"></a>
 # **ucpCompleteCheckout**
-> InlineResponse20113 ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest)
+> UcpCheckoutSessionResponse ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest)
 
 Complete Checkout UCP
 
@@ -76,7 +76,7 @@ String sessionId = "sess_abc123"; // String | The unique identifier of the UCP c
 String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. 
 UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest = new UcpCompleteCheckoutRequest(); // UcpCompleteCheckoutRequest | UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. 
 try {
-    InlineResponse20113 result = apiInstance.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+    UcpCheckoutSessionResponse result = apiInstance.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UcpCheckoutApi#ucpCompleteCheckout");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**UcpCheckoutSessionResponse**](UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 
 <a name="ucpCreateCheckoutSession"></a>
 # **ucpCreateCheckoutSession**
-> InlineResponse20113 ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey)
+> UcpCheckoutSessionResponse ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey)
 
 Create Checkout Session UCP
 
@@ -124,7 +124,7 @@ UcpCheckoutApi apiInstance = new UcpCheckoutApi();
 UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest = new UcpCreateCheckoutSessionRequest(); // UcpCreateCheckoutSessionRequest | UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information. 
 String idempotencyKey = "fc23729f-dc9b-4619-8742-2cf9d7bfdf1b"; // String | Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. 
 try {
-    InlineResponse20113 result = apiInstance.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
+    UcpCheckoutSessionResponse result = apiInstance.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UcpCheckoutApi#ucpCreateCheckoutSession");
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**UcpCheckoutSessionResponse**](UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ No authorization required
 
 <a name="ucpGetCheckoutSession"></a>
 # **ucpGetCheckoutSession**
-> InlineResponse20113 ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
+> UcpCheckoutSessionResponse ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
 
 Get Checkout Session UCP
 
@@ -171,7 +171,7 @@ UcpCheckoutApi apiInstance = new UcpCheckoutApi();
 String sessionId = "sess_abc123"; // String | The unique identifier of the UCP checkout session to retrieve. Obtained from the `id` field in the Create Session response. 
 Object ucpGetCheckoutSessionRequest = null; // Object | Empty request body.
 try {
-    InlineResponse20113 result = apiInstance.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
+    UcpCheckoutSessionResponse result = apiInstance.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UcpCheckoutApi#ucpGetCheckoutSession");
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**UcpCheckoutSessionResponse**](UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ No authorization required
 
 <a name="ucpUpdateCheckoutSession"></a>
 # **ucpUpdateCheckoutSession**
-> InlineResponse20113 ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey)
+> UcpCheckoutSessionResponse ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey)
 
 Update Checkout Session UCP
 
@@ -219,7 +219,7 @@ String sessionId = "sess_abc123"; // String | The unique identifier of the UCP c
 UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest = new UcpUpdateCheckoutSessionRequest(); // UcpUpdateCheckoutSessionRequest | UCP session update payload. All fields are optional — only fields you include will be applied. 
 String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Client-generated unique key for idempotency. Lowercase per UCP spec.
 try {
-    InlineResponse20113 result = apiInstance.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+    UcpCheckoutSessionResponse result = apiInstance.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UcpCheckoutApi#ucpUpdateCheckoutSession");
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**UcpCheckoutSessionResponse**](UcpCheckoutSessionResponse.md)
 
 ### Authorization
 

@@ -29,12 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.CreateSubscriptionRequest1;
+import Model.CreateFollowOnSubscriptionRequest;
 import Model.CreateSubscriptionResponse;
-import Model.GetSubscriptionResponse1;
-import Model.InlineResponse4007;
-import Model.InlineResponse4041;
+import Model.GetFollowOnSubscriptionResponse;
+import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RbsFollowOnSubscription400ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -72,22 +72,28 @@ public class SubscriptionsFollowOnsApi {
     /**
      * Build call for createFollowOnSubscription
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @param createSubscriptionRequest  (required)
+     * @param createFollowOnSubscriptionRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createFollowOnSubscriptionCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call createFollowOnSubscriptionCall(String requestId, CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createFollowOnSubscriptionRequest, CreateFollowOnSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createFollowOnSubscription,createFollowOnSubscriptionAsync,createFollowOnSubscriptionWithHttpInfo,createFollowOnSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -112,10 +118,6 @@ public class SubscriptionsFollowOnsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -135,7 +137,7 @@ public class SubscriptionsFollowOnsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFollowOnSubscriptionValidateBeforeCall(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call createFollowOnSubscriptionValidateBeforeCall(String requestId, CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'requestId' is set
         if (requestId == null) {
@@ -143,14 +145,14 @@ public class SubscriptionsFollowOnsApi {
             throw new ApiException("Missing the required parameter 'requestId' when calling createFollowOnSubscription(Async)");
         }
         
-        // verify the required parameter 'createSubscriptionRequest' is set
-        if (createSubscriptionRequest == null) {
-            logger.error("Missing the required parameter 'createSubscriptionRequest' when calling createFollowOnSubscription(Async)");
-            throw new ApiException("Missing the required parameter 'createSubscriptionRequest' when calling createFollowOnSubscription(Async)");
+        // verify the required parameter 'createFollowOnSubscriptionRequest' is set
+        if (createFollowOnSubscriptionRequest == null) {
+            logger.error("Missing the required parameter 'createFollowOnSubscriptionRequest' when calling createFollowOnSubscription(Async)");
+            throw new ApiException("Missing the required parameter 'createFollowOnSubscriptionRequest' when calling createFollowOnSubscription(Async)");
         }
         
         
-        okhttp3.Call call = createFollowOnSubscriptionCall(requestId, createSubscriptionRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createFollowOnSubscriptionCall(requestId, createFollowOnSubscriptionRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -163,14 +165,14 @@ public class SubscriptionsFollowOnsApi {
      * Create a Follow-On Subscription
      * Create a new Subscription based on the Request Id of an existing successful Transaction.
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @param createSubscriptionRequest  (required)
+     * @param createFollowOnSubscriptionRequest  (required)
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public CreateSubscriptionResponse createFollowOnSubscription(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
+    public CreateSubscriptionResponse createFollowOnSubscription(String requestId, CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createFollowOnSubscription' STARTED");
-        ApiResponse<CreateSubscriptionResponse> resp = createFollowOnSubscriptionWithHttpInfo(requestId, createSubscriptionRequest);
+        ApiResponse<CreateSubscriptionResponse> resp = createFollowOnSubscriptionWithHttpInfo(requestId, createFollowOnSubscriptionRequest);
         logger.info("CALL TO METHOD 'createFollowOnSubscription' ENDED");
         return resp.getData();
     }
@@ -179,14 +181,13 @@ public class SubscriptionsFollowOnsApi {
      * Create a Follow-On Subscription
      * Create a new Subscription based on the Request Id of an existing successful Transaction.
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @param createSubscriptionRequest  (required)
+     * @param createFollowOnSubscriptionRequest  (required)
      * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<CreateSubscriptionResponse> createFollowOnSubscriptionWithHttpInfo(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = createFollowOnSubscriptionValidateBeforeCall(requestId, createSubscriptionRequest, null, null);
+    public ApiResponse<CreateSubscriptionResponse> createFollowOnSubscriptionWithHttpInfo(String requestId, CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = createFollowOnSubscriptionValidateBeforeCall(requestId, createFollowOnSubscriptionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -195,15 +196,13 @@ public class SubscriptionsFollowOnsApi {
      * Create a Follow-On Subscription (asynchronously)
      * Create a new Subscription based on the Request Id of an existing successful Transaction.
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @param createSubscriptionRequest  (required)
+     * @param createFollowOnSubscriptionRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createFollowOnSubscriptionAsync(String requestId, CreateSubscriptionRequest1 createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createFollowOnSubscriptionAsync(String requestId, CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -223,7 +222,7 @@ public class SubscriptionsFollowOnsApi {
             };
         }
 
-        okhttp3.Call call = createFollowOnSubscriptionValidateBeforeCall(requestId, createSubscriptionRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createFollowOnSubscriptionValidateBeforeCall(requestId, createFollowOnSubscriptionRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -241,14 +240,20 @@ public class SubscriptionsFollowOnsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getFollowOnSubscription,getFollowOnSubscriptionAsync,getFollowOnSubscriptionWithHttpInfo,getFollowOnSubscriptionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -273,10 +278,6 @@ public class SubscriptionsFollowOnsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -318,13 +319,13 @@ public class SubscriptionsFollowOnsApi {
      * Get a Follow-On Subscription
      * Get details of the Subscription being created based on the Request Id of an existing successful Transaction. 
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @return GetSubscriptionResponse1
+     * @return GetFollowOnSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public GetSubscriptionResponse1 getFollowOnSubscription(String requestId) throws ApiException, ConfigException {
+    public GetFollowOnSubscriptionResponse getFollowOnSubscription(String requestId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getFollowOnSubscription' STARTED");
-        ApiResponse<GetSubscriptionResponse1> resp = getFollowOnSubscriptionWithHttpInfo(requestId);
+        ApiResponse<GetFollowOnSubscriptionResponse> resp = getFollowOnSubscriptionWithHttpInfo(requestId);
         logger.info("CALL TO METHOD 'getFollowOnSubscription' ENDED");
         return resp.getData();
     }
@@ -333,14 +334,13 @@ public class SubscriptionsFollowOnsApi {
      * Get a Follow-On Subscription
      * Get details of the Subscription being created based on the Request Id of an existing successful Transaction. 
      * @param requestId Request Id of an existing successful Transaction (required)
-     * @return ApiResponse&lt;GetSubscriptionResponse1&gt;
+     * @return ApiResponse&lt;GetFollowOnSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<GetSubscriptionResponse1> getFollowOnSubscriptionWithHttpInfo(String requestId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<GetFollowOnSubscriptionResponse> getFollowOnSubscriptionWithHttpInfo(String requestId) throws ApiException, ConfigException {
         okhttp3.Call call = getFollowOnSubscriptionValidateBeforeCall(requestId, null, null);
-        Type localVarReturnType = new TypeToken<GetSubscriptionResponse1>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetFollowOnSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -353,9 +353,7 @@ public class SubscriptionsFollowOnsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getFollowOnSubscriptionAsync(String requestId, final ApiCallback<GetSubscriptionResponse1> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getFollowOnSubscriptionAsync(String requestId, final ApiCallback<GetFollowOnSubscriptionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -376,7 +374,7 @@ public class SubscriptionsFollowOnsApi {
         }
 
         okhttp3.Call call = getFollowOnSubscriptionValidateBeforeCall(requestId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetSubscriptionResponse1>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetFollowOnSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

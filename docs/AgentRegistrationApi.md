@@ -63,7 +63,7 @@ No authorization required
 
 <a name="addAgentKey"></a>
 # **addAgentKey**
-> AddAgentKeyResponse201 addAgentKey(agentId, keyRequest)
+> AddAgentKeyResponse201 addAgentKey(agentId, addAgentKeyRequest)
 
 Add a key to an agent
 
@@ -78,9 +78,9 @@ Add a key to an agent
 
 AgentRegistrationApi apiInstance = new AgentRegistrationApi();
 String agentId = "agentId_example"; // String | Unique agent identifier
-KeyRequest keyRequest = new KeyRequest(); // KeyRequest | Key creation request
+AddAgentKeyRequest addAgentKeyRequest = new AddAgentKeyRequest(); // AddAgentKeyRequest | Key creation request
 try {
-    AddAgentKeyResponse201 result = apiInstance.addAgentKey(agentId, keyRequest);
+    AddAgentKeyResponse201 result = apiInstance.addAgentKey(agentId, addAgentKeyRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentRegistrationApi#addAgentKey");
@@ -93,7 +93,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| Unique agent identifier |
- **keyRequest** | [**KeyRequest**](KeyRequest.md)| Key creation request |
+ **addAgentKeyRequest** | [**AddAgentKeyRequest**](AddAgentKeyRequest.md)| Key creation request |
 
 ### Return type
 
@@ -343,7 +343,7 @@ No authorization required
 
 <a name="updateAgentKey"></a>
 # **updateAgentKey**
-> AddAgentKeyResponse201 updateAgentKey(agentId, keyId, keyUpdate)
+> AddAgentKeyResponse201 updateAgentKey(agentId, keyId, updateAgentKeyRequest)
 
 Update a key
 
@@ -359,9 +359,9 @@ Update a key
 AgentRegistrationApi apiInstance = new AgentRegistrationApi();
 String agentId = "agentId_example"; // String | Unique agent identifier
 String keyId = "keyId_example"; // String | Unique key identifier
-KeyUpdate keyUpdate = new KeyUpdate(); // KeyUpdate | Key update request
+UpdateAgentKeyRequest updateAgentKeyRequest = new UpdateAgentKeyRequest(); // UpdateAgentKeyRequest | Key update request
 try {
-    AddAgentKeyResponse201 result = apiInstance.updateAgentKey(agentId, keyId, keyUpdate);
+    AddAgentKeyResponse201 result = apiInstance.updateAgentKey(agentId, keyId, updateAgentKeyRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgentRegistrationApi#updateAgentKey");
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| Unique agent identifier |
  **keyId** | **String**| Unique key identifier |
- **keyUpdate** | [**KeyUpdate**](KeyUpdate.md)| Key update request |
+ **updateAgentKeyRequest** | [**UpdateAgentKeyRequest**](UpdateAgentKeyRequest.md)| Key update request |
 
 ### Return type
 

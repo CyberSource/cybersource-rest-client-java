@@ -32,6 +32,12 @@ git checkout ../src/main/java/Model/CreateAccessTokenRequest.java
 git checkout ../src/main/java/Invokers/HttpClientFactory.java
 git checkout ../src/main/java/Invokers/HttpClientFactoryAdditionalSettings.java
 git checkout ../src/test/java/Invokers/HttpClientFactoryMemoryLeakTest.java
+git checkout ../src/test/java/Invokers/EmptyPostBodyTest.java
+git checkout ../src/test/java/Invokers/ApiClientResilienceTest.java
+git checkout ../src/test/java/Invokers/HttpClientFactoryAdditionalSettingsTest.java
+git checkout ../src/test/java/Invokers/HttpClientFactoryMockWebServerTest.java
+git checkout ../src/test/java/Invokers/HttpClientFactoryResilienceTest.java
+git checkout ../src/test/java/Invokers/ProgressRequestBodyTest.java
 git checkout ../src/main/java/Invokers/TimedCache.java
 
 git checkout ../pom.xml

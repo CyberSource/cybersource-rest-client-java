@@ -19,6 +19,7 @@ import Model.PtsV2CreateOrderPost201ResponseBuyerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
+import Model.TssV2TransactionsGet200ResponseTravelInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
@@ -103,6 +104,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
 
   @SerializedName("riskInformation")
   private TssV2TransactionsPost201ResponseEmbeddedRiskInformation riskInformation = null;
+
+  @SerializedName("travelInformation")
+  private TssV2TransactionsGet200ResponseTravelInformation travelInformation = null;
 
   @SerializedName("_links")
   private TssV2TransactionsPost201ResponseEmbeddedLinks links = null;
@@ -457,6 +461,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     this.riskInformation = riskInformation;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries travelInformation(TssV2TransactionsGet200ResponseTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(TssV2TransactionsGet200ResponseTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
   public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries links(TssV2TransactionsPost201ResponseEmbeddedLinks links) {
     this.links = links;
     return this;
@@ -504,12 +526,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
         Objects.equals(this.processorInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.processorInformation) &&
         Objects.equals(this.pointOfSaleInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.pointOfSaleInformation) &&
         Objects.equals(this.riskInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.riskInformation) &&
+        Objects.equals(this.travelInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.travelInformation) &&
         Objects.equals(this.links, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, merchantId, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, links);
+    return Objects.hash(id, submitTimeUtc, merchantId, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, travelInformation, links);
   }
 
 
@@ -555,6 +578,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     if (processorInformation != null) sb.append("    processorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("processorInformation").matches() ? "[REDACTED]" : toIndentedString(processorInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("pointOfSaleInformation").matches() ? "[REDACTED]" : toIndentedString(pointOfSaleInformation)).append("\n");
     if (riskInformation != null) sb.append("    riskInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskInformation").matches() ? "[REDACTED]" : toIndentedString(riskInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelInformation").matches() ? "[REDACTED]" : toIndentedString(travelInformation)).append("\n");
     if (links != null) sb.append("    links: ").append(SENSITIVE_FIELD_PATTERN.matcher("links").matches() ? "[REDACTED]" : toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -593,6 +617,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

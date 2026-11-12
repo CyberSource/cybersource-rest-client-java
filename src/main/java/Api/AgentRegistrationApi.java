@@ -29,15 +29,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.AddAgentKeyRequest;
 import Model.AddAgentKeyResponse201;
 import Model.AgentRegistrationConflictResponse409;
 import Model.AgentRegistrationResponse201;
 import Model.AgentRegistrationValidationErrorResponse422;
 import Model.AgentRequest;
 import Model.AgentUpdate;
-import Model.KeyRequest;
-import Model.KeyUpdate;
 import Model.ListAgentKeysResponse200;
+import Model.UpdateAgentKeyRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -86,14 +86,20 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "activateAgentKey,activateAgentKeyAsync,activateAgentKeyWithHttpInfo,activateAgentKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -119,10 +125,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -192,7 +194,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AddAgentKeyResponse201> activateAgentKeyWithHttpInfo(String agentId, String keyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activateAgentKeyValidateBeforeCall(agentId, keyId, null, null);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -209,8 +210,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call activateAgentKeyAsync(String agentId, String keyId, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -238,22 +237,28 @@ public class AgentRegistrationApi {
     /**
      * Build call for addAgentKey
      * @param agentId Unique agent identifier (required)
-     * @param keyRequest Key creation request (required)
+     * @param addAgentKeyRequest Key creation request (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call addAgentKeyCall(String agentId, KeyRequest keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call addAgentKeyCall(String agentId, AddAgentKeyRequest addAgentKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyRequest, KeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addAgentKeyRequest, AddAgentKeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "addAgentKey,addAgentKeyAsync,addAgentKeyWithHttpInfo,addAgentKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -278,10 +283,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -301,7 +302,7 @@ public class AgentRegistrationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addAgentKeyValidateBeforeCall(String agentId, KeyRequest keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call addAgentKeyValidateBeforeCall(String agentId, AddAgentKeyRequest addAgentKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'agentId' is set
         if (agentId == null) {
@@ -309,14 +310,14 @@ public class AgentRegistrationApi {
             throw new ApiException("Missing the required parameter 'agentId' when calling addAgentKey(Async)");
         }
         
-        // verify the required parameter 'keyRequest' is set
-        if (keyRequest == null) {
-            logger.error("Missing the required parameter 'keyRequest' when calling addAgentKey(Async)");
-            throw new ApiException("Missing the required parameter 'keyRequest' when calling addAgentKey(Async)");
+        // verify the required parameter 'addAgentKeyRequest' is set
+        if (addAgentKeyRequest == null) {
+            logger.error("Missing the required parameter 'addAgentKeyRequest' when calling addAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'addAgentKeyRequest' when calling addAgentKey(Async)");
         }
         
         
-        okhttp3.Call call = addAgentKeyCall(agentId, keyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = addAgentKeyCall(agentId, addAgentKeyRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -329,14 +330,14 @@ public class AgentRegistrationApi {
      * Add a key to an agent
      * **Add a Key to an Agent**&lt;br&gt;Uploads a new public key for the specified agent. The key is created in ***deactivated*** state and must be explicitly activated via &#x60;POST /agents/{agentId}/keys/{keyId}/activate&#x60; before it can be used.&lt;br&gt;&lt;br&gt; Returns **404** if the agent is not found, **403** if the agent is deactivated. 
      * @param agentId Unique agent identifier (required)
-     * @param keyRequest Key creation request (required)
+     * @param addAgentKeyRequest Key creation request (required)
      * @return AddAgentKeyResponse201
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public AddAgentKeyResponse201 addAgentKey(String agentId, KeyRequest keyRequest) throws ApiException, ConfigException {
+    public AddAgentKeyResponse201 addAgentKey(String agentId, AddAgentKeyRequest addAgentKeyRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'addAgentKey' STARTED");
-        ApiResponse<AddAgentKeyResponse201> resp = addAgentKeyWithHttpInfo(agentId, keyRequest);
+        ApiResponse<AddAgentKeyResponse201> resp = addAgentKeyWithHttpInfo(agentId, addAgentKeyRequest);
         logger.info("CALL TO METHOD 'addAgentKey' ENDED");
         return resp.getData();
     }
@@ -345,14 +346,13 @@ public class AgentRegistrationApi {
      * Add a key to an agent
      * **Add a Key to an Agent**&lt;br&gt;Uploads a new public key for the specified agent. The key is created in ***deactivated*** state and must be explicitly activated via &#x60;POST /agents/{agentId}/keys/{keyId}/activate&#x60; before it can be used.&lt;br&gt;&lt;br&gt; Returns **404** if the agent is not found, **403** if the agent is deactivated. 
      * @param agentId Unique agent identifier (required)
-     * @param keyRequest Key creation request (required)
+     * @param addAgentKeyRequest Key creation request (required)
      * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<AddAgentKeyResponse201> addAgentKeyWithHttpInfo(String agentId, KeyRequest keyRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, keyRequest, null, null);
+    public ApiResponse<AddAgentKeyResponse201> addAgentKeyWithHttpInfo(String agentId, AddAgentKeyRequest addAgentKeyRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, addAgentKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -361,15 +361,13 @@ public class AgentRegistrationApi {
      * Add a key to an agent (asynchronously)
      * **Add a Key to an Agent**&lt;br&gt;Uploads a new public key for the specified agent. The key is created in ***deactivated*** state and must be explicitly activated via &#x60;POST /agents/{agentId}/keys/{keyId}/activate&#x60; before it can be used.&lt;br&gt;&lt;br&gt; Returns **404** if the agent is not found, **403** if the agent is deactivated. 
      * @param agentId Unique agent identifier (required)
-     * @param keyRequest Key creation request (required)
+     * @param addAgentKeyRequest Key creation request (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call addAgentKeyAsync(String agentId, KeyRequest keyRequest, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call addAgentKeyAsync(String agentId, AddAgentKeyRequest addAgentKeyRequest, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -389,7 +387,7 @@ public class AgentRegistrationApi {
             };
         }
 
-        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, keyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = addAgentKeyValidateBeforeCall(agentId, addAgentKeyRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -407,14 +405,20 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAgent,getAgentAsync,getAgentWithHttpInfo,getAgentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -439,10 +443,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -504,7 +504,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgentRegistrationResponse201> getAgentWithHttpInfo(String agentId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAgentValidateBeforeCall(agentId, null, null);
         Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -520,8 +519,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAgentAsync(String agentId, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -560,14 +557,20 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getAgentKey,getAgentKeyAsync,getAgentKeyWithHttpInfo,getAgentKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -593,10 +596,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -666,7 +665,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AddAgentKeyResponse201> getAgentKeyWithHttpInfo(String agentId, String keyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAgentKeyValidateBeforeCall(agentId, keyId, null, null);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -683,8 +681,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getAgentKeyAsync(String agentId, String keyId, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -724,14 +720,20 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "listAgentKeys,listAgentKeysAsync,listAgentKeysWithHttpInfo,listAgentKeysCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -760,10 +762,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -829,7 +827,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ListAgentKeysResponse200> listAgentKeysWithHttpInfo(String agentId, Integer page, Integer pageSize) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = listAgentKeysValidateBeforeCall(agentId, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<ListAgentKeysResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -847,8 +844,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call listAgentKeysAsync(String agentId, Integer page, Integer pageSize, final ApiCallback<ListAgentKeysResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -886,11 +881,17 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agentRequest, AgentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "registerAgent,registerAgentAsync,registerAgentWithHttpInfo,registerAgentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -914,10 +915,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -979,7 +976,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgentRegistrationResponse201> registerAgentWithHttpInfo(AgentRequest agentRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = registerAgentValidateBeforeCall(agentRequest, null, null);
         Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -995,8 +991,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call registerAgentAsync(AgentRequest agentRequest, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1035,11 +1029,17 @@ public class AgentRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agentUpdate, AgentUpdate.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateAgent,updateAgentAsync,updateAgentWithHttpInfo,updateAgentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1064,10 +1064,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1137,7 +1133,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgentRegistrationResponse201> updateAgentWithHttpInfo(String agentId, AgentUpdate agentUpdate) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateAgentValidateBeforeCall(agentId, agentUpdate, null, null);
         Type localVarReturnType = new TypeToken<AgentRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1154,8 +1149,6 @@ public class AgentRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateAgentAsync(String agentId, AgentUpdate agentUpdate, final ApiCallback<AgentRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1184,22 +1177,28 @@ public class AgentRegistrationApi {
      * Build call for updateAgentKey
      * @param agentId Unique agent identifier (required)
      * @param keyId Unique key identifier (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateAgentKeyRequest Key update request (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateAgentKeyCall(String agentId, String keyId, KeyUpdate keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call updateAgentKeyCall(String agentId, String keyId, UpdateAgentKeyRequest updateAgentKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyUpdate, KeyUpdate.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateAgentKeyRequest, UpdateAgentKeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateAgentKey,updateAgentKeyAsync,updateAgentKeyWithHttpInfo,updateAgentKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1225,10 +1224,6 @@ public class AgentRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1248,7 +1243,7 @@ public class AgentRegistrationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAgentKeyValidateBeforeCall(String agentId, String keyId, KeyUpdate keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call updateAgentKeyValidateBeforeCall(String agentId, String keyId, UpdateAgentKeyRequest updateAgentKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'agentId' is set
         if (agentId == null) {
@@ -1262,14 +1257,14 @@ public class AgentRegistrationApi {
             throw new ApiException("Missing the required parameter 'keyId' when calling updateAgentKey(Async)");
         }
         
-        // verify the required parameter 'keyUpdate' is set
-        if (keyUpdate == null) {
-            logger.error("Missing the required parameter 'keyUpdate' when calling updateAgentKey(Async)");
-            throw new ApiException("Missing the required parameter 'keyUpdate' when calling updateAgentKey(Async)");
+        // verify the required parameter 'updateAgentKeyRequest' is set
+        if (updateAgentKeyRequest == null) {
+            logger.error("Missing the required parameter 'updateAgentKeyRequest' when calling updateAgentKey(Async)");
+            throw new ApiException("Missing the required parameter 'updateAgentKeyRequest' when calling updateAgentKey(Async)");
         }
         
         
-        okhttp3.Call call = updateAgentKeyCall(agentId, keyId, keyUpdate, progressListener, progressRequestListener);
+        okhttp3.Call call = updateAgentKeyCall(agentId, keyId, updateAgentKeyRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -1283,14 +1278,14 @@ public class AgentRegistrationApi {
      * **Update a Key**&lt;br&gt;Updates key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;publicKey&#x60;, &#x60;algorithm&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; **Note:** &#x60;publicKey&#x60; and &#x60;algorithm&#x60; must always be updated together.&lt;br&gt; Returns **404** if the agent or key is not found, **403** if the agent or key is deactivated, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param agentId Unique agent identifier (required)
      * @param keyId Unique key identifier (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateAgentKeyRequest Key update request (required)
      * @return AddAgentKeyResponse201
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public AddAgentKeyResponse201 updateAgentKey(String agentId, String keyId, KeyUpdate keyUpdate) throws ApiException, ConfigException {
+    public AddAgentKeyResponse201 updateAgentKey(String agentId, String keyId, UpdateAgentKeyRequest updateAgentKeyRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateAgentKey' STARTED");
-        ApiResponse<AddAgentKeyResponse201> resp = updateAgentKeyWithHttpInfo(agentId, keyId, keyUpdate);
+        ApiResponse<AddAgentKeyResponse201> resp = updateAgentKeyWithHttpInfo(agentId, keyId, updateAgentKeyRequest);
         logger.info("CALL TO METHOD 'updateAgentKey' ENDED");
         return resp.getData();
     }
@@ -1300,14 +1295,13 @@ public class AgentRegistrationApi {
      * **Update a Key**&lt;br&gt;Updates key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;publicKey&#x60;, &#x60;algorithm&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; **Note:** &#x60;publicKey&#x60; and &#x60;algorithm&#x60; must always be updated together.&lt;br&gt; Returns **404** if the agent or key is not found, **403** if the agent or key is deactivated, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param agentId Unique agent identifier (required)
      * @param keyId Unique key identifier (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateAgentKeyRequest Key update request (required)
      * @return ApiResponse&lt;AddAgentKeyResponse201&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<AddAgentKeyResponse201> updateAgentKeyWithHttpInfo(String agentId, String keyId, KeyUpdate keyUpdate) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, keyUpdate, null, null);
+    public ApiResponse<AddAgentKeyResponse201> updateAgentKeyWithHttpInfo(String agentId, String keyId, UpdateAgentKeyRequest updateAgentKeyRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, updateAgentKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1317,15 +1311,13 @@ public class AgentRegistrationApi {
      * **Update a Key**&lt;br&gt;Updates key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;publicKey&#x60;, &#x60;algorithm&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; **Note:** &#x60;publicKey&#x60; and &#x60;algorithm&#x60; must always be updated together.&lt;br&gt; Returns **404** if the agent or key is not found, **403** if the agent or key is deactivated, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param agentId Unique agent identifier (required)
      * @param keyId Unique key identifier (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateAgentKeyRequest Key update request (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateAgentKeyAsync(String agentId, String keyId, KeyUpdate keyUpdate, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call updateAgentKeyAsync(String agentId, String keyId, UpdateAgentKeyRequest updateAgentKeyRequest, final ApiCallback<AddAgentKeyResponse201> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1345,7 +1337,7 @@ public class AgentRegistrationApi {
             };
         }
 
-        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, keyUpdate, progressListener, progressRequestListener);
+        okhttp3.Call call = updateAgentKeyValidateBeforeCall(agentId, keyId, updateAgentKeyRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AddAgentKeyResponse201>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

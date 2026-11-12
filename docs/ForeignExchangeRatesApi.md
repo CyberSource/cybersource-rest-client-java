@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createFxRates"></a>
 # **createFxRates**
-> InlineResponse2013 createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
+> CreateFxRatesResponse createFxRates(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
 
 Retrieve Foreign Exchange Rates
 
@@ -23,7 +23,7 @@ Retrieve current foreign exchange rates for cross-border payouts.
 
 
 ForeignExchangeRatesApi apiInstance = new ForeignExchangeRatesApi();
-Body body = new Body(); // Body | 
+CreateFxRatesRequest createFxRatesRequest = new CreateFxRatesRequest(); // CreateFxRatesRequest | 
 String contentType = "contentType_example"; // String | 
 String xRequestid = "xRequestid_example"; // String | 
 String vCMerchantId = "vCMerchantId_example"; // String | 
@@ -31,7 +31,7 @@ String vCPermissions = "vCPermissions_example"; // String |
 String vCCorrelationId = "vCCorrelationId_example"; // String | 
 String vCOrganizationId = "vCOrganizationId_example"; // String | 
 try {
-    InlineResponse2013 result = apiInstance.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+    CreateFxRatesResponse result = apiInstance.createFxRates(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ForeignExchangeRatesApi#createFxRates");
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  |
+ **createFxRatesRequest** | [**CreateFxRatesRequest**](CreateFxRatesRequest.md)|  |
  **contentType** | **String**|  |
  **xRequestid** | **String**|  |
  **vCMerchantId** | **String**|  |
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**CreateFxRatesResponse**](CreateFxRatesResponse.md)
 
 ### Authorization
 

@@ -16,8 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.AcpUpdateCheckoutSessionBuyer;
+import Model.Iccv1UpdateCheckoutSessionsFulfillmentAddress;
 import Model.Iccv1checkoutSessionsItems;
-import Model.Iccv1checkoutSessionssessionIdFulfillmentAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,7 +42,7 @@ public class AcpUpdateCheckoutSessionRequest {
   private AcpUpdateCheckoutSessionBuyer buyer = null;
 
   @SerializedName("fulfillment_address")
-  private Iccv1checkoutSessionssessionIdFulfillmentAddress fulfillmentAddress = null;
+  private Iccv1UpdateCheckoutSessionsFulfillmentAddress fulfillmentAddress = null;
 
   @SerializedName("fulfillment_option_id")
   private String fulfillmentOptionId = null;
@@ -91,7 +91,7 @@ public class AcpUpdateCheckoutSessionRequest {
     this.buyer = buyer;
   }
 
-  public AcpUpdateCheckoutSessionRequest fulfillmentAddress(Iccv1checkoutSessionssessionIdFulfillmentAddress fulfillmentAddress) {
+  public AcpUpdateCheckoutSessionRequest fulfillmentAddress(Iccv1UpdateCheckoutSessionsFulfillmentAddress fulfillmentAddress) {
     this.fulfillmentAddress = fulfillmentAddress;
     return this;
   }
@@ -101,11 +101,11 @@ public class AcpUpdateCheckoutSessionRequest {
    * @return fulfillmentAddress
   **/
   @ApiModelProperty(value = "")
-  public Iccv1checkoutSessionssessionIdFulfillmentAddress getFulfillmentAddress() {
+  public Iccv1UpdateCheckoutSessionsFulfillmentAddress getFulfillmentAddress() {
     return fulfillmentAddress;
   }
 
-  public void setFulfillmentAddress(Iccv1checkoutSessionssessionIdFulfillmentAddress fulfillmentAddress) {
+  public void setFulfillmentAddress(Iccv1UpdateCheckoutSessionsFulfillmentAddress fulfillmentAddress) {
     this.fulfillmentAddress = fulfillmentAddress;
   }
 

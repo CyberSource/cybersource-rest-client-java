@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAccountInfo"></a>
 # **getAccountInfo**
-> InlineResponse2015 getAccountInfo(createBinLookupRequest)
+> GetAccountInfoResponse getAccountInfo(createBinLookupRequest)
 
 BIN Lookup API
 
@@ -25,7 +25,7 @@ The BIN Lookup Service is a versatile business tool that provides card network a
 BinLookupApi apiInstance = new BinLookupApi();
 CreateBinLookupRequest createBinLookupRequest = new CreateBinLookupRequest(); // CreateBinLookupRequest | 
 try {
-    InlineResponse2015 result = apiInstance.getAccountInfo(createBinLookupRequest);
+    GetAccountInfoResponse result = apiInstance.getAccountInfo(createBinLookupRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BinLookupApi#getAccountInfo");
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**GetAccountInfoResponse**](GetAccountInfoResponse.md)
 
 ### Authorization
 

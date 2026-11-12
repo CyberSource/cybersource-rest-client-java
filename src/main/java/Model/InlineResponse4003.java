@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2013ErrorInformationDetails;
+import Model.InlineResponse4003Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,59 +32,20 @@ import java.util.List;
  */
 
 public class InlineResponse4003 {
-  @SerializedName("id")
-  private String id = null;
-
-  @SerializedName("submitTimeStampUtc")
-  private String submitTimeStampUtc = null;
-
   @SerializedName("status")
   private String status = null;
-
-  @SerializedName("reason")
-  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
 
+  @SerializedName("code")
+  private String code = null;
+
   @SerializedName("details")
-  private List<InlineResponse2013ErrorInformationDetails> details = null;
+  private List<InlineResponse4003Details> details = null;
 
-  public InlineResponse4003 id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
-   * @return id
-  **/
-  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse4003 submitTimeStampUtc(String submitTimeStampUtc) {
-    this.submitTimeStampUtc = submitTimeStampUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeStampUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeStampUtc() {
-    return submitTimeStampUtc;
-  }
-
-  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
-    this.submitTimeStampUtc = submitTimeStampUtc;
-  }
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
 
   public InlineResponse4003 status(String status) {
     this.status = status;
@@ -92,10 +53,10 @@ public class InlineResponse4003 {
   }
 
    /**
-   * Possible values: - INVALID_REQUEST 
+   * The status of the submitted request.  Possible values: - BAD_REQUEST
    * @return status
   **/
-  @ApiModelProperty(value = "Possible values: - INVALID_REQUEST ")
+  @ApiModelProperty(value = "The status of the submitted request.  Possible values: - BAD_REQUEST")
   public String getStatus() {
     return status;
   }
@@ -104,34 +65,16 @@ public class InlineResponse4003 {
     this.status = status;
   }
 
-  public InlineResponse4003 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD ")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
-
   public InlineResponse4003 message(String message) {
     this.message = message;
     return this;
   }
 
    /**
-   * The detail message related to the status and reason listed above. 
+   * The detail message related to the status and reason listed above.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above. ")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
   public String getMessage() {
     return message;
   }
@@ -140,30 +83,66 @@ public class InlineResponse4003 {
     this.message = message;
   }
 
-  public InlineResponse4003 details(List<InlineResponse2013ErrorInformationDetails> details) {
+  public InlineResponse4003 code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * An optional short string which identifies the exact error.
+   * @return code
+  **/
+  @ApiModelProperty(value = "An optional short string which identifies the exact error.")
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+  public InlineResponse4003 details(List<InlineResponse4003Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4003 addDetailsItem(InlineResponse2013ErrorInformationDetails detailsItem) {
+  public InlineResponse4003 addDetailsItem(InlineResponse4003Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse2013ErrorInformationDetails>();
+      this.details = new ArrayList<InlineResponse4003Details>();
     }
     this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * Get details
+   * An optional array which provides more details of the error.
    * @return details
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse2013ErrorInformationDetails> getDetails() {
+  @ApiModelProperty(value = "An optional array which provides more details of the error.")
+  public List<InlineResponse4003Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse2013ErrorInformationDetails> details) {
+  public void setDetails(List<InlineResponse4003Details> details) {
     this.details = details;
+  }
+
+  public InlineResponse4003 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
+
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
   }
 
 
@@ -176,17 +155,16 @@ public class InlineResponse4003 {
       return false;
     }
     InlineResponse4003 inlineResponse4003 = (InlineResponse4003) o;
-    return Objects.equals(this.id, inlineResponse4003.id) &&
-        Objects.equals(this.submitTimeStampUtc, inlineResponse4003.submitTimeStampUtc) &&
-        Objects.equals(this.status, inlineResponse4003.status) &&
-        Objects.equals(this.reason, inlineResponse4003.reason) &&
+    return Objects.equals(this.status, inlineResponse4003.status) &&
         Objects.equals(this.message, inlineResponse4003.message) &&
-        Objects.equals(this.details, inlineResponse4003.details);
+        Objects.equals(this.code, inlineResponse4003.code) &&
+        Objects.equals(this.details, inlineResponse4003.details) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse4003.submitTimeUtc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeStampUtc, status, reason, message, details);
+    return Objects.hash(status, message, code, details, submitTimeUtc);
   }
 
 
@@ -213,12 +191,11 @@ public class InlineResponse4003 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4003 {\n");
     
-    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
-    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
     if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -237,12 +214,11 @@ public class InlineResponse4003 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4003 {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }

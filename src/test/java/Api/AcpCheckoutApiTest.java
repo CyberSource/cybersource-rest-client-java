@@ -16,10 +16,10 @@ package Api;
 import Model.AcpCompleteCheckoutRequest;
 import Model.AcpCreateCheckoutSessionRequest;
 import Model.AcpUpdateCheckoutSessionRequest;
-import Model.InlineResponse20017;
-import Model.InlineResponse20018;
-import Model.InlineResponse20112;
-import Model.InlineResponse40016;
+import Model.CancelCheckoutResponse;
+import Model.CheckoutSessionResponse;
+import Model.CompleteCheckoutResponse;
+import Model.InlineResponse4007;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -56,7 +56,7 @@ public class AcpCheckoutApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20018 response = api.cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        CancelCheckoutResponse response = api.cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -80,7 +80,7 @@ public class AcpCheckoutApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20017 response = api.completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        CompleteCheckoutResponse response = api.completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -103,7 +103,7 @@ public class AcpCheckoutApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20112 response = api.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        CheckoutSessionResponse response = api.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -127,7 +127,7 @@ public class AcpCheckoutApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20112 response = api.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        CheckoutSessionResponse response = api.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }
@@ -151,7 +151,7 @@ public class AcpCheckoutApiTest {
         String signature = null;
         String timestamp = null;
         String apIVersion = null;
-        InlineResponse20112 response = api.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+        CheckoutSessionResponse response = api.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
 
         // TODO: test validations
     }

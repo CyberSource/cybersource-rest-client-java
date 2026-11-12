@@ -15,6 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin;
+import Model.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount
@@ -46,6 +49,24 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
 
   @SerializedName("passwordChangeDate")
   private String passwordChangeDate = null;
+
+  @SerializedName("previousLogin")
+  private Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin previousLogin = null;
+
+  @SerializedName("previousOrder")
+  private Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder previousOrder = null;
+
+  @SerializedName("paymentMethodsCount")
+  private BigDecimal paymentMethodsCount = null;
+
+  @SerializedName("totalOrdersCount")
+  private BigDecimal totalOrdersCount = null;
+
+  @SerializedName("proofOfIdReceived")
+  private Boolean proofOfIdReceived = null;
+
+  @SerializedName("lastEmailChangeDate")
+  private String lastEmailChangeDate = null;
 
   public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount lastChangeDate(String lastChangeDate) {
     this.lastChangeDate = lastChangeDate;
@@ -155,6 +176,114 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
     this.passwordChangeDate = passwordChangeDate;
   }
 
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount previousLogin(Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin previousLogin) {
+    this.previousLogin = previousLogin;
+    return this;
+  }
+
+   /**
+   * Get previousLogin
+   * @return previousLogin
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin getPreviousLogin() {
+    return previousLogin;
+  }
+
+  public void setPreviousLogin(Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin previousLogin) {
+    this.previousLogin = previousLogin;
+  }
+
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount previousOrder(Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder previousOrder) {
+    this.previousOrder = previousOrder;
+    return this;
+  }
+
+   /**
+   * Get previousOrder
+   * @return previousOrder
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder getPreviousOrder() {
+    return previousOrder;
+  }
+
+  public void setPreviousOrder(Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder previousOrder) {
+    this.previousOrder = previousOrder;
+  }
+
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount paymentMethodsCount(BigDecimal paymentMethodsCount) {
+    this.paymentMethodsCount = paymentMethodsCount;
+    return this;
+  }
+
+   /**
+   * Number of Payment methods (all types) created on customer account
+   * @return paymentMethodsCount
+  **/
+  @ApiModelProperty(value = "Number of Payment methods (all types) created on customer account")
+  public BigDecimal getPaymentMethodsCount() {
+    return paymentMethodsCount;
+  }
+
+  public void setPaymentMethodsCount(BigDecimal paymentMethodsCount) {
+    this.paymentMethodsCount = paymentMethodsCount;
+  }
+
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount totalOrdersCount(BigDecimal totalOrdersCount) {
+    this.totalOrdersCount = totalOrdersCount;
+    return this;
+  }
+
+   /**
+   * Number of total orders made by this customer account
+   * @return totalOrdersCount
+  **/
+  @ApiModelProperty(value = "Number of total orders made by this customer account")
+  public BigDecimal getTotalOrdersCount() {
+    return totalOrdersCount;
+  }
+
+  public void setTotalOrdersCount(BigDecimal totalOrdersCount) {
+    this.totalOrdersCount = totalOrdersCount;
+  }
+
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount proofOfIdReceived(Boolean proofOfIdReceived) {
+    this.proofOfIdReceived = proofOfIdReceived;
+    return this;
+  }
+
+   /**
+   * True if the customer provided a proof of any id
+   * @return proofOfIdReceived
+  **/
+  @ApiModelProperty(value = "True if the customer provided a proof of any id")
+  public Boolean ProofOfIdReceived() {
+    return proofOfIdReceived;
+  }
+
+  public void setProofOfIdReceived(Boolean proofOfIdReceived) {
+    this.proofOfIdReceived = proofOfIdReceived;
+  }
+
+  public Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount lastEmailChangeDate(String lastEmailChangeDate) {
+    this.lastEmailChangeDate = lastEmailChangeDate;
+    return this;
+  }
+
+   /**
+   * Date of last email change. Format: &#39;YYYYMMDD&#39; 
+   * @return lastEmailChangeDate
+  **/
+  @ApiModelProperty(value = "Date of last email change. Format: 'YYYYMMDD' ")
+  public String getLastEmailChangeDate() {
+    return lastEmailChangeDate;
+  }
+
+  public void setLastEmailChangeDate(String lastEmailChangeDate) {
+    this.lastEmailChangeDate = lastEmailChangeDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,12 +299,18 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
         Objects.equals(this.modificationHistory, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.modificationHistory) &&
         Objects.equals(this.passwordHistory, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.passwordHistory) &&
         Objects.equals(this.createDate, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.createDate) &&
-        Objects.equals(this.passwordChangeDate, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.passwordChangeDate);
+        Objects.equals(this.passwordChangeDate, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.passwordChangeDate) &&
+        Objects.equals(this.previousLogin, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.previousLogin) &&
+        Objects.equals(this.previousOrder, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.previousOrder) &&
+        Objects.equals(this.paymentMethodsCount, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.paymentMethodsCount) &&
+        Objects.equals(this.totalOrdersCount, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.totalOrdersCount) &&
+        Objects.equals(this.proofOfIdReceived, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.proofOfIdReceived) &&
+        Objects.equals(this.lastEmailChangeDate, ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount.lastEmailChangeDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastChangeDate, creationHistory, modificationHistory, passwordHistory, createDate, passwordChangeDate);
+    return Objects.hash(lastChangeDate, creationHistory, modificationHistory, passwordHistory, createDate, passwordChangeDate, previousLogin, previousOrder, paymentMethodsCount, totalOrdersCount, proofOfIdReceived, lastEmailChangeDate);
   }
 
 
@@ -208,6 +343,12 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
     if (passwordHistory != null) sb.append("    passwordHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("passwordHistory").matches() ? "[REDACTED]" : toIndentedString(passwordHistory)).append("\n");
     if (createDate != null) sb.append("    createDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("createDate").matches() ? "[REDACTED]" : toIndentedString(createDate)).append("\n");
     if (passwordChangeDate != null) sb.append("    passwordChangeDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("passwordChangeDate").matches() ? "[REDACTED]" : toIndentedString(passwordChangeDate)).append("\n");
+    if (previousLogin != null) sb.append("    previousLogin: ").append(SENSITIVE_FIELD_PATTERN.matcher("previousLogin").matches() ? "[REDACTED]" : toIndentedString(previousLogin)).append("\n");
+    if (previousOrder != null) sb.append("    previousOrder: ").append(SENSITIVE_FIELD_PATTERN.matcher("previousOrder").matches() ? "[REDACTED]" : toIndentedString(previousOrder)).append("\n");
+    if (paymentMethodsCount != null) sb.append("    paymentMethodsCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentMethodsCount").matches() ? "[REDACTED]" : toIndentedString(paymentMethodsCount)).append("\n");
+    if (totalOrdersCount != null) sb.append("    totalOrdersCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalOrdersCount").matches() ? "[REDACTED]" : toIndentedString(totalOrdersCount)).append("\n");
+    if (proofOfIdReceived != null) sb.append("    proofOfIdReceived: ").append(SENSITIVE_FIELD_PATTERN.matcher("proofOfIdReceived").matches() ? "[REDACTED]" : toIndentedString(proofOfIdReceived)).append("\n");
+    if (lastEmailChangeDate != null) sb.append("    lastEmailChangeDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("lastEmailChangeDate").matches() ? "[REDACTED]" : toIndentedString(lastEmailChangeDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -232,6 +373,12 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
     if (passwordHistory != null) sb.append("    passwordHistory: ").append(toIndentedString(passwordHistory)).append("\n");
     if (createDate != null) sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     if (passwordChangeDate != null) sb.append("    passwordChangeDate: ").append(toIndentedString(passwordChangeDate)).append("\n");
+    if (previousLogin != null) sb.append("    previousLogin: ").append(toIndentedString(previousLogin)).append("\n");
+    if (previousOrder != null) sb.append("    previousOrder: ").append(toIndentedString(previousOrder)).append("\n");
+    if (paymentMethodsCount != null) sb.append("    paymentMethodsCount: ").append(toIndentedString(paymentMethodsCount)).append("\n");
+    if (totalOrdersCount != null) sb.append("    totalOrdersCount: ").append(toIndentedString(totalOrdersCount)).append("\n");
+    if (proofOfIdReceived != null) sb.append("    proofOfIdReceived: ").append(toIndentedString(proofOfIdReceived)).append("\n");
+    if (lastEmailChangeDate != null) sb.append("    lastEmailChangeDate: ").append(toIndentedString(lastEmailChangeDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

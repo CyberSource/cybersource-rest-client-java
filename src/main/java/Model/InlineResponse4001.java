@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4001Details;
+import Model.InlineResponse4001Fields;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,85 +28,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * InlineResponse4001
+ * Error Bean
  */
+@ApiModel(description = "Error Bean")
 
 public class InlineResponse4001 {
-  @SerializedName("correlationId")
-  private String correlationId = null;
-
-  @SerializedName("details")
-  private List<InlineResponse4001Details> details = null;
-
-  @SerializedName("informationLink")
-  private String informationLink = null;
+  @SerializedName("code")
+  private String code = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("reason")
-  private String reason = null;
+  @SerializedName("localizationKey")
+  private String localizationKey = null;
 
-  public InlineResponse4001 correlationId(String correlationId) {
-    this.correlationId = correlationId;
+  @SerializedName("correlationId")
+  private String correlationId = null;
+
+  @SerializedName("detail")
+  private String detail = null;
+
+  @SerializedName("fields")
+  private List<InlineResponse4001Fields> fields = null;
+
+  public InlineResponse4001 code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * Get correlationId
-   * @return correlationId
+   * Error code
+   * @return code
   **/
-  @ApiModelProperty(value = "")
-  public String getCorrelationId() {
-    return correlationId;
+  @ApiModelProperty(required = true, value = "Error code")
+  public String getCode() {
+    return code;
   }
 
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
-  }
-
-  public InlineResponse4001 details(List<InlineResponse4001Details> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse4001 addDetailsItem(InlineResponse4001Details detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4001Details>();
-    }
-    this.details.add(detailsItem);
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse4001Details> getDetails() {
-    return details;
-  }
-
-  public void setDetails(List<InlineResponse4001Details> details) {
-    this.details = details;
-  }
-
-  public InlineResponse4001 informationLink(String informationLink) {
-    this.informationLink = informationLink;
-    return this;
-  }
-
-   /**
-   * Get informationLink
-   * @return informationLink
-  **/
-  @ApiModelProperty(value = "")
-  public String getInformationLink() {
-    return informationLink;
-  }
-
-  public void setInformationLink(String informationLink) {
-    this.informationLink = informationLink;
+  public void setCode(String code) {
+    this.code = code;
   }
 
   public InlineResponse4001 message(String message) {
@@ -115,10 +75,10 @@ public class InlineResponse4001 {
   }
 
    /**
-   * Get message
+   * Error message
    * @return message
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Error message")
   public String getMessage() {
     return message;
   }
@@ -127,22 +87,84 @@ public class InlineResponse4001 {
     this.message = message;
   }
 
-  public InlineResponse4001 reason(String reason) {
-    this.reason = reason;
+  public InlineResponse4001 localizationKey(String localizationKey) {
+    this.localizationKey = localizationKey;
     return this;
   }
 
    /**
-   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
-   * @return reason
+   * Localization Key Name
+   * @return localizationKey
   **/
-  @ApiModelProperty(required = true, value = "Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT")
-  public String getReason() {
-    return reason;
+  @ApiModelProperty(value = "Localization Key Name")
+  public String getLocalizationKey() {
+    return localizationKey;
   }
 
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setLocalizationKey(String localizationKey) {
+    this.localizationKey = localizationKey;
+  }
+
+  public InlineResponse4001 correlationId(String correlationId) {
+    this.correlationId = correlationId;
+    return this;
+  }
+
+   /**
+   * Correlation Id
+   * @return correlationId
+  **/
+  @ApiModelProperty(value = "Correlation Id")
+  public String getCorrelationId() {
+    return correlationId;
+  }
+
+  public void setCorrelationId(String correlationId) {
+    this.correlationId = correlationId;
+  }
+
+  public InlineResponse4001 detail(String detail) {
+    this.detail = detail;
+    return this;
+  }
+
+   /**
+   * Error Detail
+   * @return detail
+  **/
+  @ApiModelProperty(value = "Error Detail")
+  public String getDetail() {
+    return detail;
+  }
+
+  public void setDetail(String detail) {
+    this.detail = detail;
+  }
+
+  public InlineResponse4001 fields(List<InlineResponse4001Fields> fields) {
+    this.fields = fields;
+    return this;
+  }
+
+  public InlineResponse4001 addFieldsItem(InlineResponse4001Fields fieldsItem) {
+    if (this.fields == null) {
+      this.fields = new ArrayList<InlineResponse4001Fields>();
+    }
+    this.fields.add(fieldsItem);
+    return this;
+  }
+
+   /**
+   * Error fields List
+   * @return fields
+  **/
+  @ApiModelProperty(value = "Error fields List")
+  public List<InlineResponse4001Fields> getFields() {
+    return fields;
+  }
+
+  public void setFields(List<InlineResponse4001Fields> fields) {
+    this.fields = fields;
   }
 
 
@@ -155,16 +177,17 @@ public class InlineResponse4001 {
       return false;
     }
     InlineResponse4001 inlineResponse4001 = (InlineResponse4001) o;
-    return Objects.equals(this.correlationId, inlineResponse4001.correlationId) &&
-        Objects.equals(this.details, inlineResponse4001.details) &&
-        Objects.equals(this.informationLink, inlineResponse4001.informationLink) &&
+    return Objects.equals(this.code, inlineResponse4001.code) &&
         Objects.equals(this.message, inlineResponse4001.message) &&
-        Objects.equals(this.reason, inlineResponse4001.reason);
+        Objects.equals(this.localizationKey, inlineResponse4001.localizationKey) &&
+        Objects.equals(this.correlationId, inlineResponse4001.correlationId) &&
+        Objects.equals(this.detail, inlineResponse4001.detail) &&
+        Objects.equals(this.fields, inlineResponse4001.fields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(correlationId, details, informationLink, message, reason);
+    return Objects.hash(code, message, localizationKey, correlationId, detail, fields);
   }
 
 
@@ -191,11 +214,12 @@ public class InlineResponse4001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4001 {\n");
     
-    if (correlationId != null) sb.append("    correlationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("correlationId").matches() ? "[REDACTED]" : toIndentedString(correlationId)).append("\n");
-    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
-    if (informationLink != null) sb.append("    informationLink: ").append(SENSITIVE_FIELD_PATTERN.matcher("informationLink").matches() ? "[REDACTED]" : toIndentedString(informationLink)).append("\n");
+    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (localizationKey != null) sb.append("    localizationKey: ").append(SENSITIVE_FIELD_PATTERN.matcher("localizationKey").matches() ? "[REDACTED]" : toIndentedString(localizationKey)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("correlationId").matches() ? "[REDACTED]" : toIndentedString(correlationId)).append("\n");
+    if (detail != null) sb.append("    detail: ").append(SENSITIVE_FIELD_PATTERN.matcher("detail").matches() ? "[REDACTED]" : toIndentedString(detail)).append("\n");
+    if (fields != null) sb.append("    fields: ").append(SENSITIVE_FIELD_PATTERN.matcher("fields").matches() ? "[REDACTED]" : toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -214,11 +238,12 @@ public class InlineResponse4001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4001 {\n");
     
-    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    if (informationLink != null) sb.append("    informationLink: ").append(toIndentedString(informationLink)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (localizationKey != null) sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
+    if (detail != null) sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+    if (fields != null) sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

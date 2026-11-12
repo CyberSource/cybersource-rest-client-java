@@ -11,7 +11,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 import java.util.Properties;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * Factory and cache for {@link OkHttpClient} instances.
@@ -38,6 +41,49 @@ public final class HttpClientFactory {
     private static final TimedCache<Integer, OkHttpClient> CLIENT_CACHE = new TimedCache<>(
             CLIENT_IDLE_TIMEOUT_MINUTES, TimeUnit.MINUTES, MAX_CACHED_CLIENTS,
             (key, client) -> shutdownQuietly(client));
+
+    /**
+     * Path patterns for body-bearing POSTs that move real funds and carry no backend-supported
+     * idempotency key (see issue #4252): payments, captures, reversals, credits, refunds,
+     * payouts, and push/pull funds transfers (OCT/AFT).
+     *
+     * <p>This file is excluded from the swagger-codegen wipe/regenerate cycle (see
+     * {@code generator/cybersource_java_sdk_gen.sh}/{@code .bat}, which {@code git checkout}s it
+     * back after regeneration), so add new retry-unsafe paths here rather than in
+     * {@code ApiClient.mustache}/{@code ApiClient.java}, which are regenerated from the spec on
+     * every build and would silently lose any such list.
+     */
+    private static final List<String> RETRY_UNSAFE_POST_PATTERNS = Arrays.asList(
+            "/pts/v2/payments",
+            "/pts/v2/payments/[^/]+/captures",
+            "/pts/v2/payments/[^/]+/reversals",
+            "/pts/v2/payments/[^/]+/refunds",
+            "/pts/v2/credits",
+            "/pts/v2/captures/[^/]+/refunds",
+            "/pts/v2/reversals",
+            "/pts/v2/payouts",
+            "/pts/v1/push-funds-transfer",
+            "/pts/v1/pull-funds-transfer",
+            "/pts/v1/pull-funds-transfer/[^/]+/refund",
+            "/pts/v1/pull-funds-transfer/[^/]+/reversal"
+    ).stream().map(p -> "^" + p + "$").collect(Collectors.toList());
+
+    /**
+     * True for a body-bearing POST where a connection-failure retry could silently duplicate a
+     * non-idempotent money-movement operation. Used by {@code ApiClient.buildCall()} to decide
+     * whether to default {@code retryOnConnectionFailure} to {@code false} for this call.
+     */
+    public static boolean isRetryUnsafePost(String path, String method) {
+        if (!"POST".equalsIgnoreCase(method) || path == null) {
+            return false;
+        }
+        for (String pattern : RETRY_UNSAFE_POST_PATTERNS) {
+            if (path.matches(pattern)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private HttpClientFactory() {
         // Utility class; not instantiable.
@@ -99,10 +145,6 @@ public final class HttpClientFactory {
                 builder.addInterceptor(additionalSettings.getCustomLoggingInterceptor());
             }
 
-            if (additionalSettings.getCustomRetryInterceptor() != null) {
-                builder.addInterceptor(additionalSettings.getCustomRetryInterceptor());
-            }
-
             if (additionalSettings.getCustomSSLSocketFactory() != null && additionalSettings.getCustomX509TrustManager() != null) {
                 builder.sslSocketFactory(additionalSettings.getCustomSSLSocketFactory(), additionalSettings.getCustomX509TrustManager());
             }
@@ -139,7 +181,6 @@ public final class HttpClientFactory {
                 merchantConfig.getUserDefinedKeepAliveDuration(),
                 merchantConfig.getUserDefinedMaxIdleConnections(),
                 additionalSettings.getCustomLoggingInterceptor() != null ? additionalSettings.getCustomLoggingInterceptor().getLevel() : null,
-                additionalSettings.getCustomRetryInterceptor() != null,
                 additionalSettings.getCustomRetryOnConnectionFailure(),
                 additionalSettings.getCustomNetworkEventListener() != null,
                 // Security material is keyed by content/identity (not mere presence) so that

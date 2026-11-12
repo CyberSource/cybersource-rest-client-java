@@ -18,9 +18,10 @@ import java.util.Arrays;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import Model.Riskv1decisionsAcquirerInformation;
+import Model.Riskv1decisionsAggregatorInformation;
+import Model.Riskv1decisionsBundledConsumerAuthenticationInformation;
 import Model.Riskv1decisionsBuyerInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
-import Model.Riskv1decisionsConsumerAuthenticationInformation;
 import Model.Riskv1decisionsDeviceInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
 import Model.Riskv1decisionsMerchantInformation;
@@ -28,7 +29,9 @@ import Model.Riskv1decisionsOrderInformation;
 import Model.Riskv1decisionsPaymentInformation;
 import Model.Riskv1decisionsProcessingInformation;
 import Model.Riskv1decisionsProcessorInformation;
+import Model.Riskv1decisionsRecipientInformation;
 import Model.Riskv1decisionsRiskInformation;
+import Model.Riskv1decisionsSenderInformation;
 import Model.Riskv1decisionsTokenInformation;
 import Model.Riskv1decisionsTravelInformation;
 import com.google.gson.TypeAdapter;
@@ -74,6 +77,15 @@ public class CreateBundledDecisionManagerCaseRequest {
   @SerializedName("travelInformation")
   private Riskv1decisionsTravelInformation travelInformation = null;
 
+  @SerializedName("recipientInformation")
+  private Riskv1decisionsRecipientInformation recipientInformation = null;
+
+  @SerializedName("senderInformation")
+  private Riskv1decisionsSenderInformation senderInformation = null;
+
+  @SerializedName("aggregatorInformation")
+  private Riskv1decisionsAggregatorInformation aggregatorInformation = null;
+
   @SerializedName("merchantDefinedInformation")
   private List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation = null;
 
@@ -87,7 +99,7 @@ public class CreateBundledDecisionManagerCaseRequest {
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
-  private Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+  private Riskv1decisionsBundledConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
   @SerializedName("watchlistScreeningInformation")
   private Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation = null;
@@ -257,6 +269,60 @@ public class CreateBundledDecisionManagerCaseRequest {
     this.travelInformation = travelInformation;
   }
 
+  public CreateBundledDecisionManagerCaseRequest recipientInformation(Riskv1decisionsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+    return this;
+  }
+
+   /**
+   * Get recipientInformation
+   * @return recipientInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsRecipientInformation getRecipientInformation() {
+    return recipientInformation;
+  }
+
+  public void setRecipientInformation(Riskv1decisionsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+  }
+
+  public CreateBundledDecisionManagerCaseRequest senderInformation(Riskv1decisionsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+    return this;
+  }
+
+   /**
+   * Get senderInformation
+   * @return senderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsSenderInformation getSenderInformation() {
+    return senderInformation;
+  }
+
+  public void setSenderInformation(Riskv1decisionsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+  }
+
+  public CreateBundledDecisionManagerCaseRequest aggregatorInformation(Riskv1decisionsAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+    return this;
+  }
+
+   /**
+   * Get aggregatorInformation
+   * @return aggregatorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsAggregatorInformation getAggregatorInformation() {
+    return aggregatorInformation;
+  }
+
+  public void setAggregatorInformation(Riskv1decisionsAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+  }
+
   public CreateBundledDecisionManagerCaseRequest merchantDefinedInformation(List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
@@ -337,7 +403,7 @@ public class CreateBundledDecisionManagerCaseRequest {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
-  public CreateBundledDecisionManagerCaseRequest consumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public CreateBundledDecisionManagerCaseRequest consumerAuthenticationInformation(Riskv1decisionsBundledConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
     return this;
   }
@@ -347,11 +413,11 @@ public class CreateBundledDecisionManagerCaseRequest {
    * @return consumerAuthenticationInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
+  public Riskv1decisionsBundledConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
     return consumerAuthenticationInformation;
   }
 
-  public void setConsumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public void setConsumerAuthenticationInformation(Riskv1decisionsBundledConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
@@ -410,6 +476,9 @@ public class CreateBundledDecisionManagerCaseRequest {
         Objects.equals(this.deviceInformation, createBundledDecisionManagerCaseRequest.deviceInformation) &&
         Objects.equals(this.riskInformation, createBundledDecisionManagerCaseRequest.riskInformation) &&
         Objects.equals(this.travelInformation, createBundledDecisionManagerCaseRequest.travelInformation) &&
+        Objects.equals(this.recipientInformation, createBundledDecisionManagerCaseRequest.recipientInformation) &&
+        Objects.equals(this.senderInformation, createBundledDecisionManagerCaseRequest.senderInformation) &&
+        Objects.equals(this.aggregatorInformation, createBundledDecisionManagerCaseRequest.aggregatorInformation) &&
         Objects.equals(this.merchantDefinedInformation, createBundledDecisionManagerCaseRequest.merchantDefinedInformation) &&
         Objects.equals(this.merchantInformation, createBundledDecisionManagerCaseRequest.merchantInformation) &&
         Objects.equals(this.acquirerInformation, createBundledDecisionManagerCaseRequest.acquirerInformation) &&
@@ -421,7 +490,7 @@ public class CreateBundledDecisionManagerCaseRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, watchlistScreeningInformation, tokenInformation);
+    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, recipientInformation, senderInformation, aggregatorInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, watchlistScreeningInformation, tokenInformation);
   }
 
 
@@ -457,6 +526,9 @@ public class CreateBundledDecisionManagerCaseRequest {
     if (deviceInformation != null) sb.append("    deviceInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("deviceInformation").matches() ? "[REDACTED]" : toIndentedString(deviceInformation)).append("\n");
     if (riskInformation != null) sb.append("    riskInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("riskInformation").matches() ? "[REDACTED]" : toIndentedString(riskInformation)).append("\n");
     if (travelInformation != null) sb.append("    travelInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelInformation").matches() ? "[REDACTED]" : toIndentedString(travelInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("recipientInformation").matches() ? "[REDACTED]" : toIndentedString(recipientInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("senderInformation").matches() ? "[REDACTED]" : toIndentedString(senderInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("aggregatorInformation").matches() ? "[REDACTED]" : toIndentedString(aggregatorInformation)).append("\n");
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedInformation").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
     if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("acquirerInformation").matches() ? "[REDACTED]" : toIndentedString(acquirerInformation)).append("\n");
@@ -491,6 +563,9 @@ public class CreateBundledDecisionManagerCaseRequest {
     if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");

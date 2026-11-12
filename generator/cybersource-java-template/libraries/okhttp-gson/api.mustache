@@ -87,15 +87,21 @@ public class {{classname}} {
         Object localVarPostBody = {{#bodyParam}}sdkTracker.insertDeveloperIdTracker({{paramName}}, {{{dataType}}}.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId()){{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
 {{^bodyParam}}
         if ("{{httpMethod}}".equalsIgnoreCase("POST")) {
-            {{localVariablePrefix}}localVarPostBody = "{}";
+            {{localVariablePrefix}}localVarPostBody = java.util.Collections.emptyMap();
         }
         {{/bodyParam}}
         
+        final String[] {{localVariablePrefix}}localVarContentTypes = {
+            {{#consumes}}"{{{mediaType}}}"{{#hasMore}}, {{/hasMore}}{{/consumes}}
+        };
+        final String {{localVariablePrefix}}localVarContentType = {{localVariablePrefix}}apiClient.selectHeaderContentType({{localVariablePrefix}}localVarContentTypes);
+
         String inboundMLEStatus = "{{#vendorExtensions.x-devcenter-metaData.mleForRequest}}{{vendorExtensions.x-devcenter-metaData.mleForRequest}}{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}{{^vendorExtensions.x-devcenter-metaData.mleForRequest}}false{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "{{operationId}},{{operationId}}Async,{{operationId}}WithHttpInfo,{{operationId}}Call")) {
             try {
-                {{localVariablePrefix}}localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String {{localVariablePrefix}}localVarSerializedPayload = {{localVariablePrefix}}apiClient.serializePayload({{localVariablePrefix}}localVarPostBody, {{localVariablePrefix}}localVarContentType);
+                {{localVariablePrefix}}localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, {{localVariablePrefix}}localVarPostBody, {{localVariablePrefix}}localVarSerializedPayload, {{localVariablePrefix}}localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -126,10 +132,6 @@ public class {{classname}} {
         final String {{localVariablePrefix}}localVarAccept = {{localVariablePrefix}}apiClient.selectHeaderAccept({{localVariablePrefix}}localVarAccepts);
         if ({{localVariablePrefix}}localVarAccept != null) {{localVariablePrefix}}localVarHeaderParams.put("Accept", {{localVariablePrefix}}localVarAccept);
 
-        final String[] {{localVariablePrefix}}localVarContentTypes = {
-            {{#consumes}}"{{{mediaType}}}"{{#hasMore}}, {{/hasMore}}{{/consumes}}
-        };
-        final String {{localVariablePrefix}}localVarContentType = {{localVariablePrefix}}apiClient.selectHeaderContentType({{localVariablePrefix}}localVarContentTypes);
         {{localVariablePrefix}}localVarHeaderParams.put("Content-Type", {{localVariablePrefix}}localVarContentType);
 
         if(progressListener != null) {
@@ -221,7 +223,6 @@ public class {{classname}} {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<{{#vendorExtensions.x-streaming}}InputStream{{/vendorExtensions.x-streaming}}{{^vendorExtensions.x-streaming}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}{{/vendorExtensions.x-streaming}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call {{localVariablePrefix}}call = {{operationId}}ValidateBeforeCall({{#allParams}}{{paramName}}, {{/allParams}}null, null);
         {{#returnType}}Type {{localVariablePrefix}}localVarReturnType = new TypeToken<{{{returnType}}}>(){}.getType();
         return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call, {{localVariablePrefix}}localVarReturnType);{{/returnType}}{{^returnType}}return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call);{{/returnType}}
@@ -237,8 +238,6 @@ public class {{classname}} {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ApiCallback<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}> {{localVariablePrefix}}callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

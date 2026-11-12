@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4042Details;
+import Model.InlineResponse4002Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse4042
@@ -33,10 +34,10 @@ import java.util.List;
 
 public class InlineResponse4042 {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
-  private Integer status = null;
+  private String status = null;
 
   @SerializedName("reason")
   private String reason = null;
@@ -45,41 +46,32 @@ public class InlineResponse4042 {
   private String message = null;
 
   @SerializedName("details")
-  private List<InlineResponse4042Details> details = null;
-
-  public InlineResponse4042 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
+  private List<InlineResponse4002Details> details = null;
 
    /**
-   * The time the response was submitted
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "The time the response was submitted")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse4042 status(Integer status) {
+  public InlineResponse4042 status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * The status code of the response
+   * The http status description of the submitted request.
    * @return status
   **/
-  @ApiModelProperty(value = "The status code of the response")
-  public Integer getStatus() {
+  @ApiModelProperty(example = "NOT_FOUND", value = "The http status description of the submitted request.")
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(Integer status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
@@ -89,10 +81,10 @@ public class InlineResponse4042 {
   }
 
    /**
-   * The reason for the response
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;RESOURCE_NOT_FOUND&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason for the response")
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND' ")
   public String getReason() {
     return reason;
   }
@@ -107,10 +99,10 @@ public class InlineResponse4042 {
   }
 
    /**
-   * The message of the response
+   * Descriptive message for the error.
    * @return message
   **/
-  @ApiModelProperty(value = "The message of the response")
+  @ApiModelProperty(value = "Descriptive message for the error.")
   public String getMessage() {
     return message;
   }
@@ -119,29 +111,29 @@ public class InlineResponse4042 {
     this.message = message;
   }
 
-  public InlineResponse4042 details(List<InlineResponse4042Details> details) {
+  public InlineResponse4042 details(List<InlineResponse4002Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4042 addDetailsItem(InlineResponse4042Details detailsItem) {
+  public InlineResponse4042 addDetailsItem(InlineResponse4002Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4042Details>();
+      this.details = new ArrayList<InlineResponse4002Details>();
     }
     this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * The details of the validation error
+   * Get details
    * @return details
   **/
-  @ApiModelProperty(value = "The details of the validation error")
-  public List<InlineResponse4042Details> getDetails() {
+  @ApiModelProperty(value = "")
+  public List<InlineResponse4002Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse4042Details> details) {
+  public void setDetails(List<InlineResponse4002Details> details) {
     this.details = details;
   }
 

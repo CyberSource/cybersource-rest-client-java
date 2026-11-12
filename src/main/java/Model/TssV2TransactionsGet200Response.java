@@ -40,6 +40,7 @@ import Model.TssV2TransactionsGet200ResponseRecurringPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseRiskInformation;
 import Model.TssV2TransactionsGet200ResponseSenderInformation;
 import Model.TssV2TransactionsGet200ResponseTokenInformation;
+import Model.TssV2TransactionsGet200ResponseTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -103,6 +104,9 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("healthCareInformation")
   private Ptsv2paymentsHealthCareInformation healthCareInformation = null;
+
+  @SerializedName("travelInformation")
+  private TssV2TransactionsGet200ResponseTravelInformation travelInformation = null;
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
@@ -437,6 +441,24 @@ public class TssV2TransactionsGet200Response {
     this.healthCareInformation = healthCareInformation;
   }
 
+  public TssV2TransactionsGet200Response travelInformation(TssV2TransactionsGet200ResponseTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(TssV2TransactionsGet200ResponseTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
   public TssV2TransactionsGet200Response merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
@@ -741,6 +763,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.installmentInformation, tssV2TransactionsGet200Response.installmentInformation) &&
         Objects.equals(this.fraudMarkingInformation, tssV2TransactionsGet200Response.fraudMarkingInformation) &&
         Objects.equals(this.healthCareInformation, tssV2TransactionsGet200Response.healthCareInformation) &&
+        Objects.equals(this.travelInformation, tssV2TransactionsGet200Response.travelInformation) &&
         Objects.equals(this.merchantDefinedInformation, tssV2TransactionsGet200Response.merchantDefinedInformation) &&
         Objects.equals(this.merchantInformation, tssV2TransactionsGet200Response.merchantInformation) &&
         Objects.equals(this.orderInformation, tssV2TransactionsGet200Response.orderInformation) &&
@@ -760,7 +783,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, bankAccountValidation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, unscheduledPaymentInformation, processingInformation, processorInformation, recurringPaymentInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, bankAccountValidation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, travelInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, unscheduledPaymentInformation, processingInformation, processorInformation, recurringPaymentInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -803,6 +826,7 @@ public class TssV2TransactionsGet200Response {
     if (installmentInformation != null) sb.append("    installmentInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("installmentInformation").matches() ? "[REDACTED]" : toIndentedString(installmentInformation)).append("\n");
     if (fraudMarkingInformation != null) sb.append("    fraudMarkingInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("fraudMarkingInformation").matches() ? "[REDACTED]" : toIndentedString(fraudMarkingInformation)).append("\n");
     if (healthCareInformation != null) sb.append("    healthCareInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("healthCareInformation").matches() ? "[REDACTED]" : toIndentedString(healthCareInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("travelInformation").matches() ? "[REDACTED]" : toIndentedString(travelInformation)).append("\n");
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDefinedInformation").matches() ? "[REDACTED]" : toIndentedString(merchantDefinedInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantInformation").matches() ? "[REDACTED]" : toIndentedString(merchantInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(SENSITIVE_FIELD_PATTERN.matcher("orderInformation").matches() ? "[REDACTED]" : toIndentedString(orderInformation)).append("\n");
@@ -852,6 +876,7 @@ public class TssV2TransactionsGet200Response {
     if (installmentInformation != null) sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     if (fraudMarkingInformation != null) sb.append("    fraudMarkingInformation: ").append(toIndentedString(fraudMarkingInformation)).append("\n");
     if (healthCareInformation != null) sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
     if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");

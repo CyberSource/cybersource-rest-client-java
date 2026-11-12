@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="createMerchantDefinedFieldDefinition"></a>
 # **createMerchantDefinedFieldDefinition**
-> List&lt;InlineResponse2004&gt; createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
 
 Create merchant defined field for a given reference type
 
@@ -31,7 +31,7 @@ MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
 MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest = new MerchantDefinedFieldDefinitionRequest(); // MerchantDefinedFieldDefinitionRequest | 
 try {
-    List<InlineResponse2004> result = apiInstance.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#createMerchantDefinedFieldDefinition");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="createPblMerchantDefinedFieldDefinition"></a>
 # **createPblMerchantDefinedFieldDefinition**
-> List&lt;InlineResponse2004&gt; createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; createPblMerchantDefinedFieldDefinition(referenceType, pblMerchantDefinedFieldDefinitionRequest)
 
 Create a PayByLink merchant defined field for a given reference type
 
@@ -76,9 +76,9 @@ Creates a merchant defined field for the given reference type (&#x60;Purchase&#x
 
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation
-MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest = new MerchantDefinedFieldDefinitionRequest1(); // MerchantDefinedFieldDefinitionRequest1 | 
+PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest = new PblMerchantDefinedFieldDefinitionRequest(); // PblMerchantDefinedFieldDefinitionRequest | 
 try {
-    List<InlineResponse2004> result = apiInstance.createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.createPblMerchantDefinedFieldDefinition(referenceType, pblMerchantDefinedFieldDefinitionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#createPblMerchantDefinedFieldDefinition");
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**| The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation | [enum: Purchase, Donation]
- **merchantDefinedFieldDefinitionRequest** | [**MerchantDefinedFieldDefinitionRequest1**](MerchantDefinedFieldDefinitionRequest1.md)|  |
+ **pblMerchantDefinedFieldDefinitionRequest** | [**PblMerchantDefinedFieldDefinitionRequest**](PblMerchantDefinedFieldDefinitionRequest.md)|  |
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ No authorization required
 
 <a name="getMerchantDefinedFieldsDefinitions"></a>
 # **getMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2004&gt; getMerchantDefinedFieldsDefinitions(referenceType)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; getMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all merchant defined fields for a given reference type
 
@@ -210,7 +210,7 @@ Get all merchant defined fields for a given reference type
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
 try {
-    List<InlineResponse2004> result = apiInstance.getMerchantDefinedFieldsDefinitions(referenceType);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.getMerchantDefinedFieldsDefinitions(referenceType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#getMerchantDefinedFieldsDefinitions");
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ No authorization required
 
 <a name="getPblMerchantDefinedFieldsDefinitions"></a>
 # **getPblMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2004&gt; getPblMerchantDefinedFieldsDefinitions(referenceType)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; getPblMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all PayByLink merchant defined fields for a given reference type
 
@@ -253,7 +253,7 @@ Get all PayByLink merchant defined fields for a given reference type
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined.
 try {
-    List<InlineResponse2004> result = apiInstance.getPblMerchantDefinedFieldsDefinitions(referenceType);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.getPblMerchantDefinedFieldsDefinitions(referenceType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#getPblMerchantDefinedFieldsDefinitions");
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 
 <a name="putMerchantDefinedFieldsDefinitions"></a>
 # **putMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2004&gt; putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; putMerchantDefinedFieldsDefinitions(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest)
 
 Update a MerchantDefinedField by ID
 
@@ -296,9 +296,9 @@ Update a MerchantDefinedField by ID
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | 
 Long id = 789L; // Long | 
-MerchantDefinedFieldCore merchantDefinedFieldCore = new MerchantDefinedFieldCore(); // MerchantDefinedFieldCore | 
+UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest = new UpdateMerchantDefinedFieldCoreByIdRequest(); // UpdateMerchantDefinedFieldCoreByIdRequest | 
 try {
-    List<InlineResponse2004> result = apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#putMerchantDefinedFieldsDefinitions");
@@ -312,11 +312,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**|  | [enum: Invoice, Purchase, Donation]
  **id** | **Long**|  |
- **merchantDefinedFieldCore** | [**MerchantDefinedFieldCore**](MerchantDefinedFieldCore.md)|  |
+ **updateMerchantDefinedFieldCoreByIdRequest** | [**UpdateMerchantDefinedFieldCoreByIdRequest**](UpdateMerchantDefinedFieldCoreByIdRequest.md)|  |
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -329,7 +329,7 @@ No authorization required
 
 <a name="putPblMerchantDefinedFieldsDefinitions"></a>
 # **putPblMerchantDefinedFieldsDefinitions**
-> List&lt;InlineResponse2004&gt; putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> List&lt;MerchantDefinedFieldWithIdResponse&gt; putPblMerchantDefinedFieldsDefinitions(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest)
 
 Update a PayByLink MerchantDefinedField by ID
 
@@ -343,9 +343,9 @@ Update a PayByLink MerchantDefinedField by ID
 MerchantDefinedFieldsApi apiInstance = new MerchantDefinedFieldsApi();
 String referenceType = "referenceType_example"; // String | 
 Long id = 789L; // Long | 
-MerchantDefinedFieldCore1 merchantDefinedFieldCore = new MerchantDefinedFieldCore1(); // MerchantDefinedFieldCore1 | 
+UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest = new UpdatePblMerchantDefinedFieldCoreByIdRequest(); // UpdatePblMerchantDefinedFieldCoreByIdRequest | 
 try {
-    List<InlineResponse2004> result = apiInstance.putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+    List<MerchantDefinedFieldWithIdResponse> result = apiInstance.putPblMerchantDefinedFieldsDefinitions(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MerchantDefinedFieldsApi#putPblMerchantDefinedFieldsDefinitions");
@@ -359,11 +359,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**|  | [enum: Purchase, Donation]
  **id** | **Long**|  |
- **merchantDefinedFieldCore** | [**MerchantDefinedFieldCore1**](MerchantDefinedFieldCore1.md)|  |
+ **updatePblMerchantDefinedFieldCoreByIdRequest** | [**UpdatePblMerchantDefinedFieldCoreByIdRequest**](UpdatePblMerchantDefinedFieldCoreByIdRequest.md)|  |
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;MerchantDefinedFieldWithIdResponse&gt;**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 

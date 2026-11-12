@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
+import Model.InlineResponse4002Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse4002
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class InlineResponse4002 {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
@@ -45,24 +46,15 @@ public class InlineResponse4002 {
   private String message = null;
 
   @SerializedName("details")
-  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
-
-  public InlineResponse4002 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
+  private List<InlineResponse4002Details> details = null;
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
   }
 
   public InlineResponse4002 status(String status) {
@@ -71,10 +63,10 @@ public class InlineResponse4002 {
   }
 
    /**
-   * The status of the submitted transaction. Possible values: - &#x60;INVALID_REQUEST&#x60; 
+   * The http status description of the submitted request.
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `INVALID_REQUEST` ")
+  @ApiModelProperty(example = "BAD_REQUEST", value = "The http status description of the submitted request.")
   public String getStatus() {
     return status;
   }
@@ -89,10 +81,10 @@ public class InlineResponse4002 {
   }
 
    /**
-   * The reason of the status. Possible Values: - &#x60;INVALID_DATA&#x60; 
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. Possible Values: - `INVALID_DATA` ")
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
   public String getReason() {
     return reason;
   }
@@ -107,10 +99,10 @@ public class InlineResponse4002 {
   }
 
    /**
-   * Input request error.
+   * Descriptive message for the error.
    * @return message
   **/
-  @ApiModelProperty(value = "Input request error.")
+  @ApiModelProperty(value = "Descriptive message for the error.")
   public String getMessage() {
     return message;
   }
@@ -119,14 +111,14 @@ public class InlineResponse4002 {
     this.message = message;
   }
 
-  public InlineResponse4002 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public InlineResponse4002 details(List<InlineResponse4002Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4002 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+  public InlineResponse4002 addDetailsItem(InlineResponse4002Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+      this.details = new ArrayList<InlineResponse4002Details>();
     }
     this.details.add(detailsItem);
     return this;
@@ -137,11 +129,11 @@ public class InlineResponse4002 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+  public List<InlineResponse4002Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public void setDetails(List<InlineResponse4002Details> details) {
     this.details = details;
   }
 

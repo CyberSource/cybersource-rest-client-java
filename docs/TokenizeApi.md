@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="tokenize"></a>
 # **tokenize**
-> InlineResponse200 tokenize(postTokenizeRequest, profileId)
+> PostTokenizeResponse tokenize(postTokenizeRequest, profileId)
 
 Tokenize
 
@@ -26,7 +26,7 @@ TokenizeApi apiInstance = new TokenizeApi();
 PostTokenizeRequest postTokenizeRequest = new PostTokenizeRequest(); // PostTokenizeRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    InlineResponse200 result = apiInstance.tokenize(postTokenizeRequest, profileId);
+    PostTokenizeResponse result = apiInstance.tokenize(postTokenizeRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokenizeApi#tokenize");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**PostTokenizeResponse**](PostTokenizeResponse.md)
 
 ### Authorization
 

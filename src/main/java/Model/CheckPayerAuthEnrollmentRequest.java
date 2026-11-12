@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Riskv1authenticationsBuyerInformation;
 import Model.Riskv1authenticationsDeviceInformation;
+import Model.Riskv1authenticationsMerchantInformation;
 import Model.Riskv1authenticationsOrderInformation;
 import Model.Riskv1authenticationsPaymentInformation;
 import Model.Riskv1authenticationsRiskInformation;
@@ -28,7 +29,6 @@ import Model.Riskv1decisionsAcquirerInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsConsumerAuthenticationInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
-import Model.Riskv1decisionsMerchantInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -67,7 +67,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationsDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
-  private Riskv1decisionsMerchantInformation merchantInformation = null;
+  private Riskv1authenticationsMerchantInformation merchantInformation = null;
 
   @SerializedName("acquirerInformation")
   private Riskv1decisionsAcquirerInformation acquirerInformation = null;
@@ -213,7 +213,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.deviceInformation = deviceInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest merchantInformation(Riskv1decisionsMerchantInformation merchantInformation) {
+  public CheckPayerAuthEnrollmentRequest merchantInformation(Riskv1authenticationsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -223,11 +223,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsMerchantInformation getMerchantInformation() {
+  public Riskv1authenticationsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(Riskv1decisionsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Riskv1authenticationsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 

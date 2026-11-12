@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress;
+import Model.Iccv1checkoutSessionsPaymentDataBillingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,7 +38,7 @@ public class Iccv1checkoutSessionssessionIdcompletePaymentData {
   private String provider = null;
 
   @SerializedName("billing_address")
-  private Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress billingAddress = null;
+  private Iccv1checkoutSessionsPaymentDataBillingAddress billingAddress = null;
 
   public Iccv1checkoutSessionssessionIdcompletePaymentData token(String token) {
     this.token = token;
@@ -76,7 +76,7 @@ public class Iccv1checkoutSessionssessionIdcompletePaymentData {
     this.provider = provider;
   }
 
-  public Iccv1checkoutSessionssessionIdcompletePaymentData billingAddress(Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress billingAddress) {
+  public Iccv1checkoutSessionssessionIdcompletePaymentData billingAddress(Iccv1checkoutSessionsPaymentDataBillingAddress billingAddress) {
     this.billingAddress = billingAddress;
     return this;
   }
@@ -86,11 +86,11 @@ public class Iccv1checkoutSessionssessionIdcompletePaymentData {
    * @return billingAddress
   **/
   @ApiModelProperty(value = "")
-  public Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress getBillingAddress() {
+  public Iccv1checkoutSessionsPaymentDataBillingAddress getBillingAddress() {
     return billingAddress;
   }
 
-  public void setBillingAddress(Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress billingAddress) {
+  public void setBillingAddress(Iccv1checkoutSessionsPaymentDataBillingAddress billingAddress) {
     this.billingAddress = billingAddress;
   }
 

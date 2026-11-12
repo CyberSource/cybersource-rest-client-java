@@ -29,17 +29,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse404;
-import Model.InlineResponse409;
-import Model.InlineResponse410;
-import Model.InlineResponse412;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
 import Model.PatchCustomerPaymentInstrumentRequest;
 import Model.PaymentInstrumentList1;
 import Model.PostCustomerPaymentInstrumentRequest;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms404ErrorResponse;
+import Model.Tms409ErrorResponse;
+import Model.Tms410ErrorResponse;
+import Model.Tms412ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -89,14 +89,20 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentAsync,deleteCustomerPaymentInstrumentWithHttpInfo,deleteCustomerPaymentInstrumentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -124,10 +130,6 @@ public class CustomerPaymentInstrumentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -197,7 +199,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deleteCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -214,8 +215,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -254,14 +253,20 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentAsync,getCustomerPaymentInstrumentWithHttpInfo,getCustomerPaymentInstrumentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -289,10 +294,6 @@ public class CustomerPaymentInstrumentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -364,7 +365,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostCustomerPaymentInstrumentRequest> getCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -382,8 +382,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -424,14 +422,20 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListAsync,getCustomerPaymentInstrumentsListWithHttpInfo,getCustomerPaymentInstrumentsListCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -462,10 +466,6 @@ public class CustomerPaymentInstrumentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -533,7 +533,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PaymentInstrumentList1> getCustomerPaymentInstrumentsListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerPaymentInstrumentsListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaymentInstrumentList1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -552,8 +551,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList1> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -595,11 +592,17 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -629,10 +632,6 @@ public class CustomerPaymentInstrumentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -714,7 +713,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PatchCustomerPaymentInstrumentRequest> patchCustomersPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomersPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -734,8 +732,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -775,11 +771,17 @@ public class CustomerPaymentInstrumentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -806,10 +808,6 @@ public class CustomerPaymentInstrumentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -881,7 +879,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PostCustomerPaymentInstrumentRequest> postCustomerPaymentInstrumentWithHttpInfo(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerPaymentInstrumentValidateBeforeCall(customerId, postCustomerPaymentInstrumentRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -899,8 +896,6 @@ public class CustomerPaymentInstrumentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

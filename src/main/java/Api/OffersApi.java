@@ -29,10 +29,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse20016;
-import Model.InlineResponse20111;
-import Model.InlineResponse40015;
-import Model.InlineResponse5025;
+import Model.CreateOfferResponse;
+import Model.GetOfferResponse;
+import Model.InlineResponse4006;
+import Model.InlineResponse5022;
 import Model.OfferRequest;
 
 import java.lang.reflect.Type;
@@ -86,11 +86,17 @@ public class OffersApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(offerRequest, OfferRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
-        String inboundMLEStatus = "false";
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createOffer,createOfferAsync,createOfferWithHttpInfo,createOfferCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -124,10 +130,6 @@ public class OffersApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -205,13 +207,13 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param offerRequest  (required)
-     * @return InlineResponse20111
+     * @return CreateOfferResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20111 createOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
+    public CreateOfferResponse createOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createOffer' STARTED");
-        ApiResponse<InlineResponse20111> resp = createOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
+        ApiResponse<CreateOfferResponse> resp = createOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
         logger.info("CALL TO METHOD 'createOffer' ENDED");
         return resp.getData();
     }
@@ -225,14 +227,13 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param offerRequest  (required)
-     * @return ApiResponse&lt;InlineResponse20111&gt;
+     * @return ApiResponse&lt;CreateOfferResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20111> createOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CreateOfferResponse> createOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest) throws ApiException, ConfigException {
         okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20111>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateOfferResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -250,9 +251,7 @@ public class OffersApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ApiCallback<InlineResponse20111> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, OfferRequest offerRequest, final ApiCallback<CreateOfferResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -273,7 +272,7 @@ public class OffersApi {
         }
 
         okhttp3.Call call = createOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20111>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateOfferResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -295,14 +294,20 @@ public class OffersApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
-        String inboundMLEStatus = "false";
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getOffer,getOfferAsync,getOfferWithHttpInfo,getOfferCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -337,10 +342,6 @@ public class OffersApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -417,13 +418,13 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param id Request ID generated by Cybersource. This was sent in the header on the request. Echo value from v-c-request-id (required)
-     * @return InlineResponse20016
+     * @return GetOfferResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20016 getOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id) throws ApiException, ConfigException {
+    public GetOfferResponse getOffer(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getOffer' STARTED");
-        ApiResponse<InlineResponse20016> resp = getOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
+        ApiResponse<GetOfferResponse> resp = getOfferWithHttpInfo(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
         logger.info("CALL TO METHOD 'getOffer' ENDED");
         return resp.getData();
     }
@@ -437,14 +438,13 @@ public class OffersApi {
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
      * @param id Request ID generated by Cybersource. This was sent in the header on the request. Echo value from v-c-request-id (required)
-     * @return ApiResponse&lt;InlineResponse20016&gt;
+     * @return ApiResponse&lt;GetOfferResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20016> getOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<GetOfferResponse> getOfferWithHttpInfo(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id) throws ApiException, ConfigException {
         okhttp3.Call call = getOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetOfferResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -462,9 +462,7 @@ public class OffersApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id, final ApiCallback<InlineResponse20016> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getOfferAsync(String contentType, String xRequestid, String vCMerchantId, String vCCorrelationId, String vCOrganizationId, String id, final ApiCallback<GetOfferResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -485,7 +483,7 @@ public class OffersApi {
         }
 
         okhttp3.Call call = getOfferValidateBeforeCall(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetOfferResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

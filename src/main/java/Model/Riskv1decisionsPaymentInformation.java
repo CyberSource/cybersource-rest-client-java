@@ -17,7 +17,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2refreshpaymentstatusidPaymentInformationPaymentType;
 import Model.Riskv1decisionsPaymentInformationCard;
+import Model.Riskv1decisionsPaymentInformationPaymentAccountReference;
 import Model.Riskv1decisionsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,6 +50,12 @@ public class Riskv1decisionsPaymentInformation {
 
   @SerializedName("method")
   private String method = null;
+
+  @SerializedName("paymentType")
+  private Ptsv2refreshpaymentstatusidPaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("paymentAccountReference")
+  private Riskv1decisionsPaymentInformationPaymentAccountReference paymentAccountReference = null;
 
   public Riskv1decisionsPaymentInformation card(Riskv1decisionsPaymentInformationCard card) {
     this.card = card;
@@ -139,6 +147,42 @@ public class Riskv1decisionsPaymentInformation {
     this.method = method;
   }
 
+  public Riskv1decisionsPaymentInformation paymentType(Ptsv2refreshpaymentstatusidPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Get paymentType
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2refreshpaymentstatusidPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(Ptsv2refreshpaymentstatusidPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  public Riskv1decisionsPaymentInformation paymentAccountReference(Riskv1decisionsPaymentInformationPaymentAccountReference paymentAccountReference) {
+    this.paymentAccountReference = paymentAccountReference;
+    return this;
+  }
+
+   /**
+   * Get paymentAccountReference
+   * @return paymentAccountReference
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsPaymentInformationPaymentAccountReference getPaymentAccountReference() {
+    return paymentAccountReference;
+  }
+
+  public void setPaymentAccountReference(Riskv1decisionsPaymentInformationPaymentAccountReference paymentAccountReference) {
+    this.paymentAccountReference = paymentAccountReference;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +197,14 @@ public class Riskv1decisionsPaymentInformation {
         Objects.equals(this.tokenizedCard, riskv1decisionsPaymentInformation.tokenizedCard) &&
         Objects.equals(this.customer, riskv1decisionsPaymentInformation.customer) &&
         Objects.equals(this.bank, riskv1decisionsPaymentInformation.bank) &&
-        Objects.equals(this.method, riskv1decisionsPaymentInformation.method);
+        Objects.equals(this.method, riskv1decisionsPaymentInformation.method) &&
+        Objects.equals(this.paymentType, riskv1decisionsPaymentInformation.paymentType) &&
+        Objects.equals(this.paymentAccountReference, riskv1decisionsPaymentInformation.paymentAccountReference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, customer, bank, method);
+    return Objects.hash(card, tokenizedCard, customer, bank, method, paymentType, paymentAccountReference);
   }
 
 
@@ -190,6 +236,8 @@ public class Riskv1decisionsPaymentInformation {
     if (customer != null) sb.append("    customer: ").append(SENSITIVE_FIELD_PATTERN.matcher("customer").matches() ? "[REDACTED]" : toIndentedString(customer)).append("\n");
     if (bank != null) sb.append("    bank: ").append(SENSITIVE_FIELD_PATTERN.matcher("bank").matches() ? "[REDACTED]" : toIndentedString(bank)).append("\n");
     if (method != null) sb.append("    method: ").append(SENSITIVE_FIELD_PATTERN.matcher("method").matches() ? "[REDACTED]" : toIndentedString(method)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentType").matches() ? "[REDACTED]" : toIndentedString(paymentType)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountReference").matches() ? "[REDACTED]" : toIndentedString(paymentAccountReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -213,6 +261,8 @@ public class Riskv1decisionsPaymentInformation {
     if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }

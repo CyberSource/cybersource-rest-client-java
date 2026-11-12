@@ -13,10 +13,10 @@
 
 package Api;
 
-import Model.InlineResponse20016;
-import Model.InlineResponse20111;
-import Model.InlineResponse40015;
-import Model.InlineResponse5025;
+import Model.CreateOfferResponse;
+import Model.GetOfferResponse;
+import Model.InlineResponse4006;
+import Model.InlineResponse5022;
 import Model.OfferRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -52,7 +52,7 @@ public class OffersApiTest {
         String vCCorrelationId = null;
         String vCOrganizationId = null;
         OfferRequest offerRequest = null;
-        InlineResponse20111 response = api.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
+        CreateOfferResponse response = api.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest);
 
         // TODO: test validations
     }
@@ -73,7 +73,7 @@ public class OffersApiTest {
         String vCCorrelationId = null;
         String vCOrganizationId = null;
         String id = null;
-        InlineResponse20016 response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
+        GetOfferResponse response = api.getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id);
 
         // TODO: test validations
     }

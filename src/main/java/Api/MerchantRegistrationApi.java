@@ -30,14 +30,14 @@ import java.io.InputStream;
 
 
 import Model.ActivateMerchantKeyResponse200;
+import Model.AddMerchantKeyRequest;
 import Model.AgentRegistrationConflictResponse409;
-import Model.KeyRequest1;
-import Model.KeyUpdate1;
 import Model.ListMerchantKeysResponse200;
 import Model.MerchantRegistrationResponse201;
 import Model.MerchantRegistrationValidationErrorResponse422;
 import Model.MerchantRequest;
 import Model.MerchantUpdate;
+import Model.UpdateMerchantKeyRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -86,14 +86,20 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "activateMerchantKey,activateMerchantKeyAsync,activateMerchantKeyWithHttpInfo,activateMerchantKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -119,10 +125,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -192,7 +194,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ActivateMerchantKeyResponse200> activateMerchantKeyWithHttpInfo(String merchantId, String keyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = activateMerchantKeyValidateBeforeCall(merchantId, keyId, null, null);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -209,8 +210,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call activateMerchantKeyAsync(String merchantId, String keyId, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -238,22 +237,28 @@ public class MerchantRegistrationApi {
     /**
      * Build call for addMerchantKey
      * @param merchantId Unique merchant identifier (UUID) (required)
-     * @param keyRequest Key creation request (required)
+     * @param addMerchantKeyRequest Key creation request (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call addMerchantKeyCall(String merchantId, KeyRequest1 keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call addMerchantKeyCall(String merchantId, AddMerchantKeyRequest addMerchantKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyRequest, KeyRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addMerchantKeyRequest, AddMerchantKeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "addMerchantKey,addMerchantKeyAsync,addMerchantKeyWithHttpInfo,addMerchantKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -278,10 +283,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -301,7 +302,7 @@ public class MerchantRegistrationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addMerchantKeyValidateBeforeCall(String merchantId, KeyRequest1 keyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call addMerchantKeyValidateBeforeCall(String merchantId, AddMerchantKeyRequest addMerchantKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'merchantId' is set
         if (merchantId == null) {
@@ -309,14 +310,14 @@ public class MerchantRegistrationApi {
             throw new ApiException("Missing the required parameter 'merchantId' when calling addMerchantKey(Async)");
         }
         
-        // verify the required parameter 'keyRequest' is set
-        if (keyRequest == null) {
-            logger.error("Missing the required parameter 'keyRequest' when calling addMerchantKey(Async)");
-            throw new ApiException("Missing the required parameter 'keyRequest' when calling addMerchantKey(Async)");
+        // verify the required parameter 'addMerchantKeyRequest' is set
+        if (addMerchantKeyRequest == null) {
+            logger.error("Missing the required parameter 'addMerchantKeyRequest' when calling addMerchantKey(Async)");
+            throw new ApiException("Missing the required parameter 'addMerchantKeyRequest' when calling addMerchantKey(Async)");
         }
         
         
-        okhttp3.Call call = addMerchantKeyCall(merchantId, keyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = addMerchantKeyCall(merchantId, addMerchantKeyRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -329,14 +330,14 @@ public class MerchantRegistrationApi {
      * Add a key to a merchant
      * **Add a Key to a Merchant**&lt;br&gt;Adds a new encryption key for the specified merchant. The new key is created as ***active*** immediately.&lt;br&gt;&lt;br&gt; **Note:** Adding a new key automatically deactivates all previously active keys for this merchant (single-active key invariant).&lt;br&gt; Returns **403** if the merchant is deactivated, **404** if the merchant is not found. 
      * @param merchantId Unique merchant identifier (UUID) (required)
-     * @param keyRequest Key creation request (required)
+     * @param addMerchantKeyRequest Key creation request (required)
      * @return ActivateMerchantKeyResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateMerchantKeyResponse200 addMerchantKey(String merchantId, KeyRequest1 keyRequest) throws ApiException, ConfigException {
+    public ActivateMerchantKeyResponse200 addMerchantKey(String merchantId, AddMerchantKeyRequest addMerchantKeyRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'addMerchantKey' STARTED");
-        ApiResponse<ActivateMerchantKeyResponse200> resp = addMerchantKeyWithHttpInfo(merchantId, keyRequest);
+        ApiResponse<ActivateMerchantKeyResponse200> resp = addMerchantKeyWithHttpInfo(merchantId, addMerchantKeyRequest);
         logger.info("CALL TO METHOD 'addMerchantKey' ENDED");
         return resp.getData();
     }
@@ -345,14 +346,13 @@ public class MerchantRegistrationApi {
      * Add a key to a merchant
      * **Add a Key to a Merchant**&lt;br&gt;Adds a new encryption key for the specified merchant. The new key is created as ***active*** immediately.&lt;br&gt;&lt;br&gt; **Note:** Adding a new key automatically deactivates all previously active keys for this merchant (single-active key invariant).&lt;br&gt; Returns **403** if the merchant is deactivated, **404** if the merchant is not found. 
      * @param merchantId Unique merchant identifier (UUID) (required)
-     * @param keyRequest Key creation request (required)
+     * @param addMerchantKeyRequest Key creation request (required)
      * @return ApiResponse&lt;ActivateMerchantKeyResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateMerchantKeyResponse200> addMerchantKeyWithHttpInfo(String merchantId, KeyRequest1 keyRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = addMerchantKeyValidateBeforeCall(merchantId, keyRequest, null, null);
+    public ApiResponse<ActivateMerchantKeyResponse200> addMerchantKeyWithHttpInfo(String merchantId, AddMerchantKeyRequest addMerchantKeyRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = addMerchantKeyValidateBeforeCall(merchantId, addMerchantKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -361,15 +361,13 @@ public class MerchantRegistrationApi {
      * Add a key to a merchant (asynchronously)
      * **Add a Key to a Merchant**&lt;br&gt;Adds a new encryption key for the specified merchant. The new key is created as ***active*** immediately.&lt;br&gt;&lt;br&gt; **Note:** Adding a new key automatically deactivates all previously active keys for this merchant (single-active key invariant).&lt;br&gt; Returns **403** if the merchant is deactivated, **404** if the merchant is not found. 
      * @param merchantId Unique merchant identifier (UUID) (required)
-     * @param keyRequest Key creation request (required)
+     * @param addMerchantKeyRequest Key creation request (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call addMerchantKeyAsync(String merchantId, KeyRequest1 keyRequest, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call addMerchantKeyAsync(String merchantId, AddMerchantKeyRequest addMerchantKeyRequest, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -389,7 +387,7 @@ public class MerchantRegistrationApi {
             };
         }
 
-        okhttp3.Call call = addMerchantKeyValidateBeforeCall(merchantId, keyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = addMerchantKeyValidateBeforeCall(merchantId, addMerchantKeyRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -407,14 +405,20 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getMerchant,getMerchantAsync,getMerchantWithHttpInfo,getMerchantCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -439,10 +443,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -504,7 +504,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<MerchantRegistrationResponse201> getMerchantWithHttpInfo(String merchantId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getMerchantValidateBeforeCall(merchantId, null, null);
         Type localVarReturnType = new TypeToken<MerchantRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -520,8 +519,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getMerchantAsync(String merchantId, final ApiCallback<MerchantRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -560,14 +557,20 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getMerchantKey,getMerchantKeyAsync,getMerchantKeyWithHttpInfo,getMerchantKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -593,10 +596,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -666,7 +665,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ActivateMerchantKeyResponse200> getMerchantKeyWithHttpInfo(String merchantId, String keyId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getMerchantKeyValidateBeforeCall(merchantId, keyId, null, null);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -683,8 +681,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getMerchantKeyAsync(String merchantId, String keyId, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -723,14 +719,20 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "listMerchantKeys,listMerchantKeysAsync,listMerchantKeysWithHttpInfo,listMerchantKeysCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -757,10 +759,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -824,7 +822,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<ListMerchantKeysResponse200> listMerchantKeysWithHttpInfo(String merchantId, String status) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = listMerchantKeysValidateBeforeCall(merchantId, status, null, null);
         Type localVarReturnType = new TypeToken<ListMerchantKeysResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -841,8 +838,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call listMerchantKeysAsync(String merchantId, String status, final ApiCallback<ListMerchantKeysResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -880,11 +875,17 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantRequest, MerchantRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "registerMerchant,registerMerchantAsync,registerMerchantWithHttpInfo,registerMerchantCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -908,10 +909,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -973,7 +970,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<MerchantRegistrationResponse201> registerMerchantWithHttpInfo(MerchantRequest merchantRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = registerMerchantValidateBeforeCall(merchantRequest, null, null);
         Type localVarReturnType = new TypeToken<MerchantRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -989,8 +985,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call registerMerchantAsync(MerchantRequest merchantRequest, final ApiCallback<MerchantRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1029,11 +1023,17 @@ public class MerchantRegistrationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantUpdate, MerchantUpdate.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateMerchant,updateMerchantAsync,updateMerchantWithHttpInfo,updateMerchantCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1058,10 +1058,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1131,7 +1127,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<MerchantRegistrationResponse201> updateMerchantWithHttpInfo(String merchantId, MerchantUpdate merchantUpdate) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateMerchantValidateBeforeCall(merchantId, merchantUpdate, null, null);
         Type localVarReturnType = new TypeToken<MerchantRegistrationResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1148,8 +1143,6 @@ public class MerchantRegistrationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updateMerchantAsync(String merchantId, MerchantUpdate merchantUpdate, final ApiCallback<MerchantRegistrationResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1178,22 +1171,28 @@ public class MerchantRegistrationApi {
      * Build call for updateMerchantKey
      * @param merchantId Unique merchant identifier (UUID) (required)
      * @param keyId Unique key identifier (UUID) (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateMerchantKeyRequest Key update request (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateMerchantKeyCall(String merchantId, String keyId, KeyUpdate1 keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call updateMerchantKeyCall(String merchantId, String keyId, UpdateMerchantKeyRequest updateMerchantKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(keyUpdate, KeyUpdate1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateMerchantKeyRequest, UpdateMerchantKeyRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateMerchantKey,updateMerchantKeyAsync,updateMerchantKeyWithHttpInfo,updateMerchantKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1219,10 +1218,6 @@ public class MerchantRegistrationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1242,7 +1237,7 @@ public class MerchantRegistrationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateMerchantKeyValidateBeforeCall(String merchantId, String keyId, KeyUpdate1 keyUpdate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call updateMerchantKeyValidateBeforeCall(String merchantId, String keyId, UpdateMerchantKeyRequest updateMerchantKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'merchantId' is set
         if (merchantId == null) {
@@ -1256,14 +1251,14 @@ public class MerchantRegistrationApi {
             throw new ApiException("Missing the required parameter 'keyId' when calling updateMerchantKey(Async)");
         }
         
-        // verify the required parameter 'keyUpdate' is set
-        if (keyUpdate == null) {
-            logger.error("Missing the required parameter 'keyUpdate' when calling updateMerchantKey(Async)");
-            throw new ApiException("Missing the required parameter 'keyUpdate' when calling updateMerchantKey(Async)");
+        // verify the required parameter 'updateMerchantKeyRequest' is set
+        if (updateMerchantKeyRequest == null) {
+            logger.error("Missing the required parameter 'updateMerchantKeyRequest' when calling updateMerchantKey(Async)");
+            throw new ApiException("Missing the required parameter 'updateMerchantKeyRequest' when calling updateMerchantKey(Async)");
         }
         
         
-        okhttp3.Call call = updateMerchantKeyCall(merchantId, keyId, keyUpdate, progressListener, progressRequestListener);
+        okhttp3.Call call = updateMerchantKeyCall(merchantId, keyId, updateMerchantKeyRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -1277,14 +1272,14 @@ public class MerchantRegistrationApi {
      * **Update a Merchant Key**&lt;br&gt;Updates encryption key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;encryptionKey&#x60;, &#x60;algorithm&#x60;, &#x60;encryptionType&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; Returns **403** if the merchant is deactivated, key is deactivated, or key is expired, **404** if the merchant or key is not found, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param merchantId Unique merchant identifier (UUID) (required)
      * @param keyId Unique key identifier (UUID) (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateMerchantKeyRequest Key update request (required)
      * @return ActivateMerchantKeyResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ActivateMerchantKeyResponse200 updateMerchantKey(String merchantId, String keyId, KeyUpdate1 keyUpdate) throws ApiException, ConfigException {
+    public ActivateMerchantKeyResponse200 updateMerchantKey(String merchantId, String keyId, UpdateMerchantKeyRequest updateMerchantKeyRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateMerchantKey' STARTED");
-        ApiResponse<ActivateMerchantKeyResponse200> resp = updateMerchantKeyWithHttpInfo(merchantId, keyId, keyUpdate);
+        ApiResponse<ActivateMerchantKeyResponse200> resp = updateMerchantKeyWithHttpInfo(merchantId, keyId, updateMerchantKeyRequest);
         logger.info("CALL TO METHOD 'updateMerchantKey' ENDED");
         return resp.getData();
     }
@@ -1294,14 +1289,13 @@ public class MerchantRegistrationApi {
      * **Update a Merchant Key**&lt;br&gt;Updates encryption key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;encryptionKey&#x60;, &#x60;algorithm&#x60;, &#x60;encryptionType&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; Returns **403** if the merchant is deactivated, key is deactivated, or key is expired, **404** if the merchant or key is not found, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param merchantId Unique merchant identifier (UUID) (required)
      * @param keyId Unique key identifier (UUID) (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateMerchantKeyRequest Key update request (required)
      * @return ApiResponse&lt;ActivateMerchantKeyResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<ActivateMerchantKeyResponse200> updateMerchantKeyWithHttpInfo(String merchantId, String keyId, KeyUpdate1 keyUpdate) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = updateMerchantKeyValidateBeforeCall(merchantId, keyId, keyUpdate, null, null);
+    public ApiResponse<ActivateMerchantKeyResponse200> updateMerchantKeyWithHttpInfo(String merchantId, String keyId, UpdateMerchantKeyRequest updateMerchantKeyRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = updateMerchantKeyValidateBeforeCall(merchantId, keyId, updateMerchantKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1311,15 +1305,13 @@ public class MerchantRegistrationApi {
      * **Update a Merchant Key**&lt;br&gt;Updates encryption key information. The following fields can be modified: &#x60;keyName&#x60;, &#x60;encryptionKey&#x60;, &#x60;algorithm&#x60;, &#x60;encryptionType&#x60;, and &#x60;expirationDate&#x60;.&lt;br&gt;&lt;br&gt; Returns **403** if the merchant is deactivated, key is deactivated, or key is expired, **404** if the merchant or key is not found, **409** if the new &#x60;keyName&#x60; already exists. 
      * @param merchantId Unique merchant identifier (UUID) (required)
      * @param keyId Unique key identifier (UUID) (required)
-     * @param keyUpdate Key update request (required)
+     * @param updateMerchantKeyRequest Key update request (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateMerchantKeyAsync(String merchantId, String keyId, KeyUpdate1 keyUpdate, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call updateMerchantKeyAsync(String merchantId, String keyId, UpdateMerchantKeyRequest updateMerchantKeyRequest, final ApiCallback<ActivateMerchantKeyResponse200> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1339,7 +1331,7 @@ public class MerchantRegistrationApi {
             };
         }
 
-        okhttp3.Call call = updateMerchantKeyValidateBeforeCall(merchantId, keyId, keyUpdate, progressListener, progressRequestListener);
+        okhttp3.Call call = updateMerchantKeyValidateBeforeCall(merchantId, keyId, updateMerchantKeyRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ActivateMerchantKeyResponse200>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

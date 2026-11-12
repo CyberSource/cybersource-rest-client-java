@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201Response1IssuerInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
+import Model.RefreshPaymentStatusResponseIssuerInformation;
 import Model.Riskv1decisionsProcessorInformationCardVerification;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting;
@@ -76,7 +76,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   private TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
 
   @SerializedName("issuerInformation")
-  private PtsV2PaymentsPost201Response1IssuerInformation issuerInformation = null;
+  private RefreshPaymentStatusResponseIssuerInformation issuerInformation = null;
 
   @SerializedName("eventStatus")
   private String eventStatus = null;
@@ -326,7 +326,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.electronicVerificationResults = electronicVerificationResults;
   }
 
-  public TssV2TransactionsGet200ResponseProcessorInformation issuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+  public TssV2TransactionsGet200ResponseProcessorInformation issuerInformation(RefreshPaymentStatusResponseIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
     return this;
   }
@@ -336,11 +336,11 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
    * @return issuerInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201Response1IssuerInformation getIssuerInformation() {
+  public RefreshPaymentStatusResponseIssuerInformation getIssuerInformation() {
     return issuerInformation;
   }
 
-  public void setIssuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+  public void setIssuerInformation(RefreshPaymentStatusResponseIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
   }
 

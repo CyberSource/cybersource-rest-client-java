@@ -14,12 +14,12 @@
 package Api;
 
 import Model.AccountValidationsRequest;
-import Model.InlineResponse20015;
-import Model.InlineResponse40014;
-import Model.InlineResponse4033;
-import Model.InlineResponse4046;
+import Model.BankAccountValidationResponse;
+import Model.InlineResponse4005;
+import Model.InlineResponse4032;
+import Model.InlineResponse4045;
 import Model.InlineResponse4222;
-import Model.InlineResponse5024;
+import Model.InlineResponse5021;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +49,7 @@ public class BankAccountValidationApiTest {
     @Test
     public void bankAccountValidationRequestTest() throws Exception {
         AccountValidationsRequest accountValidationsRequest = null;
-        InlineResponse20015 response = api.bankAccountValidationRequest(accountValidationsRequest);
+        BankAccountValidationResponse response = api.bankAccountValidationRequest(accountValidationsRequest);
 
         // TODO: test validations
     }

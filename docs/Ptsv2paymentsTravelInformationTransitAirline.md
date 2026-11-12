@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **reservationType** | **String** | The field is not currently supported.  |  [optional]
 **boardingFeeAmount** | **String** | Boarding fee.  |  [optional]
 **legs** | [**List&lt;Ptsv2paymentsTravelInformationTransitAirlineLegs&gt;**](Ptsv2paymentsTravelInformationTransitAirlineLegs.md) |  |  [optional]
-**ancillaryInformation** | [**Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation**](Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.md) |  |  [optional]
+**ancillaryInformation** | [**Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation**](Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation.md) |  |  [optional]
 **flightType** | **String** | Specifies the type of flight. One way (0) Return (1) Transit (2) Transit &amp; Return (3) Multi-City (4)  |  [optional]
 **insuranceAmount** | **String** | The total cost of the flight insurance. Example: 10000.00  |  [optional]
 **frequentFlyerNumber** | **String** | The consumer&#39;s frequent flyer number. Leave 0 if there is no frequent flyer number  |  [optional]

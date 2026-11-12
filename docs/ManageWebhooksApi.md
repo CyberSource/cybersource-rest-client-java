@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v2/webhooks/{webhookId} | Delete a Webhook Subscription
 [**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v2/webhooks/{webhookId} | Get Details On a Single Webhook
 [**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v2/webhooks | Get Details On All Created Webhooks
-[**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
-[**notificationSubscriptionsV2WebhooksWebhookIdPatch**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdPatch) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
 [**notificationSubscriptionsV2WebhooksWebhookIdStatusPut**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdStatusPut) | **PUT** /notification-subscriptions/v2/webhooks/{webhookId}/status | Update a Webhook Status
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
+[**testWebhookSubscription**](ManageWebhooksApi.md#testWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
+[**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
 
 
 <a name="deleteWebhookSubscription"></a>
@@ -59,7 +59,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2018 getWebhookSubscriptionById(webhookId)
+> CreateWebhookSubscriptionResponse getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -75,7 +75,7 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The webhook Identifier
 try {
-    InlineResponse2018 result = apiInstance.getWebhookSubscriptionById(webhookId);
+    CreateWebhookSubscriptionResponse result = apiInstance.getWebhookSubscriptionById(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionById");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2018**](InlineResponse2018.md)
+[**CreateWebhookSubscriptionResponse**](CreateWebhookSubscriptionResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> List&lt;InlineResponse2007&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
+> List&lt;WebhookSubscription&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -122,7 +122,7 @@ String organizationId = "organizationId_example"; // String | The Organization I
 String productId = "productId_example"; // String | The Product Identifier.
 String eventType = "eventType_example"; // String | The Event Type.
 try {
-    List<InlineResponse2007> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+    List<WebhookSubscription> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionsByOrg");
@@ -140,99 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2007&gt;**](InlineResponse2007.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
-# **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> InlineResponse2019 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
-
-Test a Webhook Configuration
-
-Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.ManageWebhooksApi;
-
-
-ManageWebhooksApi apiInstance = new ManageWebhooksApi();
-String webhookId = "webhookId_example"; // String | The Webhook Identifier.
-try {
-    InlineResponse2019 result = apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV1WebhooksWebhookIdPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The Webhook Identifier. |
-
-### Return type
-
-[**InlineResponse2019**](InlineResponse2019.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
-# **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> InlineResponse2008 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook)
-
-Update a Webhook Subscription
-
-Update a Webhook Subscription.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.ManageWebhooksApi;
-
-
-ManageWebhooksApi apiInstance = new ManageWebhooksApi();
-String webhookId = "webhookId_example"; // String | The Webhook Identifier.
-UpdateWebhook updateWebhook = new UpdateWebhook(); // UpdateWebhook | The webhook payload or changes to apply.
-try {
-    InlineResponse2008 result = apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ManageWebhooksApi#notificationSubscriptionsV2WebhooksWebhookIdPatch");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The Webhook Identifier. |
- **updateWebhook** | [**UpdateWebhook**](UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
-
-### Return type
-
-[**InlineResponse2008**](InlineResponse2008.md)
+[**List&lt;WebhookSubscription&gt;**](WebhookSubscription.md)
 
 ### Authorization
 
@@ -291,7 +199,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse20110 saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions)
+> SaveAsymEgressKeyResponse saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions)
 
 Message Level Encryption
 
@@ -310,7 +218,7 @@ String vCCorrelationId = "vCCorrelationId_example"; // String | A globally uniqu
 String vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Sender organization id
 String vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
 try {
-    InlineResponse20110 result = apiInstance.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
+    SaveAsymEgressKeyResponse result = apiInstance.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -329,7 +237,99 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20110**](InlineResponse20110.md)
+[**SaveAsymEgressKeyResponse**](SaveAsymEgressKeyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="testWebhookSubscription"></a>
+# **testWebhookSubscription**
+> TestWebhookSubscriptionResponse testWebhookSubscription(webhookId)
+
+Test a Webhook Configuration
+
+Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ManageWebhooksApi;
+
+
+ManageWebhooksApi apiInstance = new ManageWebhooksApi();
+String webhookId = "webhookId_example"; // String | The Webhook Identifier.
+try {
+    TestWebhookSubscriptionResponse result = apiInstance.testWebhookSubscription(webhookId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ManageWebhooksApi#testWebhookSubscription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The Webhook Identifier. |
+
+### Return type
+
+[**TestWebhookSubscriptionResponse**](TestWebhookSubscriptionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="updateWebhookSubscription"></a>
+# **updateWebhookSubscription**
+> UpdateWebhookSubscriptionResponse updateWebhookSubscription(webhookId, updateWebhook)
+
+Update a Webhook Subscription
+
+Update a Webhook Subscription.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ManageWebhooksApi;
+
+
+ManageWebhooksApi apiInstance = new ManageWebhooksApi();
+String webhookId = "webhookId_example"; // String | The Webhook Identifier.
+UpdateWebhook updateWebhook = new UpdateWebhook(); // UpdateWebhook | The webhook payload or changes to apply.
+try {
+    UpdateWebhookSubscriptionResponse result = apiInstance.updateWebhookSubscription(webhookId, updateWebhook);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ManageWebhooksApi#updateWebhookSubscription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The Webhook Identifier. |
+ **updateWebhook** | [**UpdateWebhook**](UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
+
+### Return type
+
+[**UpdateWebhookSubscriptionResponse**](UpdateWebhookSubscriptionResponse.md)
 
 ### Authorization
 

@@ -13,8 +13,8 @@
 
 package Api;
 
-import Model.InlineResponse20113;
-import Model.InlineResponse40016;
+import Model.InlineResponse4007;
+import Model.UcpCheckoutSessionResponse;
 import Model.UcpCompleteCheckoutRequest;
 import Model.UcpCreateCheckoutSessionRequest;
 import Model.UcpUpdateCheckoutSessionRequest;
@@ -47,7 +47,7 @@ public class UcpCheckoutApiTest {
     @Test
     public void ucpCancelCheckoutTest() throws Exception {
         String sessionId = null;
-        InlineResponse20113 response = api.ucpCancelCheckout(sessionId);
+        UcpCheckoutSessionResponse response = api.ucpCancelCheckout(sessionId);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class UcpCheckoutApiTest {
         String sessionId = null;
         String idempotencyKey = null;
         UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest = null;
-        InlineResponse20113 response = api.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+        UcpCheckoutSessionResponse response = api.ucpCompleteCheckout(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
 
         // TODO: test validations
     }
@@ -82,7 +82,7 @@ public class UcpCheckoutApiTest {
     public void ucpCreateCheckoutSessionTest() throws Exception {
         UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest = null;
         String idempotencyKey = null;
-        InlineResponse20113 response = api.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
+        UcpCheckoutSessionResponse response = api.ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, idempotencyKey);
 
         // TODO: test validations
     }
@@ -99,7 +99,7 @@ public class UcpCheckoutApiTest {
     public void ucpGetCheckoutSessionTest() throws Exception {
         String sessionId = null;
         Object ucpGetCheckoutSessionRequest = null;
-        InlineResponse20113 response = api.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
+        UcpCheckoutSessionResponse response = api.ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest);
 
         // TODO: test validations
     }
@@ -117,7 +117,7 @@ public class UcpCheckoutApiTest {
         String sessionId = null;
         UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest = null;
         String idempotencyKey = null;
-        InlineResponse20113 response = api.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+        UcpCheckoutSessionResponse response = api.ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
 
         // TODO: test validations
     }

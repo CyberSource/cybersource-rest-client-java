@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse404Errors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,24 +23,52 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse404
  */
 
 public class InlineResponse404 {
-  @SerializedName("errors")
-  private List<InlineResponse404Errors> errors = null;
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
+
+  @SerializedName("status")
+  private String status = null;
+
+  public InlineResponse404 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
 
    /**
-   * Get errors
-   * @return errors
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse404Errors> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+  }
+
+  public InlineResponse404 status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction.  Possible values:  - NOT_FOUND 
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - NOT_FOUND ")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
 
@@ -54,12 +81,13 @@ public class InlineResponse404 {
       return false;
     }
     InlineResponse404 inlineResponse404 = (InlineResponse404) o;
-    return Objects.equals(this.errors, inlineResponse404.errors);
+    return Objects.equals(this.submitTimeUtc, inlineResponse404.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse404.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(submitTimeUtc, status);
   }
 
 
@@ -86,7 +114,8 @@ public class InlineResponse404 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse404 {\n");
     
-    if (errors != null) sb.append("    errors: ").append(SENSITIVE_FIELD_PATTERN.matcher("errors").matches() ? "[REDACTED]" : toIndentedString(errors)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -105,7 +134,8 @@ public class InlineResponse404 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse404 {\n");
     
-    if (errors != null) sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

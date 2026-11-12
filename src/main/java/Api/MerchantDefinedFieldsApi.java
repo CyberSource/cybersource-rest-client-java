@@ -29,12 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse2004;
-import Model.InlineResponse4042;
-import Model.MerchantDefinedFieldCore;
-import Model.MerchantDefinedFieldCore1;
+import Model.InlineResponse4041;
 import Model.MerchantDefinedFieldDefinitionRequest;
-import Model.MerchantDefinedFieldDefinitionRequest1;
+import Model.MerchantDefinedFieldWithIdResponse;
+import Model.PblMerchantDefinedFieldDefinitionRequest;
+import Model.UpdateMerchantDefinedFieldCoreByIdRequest;
+import Model.UpdatePblMerchantDefinedFieldCoreByIdRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -83,11 +83,17 @@ public class MerchantDefinedFieldsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantDefinedFieldDefinitionRequest, MerchantDefinedFieldDefinitionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createMerchantDefinedFieldDefinition,createMerchantDefinedFieldDefinitionAsync,createMerchantDefinedFieldDefinitionWithHttpInfo,createMerchantDefinedFieldDefinitionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -112,10 +118,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -164,13 +166,13 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param merchantDefinedFieldDefinitionRequest  (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> createMerchantDefinedFieldDefinition(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> createMerchantDefinedFieldDefinition(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createMerchantDefinedFieldDefinition' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = createMerchantDefinedFieldDefinitionWithHttpInfo(referenceType, merchantDefinedFieldDefinitionRequest);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = createMerchantDefinedFieldDefinitionWithHttpInfo(referenceType, merchantDefinedFieldDefinitionRequest);
         logger.info("CALL TO METHOD 'createMerchantDefinedFieldDefinition' ENDED");
         return resp.getData();
     }
@@ -180,14 +182,13 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param merchantDefinedFieldDefinitionRequest  (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> createMerchantDefinedFieldDefinitionWithHttpInfo(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> createMerchantDefinedFieldDefinitionWithHttpInfo(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
         okhttp3.Call call = createMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, merchantDefinedFieldDefinitionRequest, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -201,9 +202,7 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createMerchantDefinedFieldDefinitionAsync(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createMerchantDefinedFieldDefinitionAsync(String referenceType, MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -224,29 +223,35 @@ public class MerchantDefinedFieldsApi {
         }
 
         okhttp3.Call call = createMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, merchantDefinedFieldDefinitionRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createPblMerchantDefinedFieldDefinition
      * @param referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param merchantDefinedFieldDefinitionRequest  (required)
+     * @param pblMerchantDefinedFieldDefinitionRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createPblMerchantDefinedFieldDefinitionCall(String referenceType, MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call createPblMerchantDefinedFieldDefinitionCall(String referenceType, PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantDefinedFieldDefinitionRequest, MerchantDefinedFieldDefinitionRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(pblMerchantDefinedFieldDefinitionRequest, PblMerchantDefinedFieldDefinitionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPblMerchantDefinedFieldDefinition,createPblMerchantDefinedFieldDefinitionAsync,createPblMerchantDefinedFieldDefinitionWithHttpInfo,createPblMerchantDefinedFieldDefinitionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -271,10 +276,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -294,7 +295,7 @@ public class MerchantDefinedFieldsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPblMerchantDefinedFieldDefinitionValidateBeforeCall(String referenceType, MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call createPblMerchantDefinedFieldDefinitionValidateBeforeCall(String referenceType, PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'referenceType' is set
         if (referenceType == null) {
@@ -302,14 +303,14 @@ public class MerchantDefinedFieldsApi {
             throw new ApiException("Missing the required parameter 'referenceType' when calling createPblMerchantDefinedFieldDefinition(Async)");
         }
         
-        // verify the required parameter 'merchantDefinedFieldDefinitionRequest' is set
-        if (merchantDefinedFieldDefinitionRequest == null) {
-            logger.error("Missing the required parameter 'merchantDefinedFieldDefinitionRequest' when calling createPblMerchantDefinedFieldDefinition(Async)");
-            throw new ApiException("Missing the required parameter 'merchantDefinedFieldDefinitionRequest' when calling createPblMerchantDefinedFieldDefinition(Async)");
+        // verify the required parameter 'pblMerchantDefinedFieldDefinitionRequest' is set
+        if (pblMerchantDefinedFieldDefinitionRequest == null) {
+            logger.error("Missing the required parameter 'pblMerchantDefinedFieldDefinitionRequest' when calling createPblMerchantDefinedFieldDefinition(Async)");
+            throw new ApiException("Missing the required parameter 'pblMerchantDefinedFieldDefinitionRequest' when calling createPblMerchantDefinedFieldDefinition(Async)");
         }
         
         
-        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionCall(referenceType, merchantDefinedFieldDefinitionRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionCall(referenceType, pblMerchantDefinedFieldDefinitionRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -322,14 +323,14 @@ public class MerchantDefinedFieldsApi {
      * Create a PayByLink merchant defined field for a given reference type
      * Creates a merchant defined field for the given reference type (&#x60;Purchase&#x60; or &#x60;Donation&#x60;). The field type is independent of the reference type: both &#x60;Purchase&#x60; and &#x60;Donation&#x60; support both &#x60;Text&#x60; and &#x60;Select&#x60; fields. Set &#x60;fieldType&#x60; to &#x60;Text&#x60; or &#x60;Select&#x60; accordingly. 
      * @param referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param merchantDefinedFieldDefinitionRequest  (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @param pblMerchantDefinedFieldDefinitionRequest  (required)
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> createPblMerchantDefinedFieldDefinition(String referenceType, MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> createPblMerchantDefinedFieldDefinition(String referenceType, PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createPblMerchantDefinedFieldDefinition' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = createPblMerchantDefinedFieldDefinitionWithHttpInfo(referenceType, merchantDefinedFieldDefinitionRequest);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = createPblMerchantDefinedFieldDefinitionWithHttpInfo(referenceType, pblMerchantDefinedFieldDefinitionRequest);
         logger.info("CALL TO METHOD 'createPblMerchantDefinedFieldDefinition' ENDED");
         return resp.getData();
     }
@@ -338,15 +339,14 @@ public class MerchantDefinedFieldsApi {
      * Create a PayByLink merchant defined field for a given reference type
      * Creates a merchant defined field for the given reference type (&#x60;Purchase&#x60; or &#x60;Donation&#x60;). The field type is independent of the reference type: both &#x60;Purchase&#x60; and &#x60;Donation&#x60; support both &#x60;Text&#x60; and &#x60;Select&#x60; fields. Set &#x60;fieldType&#x60; to &#x60;Text&#x60; or &#x60;Select&#x60; accordingly. 
      * @param referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param merchantDefinedFieldDefinitionRequest  (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @param pblMerchantDefinedFieldDefinitionRequest  (required)
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> createPblMerchantDefinedFieldDefinitionWithHttpInfo(String referenceType, MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, merchantDefinedFieldDefinitionRequest, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> createPblMerchantDefinedFieldDefinitionWithHttpInfo(String referenceType, PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, pblMerchantDefinedFieldDefinitionRequest, null, null);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -354,15 +354,13 @@ public class MerchantDefinedFieldsApi {
      * Create a PayByLink merchant defined field for a given reference type (asynchronously)
      * Creates a merchant defined field for the given reference type (&#x60;Purchase&#x60; or &#x60;Donation&#x60;). The field type is independent of the reference type: both &#x60;Purchase&#x60; and &#x60;Donation&#x60; support both &#x60;Text&#x60; and &#x60;Select&#x60; fields. Set &#x60;fieldType&#x60; to &#x60;Text&#x60; or &#x60;Select&#x60; accordingly. 
      * @param referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param merchantDefinedFieldDefinitionRequest  (required)
+     * @param pblMerchantDefinedFieldDefinitionRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createPblMerchantDefinedFieldDefinitionAsync(String referenceType, MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createPblMerchantDefinedFieldDefinitionAsync(String referenceType, PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -382,8 +380,8 @@ public class MerchantDefinedFieldsApi {
             };
         }
 
-        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, merchantDefinedFieldDefinitionRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        okhttp3.Call call = createPblMerchantDefinedFieldDefinitionValidateBeforeCall(referenceType, pblMerchantDefinedFieldDefinitionRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -401,14 +399,20 @@ public class MerchantDefinedFieldsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteMerchantDefinedFieldsDefinitions,deleteMerchantDefinedFieldsDefinitionsAsync,deleteMerchantDefinedFieldsDefinitionsWithHttpInfo,deleteMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -434,10 +438,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -505,7 +505,6 @@ public class MerchantDefinedFieldsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deleteMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, null, null);
         return apiClient.execute(call);
     }
@@ -521,8 +520,6 @@ public class MerchantDefinedFieldsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -560,14 +557,20 @@ public class MerchantDefinedFieldsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deletePblMerchantDefinedFieldsDefinitions,deletePblMerchantDefinedFieldsDefinitionsAsync,deletePblMerchantDefinedFieldsDefinitionsWithHttpInfo,deletePblMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -593,10 +596,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -664,7 +663,6 @@ public class MerchantDefinedFieldsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deletePblMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, null, null);
         return apiClient.execute(call);
     }
@@ -680,8 +678,6 @@ public class MerchantDefinedFieldsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deletePblMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -718,14 +714,20 @@ public class MerchantDefinedFieldsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getMerchantDefinedFieldsDefinitions,getMerchantDefinedFieldsDefinitionsAsync,getMerchantDefinedFieldsDefinitionsWithHttpInfo,getMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -750,10 +752,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -795,13 +793,13 @@ public class MerchantDefinedFieldsApi {
      * Get all merchant defined fields for a given reference type
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> getMerchantDefinedFieldsDefinitions(String referenceType) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> getMerchantDefinedFieldsDefinitions(String referenceType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getMerchantDefinedFieldsDefinitions' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = getMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = getMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType);
         logger.info("CALL TO METHOD 'getMerchantDefinedFieldsDefinitions' ENDED");
         return resp.getData();
     }
@@ -810,14 +808,13 @@ public class MerchantDefinedFieldsApi {
      * Get all merchant defined fields for a given reference type
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> getMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> getMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType) throws ApiException, ConfigException {
         okhttp3.Call call = getMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -830,9 +827,7 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getMerchantDefinedFieldsDefinitionsAsync(String referenceType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getMerchantDefinedFieldsDefinitionsAsync(String referenceType, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -853,7 +848,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         okhttp3.Call call = getMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -870,14 +865,20 @@ public class MerchantDefinedFieldsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getPblMerchantDefinedFieldsDefinitions,getPblMerchantDefinedFieldsDefinitionsAsync,getPblMerchantDefinedFieldsDefinitionsWithHttpInfo,getPblMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -902,10 +903,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -947,13 +944,13 @@ public class MerchantDefinedFieldsApi {
      * Get all PayByLink merchant defined fields for a given reference type
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined. (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> getPblMerchantDefinedFieldsDefinitions(String referenceType) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> getPblMerchantDefinedFieldsDefinitions(String referenceType) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getPblMerchantDefinedFieldsDefinitions' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = getPblMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = getPblMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType);
         logger.info("CALL TO METHOD 'getPblMerchantDefinedFieldsDefinitions' ENDED");
         return resp.getData();
     }
@@ -962,14 +959,13 @@ public class MerchantDefinedFieldsApi {
      * Get all PayByLink merchant defined fields for a given reference type
      * 
      * @param referenceType The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> getPblMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> getPblMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType) throws ApiException, ConfigException {
         okhttp3.Call call = getPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -982,9 +978,7 @@ public class MerchantDefinedFieldsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getPblMerchantDefinedFieldsDefinitionsAsync(String referenceType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getPblMerchantDefinedFieldsDefinitionsAsync(String referenceType, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1005,7 +999,7 @@ public class MerchantDefinedFieldsApi {
         }
 
         okhttp3.Call call = getPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1013,22 +1007,28 @@ public class MerchantDefinedFieldsApi {
      * Build call for putMerchantDefinedFieldsDefinitions
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
+     * @param updateMerchantDefinedFieldCoreByIdRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call putMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call putMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantDefinedFieldCore, MerchantDefinedFieldCore.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateMerchantDefinedFieldCoreByIdRequest, UpdateMerchantDefinedFieldCoreByIdRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsAsync,putMerchantDefinedFieldsDefinitionsWithHttpInfo,putMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1054,10 +1054,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1077,7 +1073,7 @@ public class MerchantDefinedFieldsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call putMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'referenceType' is set
         if (referenceType == null) {
@@ -1091,14 +1087,14 @@ public class MerchantDefinedFieldsApi {
             throw new ApiException("Missing the required parameter 'id' when calling putMerchantDefinedFieldsDefinitions(Async)");
         }
         
-        // verify the required parameter 'merchantDefinedFieldCore' is set
-        if (merchantDefinedFieldCore == null) {
-            logger.error("Missing the required parameter 'merchantDefinedFieldCore' when calling putMerchantDefinedFieldsDefinitions(Async)");
-            throw new ApiException("Missing the required parameter 'merchantDefinedFieldCore' when calling putMerchantDefinedFieldsDefinitions(Async)");
+        // verify the required parameter 'updateMerchantDefinedFieldCoreByIdRequest' is set
+        if (updateMerchantDefinedFieldCoreByIdRequest == null) {
+            logger.error("Missing the required parameter 'updateMerchantDefinedFieldCoreByIdRequest' when calling putMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'updateMerchantDefinedFieldCoreByIdRequest' when calling putMerchantDefinedFieldsDefinitions(Async)");
         }
         
         
-        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsCall(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -1112,14 +1108,14 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @param updateMerchantDefinedFieldCoreByIdRequest  (required)
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> putMerchantDefinedFieldsDefinitions(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> putMerchantDefinedFieldsDefinitions(String referenceType, Long id, UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'putMerchantDefinedFieldsDefinitions' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = putMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id, merchantDefinedFieldCore);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = putMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest);
         logger.info("CALL TO METHOD 'putMerchantDefinedFieldsDefinitions' ENDED");
         return resp.getData();
     }
@@ -1129,15 +1125,14 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @param updateMerchantDefinedFieldCoreByIdRequest  (required)
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> putMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> putMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id, UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest, null, null);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1146,15 +1141,13 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
+     * @param updateMerchantDefinedFieldCoreByIdRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call putMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, MerchantDefinedFieldCore merchantDefinedFieldCore, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call putMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1174,8 +1167,8 @@ public class MerchantDefinedFieldsApi {
             };
         }
 
-        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        okhttp3.Call call = putMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1183,22 +1176,28 @@ public class MerchantDefinedFieldsApi {
      * Build call for putPblMerchantDefinedFieldsDefinitions
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
+     * @param updatePblMerchantDefinedFieldCoreByIdRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call putPblMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, MerchantDefinedFieldCore1 merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call putPblMerchantDefinedFieldsDefinitionsCall(String referenceType, Long id, UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(merchantDefinedFieldCore, MerchantDefinedFieldCore1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePblMerchantDefinedFieldCoreByIdRequest, UpdatePblMerchantDefinedFieldCoreByIdRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "putPblMerchantDefinedFieldsDefinitions,putPblMerchantDefinedFieldsDefinitionsAsync,putPblMerchantDefinedFieldsDefinitionsWithHttpInfo,putPblMerchantDefinedFieldsDefinitionsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -1224,10 +1223,6 @@ public class MerchantDefinedFieldsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -1247,7 +1242,7 @@ public class MerchantDefinedFieldsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, MerchantDefinedFieldCore1 merchantDefinedFieldCore, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(String referenceType, Long id, UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'referenceType' is set
         if (referenceType == null) {
@@ -1261,14 +1256,14 @@ public class MerchantDefinedFieldsApi {
             throw new ApiException("Missing the required parameter 'id' when calling putPblMerchantDefinedFieldsDefinitions(Async)");
         }
         
-        // verify the required parameter 'merchantDefinedFieldCore' is set
-        if (merchantDefinedFieldCore == null) {
-            logger.error("Missing the required parameter 'merchantDefinedFieldCore' when calling putPblMerchantDefinedFieldsDefinitions(Async)");
-            throw new ApiException("Missing the required parameter 'merchantDefinedFieldCore' when calling putPblMerchantDefinedFieldsDefinitions(Async)");
+        // verify the required parameter 'updatePblMerchantDefinedFieldCoreByIdRequest' is set
+        if (updatePblMerchantDefinedFieldCoreByIdRequest == null) {
+            logger.error("Missing the required parameter 'updatePblMerchantDefinedFieldCoreByIdRequest' when calling putPblMerchantDefinedFieldsDefinitions(Async)");
+            throw new ApiException("Missing the required parameter 'updatePblMerchantDefinedFieldCoreByIdRequest' when calling putPblMerchantDefinedFieldsDefinitions(Async)");
         }
         
         
-        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
+        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsCall(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -1282,14 +1277,14 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @param updatePblMerchantDefinedFieldCoreByIdRequest  (required)
+     * @return List&lt;MerchantDefinedFieldWithIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2004> putPblMerchantDefinedFieldsDefinitions(String referenceType, Long id, MerchantDefinedFieldCore1 merchantDefinedFieldCore) throws ApiException, ConfigException {
+    public List<MerchantDefinedFieldWithIdResponse> putPblMerchantDefinedFieldsDefinitions(String referenceType, Long id, UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'putPblMerchantDefinedFieldsDefinitions' STARTED");
-        ApiResponse<List<InlineResponse2004>> resp = putPblMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id, merchantDefinedFieldCore);
+        ApiResponse<List<MerchantDefinedFieldWithIdResponse>> resp = putPblMerchantDefinedFieldsDefinitionsWithHttpInfo(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest);
         logger.info("CALL TO METHOD 'putPblMerchantDefinedFieldsDefinitions' ENDED");
         return resp.getData();
     }
@@ -1299,15 +1294,14 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @param updatePblMerchantDefinedFieldCoreByIdRequest  (required)
+     * @return ApiResponse&lt;List&lt;MerchantDefinedFieldWithIdResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2004>> putPblMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id, MerchantDefinedFieldCore1 merchantDefinedFieldCore) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+    public ApiResponse<List<MerchantDefinedFieldWithIdResponse>> putPblMerchantDefinedFieldsDefinitionsWithHttpInfo(String referenceType, Long id, UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest, null, null);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1316,15 +1310,13 @@ public class MerchantDefinedFieldsApi {
      * 
      * @param referenceType  (required)
      * @param id  (required)
-     * @param merchantDefinedFieldCore  (required)
+     * @param updatePblMerchantDefinedFieldCoreByIdRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call putPblMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, MerchantDefinedFieldCore1 merchantDefinedFieldCore, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call putPblMerchantDefinedFieldsDefinitionsAsync(String referenceType, Long id, UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest, final ApiCallback<List<MerchantDefinedFieldWithIdResponse>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1344,8 +1336,8 @@ public class MerchantDefinedFieldsApi {
             };
         }
 
-        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, merchantDefinedFieldCore, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        okhttp3.Call call = putPblMerchantDefinedFieldsDefinitionsValidateBeforeCall(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<MerchantDefinedFieldWithIdResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

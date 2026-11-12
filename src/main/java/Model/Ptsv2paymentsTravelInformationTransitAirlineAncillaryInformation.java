@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService;
+import Model.CommonAncillaryInformationServiceItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,10 +45,7 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
   private String creditReasonIndicator = null;
 
   @SerializedName("service")
-  private List<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService> service = null;
-
-  @SerializedName("feeDescription")
-  private String feeDescription = null;
+  private List<CommonAncillaryInformationServiceItem> service = null;
 
   public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ticketNumber(String ticketNumber) {
     this.ticketNumber = ticketNumber;
@@ -122,14 +119,14 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     this.creditReasonIndicator = creditReasonIndicator;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation service(List<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService> service) {
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation service(List<CommonAncillaryInformationServiceItem> service) {
     this.service = service;
     return this;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation addServiceItem(Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService serviceItem) {
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation addServiceItem(CommonAncillaryInformationServiceItem serviceItem) {
     if (this.service == null) {
-      this.service = new ArrayList<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService>();
+      this.service = new ArrayList<CommonAncillaryInformationServiceItem>();
     }
     this.service.add(serviceItem);
     return this;
@@ -140,30 +137,12 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
    * @return service
   **/
   @ApiModelProperty(value = "")
-  public List<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService> getService() {
+  public List<CommonAncillaryInformationServiceItem> getService() {
     return service;
   }
 
-  public void setService(List<Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService> service) {
+  public void setService(List<CommonAncillaryInformationServiceItem> service) {
     this.service = service;
-  }
-
-  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation feeDescription(String feeDescription) {
-    this.feeDescription = feeDescription;
-    return this;
-  }
-
-   /**
-   * This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. 
-   * @return feeDescription
-  **/
-  @ApiModelProperty(value = "This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. ")
-  public String getFeeDescription() {
-    return feeDescription;
-  }
-
-  public void setFeeDescription(String feeDescription) {
-    this.feeDescription = feeDescription;
   }
 
 
@@ -180,13 +159,12 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
         Objects.equals(this.passengerName, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.passengerName) &&
         Objects.equals(this.connectedTicketNumber, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.connectedTicketNumber) &&
         Objects.equals(this.creditReasonIndicator, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.creditReasonIndicator) &&
-        Objects.equals(this.service, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.service) &&
-        Objects.equals(this.feeDescription, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.feeDescription);
+        Objects.equals(this.service, ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.service);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ticketNumber, passengerName, connectedTicketNumber, creditReasonIndicator, service, feeDescription);
+    return Objects.hash(ticketNumber, passengerName, connectedTicketNumber, creditReasonIndicator, service);
   }
 
 
@@ -218,7 +196,6 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     if (connectedTicketNumber != null) sb.append("    connectedTicketNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("connectedTicketNumber").matches() ? "[REDACTED]" : toIndentedString(connectedTicketNumber)).append("\n");
     if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(SENSITIVE_FIELD_PATTERN.matcher("creditReasonIndicator").matches() ? "[REDACTED]" : toIndentedString(creditReasonIndicator)).append("\n");
     if (service != null) sb.append("    service: ").append(SENSITIVE_FIELD_PATTERN.matcher("service").matches() ? "[REDACTED]" : toIndentedString(service)).append("\n");
-    if (feeDescription != null) sb.append("    feeDescription: ").append(SENSITIVE_FIELD_PATTERN.matcher("feeDescription").matches() ? "[REDACTED]" : toIndentedString(feeDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -242,7 +219,6 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     if (connectedTicketNumber != null) sb.append("    connectedTicketNumber: ").append(toIndentedString(connectedTicketNumber)).append("\n");
     if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
     if (service != null) sb.append("    service: ").append(toIndentedString(service)).append("\n");
-    if (feeDescription != null) sb.append("    feeDescription: ").append(toIndentedString(feeDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

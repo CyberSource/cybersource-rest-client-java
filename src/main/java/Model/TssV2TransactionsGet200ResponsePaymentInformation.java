@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201Response1PaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
+import Model.RefreshPaymentStatusResponsePaymentInformationEWallet;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBrands;
@@ -50,7 +50,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
 
   @SerializedName("eWallet")
-  private PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet = null;
+  private RefreshPaymentStatusResponsePaymentInformationEWallet eWallet = null;
 
   @SerializedName("customer")
   private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
@@ -109,7 +109,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformation eWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+  public TssV2TransactionsGet200ResponsePaymentInformation eWallet(RefreshPaymentStatusResponsePaymentInformationEWallet eWallet) {
     this.eWallet = eWallet;
     return this;
   }
@@ -119,11 +119,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
    * @return eWallet
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201Response1PaymentInformationEWallet getEWallet() {
+  public RefreshPaymentStatusResponsePaymentInformationEWallet getEWallet() {
     return eWallet;
   }
 
-  public void setEWallet(PtsV2PaymentsPost201Response1PaymentInformationEWallet eWallet) {
+  public void setEWallet(RefreshPaymentStatusResponsePaymentInformationEWallet eWallet) {
     this.eWallet = eWallet;
   }
 

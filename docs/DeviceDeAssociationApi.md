@@ -54,7 +54,7 @@ No authorization required
 
 <a name="postDeAssociateV3Terminal"></a>
 # **postDeAssociateV3Terminal**
-> List&lt;InlineResponse20010&gt; postDeAssociateV3Terminal(deviceDeAssociateV3Request)
+> List&lt;DeviceDeAssociateV3Response&gt; postDeAssociateV3Terminal(deviceDeAssociateV3Request)
 
 De-associate a device from merchant to account or reseller and from account to reseller
 
@@ -70,7 +70,7 @@ A device will be de-associated from its current organization and moved up in the
 DeviceDeAssociationApi apiInstance = new DeviceDeAssociationApi();
 List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request = Arrays.asList(new DeviceDeAssociateV3Request()); // List<DeviceDeAssociateV3Request> | deviceId that has to be de-associated to the destination organizationId.
 try {
-    List<InlineResponse20010> result = apiInstance.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
+    List<DeviceDeAssociateV3Response> result = apiInstance.postDeAssociateV3Terminal(deviceDeAssociateV3Request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeviceDeAssociationApi#postDeAssociateV3Terminal");
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20010&gt;**](InlineResponse20010.md)
+[**List&lt;DeviceDeAssociateV3Response&gt;**](DeviceDeAssociateV3Response.md)
 
 ### Authorization
 

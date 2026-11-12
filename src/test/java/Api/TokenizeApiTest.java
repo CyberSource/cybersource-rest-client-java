@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.InlineResponse200;
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
 import Model.PostTokenizeRequest;
+import Model.PostTokenizeResponse;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +49,7 @@ public class TokenizeApiTest {
     public void tokenizeTest() throws Exception {
         PostTokenizeRequest postTokenizeRequest = null;
         String profileId = null;
-        InlineResponse200 response = api.tokenize(postTokenizeRequest, profileId);
+        PostTokenizeResponse response = api.tokenize(postTokenizeRequest, profileId);
 
         // TODO: test validations
     }

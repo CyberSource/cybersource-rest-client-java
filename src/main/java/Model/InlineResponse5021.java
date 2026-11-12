@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,8 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse5021
@@ -38,14 +35,11 @@ public class InlineResponse5021 {
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("reason")
-  private String reason = null;
-
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("details")
-  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
+  @SerializedName("reason")
+  private String reason = null;
 
   public InlineResponse5021 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -53,10 +47,10 @@ public class InlineResponse5021 {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * Time verification was requested  Format: &#x60;YYYY-MM-DDThhmmssZ&#x60;, where: - &#x60;T&#x60;:  Separates the date and the time - &#x60;Z&#x60;:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  &#x60;2020-01-11T224757Z&#x60; equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
+  @ApiModelProperty(value = "Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -71,10 +65,10 @@ public class InlineResponse5021 {
   }
 
    /**
-   * The status of the submitted transaction. Possible values: - &#x60;SERVER_ERROR&#x60; 
+   * The status of the submitted transaction. Possible values:   - &#x60;SERVER_ERROR&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `SERVER_ERROR` ")
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values:   - `SERVER_ERROR` ")
   public String getStatus() {
     return status;
   }
@@ -83,34 +77,16 @@ public class InlineResponse5021 {
     this.status = status;
   }
 
-  public InlineResponse5021 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * The reason of the status. Possible Values: - &#x60;INTERNAL_SERVICE_ERROR&#x60; 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR` ")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
-
   public InlineResponse5021 message(String message) {
     this.message = message;
     return this;
   }
 
    /**
-   * Application failed.
+   * The detail message related to the status and reason
    * @return message
   **/
-  @ApiModelProperty(value = "Application failed.")
+  @ApiModelProperty(value = "The detail message related to the status and reason")
   public String getMessage() {
     return message;
   }
@@ -119,30 +95,22 @@ public class InlineResponse5021 {
     this.message = message;
   }
 
-  public InlineResponse5021 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse5021 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
-    }
-    this.details.add(detailsItem);
+  public InlineResponse5021 reason(String reason) {
+    this.reason = reason;
     return this;
   }
 
    /**
-   * Get details
-   * @return details
+   * The reason of the status.  Possible values:   - &#x60;SYSTEM_ERROR&#x60;   - &#x60;SERVER_TIMEOUT&#x60;   - &#x60;SERVICE_TIMEOUT&#x60; 
+   * @return reason
   **/
-  @ApiModelProperty(value = "")
-  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
-    return details;
+  @ApiModelProperty(value = "The reason of the status.  Possible values:   - `SYSTEM_ERROR`   - `SERVER_TIMEOUT`   - `SERVICE_TIMEOUT` ")
+  public String getReason() {
+    return reason;
   }
 
-  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
 
@@ -157,14 +125,13 @@ public class InlineResponse5021 {
     InlineResponse5021 inlineResponse5021 = (InlineResponse5021) o;
     return Objects.equals(this.submitTimeUtc, inlineResponse5021.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse5021.status) &&
-        Objects.equals(this.reason, inlineResponse5021.reason) &&
         Objects.equals(this.message, inlineResponse5021.message) &&
-        Objects.equals(this.details, inlineResponse5021.details);
+        Objects.equals(this.reason, inlineResponse5021.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, details);
+    return Objects.hash(submitTimeUtc, status, message, reason);
   }
 
 
@@ -193,9 +160,8 @@ public class InlineResponse5021 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -216,9 +182,8 @@ public class InlineResponse5021 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

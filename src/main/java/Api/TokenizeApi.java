@@ -29,12 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse200;
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
 import Model.PostTokenizeRequest;
+import Model.PostTokenizeResponse;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -83,11 +83,17 @@ public class TokenizeApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postTokenizeRequest, PostTokenizeRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "tokenize,tokenizeAsync,tokenizeWithHttpInfo,tokenizeCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -113,10 +119,6 @@ public class TokenizeApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -159,13 +161,13 @@ public class TokenizeApi {
      * |  |  |  |   | --- | --- | --- | |The **Tokenize API** endpoint facilitates the creation of various TMS tokens such as Customers, Payment Instruments, Shipping Addresses, and Instrument Identifiers in a single operation. The request includes a processingInformation object, which specifies **\&quot;TOKEN_CREATE\&quot;** and the types of tokens to be created. The **tokenInformation** section of the request includes detailed information relevant to each token type. This includes attributes for Customers, Payment Instruments, Shipping Addresses, Instrument Identifiers and Transient Token data. The payload is flexible, allowing for different combinations of tokens to be created in a single request.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|The **API response** includes a responses array, which details the outcome of the tokenization process for each requested resource type, such as Customer, Payment Instrument, Shipping Address, and Instrument Identifier. Each entry in this array provides an HTTP status code such as **201/200 for successful creations**, and a unique identifier for the newly created token.&lt;br&gt;In cases where token creation encounters issues, the response includes a **non-2XX** status code and an errors array for the affected resource. Each error object in the array details the **error type and a descriptive message** providing insight into why a particular token creation was not attempted or failed. 
      * @param postTokenizeRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return InlineResponse200
+     * @return PostTokenizeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse200 tokenize(PostTokenizeRequest postTokenizeRequest, String profileId) throws ApiException, ConfigException {
+    public PostTokenizeResponse tokenize(PostTokenizeRequest postTokenizeRequest, String profileId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'tokenize' STARTED");
-        ApiResponse<InlineResponse200> resp = tokenizeWithHttpInfo(postTokenizeRequest, profileId);
+        ApiResponse<PostTokenizeResponse> resp = tokenizeWithHttpInfo(postTokenizeRequest, profileId);
         logger.info("CALL TO METHOD 'tokenize' ENDED");
         return resp.getData();
     }
@@ -175,14 +177,13 @@ public class TokenizeApi {
      * |  |  |  |   | --- | --- | --- | |The **Tokenize API** endpoint facilitates the creation of various TMS tokens such as Customers, Payment Instruments, Shipping Addresses, and Instrument Identifiers in a single operation. The request includes a processingInformation object, which specifies **\&quot;TOKEN_CREATE\&quot;** and the types of tokens to be created. The **tokenInformation** section of the request includes detailed information relevant to each token type. This includes attributes for Customers, Payment Instruments, Shipping Addresses, Instrument Identifiers and Transient Token data. The payload is flexible, allowing for different combinations of tokens to be created in a single request.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|The **API response** includes a responses array, which details the outcome of the tokenization process for each requested resource type, such as Customer, Payment Instrument, Shipping Address, and Instrument Identifier. Each entry in this array provides an HTTP status code such as **201/200 for successful creations**, and a unique identifier for the newly created token.&lt;br&gt;In cases where token creation encounters issues, the response includes a **non-2XX** status code and an errors array for the affected resource. Each error object in the array details the **error type and a descriptive message** providing insight into why a particular token creation was not attempted or failed. 
      * @param postTokenizeRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;PostTokenizeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse200> tokenizeWithHttpInfo(PostTokenizeRequest postTokenizeRequest, String profileId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<PostTokenizeResponse> tokenizeWithHttpInfo(PostTokenizeRequest postTokenizeRequest, String profileId) throws ApiException, ConfigException {
         okhttp3.Call call = tokenizeValidateBeforeCall(postTokenizeRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostTokenizeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -196,9 +197,7 @@ public class TokenizeApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call tokenizeAsync(PostTokenizeRequest postTokenizeRequest, String profileId, final ApiCallback<InlineResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call tokenizeAsync(PostTokenizeRequest postTokenizeRequest, String profileId, final ApiCallback<PostTokenizeResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -219,7 +218,7 @@ public class TokenizeApi {
         }
 
         okhttp3.Call call = tokenizeValidateBeforeCall(postTokenizeRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostTokenizeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

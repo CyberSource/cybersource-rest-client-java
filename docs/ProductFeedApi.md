@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getAllProducts"></a>
 # **getAllProducts**
-> InlineResponse20020 getAllProducts(getAllProductsRequest, page, size)
+> ProductCatalogResponse getAllProducts(getAllProductsRequest, page, size)
 
 Get All Products
 
@@ -30,7 +30,7 @@ Object getAllProductsRequest = null; // Object | Empty request body.
 Integer page = 0; // Integer | Page number to retrieve (0-based). Defaults to 0.
 Integer size = 300; // Integer | Number of products per page. Defaults to 300. Server enforces a maximum of 1000; values above 1000 are capped. 
 try {
-    InlineResponse20020 result = apiInstance.getAllProducts(getAllProductsRequest, page, size);
+    ProductCatalogResponse result = apiInstance.getAllProducts(getAllProductsRequest, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProductFeedApi#getAllProducts");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ProductCatalogResponse**](ProductCatalogResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="getFeedJobStatus"></a>
 # **getFeedJobStatus**
-> InlineResponse20019 getFeedJobStatus(jobId, getFeedJobStatusRequest)
+> FeedJobStatusResponse getFeedJobStatus(jobId, getFeedJobStatusRequest)
 
 Get Feed Job Status
 
@@ -78,7 +78,7 @@ ProductFeedApi apiInstance = new ProductFeedApi();
 UUID jobId = new UUID(); // UUID | Unique identifier of the feed submission job, returned by the Ingest Product Feed endpoint. 
 Object getFeedJobStatusRequest = null; // Object | Empty request body.
 try {
-    InlineResponse20019 result = apiInstance.getFeedJobStatus(jobId, getFeedJobStatusRequest);
+    FeedJobStatusResponse result = apiInstance.getFeedJobStatus(jobId, getFeedJobStatusRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProductFeedApi#getFeedJobStatus");
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**FeedJobStatusResponse**](FeedJobStatusResponse.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 
 <a name="getProduct"></a>
 # **getProduct**
-> InlineResponse20021 getProduct(productId, getProductRequest)
+> ProductDetailResponse getProduct(productId, getProductRequest)
 
 Get Product by ID
 
@@ -125,7 +125,7 @@ ProductFeedApi apiInstance = new ProductFeedApi();
 String productId = "productId_example"; // String | The unique product identifier (SKU) assigned by the merchant and provided during feed ingestion. Example: `SKU-1001`. 
 Object getProductRequest = null; // Object | Empty request body.
 try {
-    InlineResponse20021 result = apiInstance.getProduct(productId, getProductRequest);
+    ProductDetailResponse result = apiInstance.getProduct(productId, getProductRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProductFeedApi#getProduct");
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ProductDetailResponse**](ProductDetailResponse.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ No authorization required
 
 <a name="submitProductFeedJson"></a>
 # **submitProductFeedJson**
-> InlineResponse2021 submitProductFeedJson(productFeedRequest)
+> ProductAcceptedFeedResponse submitProductFeedJson(productFeedRequest)
 
 Ingest Product Feed
 
@@ -171,7 +171,7 @@ Submits a merchant product catalog to ACG for asynchronous processing and syndic
 ProductFeedApi apiInstance = new ProductFeedApi();
 ProductFeedRequest productFeedRequest = new ProductFeedRequest(); // ProductFeedRequest | Product feed payload. The `products` array is required and must contain at least one product. See `ProductInput` for the full list of required fields. 
 try {
-    InlineResponse2021 result = apiInstance.submitProductFeedJson(productFeedRequest);
+    ProductAcceptedFeedResponse result = apiInstance.submitProductFeedJson(productFeedRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProductFeedApi#submitProductFeedJson");
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**ProductAcceptedFeedResponse**](ProductAcceptedFeedResponse.md)
 
 ### Authorization
 

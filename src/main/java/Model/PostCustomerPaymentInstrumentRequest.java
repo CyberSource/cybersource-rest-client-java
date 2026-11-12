@@ -22,9 +22,9 @@ import Model.DefaultPaymentInstrumentCard;
 import Model.DefaultPaymentInstrumentInstrumentIdentifier;
 import Model.DefaultPaymentInstrumentLinks;
 import Model.DefaultPaymentInstrumentMetadata;
+import Model.PaymentInstrumentEmbedded2;
 import Model.TmsMerchantInformation;
 import Model.TmsPaymentInstrumentProcessingInfo;
-import Model.Tmsv1paymentinstrumentsEmbedded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -82,7 +82,7 @@ public class PostCustomerPaymentInstrumentRequest {
   private DefaultPaymentInstrumentMetadata metadata = null;
 
   @SerializedName("_embedded")
-  private Tmsv1paymentinstrumentsEmbedded embedded = null;
+  private PaymentInstrumentEmbedded2 embedded = null;
 
   public PostCustomerPaymentInstrumentRequest links(DefaultPaymentInstrumentLinks links) {
     this.links = links;
@@ -309,7 +309,7 @@ public class PostCustomerPaymentInstrumentRequest {
     this.metadata = metadata;
   }
 
-  public PostCustomerPaymentInstrumentRequest embedded(Tmsv1paymentinstrumentsEmbedded embedded) {
+  public PostCustomerPaymentInstrumentRequest embedded(PaymentInstrumentEmbedded2 embedded) {
     this.embedded = embedded;
     return this;
   }
@@ -319,11 +319,11 @@ public class PostCustomerPaymentInstrumentRequest {
    * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1paymentinstrumentsEmbedded getEmbedded() {
+  public PaymentInstrumentEmbedded2 getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Tmsv1paymentinstrumentsEmbedded embedded) {
+  public void setEmbedded(PaymentInstrumentEmbedded2 embedded) {
     this.embedded = embedded;
   }
 

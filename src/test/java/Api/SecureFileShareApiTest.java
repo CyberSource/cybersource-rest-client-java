@@ -13,7 +13,7 @@
 
 package Api;
 
-import Model.InlineResponse40010;
+import Model.InlineResponse4001;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 import org.junit.Test;

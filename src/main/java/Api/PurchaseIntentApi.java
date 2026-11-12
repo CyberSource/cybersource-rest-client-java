@@ -83,11 +83,17 @@ public class PurchaseIntentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agenticCancelPurchaseIntentRequest, AgenticCancelPurchaseIntentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "cancelPurchaseIntent,cancelPurchaseIntentAsync,cancelPurchaseIntentWithHttpInfo,cancelPurchaseIntentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -112,10 +118,6 @@ public class PurchaseIntentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -185,7 +187,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgenticCreatePurchaseIntentResponse200> cancelPurchaseIntentWithHttpInfo(String instructionId, AgenticCancelPurchaseIntentRequest agenticCancelPurchaseIntentRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = cancelPurchaseIntentValidateBeforeCall(instructionId, agenticCancelPurchaseIntentRequest, null, null);
         Type localVarReturnType = new TypeToken<AgenticCreatePurchaseIntentResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -202,8 +203,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call cancelPurchaseIntentAsync(String instructionId, AgenticCancelPurchaseIntentRequest agenticCancelPurchaseIntentRequest, final ApiCallback<AgenticCreatePurchaseIntentResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -241,11 +240,17 @@ public class PurchaseIntentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agenticCreatePurchaseIntentRequest, AgenticCreatePurchaseIntentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "initiatePurchaseIntent,initiatePurchaseIntentAsync,initiatePurchaseIntentWithHttpInfo,initiatePurchaseIntentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -269,10 +274,6 @@ public class PurchaseIntentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -334,7 +335,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgenticCreatePurchaseIntentResponse200> initiatePurchaseIntentWithHttpInfo(AgenticCreatePurchaseIntentRequest agenticCreatePurchaseIntentRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = initiatePurchaseIntentValidateBeforeCall(agenticCreatePurchaseIntentRequest, null, null);
         Type localVarReturnType = new TypeToken<AgenticCreatePurchaseIntentResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -350,8 +350,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call initiatePurchaseIntentAsync(AgenticCreatePurchaseIntentRequest agenticCreatePurchaseIntentRequest, final ApiCallback<AgenticCreatePurchaseIntentResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -390,11 +388,17 @@ public class PurchaseIntentApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agenticUpdatePurchaseIntentRequest, AgenticUpdatePurchaseIntentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updatePurchaseIntent,updatePurchaseIntentAsync,updatePurchaseIntentWithHttpInfo,updatePurchaseIntentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -419,10 +423,6 @@ public class PurchaseIntentApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -492,7 +492,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgenticCreatePurchaseIntentResponse200> updatePurchaseIntentWithHttpInfo(String instructionId, AgenticUpdatePurchaseIntentRequest agenticUpdatePurchaseIntentRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updatePurchaseIntentValidateBeforeCall(instructionId, agenticUpdatePurchaseIntentRequest, null, null);
         Type localVarReturnType = new TypeToken<AgenticCreatePurchaseIntentResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -509,8 +508,6 @@ public class PurchaseIntentApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call updatePurchaseIntentAsync(String instructionId, AgenticUpdatePurchaseIntentRequest agenticUpdatePurchaseIntentRequest, final ApiCallback<AgenticCreatePurchaseIntentResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

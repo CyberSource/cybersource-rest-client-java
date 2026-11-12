@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsBuyerInformationPersonalIdentification;
+import Model.Riskv1decisionsBuyerInformationLoyalty;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,9 @@ public class Riskv1decisionsBuyerInformation {
 
   @SerializedName("personalIdentification")
   private List<Ptsv2paymentsBuyerInformationPersonalIdentification> personalIdentification = null;
+
+  @SerializedName("loyalty")
+  private Riskv1decisionsBuyerInformationLoyalty loyalty = null;
 
   public Riskv1decisionsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -146,6 +150,24 @@ public class Riskv1decisionsBuyerInformation {
     this.personalIdentification = personalIdentification;
   }
 
+  public Riskv1decisionsBuyerInformation loyalty(Riskv1decisionsBuyerInformationLoyalty loyalty) {
+    this.loyalty = loyalty;
+    return this;
+  }
+
+   /**
+   * Get loyalty
+   * @return loyalty
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsBuyerInformationLoyalty getLoyalty() {
+    return loyalty;
+  }
+
+  public void setLoyalty(Riskv1decisionsBuyerInformationLoyalty loyalty) {
+    this.loyalty = loyalty;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,12 +182,13 @@ public class Riskv1decisionsBuyerInformation {
         Objects.equals(this.username, riskv1decisionsBuyerInformation.username) &&
         Objects.equals(this.hashedPassword, riskv1decisionsBuyerInformation.hashedPassword) &&
         Objects.equals(this.dateOfBirth, riskv1decisionsBuyerInformation.dateOfBirth) &&
-        Objects.equals(this.personalIdentification, riskv1decisionsBuyerInformation.personalIdentification);
+        Objects.equals(this.personalIdentification, riskv1decisionsBuyerInformation.personalIdentification) &&
+        Objects.equals(this.loyalty, riskv1decisionsBuyerInformation.loyalty);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, username, hashedPassword, dateOfBirth, personalIdentification);
+    return Objects.hash(merchantCustomerId, username, hashedPassword, dateOfBirth, personalIdentification, loyalty);
   }
 
 
@@ -197,6 +220,7 @@ public class Riskv1decisionsBuyerInformation {
     if (hashedPassword != null) sb.append("    hashedPassword: ").append(SENSITIVE_FIELD_PATTERN.matcher("hashedPassword").matches() ? "[REDACTED]" : toIndentedString(hashedPassword)).append("\n");
     if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(SENSITIVE_FIELD_PATTERN.matcher("dateOfBirth").matches() ? "[REDACTED]" : toIndentedString(dateOfBirth)).append("\n");
     if (personalIdentification != null) sb.append("    personalIdentification: ").append(SENSITIVE_FIELD_PATTERN.matcher("personalIdentification").matches() ? "[REDACTED]" : toIndentedString(personalIdentification)).append("\n");
+    if (loyalty != null) sb.append("    loyalty: ").append(SENSITIVE_FIELD_PATTERN.matcher("loyalty").matches() ? "[REDACTED]" : toIndentedString(loyalty)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -220,6 +244,7 @@ public class Riskv1decisionsBuyerInformation {
     if (hashedPassword != null) sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
     if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (loyalty != null) sb.append("    loyalty: ").append(toIndentedString(loyalty)).append("\n");
     sb.append("}");
     return sb.toString();
   }

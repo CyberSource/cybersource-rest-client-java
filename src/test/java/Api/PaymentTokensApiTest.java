@@ -13,10 +13,10 @@
 
 package Api;
 
-import Model.InlineResponse201;
+import Model.PaymentTokenRequest;
 import Model.PtsV2RetrievePaymentTokenGet400Response;
 import Model.PtsV2RetrievePaymentTokenGet502Response;
-import Model.Request;
+import Model.RetrieveOrDeletePaymentTokenResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,8 +45,8 @@ public class PaymentTokensApiTest {
      */
     @Test
     public void retrieveOrDeletePaymentTokenTest() throws Exception {
-        Request request = null;
-        InlineResponse201 response = api.retrieveOrDeletePaymentToken(request);
+        PaymentTokenRequest paymentTokenRequest = null;
+        RetrieveOrDeletePaymentTokenResponse response = api.retrieveOrDeletePaymentToken(paymentTokenRequest);
 
         // TODO: test validations
     }

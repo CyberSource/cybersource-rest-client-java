@@ -29,8 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse20113;
-import Model.InlineResponse40016;
+import Model.InlineResponse4007;
+import Model.UcpCheckoutSessionResponse;
 import Model.UcpCompleteCheckoutRequest;
 import Model.UcpCreateCheckoutSessionRequest;
 import Model.UcpUpdateCheckoutSessionRequest;
@@ -81,14 +81,20 @@ public class UcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCancelCheckout,ucpCancelCheckoutAsync,ucpCancelCheckoutWithHttpInfo,ucpCancelCheckoutCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -113,10 +119,6 @@ public class UcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -158,13 +160,13 @@ public class UcpCheckoutApi {
      * Cancel Checkout UCP
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
-     * @return InlineResponse20113
+     * @return UcpCheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 ucpCancelCheckout(String sessionId) throws ApiException, ConfigException {
+    public UcpCheckoutSessionResponse ucpCancelCheckout(String sessionId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCancelCheckout' STARTED");
-        ApiResponse<InlineResponse20113> resp = ucpCancelCheckoutWithHttpInfo(sessionId);
+        ApiResponse<UcpCheckoutSessionResponse> resp = ucpCancelCheckoutWithHttpInfo(sessionId);
         logger.info("CALL TO METHOD 'ucpCancelCheckout' ENDED");
         return resp.getData();
     }
@@ -173,14 +175,13 @@ public class UcpCheckoutApi {
      * Cancel Checkout UCP
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param sessionId The unique identifier of the UCP checkout session to cancel. (required)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;UcpCheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> ucpCancelCheckoutWithHttpInfo(String sessionId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UcpCheckoutSessionResponse> ucpCancelCheckoutWithHttpInfo(String sessionId) throws ApiException, ConfigException {
         okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -193,9 +194,7 @@ public class UcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCancelCheckoutAsync(String sessionId, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call ucpCancelCheckoutAsync(String sessionId, final ApiCallback<UcpCheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -216,7 +215,7 @@ public class UcpCheckoutApi {
         }
 
         okhttp3.Call call = ucpCancelCheckoutValidateBeforeCall(sessionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -235,11 +234,17 @@ public class UcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpCompleteCheckoutRequest, UcpCompleteCheckoutRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCompleteCheckout,ucpCompleteCheckoutAsync,ucpCompleteCheckoutWithHttpInfo,ucpCompleteCheckoutCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -266,10 +271,6 @@ public class UcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -313,13 +314,13 @@ public class UcpCheckoutApi {
      * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
      * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
      * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
-     * @return InlineResponse20113
+     * @return UcpCheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 ucpCompleteCheckout(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
+    public UcpCheckoutSessionResponse ucpCompleteCheckout(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCompleteCheckout' STARTED");
-        ApiResponse<InlineResponse20113> resp = ucpCompleteCheckoutWithHttpInfo(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
+        ApiResponse<UcpCheckoutSessionResponse> resp = ucpCompleteCheckoutWithHttpInfo(sessionId, idempotencyKey, ucpCompleteCheckoutRequest);
         logger.info("CALL TO METHOD 'ucpCompleteCheckout' ENDED");
         return resp.getData();
     }
@@ -330,14 +331,13 @@ public class UcpCheckoutApi {
      * @param sessionId The unique identifier of the UCP checkout session to complete. (required)
      * @param idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec.  (optional)
      * @param ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant.  (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;UcpCheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> ucpCompleteCheckoutWithHttpInfo(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UcpCheckoutSessionResponse> ucpCompleteCheckoutWithHttpInfo(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest) throws ApiException, ConfigException {
         okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -352,9 +352,7 @@ public class UcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCompleteCheckoutAsync(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call ucpCompleteCheckoutAsync(String sessionId, String idempotencyKey, UcpCompleteCheckoutRequest ucpCompleteCheckoutRequest, final ApiCallback<UcpCheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -375,7 +373,7 @@ public class UcpCheckoutApi {
         }
 
         okhttp3.Call call = ucpCompleteCheckoutValidateBeforeCall(sessionId, idempotencyKey, ucpCompleteCheckoutRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -393,11 +391,17 @@ public class UcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpCreateCheckoutSessionRequest, UcpCreateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpCreateCheckoutSession,ucpCreateCheckoutSessionAsync,ucpCreateCheckoutSessionWithHttpInfo,ucpCreateCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -423,10 +427,6 @@ public class UcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -469,13 +469,13 @@ public class UcpCheckoutApi {
      * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
      * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
      * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
-     * @return InlineResponse20113
+     * @return UcpCheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 ucpCreateCheckoutSession(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public UcpCheckoutSessionResponse ucpCreateCheckoutSession(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = ucpCreateCheckoutSessionWithHttpInfo(ucpCreateCheckoutSessionRequest, idempotencyKey);
+        ApiResponse<UcpCheckoutSessionResponse> resp = ucpCreateCheckoutSessionWithHttpInfo(ucpCreateCheckoutSessionRequest, idempotencyKey);
         logger.info("CALL TO METHOD 'ucpCreateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -485,14 +485,13 @@ public class UcpCheckoutApi {
      * **Step 1 of the UCP checkout flow.**  Creates a new UCP checkout session using Google&#39;s Universal Commerce Protocol format. ACG translates the UCP request into the internal ACP format, applies merchant pricing, and returns a UCP-format session response with a session &#x60;id&#x60;.  UCP uses &#x60;line_items&#x60; (instead of &#x60;items&#x60;) and lowercase header names (&#x60;idempotency-key&#x60;) per the UCP specification.  **Store the &#x60;id&#x60;** from the response — it is required for all subsequent UCP calls. 
      * @param ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information.  (required)
      * @param idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification.  (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;UcpCheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> ucpCreateCheckoutSessionWithHttpInfo(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UcpCheckoutSessionResponse> ucpCreateCheckoutSessionWithHttpInfo(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -506,9 +505,7 @@ public class UcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpCreateCheckoutSessionAsync(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call ucpCreateCheckoutSessionAsync(UcpCreateCheckoutSessionRequest ucpCreateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<UcpCheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -529,7 +526,7 @@ public class UcpCheckoutApi {
         }
 
         okhttp3.Call call = ucpCreateCheckoutSessionValidateBeforeCall(ucpCreateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -547,11 +544,17 @@ public class UcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpGetCheckoutSessionRequest, Object.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpGetCheckoutSession,ucpGetCheckoutSessionAsync,ucpGetCheckoutSessionWithHttpInfo,ucpGetCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -576,10 +579,6 @@ public class UcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -628,13 +627,13 @@ public class UcpCheckoutApi {
      * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
      * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
      * @param ucpGetCheckoutSessionRequest Empty request body. (required)
-     * @return InlineResponse20113
+     * @return UcpCheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 ucpGetCheckoutSession(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
+    public UcpCheckoutSessionResponse ucpGetCheckoutSession(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpGetCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = ucpGetCheckoutSessionWithHttpInfo(sessionId, ucpGetCheckoutSessionRequest);
+        ApiResponse<UcpCheckoutSessionResponse> resp = ucpGetCheckoutSessionWithHttpInfo(sessionId, ucpGetCheckoutSessionRequest);
         logger.info("CALL TO METHOD 'ucpGetCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -644,14 +643,13 @@ public class UcpCheckoutApi {
      * Retrieves the current state of a UCP checkout session.  Use this to verify session status, retrieve updated totals after a fulfillment change, or resume a session after an interruption. 
      * @param sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response.  (required)
      * @param ucpGetCheckoutSessionRequest Empty request body. (required)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;UcpCheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> ucpGetCheckoutSessionWithHttpInfo(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UcpCheckoutSessionResponse> ucpGetCheckoutSessionWithHttpInfo(String sessionId, Object ucpGetCheckoutSessionRequest) throws ApiException, ConfigException {
         okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -665,9 +663,7 @@ public class UcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpGetCheckoutSessionAsync(String sessionId, Object ucpGetCheckoutSessionRequest, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call ucpGetCheckoutSessionAsync(String sessionId, Object ucpGetCheckoutSessionRequest, final ApiCallback<UcpCheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -688,7 +684,7 @@ public class UcpCheckoutApi {
         }
 
         okhttp3.Call call = ucpGetCheckoutSessionValidateBeforeCall(sessionId, ucpGetCheckoutSessionRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -707,11 +703,17 @@ public class UcpCheckoutApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(ucpUpdateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "ucpUpdateCheckoutSession,ucpUpdateCheckoutSessionAsync,ucpUpdateCheckoutSessionWithHttpInfo,ucpUpdateCheckoutSessionCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -738,10 +740,6 @@ public class UcpCheckoutApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -791,13 +789,13 @@ public class UcpCheckoutApi {
      * @param sessionId The unique identifier of the UCP checkout session to update. (required)
      * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
      * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
-     * @return InlineResponse20113
+     * @return UcpCheckoutSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20113 ucpUpdateCheckoutSession(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
+    public UcpCheckoutSessionResponse ucpUpdateCheckoutSession(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' STARTED");
-        ApiResponse<InlineResponse20113> resp = ucpUpdateCheckoutSessionWithHttpInfo(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
+        ApiResponse<UcpCheckoutSessionResponse> resp = ucpUpdateCheckoutSessionWithHttpInfo(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey);
         logger.info("CALL TO METHOD 'ucpUpdateCheckoutSession' ENDED");
         return resp.getData();
     }
@@ -808,14 +806,13 @@ public class UcpCheckoutApi {
      * @param sessionId The unique identifier of the UCP checkout session to update. (required)
      * @param ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied.  (required)
      * @param idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
-     * @return ApiResponse&lt;InlineResponse20113&gt;
+     * @return ApiResponse&lt;UcpCheckoutSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20113> ucpUpdateCheckoutSessionWithHttpInfo(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<UcpCheckoutSessionResponse> ucpUpdateCheckoutSessionWithHttpInfo(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey) throws ApiException, ConfigException {
         okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -830,9 +827,7 @@ public class UcpCheckoutApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call ucpUpdateCheckoutSessionAsync(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<InlineResponse20113> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call ucpUpdateCheckoutSessionAsync(String sessionId, UcpUpdateCheckoutSessionRequest ucpUpdateCheckoutSessionRequest, String idempotencyKey, final ApiCallback<UcpCheckoutSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -853,7 +848,7 @@ public class UcpCheckoutApi {
         }
 
         okhttp3.Call call = ucpUpdateCheckoutSessionValidateBeforeCall(sessionId, ucpUpdateCheckoutSessionRequest, idempotencyKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20113>(){}.getType();
+        Type localVarReturnType = new TypeToken<UcpCheckoutSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

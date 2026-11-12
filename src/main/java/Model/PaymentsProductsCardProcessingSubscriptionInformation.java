@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsCardProcessingSubscriptionInformationFeatures;
+import Model.CardProessingFeatureSubscriptionItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +40,7 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
   private String selfServiceability = "NOT_SELF_SERVICEABLE";
 
   @SerializedName("features")
-  private Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features = null;
+  private Map<String, CardProessingFeatureSubscriptionItem> features = null;
 
   public PaymentsProductsCardProcessingSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -78,14 +78,14 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
     this.selfServiceability = selfServiceability;
   }
 
-  public PaymentsProductsCardProcessingSubscriptionInformation features(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public PaymentsProductsCardProcessingSubscriptionInformation features(Map<String, CardProessingFeatureSubscriptionItem> features) {
     this.features = features;
     return this;
   }
 
-  public PaymentsProductsCardProcessingSubscriptionInformation putFeaturesItem(String key, PaymentsProductsCardProcessingSubscriptionInformationFeatures featuresItem) {
+  public PaymentsProductsCardProcessingSubscriptionInformation putFeaturesItem(String key, CardProessingFeatureSubscriptionItem featuresItem) {
     if (this.features == null) {
-      this.features = new HashMap<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures>();
+      this.features = new HashMap<String, CardProessingFeatureSubscriptionItem>();
     }
     this.features.put(key, featuresItem);
     return this;
@@ -96,11 +96,11 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
    * @return features
   **/
   @ApiModelProperty(value = "This is a map. The allowed keys are below. Value should be an object containing a sole boolean property - enabled. <table>    <tr>       <td>cardPresent</td>    </tr>    <tr>       <td>cardNotPresent</td>    </tr> </table> ")
-  public Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> getFeatures() {
+  public Map<String, CardProessingFeatureSubscriptionItem> getFeatures() {
     return features;
   }
 
-  public void setFeatures(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public void setFeatures(Map<String, CardProessingFeatureSubscriptionItem> features) {
     this.features = features;
   }
 

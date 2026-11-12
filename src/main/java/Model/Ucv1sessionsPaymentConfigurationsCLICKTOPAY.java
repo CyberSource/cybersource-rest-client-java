@@ -23,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ucv1sessionsPaymentConfigurationsCLICKTOPAY
@@ -31,6 +33,9 @@ import java.io.IOException;
 public class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {
   @SerializedName("autoCheckEnrollment")
   private Boolean autoCheckEnrollment = null;
+
+  @SerializedName("allowedCardNetworks")
+  private List<String> allowedCardNetworks = null;
 
   public Ucv1sessionsPaymentConfigurationsCLICKTOPAY autoCheckEnrollment(Boolean autoCheckEnrollment) {
     this.autoCheckEnrollment = autoCheckEnrollment;
@@ -50,6 +55,32 @@ public class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {
     this.autoCheckEnrollment = autoCheckEnrollment;
   }
 
+  public Ucv1sessionsPaymentConfigurationsCLICKTOPAY allowedCardNetworks(List<String> allowedCardNetworks) {
+    this.allowedCardNetworks = allowedCardNetworks;
+    return this;
+  }
+
+  public Ucv1sessionsPaymentConfigurationsCLICKTOPAY addAllowedCardNetworksItem(String allowedCardNetworksItem) {
+    if (this.allowedCardNetworks == null) {
+      this.allowedCardNetworks = new ArrayList<String>();
+    }
+    this.allowedCardNetworks.add(allowedCardNetworksItem);
+    return this;
+  }
+
+   /**
+   * allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible.&lt;br&gt;&lt;br&gt;  Optional field: This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
+   * @return allowedCardNetworks
+  **/
+  @ApiModelProperty(value = "allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible.<br><br>  Optional field: This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
+  public List<String> getAllowedCardNetworks() {
+    return allowedCardNetworks;
+  }
+
+  public void setAllowedCardNetworks(List<String> allowedCardNetworks) {
+    this.allowedCardNetworks = allowedCardNetworks;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +91,13 @@ public class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {
       return false;
     }
     Ucv1sessionsPaymentConfigurationsCLICKTOPAY ucv1sessionsPaymentConfigurationsCLICKTOPAY = (Ucv1sessionsPaymentConfigurationsCLICKTOPAY) o;
-    return Objects.equals(this.autoCheckEnrollment, ucv1sessionsPaymentConfigurationsCLICKTOPAY.autoCheckEnrollment);
+    return Objects.equals(this.autoCheckEnrollment, ucv1sessionsPaymentConfigurationsCLICKTOPAY.autoCheckEnrollment) &&
+        Objects.equals(this.allowedCardNetworks, ucv1sessionsPaymentConfigurationsCLICKTOPAY.allowedCardNetworks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCheckEnrollment);
+    return Objects.hash(autoCheckEnrollment, allowedCardNetworks);
   }
 
 
@@ -93,6 +125,7 @@ public class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {
     sb.append("class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {\n");
     
     if (autoCheckEnrollment != null) sb.append("    autoCheckEnrollment: ").append(SENSITIVE_FIELD_PATTERN.matcher("autoCheckEnrollment").matches() ? "[REDACTED]" : toIndentedString(autoCheckEnrollment)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedCardNetworks").matches() ? "[REDACTED]" : toIndentedString(allowedCardNetworks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -112,6 +145,7 @@ public class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {
     sb.append("class Ucv1sessionsPaymentConfigurationsCLICKTOPAY {\n");
     
     if (autoCheckEnrollment != null) sb.append("    autoCheckEnrollment: ").append(toIndentedString(autoCheckEnrollment)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

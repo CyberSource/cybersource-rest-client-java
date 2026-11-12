@@ -38,6 +38,12 @@ public class ProgressRequestBody extends RequestBody {
         return requestBody.contentLength();
     }
 
+    // Propagates the wrapped body's one-shot flag so OkHttp won't attempt to replay it on retry.
+    @Override
+    public boolean isOneShot() {
+        return requestBody.isOneShot();
+    }
+
     @Override
     public void writeTo(BufferedSink sink) throws IOException {
         BufferedSink bufferedSink = Okio.buffer(sink(sink));

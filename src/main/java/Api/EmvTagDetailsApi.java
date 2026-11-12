@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.Body2;
+import Model.ParseEmvTagsRequest;
 import Model.TssV2GetEmvTags200Response;
 import Model.TssV2PostEmvTags200Response;
 
@@ -78,14 +78,20 @@ public class EmvTagDetailsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getEmvTags,getEmvTagsAsync,getEmvTagsWithHttpInfo,getEmvTagsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -109,10 +115,6 @@ public class EmvTagDetailsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -166,7 +168,6 @@ public class EmvTagDetailsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<TssV2GetEmvTags200Response> getEmvTagsWithHttpInfo() throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getEmvTagsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<TssV2GetEmvTags200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -181,8 +182,6 @@ public class EmvTagDetailsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call getEmvTagsAsync(final ApiCallback<TssV2GetEmvTags200Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -209,22 +208,28 @@ public class EmvTagDetailsApi {
     }
     /**
      * Build call for parseEmvTags
-     * @param body  (required)
+     * @param parseEmvTagsRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call parseEmvTagsCall(Body2 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call parseEmvTagsCall(ParseEmvTagsRequest parseEmvTagsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body2.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(parseEmvTagsRequest, ParseEmvTagsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "parseEmvTags,parseEmvTagsAsync,parseEmvTagsWithHttpInfo,parseEmvTagsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -248,10 +253,6 @@ public class EmvTagDetailsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -271,16 +272,16 @@ public class EmvTagDetailsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call parseEmvTagsValidateBeforeCall(Body2 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call parseEmvTagsValidateBeforeCall(ParseEmvTagsRequest parseEmvTagsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            logger.error("Missing the required parameter 'body' when calling parseEmvTags(Async)");
-            throw new ApiException("Missing the required parameter 'body' when calling parseEmvTags(Async)");
+        // verify the required parameter 'parseEmvTagsRequest' is set
+        if (parseEmvTagsRequest == null) {
+            logger.error("Missing the required parameter 'parseEmvTagsRequest' when calling parseEmvTags(Async)");
+            throw new ApiException("Missing the required parameter 'parseEmvTagsRequest' when calling parseEmvTags(Async)");
         }
         
         
-        okhttp3.Call call = parseEmvTagsCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = parseEmvTagsCall(parseEmvTagsRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -292,14 +293,14 @@ public class EmvTagDetailsApi {
     /**
      * Parse an EMV String
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
-     * @param body  (required)
+     * @param parseEmvTagsRequest  (required)
      * @return TssV2PostEmvTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public TssV2PostEmvTags200Response parseEmvTags(Body2 body) throws ApiException, ConfigException {
+    public TssV2PostEmvTags200Response parseEmvTags(ParseEmvTagsRequest parseEmvTagsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
-        ApiResponse<TssV2PostEmvTags200Response> resp = parseEmvTagsWithHttpInfo(body);
+        ApiResponse<TssV2PostEmvTags200Response> resp = parseEmvTagsWithHttpInfo(parseEmvTagsRequest);
         logger.info("CALL TO METHOD 'parseEmvTags' ENDED");
         return resp.getData();
     }
@@ -307,14 +308,13 @@ public class EmvTagDetailsApi {
     /**
      * Parse an EMV String
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
-     * @param body  (required)
+     * @param parseEmvTagsRequest  (required)
      * @return ApiResponse&lt;TssV2PostEmvTags200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(Body2 body) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = parseEmvTagsValidateBeforeCall(body, null, null);
+    public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(ParseEmvTagsRequest parseEmvTagsRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = parseEmvTagsValidateBeforeCall(parseEmvTagsRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2PostEmvTags200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -322,15 +322,13 @@ public class EmvTagDetailsApi {
     /**
      * Parse an EMV String (asynchronously)
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
-     * @param body  (required)
+     * @param parseEmvTagsRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call parseEmvTagsAsync(Body2 body, final ApiCallback<TssV2PostEmvTags200Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call parseEmvTagsAsync(ParseEmvTagsRequest parseEmvTagsRequest, final ApiCallback<TssV2PostEmvTags200Response> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -350,7 +348,7 @@ public class EmvTagDetailsApi {
             };
         }
 
-        okhttp3.Call call = parseEmvTagsValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = parseEmvTagsValidateBeforeCall(parseEmvTagsRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TssV2PostEmvTags200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

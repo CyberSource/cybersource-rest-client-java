@@ -13,17 +13,17 @@
 
 package Api;
 
-import Model.InlineResponse400;
-import Model.InlineResponse403;
-import Model.InlineResponse404;
-import Model.InlineResponse409;
-import Model.InlineResponse410;
-import Model.InlineResponse412;
-import Model.InlineResponse424;
-import Model.InlineResponse500;
 import Model.PatchCustomerPaymentInstrumentRequest;
 import Model.PaymentInstrumentList1;
 import Model.PostCustomerPaymentInstrumentRequest;
+import Model.Tms400ErrorResponse;
+import Model.Tms403ErrorResponse;
+import Model.Tms404ErrorResponse;
+import Model.Tms409ErrorResponse;
+import Model.Tms410ErrorResponse;
+import Model.Tms412ErrorResponse;
+import Model.Tms424ErrorResponse;
+import Model.Tms500ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 

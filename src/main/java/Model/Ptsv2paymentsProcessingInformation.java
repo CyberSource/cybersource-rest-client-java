@@ -189,6 +189,12 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("inquiryType")
   private String inquiryType = null;
 
+  @SerializedName("preAuthStatus")
+  private String preAuthStatus = null;
+
+  @SerializedName("preAuthResponseCode")
+  private String preAuthResponseCode = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -1088,6 +1094,42 @@ public class Ptsv2paymentsProcessingInformation {
     this.inquiryType = inquiryType;
   }
 
+  public Ptsv2paymentsProcessingInformation preAuthStatus(String preAuthStatus) {
+    this.preAuthStatus = preAuthStatus;
+    return this;
+  }
+
+   /**
+   * Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation.  Possible values: Approved, Rejected, Hold. 
+   * @return preAuthStatus
+  **/
+  @ApiModelProperty(value = "Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation.  Possible values: Approved, Rejected, Hold. ")
+  public String getPreAuthStatus() {
+    return preAuthStatus;
+  }
+
+  public void setPreAuthStatus(String preAuthStatus) {
+    this.preAuthStatus = preAuthStatus;
+  }
+
+  public Ptsv2paymentsProcessingInformation preAuthResponseCode(String preAuthResponseCode) {
+    this.preAuthResponseCode = preAuthResponseCode;
+    return this;
+  }
+
+   /**
+   * Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. 
+   * @return preAuthResponseCode
+  **/
+  @ApiModelProperty(value = "Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. ")
+  public String getPreAuthResponseCode() {
+    return preAuthResponseCode;
+  }
+
+  public void setPreAuthResponseCode(String preAuthResponseCode) {
+    this.preAuthResponseCode = preAuthResponseCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1146,12 +1188,14 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.walletTransactionIntent, ptsv2paymentsProcessingInformation.walletTransactionIntent) &&
         Objects.equals(this.destinationType, ptsv2paymentsProcessingInformation.destinationType) &&
         Objects.equals(this.programIndicators, ptsv2paymentsProcessingInformation.programIndicators) &&
-        Objects.equals(this.inquiryType, ptsv2paymentsProcessingInformation.inquiryType);
+        Objects.equals(this.inquiryType, ptsv2paymentsProcessingInformation.inquiryType) &&
+        Objects.equals(this.preAuthStatus, ptsv2paymentsProcessingInformation.preAuthStatus) &&
+        Objects.equals(this.preAuthResponseCode, ptsv2paymentsProcessingInformation.preAuthResponseCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, cardVerification, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId, amexIndirectModelType, walletTransactionIntent, destinationType, programIndicators, inquiryType);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, cardVerification, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, merchantVerificationValue, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId, amexIndirectModelType, walletTransactionIntent, destinationType, programIndicators, inquiryType, preAuthStatus, preAuthResponseCode);
   }
 
 
@@ -1227,6 +1271,8 @@ public class Ptsv2paymentsProcessingInformation {
     if (destinationType != null) sb.append("    destinationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("destinationType").matches() ? "[REDACTED]" : toIndentedString(destinationType)).append("\n");
     if (programIndicators != null) sb.append("    programIndicators: ").append(SENSITIVE_FIELD_PATTERN.matcher("programIndicators").matches() ? "[REDACTED]" : toIndentedString(programIndicators)).append("\n");
     if (inquiryType != null) sb.append("    inquiryType: ").append(SENSITIVE_FIELD_PATTERN.matcher("inquiryType").matches() ? "[REDACTED]" : toIndentedString(inquiryType)).append("\n");
+    if (preAuthStatus != null) sb.append("    preAuthStatus: ").append(SENSITIVE_FIELD_PATTERN.matcher("preAuthStatus").matches() ? "[REDACTED]" : toIndentedString(preAuthStatus)).append("\n");
+    if (preAuthResponseCode != null) sb.append("    preAuthResponseCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("preAuthResponseCode").matches() ? "[REDACTED]" : toIndentedString(preAuthResponseCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1294,6 +1340,8 @@ public class Ptsv2paymentsProcessingInformation {
     if (destinationType != null) sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
     if (programIndicators != null) sb.append("    programIndicators: ").append(toIndentedString(programIndicators)).append("\n");
     if (inquiryType != null) sb.append("    inquiryType: ").append(toIndentedString(inquiryType)).append("\n");
+    if (preAuthStatus != null) sb.append("    preAuthStatus: ").append(toIndentedString(preAuthStatus)).append("\n");
+    if (preAuthResponseCode != null) sb.append("    preAuthResponseCode: ").append(toIndentedString(preAuthResponseCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**buyerHistory** | [**Ptsv2paymentsRiskInformationBuyerHistory**](Ptsv2paymentsRiskInformationBuyerHistory.md) |  |  [optional]
+**buyerHistory** | [**Riskv1decisionsRiskInformationBuyerHistory**](Riskv1decisionsRiskInformationBuyerHistory.md) |  |  [optional]
 
 
 

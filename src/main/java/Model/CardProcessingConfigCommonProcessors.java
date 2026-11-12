@@ -17,8 +17,8 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.CardProcessingConfigCommonAcquirer;
 import Model.CardProcessingConfigCommonAcquirers;
-import Model.CardProcessingConfigCommonCurrencies1;
 import Model.CardProcessingConfigCommonPaymentTypes;
+import Model.CurrencyUpdatedConfiguration;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -64,7 +64,7 @@ public class CardProcessingConfigCommonProcessors {
   private Map<String, CardProcessingConfigCommonPaymentTypes> paymentTypes = null;
 
   @SerializedName("currencies")
-  private Map<String, CardProcessingConfigCommonCurrencies1> currencies = null;
+  private Map<String, CurrencyUpdatedConfiguration> currencies = null;
 
   @SerializedName("visaAggregatorId")
   private String visaAggregatorId = null;
@@ -370,14 +370,14 @@ public class CardProcessingConfigCommonProcessors {
     this.paymentTypes = paymentTypes;
   }
 
-  public CardProcessingConfigCommonProcessors currencies(Map<String, CardProcessingConfigCommonCurrencies1> currencies) {
+  public CardProcessingConfigCommonProcessors currencies(Map<String, CurrencyUpdatedConfiguration> currencies) {
     this.currencies = currencies;
     return this;
   }
 
-  public CardProcessingConfigCommonProcessors putCurrenciesItem(String key, CardProcessingConfigCommonCurrencies1 currenciesItem) {
+  public CardProcessingConfigCommonProcessors putCurrenciesItem(String key, CurrencyUpdatedConfiguration currenciesItem) {
     if (this.currencies == null) {
-      this.currencies = new HashMap<String, CardProcessingConfigCommonCurrencies1>();
+      this.currencies = new HashMap<String, CurrencyUpdatedConfiguration>();
     }
     this.currencies.put(key, currenciesItem);
     return this;
@@ -388,11 +388,11 @@ public class CardProcessingConfigCommonProcessors {
    * @return currencies
   **/
   @ApiModelProperty(value = "Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)")
-  public Map<String, CardProcessingConfigCommonCurrencies1> getCurrencies() {
+  public Map<String, CurrencyUpdatedConfiguration> getCurrencies() {
     return currencies;
   }
 
-  public void setCurrencies(Map<String, CardProcessingConfigCommonCurrencies1> currencies) {
+  public void setCurrencies(Map<String, CurrencyUpdatedConfiguration> currencies) {
     this.currencies = currencies;
   }
 

@@ -2,7 +2,6 @@ package Invokers;
 
 import okhttp3.Authenticator;
 import okhttp3.logging.HttpLoggingInterceptor;
-import utilities.interceptors.RetryInterceptor;
 import utilities.listeners.NetworkEventListener;
 
 import javax.net.ssl.HostnameVerifier;
@@ -12,7 +11,6 @@ import java.net.Proxy;
 
 public class HttpClientFactoryAdditionalSettings {
     private HttpLoggingInterceptor customLoggingInterceptor;
-    private RetryInterceptor customRetryInterceptor;
     private SSLSocketFactory customSSLSocketFactory;
     private X509TrustManager customX509TrustManager;
     private HostnameVerifier customHostnameVerifier;
@@ -27,14 +25,6 @@ public class HttpClientFactoryAdditionalSettings {
 
     public void setCustomLoggingInterceptor(HttpLoggingInterceptor customLoggingInterceptor) {
         this.customLoggingInterceptor = customLoggingInterceptor;
-    }
-
-    public RetryInterceptor getCustomRetryInterceptor() {
-        return customRetryInterceptor;
-    }
-
-    public void setCustomRetryInterceptor(RetryInterceptor customRetryInterceptor) {
-        this.customRetryInterceptor = customRetryInterceptor;
     }
 
     public SSLSocketFactory getCustomSSLSocketFactory() {
@@ -91,5 +81,22 @@ public class HttpClientFactoryAdditionalSettings {
 
     public void setCustomProxyAuthenticator(Authenticator customProxyAuthenticator) {
         this.customProxyAuthenticator = customProxyAuthenticator;
+    }
+
+    /**
+     * Shallow copy used to apply a per-call override (e.g. forcing retry off for a payment
+     * POST) without mutating the merchant's shared settings instance.
+     */
+    HttpClientFactoryAdditionalSettings copy() {
+        HttpClientFactoryAdditionalSettings copy = new HttpClientFactoryAdditionalSettings();
+        copy.customLoggingInterceptor = this.customLoggingInterceptor;
+        copy.customSSLSocketFactory = this.customSSLSocketFactory;
+        copy.customX509TrustManager = this.customX509TrustManager;
+        copy.customHostnameVerifier = this.customHostnameVerifier;
+        copy.customRetryOnConnectionFailure = this.customRetryOnConnectionFailure;
+        copy.customNetworkEventListener = this.customNetworkEventListener;
+        copy.customProxy = this.customProxy;
+        copy.customProxyAuthenticator = this.customProxyAuthenticator;
+        return copy;
     }
 }

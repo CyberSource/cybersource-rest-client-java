@@ -15,12 +15,12 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PullFunds201ResponseLinksCustomer;
-import Model.PullFunds201ResponseLinksInstrumentIdentifier;
-import Model.PullFunds201ResponseLinksPaymentInstrument;
-import Model.PullFunds201ResponseLinksRefund;
-import Model.PullFunds201ResponseLinksReversal;
-import Model.PullFunds201ResponseLinksSelf;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf10;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf5;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf6;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf7;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf8;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf9;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,24 +36,24 @@ import java.io.IOException;
 
 public class PullFunds201ResponseLinks {
   @SerializedName("self")
-  private PullFunds201ResponseLinksSelf self = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf5 self = null;
 
   @SerializedName("reversal")
-  private PullFunds201ResponseLinksReversal reversal = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf6 reversal = null;
 
   @SerializedName("refund")
-  private PullFunds201ResponseLinksRefund refund = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf7 refund = null;
 
   @SerializedName("customer")
-  private PullFunds201ResponseLinksCustomer customer = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf8 customer = null;
 
   @SerializedName("paymentInstrument")
-  private PullFunds201ResponseLinksPaymentInstrument paymentInstrument = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf9 paymentInstrument = null;
 
   @SerializedName("instrumentIdentifier")
-  private PullFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf10 instrumentIdentifier = null;
 
-  public PullFunds201ResponseLinks self(PullFunds201ResponseLinksSelf self) {
+  public PullFunds201ResponseLinks self(PtsV2PaymentsPost201ResponseLinksSelf5 self) {
     this.self = self;
     return this;
   }
@@ -63,15 +63,15 @@ public class PullFunds201ResponseLinks {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksSelf getSelf() {
+  public PtsV2PaymentsPost201ResponseLinksSelf5 getSelf() {
     return self;
   }
 
-  public void setSelf(PullFunds201ResponseLinksSelf self) {
+  public void setSelf(PtsV2PaymentsPost201ResponseLinksSelf5 self) {
     this.self = self;
   }
 
-  public PullFunds201ResponseLinks reversal(PullFunds201ResponseLinksReversal reversal) {
+  public PullFunds201ResponseLinks reversal(PtsV2PaymentsPost201ResponseLinksSelf6 reversal) {
     this.reversal = reversal;
     return this;
   }
@@ -81,15 +81,15 @@ public class PullFunds201ResponseLinks {
    * @return reversal
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksReversal getReversal() {
+  public PtsV2PaymentsPost201ResponseLinksSelf6 getReversal() {
     return reversal;
   }
 
-  public void setReversal(PullFunds201ResponseLinksReversal reversal) {
+  public void setReversal(PtsV2PaymentsPost201ResponseLinksSelf6 reversal) {
     this.reversal = reversal;
   }
 
-  public PullFunds201ResponseLinks refund(PullFunds201ResponseLinksRefund refund) {
+  public PullFunds201ResponseLinks refund(PtsV2PaymentsPost201ResponseLinksSelf7 refund) {
     this.refund = refund;
     return this;
   }
@@ -99,15 +99,15 @@ public class PullFunds201ResponseLinks {
    * @return refund
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksRefund getRefund() {
+  public PtsV2PaymentsPost201ResponseLinksSelf7 getRefund() {
     return refund;
   }
 
-  public void setRefund(PullFunds201ResponseLinksRefund refund) {
+  public void setRefund(PtsV2PaymentsPost201ResponseLinksSelf7 refund) {
     this.refund = refund;
   }
 
-  public PullFunds201ResponseLinks customer(PullFunds201ResponseLinksCustomer customer) {
+  public PullFunds201ResponseLinks customer(PtsV2PaymentsPost201ResponseLinksSelf8 customer) {
     this.customer = customer;
     return this;
   }
@@ -117,15 +117,15 @@ public class PullFunds201ResponseLinks {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksCustomer getCustomer() {
+  public PtsV2PaymentsPost201ResponseLinksSelf8 getCustomer() {
     return customer;
   }
 
-  public void setCustomer(PullFunds201ResponseLinksCustomer customer) {
+  public void setCustomer(PtsV2PaymentsPost201ResponseLinksSelf8 customer) {
     this.customer = customer;
   }
 
-  public PullFunds201ResponseLinks paymentInstrument(PullFunds201ResponseLinksPaymentInstrument paymentInstrument) {
+  public PullFunds201ResponseLinks paymentInstrument(PtsV2PaymentsPost201ResponseLinksSelf9 paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
     return this;
   }
@@ -135,15 +135,15 @@ public class PullFunds201ResponseLinks {
    * @return paymentInstrument
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksPaymentInstrument getPaymentInstrument() {
+  public PtsV2PaymentsPost201ResponseLinksSelf9 getPaymentInstrument() {
     return paymentInstrument;
   }
 
-  public void setPaymentInstrument(PullFunds201ResponseLinksPaymentInstrument paymentInstrument) {
+  public void setPaymentInstrument(PtsV2PaymentsPost201ResponseLinksSelf9 paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
   }
 
-  public PullFunds201ResponseLinks instrumentIdentifier(PullFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier) {
+  public PullFunds201ResponseLinks instrumentIdentifier(PtsV2PaymentsPost201ResponseLinksSelf10 instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -153,11 +153,11 @@ public class PullFunds201ResponseLinks {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public PullFunds201ResponseLinksInstrumentIdentifier getInstrumentIdentifier() {
+  public PtsV2PaymentsPost201ResponseLinksSelf10 getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(PullFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(PtsV2PaymentsPost201ResponseLinksSelf10 instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 

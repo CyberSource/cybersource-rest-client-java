@@ -13,8 +13,8 @@
 
 package Api;
 
+import Model.Flex400ErrorResponse;
 import Model.GenerateFlexAPICaptureContextRequest;
-import Model.InlineResponse4001;
 import org.junit.Test;
 import org.junit.Ignore;
 

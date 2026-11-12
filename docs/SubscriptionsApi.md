@@ -347,7 +347,7 @@ No authorization required
 
 <a name="subscriptionsIdPaymentsPut"></a>
 # **subscriptionsIdPaymentsPut**
-> GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(id, updatePayments)
+> UpdateSubscriptionsPaymentsResponse subscriptionsIdPaymentsPut(id, updatePayments)
 
 Update Payments for a subscription
 
@@ -364,7 +364,7 @@ SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 UpdatePayments updatePayments = new UpdatePayments(); // UpdatePayments | Modify payments of a subscription
 try {
-    GetSubscriptionsPaymentsResponse1 result = apiInstance.subscriptionsIdPaymentsPut(id, updatePayments);
+    UpdateSubscriptionsPaymentsResponse result = apiInstance.subscriptionsIdPaymentsPut(id, updatePayments);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#subscriptionsIdPaymentsPut");
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSubscriptionsPaymentsResponse1**](GetSubscriptionsPaymentsResponse1.md)
+[**UpdateSubscriptionsPaymentsResponse**](UpdateSubscriptionsPaymentsResponse.md)
 
 ### Authorization
 

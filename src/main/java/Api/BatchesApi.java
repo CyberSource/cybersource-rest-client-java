@@ -29,12 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.Body;
-import Model.InlineResponse20012;
-import Model.InlineResponse20013;
-import Model.InlineResponse20014;
-import Model.InlineResponse202;
-import Model.InlineResponse4013;
+import Model.BatchCreateResponse;
+import Model.BatchReportResponse;
+import Model.BatchStatusResponse;
+import Model.BatchesListResponse;
+import Model.InlineResponse4011;
+import Model.PostBatchRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -82,14 +82,20 @@ public class BatchesApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getBatchReport,getBatchReportAsync,getBatchReportWithHttpInfo,getBatchReportCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -114,10 +120,6 @@ public class BatchesApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -159,13 +161,13 @@ public class BatchesApi {
      * Retrieve a Batch Report
      * **Get Batch Report**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates &amp; card type. - Response record information including response code, reason, token ids, masked card number, expiration dates &amp; card type. 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return InlineResponse20014
+     * @return BatchReportResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20014 getBatchReport(String batchId) throws ApiException, ConfigException {
+    public BatchReportResponse getBatchReport(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchReport' STARTED");
-        ApiResponse<InlineResponse20014> resp = getBatchReportWithHttpInfo(batchId);
+        ApiResponse<BatchReportResponse> resp = getBatchReportWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchReport' ENDED");
         return resp.getData();
     }
@@ -174,14 +176,13 @@ public class BatchesApi {
      * Retrieve a Batch Report
      * **Get Batch Report**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates &amp; card type. - Response record information including response code, reason, token ids, masked card number, expiration dates &amp; card type. 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;BatchReportResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20014> getBatchReportWithHttpInfo(String batchId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BatchReportResponse> getBatchReportWithHttpInfo(String batchId) throws ApiException, ConfigException {
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchReportResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -194,9 +195,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<InlineResponse20014> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getBatchReportAsync(String batchId, final ApiCallback<BatchReportResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -217,7 +216,7 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchReportResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -234,14 +233,20 @@ public class BatchesApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getBatchStatus,getBatchStatusAsync,getBatchStatusWithHttpInfo,getBatchStatusCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -266,10 +271,6 @@ public class BatchesApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -311,13 +312,13 @@ public class BatchesApi {
      * Retrieve a Batch Status
      * **Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return InlineResponse20013
+     * @return BatchStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20013 getBatchStatus(String batchId) throws ApiException, ConfigException {
+    public BatchStatusResponse getBatchStatus(String batchId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
-        ApiResponse<InlineResponse20013> resp = getBatchStatusWithHttpInfo(batchId);
+        ApiResponse<BatchStatusResponse> resp = getBatchStatusWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchStatus' ENDED");
         return resp.getData();
     }
@@ -326,14 +327,13 @@ public class BatchesApi {
      * Retrieve a Batch Status
      * **Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param batchId Unique identification number assigned to the submitted request. (required)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;BatchStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20013> getBatchStatusWithHttpInfo(String batchId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BatchStatusResponse> getBatchStatusWithHttpInfo(String batchId) throws ApiException, ConfigException {
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchStatusResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -346,9 +346,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<InlineResponse20013> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getBatchStatusAsync(String batchId, final ApiCallback<BatchStatusResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -369,7 +367,7 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchStatusResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -389,14 +387,20 @@ public class BatchesApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "getBatchesList,getBatchesListAsync,getBatchesListWithHttpInfo,getBatchesListCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -428,10 +432,6 @@ public class BatchesApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -470,13 +470,13 @@ public class BatchesApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. (optional, default to 20)
      * @param fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
-     * @return InlineResponse20012
+     * @return BatchesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20012 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
+    public BatchesListResponse getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'getBatchesList' STARTED");
-        ApiResponse<InlineResponse20012> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
+        ApiResponse<BatchesListResponse> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
         logger.info("CALL TO METHOD 'getBatchesList' ENDED");
         return resp.getData();
     }
@@ -488,14 +488,13 @@ public class BatchesApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. (optional, default to 20)
      * @param fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;BatchesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20012> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BatchesListResponse> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException, ConfigException {
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchesListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -511,9 +510,7 @@ public class BatchesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<InlineResponse20012> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call getBatchesListAsync(Long offset, Long limit, String fromDate, String toDate, final ApiCallback<BatchesListResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -534,28 +531,34 @@ public class BatchesApi {
         }
 
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<BatchesListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for postBatch
-     * @param body  (required)
+     * @param postBatchRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postBatchCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call postBatchCall(PostBatchRequest postBatchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postBatchRequest, PostBatchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postBatch,postBatchAsync,postBatchWithHttpInfo,postBatchCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -579,10 +582,6 @@ public class BatchesApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -602,16 +601,16 @@ public class BatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postBatchValidateBeforeCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call postBatchValidateBeforeCall(PostBatchRequest postBatchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            logger.error("Missing the required parameter 'body' when calling postBatch(Async)");
-            throw new ApiException("Missing the required parameter 'body' when calling postBatch(Async)");
+        // verify the required parameter 'postBatchRequest' is set
+        if (postBatchRequest == null) {
+            logger.error("Missing the required parameter 'postBatchRequest' when calling postBatch(Async)");
+            throw new ApiException("Missing the required parameter 'postBatchRequest' when calling postBatch(Async)");
         }
         
         
-        okhttp3.Call call = postBatchCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = postBatchCall(postBatchRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -623,14 +622,14 @@ public class BatchesApi {
     /**
      * Create a Batch
      * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
-     * @param body  (required)
-     * @return InlineResponse202
+     * @param postBatchRequest  (required)
+     * @return BatchCreateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse202 postBatch(Body body) throws ApiException, ConfigException {
+    public BatchCreateResponse postBatch(PostBatchRequest postBatchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postBatch' STARTED");
-        ApiResponse<InlineResponse202> resp = postBatchWithHttpInfo(body);
+        ApiResponse<BatchCreateResponse> resp = postBatchWithHttpInfo(postBatchRequest);
         logger.info("CALL TO METHOD 'postBatch' ENDED");
         return resp.getData();
     }
@@ -638,30 +637,27 @@ public class BatchesApi {
     /**
      * Create a Batch
      * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
-     * @param body  (required)
-     * @return ApiResponse&lt;InlineResponse202&gt;
+     * @param postBatchRequest  (required)
+     * @return ApiResponse&lt;BatchCreateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse202> postBatchWithHttpInfo(Body body) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = postBatchValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
+    public ApiResponse<BatchCreateResponse> postBatchWithHttpInfo(PostBatchRequest postBatchRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = postBatchValidateBeforeCall(postBatchRequest, null, null);
+        Type localVarReturnType = new TypeToken<BatchCreateResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Create a Batch (asynchronously)
      * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
-     * @param body  (required)
+     * @param postBatchRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postBatchAsync(Body body, final ApiCallback<InlineResponse202> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postBatchAsync(PostBatchRequest postBatchRequest, final ApiCallback<BatchCreateResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -681,8 +677,8 @@ public class BatchesApi {
             };
         }
 
-        okhttp3.Call call = postBatchValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
+        okhttp3.Call call = postBatchValidateBeforeCall(postBatchRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchCreateResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -65,6 +65,9 @@ public class Riskv1decisionsOrderInformationLineItems {
   @SerializedName("distributorProductSku")
   private String distributorProductSku = null;
 
+  @SerializedName("productType")
+  private String productType = null;
+
   @SerializedName("passenger")
   private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
@@ -280,6 +283,24 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.distributorProductSku = distributorProductSku;
   }
 
+  public Riskv1decisionsOrderInformationLineItems productType(String productType) {
+    this.productType = productType;
+    return this;
+  }
+
+   /**
+   * Type of product (e.g., Prepaid, Postpaid, Electronic Devices, Flight, Hotel).
+   * @return productType
+  **/
+  @ApiModelProperty(value = "Type of product (e.g., Prepaid, Postpaid, Electronic Devices, Flight, Hotel).")
+  public String getProductType() {
+    return productType;
+  }
+
+  public void setProductType(String productType) {
+    this.productType = productType;
+  }
+
   public Riskv1decisionsOrderInformationLineItems passenger(Ptsv2paymentsOrderInformationPassenger passenger) {
     this.passenger = passenger;
     return this;
@@ -407,6 +428,7 @@ public class Riskv1decisionsOrderInformationLineItems {
         Objects.equals(this.productCode, riskv1decisionsOrderInformationLineItems.productCode) &&
         Objects.equals(this.gift, riskv1decisionsOrderInformationLineItems.gift) &&
         Objects.equals(this.distributorProductSku, riskv1decisionsOrderInformationLineItems.distributorProductSku) &&
+        Objects.equals(this.productType, riskv1decisionsOrderInformationLineItems.productType) &&
         Objects.equals(this.passenger, riskv1decisionsOrderInformationLineItems.passenger) &&
         Objects.equals(this.shippingDestinationTypes, riskv1decisionsOrderInformationLineItems.shippingDestinationTypes) &&
         Objects.equals(this.taxAmount, riskv1decisionsOrderInformationLineItems.taxAmount) &&
@@ -416,7 +438,7 @@ public class Riskv1decisionsOrderInformationLineItems {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productRisk, productDescription, productName, productCode, gift, distributorProductSku, passenger, shippingDestinationTypes, taxAmount, allowedExportCountries, restrictedExportCountries);
+    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productRisk, productDescription, productName, productCode, gift, distributorProductSku, productType, passenger, shippingDestinationTypes, taxAmount, allowedExportCountries, restrictedExportCountries);
   }
 
 
@@ -454,6 +476,7 @@ public class Riskv1decisionsOrderInformationLineItems {
     if (productCode != null) sb.append("    productCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("productCode").matches() ? "[REDACTED]" : toIndentedString(productCode)).append("\n");
     if (gift != null) sb.append("    gift: ").append(SENSITIVE_FIELD_PATTERN.matcher("gift").matches() ? "[REDACTED]" : toIndentedString(gift)).append("\n");
     if (distributorProductSku != null) sb.append("    distributorProductSku: ").append(SENSITIVE_FIELD_PATTERN.matcher("distributorProductSku").matches() ? "[REDACTED]" : toIndentedString(distributorProductSku)).append("\n");
+    if (productType != null) sb.append("    productType: ").append(SENSITIVE_FIELD_PATTERN.matcher("productType").matches() ? "[REDACTED]" : toIndentedString(productType)).append("\n");
     if (passenger != null) sb.append("    passenger: ").append(SENSITIVE_FIELD_PATTERN.matcher("passenger").matches() ? "[REDACTED]" : toIndentedString(passenger)).append("\n");
     if (shippingDestinationTypes != null) sb.append("    shippingDestinationTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingDestinationTypes").matches() ? "[REDACTED]" : toIndentedString(shippingDestinationTypes)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxAmount").matches() ? "[REDACTED]" : toIndentedString(taxAmount)).append("\n");
@@ -488,6 +511,7 @@ public class Riskv1decisionsOrderInformationLineItems {
     if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     if (gift != null) sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
     if (distributorProductSku != null) sb.append("    distributorProductSku: ").append(toIndentedString(distributorProductSku)).append("\n");
+    if (productType != null) sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     if (passenger != null) sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
     if (shippingDestinationTypes != null) sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
     if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");

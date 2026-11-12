@@ -17,7 +17,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsRiskInformationAuxiliaryData;
 import Model.Ptsv2paymentsRiskInformationBuyerHistory;
+import Model.Ptsv2paymentsRiskInformationExternalScore;
 import Model.Ptsv2paymentsRiskInformationProfile;
+import Model.Ptsv2paymentsRiskInformationStore;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,6 +28,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +49,18 @@ public class Ptsv2paymentsRiskInformation {
 
   @SerializedName("auxiliaryData")
   private List<Ptsv2paymentsRiskInformationAuxiliaryData> auxiliaryData = null;
+
+  @SerializedName("store")
+  private Ptsv2paymentsRiskInformationStore store = null;
+
+  @SerializedName("authenticationType")
+  private String authenticationType = null;
+
+  @SerializedName("pickupDays")
+  private BigDecimal pickupDays = null;
+
+  @SerializedName("externalScore")
+  private Ptsv2paymentsRiskInformationExternalScore externalScore = null;
 
   public Ptsv2paymentsRiskInformation profile(Ptsv2paymentsRiskInformationProfile profile) {
     this.profile = profile;
@@ -127,6 +142,78 @@ public class Ptsv2paymentsRiskInformation {
     this.auxiliaryData = auxiliaryData;
   }
 
+  public Ptsv2paymentsRiskInformation store(Ptsv2paymentsRiskInformationStore store) {
+    this.store = store;
+    return this;
+  }
+
+   /**
+   * Get store
+   * @return store
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRiskInformationStore getStore() {
+    return store;
+  }
+
+  public void setStore(Ptsv2paymentsRiskInformationStore store) {
+    this.store = store;
+  }
+
+  public Ptsv2paymentsRiskInformation authenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+    return this;
+  }
+
+   /**
+   * • 01 &#x3D; Static Passcode • 02 &#x3D; SMS OTP • 03 &#x3D; Key fob or EMV card reader OTP • 04 &#x3D; App OTP • 05 &#x3D; OTP Other • 07 &#x3D; OOB Biometrics • 08 &#x3D; OOB Login • 09 &#x3D; OOB Other • 10 &#x3D; Other • 11 &#x3D; Push Confirmation • 12 &#x3D; Decoupled • 13 &#x3D; WebAuthn • 14 &#x3D; SPC • 15 &#x3D; Behavioural biometrics 
+   * @return authenticationType
+  **/
+  @ApiModelProperty(value = "• 01 = Static Passcode • 02 = SMS OTP • 03 = Key fob or EMV card reader OTP • 04 = App OTP • 05 = OTP Other • 07 = OOB Biometrics • 08 = OOB Login • 09 = OOB Other • 10 = Other • 11 = Push Confirmation • 12 = Decoupled • 13 = WebAuthn • 14 = SPC • 15 = Behavioural biometrics ")
+  public String getAuthenticationType() {
+    return authenticationType;
+  }
+
+  public void setAuthenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+  }
+
+  public Ptsv2paymentsRiskInformation pickupDays(BigDecimal pickupDays) {
+    this.pickupDays = pickupDays;
+    return this;
+  }
+
+   /**
+   * Number of days between transaction date and rental pickup date 
+   * @return pickupDays
+  **/
+  @ApiModelProperty(value = "Number of days between transaction date and rental pickup date ")
+  public BigDecimal getPickupDays() {
+    return pickupDays;
+  }
+
+  public void setPickupDays(BigDecimal pickupDays) {
+    this.pickupDays = pickupDays;
+  }
+
+  public Ptsv2paymentsRiskInformation externalScore(Ptsv2paymentsRiskInformationExternalScore externalScore) {
+    this.externalScore = externalScore;
+    return this;
+  }
+
+   /**
+   * Get externalScore
+   * @return externalScore
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRiskInformationExternalScore getExternalScore() {
+    return externalScore;
+  }
+
+  public void setExternalScore(Ptsv2paymentsRiskInformationExternalScore externalScore) {
+    this.externalScore = externalScore;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +227,16 @@ public class Ptsv2paymentsRiskInformation {
     return Objects.equals(this.profile, ptsv2paymentsRiskInformation.profile) &&
         Objects.equals(this.eventType, ptsv2paymentsRiskInformation.eventType) &&
         Objects.equals(this.buyerHistory, ptsv2paymentsRiskInformation.buyerHistory) &&
-        Objects.equals(this.auxiliaryData, ptsv2paymentsRiskInformation.auxiliaryData);
+        Objects.equals(this.auxiliaryData, ptsv2paymentsRiskInformation.auxiliaryData) &&
+        Objects.equals(this.store, ptsv2paymentsRiskInformation.store) &&
+        Objects.equals(this.authenticationType, ptsv2paymentsRiskInformation.authenticationType) &&
+        Objects.equals(this.pickupDays, ptsv2paymentsRiskInformation.pickupDays) &&
+        Objects.equals(this.externalScore, ptsv2paymentsRiskInformation.externalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, eventType, buyerHistory, auxiliaryData);
+    return Objects.hash(profile, eventType, buyerHistory, auxiliaryData, store, authenticationType, pickupDays, externalScore);
   }
 
 
@@ -176,6 +267,10 @@ public class Ptsv2paymentsRiskInformation {
     if (eventType != null) sb.append("    eventType: ").append(SENSITIVE_FIELD_PATTERN.matcher("eventType").matches() ? "[REDACTED]" : toIndentedString(eventType)).append("\n");
     if (buyerHistory != null) sb.append("    buyerHistory: ").append(SENSITIVE_FIELD_PATTERN.matcher("buyerHistory").matches() ? "[REDACTED]" : toIndentedString(buyerHistory)).append("\n");
     if (auxiliaryData != null) sb.append("    auxiliaryData: ").append(SENSITIVE_FIELD_PATTERN.matcher("auxiliaryData").matches() ? "[REDACTED]" : toIndentedString(auxiliaryData)).append("\n");
+    if (store != null) sb.append("    store: ").append(SENSITIVE_FIELD_PATTERN.matcher("store").matches() ? "[REDACTED]" : toIndentedString(store)).append("\n");
+    if (authenticationType != null) sb.append("    authenticationType: ").append(SENSITIVE_FIELD_PATTERN.matcher("authenticationType").matches() ? "[REDACTED]" : toIndentedString(authenticationType)).append("\n");
+    if (pickupDays != null) sb.append("    pickupDays: ").append(SENSITIVE_FIELD_PATTERN.matcher("pickupDays").matches() ? "[REDACTED]" : toIndentedString(pickupDays)).append("\n");
+    if (externalScore != null) sb.append("    externalScore: ").append(SENSITIVE_FIELD_PATTERN.matcher("externalScore").matches() ? "[REDACTED]" : toIndentedString(externalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -198,6 +293,10 @@ public class Ptsv2paymentsRiskInformation {
     if (eventType != null) sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     if (buyerHistory != null) sb.append("    buyerHistory: ").append(toIndentedString(buyerHistory)).append("\n");
     if (auxiliaryData != null) sb.append("    auxiliaryData: ").append(toIndentedString(auxiliaryData)).append("\n");
+    if (store != null) sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    if (authenticationType != null) sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    if (pickupDays != null) sb.append("    pickupDays: ").append(toIndentedString(pickupDays)).append("\n");
+    if (externalScore != null) sb.append("    externalScore: ").append(toIndentedString(externalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
