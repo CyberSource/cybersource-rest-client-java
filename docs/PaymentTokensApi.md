@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="retrieveOrDeletePaymentToken"></a>
 # **retrieveOrDeletePaymentToken**
-> InlineResponse201 retrieveOrDeletePaymentToken(request)
+> RetrieveOrDeletePaymentTokenResponse retrieveOrDeletePaymentToken(paymentTokenRequest)
 
 Retrieve or Delete Payment Token
 
@@ -23,9 +23,9 @@ This API can be used in two flavours - for retrieval or deletion of vault id.
 
 
 PaymentTokensApi apiInstance = new PaymentTokensApi();
-Request request = new Request(); // Request | 
+PaymentTokenRequest paymentTokenRequest = new PaymentTokenRequest(); // PaymentTokenRequest | 
 try {
-    InlineResponse201 result = apiInstance.retrieveOrDeletePaymentToken(request);
+    RetrieveOrDeletePaymentTokenResponse result = apiInstance.retrieveOrDeletePaymentToken(paymentTokenRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentTokensApi#retrieveOrDeletePaymentToken");
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Request**](Request.md)|  |
+ **paymentTokenRequest** | [**PaymentTokenRequest**](PaymentTokenRequest.md)|  |
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**RetrieveOrDeletePaymentTokenResponse**](RetrieveOrDeletePaymentTokenResponse.md)
 
 ### Authorization
 

@@ -13,11 +13,11 @@
 
 package Api;
 
-import Model.Body;
-import Model.InlineResponse2013;
-import Model.InlineResponse4003;
-import Model.InlineResponse401;
-import Model.InlineResponse5022;
+import Model.CreateFxRatesRequest;
+import Model.CreateFxRatesResponse;
+import Model.MmFxRates400ErrorResponse;
+import Model.MmFxRates401ErrorResponse;
+import Model.MmFxRates502ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,14 +46,14 @@ public class ForeignExchangeRatesApiTest {
      */
     @Test
     public void createFxRatesTest() throws Exception {
-        Body body = null;
+        CreateFxRatesRequest createFxRatesRequest = null;
         String contentType = null;
         String xRequestid = null;
         String vCMerchantId = null;
         String vCPermissions = null;
         String vCCorrelationId = null;
         String vCOrganizationId = null;
-        InlineResponse2013 response = api.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+        CreateFxRatesResponse response = api.createFxRates(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
 
         // TODO: test validations
     }

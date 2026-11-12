@@ -51,7 +51,7 @@ No authorization required
 
 <a name="parseEmvTags"></a>
 # **parseEmvTags**
-> TssV2PostEmvTags200Response parseEmvTags(body)
+> TssV2PostEmvTags200Response parseEmvTags(parseEmvTagsRequest)
 
 Parse an EMV String
 
@@ -65,9 +65,9 @@ Pass an EMV Tag-Length-Value (TLV) string for parsing.
 
 
 EmvTagDetailsApi apiInstance = new EmvTagDetailsApi();
-Body2 body = new Body2(); // Body2 | 
+ParseEmvTagsRequest parseEmvTagsRequest = new ParseEmvTagsRequest(); // ParseEmvTagsRequest | 
 try {
-    TssV2PostEmvTags200Response result = apiInstance.parseEmvTags(body);
+    TssV2PostEmvTags200Response result = apiInstance.parseEmvTags(parseEmvTagsRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EmvTagDetailsApi#parseEmvTags");
@@ -79,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body2**](Body2.md)|  |
+ **parseEmvTagsRequest** | [**ParseEmvTagsRequest**](ParseEmvTagsRequest.md)|  |
 
 ### Return type
 

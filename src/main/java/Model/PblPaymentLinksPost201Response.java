@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.GetSubscriptionsPaymentsResponse1Links;
 import Model.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition;
 import Model.Iplv2paymentlinksProcessingInformation;
 import Model.PblPaymentLinksPost201ResponseOrderInformation;
 import Model.PblPaymentLinksPost201ResponsePurchaseInformation;
+import Model.UpdateSubscriptionsPaymentsResponseLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,7 @@ import java.util.List;
 
 public class PblPaymentLinksPost201Response {
   @SerializedName("_links")
-  private GetSubscriptionsPaymentsResponse1Links links = null;
+  private UpdateSubscriptionsPaymentsResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -60,7 +60,7 @@ public class PblPaymentLinksPost201Response {
   @SerializedName("merchantDefinedFieldValuesWithDefinition")
   private List<InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition> merchantDefinedFieldValuesWithDefinition = null;
 
-  public PblPaymentLinksPost201Response links(GetSubscriptionsPaymentsResponse1Links links) {
+  public PblPaymentLinksPost201Response links(UpdateSubscriptionsPaymentsResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -70,11 +70,11 @@ public class PblPaymentLinksPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public GetSubscriptionsPaymentsResponse1Links getLinks() {
+  public UpdateSubscriptionsPaymentsResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(GetSubscriptionsPaymentsResponse1Links links) {
+  public void setLinks(UpdateSubscriptionsPaymentsResponseLinks links) {
     this.links = links;
   }
 

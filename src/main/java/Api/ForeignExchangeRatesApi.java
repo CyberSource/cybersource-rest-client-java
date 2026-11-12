@@ -29,11 +29,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.Body;
-import Model.InlineResponse2013;
-import Model.InlineResponse4003;
-import Model.InlineResponse401;
-import Model.InlineResponse5022;
+import Model.CreateFxRatesRequest;
+import Model.CreateFxRatesResponse;
+import Model.MmFxRates400ErrorResponse;
+import Model.MmFxRates401ErrorResponse;
+import Model.MmFxRates502ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -70,7 +70,7 @@ public class ForeignExchangeRatesApi {
 
     /**
      * Build call for createFxRates
-     * @param body  (required)
+     * @param createFxRatesRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -83,15 +83,21 @@ public class ForeignExchangeRatesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createFxRatesCall(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call createFxRatesCall(CreateFxRatesRequest createFxRatesRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createFxRatesRequest, CreateFxRatesRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createFxRates,createFxRatesAsync,createFxRatesWithHttpInfo,createFxRatesCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -127,10 +133,6 @@ public class ForeignExchangeRatesApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -150,12 +152,12 @@ public class ForeignExchangeRatesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFxRatesValidateBeforeCall(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call createFxRatesValidateBeforeCall(CreateFxRatesRequest createFxRatesRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            logger.error("Missing the required parameter 'body' when calling createFxRates(Async)");
-            throw new ApiException("Missing the required parameter 'body' when calling createFxRates(Async)");
+        // verify the required parameter 'createFxRatesRequest' is set
+        if (createFxRatesRequest == null) {
+            logger.error("Missing the required parameter 'createFxRatesRequest' when calling createFxRates(Async)");
+            throw new ApiException("Missing the required parameter 'createFxRatesRequest' when calling createFxRates(Async)");
         }
         
         // verify the required parameter 'contentType' is set
@@ -195,7 +197,7 @@ public class ForeignExchangeRatesApi {
         }
         
         
-        okhttp3.Call call = createFxRatesCall(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = createFxRatesCall(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -207,20 +209,20 @@ public class ForeignExchangeRatesApi {
     /**
      * Retrieve Foreign Exchange Rates
      * Retrieve current foreign exchange rates for cross-border payouts. 
-     * @param body  (required)
+     * @param createFxRatesRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
      * @param vCPermissions  (required)
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
-     * @return InlineResponse2013
+     * @return CreateFxRatesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2013 createFxRates(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
+    public CreateFxRatesResponse createFxRates(CreateFxRatesRequest createFxRatesRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createFxRates' STARTED");
-        ApiResponse<InlineResponse2013> resp = createFxRatesWithHttpInfo(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
+        ApiResponse<CreateFxRatesResponse> resp = createFxRatesWithHttpInfo(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
         logger.info("CALL TO METHOD 'createFxRates' ENDED");
         return resp.getData();
     }
@@ -228,28 +230,27 @@ public class ForeignExchangeRatesApi {
     /**
      * Retrieve Foreign Exchange Rates
      * Retrieve current foreign exchange rates for cross-border payouts. 
-     * @param body  (required)
+     * @param createFxRatesRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
      * @param vCPermissions  (required)
      * @param vCCorrelationId  (required)
      * @param vCOrganizationId  (required)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;CreateFxRatesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2013> createFxRatesWithHttpInfo(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = createFxRatesValidateBeforeCall(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+    public ApiResponse<CreateFxRatesResponse> createFxRatesWithHttpInfo(CreateFxRatesRequest createFxRatesRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException, ConfigException {
+        okhttp3.Call call = createFxRatesValidateBeforeCall(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, null, null);
+        Type localVarReturnType = new TypeToken<CreateFxRatesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve Foreign Exchange Rates (asynchronously)
      * Retrieve current foreign exchange rates for cross-border payouts. 
-     * @param body  (required)
+     * @param createFxRatesRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -261,9 +262,7 @@ public class ForeignExchangeRatesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createFxRatesAsync(Body body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ApiCallback<InlineResponse2013> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createFxRatesAsync(CreateFxRatesRequest createFxRatesRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, final ApiCallback<CreateFxRatesResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -283,8 +282,8 @@ public class ForeignExchangeRatesApi {
             };
         }
 
-        okhttp3.Call call = createFxRatesValidateBeforeCall(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        okhttp3.Call call = createFxRatesValidateBeforeCall(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CreateFxRatesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

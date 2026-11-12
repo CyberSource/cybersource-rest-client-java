@@ -116,7 +116,6 @@ public class OAuthApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public AccessTokenResponse postAccessTokenFromAuthCode(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromAuthCodeWithHttpInfo(createAccessTokenRequest);
         return resp.getData();
     }
@@ -146,8 +145,6 @@ public class OAuthApi {
      */
 
     public okhttp3.Call postAccessTokenFromAuthCodeAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -244,7 +241,6 @@ public class OAuthApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public AccessTokenResponse postAccessTokenFromRefreshToken(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromRefreshTokenWithHttpInfo(createAccessTokenRequest);
         return resp.getData();
     }
@@ -274,8 +270,6 @@ public class OAuthApi {
      */
 
     public okhttp3.Call postAccessTokenFromRefreshTokenAsync(CreateAccessTokenRequest createAccessTokenRequest, final ApiCallback<AccessTokenResponse> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -74,9 +74,7 @@ import Invokers.auth.Authentication;
 import Invokers.auth.HttpBasicAuth;
 import Invokers.auth.OAuth;
 
-import utilities.interceptors.RetryInterceptor;
 import utilities.listeners.NetworkEventListener;
-import utilities.telemetry.RequestTransactionMetrics;
 
 public class ApiClient {
 	public static final double JAVA_VERSION;
@@ -132,7 +130,6 @@ public class ApiClient {
 	private JSON json;
 	private String versionInfo;
 	private HttpLoggingInterceptor loggingInterceptor;
-	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
 
 	/**
@@ -154,15 +151,15 @@ public class ApiClient {
 	public String status;
 
 	public MerchantConfig merchantConfig;
-	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 
 	/*
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
 		versionInfo = getClientID();
-		additionalSettings.setCustomRetryOnConnectionFailure(true);
-		additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
+		// retryOnConnectionFailure is left unset here: HttpClientFactory falls back to OkHttp's own
+		// default (true) unless the merchant explicitly overrides it via getAdditionalSettings(),
+		// or buildCall() forces it off for non-idempotent money-movement POSTs (see HttpClientFactory.isRetryUnsafePost()).
 		additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
 
 		verifyingSsl = true;
@@ -236,11 +233,29 @@ public class ApiClient {
 			additionalSettings.setCustomProxyAuthenticator(proxyAuthenticator);
 		}
 
-		additionalSettings.setCustomRetryOnConnectionFailure(true);
-		additionalSettings.setCustomRetryInterceptor(new RetryInterceptor(this.apiRequestMetrics));
 		additionalSettings.setCustomNetworkEventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()));
 
 		this.merchantConfig = merchantConfig;
+	}
+
+	/**
+	 * Get the additional settings used to configure the OkHttpClient (retry, SSL, proxy, etc).
+	 *
+	 * @return the {@link HttpClientFactoryAdditionalSettings} instance
+	 */
+	public HttpClientFactoryAdditionalSettings getAdditionalSettings() {
+		return additionalSettings;
+	}
+
+	/**
+	 * Set the additional settings used to configure the OkHttpClient.
+	 * Gives merchants a seam to override retry, SSL, proxy, and other connection settings
+	 * that were previously unreachable after construction.
+	 *
+	 * @param additionalSettings the {@link HttpClientFactoryAdditionalSettings} to use
+	 */
+	public void setAdditionalSettings(HttpClientFactoryAdditionalSettings additionalSettings) {
+		this.additionalSettings = additionalSettings;
 	}
 
 	/**
@@ -276,7 +291,18 @@ public class ApiClient {
 	 * @return An instance of OkHttpClient
 	 */
 	public OkHttpClient getHttpClient() throws ConfigException {
-		httpClient = createInternalHttpClient();
+		httpClient = createInternalHttpClient(false);
+		return httpClient;
+	}
+
+	/**
+	 * Builds/fetches the HTTP client to use for one call. When {@code forceRetryOff} is set and
+	 * the merchant hasn't explicitly chosen a retry value, a shallow copy of
+	 * {@code additionalSettings} with retry disabled is used instead of the shared instance,
+	 * so the merchant's own settings object is never mutated.
+	 */
+	private OkHttpClient getHttpClient(boolean forceRetryOff) throws ConfigException {
+		httpClient = createInternalHttpClient(forceRetryOff);
 		return httpClient;
 	}
 
@@ -718,20 +744,6 @@ public class ApiClient {
 		return this;
 	}
 
-	/**
-	 * @return the computationStartTime
-	 */
-	public long getComputationStartTime() {
-		return computationStartTime;
-	}
-
-	/**
-	 * @param computationStartTime the computationStartTime to set
-	 */
-	public void setComputationStartTime(long computationStartTime) {
-		this.computationStartTime = computationStartTime;
-	}
-
 	public void resetInstance() {
 		this.defaultHeaderMap.clear();
 	}
@@ -1001,6 +1013,21 @@ public class ApiClient {
 		}
 	}
 
+	public String serializePayload(Object obj, String contentType) throws ApiException {
+		if (obj == null) {
+			return null;
+		}
+		if ("{}".equals(obj) && isJsonMime(contentType)) {
+			return "{}";
+		}
+		RequestBody requestBody = serialize(obj, contentType);
+		try {
+			return getRequestContentSendOverNetwork(requestBody);
+		} catch (IOException e) {
+			throw new ApiException(e);
+		}
+	}
+
 	/**
 	 * Download file from the given response.
 	 *
@@ -1094,7 +1121,6 @@ public class ApiClient {
 		Response response = null;
 		boolean streamingResponse = false;
 		try {
-			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime()) / 1000000);
 			response = call.execute();
 			String responseCode = String.valueOf(response.code());
 			this.status = response.message();
@@ -1275,15 +1301,20 @@ public class ApiClient {
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		try {
-			this.getHttpClient();
+			this.getHttpClient(HttpClientFactory.isRetryUnsafePost(path, method));
 		} catch (ConfigException e) {
 			throw e;
 		}
 		return httpClient.newCall(request);
 	}
 
-	private OkHttpClient createInternalHttpClient() throws ConfigException {
-		return HttpClientFactory.getHttpClient(this.merchantConfig, this.additionalSettings);
+	private OkHttpClient createInternalHttpClient(boolean forceRetryOff) throws ConfigException {
+		HttpClientFactoryAdditionalSettings effectiveSettings = this.additionalSettings;
+		if (forceRetryOff && this.additionalSettings.getCustomRetryOnConnectionFailure() == null) {
+			effectiveSettings = this.additionalSettings.copy();
+			effectiveSettings.setCustomRetryOnConnectionFailure(false);
+		}
+		return HttpClientFactory.getHttpClient(this.merchantConfig, effectiveSettings);
 	}
 	
 	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
@@ -1414,14 +1445,47 @@ public class ApiClient {
 
 		Request request = null;
 
-		if (progressRequestListener != null && reqBody != null) {
-			ProgressRequestBody progressRequestBody = new ProgressRequestBody(reqBody, progressRequestListener);
-			request = reqBuilder.method(method, progressRequestBody).build();
-		} else {
-			request = reqBuilder.method(method, reqBody).build();
+		RequestBody effectiveBody = reqBody;
+		if (effectiveBody != null && progressRequestListener != null) {
+			effectiveBody = new ProgressRequestBody(effectiveBody, progressRequestListener);
 		}
+		if (effectiveBody != null && HttpClientFactory.isRetryUnsafePost(path, method)) {
+			// Belt-and-suspenders: even if a merchant explicitly re-enables retry for this path,
+			// OkHttp must never replay a non-idempotent money-movement body (see issue #4252).
+			effectiveBody = new OneShotRequestBody(effectiveBody);
+		}
+		request = reqBuilder.method(method, effectiveBody).build();
 
 		return request;
+	}
+
+	/** Forces {@code isOneShot()=true} so OkHttp never attempts to replay this body. */
+	private static final class OneShotRequestBody extends RequestBody {
+		private final RequestBody delegate;
+
+		OneShotRequestBody(RequestBody delegate) {
+			this.delegate = delegate;
+		}
+
+		@Override
+		public MediaType contentType() {
+			return delegate.contentType();
+		}
+
+		@Override
+		public long contentLength() throws IOException {
+			return delegate.contentLength();
+		}
+
+		@Override
+		public boolean isOneShot() {
+			return true;
+		}
+
+		@Override
+		public void writeTo(BufferedSink sink) throws IOException {
+			delegate.writeTo(sink);
+		}
 	}
 	
 	private RequestBody createRequestBody(String method, Object body, Map<String, Object> formParams,

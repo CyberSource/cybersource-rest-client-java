@@ -42,7 +42,7 @@ import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsRiskInformation;
 import Model.Ptsv2paymentsSenderInformation;
 import Model.Ptsv2paymentsTokenInformation;
-import Model.Ptsv2paymentsTravelInformation;
+import Model.Ptsv2paymentsTravelInformationExtended;
 import Model.Ptsv2paymentsUnscheduledPaymentInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import com.google.gson.TypeAdapter;
@@ -113,7 +113,7 @@ public class CreatePaymentRequest {
   private Ptsv2paymentsInstallmentInformation installmentInformation = null;
 
   @SerializedName("travelInformation")
-  private Ptsv2paymentsTravelInformation travelInformation = null;
+  private Ptsv2paymentsTravelInformationExtended travelInformation = null;
 
   @SerializedName("healthCareInformation")
   private Ptsv2paymentsHealthCareInformation healthCareInformation = null;
@@ -473,7 +473,7 @@ public class CreatePaymentRequest {
     this.installmentInformation = installmentInformation;
   }
 
-  public CreatePaymentRequest travelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+  public CreatePaymentRequest travelInformation(Ptsv2paymentsTravelInformationExtended travelInformation) {
     this.travelInformation = travelInformation;
     return this;
   }
@@ -483,11 +483,11 @@ public class CreatePaymentRequest {
    * @return travelInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsTravelInformation getTravelInformation() {
+  public Ptsv2paymentsTravelInformationExtended getTravelInformation() {
     return travelInformation;
   }
 
-  public void setTravelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+  public void setTravelInformation(Ptsv2paymentsTravelInformationExtended travelInformation) {
     this.travelInformation = travelInformation;
   }
 

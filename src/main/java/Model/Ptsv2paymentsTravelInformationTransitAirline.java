@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation;
+import Model.Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineLegs;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer;
 import com.google.gson.TypeAdapter;
@@ -149,7 +149,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   private List<Ptsv2paymentsTravelInformationTransitAirlineLegs> legs = null;
 
   @SerializedName("ancillaryInformation")
-  private Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation = null;
+  private Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation ancillaryInformation = null;
 
   @SerializedName("flightType")
   private String flightType = null;
@@ -861,7 +861,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     this.legs = legs;
   }
 
-  public Ptsv2paymentsTravelInformationTransitAirline ancillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
+  public Ptsv2paymentsTravelInformationTransitAirline ancillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation ancillaryInformation) {
     this.ancillaryInformation = ancillaryInformation;
     return this;
   }
@@ -871,11 +871,11 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
    * @return ancillaryInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation getAncillaryInformation() {
+  public Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation getAncillaryInformation() {
     return ancillaryInformation;
   }
 
-  public void setAncillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
+  public void setAncillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineEnhancedAncillaryInformation ancillaryInformation) {
     this.ancillaryInformation = ancillaryInformation;
   }
 

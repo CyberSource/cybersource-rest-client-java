@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.CreateSubscriptionRequest1;
+import Model.CreateFollowOnSubscriptionRequest;
 import Model.CreateSubscriptionResponse;
-import Model.GetSubscriptionResponse1;
-import Model.InlineResponse4007;
-import Model.InlineResponse4041;
+import Model.GetFollowOnSubscriptionResponse;
+import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RbsFollowOnSubscription400ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -48,8 +48,8 @@ public class SubscriptionsFollowOnsApiTest {
     @Test
     public void createFollowOnSubscriptionTest() throws Exception {
         String requestId = null;
-        CreateSubscriptionRequest1 createSubscriptionRequest = null;
-        CreateSubscriptionResponse response = api.createFollowOnSubscription(requestId, createSubscriptionRequest);
+        CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest = null;
+        CreateSubscriptionResponse response = api.createFollowOnSubscription(requestId, createFollowOnSubscriptionRequest);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class SubscriptionsFollowOnsApiTest {
     @Test
     public void getFollowOnSubscriptionTest() throws Exception {
         String requestId = null;
-        GetSubscriptionResponse1 response = api.getFollowOnSubscription(requestId);
+        GetFollowOnSubscriptionResponse response = api.getFollowOnSubscription(requestId);
 
         // TODO: test validations
     }

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsCardProcessingSubscriptionInformationFeatures;
+import Model.CardProessingFeatureSubscriptionItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,7 +43,7 @@ public class PaymentsProductsMicroformSubscriptionInformation {
   private String selfServiceability = "NOT_SELF_SERVICEABLE";
 
   @SerializedName("features")
-  private Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features = null;
+  private Map<String, CardProessingFeatureSubscriptionItem> features = null;
 
   public PaymentsProductsMicroformSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -99,14 +99,14 @@ public class PaymentsProductsMicroformSubscriptionInformation {
     this.selfServiceability = selfServiceability;
   }
 
-  public PaymentsProductsMicroformSubscriptionInformation features(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public PaymentsProductsMicroformSubscriptionInformation features(Map<String, CardProessingFeatureSubscriptionItem> features) {
     this.features = features;
     return this;
   }
 
-  public PaymentsProductsMicroformSubscriptionInformation putFeaturesItem(String key, PaymentsProductsCardProcessingSubscriptionInformationFeatures featuresItem) {
+  public PaymentsProductsMicroformSubscriptionInformation putFeaturesItem(String key, CardProessingFeatureSubscriptionItem featuresItem) {
     if (this.features == null) {
-      this.features = new HashMap<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures>();
+      this.features = new HashMap<String, CardProessingFeatureSubscriptionItem>();
     }
     this.features.put(key, featuresItem);
     return this;
@@ -117,11 +117,11 @@ public class PaymentsProductsMicroformSubscriptionInformation {
    * @return features
   **/
   @ApiModelProperty(value = "")
-  public Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> getFeatures() {
+  public Map<String, CardProessingFeatureSubscriptionItem> getFeatures() {
     return features;
   }
 
-  public void setFeatures(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public void setFeatures(Map<String, CardProessingFeatureSubscriptionItem> features) {
     this.features = features;
   }
 

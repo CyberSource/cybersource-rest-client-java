@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cancelCheckout"></a>
 # **cancelCheckout**
-> InlineResponse20018 cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> CancelCheckoutResponse cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Cancel Checkout ACP
 
@@ -36,7 +36,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20018 result = apiInstance.cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    CancelCheckoutResponse result = apiInstance.cancelCheckout(sessionId, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AcpCheckoutApi#cancelCheckout");
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**CancelCheckoutResponse**](CancelCheckoutResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 
 <a name="completeCheckout"></a>
 # **completeCheckout**
-> InlineResponse20017 completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> CompleteCheckoutResponse completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Complete Checkout ACP
 
@@ -96,7 +96,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20017 result = apiInstance.completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    CompleteCheckoutResponse result = apiInstance.completeCheckout(sessionId, acpCompleteCheckoutRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AcpCheckoutApi#completeCheckout");
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**CompleteCheckoutResponse**](CompleteCheckoutResponse.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ No authorization required
 
 <a name="createCheckoutSession"></a>
 # **createCheckoutSession**
-> InlineResponse20112 createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> CheckoutSessionResponse createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Create Checkout Session ACP
 
@@ -156,7 +156,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20112 result = apiInstance.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    CheckoutSessionResponse result = apiInstance.createCheckoutSession(acpCreateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AcpCheckoutApi#createCheckoutSession");
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ No authorization required
 
 <a name="getCheckoutSession"></a>
 # **getCheckoutSession**
-> InlineResponse20112 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> CheckoutSessionResponse getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Get Checkout Session ACP
 
@@ -216,7 +216,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20112 result = apiInstance.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    CheckoutSessionResponse result = apiInstance.getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AcpCheckoutApi#getCheckoutSession");
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 
 <a name="updateCheckoutSession"></a>
 # **updateCheckoutSession**
-> InlineResponse20112 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
+> CheckoutSessionResponse updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion)
 
 Update Checkout Session ACP
 
@@ -277,7 +277,7 @@ String signature = "signature_example"; // String | Request signature for payloa
 String timestamp = "timestamp_example"; // String | ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
 String apIVersion = "apIVersion_example"; // String | ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
 try {
-    InlineResponse20112 result = apiInstance.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
+    CheckoutSessionResponse result = apiInstance.updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, idempotencyKey, acceptLanguage, userAgent, requestId, signature, timestamp, apIVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AcpCheckoutApi#updateCheckoutSession");
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 

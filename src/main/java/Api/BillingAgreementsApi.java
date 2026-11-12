@@ -31,11 +31,11 @@ import java.io.InputStream;
 
 import Model.CreateBillingAgreement;
 import Model.IntimateBillingAgreement;
+import Model.IntimateBillingAgreementResponse;
 import Model.ModifyBillingAgreement;
 import Model.PtsV2CreateBillingAgreementPost201Response;
 import Model.PtsV2CreateBillingAgreementPost400Response;
 import Model.PtsV2CreateBillingAgreementPost502Response;
-import Model.PtsV2CreditsPost201Response1;
 import Model.PtsV2ModifyBillingAgreementPost201Response;
 
 import java.lang.reflect.Type;
@@ -85,11 +85,17 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationAsync,billingAgreementsDeRegistrationWithHttpInfo,billingAgreementsDeRegistrationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -114,10 +120,6 @@ public class BillingAgreementsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -187,7 +189,6 @@ public class BillingAgreementsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2ModifyBillingAgreementPost201Response> billingAgreementsDeRegistrationWithHttpInfo(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsDeRegistrationValidateBeforeCall(modifyBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2ModifyBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -204,8 +205,6 @@ public class BillingAgreementsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call billingAgreementsDeRegistrationAsync(ModifyBillingAgreement modifyBillingAgreement, String id, final ApiCallback<PtsV2ModifyBillingAgreementPost201Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -244,11 +243,17 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsIntimation,billingAgreementsIntimationAsync,billingAgreementsIntimationWithHttpInfo,billingAgreementsIntimationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -273,10 +278,6 @@ public class BillingAgreementsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -325,13 +326,13 @@ public class BillingAgreementsApi {
      * Standing Instruction with or without Token.
      * @param intimateBillingAgreement  (required)
      * @param id ID for intimation of Billing Agreement (required)
-     * @return PtsV2CreditsPost201Response1
+     * @return IntimateBillingAgreementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
+    public IntimateBillingAgreementResponse billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' STARTED");
-        ApiResponse<PtsV2CreditsPost201Response1> resp = billingAgreementsIntimationWithHttpInfo(intimateBillingAgreement, id);
+        ApiResponse<IntimateBillingAgreementResponse> resp = billingAgreementsIntimationWithHttpInfo(intimateBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' ENDED");
         return resp.getData();
     }
@@ -341,14 +342,13 @@ public class BillingAgreementsApi {
      * Standing Instruction with or without Token.
      * @param intimateBillingAgreement  (required)
      * @param id ID for intimation of Billing Agreement (required)
-     * @return ApiResponse&lt;PtsV2CreditsPost201Response1&gt;
+     * @return ApiResponse&lt;IntimateBillingAgreementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2CreditsPost201Response1> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<IntimateBillingAgreementResponse> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException, ConfigException {
         okhttp3.Call call = billingAgreementsIntimationValidateBeforeCall(intimateBillingAgreement, id, null, null);
-        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<IntimateBillingAgreementResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -362,9 +362,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call billingAgreementsIntimationAsync(IntimateBillingAgreement intimateBillingAgreement, String id, final ApiCallback<PtsV2CreditsPost201Response1> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call billingAgreementsIntimationAsync(IntimateBillingAgreement intimateBillingAgreement, String id, final ApiCallback<IntimateBillingAgreementResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -385,7 +383,7 @@ public class BillingAgreementsApi {
         }
 
         okhttp3.Call call = billingAgreementsIntimationValidateBeforeCall(intimateBillingAgreement, id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<IntimateBillingAgreementResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -402,11 +400,17 @@ public class BillingAgreementsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "billingAgreementsRegistration,billingAgreementsRegistrationAsync,billingAgreementsRegistrationWithHttpInfo,billingAgreementsRegistrationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -430,10 +434,6 @@ public class BillingAgreementsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -495,7 +495,6 @@ public class BillingAgreementsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2CreateBillingAgreementPost201Response> billingAgreementsRegistrationWithHttpInfo(CreateBillingAgreement createBillingAgreement) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsRegistrationValidateBeforeCall(createBillingAgreement, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -511,8 +510,6 @@ public class BillingAgreementsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call billingAgreementsRegistrationAsync(CreateBillingAgreement createBillingAgreement, final ApiCallback<PtsV2CreateBillingAgreementPost201Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

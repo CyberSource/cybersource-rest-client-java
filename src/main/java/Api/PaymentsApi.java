@@ -32,17 +32,17 @@ import java.io.InputStream;
 import Model.CreatePaymentRequest;
 import Model.CreateSessionReq;
 import Model.CreateSessionRequest;
+import Model.CreateSessionResponse;
 import Model.IncrementAuthRequest;
 import Model.OrderPaymentRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
 import Model.PtsV2IncrementalAuthorizationPatch400Response;
 import Model.PtsV2PaymentsOrderPost201Response;
 import Model.PtsV2PaymentsPost201Response;
-import Model.PtsV2PaymentsPost201Response1;
-import Model.PtsV2PaymentsPost201Response2;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RefreshPaymentStatusRequest;
+import Model.RefreshPaymentStatusResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -91,11 +91,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(orderPaymentRequest, OrderPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createOrderRequest,createOrderRequestAsync,createOrderRequestWithHttpInfo,createOrderRequestCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -120,10 +126,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -193,7 +195,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOrderRequestValidateBeforeCall(orderPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsOrderPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -210,8 +211,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createOrderRequestAsync(OrderPaymentRequest orderPaymentRequest, String id, final ApiCallback<PtsV2PaymentsOrderPost201Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -249,11 +248,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPaymentRequest, CreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createPayment,createPaymentAsync,createPaymentWithHttpInfo,createPaymentCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -277,10 +282,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -342,7 +343,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPaymentValidateBeforeCall(createPaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -358,8 +358,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -397,11 +395,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionReq, CreateSessionReq.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createSessionRequest,createSessionRequestAsync,createSessionRequestWithHttpInfo,createSessionRequestCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -425,10 +429,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -470,13 +470,13 @@ public class PaymentsApi {
      * Create Alternative Payments Sessions Request
      * Create Alternative Payments Sessions Request
      * @param createSessionReq  (required)
-     * @return PtsV2PaymentsPost201Response2
+     * @return CreateSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
+    public CreateSessionResponse createSessionRequest(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
-        ApiResponse<PtsV2PaymentsPost201Response2> resp = createSessionRequestWithHttpInfo(createSessionReq);
+        ApiResponse<CreateSessionResponse> resp = createSessionRequestWithHttpInfo(createSessionReq);
         logger.info("CALL TO METHOD 'createSessionRequest' ENDED");
         return resp.getData();
     }
@@ -485,14 +485,13 @@ public class PaymentsApi {
      * Create Alternative Payments Sessions Request
      * Create Alternative Payments Sessions Request
      * @param createSessionReq  (required)
-     * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
+     * @return ApiResponse&lt;CreateSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CreateSessionResponse> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException, ConfigException {
         okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, null, null);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -505,9 +504,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<CreateSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -528,7 +525,7 @@ public class PaymentsApi {
         }
 
         okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -546,11 +543,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(incrementAuthRequest, IncrementAuthRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "incrementAuth,incrementAuthAsync,incrementAuthWithHttpInfo,incrementAuthCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -575,10 +578,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -648,7 +647,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> incrementAuthWithHttpInfo(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = incrementAuthValidateBeforeCall(id, incrementAuthRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2IncrementalAuthorizationPatch201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -665,8 +663,6 @@ public class PaymentsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call incrementAuthAsync(String id, IncrementAuthRequest incrementAuthRequest, final ApiCallback<PtsV2IncrementalAuthorizationPatch201Response> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -705,11 +701,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refreshPaymentStatusRequest, RefreshPaymentStatusRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "refreshPaymentStatus,refreshPaymentStatusAsync,refreshPaymentStatusWithHttpInfo,refreshPaymentStatusCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -734,10 +736,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -786,13 +784,13 @@ public class PaymentsApi {
      * Checks and updates the payment status 
      * @param id The payment id whose status needs to be checked and updated. (required)
      * @param refreshPaymentStatusRequest  (required)
-     * @return PtsV2PaymentsPost201Response1
+     * @return RefreshPaymentStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
+    public RefreshPaymentStatusResponse refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
-        ApiResponse<PtsV2PaymentsPost201Response1> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
+        ApiResponse<RefreshPaymentStatusResponse> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
         logger.info("CALL TO METHOD 'refreshPaymentStatus' ENDED");
         return resp.getData();
     }
@@ -802,14 +800,13 @@ public class PaymentsApi {
      * Checks and updates the payment status 
      * @param id The payment id whose status needs to be checked and updated. (required)
      * @param refreshPaymentStatusRequest  (required)
-     * @return ApiResponse&lt;PtsV2PaymentsPost201Response1&gt;
+     * @return ApiResponse&lt;RefreshPaymentStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<RefreshPaymentStatusResponse> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException, ConfigException {
         okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, null, null);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<RefreshPaymentStatusResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -823,9 +820,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<PtsV2PaymentsPost201Response1> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<RefreshPaymentStatusResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -846,7 +841,7 @@ public class PaymentsApi {
         }
 
         okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<RefreshPaymentStatusResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -864,11 +859,17 @@ public class PaymentsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionRequest, CreateSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "updateSessionRequest,updateSessionRequestAsync,updateSessionRequestWithHttpInfo,updateSessionRequestCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -893,10 +894,6 @@ public class PaymentsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -945,13 +942,13 @@ public class PaymentsApi {
      * Update Alternative Payments Sessions Request
      * @param createSessionRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
-     * @return PtsV2PaymentsPost201Response2
+     * @return CreateSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public PtsV2PaymentsPost201Response2 updateSessionRequest(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
+    public CreateSessionResponse updateSessionRequest(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'updateSessionRequest' STARTED");
-        ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionRequestWithHttpInfo(createSessionRequest, id);
+        ApiResponse<CreateSessionResponse> resp = updateSessionRequestWithHttpInfo(createSessionRequest, id);
         logger.info("CALL TO METHOD 'updateSessionRequest' ENDED");
         return resp.getData();
     }
@@ -961,14 +958,13 @@ public class PaymentsApi {
      * Update Alternative Payments Sessions Request
      * @param createSessionRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
-     * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
+     * @return ApiResponse&lt;CreateSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionRequestWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<CreateSessionResponse> updateSessionRequestWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException, ConfigException {
         okhttp3.Call call = updateSessionRequestValidateBeforeCall(createSessionRequest, id, null, null);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSessionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -982,9 +978,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call updateSessionRequestAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call updateSessionRequestAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<CreateSessionResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -1005,7 +999,7 @@ public class PaymentsApi {
         }
 
         okhttp3.Call call = updateSessionRequestValidateBeforeCall(createSessionRequest, id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSessionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

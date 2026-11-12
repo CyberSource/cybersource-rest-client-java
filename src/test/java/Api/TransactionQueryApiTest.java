@@ -13,11 +13,11 @@
 
 package Api;
 
-import Model.Body1;
-import Model.InlineResponse2014;
-import Model.InlineResponse4004;
-import Model.InlineResponse4011;
-import Model.InlineResponse5023;
+import Model.CreateQueryApiRequest;
+import Model.CreateQueryApiResponse;
+import Model.MmQueryApi400ErrorResponse;
+import Model.MmQueryApi401ErrorResponse;
+import Model.MmQueryApi502ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,7 +47,7 @@ public class TransactionQueryApiTest {
     @Test
     public void createQueryApiTest() throws Exception {
         String id = null;
-        Body1 body = null;
+        CreateQueryApiRequest createQueryApiRequest = null;
         String contentType = null;
         String xRequestid = null;
         String vCMerchantId = null;
@@ -56,7 +56,7 @@ public class TransactionQueryApiTest {
         String vCOrganizationId = null;
         Integer limit = null;
         Integer offset = null;
-        InlineResponse2014 response = api.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+        CreateQueryApiResponse response = api.createQueryApi(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
 
         // TODO: test validations
     }

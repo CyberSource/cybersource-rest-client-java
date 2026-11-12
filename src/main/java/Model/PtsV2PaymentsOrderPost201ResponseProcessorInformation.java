@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection;
-import Model.PtsV2PaymentsPost201Response1ProcessorInformationAvs;
+import Model.RefreshPaymentStatusResponseProcessorInformationAvs;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class PtsV2PaymentsOrderPost201ResponseProcessorInformation {
   private PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
 
   @SerializedName("avs")
-  private PtsV2PaymentsPost201Response1ProcessorInformationAvs avs = null;
+  private RefreshPaymentStatusResponseProcessorInformationAvs avs = null;
 
   @SerializedName("transactionId")
   private String transactionId = null;
@@ -61,7 +61,7 @@ public class PtsV2PaymentsOrderPost201ResponseProcessorInformation {
     this.sellerProtection = sellerProtection;
   }
 
-  public PtsV2PaymentsOrderPost201ResponseProcessorInformation avs(PtsV2PaymentsPost201Response1ProcessorInformationAvs avs) {
+  public PtsV2PaymentsOrderPost201ResponseProcessorInformation avs(RefreshPaymentStatusResponseProcessorInformationAvs avs) {
     this.avs = avs;
     return this;
   }
@@ -71,11 +71,11 @@ public class PtsV2PaymentsOrderPost201ResponseProcessorInformation {
    * @return avs
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201Response1ProcessorInformationAvs getAvs() {
+  public RefreshPaymentStatusResponseProcessorInformationAvs getAvs() {
     return avs;
   }
 
-  public void setAvs(PtsV2PaymentsPost201Response1ProcessorInformationAvs avs) {
+  public void setAvs(RefreshPaymentStatusResponseProcessorInformationAvs avs) {
     this.avs = avs;
   }
 

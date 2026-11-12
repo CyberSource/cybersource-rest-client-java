@@ -15,16 +15,16 @@ package Api;
 
 import Model.AddNegativeListRequest;
 import Model.CaseManagementActionsRequest;
+import Model.CaseManagementActionsResponse;
 import Model.CaseManagementCommentsRequest;
+import Model.CommentDecisionManagerCaseResponse;
 import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
-import Model.InlineResponse2003;
-import Model.InlineResponse2012;
-import Model.InlineResponse4002;
-import Model.InlineResponse4031;
+import Model.InlineResponse400;
+import Model.InlineResponse403;
 import Model.InlineResponse422;
-import Model.InlineResponse5001;
-import Model.InlineResponse5021;
+import Model.InlineResponse500;
+import Model.InlineResponse502;
 import Model.InlineResponse503;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;
@@ -61,7 +61,7 @@ public class DecisionManagerApiTest {
     public void actionDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementActionsRequest caseManagementActionsRequest = null;
-        InlineResponse2003 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
+        CaseManagementActionsResponse response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
 
         // TODO: test validations
     }
@@ -95,7 +95,7 @@ public class DecisionManagerApiTest {
     public void commentDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementCommentsRequest caseManagementCommentsRequest = null;
-        InlineResponse2012 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
+        CommentDecisionManagerCaseResponse response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
 
         // TODO: test validations
     }

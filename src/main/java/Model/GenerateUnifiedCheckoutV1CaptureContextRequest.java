@@ -37,9 +37,6 @@ import java.util.List;
  */
 
 public class GenerateUnifiedCheckoutV1CaptureContextRequest {
-  @SerializedName("clientVersion")
-  private String clientVersion = null;
-
   @SerializedName("targetOrigins")
   private List<String> targetOrigins = null;
 
@@ -75,24 +72,6 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
 
   @SerializedName("data")
   private Ucv1sessionsData data = null;
-
-  public GenerateUnifiedCheckoutV1CaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-    return this;
-  }
-
-   /**
-   * This field is used to specify the Unified Checkout API version your integration should use.  The recommended approach is to omit this field from the uc/v1/sessions API request.  When omitted, Unified Checkout automatically uses the latest available version, ensuring access to the most recent enhancements and updates without requiring integration changes. If included, the value must be provided in Major.Minor format (for example, 1.1 or 1.2).&lt;br&gt;&lt;br&gt;  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center but can be provided in the uc/v1/sessions API request. 
-   * @return clientVersion
-  **/
-  @ApiModelProperty(example = "1.0", value = "This field is used to specify the Unified Checkout API version your integration should use.  The recommended approach is to omit this field from the uc/v1/sessions API request.  When omitted, Unified Checkout automatically uses the latest available version, ensuring access to the most recent enhancements and updates without requiring integration changes. If included, the value must be provided in Major.Minor format (for example, 1.1 or 1.2).<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center but can be provided in the uc/v1/sessions API request. ")
-  public String getClientVersion() {
-    return clientVersion;
-  }
-
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-  }
 
   public GenerateUnifiedCheckoutV1CaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -160,10 +139,10 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -344,8 +323,7 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
       return false;
     }
     GenerateUnifiedCheckoutV1CaptureContextRequest generateUnifiedCheckoutV1CaptureContextRequest = (GenerateUnifiedCheckoutV1CaptureContextRequest) o;
-    return Objects.equals(this.clientVersion, generateUnifiedCheckoutV1CaptureContextRequest.clientVersion) &&
-        Objects.equals(this.targetOrigins, generateUnifiedCheckoutV1CaptureContextRequest.targetOrigins) &&
+    return Objects.equals(this.targetOrigins, generateUnifiedCheckoutV1CaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateUnifiedCheckoutV1CaptureContextRequest.allowedCardNetworks) &&
         Objects.equals(this.allowedPaymentTypes, generateUnifiedCheckoutV1CaptureContextRequest.allowedPaymentTypes) &&
         Objects.equals(this.paymentConfigurations, generateUnifiedCheckoutV1CaptureContextRequest.paymentConfigurations) &&
@@ -361,7 +339,7 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, paymentConfigurations, appearance, country, locale, buttonType, captureMandate, completeMandate, transientTokenResponseOptions, data);
+    return Objects.hash(targetOrigins, allowedCardNetworks, allowedPaymentTypes, paymentConfigurations, appearance, country, locale, buttonType, captureMandate, completeMandate, transientTokenResponseOptions, data);
   }
 
 
@@ -388,7 +366,6 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutV1CaptureContextRequest {\n");
     
-    if (clientVersion != null) sb.append("    clientVersion: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientVersion").matches() ? "[REDACTED]" : toIndentedString(clientVersion)).append("\n");
     if (targetOrigins != null) sb.append("    targetOrigins: ").append(SENSITIVE_FIELD_PATTERN.matcher("targetOrigins").matches() ? "[REDACTED]" : toIndentedString(targetOrigins)).append("\n");
     if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedCardNetworks").matches() ? "[REDACTED]" : toIndentedString(allowedCardNetworks)).append("\n");
     if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedPaymentTypes").matches() ? "[REDACTED]" : toIndentedString(allowedPaymentTypes)).append("\n");
@@ -419,7 +396,6 @@ public class GenerateUnifiedCheckoutV1CaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutV1CaptureContextRequest {\n");
     
-    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
     if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
     if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");

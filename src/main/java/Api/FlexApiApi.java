@@ -29,8 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.Flex400ErrorResponse;
 import Model.GenerateFlexAPICaptureContextRequest;
-import Model.InlineResponse4001;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -78,11 +78,17 @@ public class FlexApiApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateFlexAPICaptureContextRequest, GenerateFlexAPICaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "generateFlexAPICaptureContext,generateFlexAPICaptureContextAsync,generateFlexAPICaptureContextWithHttpInfo,generateFlexAPICaptureContextCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -106,10 +112,6 @@ public class FlexApiApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -171,7 +173,6 @@ public class FlexApiApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<String> generateFlexAPICaptureContextWithHttpInfo(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateFlexAPICaptureContextValidateBeforeCall(generateFlexAPICaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -187,8 +188,6 @@ public class FlexApiApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call generateFlexAPICaptureContextAsync(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ApiCallback<String> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

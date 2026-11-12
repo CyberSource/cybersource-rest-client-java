@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PushFunds201ResponseLinksCustomer;
-import Model.PushFunds201ResponseLinksInstrumentIdentifier;
-import Model.PushFunds201ResponseLinksPaymentInstrument;
-import Model.PushFunds201ResponseLinksSelf;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf1;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf2;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf3;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf4;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,18 +34,18 @@ import java.io.IOException;
 
 public class PushFunds201ResponseLinks {
   @SerializedName("self")
-  private PushFunds201ResponseLinksSelf self = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf1 self = null;
 
   @SerializedName("customer")
-  private PushFunds201ResponseLinksCustomer customer = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf2 customer = null;
 
   @SerializedName("paymentInstrument")
-  private PushFunds201ResponseLinksPaymentInstrument paymentInstrument = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf3 paymentInstrument = null;
 
   @SerializedName("instrumentIdentifier")
-  private PushFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf4 instrumentIdentifier = null;
 
-  public PushFunds201ResponseLinks self(PushFunds201ResponseLinksSelf self) {
+  public PushFunds201ResponseLinks self(PtsV2PaymentsPost201ResponseLinksSelf1 self) {
     this.self = self;
     return this;
   }
@@ -55,15 +55,15 @@ public class PushFunds201ResponseLinks {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public PushFunds201ResponseLinksSelf getSelf() {
+  public PtsV2PaymentsPost201ResponseLinksSelf1 getSelf() {
     return self;
   }
 
-  public void setSelf(PushFunds201ResponseLinksSelf self) {
+  public void setSelf(PtsV2PaymentsPost201ResponseLinksSelf1 self) {
     this.self = self;
   }
 
-  public PushFunds201ResponseLinks customer(PushFunds201ResponseLinksCustomer customer) {
+  public PushFunds201ResponseLinks customer(PtsV2PaymentsPost201ResponseLinksSelf2 customer) {
     this.customer = customer;
     return this;
   }
@@ -73,15 +73,15 @@ public class PushFunds201ResponseLinks {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public PushFunds201ResponseLinksCustomer getCustomer() {
+  public PtsV2PaymentsPost201ResponseLinksSelf2 getCustomer() {
     return customer;
   }
 
-  public void setCustomer(PushFunds201ResponseLinksCustomer customer) {
+  public void setCustomer(PtsV2PaymentsPost201ResponseLinksSelf2 customer) {
     this.customer = customer;
   }
 
-  public PushFunds201ResponseLinks paymentInstrument(PushFunds201ResponseLinksPaymentInstrument paymentInstrument) {
+  public PushFunds201ResponseLinks paymentInstrument(PtsV2PaymentsPost201ResponseLinksSelf3 paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
     return this;
   }
@@ -91,15 +91,15 @@ public class PushFunds201ResponseLinks {
    * @return paymentInstrument
   **/
   @ApiModelProperty(value = "")
-  public PushFunds201ResponseLinksPaymentInstrument getPaymentInstrument() {
+  public PtsV2PaymentsPost201ResponseLinksSelf3 getPaymentInstrument() {
     return paymentInstrument;
   }
 
-  public void setPaymentInstrument(PushFunds201ResponseLinksPaymentInstrument paymentInstrument) {
+  public void setPaymentInstrument(PtsV2PaymentsPost201ResponseLinksSelf3 paymentInstrument) {
     this.paymentInstrument = paymentInstrument;
   }
 
-  public PushFunds201ResponseLinks instrumentIdentifier(PushFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier) {
+  public PushFunds201ResponseLinks instrumentIdentifier(PtsV2PaymentsPost201ResponseLinksSelf4 instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -109,11 +109,11 @@ public class PushFunds201ResponseLinks {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public PushFunds201ResponseLinksInstrumentIdentifier getInstrumentIdentifier() {
+  public PtsV2PaymentsPost201ResponseLinksSelf4 getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(PushFunds201ResponseLinksInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(PtsV2PaymentsPost201ResponseLinksSelf4 instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 

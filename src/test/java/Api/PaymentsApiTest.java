@@ -16,17 +16,17 @@ package Api;
 import Model.CreatePaymentRequest;
 import Model.CreateSessionReq;
 import Model.CreateSessionRequest;
+import Model.CreateSessionResponse;
 import Model.IncrementAuthRequest;
 import Model.OrderPaymentRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
 import Model.PtsV2IncrementalAuthorizationPatch400Response;
 import Model.PtsV2PaymentsOrderPost201Response;
 import Model.PtsV2PaymentsPost201Response;
-import Model.PtsV2PaymentsPost201Response1;
-import Model.PtsV2PaymentsPost201Response2;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RefreshPaymentStatusRequest;
+import Model.RefreshPaymentStatusResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -89,7 +89,7 @@ public class PaymentsApiTest {
     @Test
     public void createSessionRequestTest() throws Exception {
         CreateSessionReq createSessionReq = null;
-        PtsV2PaymentsPost201Response2 response = api.createSessionRequest(createSessionReq);
+        CreateSessionResponse response = api.createSessionRequest(createSessionReq);
 
         // TODO: test validations
     }
@@ -123,7 +123,7 @@ public class PaymentsApiTest {
     public void refreshPaymentStatusTest() throws Exception {
         String id = null;
         RefreshPaymentStatusRequest refreshPaymentStatusRequest = null;
-        PtsV2PaymentsPost201Response1 response = api.refreshPaymentStatus(id, refreshPaymentStatusRequest);
+        RefreshPaymentStatusResponse response = api.refreshPaymentStatus(id, refreshPaymentStatusRequest);
 
         // TODO: test validations
     }
@@ -140,7 +140,7 @@ public class PaymentsApiTest {
     public void updateSessionRequestTest() throws Exception {
         CreateSessionRequest createSessionRequest = null;
         String id = null;
-        PtsV2PaymentsPost201Response2 response = api.updateSessionRequest(createSessionRequest, id);
+        CreateSessionResponse response = api.updateSessionRequest(createSessionRequest, id);
 
         // TODO: test validations
     }

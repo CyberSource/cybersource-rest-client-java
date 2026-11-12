@@ -4,11 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | [**DateTime**](DateTime.md) | Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  |  [optional]
-**status** | **String** | The http status description of the submitted request. |  [optional]
-**reason** | **String** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;RESOURCE_NOT_FOUND&#39;  |  [optional]
-**message** | **String** | Descriptive message for the error. |  [optional]
-**details** | [**List&lt;InlineResponse40011Details&gt;**](InlineResponse40011Details.md) |  |  [optional]
+**reason** | **String** |  |  [optional]
+**message** | **String** |  |  [optional]
+**details** | [**List&lt;InlineResponse4043Details&gt;**](InlineResponse4043Details.md) |  |  [optional]
 
 
 

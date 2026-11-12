@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Iccv1merchantsApiIntegrations;
 import Model.Iccv1merchantsProtocolInteractions;
-import Model.MerchantRegistrationResponse201ApiIntegrations;
-import Model.MerchantRegistrationResponse201WebIntegrations;
+import Model.Iccv1merchantsWebIntegrations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,10 +54,10 @@ public class MerchantUpdate {
   private List<Iccv1merchantsProtocolInteractions> protocolInteractions = null;
 
   @SerializedName("webIntegrations")
-  private MerchantRegistrationResponse201WebIntegrations webIntegrations = null;
+  private Iccv1merchantsWebIntegrations webIntegrations = null;
 
   @SerializedName("apiIntegrations")
-  private MerchantRegistrationResponse201ApiIntegrations apiIntegrations = null;
+  private Iccv1merchantsApiIntegrations apiIntegrations = null;
 
   public MerchantUpdate merchantName(String merchantName) {
     this.merchantName = merchantName;
@@ -183,7 +183,7 @@ public class MerchantUpdate {
     this.protocolInteractions = protocolInteractions;
   }
 
-  public MerchantUpdate webIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
+  public MerchantUpdate webIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
     return this;
   }
@@ -193,15 +193,15 @@ public class MerchantUpdate {
    * @return webIntegrations
   **/
   @ApiModelProperty(value = "")
-  public MerchantRegistrationResponse201WebIntegrations getWebIntegrations() {
+  public Iccv1merchantsWebIntegrations getWebIntegrations() {
     return webIntegrations;
   }
 
-  public void setWebIntegrations(MerchantRegistrationResponse201WebIntegrations webIntegrations) {
+  public void setWebIntegrations(Iccv1merchantsWebIntegrations webIntegrations) {
     this.webIntegrations = webIntegrations;
   }
 
-  public MerchantUpdate apiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
+  public MerchantUpdate apiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
     return this;
   }
@@ -211,11 +211,11 @@ public class MerchantUpdate {
    * @return apiIntegrations
   **/
   @ApiModelProperty(value = "")
-  public MerchantRegistrationResponse201ApiIntegrations getApiIntegrations() {
+  public Iccv1merchantsApiIntegrations getApiIntegrations() {
     return apiIntegrations;
   }
 
-  public void setApiIntegrations(MerchantRegistrationResponse201ApiIntegrations apiIntegrations) {
+  public void setApiIntegrations(Iccv1merchantsApiIntegrations apiIntegrations) {
     this.apiIntegrations = apiIntegrations;
   }
 

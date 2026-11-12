@@ -21,17 +21,17 @@ import Model.GetAllSubscriptionsResponse;
 import Model.GetSubscriptionCodeResponse;
 import Model.GetSubscriptionResponse;
 import Model.GetSubscriptionsPaymentsResponse;
-import Model.GetSubscriptionsPaymentsResponse1;
-import Model.InlineResponse4005;
-import Model.InlineResponse4006;
-import Model.InlineResponse4008;
-import Model.InlineResponse4009;
-import Model.InlineResponse4041;
+import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RbsGetPayment400ErrorResponse;
+import Model.RbsPlan400ErrorResponse;
+import Model.RbsPutPayment400ErrorResponse;
+import Model.RbsSubscription400ErrorResponse;
 import Model.SuspendSubscriptionResponse;
 import Model.UpdatePayments;
 import Model.UpdateSubscription;
 import Model.UpdateSubscriptionResponse;
+import Model.UpdateSubscriptionsPaymentsResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -182,7 +182,7 @@ public class SubscriptionsApiTest {
     public void subscriptionsIdPaymentsPutTest() throws Exception {
         String id = null;
         UpdatePayments updatePayments = null;
-        GetSubscriptionsPaymentsResponse1 response = api.subscriptionsIdPaymentsPut(id, updatePayments);
+        UpdateSubscriptionsPaymentsResponse response = api.subscriptionsIdPaymentsPut(id, updatePayments);
 
         // TODO: test validations
     }

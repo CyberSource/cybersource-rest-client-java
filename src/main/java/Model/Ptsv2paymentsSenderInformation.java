@@ -67,6 +67,9 @@ public class Ptsv2paymentsSenderInformation {
   @SerializedName("taxIdNumber")
   private BigDecimal taxIdNumber = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   public Ptsv2paymentsSenderInformation firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -283,6 +286,24 @@ public class Ptsv2paymentsSenderInformation {
     this.taxIdNumber = taxIdNumber;
   }
 
+  public Ptsv2paymentsSenderInformation email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Sender&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Sender's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -304,12 +325,13 @@ public class Ptsv2paymentsSenderInformation {
         Objects.equals(this.referenceNumber, ptsv2paymentsSenderInformation.referenceNumber) &&
         Objects.equals(this.account, ptsv2paymentsSenderInformation.account) &&
         Objects.equals(this.postalCode, ptsv2paymentsSenderInformation.postalCode) &&
-        Objects.equals(this.taxIdNumber, ptsv2paymentsSenderInformation.taxIdNumber);
+        Objects.equals(this.taxIdNumber, ptsv2paymentsSenderInformation.taxIdNumber) &&
+        Objects.equals(this.email, ptsv2paymentsSenderInformation.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, countryCode, aliasName, referenceNumber, account, postalCode, taxIdNumber);
+    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, countryCode, aliasName, referenceNumber, account, postalCode, taxIdNumber, email);
   }
 
 
@@ -348,6 +370,7 @@ public class Ptsv2paymentsSenderInformation {
     if (account != null) sb.append("    account: ").append(SENSITIVE_FIELD_PATTERN.matcher("account").matches() ? "[REDACTED]" : toIndentedString(account)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("postalCode").matches() ? "[REDACTED]" : toIndentedString(postalCode)).append("\n");
     if (taxIdNumber != null) sb.append("    taxIdNumber: ").append(SENSITIVE_FIELD_PATTERN.matcher("taxIdNumber").matches() ? "[REDACTED]" : toIndentedString(taxIdNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(SENSITIVE_FIELD_PATTERN.matcher("email").matches() ? "[REDACTED]" : toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -378,6 +401,7 @@ public class Ptsv2paymentsSenderInformation {
     if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
     if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     if (taxIdNumber != null) sb.append("    taxIdNumber: ").append(toIndentedString(taxIdNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

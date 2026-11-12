@@ -15,7 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Riskv1decisionsTravelInformationLegs;
+import Model.Riskv1decisionsBundledTravelInformationLegs;
+import Model.Riskv1decisionsTravelInformationLodging;
 import Model.Riskv1decisionsTravelInformationPassengers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -46,13 +47,16 @@ public class Riskv1decisionsTravelInformation {
   private String journeyType = null;
 
   @SerializedName("legs")
-  private List<Riskv1decisionsTravelInformationLegs> legs = null;
+  private List<Riskv1decisionsBundledTravelInformationLegs> legs = null;
 
   @SerializedName("numberOfPassengers")
   private Integer numberOfPassengers = null;
 
   @SerializedName("passengers")
   private List<Riskv1decisionsTravelInformationPassengers> passengers = null;
+
+  @SerializedName("lodging")
+  private Riskv1decisionsTravelInformationLodging lodging = null;
 
   public Riskv1decisionsTravelInformation actualFinalDestination(String actualFinalDestination) {
     this.actualFinalDestination = actualFinalDestination;
@@ -126,14 +130,14 @@ public class Riskv1decisionsTravelInformation {
     this.journeyType = journeyType;
   }
 
-  public Riskv1decisionsTravelInformation legs(List<Riskv1decisionsTravelInformationLegs> legs) {
+  public Riskv1decisionsTravelInformation legs(List<Riskv1decisionsBundledTravelInformationLegs> legs) {
     this.legs = legs;
     return this;
   }
 
-  public Riskv1decisionsTravelInformation addLegsItem(Riskv1decisionsTravelInformationLegs legsItem) {
+  public Riskv1decisionsTravelInformation addLegsItem(Riskv1decisionsBundledTravelInformationLegs legsItem) {
     if (this.legs == null) {
-      this.legs = new ArrayList<Riskv1decisionsTravelInformationLegs>();
+      this.legs = new ArrayList<Riskv1decisionsBundledTravelInformationLegs>();
     }
     this.legs.add(legsItem);
     return this;
@@ -144,11 +148,11 @@ public class Riskv1decisionsTravelInformation {
    * @return legs
   **/
   @ApiModelProperty(value = "")
-  public List<Riskv1decisionsTravelInformationLegs> getLegs() {
+  public List<Riskv1decisionsBundledTravelInformationLegs> getLegs() {
     return legs;
   }
 
-  public void setLegs(List<Riskv1decisionsTravelInformationLegs> legs) {
+  public void setLegs(List<Riskv1decisionsBundledTravelInformationLegs> legs) {
     this.legs = legs;
   }
 
@@ -196,6 +200,24 @@ public class Riskv1decisionsTravelInformation {
     this.passengers = passengers;
   }
 
+  public Riskv1decisionsTravelInformation lodging(Riskv1decisionsTravelInformationLodging lodging) {
+    this.lodging = lodging;
+    return this;
+  }
+
+   /**
+   * Get lodging
+   * @return lodging
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsTravelInformationLodging getLodging() {
+    return lodging;
+  }
+
+  public void setLodging(Riskv1decisionsTravelInformationLodging lodging) {
+    this.lodging = lodging;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,12 +234,13 @@ public class Riskv1decisionsTravelInformation {
         Objects.equals(this.journeyType, riskv1decisionsTravelInformation.journeyType) &&
         Objects.equals(this.legs, riskv1decisionsTravelInformation.legs) &&
         Objects.equals(this.numberOfPassengers, riskv1decisionsTravelInformation.numberOfPassengers) &&
-        Objects.equals(this.passengers, riskv1decisionsTravelInformation.passengers);
+        Objects.equals(this.passengers, riskv1decisionsTravelInformation.passengers) &&
+        Objects.equals(this.lodging, riskv1decisionsTravelInformation.lodging);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actualFinalDestination, completeRoute, departureTime, journeyType, legs, numberOfPassengers, passengers);
+    return Objects.hash(actualFinalDestination, completeRoute, departureTime, journeyType, legs, numberOfPassengers, passengers, lodging);
   }
 
 
@@ -251,6 +274,7 @@ public class Riskv1decisionsTravelInformation {
     if (legs != null) sb.append("    legs: ").append(SENSITIVE_FIELD_PATTERN.matcher("legs").matches() ? "[REDACTED]" : toIndentedString(legs)).append("\n");
     if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(SENSITIVE_FIELD_PATTERN.matcher("numberOfPassengers").matches() ? "[REDACTED]" : toIndentedString(numberOfPassengers)).append("\n");
     if (passengers != null) sb.append("    passengers: ").append(SENSITIVE_FIELD_PATTERN.matcher("passengers").matches() ? "[REDACTED]" : toIndentedString(passengers)).append("\n");
+    if (lodging != null) sb.append("    lodging: ").append(SENSITIVE_FIELD_PATTERN.matcher("lodging").matches() ? "[REDACTED]" : toIndentedString(lodging)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -276,6 +300,7 @@ public class Riskv1decisionsTravelInformation {
     if (legs != null) sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
     if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
     if (passengers != null) sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
+    if (lodging != null) sb.append("    lodging: ").append(toIndentedString(lodging)).append("\n");
     sb.append("}");
     return sb.toString();
   }

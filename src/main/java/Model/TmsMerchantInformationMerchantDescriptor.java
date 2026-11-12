@@ -29,25 +29,46 @@ import java.io.IOException;
  */
 
 public class TmsMerchantInformationMerchantDescriptor {
-  @SerializedName("alternateName")
-  private String alternateName = null;
+  @SerializedName("name")
+  private String name = null;
 
-  public TmsMerchantInformationMerchantDescriptor alternateName(String alternateName) {
-    this.alternateName = alternateName;
+  @SerializedName("url")
+  private String url = null;
+
+  public TmsMerchantInformationMerchantDescriptor name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder&#39;s statement. When you do not include this value in your capture or credit request, the merchant URL from your CyberSource account is used. Important This value must consist of English characters 
-   * @return alternateName
+   * Merchant&#39;s name
+   * @return name
   **/
-  @ApiModelProperty(value = "Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder's statement. When you do not include this value in your capture or credit request, the merchant URL from your CyberSource account is used. Important This value must consist of English characters ")
-  public String getAlternateName() {
-    return alternateName;
+  @ApiModelProperty(example = "TWVyY2hhbnQgVlphRjVYQmo", value = "Merchant's name")
+  public String getName() {
+    return name;
   }
 
-  public void setAlternateName(String alternateName) {
-    this.alternateName = alternateName;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public TmsMerchantInformationMerchantDescriptor url(String url) {
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Address of company&#39;s website provided by merchant
+   * @return url
+  **/
+  @ApiModelProperty(example = "aHR0cHM6Ly93d3cuTWVyY2hhbnQtVlphRjVYQmouY29t", value = "Address of company's website provided by merchant")
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
   }
 
 
@@ -60,12 +81,13 @@ public class TmsMerchantInformationMerchantDescriptor {
       return false;
     }
     TmsMerchantInformationMerchantDescriptor tmsMerchantInformationMerchantDescriptor = (TmsMerchantInformationMerchantDescriptor) o;
-    return Objects.equals(this.alternateName, tmsMerchantInformationMerchantDescriptor.alternateName);
+    return Objects.equals(this.name, tmsMerchantInformationMerchantDescriptor.name) &&
+        Objects.equals(this.url, tmsMerchantInformationMerchantDescriptor.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alternateName);
+    return Objects.hash(name, url);
   }
 
 
@@ -92,7 +114,8 @@ public class TmsMerchantInformationMerchantDescriptor {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsMerchantInformationMerchantDescriptor {\n");
     
-    if (alternateName != null) sb.append("    alternateName: ").append(SENSITIVE_FIELD_PATTERN.matcher("alternateName").matches() ? "[REDACTED]" : toIndentedString(alternateName)).append("\n");
+    if (name != null) sb.append("    name: ").append(SENSITIVE_FIELD_PATTERN.matcher("name").matches() ? "[REDACTED]" : toIndentedString(name)).append("\n");
+    if (url != null) sb.append("    url: ").append(SENSITIVE_FIELD_PATTERN.matcher("url").matches() ? "[REDACTED]" : toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -111,7 +134,8 @@ public class TmsMerchantInformationMerchantDescriptor {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsMerchantInformationMerchantDescriptor {\n");
     
-    if (alternateName != null) sb.append("    alternateName: ").append(toIndentedString(alternateName)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

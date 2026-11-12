@@ -30,12 +30,12 @@ import java.io.InputStream;
 
 
 import Model.AccountValidationsRequest;
-import Model.InlineResponse20015;
-import Model.InlineResponse40014;
-import Model.InlineResponse4033;
-import Model.InlineResponse4046;
+import Model.BankAccountValidationResponse;
+import Model.InlineResponse4005;
+import Model.InlineResponse4032;
+import Model.InlineResponse4045;
 import Model.InlineResponse4222;
-import Model.InlineResponse5024;
+import Model.InlineResponse5021;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -83,11 +83,17 @@ public class BankAccountValidationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(accountValidationsRequest, AccountValidationsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "bankAccountValidationRequest,bankAccountValidationRequestAsync,bankAccountValidationRequestWithHttpInfo,bankAccountValidationRequestCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -111,10 +117,6 @@ public class BankAccountValidationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -156,13 +158,13 @@ public class BankAccountValidationApi {
      * Visa Bank Account Validation Service
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer&#39;s routing and bank account number combination for ACH transactions. Merchant&#39;s can use this standalone product to validate their customer&#39;s account prior to processing an ACH transaction against the customer&#39;s account to comply with Nacha&#39;s account validation mandate for Web-debit transactions. 
      * @param accountValidationsRequest  (required)
-     * @return InlineResponse20015
+     * @return BankAccountValidationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20015 bankAccountValidationRequest(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
+    public BankAccountValidationResponse bankAccountValidationRequest(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'bankAccountValidationRequest' STARTED");
-        ApiResponse<InlineResponse20015> resp = bankAccountValidationRequestWithHttpInfo(accountValidationsRequest);
+        ApiResponse<BankAccountValidationResponse> resp = bankAccountValidationRequestWithHttpInfo(accountValidationsRequest);
         logger.info("CALL TO METHOD 'bankAccountValidationRequest' ENDED");
         return resp.getData();
     }
@@ -171,14 +173,13 @@ public class BankAccountValidationApi {
      * Visa Bank Account Validation Service
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer&#39;s routing and bank account number combination for ACH transactions. Merchant&#39;s can use this standalone product to validate their customer&#39;s account prior to processing an ACH transaction against the customer&#39;s account to comply with Nacha&#39;s account validation mandate for Web-debit transactions. 
      * @param accountValidationsRequest  (required)
-     * @return ApiResponse&lt;InlineResponse20015&gt;
+     * @return ApiResponse&lt;BankAccountValidationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20015> bankAccountValidationRequestWithHttpInfo(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<BankAccountValidationResponse> bankAccountValidationRequestWithHttpInfo(AccountValidationsRequest accountValidationsRequest) throws ApiException, ConfigException {
         okhttp3.Call call = bankAccountValidationRequestValidateBeforeCall(accountValidationsRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<BankAccountValidationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -191,9 +192,7 @@ public class BankAccountValidationApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call bankAccountValidationRequestAsync(AccountValidationsRequest accountValidationsRequest, final ApiCallback<InlineResponse20015> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call bankAccountValidationRequestAsync(AccountValidationsRequest accountValidationsRequest, final ApiCallback<BankAccountValidationResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -214,7 +213,7 @@ public class BankAccountValidationApi {
         }
 
         okhttp3.Call call = bankAccountValidationRequestValidateBeforeCall(accountValidationsRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<BankAccountValidationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

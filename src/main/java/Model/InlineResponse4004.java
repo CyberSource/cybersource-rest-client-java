@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2013ErrorInformationDetails;
+import Model.Flex400ErrorResponseDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,122 +32,47 @@ import java.util.List;
  */
 
 public class InlineResponse4004 {
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("correlationId")
+  private String correlationId = null;
 
-  @SerializedName("submitTimeStampUtc")
-  private String submitTimeStampUtc = null;
+  @SerializedName("details")
+  private List<Flex400ErrorResponseDetails> details = null;
 
-  @SerializedName("status")
-  private String status = null;
-
-  @SerializedName("reason")
-  private String reason = null;
+  @SerializedName("informationLink")
+  private String informationLink = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("details")
-  private List<InlineResponse2013ErrorInformationDetails> details = null;
+  @SerializedName("reason")
+  private String reason = null;
 
-  public InlineResponse4004 id(String id) {
-    this.id = id;
+  public InlineResponse4004 correlationId(String correlationId) {
+    this.correlationId = correlationId;
     return this;
   }
 
    /**
-   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
-   * @return id
+   * Get correlationId
+   * @return correlationId
   **/
-  @ApiModelProperty(value = "A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. ")
-  public String getId() {
-    return id;
+  @ApiModelProperty(value = "")
+  public String getCorrelationId() {
+    return correlationId;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setCorrelationId(String correlationId) {
+    this.correlationId = correlationId;
   }
 
-  public InlineResponse4004 submitTimeStampUtc(String submitTimeStampUtc) {
-    this.submitTimeStampUtc = submitTimeStampUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DD&#39;T&#39;HH:mm:ssZ&#x60;  Example: &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeStampUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeStampUtc() {
-    return submitTimeStampUtc;
-  }
-
-  public void setSubmitTimeStampUtc(String submitTimeStampUtc) {
-    this.submitTimeStampUtc = submitTimeStampUtc;
-  }
-
-  public InlineResponse4004 status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Possible values: - INVALID_REQUEST 
-   * @return status
-  **/
-  @ApiModelProperty(required = true, value = "Possible values: - INVALID_REQUEST ")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse4004 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD ")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
-
-  public InlineResponse4004 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detail message related to the status and reason listed above. 
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above. ")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public InlineResponse4004 details(List<InlineResponse2013ErrorInformationDetails> details) {
+  public InlineResponse4004 details(List<Flex400ErrorResponseDetails> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4004 addDetailsItem(InlineResponse2013ErrorInformationDetails detailsItem) {
+  public InlineResponse4004 addDetailsItem(Flex400ErrorResponseDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse2013ErrorInformationDetails>();
+      this.details = new ArrayList<Flex400ErrorResponseDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -158,12 +83,66 @@ public class InlineResponse4004 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2013ErrorInformationDetails> getDetails() {
+  public List<Flex400ErrorResponseDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse2013ErrorInformationDetails> details) {
+  public void setDetails(List<Flex400ErrorResponseDetails> details) {
     this.details = details;
+  }
+
+  public InlineResponse4004 informationLink(String informationLink) {
+    this.informationLink = informationLink;
+    return this;
+  }
+
+   /**
+   * Get informationLink
+   * @return informationLink
+  **/
+  @ApiModelProperty(value = "")
+  public String getInformationLink() {
+    return informationLink;
+  }
+
+  public void setInformationLink(String informationLink) {
+    this.informationLink = informationLink;
+  }
+
+  public InlineResponse4004 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Get message
+   * @return message
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public InlineResponse4004 reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
+   * @return reason
+  **/
+  @ApiModelProperty(required = true, value = "Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
 
@@ -176,17 +155,16 @@ public class InlineResponse4004 {
       return false;
     }
     InlineResponse4004 inlineResponse4004 = (InlineResponse4004) o;
-    return Objects.equals(this.id, inlineResponse4004.id) &&
-        Objects.equals(this.submitTimeStampUtc, inlineResponse4004.submitTimeStampUtc) &&
-        Objects.equals(this.status, inlineResponse4004.status) &&
-        Objects.equals(this.reason, inlineResponse4004.reason) &&
+    return Objects.equals(this.correlationId, inlineResponse4004.correlationId) &&
+        Objects.equals(this.details, inlineResponse4004.details) &&
+        Objects.equals(this.informationLink, inlineResponse4004.informationLink) &&
         Objects.equals(this.message, inlineResponse4004.message) &&
-        Objects.equals(this.details, inlineResponse4004.details);
+        Objects.equals(this.reason, inlineResponse4004.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeStampUtc, status, reason, message, details);
+    return Objects.hash(correlationId, details, informationLink, message, reason);
   }
 
 
@@ -213,12 +191,11 @@ public class InlineResponse4004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4004 {\n");
     
-    if (id != null) sb.append("    id: ").append(SENSITIVE_FIELD_PATTERN.matcher("id").matches() ? "[REDACTED]" : toIndentedString(id)).append("\n");
-    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeStampUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeStampUtc)).append("\n");
-    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
-    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(SENSITIVE_FIELD_PATTERN.matcher("correlationId").matches() ? "[REDACTED]" : toIndentedString(correlationId)).append("\n");
     if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
+    if (informationLink != null) sb.append("    informationLink: ").append(SENSITIVE_FIELD_PATTERN.matcher("informationLink").matches() ? "[REDACTED]" : toIndentedString(informationLink)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -237,12 +214,11 @@ public class InlineResponse4004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4004 {\n");
     
-    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    if (submitTimeStampUtc != null) sb.append("    submitTimeStampUtc: ").append(toIndentedString(submitTimeStampUtc)).append("\n");
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
     if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (informationLink != null) sb.append("    informationLink: ").append(toIndentedString(informationLink)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

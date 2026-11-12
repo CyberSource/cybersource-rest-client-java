@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.InlineResponse2004;
-import Model.InlineResponse4042;
-import Model.MerchantDefinedFieldCore;
-import Model.MerchantDefinedFieldCore1;
+import Model.InlineResponse4041;
 import Model.MerchantDefinedFieldDefinitionRequest;
-import Model.MerchantDefinedFieldDefinitionRequest1;
+import Model.MerchantDefinedFieldWithIdResponse;
+import Model.PblMerchantDefinedFieldDefinitionRequest;
+import Model.UpdateMerchantDefinedFieldCoreByIdRequest;
+import Model.UpdatePblMerchantDefinedFieldCoreByIdRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +49,7 @@ public class MerchantDefinedFieldsApiTest {
     public void createMerchantDefinedFieldDefinitionTest() throws Exception {
         String referenceType = null;
         MerchantDefinedFieldDefinitionRequest merchantDefinedFieldDefinitionRequest = null;
-        List<InlineResponse2004> response = api.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+        List<MerchantDefinedFieldWithIdResponse> response = api.createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
 
         // TODO: test validations
     }
@@ -65,8 +65,8 @@ public class MerchantDefinedFieldsApiTest {
     @Test
     public void createPblMerchantDefinedFieldDefinitionTest() throws Exception {
         String referenceType = null;
-        MerchantDefinedFieldDefinitionRequest1 merchantDefinedFieldDefinitionRequest = null;
-        List<InlineResponse2004> response = api.createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest);
+        PblMerchantDefinedFieldDefinitionRequest pblMerchantDefinedFieldDefinitionRequest = null;
+        List<MerchantDefinedFieldWithIdResponse> response = api.createPblMerchantDefinedFieldDefinition(referenceType, pblMerchantDefinedFieldDefinitionRequest);
 
         // TODO: test validations
     }
@@ -116,7 +116,7 @@ public class MerchantDefinedFieldsApiTest {
     @Test
     public void getMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
-        List<InlineResponse2004> response = api.getMerchantDefinedFieldsDefinitions(referenceType);
+        List<MerchantDefinedFieldWithIdResponse> response = api.getMerchantDefinedFieldsDefinitions(referenceType);
 
         // TODO: test validations
     }
@@ -132,7 +132,7 @@ public class MerchantDefinedFieldsApiTest {
     @Test
     public void getPblMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
-        List<InlineResponse2004> response = api.getPblMerchantDefinedFieldsDefinitions(referenceType);
+        List<MerchantDefinedFieldWithIdResponse> response = api.getPblMerchantDefinedFieldsDefinitions(referenceType);
 
         // TODO: test validations
     }
@@ -149,8 +149,8 @@ public class MerchantDefinedFieldsApiTest {
     public void putMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
         Long id = null;
-        MerchantDefinedFieldCore merchantDefinedFieldCore = null;
-        List<InlineResponse2004> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+        UpdateMerchantDefinedFieldCoreByIdRequest updateMerchantDefinedFieldCoreByIdRequest = null;
+        List<MerchantDefinedFieldWithIdResponse> response = api.putMerchantDefinedFieldsDefinitions(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest);
 
         // TODO: test validations
     }
@@ -167,8 +167,8 @@ public class MerchantDefinedFieldsApiTest {
     public void putPblMerchantDefinedFieldsDefinitionsTest() throws Exception {
         String referenceType = null;
         Long id = null;
-        MerchantDefinedFieldCore1 merchantDefinedFieldCore = null;
-        List<InlineResponse2004> response = api.putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore);
+        UpdatePblMerchantDefinedFieldCoreByIdRequest updatePblMerchantDefinedFieldCoreByIdRequest = null;
+        List<MerchantDefinedFieldWithIdResponse> response = api.putPblMerchantDefinedFieldsDefinitions(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest);
 
         // TODO: test validations
     }

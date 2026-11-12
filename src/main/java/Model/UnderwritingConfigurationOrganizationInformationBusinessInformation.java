@@ -19,8 +19,8 @@ import Model.UnderwritingConfigurationBusinessDetails;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationAddress;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation;
-import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation;
 import Model.UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress;
+import Model.UnderwritingConfigurationOwnerInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -105,7 +105,7 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
   private UnderwritingConfigurationBusinessDetails businessDetails = null;
 
   @SerializedName("ownerInformation")
-  private List<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation> ownerInformation = null;
+  private List<UnderwritingConfigurationOwnerInformation> ownerInformation = null;
 
   @SerializedName("directorInformation")
   private List<UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation> directorInformation = null;
@@ -514,14 +514,14 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
     this.businessDetails = businessDetails;
   }
 
-  public UnderwritingConfigurationOrganizationInformationBusinessInformation ownerInformation(List<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation> ownerInformation) {
+  public UnderwritingConfigurationOrganizationInformationBusinessInformation ownerInformation(List<UnderwritingConfigurationOwnerInformation> ownerInformation) {
     this.ownerInformation = ownerInformation;
     return this;
   }
 
-  public UnderwritingConfigurationOrganizationInformationBusinessInformation addOwnerInformationItem(UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation ownerInformationItem) {
+  public UnderwritingConfigurationOrganizationInformationBusinessInformation addOwnerInformationItem(UnderwritingConfigurationOwnerInformation ownerInformationItem) {
     if (this.ownerInformation == null) {
-      this.ownerInformation = new ArrayList<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation>();
+      this.ownerInformation = new ArrayList<UnderwritingConfigurationOwnerInformation>();
     }
     this.ownerInformation.add(ownerInformationItem);
     return this;
@@ -532,11 +532,11 @@ public class UnderwritingConfigurationOrganizationInformationBusinessInformation
    * @return ownerInformation
   **/
   @ApiModelProperty(value = "")
-  public List<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation> getOwnerInformation() {
+  public List<UnderwritingConfigurationOwnerInformation> getOwnerInformation() {
     return ownerInformation;
   }
 
-  public void setOwnerInformation(List<UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation> ownerInformation) {
+  public void setOwnerInformation(List<UnderwritingConfigurationOwnerInformation> ownerInformation) {
     this.ownerInformation = ownerInformation;
   }
 

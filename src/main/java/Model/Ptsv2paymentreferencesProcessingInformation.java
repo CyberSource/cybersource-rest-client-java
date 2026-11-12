@@ -90,10 +90,10 @@ public class Ptsv2paymentreferencesProcessingInformation {
   }
 
    /**
-   * Possible values are one or more of follows:   - &#x60;AP_SESSIONS&#x60;: Use this when Alternative Payment Sessions service is requested. 
+   * Possible values are one or more of follows:  - &#x60;AP_SESSIONS&#x60;: Use this when Alternative Payment Sessions service is requested. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "Possible values are one or more of follows:   - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested. ")
+  @ApiModelProperty(value = "Possible values are one or more of follows:  - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested. ")
   public List<String> getActionList() {
     return actionList;
   }

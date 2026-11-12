@@ -30,10 +30,10 @@ import java.io.InputStream;
 
 
 import Model.CreateWebhook;
-import Model.InlineResponse2006;
-import Model.InlineResponse2017;
-import Model.InlineResponse2018;
+import Model.CreateWebhookSubscriptionResponse;
+import Model.ProductCatalogProduct;
 import Model.SaveSymEgressKey;
+import Model.SaveSymEgressKeyResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,6 +69,147 @@ public class CreateNewWebhooksApi {
     }
 
     /**
+     * Build call for createWebhookSubscription
+     * @param createWebhook The webhook payload (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createWebhookSubscriptionCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createWebhook, CreateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String inboundMLEStatus = "false";
+
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createWebhookSubscription,createWebhookSubscriptionAsync,createWebhookSubscriptionWithHttpInfo,createWebhookSubscriptionCall")) {
+            try {
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+
+        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "createWebhookSubscription,createWebhookSubscriptionAsync,createWebhookSubscriptionWithHttpInfo,createWebhookSubscriptionCall");
+        
+        // create path and map variables
+        String localVarPath = "/notification-subscriptions/v2/webhooks";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createWebhookSubscriptionValidateBeforeCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+        
+        
+        okhttp3.Call call = createWebhookSubscriptionCall(createWebhook, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create a New Webhook Subscription
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
+     * @param createWebhook The webhook payload (optional)
+     * @return CreateWebhookSubscriptionResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public CreateWebhookSubscriptionResponse createWebhookSubscription(CreateWebhook createWebhook) throws ApiException, ConfigException {
+        logger.info("CALL TO METHOD 'createWebhookSubscription' STARTED");
+        ApiResponse<CreateWebhookSubscriptionResponse> resp = createWebhookSubscriptionWithHttpInfo(createWebhook);
+        logger.info("CALL TO METHOD 'createWebhookSubscription' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create a New Webhook Subscription
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
+     * @param createWebhook The webhook payload (optional)
+     * @return ApiResponse&lt;CreateWebhookSubscriptionResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public ApiResponse<CreateWebhookSubscriptionResponse> createWebhookSubscriptionWithHttpInfo(CreateWebhook createWebhook) throws ApiException, ConfigException {
+        okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhook, null, null);
+        Type localVarReturnType = new TypeToken<CreateWebhookSubscriptionResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a New Webhook Subscription (asynchronously)
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
+     * @param createWebhook The webhook payload (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ConfigException If creation of merchant configuration fails in ApiClient
+     */
+    public okhttp3.Call createWebhookSubscriptionAsync(CreateWebhook createWebhook, final ApiCallback<CreateWebhookSubscriptionResponse> callback) throws ApiException, ConfigException {
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhook, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CreateWebhookSubscriptionResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for findProductsToSubscribe
      * @param organizationId The Organization Identifier. (required)
      * @param progressListener Progress listener
@@ -81,14 +222,20 @@ public class CreateNewWebhooksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
+            localVarPostBody = java.util.Collections.emptyMap();
         }
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "findProductsToSubscribe,findProductsToSubscribeAsync,findProductsToSubscribeWithHttpInfo,findProductsToSubscribeCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -113,10 +260,6 @@ public class CreateNewWebhooksApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -158,13 +301,13 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return List&lt;InlineResponse2006&gt;
+     * @return List&lt;ProductCatalogProduct&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse2006> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
+    public List<ProductCatalogProduct> findProductsToSubscribe(String organizationId) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
-        ApiResponse<List<InlineResponse2006>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
+        ApiResponse<List<ProductCatalogProduct>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
     }
@@ -173,14 +316,13 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2006&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ProductCatalogProduct&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse2006>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<List<ProductCatalogProduct>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException, ConfigException {
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ProductCatalogProduct>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -193,9 +335,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2006>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<ProductCatalogProduct>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -216,149 +356,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2006>>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for notificationSubscriptionsV2WebhooksPost
-     * @param createWebhook The webhook payload (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksPostCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createWebhook, CreateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
-        
-        String inboundMLEStatus = "false";
-
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "notificationSubscriptionsV2WebhooksPost,notificationSubscriptionsV2WebhooksPostAsync,notificationSubscriptionsV2WebhooksPostWithHttpInfo,notificationSubscriptionsV2WebhooksPostCall")) {
-            try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
-            } catch (MLEException e) {
-                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
-                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
-            }
-        }
-
-        boolean isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(apiClient.merchantConfig, "notificationSubscriptionsV2WebhooksPost,notificationSubscriptionsV2WebhooksPostAsync,notificationSubscriptionsV2WebhooksPostWithHttpInfo,notificationSubscriptionsV2WebhooksPostCall");
-        
-        // create path and map variables
-        String localVarPath = "/notification-subscriptions/v2/webhooks";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener, isResponseMLEForApi);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call notificationSubscriptionsV2WebhooksPostValidateBeforeCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
-        
-        
-        okhttp3.Call call = notificationSubscriptionsV2WebhooksPostCall(createWebhook, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Create a New Webhook Subscription
-     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
-     * @param createWebhook The webhook payload (optional)
-     * @return InlineResponse2018
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public InlineResponse2018 notificationSubscriptionsV2WebhooksPost(CreateWebhook createWebhook) throws ApiException, ConfigException {
-        logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' STARTED");
-        ApiResponse<InlineResponse2018> resp = notificationSubscriptionsV2WebhooksPostWithHttpInfo(createWebhook);
-        logger.info("CALL TO METHOD 'notificationSubscriptionsV2WebhooksPost' ENDED");
-        return resp.getData();
-    }
-
-    /**
-     * Create a New Webhook Subscription
-     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
-     * @param createWebhook The webhook payload (optional)
-     * @return ApiResponse&lt;InlineResponse2018&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public ApiResponse<InlineResponse2018> notificationSubscriptionsV2WebhooksPostWithHttpInfo(CreateWebhook createWebhook) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Create a New Webhook Subscription (asynchronously)
-     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
-     * @param createWebhook The webhook payload (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @throws ConfigException If creation of merchant configuration fails in ApiClient
-     */
-    public okhttp3.Call notificationSubscriptionsV2WebhooksPostAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2018> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = notificationSubscriptionsV2WebhooksPostValidateBeforeCall(createWebhook, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2018>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ProductCatalogProduct>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -378,11 +376,17 @@ public class CreateNewWebhooksApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveSymEgressKey, SaveSymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "saveSymEgressKey,saveSymEgressKeyAsync,saveSymEgressKeyWithHttpInfo,saveSymEgressKeyCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -412,10 +416,6 @@ public class CreateNewWebhooksApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -454,13 +454,13 @@ public class CreateNewWebhooksApi {
      * @param vCSenderOrganizationId Sender organization id (optional)
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return InlineResponse2017
+     * @return SaveSymEgressKeyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2017 saveSymEgressKey(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
+    public SaveSymEgressKeyResponse saveSymEgressKey(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
-        ApiResponse<InlineResponse2017> resp = saveSymEgressKeyWithHttpInfo(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
+        ApiResponse<SaveSymEgressKeyResponse> resp = saveSymEgressKeyWithHttpInfo(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
     }
@@ -472,14 +472,13 @@ public class CreateNewWebhooksApi {
      * @param vCSenderOrganizationId Sender organization id (optional)
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return ApiResponse&lt;InlineResponse2017&gt;
+     * @return ApiResponse&lt;SaveSymEgressKeyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2017> saveSymEgressKeyWithHttpInfo(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<SaveSymEgressKeyResponse> saveSymEgressKeyWithHttpInfo(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey) throws ApiException, ConfigException {
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
+        Type localVarReturnType = new TypeToken<SaveSymEgressKeyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -495,9 +494,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call saveSymEgressKeyAsync(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2017> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call saveSymEgressKeyAsync(String vCCorrelationId, String vCSenderOrganizationId, String vCPermissions, SaveSymEgressKey saveSymEgressKey, final ApiCallback<SaveSymEgressKeyResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -518,7 +515,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCCorrelationId, vCSenderOrganizationId, vCPermissions, saveSymEgressKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2017>(){}.getType();
+        Type localVarReturnType = new TypeToken<SaveSymEgressKeyResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

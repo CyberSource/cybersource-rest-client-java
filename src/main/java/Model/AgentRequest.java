@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Iccv1agentsKeys;
+import Model.AddAgentKeyRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +52,7 @@ public class AgentRequest {
   private Object agentMetadata = null;
 
   @SerializedName("keys")
-  private List<Iccv1agentsKeys> keys = null;
+  private List<AddAgentKeyRequest> keys = null;
 
   public AgentRequest name(String name) {
     this.name = name;
@@ -162,14 +162,14 @@ public class AgentRequest {
     this.agentMetadata = agentMetadata;
   }
 
-  public AgentRequest keys(List<Iccv1agentsKeys> keys) {
+  public AgentRequest keys(List<AddAgentKeyRequest> keys) {
     this.keys = keys;
     return this;
   }
 
-  public AgentRequest addKeysItem(Iccv1agentsKeys keysItem) {
+  public AgentRequest addKeysItem(AddAgentKeyRequest keysItem) {
     if (this.keys == null) {
-      this.keys = new ArrayList<Iccv1agentsKeys>();
+      this.keys = new ArrayList<AddAgentKeyRequest>();
     }
     this.keys.add(keysItem);
     return this;
@@ -180,11 +180,11 @@ public class AgentRequest {
    * @return keys
   **/
   @ApiModelProperty(value = "Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate. ")
-  public List<Iccv1agentsKeys> getKeys() {
+  public List<AddAgentKeyRequest> getKeys() {
     return keys;
   }
 
-  public void setKeys(List<Iccv1agentsKeys> keys) {
+  public void setKeys(List<AddAgentKeyRequest> keys) {
     this.keys = keys;
   }
 

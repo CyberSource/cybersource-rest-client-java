@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Notificationsubscriptionsv2webhooksProducts1;
+import Model.CreateWebhookRequestProductItem;
 import Model.Notificationsubscriptionsv2webhooksRetryPolicy;
 import Model.Notificationsubscriptionsv2webhooksSecurityPolicy;
 import com.google.gson.TypeAdapter;
@@ -44,7 +44,7 @@ public class CreateWebhook {
   private String organizationId = null;
 
   @SerializedName("products")
-  private List<Notificationsubscriptionsv2webhooksProducts1> products = null;
+  private List<CreateWebhookRequestProductItem> products = null;
 
   @SerializedName("webhookUrl")
   private String webhookUrl = null;
@@ -115,14 +115,14 @@ public class CreateWebhook {
     this.organizationId = organizationId;
   }
 
-  public CreateWebhook products(List<Notificationsubscriptionsv2webhooksProducts1> products) {
+  public CreateWebhook products(List<CreateWebhookRequestProductItem> products) {
     this.products = products;
     return this;
   }
 
-  public CreateWebhook addProductsItem(Notificationsubscriptionsv2webhooksProducts1 productsItem) {
+  public CreateWebhook addProductsItem(CreateWebhookRequestProductItem productsItem) {
     if (this.products == null) {
-      this.products = new ArrayList<Notificationsubscriptionsv2webhooksProducts1>();
+      this.products = new ArrayList<CreateWebhookRequestProductItem>();
     }
     this.products.add(productsItem);
     return this;
@@ -133,11 +133,11 @@ public class CreateWebhook {
    * @return products
   **/
   @ApiModelProperty(value = "To see the valid productId and eventTypes, call the \"Create and Manage Webhooks - Retrieve a list of event types\" endpoint.")
-  public List<Notificationsubscriptionsv2webhooksProducts1> getProducts() {
+  public List<CreateWebhookRequestProductItem> getProducts() {
     return products;
   }
 
-  public void setProducts(List<Notificationsubscriptionsv2webhooksProducts1> products) {
+  public void setProducts(List<CreateWebhookRequestProductItem> products) {
     this.products = products;
   }
 

@@ -86,10 +86,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Visa,Mastercard and Discover: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) 
+   * The ID you assigned to your sub-merchant.  American Express Direct: String (20) 
    * @return id
   **/
-  @ApiModelProperty(value = "The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Visa,Mastercard and Discover: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) ")
+  @ApiModelProperty(value = "The ID you assigned to your sub-merchant.  American Express Direct: String (20) ")
   public String getId() {
     return id;
   }
@@ -104,10 +104,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters.  #### CyberSource through VisaNet With American Express, the maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.  #### FDC Nashville Global With Mastercard, the maximum length of the sub-merchant name depends on the length of the aggregator name: - If aggregator name length is 1 through 3, maximum sub-merchant name length is 21. - If aggregator name length is 4 through 7, maximum sub-merchant name length is 17. - If aggregator name length is 8 through 12, maximum sub-merchant name length is 12. 
+   * Sub-merchant&#39;s business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. 
    * @return name
   **/
-  @ApiModelProperty(value = "Sub-merchant's business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters.  #### CyberSource through VisaNet With American Express, the maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.  #### FDC Nashville Global With Mastercard, the maximum length of the sub-merchant name depends on the length of the aggregator name: - If aggregator name length is 1 through 3, maximum sub-merchant name length is 21. - If aggregator name length is 4 through 7, maximum sub-merchant name length is 17. - If aggregator name length is 8 through 12, maximum sub-merchant name length is 12. ")
+  @ApiModelProperty(value = "Sub-merchant's business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. ")
   public String getName() {
     return name;
   }
@@ -122,10 +122,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * First line of the sub-merchant&#39;s street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * First line of the sub-merchant&#39;s street address. 
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the sub-merchant's street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "First line of the sub-merchant's street address. ")
   public String getAddress1() {
     return address1;
   }
@@ -140,10 +140,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant&#39;s city. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Sub-merchant's city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Sub-merchant's city. ")
   public String getLocality() {
     return locality;
   }
@@ -158,10 +158,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant&#39;s state or province. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sub-merchant's state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Sub-merchant's state or province. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -194,10 +194,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Partial postal code for the sub-merchant&#39;s address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Partial postal code for the sub-merchant&#39;s address. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Partial postal code for the sub-merchant's address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Partial postal code for the sub-merchant's address. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -212,10 +212,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant&#39;s country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). 
    * @return country
   **/
-  @ApiModelProperty(value = "Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). ")
   public String getCountry() {
     return country;
   }
@@ -230,10 +230,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s email address.  **Maximum length for processors**   - American Express Direct: 40  - CyberSource through VisaNet: 40  - FDC Compass: 40  - FDC Nashville Global: 19  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 25-64 - Field: American Express Seller E-mail Address  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
+   * Sub-merchant&#39;s email address.  **Maximum length for processors**   - American Express Direct: 40 
    * @return email
   **/
-  @ApiModelProperty(value = "Sub-merchant's email address.  **Maximum length for processors**   - American Express Direct: 40  - CyberSource through VisaNet: 40  - FDC Compass: 40  - FDC Nashville Global: 19  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 25-64 - Field: American Express Seller E-mail Address  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant's acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. ")
+  @ApiModelProperty(value = "Sub-merchant's email address.  **Maximum length for processors**   - American Express Direct: 40 ")
   public String getEmail() {
     return email;
   }
@@ -248,10 +248,10 @@ public class Ucv1sessionsDataAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s telephone number.  **Maximum length for procesors**   - American Express Direct: 20  - CyberSource through VisaNet: 20  - FDC Compass: 13  - FDC Nashville Global: 10  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCRB - Position: 5-24 - Field: American Express Seller Telephone Number  **FDC Compass**\\ This value must consist of uppercase characters. Use one of these recommended formats:\\ &#x60;NNN-NNN-NNNN&#x60;\\ &#x60;NNN-AAAAAAA&#x60; 
+   * Sub-merchant&#39;s telephone number.  **Maximum length for procesors**   - American Express Direct: 20 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Sub-merchant's telephone number.  **Maximum length for procesors**   - American Express Direct: 20  - CyberSource through VisaNet: 20  - FDC Compass: 13  - FDC Nashville Global: 10  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCRB - Position: 5-24 - Field: American Express Seller Telephone Number  **FDC Compass**\\ This value must consist of uppercase characters. Use one of these recommended formats:\\ `NNN-NNN-NNNN`\\ `NNN-AAAAAAA` ")
+  @ApiModelProperty(value = "Sub-merchant's telephone number.  **Maximum length for procesors**   - American Express Direct: 20 ")
   public String getPhoneNumber() {
     return phoneNumber;
   }

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsBuyerInformationLoyalty;
 import Model.Ptsv2paymentsBuyerInformationPersonalIdentification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -64,6 +65,9 @@ public class Ptsv2paymentsBuyerInformation {
 
   @SerializedName("walletId")
   private String walletId = null;
+
+  @SerializedName("loyalty")
+  private Ptsv2paymentsBuyerInformationLoyalty loyalty = null;
 
   public Ptsv2paymentsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -271,6 +275,24 @@ public class Ptsv2paymentsBuyerInformation {
     this.walletId = walletId;
   }
 
+  public Ptsv2paymentsBuyerInformation loyalty(Ptsv2paymentsBuyerInformationLoyalty loyalty) {
+    this.loyalty = loyalty;
+    return this;
+  }
+
+   /**
+   * Get loyalty
+   * @return loyalty
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsBuyerInformationLoyalty getLoyalty() {
+    return loyalty;
+  }
+
+  public void setLoyalty(Ptsv2paymentsBuyerInformationLoyalty loyalty) {
+    this.loyalty = loyalty;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -291,12 +313,13 @@ public class Ptsv2paymentsBuyerInformation {
         Objects.equals(this.language, ptsv2paymentsBuyerInformation.language) &&
         Objects.equals(this.noteToSeller, ptsv2paymentsBuyerInformation.noteToSeller) &&
         Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone) &&
-        Objects.equals(this.walletId, ptsv2paymentsBuyerInformation.walletId);
+        Objects.equals(this.walletId, ptsv2paymentsBuyerInformation.walletId) &&
+        Objects.equals(this.loyalty, ptsv2paymentsBuyerInformation.loyalty);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, noteToSeller, mobilePhone, walletId);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, noteToSeller, mobilePhone, walletId, loyalty);
   }
 
 
@@ -334,6 +357,7 @@ public class Ptsv2paymentsBuyerInformation {
     if (noteToSeller != null) sb.append("    noteToSeller: ").append(SENSITIVE_FIELD_PATTERN.matcher("noteToSeller").matches() ? "[REDACTED]" : toIndentedString(noteToSeller)).append("\n");
     if (mobilePhone != null) sb.append("    mobilePhone: ").append(SENSITIVE_FIELD_PATTERN.matcher("mobilePhone").matches() ? "[REDACTED]" : toIndentedString(mobilePhone)).append("\n");
     if (walletId != null) sb.append("    walletId: ").append(SENSITIVE_FIELD_PATTERN.matcher("walletId").matches() ? "[REDACTED]" : toIndentedString(walletId)).append("\n");
+    if (loyalty != null) sb.append("    loyalty: ").append(SENSITIVE_FIELD_PATTERN.matcher("loyalty").matches() ? "[REDACTED]" : toIndentedString(loyalty)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -363,6 +387,7 @@ public class Ptsv2paymentsBuyerInformation {
     if (noteToSeller != null) sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
     if (mobilePhone != null) sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     if (walletId != null) sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
+    if (loyalty != null) sb.append("    loyalty: ").append(toIndentedString(loyalty)).append("\n");
     sb.append("}");
     return sb.toString();
   }

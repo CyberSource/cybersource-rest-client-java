@@ -29,13 +29,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse20011;
-import Model.InlineResponse2009;
-import Model.InlineResponse40012;
-import Model.InlineResponse4012;
-import Model.InlineResponse4032;
-import Model.InlineResponse4045;
-import Model.InlineResponse5003;
+import Model.DeviceSearchResponse;
+import Model.DeviceSearchV3Response;
+import Model.InlineResponse4003;
+import Model.InlineResponse401;
+import Model.InlineResponse4031;
+import Model.InlineResponse4044;
+import Model.InlineResponse5002;
 import Model.PostDeviceSearchRequest;
 import Model.PostDeviceSearchRequestV3;
 
@@ -85,11 +85,17 @@ public class DeviceSearchApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequest, PostDeviceSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postSearchQuery,postSearchQueryAsync,postSearchQueryWithHttpInfo,postSearchQueryCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -113,10 +119,6 @@ public class DeviceSearchApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -158,13 +160,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return InlineResponse2009
+     * @return DeviceSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2009 postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
+    public DeviceSearchResponse postSearchQuery(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQuery' STARTED");
-        ApiResponse<InlineResponse2009> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
+        ApiResponse<DeviceSearchResponse> resp = postSearchQueryWithHttpInfo(postDeviceSearchRequest);
         logger.info("CALL TO METHOD 'postSearchQuery' ENDED");
         return resp.getData();
     }
@@ -173,14 +175,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query V2
      * Retrieves list of terminals in paginated format.
      * @param postDeviceSearchRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2009&gt;
+     * @return ApiResponse&lt;DeviceSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2009> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<DeviceSearchResponse> postSearchQueryWithHttpInfo(PostDeviceSearchRequest postDeviceSearchRequest) throws ApiException, ConfigException {
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeviceSearchResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -193,9 +194,7 @@ public class DeviceSearchApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<InlineResponse2009> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postSearchQueryAsync(PostDeviceSearchRequest postDeviceSearchRequest, final ApiCallback<DeviceSearchResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -216,7 +215,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryValidateBeforeCall(postDeviceSearchRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeviceSearchResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -233,11 +232,17 @@ public class DeviceSearchApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postDeviceSearchRequestV3, PostDeviceSearchRequestV3.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postSearchQueryV3,postSearchQueryV3Async,postSearchQueryV3WithHttpInfo,postSearchQueryV3Call")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -261,10 +266,6 @@ public class DeviceSearchApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -306,13 +307,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return InlineResponse20011
+     * @return DeviceSearchV3Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse20011 postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
+    public DeviceSearchV3Response postSearchQueryV3(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postSearchQueryV3' STARTED");
-        ApiResponse<InlineResponse20011> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
+        ApiResponse<DeviceSearchV3Response> resp = postSearchQueryV3WithHttpInfo(postDeviceSearchRequestV3);
         logger.info("CALL TO METHOD 'postSearchQueryV3' ENDED");
         return resp.getData();
     }
@@ -321,14 +322,13 @@ public class DeviceSearchApi {
      * Retrieve List of Devices for a given search query
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param postDeviceSearchRequestV3  (required)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;DeviceSearchV3Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse20011> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<DeviceSearchV3Response> postSearchQueryV3WithHttpInfo(PostDeviceSearchRequestV3 postDeviceSearchRequestV3) throws ApiException, ConfigException {
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeviceSearchV3Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -341,9 +341,7 @@ public class DeviceSearchApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<InlineResponse20011> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postSearchQueryV3Async(PostDeviceSearchRequestV3 postDeviceSearchRequestV3, final ApiCallback<DeviceSearchV3Response> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -364,7 +362,7 @@ public class DeviceSearchApi {
         }
 
         okhttp3.Call call = postSearchQueryV3ValidateBeforeCall(postDeviceSearchRequestV3, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeviceSearchV3Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

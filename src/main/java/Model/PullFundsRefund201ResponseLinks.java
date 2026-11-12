@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PullFundsRefund201ResponseLinksSelf;
+import Model.PtsV2PaymentsPost201ResponseLinksSelf12;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class PullFundsRefund201ResponseLinks {
   @SerializedName("self")
-  private PullFundsRefund201ResponseLinksSelf self = null;
+  private PtsV2PaymentsPost201ResponseLinksSelf12 self = null;
 
-  public PullFundsRefund201ResponseLinks self(PullFundsRefund201ResponseLinksSelf self) {
+  public PullFundsRefund201ResponseLinks self(PtsV2PaymentsPost201ResponseLinksSelf12 self) {
     this.self = self;
     return this;
   }
@@ -43,11 +43,11 @@ public class PullFundsRefund201ResponseLinks {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public PullFundsRefund201ResponseLinksSelf getSelf() {
+  public PtsV2PaymentsPost201ResponseLinksSelf12 getSelf() {
     return self;
   }
 
-  public void setSelf(PullFundsRefund201ResponseLinksSelf self) {
+  public void setSelf(PtsV2PaymentsPost201ResponseLinksSelf12 self) {
     this.self = self;
   }
 

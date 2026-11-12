@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsRiskInformationBuyerHistory;
+import Model.Riskv1decisionsRiskInformationBuyerHistory;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class Riskv1authenticationsRiskInformation {
   @SerializedName("buyerHistory")
-  private Ptsv2paymentsRiskInformationBuyerHistory buyerHistory = null;
+  private Riskv1decisionsRiskInformationBuyerHistory buyerHistory = null;
 
-  public Riskv1authenticationsRiskInformation buyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
+  public Riskv1authenticationsRiskInformation buyerHistory(Riskv1decisionsRiskInformationBuyerHistory buyerHistory) {
     this.buyerHistory = buyerHistory;
     return this;
   }
@@ -43,11 +43,11 @@ public class Riskv1authenticationsRiskInformation {
    * @return buyerHistory
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsRiskInformationBuyerHistory getBuyerHistory() {
+  public Riskv1decisionsRiskInformationBuyerHistory getBuyerHistory() {
     return buyerHistory;
   }
 
-  public void setBuyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
+  public void setBuyerHistory(Riskv1decisionsRiskInformationBuyerHistory buyerHistory) {
     this.buyerHistory = buyerHistory;
   }
 

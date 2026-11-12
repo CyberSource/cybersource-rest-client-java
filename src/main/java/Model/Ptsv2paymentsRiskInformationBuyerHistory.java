@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsRiskInformationBuyerHistory
@@ -57,6 +58,9 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
 
   @SerializedName("transactionCountYear")
   private Integer transactionCountYear = null;
+
+  @SerializedName("failedPaymentAttemptsCount")
+  private BigDecimal failedPaymentAttemptsCount = null;
 
   public Ptsv2paymentsRiskInformationBuyerHistory customerAccount(Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount customerAccount) {
     this.customerAccount = customerAccount;
@@ -220,6 +224,24 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
     this.transactionCountYear = transactionCountYear;
   }
 
+  public Ptsv2paymentsRiskInformationBuyerHistory failedPaymentAttemptsCount(BigDecimal failedPaymentAttemptsCount) {
+    this.failedPaymentAttemptsCount = failedPaymentAttemptsCount;
+    return this;
+  }
+
+   /**
+   * Number of failed payment attempts linked to order
+   * @return failedPaymentAttemptsCount
+  **/
+  @ApiModelProperty(value = "Number of failed payment attempts linked to order")
+  public BigDecimal getFailedPaymentAttemptsCount() {
+    return failedPaymentAttemptsCount;
+  }
+
+  public void setFailedPaymentAttemptsCount(BigDecimal failedPaymentAttemptsCount) {
+    this.failedPaymentAttemptsCount = failedPaymentAttemptsCount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -238,12 +260,13 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
         Objects.equals(this.paymentAccountHistory, ptsv2paymentsRiskInformationBuyerHistory.paymentAccountHistory) &&
         Objects.equals(this.paymentAccountDate, ptsv2paymentsRiskInformationBuyerHistory.paymentAccountDate) &&
         Objects.equals(this.transactionCountDay, ptsv2paymentsRiskInformationBuyerHistory.transactionCountDay) &&
-        Objects.equals(this.transactionCountYear, ptsv2paymentsRiskInformationBuyerHistory.transactionCountYear);
+        Objects.equals(this.transactionCountYear, ptsv2paymentsRiskInformationBuyerHistory.transactionCountYear) &&
+        Objects.equals(this.failedPaymentAttemptsCount, ptsv2paymentsRiskInformationBuyerHistory.failedPaymentAttemptsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerAccount, accountHistory, accountPurchases, addCardAttempts, priorSuspiciousActivity, paymentAccountHistory, paymentAccountDate, transactionCountDay, transactionCountYear);
+    return Objects.hash(customerAccount, accountHistory, accountPurchases, addCardAttempts, priorSuspiciousActivity, paymentAccountHistory, paymentAccountDate, transactionCountDay, transactionCountYear, failedPaymentAttemptsCount);
   }
 
 
@@ -279,6 +302,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
     if (paymentAccountDate != null) sb.append("    paymentAccountDate: ").append(SENSITIVE_FIELD_PATTERN.matcher("paymentAccountDate").matches() ? "[REDACTED]" : toIndentedString(paymentAccountDate)).append("\n");
     if (transactionCountDay != null) sb.append("    transactionCountDay: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionCountDay").matches() ? "[REDACTED]" : toIndentedString(transactionCountDay)).append("\n");
     if (transactionCountYear != null) sb.append("    transactionCountYear: ").append(SENSITIVE_FIELD_PATTERN.matcher("transactionCountYear").matches() ? "[REDACTED]" : toIndentedString(transactionCountYear)).append("\n");
+    if (failedPaymentAttemptsCount != null) sb.append("    failedPaymentAttemptsCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("failedPaymentAttemptsCount").matches() ? "[REDACTED]" : toIndentedString(failedPaymentAttemptsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -306,6 +330,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
     if (paymentAccountDate != null) sb.append("    paymentAccountDate: ").append(toIndentedString(paymentAccountDate)).append("\n");
     if (transactionCountDay != null) sb.append("    transactionCountDay: ").append(toIndentedString(transactionCountDay)).append("\n");
     if (transactionCountYear != null) sb.append("    transactionCountYear: ").append(toIndentedString(transactionCountYear)).append("\n");
+    if (failedPaymentAttemptsCount != null) sb.append("    failedPaymentAttemptsCount: ").append(toIndentedString(failedPaymentAttemptsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

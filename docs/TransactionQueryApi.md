@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createQueryApi"></a>
 # **createQueryApi**
-> InlineResponse2014 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset)
+> CreateQueryApiResponse createQueryApi(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset)
 
 Query Transaction Details
 
@@ -24,7 +24,7 @@ Query the status and details of payouts transactions including Pull Funds, Push 
 
 TransactionQueryApi apiInstance = new TransactionQueryApi();
 String id = "id_example"; // String | This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried. 
-Body1 body = new Body1(); // Body1 | 
+CreateQueryApiRequest createQueryApiRequest = new CreateQueryApiRequest(); // CreateQueryApiRequest | 
 String contentType = "contentType_example"; // String | 
 String xRequestid = "xRequestid_example"; // String | 
 String vCMerchantId = "vCMerchantId_example"; // String | 
@@ -34,7 +34,7 @@ String vCOrganizationId = "vCOrganizationId_example"; // String |
 Integer limit = 56; // Integer | The maximum number of options to be retrieved from the processor and displayed to the consumer. 
 Integer offset = 56; // Integer | Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. 
 try {
-    InlineResponse2014 result = apiInstance.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+    CreateQueryApiResponse result = apiInstance.createQueryApi(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionQueryApi#createQueryApi");
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  |
- **body** | [**Body1**](Body1.md)|  |
+ **createQueryApiRequest** | [**CreateQueryApiRequest**](CreateQueryApiRequest.md)|  |
  **contentType** | **String**|  |
  **xRequestid** | **String**|  |
  **vCMerchantId** | **String**|  |
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**CreateQueryApiResponse**](CreateQueryApiResponse.md)
 
 ### Authorization
 

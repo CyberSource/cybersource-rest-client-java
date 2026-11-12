@@ -185,10 +185,10 @@ public class Ptsv2intentsOrderInformationAmountDetails {
   }
 
    /**
-   * Amount being charged as duty amount.             
+   * Amount being charged as duty amount. 
    * @return dutyAmount
   **/
-  @ApiModelProperty(value = "Amount being charged as duty amount.             ")
+  @ApiModelProperty(value = "Amount being charged as duty amount. ")
   public String getDutyAmount() {
     return dutyAmount;
   }

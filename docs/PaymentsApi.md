@@ -106,7 +106,7 @@ No authorization required
 
 <a name="createSessionRequest"></a>
 # **createSessionRequest**
-> PtsV2PaymentsPost201Response2 createSessionRequest(createSessionReq)
+> CreateSessionResponse createSessionRequest(createSessionReq)
 
 Create Alternative Payments Sessions Request
 
@@ -122,7 +122,7 @@ Create Alternative Payments Sessions Request
 PaymentsApi apiInstance = new PaymentsApi();
 CreateSessionReq createSessionReq = new CreateSessionReq(); // CreateSessionReq | 
 try {
-    PtsV2PaymentsPost201Response2 result = apiInstance.createSessionRequest(createSessionReq);
+    CreateSessionResponse result = apiInstance.createSessionRequest(createSessionReq);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#createSessionRequest");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response2**](PtsV2PaymentsPost201Response2.md)
+[**CreateSessionResponse**](CreateSessionResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="refreshPaymentStatus"></a>
 # **refreshPaymentStatus**
-> PtsV2PaymentsPost201Response1 refreshPaymentStatus(id, refreshPaymentStatusRequest)
+> RefreshPaymentStatusResponse refreshPaymentStatus(id, refreshPaymentStatusRequest)
 
 Check a Payment Status
 
@@ -215,7 +215,7 @@ PaymentsApi apiInstance = new PaymentsApi();
 String id = "id_example"; // String | The payment id whose status needs to be checked and updated.
 RefreshPaymentStatusRequest refreshPaymentStatusRequest = new RefreshPaymentStatusRequest(); // RefreshPaymentStatusRequest | 
 try {
-    PtsV2PaymentsPost201Response1 result = apiInstance.refreshPaymentStatus(id, refreshPaymentStatusRequest);
+    RefreshPaymentStatusResponse result = apiInstance.refreshPaymentStatus(id, refreshPaymentStatusRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#refreshPaymentStatus");
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response1**](PtsV2PaymentsPost201Response1.md)
+[**RefreshPaymentStatusResponse**](RefreshPaymentStatusResponse.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ No authorization required
 
 <a name="updateSessionRequest"></a>
 # **updateSessionRequest**
-> PtsV2PaymentsPost201Response2 updateSessionRequest(createSessionRequest, id)
+> CreateSessionResponse updateSessionRequest(createSessionRequest, id)
 
 Update Alternative Payments Sessions Request
 
@@ -262,7 +262,7 @@ PaymentsApi apiInstance = new PaymentsApi();
 CreateSessionRequest createSessionRequest = new CreateSessionRequest(); // CreateSessionRequest | 
 String id = "id_example"; // String | The payment ID. This ID is returned from a previous payment request.
 try {
-    PtsV2PaymentsPost201Response2 result = apiInstance.updateSessionRequest(createSessionRequest, id);
+    CreateSessionResponse result = apiInstance.updateSessionRequest(createSessionRequest, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#updateSessionRequest");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response2**](PtsV2PaymentsPost201Response2.md)
+[**CreateSessionResponse**](CreateSessionResponse.md)
 
 ### Authorization
 

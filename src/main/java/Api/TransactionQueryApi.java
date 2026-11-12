@@ -29,11 +29,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.Body1;
-import Model.InlineResponse2014;
-import Model.InlineResponse4004;
-import Model.InlineResponse4011;
-import Model.InlineResponse5023;
+import Model.CreateQueryApiRequest;
+import Model.CreateQueryApiResponse;
+import Model.MmQueryApi400ErrorResponse;
+import Model.MmQueryApi401ErrorResponse;
+import Model.MmQueryApi502ErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class TransactionQueryApi {
     /**
      * Build call for createQueryApi
      * @param id This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  (required)
-     * @param body  (required)
+     * @param createQueryApiRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -86,15 +86,21 @@ public class TransactionQueryApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createQueryApiCall(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call createQueryApiCall(String id, CreateQueryApiRequest createQueryApiRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createQueryApiRequest, CreateQueryApiRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "createQueryApi,createQueryApiAsync,createQueryApiWithHttpInfo,createQueryApiCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -135,10 +141,6 @@ public class TransactionQueryApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -158,7 +160,7 @@ public class TransactionQueryApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createQueryApiValidateBeforeCall(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call createQueryApiValidateBeforeCall(String id, CreateQueryApiRequest createQueryApiRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -166,10 +168,10 @@ public class TransactionQueryApi {
             throw new ApiException("Missing the required parameter 'id' when calling createQueryApi(Async)");
         }
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            logger.error("Missing the required parameter 'body' when calling createQueryApi(Async)");
-            throw new ApiException("Missing the required parameter 'body' when calling createQueryApi(Async)");
+        // verify the required parameter 'createQueryApiRequest' is set
+        if (createQueryApiRequest == null) {
+            logger.error("Missing the required parameter 'createQueryApiRequest' when calling createQueryApi(Async)");
+            throw new ApiException("Missing the required parameter 'createQueryApiRequest' when calling createQueryApi(Async)");
         }
         
         // verify the required parameter 'contentType' is set
@@ -209,7 +211,7 @@ public class TransactionQueryApi {
         }
         
         
-        okhttp3.Call call = createQueryApiCall(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, progressListener, progressRequestListener);
+        okhttp3.Call call = createQueryApiCall(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, progressListener, progressRequestListener);
         return call;
 
         
@@ -222,7 +224,7 @@ public class TransactionQueryApi {
      * Query Transaction Details
      * Query the status and details of payouts transactions including Pull Funds, Push Funds, and Pull Funds Reversals 
      * @param id This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  (required)
-     * @param body  (required)
+     * @param createQueryApiRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -231,13 +233,13 @@ public class TransactionQueryApi {
      * @param vCOrganizationId  (required)
      * @param limit The maximum number of options to be retrieved from the processor and displayed to the consumer.  (optional)
      * @param offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list.  (optional)
-     * @return InlineResponse2014
+     * @return CreateQueryApiResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse2014 createQueryApi(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
+    public CreateQueryApiResponse createQueryApi(String id, CreateQueryApiRequest createQueryApiRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'createQueryApi' STARTED");
-        ApiResponse<InlineResponse2014> resp = createQueryApiWithHttpInfo(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
+        ApiResponse<CreateQueryApiResponse> resp = createQueryApiWithHttpInfo(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset);
         logger.info("CALL TO METHOD 'createQueryApi' ENDED");
         return resp.getData();
     }
@@ -246,7 +248,7 @@ public class TransactionQueryApi {
      * Query Transaction Details
      * Query the status and details of payouts transactions including Pull Funds, Push Funds, and Pull Funds Reversals 
      * @param id This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  (required)
-     * @param body  (required)
+     * @param createQueryApiRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -255,14 +257,13 @@ public class TransactionQueryApi {
      * @param vCOrganizationId  (required)
      * @param limit The maximum number of options to be retrieved from the processor and displayed to the consumer.  (optional)
      * @param offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list.  (optional)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;CreateQueryApiResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse2014> createQueryApiWithHttpInfo(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = createQueryApiValidateBeforeCall(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+    public ApiResponse<CreateQueryApiResponse> createQueryApiWithHttpInfo(String id, CreateQueryApiRequest createQueryApiRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset) throws ApiException, ConfigException {
+        okhttp3.Call call = createQueryApiValidateBeforeCall(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, null, null);
+        Type localVarReturnType = new TypeToken<CreateQueryApiResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -270,7 +271,7 @@ public class TransactionQueryApi {
      * Query Transaction Details (asynchronously)
      * Query the status and details of payouts transactions including Pull Funds, Push Funds, and Pull Funds Reversals 
      * @param id This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  (required)
-     * @param body  (required)
+     * @param createQueryApiRequest  (required)
      * @param contentType  (required)
      * @param xRequestid  (required)
      * @param vCMerchantId  (required)
@@ -284,9 +285,7 @@ public class TransactionQueryApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call createQueryApiAsync(String id, Body1 body, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ApiCallback<InlineResponse2014> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call createQueryApiAsync(String id, CreateQueryApiRequest createQueryApiRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId, Integer limit, Integer offset, final ApiCallback<CreateQueryApiResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -306,8 +305,8 @@ public class TransactionQueryApi {
             };
         }
 
-        okhttp3.Call call = createQueryApiValidateBeforeCall(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        okhttp3.Call call = createQueryApiValidateBeforeCall(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, limit, offset, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CreateQueryApiResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

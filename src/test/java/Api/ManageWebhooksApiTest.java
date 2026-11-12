@@ -13,15 +13,15 @@
 
 package Api;
 
-import Model.InlineResponse2007;
-import Model.InlineResponse2008;
-import Model.InlineResponse20110;
-import Model.InlineResponse2018;
-import Model.InlineResponse2019;
-import Model.InlineResponse4044;
+import Model.CreateWebhookSubscriptionResponse;
+import Model.InlineResponse4043;
 import Model.SaveAsymEgressKey;
+import Model.SaveAsymEgressKeyResponse;
+import Model.TestWebhookSubscriptionResponse;
 import Model.UpdateStatus;
 import Model.UpdateWebhook;
+import Model.UpdateWebhookSubscriptionResponse;
+import Model.WebhookSubscription;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -67,7 +67,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void getWebhookSubscriptionByIdTest() throws Exception {
         String webhookId = null;
-        InlineResponse2018 response = api.getWebhookSubscriptionById(webhookId);
+        CreateWebhookSubscriptionResponse response = api.getWebhookSubscriptionById(webhookId);
 
         // TODO: test validations
     }
@@ -85,40 +85,7 @@ public class ManageWebhooksApiTest {
         String organizationId = null;
         String productId = null;
         String eventType = null;
-        List<InlineResponse2007> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Test a Webhook Configuration
-     *
-     * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void notificationSubscriptionsV1WebhooksWebhookIdPostTest() throws Exception {
-        String webhookId = null;
-        InlineResponse2019 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a Webhook Subscription
-     *
-     * Update a Webhook Subscription.
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void notificationSubscriptionsV2WebhooksWebhookIdPatchTest() throws Exception {
-        String webhookId = null;
-        UpdateWebhook updateWebhook = null;
-        InlineResponse2008 response = api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+        List<WebhookSubscription> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
 
         // TODO: test validations
     }
@@ -154,7 +121,40 @@ public class ManageWebhooksApiTest {
         String vCCorrelationId = null;
         String vCSenderOrganizationId = null;
         String vCPermissions = null;
-        InlineResponse20110 response = api.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
+        SaveAsymEgressKeyResponse response = api.saveAsymEgressKey(saveAsymEgressKey, vCCorrelationId, vCSenderOrganizationId, vCPermissions);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Test a Webhook Configuration
+     *
+     * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void testWebhookSubscriptionTest() throws Exception {
+        String webhookId = null;
+        TestWebhookSubscriptionResponse response = api.testWebhookSubscription(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a Webhook Subscription
+     *
+     * Update a Webhook Subscription.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWebhookSubscriptionTest() throws Exception {
+        String webhookId = null;
+        UpdateWebhook updateWebhook = null;
+        UpdateWebhookSubscriptionResponse response = api.updateWebhookSubscription(webhookId, updateWebhook);
 
         // TODO: test validations
     }

@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Iccv1UpdateCheckoutSessionsDiscounts;
+import Model.Iccv1UpdateCheckoutSessionsFulfillment;
+import Model.Iccv1UpdateCheckoutsessionsPayment;
 import Model.Iccv1checkoutsessionsLineItems;
-import Model.Iccv1checkoutsessionssessionIdDiscounts;
-import Model.Iccv1checkoutsessionssessionIdFulfillment;
-import Model.Iccv1checkoutsessionssessionIdPayment;
 import Model.UcpUpdateCheckoutSessionBuyer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -50,13 +50,13 @@ public class UcpUpdateCheckoutSessionRequest {
   private String currency = null;
 
   @SerializedName("payment")
-  private Iccv1checkoutsessionssessionIdPayment payment = null;
+  private Iccv1UpdateCheckoutsessionsPayment payment = null;
 
   @SerializedName("fulfillment")
-  private Iccv1checkoutsessionssessionIdFulfillment fulfillment = null;
+  private Iccv1UpdateCheckoutSessionsFulfillment fulfillment = null;
 
   @SerializedName("discounts")
-  private Iccv1checkoutsessionssessionIdDiscounts discounts = null;
+  private Iccv1UpdateCheckoutSessionsDiscounts discounts = null;
 
   public UcpUpdateCheckoutSessionRequest id(String id) {
     this.id = id;
@@ -138,7 +138,7 @@ public class UcpUpdateCheckoutSessionRequest {
     this.currency = currency;
   }
 
-  public UcpUpdateCheckoutSessionRequest payment(Iccv1checkoutsessionssessionIdPayment payment) {
+  public UcpUpdateCheckoutSessionRequest payment(Iccv1UpdateCheckoutsessionsPayment payment) {
     this.payment = payment;
     return this;
   }
@@ -148,15 +148,15 @@ public class UcpUpdateCheckoutSessionRequest {
    * @return payment
   **/
   @ApiModelProperty(value = "")
-  public Iccv1checkoutsessionssessionIdPayment getPayment() {
+  public Iccv1UpdateCheckoutsessionsPayment getPayment() {
     return payment;
   }
 
-  public void setPayment(Iccv1checkoutsessionssessionIdPayment payment) {
+  public void setPayment(Iccv1UpdateCheckoutsessionsPayment payment) {
     this.payment = payment;
   }
 
-  public UcpUpdateCheckoutSessionRequest fulfillment(Iccv1checkoutsessionssessionIdFulfillment fulfillment) {
+  public UcpUpdateCheckoutSessionRequest fulfillment(Iccv1UpdateCheckoutSessionsFulfillment fulfillment) {
     this.fulfillment = fulfillment;
     return this;
   }
@@ -166,15 +166,15 @@ public class UcpUpdateCheckoutSessionRequest {
    * @return fulfillment
   **/
   @ApiModelProperty(value = "")
-  public Iccv1checkoutsessionssessionIdFulfillment getFulfillment() {
+  public Iccv1UpdateCheckoutSessionsFulfillment getFulfillment() {
     return fulfillment;
   }
 
-  public void setFulfillment(Iccv1checkoutsessionssessionIdFulfillment fulfillment) {
+  public void setFulfillment(Iccv1UpdateCheckoutSessionsFulfillment fulfillment) {
     this.fulfillment = fulfillment;
   }
 
-  public UcpUpdateCheckoutSessionRequest discounts(Iccv1checkoutsessionssessionIdDiscounts discounts) {
+  public UcpUpdateCheckoutSessionRequest discounts(Iccv1UpdateCheckoutSessionsDiscounts discounts) {
     this.discounts = discounts;
     return this;
   }
@@ -184,11 +184,11 @@ public class UcpUpdateCheckoutSessionRequest {
    * @return discounts
   **/
   @ApiModelProperty(value = "")
-  public Iccv1checkoutsessionssessionIdDiscounts getDiscounts() {
+  public Iccv1UpdateCheckoutSessionsDiscounts getDiscounts() {
     return discounts;
   }
 
-  public void setDiscounts(Iccv1checkoutsessionssessionIdDiscounts discounts) {
+  public void setDiscounts(Iccv1UpdateCheckoutSessionsDiscounts discounts) {
     this.discounts = discounts;
   }
 

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures;
+import Model.DigitalPaymentsFeatureSubscriptionItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +40,7 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
   private String selfServiceability = "NOT_SELF_SERVICEABLE";
 
   @SerializedName("features")
-  private Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features = null;
+  private Map<String, DigitalPaymentsFeatureSubscriptionItem> features = null;
 
   public PaymentsProductsDigitalPaymentsSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -78,14 +78,14 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
     this.selfServiceability = selfServiceability;
   }
 
-  public PaymentsProductsDigitalPaymentsSubscriptionInformation features(Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features) {
+  public PaymentsProductsDigitalPaymentsSubscriptionInformation features(Map<String, DigitalPaymentsFeatureSubscriptionItem> features) {
     this.features = features;
     return this;
   }
 
-  public PaymentsProductsDigitalPaymentsSubscriptionInformation putFeaturesItem(String key, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures featuresItem) {
+  public PaymentsProductsDigitalPaymentsSubscriptionInformation putFeaturesItem(String key, DigitalPaymentsFeatureSubscriptionItem featuresItem) {
     if (this.features == null) {
-      this.features = new HashMap<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures>();
+      this.features = new HashMap<String, DigitalPaymentsFeatureSubscriptionItem>();
     }
     this.features.put(key, featuresItem);
     return this;
@@ -96,11 +96,11 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
    * @return features
   **/
   @ApiModelProperty(value = "Allowed values are; <table>    <tr>       <td>visaCheckout</td>    </tr>    <tr>       <td>applePay</td>    </tr>    <tr>       <td>samsungPay</td>    </tr>    <tr>        <td>googlePay</td>     </tr> </table> ")
-  public Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> getFeatures() {
+  public Map<String, DigitalPaymentsFeatureSubscriptionItem> getFeatures() {
     return features;
   }
 
-  public void setFeatures(Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features) {
+  public void setFeatures(Map<String, DigitalPaymentsFeatureSubscriptionItem> features) {
     this.features = features;
   }
 

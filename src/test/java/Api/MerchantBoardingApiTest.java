@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.InlineResponse2005;
-import Model.InlineResponse2016;
-import Model.InlineResponse40011;
-import Model.InlineResponse4043;
+import Model.BoardingRegistrationCreateResponse;
+import Model.BoardingRegistrationGetResponse;
+import Model.InlineResponse4002;
+import Model.InlineResponse4042;
 import Model.InlineResponse4221;
-import Model.InlineResponse5002;
+import Model.InlineResponse5001;
 import Model.PatchRegistrationBody;
 import Model.PostRegistrationBody;
 import org.junit.Test;
@@ -50,7 +50,7 @@ public class MerchantBoardingApiTest {
     @Test
     public void getRegistrationTest() throws Exception {
         String registrationId = null;
-        InlineResponse2005 response = api.getRegistration(registrationId);
+        BoardingRegistrationGetResponse response = api.getRegistration(registrationId);
 
         // TODO: test validations
     }
@@ -68,7 +68,7 @@ public class MerchantBoardingApiTest {
         String registrationId = null;
         PatchRegistrationBody patchRegistrationBody = null;
         String vCIdempotencyId = null;
-        InlineResponse2005 response = api.patchRegistration(registrationId, patchRegistrationBody, vCIdempotencyId);
+        BoardingRegistrationGetResponse response = api.patchRegistration(registrationId, patchRegistrationBody, vCIdempotencyId);
 
         // TODO: test validations
     }
@@ -85,7 +85,7 @@ public class MerchantBoardingApiTest {
     public void postRegistrationTest() throws Exception {
         PostRegistrationBody postRegistrationBody = null;
         String vCIdempotencyId = null;
-        InlineResponse2016 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
+        BoardingRegistrationCreateResponse response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
 
         // TODO: test validations
     }

@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **tradingAddress** | [**UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress**](UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress.md) |  |  [optional]
 **businessContact** | [**UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact**](UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact.md) |  |  [optional]
 **businessDetails** | [**UnderwritingConfigurationBusinessDetails**](UnderwritingConfigurationBusinessDetails.md) |  |  [optional]
-**ownerInformation** | [**List&lt;UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation&gt;**](UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation.md) |  |  [optional]
+**ownerInformation** | [**List&lt;UnderwritingConfigurationOwnerInformation&gt;**](UnderwritingConfigurationOwnerInformation.md) |  |  [optional]
 **directorInformation** | [**List&lt;UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation&gt;**](UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation.md) |  |  [optional]
 
 

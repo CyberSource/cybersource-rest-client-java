@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createFollowOnSubscription"></a>
 # **createFollowOnSubscription**
-> CreateSubscriptionResponse createFollowOnSubscription(requestId, createSubscriptionRequest)
+> CreateSubscriptionResponse createFollowOnSubscription(requestId, createFollowOnSubscriptionRequest)
 
 Create a Follow-On Subscription
 
@@ -25,9 +25,9 @@ Create a new Subscription based on the Request Id of an existing successful Tran
 
 SubscriptionsFollowOnsApi apiInstance = new SubscriptionsFollowOnsApi();
 String requestId = "requestId_example"; // String | Request Id of an existing successful Transaction
-CreateSubscriptionRequest1 createSubscriptionRequest = new CreateSubscriptionRequest1(); // CreateSubscriptionRequest1 | 
+CreateFollowOnSubscriptionRequest createFollowOnSubscriptionRequest = new CreateFollowOnSubscriptionRequest(); // CreateFollowOnSubscriptionRequest | 
 try {
-    CreateSubscriptionResponse result = apiInstance.createFollowOnSubscription(requestId, createSubscriptionRequest);
+    CreateSubscriptionResponse result = apiInstance.createFollowOnSubscription(requestId, createFollowOnSubscriptionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsFollowOnsApi#createFollowOnSubscription");
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestId** | **String**| Request Id of an existing successful Transaction |
- **createSubscriptionRequest** | [**CreateSubscriptionRequest1**](CreateSubscriptionRequest1.md)|  |
+ **createFollowOnSubscriptionRequest** | [**CreateFollowOnSubscriptionRequest**](CreateFollowOnSubscriptionRequest.md)|  |
 
 ### Return type
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="getFollowOnSubscription"></a>
 # **getFollowOnSubscription**
-> GetSubscriptionResponse1 getFollowOnSubscription(requestId)
+> GetFollowOnSubscriptionResponse getFollowOnSubscription(requestId)
 
 Get a Follow-On Subscription
 
@@ -73,7 +73,7 @@ Get details of the Subscription being created based on the Request Id of an exis
 SubscriptionsFollowOnsApi apiInstance = new SubscriptionsFollowOnsApi();
 String requestId = "requestId_example"; // String | Request Id of an existing successful Transaction
 try {
-    GetSubscriptionResponse1 result = apiInstance.getFollowOnSubscription(requestId);
+    GetFollowOnSubscriptionResponse result = apiInstance.getFollowOnSubscription(requestId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsFollowOnsApi#getFollowOnSubscription");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSubscriptionResponse1**](GetSubscriptionResponse1.md)
+[**GetFollowOnSubscriptionResponse**](GetFollowOnSubscriptionResponse.md)
 
 ### Authorization
 

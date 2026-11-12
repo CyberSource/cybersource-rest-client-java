@@ -15,11 +15,11 @@ package Api;
 
 import Model.CreateBillingAgreement;
 import Model.IntimateBillingAgreement;
+import Model.IntimateBillingAgreementResponse;
 import Model.ModifyBillingAgreement;
 import Model.PtsV2CreateBillingAgreementPost201Response;
 import Model.PtsV2CreateBillingAgreementPost400Response;
 import Model.PtsV2CreateBillingAgreementPost502Response;
-import Model.PtsV2CreditsPost201Response1;
 import Model.PtsV2ModifyBillingAgreementPost201Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -68,7 +68,7 @@ public class BillingAgreementsApiTest {
     public void billingAgreementsIntimationTest() throws Exception {
         IntimateBillingAgreement intimateBillingAgreement = null;
         String id = null;
-        PtsV2CreditsPost201Response1 response = api.billingAgreementsIntimation(intimateBillingAgreement, id);
+        IntimateBillingAgreementResponse response = api.billingAgreementsIntimation(intimateBillingAgreement, id);
 
         // TODO: test validations
     }

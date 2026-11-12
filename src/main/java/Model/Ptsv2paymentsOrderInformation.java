@@ -19,9 +19,10 @@ import Model.Ptsv2paymentsOrderInformationAmountDetails;
 import Model.Ptsv2paymentsOrderInformationBillTo;
 import Model.Ptsv2paymentsOrderInformationDigitalCurrency;
 import Model.Ptsv2paymentsOrderInformationInvoiceDetails;
-import Model.Ptsv2paymentsOrderInformationLineItems;
+import Model.Ptsv2paymentsOrderInformationLineItemsExtended;
 import Model.Ptsv2paymentsOrderInformationShipTo;
 import Model.Ptsv2paymentsOrderInformationShippingDetails;
+import Model.Ptsv2paymentsOrderInformationVouchers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,10 +52,13 @@ public class Ptsv2paymentsOrderInformation {
   private Ptsv2paymentsOrderInformationShipTo shipTo = null;
 
   @SerializedName("lineItems")
-  private List<Ptsv2paymentsOrderInformationLineItems> lineItems = null;
+  private List<Ptsv2paymentsOrderInformationLineItemsExtended> lineItems = null;
 
   @SerializedName("invoiceDetails")
   private Ptsv2paymentsOrderInformationInvoiceDetails invoiceDetails = null;
+
+  @SerializedName("vouchers")
+  private List<Ptsv2paymentsOrderInformationVouchers> vouchers = null;
 
   @SerializedName("shippingDetails")
   private Ptsv2paymentsOrderInformationShippingDetails shippingDetails = null;
@@ -155,14 +159,14 @@ public class Ptsv2paymentsOrderInformation {
     this.shipTo = shipTo;
   }
 
-  public Ptsv2paymentsOrderInformation lineItems(List<Ptsv2paymentsOrderInformationLineItems> lineItems) {
+  public Ptsv2paymentsOrderInformation lineItems(List<Ptsv2paymentsOrderInformationLineItemsExtended> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
 
-  public Ptsv2paymentsOrderInformation addLineItemsItem(Ptsv2paymentsOrderInformationLineItems lineItemsItem) {
+  public Ptsv2paymentsOrderInformation addLineItemsItem(Ptsv2paymentsOrderInformationLineItemsExtended lineItemsItem) {
     if (this.lineItems == null) {
-      this.lineItems = new ArrayList<Ptsv2paymentsOrderInformationLineItems>();
+      this.lineItems = new ArrayList<Ptsv2paymentsOrderInformationLineItemsExtended>();
     }
     this.lineItems.add(lineItemsItem);
     return this;
@@ -173,11 +177,11 @@ public class Ptsv2paymentsOrderInformation {
    * @return lineItems
   **/
   @ApiModelProperty(value = "")
-  public List<Ptsv2paymentsOrderInformationLineItems> getLineItems() {
+  public List<Ptsv2paymentsOrderInformationLineItemsExtended> getLineItems() {
     return lineItems;
   }
 
-  public void setLineItems(List<Ptsv2paymentsOrderInformationLineItems> lineItems) {
+  public void setLineItems(List<Ptsv2paymentsOrderInformationLineItemsExtended> lineItems) {
     this.lineItems = lineItems;
   }
 
@@ -197,6 +201,32 @@ public class Ptsv2paymentsOrderInformation {
 
   public void setInvoiceDetails(Ptsv2paymentsOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
+  }
+
+  public Ptsv2paymentsOrderInformation vouchers(List<Ptsv2paymentsOrderInformationVouchers> vouchers) {
+    this.vouchers = vouchers;
+    return this;
+  }
+
+  public Ptsv2paymentsOrderInformation addVouchersItem(Ptsv2paymentsOrderInformationVouchers vouchersItem) {
+    if (this.vouchers == null) {
+      this.vouchers = new ArrayList<Ptsv2paymentsOrderInformationVouchers>();
+    }
+    this.vouchers.add(vouchersItem);
+    return this;
+  }
+
+   /**
+   * Get vouchers
+   * @return vouchers
+  **/
+  @ApiModelProperty(value = "")
+  public List<Ptsv2paymentsOrderInformationVouchers> getVouchers() {
+    return vouchers;
+  }
+
+  public void setVouchers(List<Ptsv2paymentsOrderInformationVouchers> vouchers) {
+    this.vouchers = vouchers;
   }
 
   public Ptsv2paymentsOrderInformation shippingDetails(Ptsv2paymentsOrderInformationShippingDetails shippingDetails) {
@@ -377,6 +407,7 @@ public class Ptsv2paymentsOrderInformation {
         Objects.equals(this.shipTo, ptsv2paymentsOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, ptsv2paymentsOrderInformation.lineItems) &&
         Objects.equals(this.invoiceDetails, ptsv2paymentsOrderInformation.invoiceDetails) &&
+        Objects.equals(this.vouchers, ptsv2paymentsOrderInformation.vouchers) &&
         Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails) &&
         Objects.equals(this.digitalCurrency, ptsv2paymentsOrderInformation.digitalCurrency) &&
         Objects.equals(this.returnsAccepted, ptsv2paymentsOrderInformation.returnsAccepted) &&
@@ -390,7 +421,7 @@ public class Ptsv2paymentsOrderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(extensionDays, amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, digitalCurrency, returnsAccepted, isCryptocurrencyPurchase, cutoffDateTime, preOrder, preOrderDate, reordered, totalOffersCount);
+    return Objects.hash(extensionDays, amountDetails, billTo, shipTo, lineItems, invoiceDetails, vouchers, shippingDetails, digitalCurrency, returnsAccepted, isCryptocurrencyPurchase, cutoffDateTime, preOrder, preOrderDate, reordered, totalOffersCount);
   }
 
 
@@ -423,6 +454,7 @@ public class Ptsv2paymentsOrderInformation {
     if (shipTo != null) sb.append("    shipTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("shipTo").matches() ? "[REDACTED]" : toIndentedString(shipTo)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
     if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("invoiceDetails").matches() ? "[REDACTED]" : toIndentedString(invoiceDetails)).append("\n");
+    if (vouchers != null) sb.append("    vouchers: ").append(SENSITIVE_FIELD_PATTERN.matcher("vouchers").matches() ? "[REDACTED]" : toIndentedString(vouchers)).append("\n");
     if (shippingDetails != null) sb.append("    shippingDetails: ").append(SENSITIVE_FIELD_PATTERN.matcher("shippingDetails").matches() ? "[REDACTED]" : toIndentedString(shippingDetails)).append("\n");
     if (digitalCurrency != null) sb.append("    digitalCurrency: ").append(SENSITIVE_FIELD_PATTERN.matcher("digitalCurrency").matches() ? "[REDACTED]" : toIndentedString(digitalCurrency)).append("\n");
     if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnsAccepted").matches() ? "[REDACTED]" : toIndentedString(returnsAccepted)).append("\n");
@@ -456,6 +488,7 @@ public class Ptsv2paymentsOrderInformation {
     if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    if (vouchers != null) sb.append("    vouchers: ").append(toIndentedString(vouchers)).append("\n");
     if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     if (digitalCurrency != null) sb.append("    digitalCurrency: ").append(toIndentedString(digitalCurrency)).append("\n");
     if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");

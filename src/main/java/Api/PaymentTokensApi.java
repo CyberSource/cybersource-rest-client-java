@@ -29,10 +29,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse201;
+import Model.PaymentTokenRequest;
 import Model.PtsV2RetrievePaymentTokenGet400Response;
 import Model.PtsV2RetrievePaymentTokenGet502Response;
-import Model.Request;
+import Model.RetrieveOrDeletePaymentTokenResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,22 +69,28 @@ public class PaymentTokensApi {
 
     /**
      * Build call for retrieveOrDeletePaymentToken
-     * @param request  (required)
+     * @param paymentTokenRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call retrieveOrDeletePaymentTokenCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    public okhttp3.Call retrieveOrDeletePaymentTokenCall(PaymentTokenRequest paymentTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(request, Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(paymentTokenRequest, PaymentTokenRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json", "application/json; charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "optional";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenAsync,retrieveOrDeletePaymentTokenWithHttpInfo,retrieveOrDeletePaymentTokenCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -108,10 +114,6 @@ public class PaymentTokensApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json", "application/json; charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -131,16 +133,16 @@ public class PaymentTokensApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retrieveOrDeletePaymentTokenValidateBeforeCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
+    private okhttp3.Call retrieveOrDeletePaymentTokenValidateBeforeCall(PaymentTokenRequest paymentTokenRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, ConfigException {
         
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            logger.error("Missing the required parameter 'request' when calling retrieveOrDeletePaymentToken(Async)");
-            throw new ApiException("Missing the required parameter 'request' when calling retrieveOrDeletePaymentToken(Async)");
+        // verify the required parameter 'paymentTokenRequest' is set
+        if (paymentTokenRequest == null) {
+            logger.error("Missing the required parameter 'paymentTokenRequest' when calling retrieveOrDeletePaymentToken(Async)");
+            throw new ApiException("Missing the required parameter 'paymentTokenRequest' when calling retrieveOrDeletePaymentToken(Async)");
         }
         
         
-        okhttp3.Call call = retrieveOrDeletePaymentTokenCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = retrieveOrDeletePaymentTokenCall(paymentTokenRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -152,14 +154,14 @@ public class PaymentTokensApi {
     /**
      * Retrieve or Delete Payment Token
      * This API can be used in two flavours - for retrieval or deletion of vault id. 
-     * @param request  (required)
-     * @return InlineResponse201
+     * @param paymentTokenRequest  (required)
+     * @return RetrieveOrDeletePaymentTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public InlineResponse201 retrieveOrDeletePaymentToken(Request request) throws ApiException, ConfigException {
+    public RetrieveOrDeletePaymentTokenResponse retrieveOrDeletePaymentToken(PaymentTokenRequest paymentTokenRequest) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'retrieveOrDeletePaymentToken' STARTED");
-        ApiResponse<InlineResponse201> resp = retrieveOrDeletePaymentTokenWithHttpInfo(request);
+        ApiResponse<RetrieveOrDeletePaymentTokenResponse> resp = retrieveOrDeletePaymentTokenWithHttpInfo(paymentTokenRequest);
         logger.info("CALL TO METHOD 'retrieveOrDeletePaymentToken' ENDED");
         return resp.getData();
     }
@@ -167,30 +169,27 @@ public class PaymentTokensApi {
     /**
      * Retrieve or Delete Payment Token
      * This API can be used in two flavours - for retrieval or deletion of vault id. 
-     * @param request  (required)
-     * @return ApiResponse&lt;InlineResponse201&gt;
+     * @param paymentTokenRequest  (required)
+     * @return ApiResponse&lt;RetrieveOrDeletePaymentTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<InlineResponse201> retrieveOrDeletePaymentTokenWithHttpInfo(Request request) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        okhttp3.Call call = retrieveOrDeletePaymentTokenValidateBeforeCall(request, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+    public ApiResponse<RetrieveOrDeletePaymentTokenResponse> retrieveOrDeletePaymentTokenWithHttpInfo(PaymentTokenRequest paymentTokenRequest) throws ApiException, ConfigException {
+        okhttp3.Call call = retrieveOrDeletePaymentTokenValidateBeforeCall(paymentTokenRequest, null, null);
+        Type localVarReturnType = new TypeToken<RetrieveOrDeletePaymentTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve or Delete Payment Token (asynchronously)
      * This API can be used in two flavours - for retrieval or deletion of vault id. 
-     * @param request  (required)
+     * @param paymentTokenRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call retrieveOrDeletePaymentTokenAsync(Request request, final ApiCallback<InlineResponse201> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call retrieveOrDeletePaymentTokenAsync(PaymentTokenRequest paymentTokenRequest, final ApiCallback<RetrieveOrDeletePaymentTokenResponse> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -210,8 +209,8 @@ public class PaymentTokensApi {
             };
         }
 
-        okhttp3.Call call = retrieveOrDeletePaymentTokenValidateBeforeCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        okhttp3.Call call = retrieveOrDeletePaymentTokenValidateBeforeCall(paymentTokenRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RetrieveOrDeletePaymentTokenResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

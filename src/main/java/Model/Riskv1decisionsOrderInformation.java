@@ -15,11 +15,12 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Riskv1decisionsBundledOrderInformationShipTo;
 import Model.Riskv1decisionsOrderInformationAmountDetails;
 import Model.Riskv1decisionsOrderInformationBillTo;
 import Model.Riskv1decisionsOrderInformationLineItems;
-import Model.Riskv1decisionsOrderInformationShipTo;
 import Model.Riskv1decisionsOrderInformationShippingDetails;
+import Model.Riskv1decisionsOrderInformationVouchers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -56,7 +57,7 @@ public class Riskv1decisionsOrderInformation {
   private Riskv1decisionsOrderInformationShippingDetails shippingDetails = null;
 
   @SerializedName("shipTo")
-  private Riskv1decisionsOrderInformationShipTo shipTo = null;
+  private Riskv1decisionsBundledOrderInformationShipTo shipTo = null;
 
   @SerializedName("returnsAccepted")
   private Boolean returnsAccepted = null;
@@ -66,6 +67,9 @@ public class Riskv1decisionsOrderInformation {
 
   @SerializedName("billTo")
   private Riskv1decisionsOrderInformationBillTo billTo = null;
+
+  @SerializedName("vouchers")
+  private List<Riskv1decisionsOrderInformationVouchers> vouchers = null;
 
   @SerializedName("totalOffersCount")
   private String totalOffersCount = null;
@@ -178,7 +182,7 @@ public class Riskv1decisionsOrderInformation {
     this.shippingDetails = shippingDetails;
   }
 
-  public Riskv1decisionsOrderInformation shipTo(Riskv1decisionsOrderInformationShipTo shipTo) {
+  public Riskv1decisionsOrderInformation shipTo(Riskv1decisionsBundledOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -188,11 +192,11 @@ public class Riskv1decisionsOrderInformation {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsOrderInformationShipTo getShipTo() {
+  public Riskv1decisionsBundledOrderInformationShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Riskv1decisionsOrderInformationShipTo shipTo) {
+  public void setShipTo(Riskv1decisionsBundledOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
   }
 
@@ -258,6 +262,32 @@ public class Riskv1decisionsOrderInformation {
     this.billTo = billTo;
   }
 
+  public Riskv1decisionsOrderInformation vouchers(List<Riskv1decisionsOrderInformationVouchers> vouchers) {
+    this.vouchers = vouchers;
+    return this;
+  }
+
+  public Riskv1decisionsOrderInformation addVouchersItem(Riskv1decisionsOrderInformationVouchers vouchersItem) {
+    if (this.vouchers == null) {
+      this.vouchers = new ArrayList<Riskv1decisionsOrderInformationVouchers>();
+    }
+    this.vouchers.add(vouchersItem);
+    return this;
+  }
+
+   /**
+   * Array of voucher/coupon information used in the order
+   * @return vouchers
+  **/
+  @ApiModelProperty(value = "Array of voucher/coupon information used in the order")
+  public List<Riskv1decisionsOrderInformationVouchers> getVouchers() {
+    return vouchers;
+  }
+
+  public void setVouchers(List<Riskv1decisionsOrderInformationVouchers> vouchers) {
+    this.vouchers = vouchers;
+  }
+
   public Riskv1decisionsOrderInformation totalOffersCount(String totalOffersCount) {
     this.totalOffersCount = totalOffersCount;
     return this;
@@ -296,12 +326,13 @@ public class Riskv1decisionsOrderInformation {
         Objects.equals(this.returnsAccepted, riskv1decisionsOrderInformation.returnsAccepted) &&
         Objects.equals(this.lineItems, riskv1decisionsOrderInformation.lineItems) &&
         Objects.equals(this.billTo, riskv1decisionsOrderInformation.billTo) &&
+        Objects.equals(this.vouchers, riskv1decisionsOrderInformation.vouchers) &&
         Objects.equals(this.totalOffersCount, riskv1decisionsOrderInformation.totalOffersCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, preOrder, preOrderDate, cutoffDateTime, reordered, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, totalOffersCount);
+    return Objects.hash(amountDetails, preOrder, preOrderDate, cutoffDateTime, reordered, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, vouchers, totalOffersCount);
   }
 
 
@@ -338,6 +369,7 @@ public class Riskv1decisionsOrderInformation {
     if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(SENSITIVE_FIELD_PATTERN.matcher("returnsAccepted").matches() ? "[REDACTED]" : toIndentedString(returnsAccepted)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(SENSITIVE_FIELD_PATTERN.matcher("lineItems").matches() ? "[REDACTED]" : toIndentedString(lineItems)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(SENSITIVE_FIELD_PATTERN.matcher("billTo").matches() ? "[REDACTED]" : toIndentedString(billTo)).append("\n");
+    if (vouchers != null) sb.append("    vouchers: ").append(SENSITIVE_FIELD_PATTERN.matcher("vouchers").matches() ? "[REDACTED]" : toIndentedString(vouchers)).append("\n");
     if (totalOffersCount != null) sb.append("    totalOffersCount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalOffersCount").matches() ? "[REDACTED]" : toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -367,6 +399,7 @@ public class Riskv1decisionsOrderInformation {
     if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
     if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (vouchers != null) sb.append("    vouchers: ").append(toIndentedString(vouchers)).append("\n");
     if (totalOffersCount != null) sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();

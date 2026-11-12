@@ -31,13 +31,13 @@ import java.io.InputStream;
 
 import Model.DeAssociationRequestBody;
 import Model.DeviceDeAssociateV3Request;
-import Model.InlineResponse20010;
-import Model.InlineResponse206;
-import Model.InlineResponse40012;
-import Model.InlineResponse4012;
-import Model.InlineResponse4032;
-import Model.InlineResponse4045;
-import Model.InlineResponse5003;
+import Model.DeviceDeAssociateV3Response;
+import Model.InlineResponse4003;
+import Model.InlineResponse401;
+import Model.InlineResponse4031;
+import Model.InlineResponse4044;
+import Model.InlineResponse5002;
+import Model.PartialDeviceDeAssociateV3;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -85,11 +85,17 @@ public class DeviceDeAssociationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deAssociationRequestBody, DeAssociationRequestBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "deleteTerminalAssociation,deleteTerminalAssociationAsync,deleteTerminalAssociationWithHttpInfo,deleteTerminalAssociationCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -113,10 +119,6 @@ public class DeviceDeAssociationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -176,7 +178,6 @@ public class DeviceDeAssociationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<Void> deleteTerminalAssociationWithHttpInfo(DeAssociationRequestBody deAssociationRequestBody) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteTerminalAssociationValidateBeforeCall(deAssociationRequestBody, null, null);
         return apiClient.execute(call);
     }
@@ -191,8 +192,6 @@ public class DeviceDeAssociationApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call deleteTerminalAssociationAsync(DeAssociationRequestBody deAssociationRequestBody, final ApiCallback<Void> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -229,11 +228,17 @@ public class DeviceDeAssociationApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deviceDeAssociateV3Request, DeviceDeAssociateV3Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "false";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "postDeAssociateV3Terminal,postDeAssociateV3TerminalAsync,postDeAssociateV3TerminalWithHttpInfo,postDeAssociateV3TerminalCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -257,10 +262,6 @@ public class DeviceDeAssociationApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -302,13 +303,13 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return List&lt;InlineResponse20010&gt;
+     * @return List&lt;DeviceDeAssociateV3Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public List<InlineResponse20010> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
+    public List<DeviceDeAssociateV3Response> postDeAssociateV3Terminal(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' STARTED");
-        ApiResponse<List<InlineResponse20010>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
+        ApiResponse<List<DeviceDeAssociateV3Response>> resp = postDeAssociateV3TerminalWithHttpInfo(deviceDeAssociateV3Request);
         logger.info("CALL TO METHOD 'postDeAssociateV3Terminal' ENDED");
         return resp.getData();
     }
@@ -317,14 +318,13 @@ public class DeviceDeAssociationApi {
      * De-associate a device from merchant to account or reseller and from account to reseller
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device&#39;s new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse20010&gt;&gt;
+     * @return ApiResponse&lt;List&lt;DeviceDeAssociateV3Response&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public ApiResponse<List<InlineResponse20010>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public ApiResponse<List<DeviceDeAssociateV3Response>> postDeAssociateV3TerminalWithHttpInfo(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request) throws ApiException, ConfigException {
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20010>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DeviceDeAssociateV3Response>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -337,9 +337,7 @@ public class DeviceDeAssociationApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
-    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<InlineResponse20010>> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
+    public okhttp3.Call postDeAssociateV3TerminalAsync(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ApiCallback<List<DeviceDeAssociateV3Response>> callback) throws ApiException, ConfigException {
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -360,7 +358,7 @@ public class DeviceDeAssociationApi {
         }
 
         okhttp3.Call call = postDeAssociateV3TerminalValidateBeforeCall(deviceDeAssociateV3Request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20010>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DeviceDeAssociateV3Response>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

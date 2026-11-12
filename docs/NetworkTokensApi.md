@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getCardArtAsset"></a>
 # **getCardArtAsset**
-> InlineResponse2002 getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
+> CardArtAssetResponse getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
 
 Retrieve Card Art
 
@@ -33,7 +33,7 @@ String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | Th
 String tokenProvider = "tokenProvider_example"; // String | The token provider.
 String assetType = "assetType_example"; // String | The type of asset.
 try {
-    InlineResponse2002 result = apiInstance.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
+    CardArtAssetResponse result = apiInstance.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NetworkTokensApi#getCardArtAsset");
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**CardArtAssetResponse**](CardArtAssetResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 
 <a name="getTokenizedCard"></a>
 # **getTokenizedCard**
-> InlineResponse2001 getTokenizedCard(tokenizedCardId, profileId)
+> GetTokenizedCardResponse getTokenizedCard(tokenizedCardId, profileId)
 
 Retrieve a Tokenized Card
 
@@ -81,7 +81,7 @@ NetworkTokensApi apiInstance = new NetworkTokensApi();
 String tokenizedCardId = "tokenizedCardId_example"; // String | The Id of a tokenized card.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    InlineResponse2001 result = apiInstance.getTokenizedCard(tokenizedCardId, profileId);
+    GetTokenizedCardResponse result = apiInstance.getTokenizedCard(tokenizedCardId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NetworkTokensApi#getTokenizedCard");
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetTokenizedCardResponse**](GetTokenizedCardResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Generate Payment Credentials v2
 
 NetworkTokensApi apiInstance = new NetworkTokensApi();
 String tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-PostPaymentCredentialsRequest1 postPaymentCredentialsRequest = new PostPaymentCredentialsRequest1(); // PostPaymentCredentialsRequest1 | 
+PostPaymentCredentialsRequest postPaymentCredentialsRequest = new PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
     String result = apiInstance.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId);
@@ -190,7 +190,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
- **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest1**](PostPaymentCredentialsRequest1.md)|  |
+ **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
@@ -208,7 +208,7 @@ No authorization required
 
 <a name="postTokenPaymentCredentialsV3"></a>
 # **postTokenPaymentCredentialsV3**
-> InlineResponse2011 postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, profileId)
+> PostPaymentCredentialsResponse postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsV3Request, profileId)
 
 Generate Payment Credentials Latest Version v3
 
@@ -223,10 +223,10 @@ Generate Payment Credentials Latest Version v3
 
 NetworkTokensApi apiInstance = new NetworkTokensApi();
 String tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-PostPaymentCredentialsRequest postPaymentCredentialsRequest = new PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
+PostPaymentCredentialsV3Request postPaymentCredentialsV3Request = new PostPaymentCredentialsV3Request(); // PostPaymentCredentialsV3Request | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    InlineResponse2011 result = apiInstance.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, profileId);
+    PostPaymentCredentialsResponse result = apiInstance.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsV3Request, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NetworkTokensApi#postTokenPaymentCredentialsV3");
@@ -239,12 +239,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
- **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  |
+ **postPaymentCredentialsV3Request** | [**PostPaymentCredentialsV3Request**](PostPaymentCredentialsV3Request.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**PostPaymentCredentialsResponse**](PostPaymentCredentialsResponse.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ No authorization required
 
 <a name="postTokenizedCard"></a>
 # **postTokenizedCard**
-> InlineResponse2001 postTokenizedCard(postTokenizedCardRequest, profileId)
+> GetTokenizedCardResponse postTokenizedCard(postTokenizedCardRequest, profileId)
 
 Create a Tokenized Card
 
@@ -274,7 +274,7 @@ NetworkTokensApi apiInstance = new NetworkTokensApi();
 PostTokenizedCardRequest postTokenizedCardRequest = new PostTokenizedCardRequest(); // PostTokenizedCardRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    InlineResponse2001 result = apiInstance.postTokenizedCard(postTokenizedCardRequest, profileId);
+    GetTokenizedCardResponse result = apiInstance.postTokenizedCard(postTokenizedCardRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NetworkTokensApi#postTokenizedCard");
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetTokenizedCardResponse**](GetTokenizedCardResponse.md)
 
 ### Authorization
 

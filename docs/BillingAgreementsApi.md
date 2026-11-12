@@ -58,7 +58,7 @@ No authorization required
 
 <a name="billingAgreementsIntimation"></a>
 # **billingAgreementsIntimation**
-> PtsV2CreditsPost201Response1 billingAgreementsIntimation(intimateBillingAgreement, id)
+> IntimateBillingAgreementResponse billingAgreementsIntimation(intimateBillingAgreement, id)
 
 Standing Instruction intimation
 
@@ -75,7 +75,7 @@ BillingAgreementsApi apiInstance = new BillingAgreementsApi();
 IntimateBillingAgreement intimateBillingAgreement = new IntimateBillingAgreement(); // IntimateBillingAgreement | 
 String id = "id_example"; // String | ID for intimation of Billing Agreement
 try {
-    PtsV2CreditsPost201Response1 result = apiInstance.billingAgreementsIntimation(intimateBillingAgreement, id);
+    IntimateBillingAgreementResponse result = apiInstance.billingAgreementsIntimation(intimateBillingAgreement, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BillingAgreementsApi#billingAgreementsIntimation");
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2CreditsPost201Response1**](PtsV2CreditsPost201Response1.md)
+[**IntimateBillingAgreementResponse**](IntimateBillingAgreementResponse.md)
 
 ### Authorization
 

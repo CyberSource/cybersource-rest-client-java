@@ -10,6 +10,12 @@ Name | Type | Description | Notes
 **passwordHistory** | **String** | This only applies for EXISTING_ACCOUNT in creationHistory. The values from the enum can be: - PASSWORD_CHANGED_NOW - PASSWORD_CHANGED_PAST - PASSWORD_NEVER_CHANGED  |  [optional]
 **createDate** | **String** | Date the cardholder opened the account. Recommended for Discover ProtectBuy. This only applies for EXISTING_ACCOUNT in creationHistory.  |  [optional]
 **passwordChangeDate** | **String** | Date the cardholder last changed or reset password on account. Recommended for Discover ProtectBuy. This only applies for PASSWORD_CHANGED_PAST in passwordHistory.  |  [optional]
+**previousLogin** | [**Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin**](Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin.md) |  |  [optional]
+**previousOrder** | [**Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder**](Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder.md) |  |  [optional]
+**paymentMethodsCount** | [**BigDecimal**](BigDecimal.md) | Number of Payment methods (all types) created on customer account |  [optional]
+**totalOrdersCount** | [**BigDecimal**](BigDecimal.md) | Number of total orders made by this customer account |  [optional]
+**proofOfIdReceived** | **Boolean** | True if the customer provided a proof of any id |  [optional]
+**lastEmailChangeDate** | **String** | Date of last email change. Format: &#39;YYYYMMDD&#39;  |  [optional]
 
 
 

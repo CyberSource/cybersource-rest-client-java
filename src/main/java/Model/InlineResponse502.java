@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse500Errors;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,16 +32,117 @@ import java.util.List;
  */
 
 public class InlineResponse502 {
-  @SerializedName("errors")
-  private List<InlineResponse500Errors> errors = null;
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
+
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("reason")
+  private String reason = null;
+
+  @SerializedName("message")
+  private String message = null;
+
+  @SerializedName("details")
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
+
+  public InlineResponse502 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
 
    /**
-   * Get errors
-   * @return errors
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+  }
+
+  public InlineResponse502 status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction. Possible values: - &#x60;SERVER_ERROR&#x60; 
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `SERVER_ERROR` ")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public InlineResponse502 reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status. Possible Values: - &#x60;INTERNAL_SERVICE_ERROR&#x60; 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR` ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
+  }
+
+  public InlineResponse502 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Application failed.
+   * @return message
+  **/
+  @ApiModelProperty(value = "Application failed.")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public InlineResponse502 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse502 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+    }
+    this.details.add(detailsItem);
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse500Errors> getErrors() {
-    return errors;
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+    return details;
+  }
+
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
   }
 
 
@@ -54,12 +155,16 @@ public class InlineResponse502 {
       return false;
     }
     InlineResponse502 inlineResponse502 = (InlineResponse502) o;
-    return Objects.equals(this.errors, inlineResponse502.errors);
+    return Objects.equals(this.submitTimeUtc, inlineResponse502.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse502.status) &&
+        Objects.equals(this.reason, inlineResponse502.reason) &&
+        Objects.equals(this.message, inlineResponse502.message) &&
+        Objects.equals(this.details, inlineResponse502.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -86,7 +191,11 @@ public class InlineResponse502 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse502 {\n");
     
-    if (errors != null) sb.append("    errors: ").append(SENSITIVE_FIELD_PATTERN.matcher("errors").matches() ? "[REDACTED]" : toIndentedString(errors)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(SENSITIVE_FIELD_PATTERN.matcher("details").matches() ? "[REDACTED]" : toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -105,7 +214,11 @@ public class InlineResponse502 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse502 {\n");
     
-    if (errors != null) sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

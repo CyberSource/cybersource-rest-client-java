@@ -82,11 +82,17 @@ public class PaymentEventsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agenticConfirmTransactionEventsRequest, AgenticConfirmTransactionEventsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "confirmTransactionEvents,confirmTransactionEventsAsync,confirmTransactionEventsWithHttpInfo,confirmTransactionEventsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -111,10 +117,6 @@ public class PaymentEventsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -184,7 +186,6 @@ public class PaymentEventsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgenticConfirmTransactionEventsResponse202> confirmTransactionEventsWithHttpInfo(String instructionId, AgenticConfirmTransactionEventsRequest agenticConfirmTransactionEventsRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = confirmTransactionEventsValidateBeforeCall(instructionId, agenticConfirmTransactionEventsRequest, null, null);
         Type localVarReturnType = new TypeToken<AgenticConfirmTransactionEventsResponse202>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -201,8 +202,6 @@ public class PaymentEventsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call confirmTransactionEventsAsync(String instructionId, AgenticConfirmTransactionEventsRequest agenticConfirmTransactionEventsRequest, final ApiCallback<AgenticConfirmTransactionEventsResponse202> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -241,11 +240,17 @@ public class PaymentEventsApi {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(agenticRetrievePaymentCredentialsRequest, AgenticRetrievePaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
         String inboundMLEStatus = "mandatory";
 
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, inboundMLEStatus, "retrievePaymentCredentials,retrievePaymentCredentialsAsync,retrievePaymentCredentialsWithHttpInfo,retrievePaymentCredentialsCall")) {
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
+                String localVarSerializedPayload = apiClient.serializePayload(localVarPostBody, localVarContentType);
+                localVarPostBody = MLEUtility.encryptSerializedRequestPayload(apiClient.merchantConfig, localVarPostBody, localVarSerializedPayload, localVarContentType);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -270,10 +275,6 @@ public class PaymentEventsApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
@@ -343,7 +344,6 @@ public class PaymentEventsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public ApiResponse<AgenticRetrievePaymentCredentialsResponse200> retrievePaymentCredentialsWithHttpInfo(String instructionId, AgenticRetrievePaymentCredentialsRequest agenticRetrievePaymentCredentialsRequest) throws ApiException, ConfigException {
-        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = retrievePaymentCredentialsValidateBeforeCall(instructionId, agenticRetrievePaymentCredentialsRequest, null, null);
         Type localVarReturnType = new TypeToken<AgenticRetrievePaymentCredentialsResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -360,8 +360,6 @@ public class PaymentEventsApi {
      * @throws ConfigException If creation of merchant configuration fails in ApiClient
      */
     public okhttp3.Call retrievePaymentCredentialsAsync(String instructionId, AgenticRetrievePaymentCredentialsRequest agenticRetrievePaymentCredentialsRequest, final ApiCallback<AgenticRetrievePaymentCredentialsResponse200> callback) throws ApiException, ConfigException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

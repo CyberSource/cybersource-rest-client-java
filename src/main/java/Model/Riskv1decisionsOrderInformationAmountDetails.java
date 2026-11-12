@@ -33,6 +33,9 @@ public class Riskv1decisionsOrderInformationAmountDetails {
   @SerializedName("currency")
   private String currency = null;
 
+  @SerializedName("discountAmount")
+  private String discountAmount = null;
+
   @SerializedName("totalAmount")
   private String totalAmount = null;
 
@@ -52,6 +55,24 @@ public class Riskv1decisionsOrderInformationAmountDetails {
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public Riskv1decisionsOrderInformationAmountDetails discountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+    return this;
+  }
+
+   /**
+   * Total discount amount applied to the order 
+   * @return discountAmount
+  **/
+  @ApiModelProperty(value = "Total discount amount applied to the order ")
+  public String getDiscountAmount() {
+    return discountAmount;
+  }
+
+  public void setDiscountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
   }
 
   public Riskv1decisionsOrderInformationAmountDetails totalAmount(String totalAmount) {
@@ -83,12 +104,13 @@ public class Riskv1decisionsOrderInformationAmountDetails {
     }
     Riskv1decisionsOrderInformationAmountDetails riskv1decisionsOrderInformationAmountDetails = (Riskv1decisionsOrderInformationAmountDetails) o;
     return Objects.equals(this.currency, riskv1decisionsOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.discountAmount, riskv1decisionsOrderInformationAmountDetails.discountAmount) &&
         Objects.equals(this.totalAmount, riskv1decisionsOrderInformationAmountDetails.totalAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, totalAmount);
+    return Objects.hash(currency, discountAmount, totalAmount);
   }
 
 
@@ -116,6 +138,7 @@ public class Riskv1decisionsOrderInformationAmountDetails {
     sb.append("class Riskv1decisionsOrderInformationAmountDetails {\n");
     
     if (currency != null) sb.append("    currency: ").append(SENSITIVE_FIELD_PATTERN.matcher("currency").matches() ? "[REDACTED]" : toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("discountAmount").matches() ? "[REDACTED]" : toIndentedString(discountAmount)).append("\n");
     if (totalAmount != null) sb.append("    totalAmount: ").append(SENSITIVE_FIELD_PATTERN.matcher("totalAmount").matches() ? "[REDACTED]" : toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -136,6 +159,7 @@ public class Riskv1decisionsOrderInformationAmountDetails {
     sb.append("class Riskv1decisionsOrderInformationAmountDetails {\n");
     
     if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();

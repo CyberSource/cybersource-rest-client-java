@@ -13,15 +13,15 @@
 
 package Api;
 
+import Model.AddAgentKeyRequest;
 import Model.AddAgentKeyResponse201;
 import Model.AgentRegistrationConflictResponse409;
 import Model.AgentRegistrationResponse201;
 import Model.AgentRegistrationValidationErrorResponse422;
 import Model.AgentRequest;
 import Model.AgentUpdate;
-import Model.KeyRequest;
-import Model.KeyUpdate;
 import Model.ListAgentKeysResponse200;
+import Model.UpdateAgentKeyRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -68,8 +68,8 @@ public class AgentRegistrationApiTest {
     @Test
     public void addAgentKeyTest() throws Exception {
         String agentId = null;
-        KeyRequest keyRequest = null;
-        AddAgentKeyResponse201 response = api.addAgentKey(agentId, keyRequest);
+        AddAgentKeyRequest addAgentKeyRequest = null;
+        AddAgentKeyResponse201 response = api.addAgentKey(agentId, addAgentKeyRequest);
 
         // TODO: test validations
     }
@@ -170,8 +170,8 @@ public class AgentRegistrationApiTest {
     public void updateAgentKeyTest() throws Exception {
         String agentId = null;
         String keyId = null;
-        KeyUpdate keyUpdate = null;
-        AddAgentKeyResponse201 response = api.updateAgentKey(agentId, keyId, keyUpdate);
+        UpdateAgentKeyRequest updateAgentKeyRequest = null;
+        AddAgentKeyResponse201 response = api.updateAgentKey(agentId, keyId, updateAgentKeyRequest);
 
         // TODO: test validations
     }

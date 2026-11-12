@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineLegs;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer;
-import Model.Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -149,7 +149,7 @@ public class Ptsv2paymentsidrefundsTravelInformationTransitAirline {
   private List<Ptsv2paymentsTravelInformationTransitAirlineLegs> legs = null;
 
   @SerializedName("ancillaryInformation")
-  private Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation = null;
+  private Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation = null;
 
   @SerializedName("flightType")
   private String flightType = null;
@@ -861,7 +861,7 @@ public class Ptsv2paymentsidrefundsTravelInformationTransitAirline {
     this.legs = legs;
   }
 
-  public Ptsv2paymentsidrefundsTravelInformationTransitAirline ancillaryInformation(Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
+  public Ptsv2paymentsidrefundsTravelInformationTransitAirline ancillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
     this.ancillaryInformation = ancillaryInformation;
     return this;
   }
@@ -871,11 +871,11 @@ public class Ptsv2paymentsidrefundsTravelInformationTransitAirline {
    * @return ancillaryInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation getAncillaryInformation() {
+  public Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation getAncillaryInformation() {
     return ancillaryInformation;
   }
 
-  public void setAncillaryInformation(Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
+  public void setAncillaryInformation(Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation) {
     this.ancillaryInformation = ancillaryInformation;
   }
 

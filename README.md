@@ -308,6 +308,34 @@ In order to use OAuth, set the run environment to OAuth enabled URLs. OAuth only
     //props.setProperty("runEnvironment", "api-ma.cybersource.com");
 ```
 
+## Resilience & Retry
+
+`ApiClient.getAdditionalSettings()` exposes the OkHttp connection-failure retry flag, which was
+previously unreachable after construction:
+
+```java
+ApiClient apiClient = new ApiClient(merchantConfig);
+apiClient.getAdditionalSettings().setCustomRetryOnConnectionFailure(true);  // opt in
+apiClient.getAdditionalSettings().setCustomRetryOnConnectionFailure(false); // opt out
+```
+
+Body-bearing POSTs that move real funds now default to `retryOnConnectionFailure = false`,
+since a connection failure after the gateway already processed the request could otherwise
+cause OkHttp to silently resend it:
+
+* `/pts/v2/payments` (+ captures/reversals/refunds), `/pts/v2/credits`, `/pts/v2/reversals`
+* `/pts/v2/payouts`
+* `/pts/v1/push-funds-transfer`, `/pts/v1/pull-funds-transfer` (+ its `/refund`/`/reversal`)
+
+Calling `setCustomRetryOnConnectionFailure(...)` explicitly always takes precedence over this
+default, for all request paths.
+
+For guidance on handling a payment whose outcome is unknown (duplicate detection, Timeout
+Reversal, safely retrying a declined authorization, etc.), see CyberSource's
+[Payments API reference](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments)
+and developer guides — that's gateway behavior, not SDK behavior, and can change independently
+of this library.
+
 ## How to Contribute
 
 * Fork the repo and create your branch from `master`.

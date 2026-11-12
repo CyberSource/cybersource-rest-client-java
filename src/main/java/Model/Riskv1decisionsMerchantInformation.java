@@ -30,11 +30,32 @@ import java.io.IOException;
  */
 
 public class Riskv1decisionsMerchantInformation {
+  @SerializedName("categoryCode")
+  private String categoryCode = null;
+
   @SerializedName("merchantDescriptor")
   private Riskv1decisionsMerchantInformationMerchantDescriptor merchantDescriptor = null;
 
   @SerializedName("merchantName")
   private String merchantName = null;
+
+  public Riskv1decisionsMerchantInformation categoryCode(String categoryCode) {
+    this.categoryCode = categoryCode;
+    return this;
+  }
+
+   /**
+   * MCC code of the merchant or transaction
+   * @return categoryCode
+  **/
+  @ApiModelProperty(value = "MCC code of the merchant or transaction")
+  public String getCategoryCode() {
+    return categoryCode;
+  }
+
+  public void setCategoryCode(String categoryCode) {
+    this.categoryCode = categoryCode;
+  }
 
   public Riskv1decisionsMerchantInformation merchantDescriptor(Riskv1decisionsMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
@@ -82,13 +103,14 @@ public class Riskv1decisionsMerchantInformation {
       return false;
     }
     Riskv1decisionsMerchantInformation riskv1decisionsMerchantInformation = (Riskv1decisionsMerchantInformation) o;
-    return Objects.equals(this.merchantDescriptor, riskv1decisionsMerchantInformation.merchantDescriptor) &&
+    return Objects.equals(this.categoryCode, riskv1decisionsMerchantInformation.categoryCode) &&
+        Objects.equals(this.merchantDescriptor, riskv1decisionsMerchantInformation.merchantDescriptor) &&
         Objects.equals(this.merchantName, riskv1decisionsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, merchantName);
+    return Objects.hash(categoryCode, merchantDescriptor, merchantName);
   }
 
 
@@ -115,6 +137,7 @@ public class Riskv1decisionsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsMerchantInformation {\n");
     
+    if (categoryCode != null) sb.append("    categoryCode: ").append(SENSITIVE_FIELD_PATTERN.matcher("categoryCode").matches() ? "[REDACTED]" : toIndentedString(categoryCode)).append("\n");
     if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantDescriptor").matches() ? "[REDACTED]" : toIndentedString(merchantDescriptor)).append("\n");
     if (merchantName != null) sb.append("    merchantName: ").append(SENSITIVE_FIELD_PATTERN.matcher("merchantName").matches() ? "[REDACTED]" : toIndentedString(merchantName)).append("\n");
     sb.append("}");
@@ -135,6 +158,7 @@ public class Riskv1decisionsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsMerchantInformation {\n");
     
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
     if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");

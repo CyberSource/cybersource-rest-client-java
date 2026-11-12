@@ -36,9 +36,6 @@ import java.util.List;
  */
 
 public class GenerateUnifiedCheckoutCaptureContextRequest {
-  @SerializedName("clientVersion")
-  private String clientVersion = null;
-
   @SerializedName("targetOrigins")
   private List<String> targetOrigins = null;
 
@@ -71,24 +68,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   @SerializedName("orderInformation")
   private Upv1capturecontextsOrderInformation orderInformation = null;
-
-  public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-    return this;
-  }
-
-   /**
-   * Specify the version of Unified Checkout that you want to use.
-   * @return clientVersion
-  **/
-  @ApiModelProperty(example = "0.34", value = "Specify the version of Unified Checkout that you want to use.")
-  public String getClientVersion() {
-    return clientVersion;
-  }
-
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-  }
 
   public GenerateUnifiedCheckoutCaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -156,10 +135,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)&lt;br&gt;&lt;br&gt;    Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP)&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \&quot;true\&quot;.   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \&quot;FULL\&quot; or \&quot;PARTIAL\&quot;.   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa&lt;br&gt;&lt;br&gt;  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY&lt;br&gt;&lt;br&gt;  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)&lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.&lt;br&gt;&lt;br&gt;  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \&quot;true\&quot;.   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \&quot;FULL\&quot; or \&quot;PARTIAL\&quot;.   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa&lt;br&gt;&lt;br&gt;  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.&lt;br&gt;&lt;br&gt;  **Managing Click to Pay Card Networks** allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)<br><br>    Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP)<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.<br><br>  **Managing Click to Pay Card Networks** allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -322,8 +301,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
       return false;
     }
     GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest = (GenerateUnifiedCheckoutCaptureContextRequest) o;
-    return Objects.equals(this.clientVersion, generateUnifiedCheckoutCaptureContextRequest.clientVersion) &&
-        Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
+    return Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateUnifiedCheckoutCaptureContextRequest.allowedCardNetworks) &&
         Objects.equals(this.allowedPaymentTypes, generateUnifiedCheckoutCaptureContextRequest.allowedPaymentTypes) &&
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
@@ -338,7 +316,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, buttonType, captureMandate, completeMandate, transientTokenResponseOptions, data, orderInformation);
+    return Objects.hash(targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, buttonType, captureMandate, completeMandate, transientTokenResponseOptions, data, orderInformation);
   }
 
 
@@ -365,7 +343,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    if (clientVersion != null) sb.append("    clientVersion: ").append(SENSITIVE_FIELD_PATTERN.matcher("clientVersion").matches() ? "[REDACTED]" : toIndentedString(clientVersion)).append("\n");
     if (targetOrigins != null) sb.append("    targetOrigins: ").append(SENSITIVE_FIELD_PATTERN.matcher("targetOrigins").matches() ? "[REDACTED]" : toIndentedString(targetOrigins)).append("\n");
     if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedCardNetworks").matches() ? "[REDACTED]" : toIndentedString(allowedCardNetworks)).append("\n");
     if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(SENSITIVE_FIELD_PATTERN.matcher("allowedPaymentTypes").matches() ? "[REDACTED]" : toIndentedString(allowedPaymentTypes)).append("\n");
@@ -395,7 +372,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
     if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
     if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");

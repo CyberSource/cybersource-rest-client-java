@@ -29,17 +29,35 @@ import java.io.IOException;
  */
 
 public class InlineResponse4045 {
+  @SerializedName("submitTimeUtc")
+  private String submitTimeUtc = null;
+
   @SerializedName("status")
   private String status = null;
+
+  @SerializedName("reason")
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("code")
-  private String code = null;
+  public InlineResponse4045 submitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+    return this;
+  }
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+   /**
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
+  **/
+  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getSubmitTimeUtc() {
+    return submitTimeUtc;
+  }
+
+  public void setSubmitTimeUtc(String submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+  }
 
   public InlineResponse4045 status(String status) {
     this.status = status;
@@ -47,16 +65,34 @@ public class InlineResponse4045 {
   }
 
    /**
-   * The status of the submitted request.   Possible values: - NOT_FOUND
+   * The status of the submitted request.  Possible values: - NOT_FOUND
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted request.   Possible values: - NOT_FOUND")
+  @ApiModelProperty(value = "The status of the submitted request.  Possible values: - NOT_FOUND")
   public String getStatus() {
     return status;
   }
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public InlineResponse4045 reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status.  Possible values: - NOT_FOUND
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - NOT_FOUND")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public InlineResponse4045 message(String message) {
@@ -77,42 +113,6 @@ public class InlineResponse4045 {
     this.message = message;
   }
 
-  public InlineResponse4045 code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * An optional short string which identifies the exact error.
-   * @return code
-  **/
-  @ApiModelProperty(value = "An optional short string which identifies the exact error.")
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public InlineResponse4045 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,15 +123,15 @@ public class InlineResponse4045 {
       return false;
     }
     InlineResponse4045 inlineResponse4045 = (InlineResponse4045) o;
-    return Objects.equals(this.status, inlineResponse4045.status) &&
-        Objects.equals(this.message, inlineResponse4045.message) &&
-        Objects.equals(this.code, inlineResponse4045.code) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse4045.submitTimeUtc);
+    return Objects.equals(this.submitTimeUtc, inlineResponse4045.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse4045.status) &&
+        Objects.equals(this.reason, inlineResponse4045.reason) &&
+        Objects.equals(this.message, inlineResponse4045.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message, code, submitTimeUtc);
+    return Objects.hash(submitTimeUtc, status, reason, message);
   }
 
 
@@ -158,10 +158,10 @@ public class InlineResponse4045 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4045 {\n");
     
-    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
-    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
-    if (code != null) sb.append("    code: ").append(SENSITIVE_FIELD_PATTERN.matcher("code").matches() ? "[REDACTED]" : toIndentedString(code)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(SENSITIVE_FIELD_PATTERN.matcher("submitTimeUtc").matches() ? "[REDACTED]" : toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(SENSITIVE_FIELD_PATTERN.matcher("status").matches() ? "[REDACTED]" : toIndentedString(status)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(SENSITIVE_FIELD_PATTERN.matcher("reason").matches() ? "[REDACTED]" : toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(SENSITIVE_FIELD_PATTERN.matcher("message").matches() ? "[REDACTED]" : toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +180,10 @@ public class InlineResponse4045 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4045 {\n");
     
-    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
